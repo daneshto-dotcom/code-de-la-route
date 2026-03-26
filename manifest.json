@@ -1,0 +1,27 @@
+{
+    "name": "Code de la Route — French Driving Theory Tutor",
+    "short_name": "Code de la Route",
+    "description": "Prepare for the French driving theory exam with bilingual practice questions, mock exams, and smart review.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#F8F9FA",
+    "theme_color": "#2E5984",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "assets/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["education"],
+    "lang": "en",
+    "dir": "ltr"
+}

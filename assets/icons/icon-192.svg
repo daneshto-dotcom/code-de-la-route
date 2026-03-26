@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E5984"/>
+      <stop offset="100%" stop-color="#1B3A5C"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="192" height="192" rx="40" fill="url(#bg)"/>
+  <!-- Road -->
+  <path d="M60 192 L86 50 L106 50 L132 192" fill="#4A4A4A"/>
+  <path d="M89 80 L93 60 L99 60 L103 80" fill="#F5A623"/>
+  <path d="M84 110 L89 85 L103 85 L108 110" fill="#F5A623"/>
+  <path d="M78 145 L84 115 L108 115 L114 145" fill="#F5A623"/>
+  <path d="M72 180 L78 150 L114 150 L120 180" fill="#F5A623"/>
+  <!-- Car silhouette -->
+  <g transform="translate(74, 20)">
+    <rect x="6" y="12" width="32" height="16" rx="4" fill="#FFFFFF"/>
+    <rect x="2" y="20" width="40" height="12" rx="3" fill="#FFFFFF"/>
+    <circle cx="10" cy="34" r="4" fill="#F5A623"/>
+    <circle cx="34" cy="34" r="4" fill="#F5A623"/>
+  </g>
+  <!-- FR flag stripe -->
+  <rect x="0" y="180" width="64" height="12" rx="0" fill="#0055A4"/>
+  <rect x="64" y="180" width="64" height="12" fill="#FFFFFF"/>
+  <rect x="128" y="180" width="64" height="12" rx="0" fill="#EF4135"/>
+</svg>
