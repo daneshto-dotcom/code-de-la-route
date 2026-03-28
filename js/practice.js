@@ -27,6 +27,7 @@ const Practice = {
         this.selectedAnswers = [];
         this.retryQueue = [];
         this.isRetry = false;
+        this.sessionStartTime = Date.now();
 
         // Select questions based on type
         const count = options.count || 10;
@@ -428,9 +429,13 @@ const Practice = {
         }
 
         const accuracy = Math.round((this.sessionCorrect / total) * 100);
+        const durationSecs = Math.round((Date.now() - (this.sessionStartTime || Date.now())) / 1000);
+        const mins = Math.floor(durationSecs / 60);
+        const secs = durationSecs % 60;
+        const timeStr = mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
 
         // Build per-topic stats from this session's attempts
-        const recentAttempts = Storage.getAttempts().slice(-total);
+        const recentAttempts = Storage.getAttempts().slice(-(total + this.retryQueue.length));
         const topicStats = {};
         for (const a of recentAttempts) {
             if (!topicStats[a.topic]) topicStats[a.topic] = { correct: 0, total: 0 };
@@ -454,16 +459,21 @@ const Practice = {
             verdict.innerHTML = `Session complete! ${this.sessionCorrect}/${total} (${accuracy}%)`;
         }
 
-        // Topic breakdown in explanation area
-        let topicHtml = '<strong>Topic Breakdown:</strong><br>';
+        // Enhanced summary with time and topic breakdown
+        let summaryHtml = `<div class="session-summary">`;
+        summaryHtml += `<div class="summary-stat"><span class="summary-label">Time</span><span class="summary-value">${timeStr}</span></div>`;
+        summaryHtml += `<div class="summary-stat"><span class="summary-label">Speed</span><span class="summary-value">${total > 0 ? Math.round(durationSecs / total) : 0}s/question</span></div>`;
+        summaryHtml += `</div>`;
+        summaryHtml += `<strong>Topic Breakdown:</strong><br>`;
+
         for (const [topicId, data] of Object.entries(topicStats)) {
             const topic = ETG_TOPICS.find(t => t.id === topicId);
             const pct = Math.round((data.correct / data.total) * 100);
             const emoji = pct >= 80 ? '✓' : pct >= 50 ? '~' : '✗';
-            topicHtml += `${emoji} ${topic?.icon || ''} ${topic?.nameEn || topicId}: ${data.correct}/${data.total}<br>`;
+            summaryHtml += `${emoji} ${topic?.icon || ''} ${topic?.nameEn || topicId}: ${data.correct}/${data.total}<br>`;
         }
 
-        document.getElementById('explanation-en').innerHTML = topicHtml;
+        document.getElementById('explanation-en').innerHTML = summaryHtml;
         document.getElementById('explanation-fr').textContent = '';
         document.getElementById('explanation-fr-section').style.display = 'none';
         document.getElementById('trap-section').classList.add('hidden');
