@@ -351,8 +351,7 @@ const Practice = {
         // Explanation
         document.getElementById('explanation-en').textContent = q.explanationEn;
         document.getElementById('explanation-fr').textContent = q.explanationFr;
-        document.getElementById('explanation-fr-section').style.display =
-            settings.showEnglish ? 'block' : 'block'; // Always show French explanation
+        document.getElementById('explanation-fr-section').style.display = 'block';
 
         // Trap note
         const trapSection = document.getElementById('trap-section');

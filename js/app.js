@@ -290,6 +290,9 @@ const App = {
             bookmarkSection.classList.add('hidden');
         }
 
+        // Smart recommendation
+        this.renderRecommendation();
+
         // Topic list (weak topics)
         this.renderTopicList();
 
@@ -341,6 +344,62 @@ const App = {
             });
             list.appendChild(item);
         }
+    },
+
+    renderRecommendation() {
+        const card = document.getElementById('recommendation-card');
+        if (!card) return;
+
+        const stats = Storage.getOverallStats();
+        const dueReviews = Storage.getDueReviews();
+        const mastery = Storage.getTopicMasteryArray();
+        const attempts = Storage.getAttempts();
+        const uniqueSeen = new Set(attempts.map(a => a.questionId)).size;
+        const coveragePct = QUESTION_BANK.length > 0 ? Math.round((uniqueSeen / QUESTION_BANK.length) * 100) : 0;
+
+        let icon, title, desc, action;
+
+        if (stats.total === 0) {
+            // Never practiced — start with Quick 10
+            icon = '🚀'; title = 'Start your first session';
+            desc = 'Try 10 questions to get your baseline';
+            action = () => { Practice.startSession('quick10'); this.navigate('practice'); };
+        } else if (dueReviews.length >= 5) {
+            // Many reviews due — do reviews first
+            icon = '🔄'; title = `${dueReviews.length} reviews waiting`;
+            desc = 'Clear your review queue to lock in knowledge';
+            action = () => { Practice.startSession('review'); this.navigate('practice'); };
+        } else if (coveragePct < 50) {
+            // Low coverage — explore new questions
+            icon = '🗺️'; title = 'Discover new questions';
+            desc = `You've seen ${coveragePct}% of questions. Explore more!`;
+            action = () => { Practice.startSession('quick10'); this.navigate('practice'); };
+        } else {
+            // Find weakest topic
+            const weakest = mastery.filter(t => t.totalAttempts >= 3).sort((a, b) => a.accuracy - b.accuracy)[0];
+            if (weakest && weakest.accuracy < 70) {
+                icon = '🎯'; title = `Drill: ${weakest.nameEn}`;
+                desc = `Your weakest topic at ${weakest.accuracy}%`;
+                action = () => {
+                    Practice.startSession('drill', { topicFilter: weakest.id || weakest.topic, count: 10 });
+                    this.navigate('practice');
+                };
+            } else if (stats.exams === 0) {
+                icon = '📝'; title = 'Try a mock exam';
+                desc = 'Test yourself under exam conditions';
+                action = () => { this.navigate('exam'); };
+            } else {
+                icon = '💪'; title = 'Keep practicing';
+                desc = 'Mix of all topics to stay sharp';
+                action = () => { Practice.startSession('quick10'); this.navigate('practice'); };
+            }
+        }
+
+        card.classList.remove('hidden');
+        document.getElementById('rec-icon').textContent = icon;
+        document.getElementById('rec-title').textContent = title;
+        document.getElementById('rec-desc').textContent = desc;
+        document.getElementById('rec-action-btn').onclick = action;
     },
 
     setupExamView() {

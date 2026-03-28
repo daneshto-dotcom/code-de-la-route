@@ -12,7 +12,6 @@ const Vocab = {
     signChoices: [],
     signCorrect: null,
     signAnswered: false,
-    stats: { seen: 0, known: 0, learning: 0 },
 
     // === INIT ===
     init() {
