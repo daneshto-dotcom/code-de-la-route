@@ -58,6 +58,12 @@ const RoadSigns = {
         'town_exit': 'Sortie d\'agglomération',
         'dipped_headlights': 'Feux de croisement obligatoires',
         'level_crossing': 'Passage à niveau',
+        'slippery_road': 'Chaussée glissante',
+        'school_zone': 'Zone scolaire',
+        'no_uturn': 'Demi-tour interdit',
+        'dead_end': 'Voie sans issue',
+        'bicycle_lane': 'Piste cyclable obligatoire',
+        'end_speed_limit': 'Fin de limitation de vitesse',
     },
 
     signs: {
@@ -232,6 +238,63 @@ const RoadSigns = {
             <polygon points="50,8 95,90 5,90" fill="white" stroke="#CC0000" stroke-width="5"/>
             <line x1="35" y1="45" x2="65" y2="75" stroke="#333" stroke-width="6"/>
             <line x1="65" y1="45" x2="35" y2="75" stroke="#333" stroke-width="6"/>
+        </svg>`,
+
+        // === SLIPPERY ROAD (danger triangle + wavy lines) ===
+        'slippery_road': () => `<svg viewBox="0 0 100 100" width="80" height="80">
+            <polygon points="50,8 95,90 5,90" fill="white" stroke="#CC0000" stroke-width="5"/>
+            <path d="M30,70 Q40,55 50,65 Q60,75 70,60" fill="none" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="45" cy="48" r="3" fill="#333"/>
+            <circle cx="55" cy="48" r="3" fill="#333"/>
+        </svg>`,
+
+        // === SCHOOL ZONE (danger triangle + children figures) ===
+        'school_zone': () => `<svg viewBox="0 0 100 100" width="80" height="80">
+            <polygon points="50,8 95,90 5,90" fill="white" stroke="#CC0000" stroke-width="5"/>
+            <circle cx="40" cy="38" r="4" fill="#333"/>
+            <line x1="40" y1="42" x2="40" y2="58" stroke="#333" stroke-width="3"/>
+            <line x1="40" y1="48" x2="33" y2="54" stroke="#333" stroke-width="2"/>
+            <line x1="40" y1="48" x2="47" y2="54" stroke="#333" stroke-width="2"/>
+            <line x1="40" y1="58" x2="34" y2="72" stroke="#333" stroke-width="2"/>
+            <line x1="40" y1="58" x2="46" y2="72" stroke="#333" stroke-width="2"/>
+            <circle cx="58" cy="42" r="3.5" fill="#333"/>
+            <line x1="58" y1="46" x2="58" y2="60" stroke="#333" stroke-width="2.5"/>
+            <line x1="58" y1="60" x2="53" y2="72" stroke="#333" stroke-width="2"/>
+            <line x1="58" y1="60" x2="63" y2="72" stroke="#333" stroke-width="2"/>
+        </svg>`,
+
+        // === NO U-TURN (red circle + U-turn arrow crossed) ===
+        'no_uturn': () => `<svg viewBox="0 0 100 100" width="80" height="80">
+            <circle cx="50" cy="50" r="45" fill="white" stroke="#CC0000" stroke-width="6"/>
+            <path d="M60,70 L60,40 A10,10 0 0 0 40,40 L40,55" fill="none" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+            <polygon points="40,55 34,46 46,46" fill="#333"/>
+            <line x1="18" y1="82" x2="82" y2="18" stroke="#CC0000" stroke-width="6"/>
+        </svg>`,
+
+        // === DEAD END / IMPASSE ===
+        'dead_end': () => `<svg viewBox="0 0 100 100" width="80" height="80">
+            <rect x="5" y="5" width="90" height="90" rx="8" fill="#2E5984" stroke="white" stroke-width="2"/>
+            <rect x="40" y="25" width="20" height="35" fill="white"/>
+            <rect x="25" y="55" width="50" height="5" fill="white"/>
+        </svg>`,
+
+        // === BICYCLE LANE (blue circle + bicycle) ===
+        'bicycle_lane': () => `<svg viewBox="0 0 100 100" width="80" height="80">
+            <circle cx="50" cy="50" r="45" fill="#2E5984" stroke="white" stroke-width="3"/>
+            <circle cx="35" cy="62" r="10" fill="none" stroke="white" stroke-width="3"/>
+            <circle cx="65" cy="62" r="10" fill="none" stroke="white" stroke-width="3"/>
+            <line x1="35" y1="62" x2="50" y2="42" stroke="white" stroke-width="2.5"/>
+            <line x1="50" y1="42" x2="65" y2="62" stroke="white" stroke-width="2.5"/>
+            <line x1="50" y1="42" x2="58" y2="42" stroke="white" stroke-width="2.5"/>
+            <circle cx="50" cy="35" r="3" fill="white"/>
+        </svg>`,
+
+        // === END OF SPEED LIMIT (grey circle + grey diagonal bars) ===
+        'end_speed_limit': () => `<svg viewBox="0 0 100 100" width="80" height="80">
+            <circle cx="50" cy="50" r="45" fill="white" stroke="#999" stroke-width="4"/>
+            <line x1="18" y1="82" x2="82" y2="18" stroke="#999" stroke-width="3"/>
+            <line x1="22" y1="85" x2="85" y2="22" stroke="#999" stroke-width="3"/>
+            <line x1="15" y1="78" x2="78" y2="15" stroke="#999" stroke-width="3"/>
         </svg>`,
     }
 };
