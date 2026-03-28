@@ -30,6 +30,15 @@ const App = {
 
         // Init tutor chat
         Tutor.init();
+
+        // Listen for service worker update notifications
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.addEventListener('message', (event) => {
+                if (event.data?.type === 'SW_UPDATED') {
+                    showToast('App updated! Refresh for latest version.', 'success');
+                }
+            });
+        }
     },
 
     showOnboarding() {
