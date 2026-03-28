@@ -25,6 +25,9 @@ const App = {
         this.setupSettings();
         this.setupExamView();
 
+        // Init vocab/learn
+        Vocab.init();
+
         // Init tutor chat
         Tutor.init();
     },
@@ -153,6 +156,7 @@ const App = {
         const titles = {
             home: 'Code de la Route',
             practice: 'Practice',
+            vocab: 'Vocabulaire',
             exam: 'Mock Exam',
             progress: 'Progress',
             settings: 'Settings'
@@ -169,6 +173,9 @@ const App = {
                 break;
             case 'settings':
                 this.loadSettings();
+                break;
+            case 'vocab':
+                Vocab.render();
                 break;
             case 'exam':
                 Exam.resetExamView();

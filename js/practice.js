@@ -15,6 +15,8 @@ const Practice = {
     timerInterval: null,
     timerSeconds: 0,
     onTimerExpired: null,
+    retryQueue: [],      // wrong questions re-queued with English
+    isRetry: false,       // current question is a retry
 
     startSession(type = 'practice', options = {}) {
         this.sessionType = type;
@@ -23,6 +25,8 @@ const Practice = {
         this.topicFilter = options.topicFilter || null;
         this.answered = false;
         this.selectedAnswers = [];
+        this.retryQueue = [];
+        this.isRetry = false;
 
         // Select questions based on type
         const count = options.count || 10;
@@ -63,12 +67,24 @@ const Practice = {
     },
 
     loadQuestion() {
-        if (this.sessionIndex >= this.sessionQuestions.length) {
-            this.endSession();
-            return;
+        // Check if we should insert a retry question (every 3 new questions)
+        if (this.retryQueue.length > 0 && this.sessionIndex > 0 && this.sessionIndex % 3 === 0) {
+            this.currentQuestion = this.retryQueue.shift();
+            this.isRetry = true;
+        } else if (this.sessionIndex >= this.sessionQuestions.length) {
+            // No more new questions — drain retry queue
+            if (this.retryQueue.length > 0) {
+                this.currentQuestion = this.retryQueue.shift();
+                this.isRetry = true;
+            } else {
+                this.endSession();
+                return;
+            }
+        } else {
+            this.currentQuestion = this.sessionQuestions[this.sessionIndex];
+            this.isRetry = false;
         }
 
-        this.currentQuestion = this.sessionQuestions[this.sessionIndex];
         this.selectedAnswers = [];
         this.answered = false;
         this.renderQuestion();
@@ -105,13 +121,23 @@ const Practice = {
             signContainer.innerHTML = '';
         }
 
-        // Question text — French only during first attempt
+        // Question text — show English on retry, French-only on first attempt
         document.getElementById('question-fr').textContent = q.questionFr;
         const enEl = document.getElementById('question-en');
         enEl.textContent = q.questionEn;
-        enEl.style.display = 'none'; // English shown only in explanation/retry
+        enEl.style.display = this.isRetry ? 'block' : 'none';
 
-        // Answer options — French only during first attempt
+        // Retry banner
+        const existingBanner = document.querySelector('.retry-banner');
+        if (existingBanner) existingBanner.remove();
+        if (this.isRetry) {
+            const banner = document.createElement('div');
+            banner.className = 'retry-banner';
+            banner.textContent = 'Retry — you got this wrong before. English shown to help.';
+            document.getElementById('question-card').prepend(banner);
+        }
+
+        // Answer options — show English on retry
         const optionsContainer = document.getElementById('answer-options');
         optionsContainer.innerHTML = '';
         optionsContainer.classList.add('stagger-enter');
@@ -128,6 +154,7 @@ const Practice = {
                 <div class="answer-letter">${letter}</div>
                 <div class="answer-content">
                     <div class="answer-text-fr">${option.fr}</div>
+                    ${this.isRetry ? `<div class="answer-text-en">${option.en}</div>` : ''}
                 </div>
                 <div class="answer-indicator"></div>
             `;
@@ -208,6 +235,11 @@ const Practice = {
         const correct = this.selectedAnswers.sort().join(',') === [...q.correctAnswers].sort().join(',');
 
         if (correct) this.sessionCorrect++;
+
+        // Queue wrong questions for retry (not in exam mode, not already a retry)
+        if (!correct && this.sessionType !== 'exam' && !this.isRetry) {
+            this.retryQueue.push(q);
+        }
 
         // Haptic feedback
         if (navigator.vibrate) {
@@ -377,9 +409,11 @@ const Practice = {
             };
         }
 
-        // Next button
+        // Next button — only advance index for non-retry questions
         document.getElementById('next-question-btn').onclick = () => {
-            this.sessionIndex++;
+            if (!this.isRetry) {
+                this.sessionIndex++;
+            }
             this.loadQuestion();
         };
 
