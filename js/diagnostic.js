@@ -144,6 +144,7 @@ const Diagnostic = {
         if (this.answered) return;
 
         if (q.answerCount === 1) {
+            this.answered = true; // guard against double-tap during 200ms delay
             this.currentSelected = [letter];
             this.highlightSelected();
             setTimeout(() => this.submitAnswer(q), 200);

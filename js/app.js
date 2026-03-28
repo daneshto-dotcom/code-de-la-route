@@ -418,7 +418,7 @@ const App = {
         document.getElementById('retake-diagnostic-btn').addEventListener('click', () => {
             if (confirm('This will re-run the 15-question diagnostic assessment. Your previous diagnostic result will be replaced. Continue?')) {
                 // Clear previous diagnostic result
-                localStorage.removeItem('fdtta_diagnostic_result');
+                localStorage.removeItem(Storage.KEYS.DIAGNOSTIC_RESULT);
                 // Hide main app, start diagnostic
                 document.getElementById('main-app').classList.remove('active');
                 document.getElementById('diagnostic-screen').classList.add('active');

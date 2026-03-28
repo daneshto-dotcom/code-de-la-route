@@ -43,11 +43,11 @@ const Vocab = {
 
     // === VOCAB MEMORY (persisted) ===
     getMemory() {
-        return JSON.parse(localStorage.getItem('fdtta_vocab_memory') || '{}');
+        return JSON.parse(localStorage.getItem(Storage.KEYS.VOCAB_MEMORY) || '{}');
     },
 
     saveMemory(memory) {
-        localStorage.setItem('fdtta_vocab_memory', JSON.stringify(memory));
+        Storage._safeSet(Storage.KEYS.VOCAB_MEMORY, JSON.stringify(memory));
     },
 
     markWord(wordFr, status) {
@@ -63,11 +63,11 @@ const Vocab = {
 
     // === SIGN PROGRESS ===
     getSignProgress() {
-        return JSON.parse(localStorage.getItem('fdtta_sign_progress') || '{}');
+        return JSON.parse(localStorage.getItem(Storage.KEYS.SIGN_PROGRESS) || '{}');
     },
 
     saveSignProgress(progress) {
-        localStorage.setItem('fdtta_sign_progress', JSON.stringify(progress));
+        Storage._safeSet(Storage.KEYS.SIGN_PROGRESS, JSON.stringify(progress));
     },
 
     markSign(signId, correct) {
