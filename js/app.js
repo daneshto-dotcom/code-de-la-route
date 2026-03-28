@@ -407,6 +407,20 @@ const App = {
             reader.readAsText(file);
         });
 
+        // Retake Diagnostic
+        document.getElementById('retake-diagnostic-btn').addEventListener('click', () => {
+            if (confirm('This will re-run the 15-question diagnostic assessment. Your previous diagnostic result will be replaced. Continue?')) {
+                // Clear previous diagnostic result
+                localStorage.removeItem('fdtta_diagnostic_result');
+                // Hide main app, start diagnostic
+                document.getElementById('main-app').classList.remove('active');
+                document.getElementById('diagnostic-screen').classList.add('active');
+                document.getElementById('diag-questions').classList.remove('hidden');
+                document.getElementById('diag-results').classList.add('hidden');
+                Diagnostic.start();
+            }
+        });
+
         // Reset
         document.getElementById('reset-data-btn').addEventListener('click', () => {
             if (confirm('This will delete ALL your progress. Are you sure?')) {
