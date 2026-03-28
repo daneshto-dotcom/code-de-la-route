@@ -499,11 +499,18 @@ if ('serviceWorker' in navigator) {
 // === GLOBAL ERROR BOUNDARY ===
 window.addEventListener('error', (event) => {
     console.error('App error:', event.error);
-    showToast('Something went wrong. Try refreshing the page.', 'error');
+    // Only show toast if app is initialized (showToast exists)
+    if (typeof showToast === 'function') {
+        showToast('Something went wrong. Try refreshing the page.', 'error');
+    }
 });
 
 window.addEventListener('unhandledrejection', (event) => {
     console.error('Unhandled promise:', event.reason);
+    // Prevent unhandled promise rejection noise for non-critical errors
+    if (event.reason?.name === 'AbortError') {
+        event.preventDefault(); // AbortController timeouts are expected
+    }
 });
 
 // === OFFLINE DETECTION ===

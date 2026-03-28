@@ -18,6 +18,9 @@ const Progress = {
 
         // Exam history
         this.renderExamHistory(exams);
+
+        // Study activity (last 7 days)
+        this.renderStudyActivity();
     },
 
     renderMasteryList(mastery) {
@@ -33,23 +36,23 @@ const Progress = {
             const item = document.createElement('div');
             item.className = 'mastery-item';
             item.innerHTML = `
-                <div style="text-align: center; min-width: 32px;">
-                    <span style="font-size: 20px;">${topic.icon}</span>
+                <div class="mastery-icon">
+                    <span>${topic.icon}</span>
                 </div>
-                <div style="flex: 1; min-width: 0;">
-                    <div style="font-weight: 600; font-size: 13px; margin-bottom: 2px;">${topic.nameEn}</div>
-                    <div style="font-size: 11px; color: var(--text-tertiary);">${topic.nameFr}</div>
-                    <div class="mastery-bar-container" style="margin-top: 4px;">
+                <div class="mastery-info">
+                    <div class="mastery-name">${topic.nameEn}</div>
+                    <div class="mastery-name-fr">${topic.nameFr}</div>
+                    <div class="mastery-bar-container">
                         <div class="mastery-bar-fill" style="width: ${topic.accuracy}%; background: ${color};"></div>
                     </div>
                 </div>
-                <div style="text-align: right;">
+                <div class="mastery-score">
                     <div class="mastery-accuracy" style="color: ${color};">${topic.accuracy}%</div>
                     <span class="mastery-level-badge ${level.id}">${level.label}</span>
                 </div>
             `;
 
-            // Click to drill — full topic
+            // Click to drill
             const topicQuestionCount = getQuestionsByTopic(topic.id || topic.topic).length;
             item.style.cursor = 'pointer';
             item.title = `${topicQuestionCount} questions — click to drill`;
@@ -70,8 +73,7 @@ const Progress = {
         }
 
         list.innerHTML = '';
-        // Show most recent first
-        [...exams].reverse().forEach((exam, i) => {
+        [...exams].reverse().forEach((exam) => {
             const passed = exam.passed;
             const date = new Date(exam.timestamp);
             const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
@@ -84,15 +86,51 @@ const Progress = {
                     <div class="exam-history-score ${passed ? 'pass' : 'fail'}">${exam.correctCount}/${exam.totalQuestions}</div>
                     <div class="exam-history-date">${dateStr} at ${timeStr}</div>
                 </div>
-                <div style="text-align: right;">
-                    <span style="padding: 3px 10px; border-radius: 10px; font-size: 12px; font-weight: 600;
-                        background: ${passed ? 'var(--success-light)' : 'var(--error-light)'};
-                        color: ${passed ? 'var(--success-dark)' : 'var(--error-dark)'};">
+                <div class="exam-history-verdict">
+                    <span class="exam-badge ${passed ? 'pass' : 'fail'}">
                         ${passed ? 'PASSED' : 'FAILED'}
                     </span>
                 </div>
             `;
             list.appendChild(item);
         });
+    },
+
+    renderStudyActivity() {
+        const container = document.getElementById('study-activity');
+        if (!container) return;
+
+        const attempts = Storage.getAttempts();
+        const now = new Date();
+        const days = [];
+
+        // Build last 7 days
+        for (let i = 6; i >= 0; i--) {
+            const d = new Date(now);
+            d.setDate(d.getDate() - i);
+            const dateStr = d.toDateString();
+            const dayAttempts = attempts.filter(a => new Date(a.timestamp).toDateString() === dateStr);
+            const correct = dayAttempts.filter(a => a.isCorrect).length;
+            days.push({
+                label: d.toLocaleDateString('en-US', { weekday: 'short' }),
+                total: dayAttempts.length,
+                correct,
+                isToday: i === 0
+            });
+        }
+
+        const maxCount = Math.max(...days.map(d => d.total), 1);
+
+        container.innerHTML = days.map(d => `
+            <div class="activity-day ${d.isToday ? 'today' : ''}">
+                <div class="activity-bar-wrapper">
+                    <div class="activity-bar" style="height: ${(d.total / maxCount) * 100}%;">
+                        <div class="activity-bar-correct" style="height: ${d.total > 0 ? (d.correct / d.total) * 100 : 0}%;"></div>
+                    </div>
+                </div>
+                <div class="activity-label">${d.label}</div>
+                <div class="activity-count">${d.total}</div>
+            </div>
+        `).join('');
     }
 };
