@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -12,6 +12,7 @@
     <meta property="og:title" content="Code de la Route — French Driving Theory Tutor">
     <meta property="og:description" content="104 bilingual questions, mock exams with timer, adaptive learning. Free PWA.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/icons/icon-512.png">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <title>Code de la Route</title>
@@ -101,7 +102,7 @@
                     </div>
                     <h3 class="section-title">Your Strengths & Gaps</h3>
                     <div class="diag-topic-results" id="diag-topic-results"></div>
-                    <button class="btn btn-primary btn-lg" id="diag-continue-btn" style="margin-top: 20px; width: 100%;">Start Learning!</button>
+                    <button class="btn btn-primary btn-lg diag-continue-btn" id="diag-continue-btn">Start Learning!</button>
                 </div>
             </div>
         </div>
@@ -126,7 +127,7 @@
                     <!-- Readiness Score -->
                     <div class="readiness-card card" id="readiness-card">
                         <div class="readiness-ring">
-                            <svg viewBox="0 0 120 120">
+                            <svg viewBox="0 0 120 120" aria-hidden="true">
                                 <circle class="readiness-bg" cx="60" cy="60" r="52" />
                                 <circle class="readiness-progress" cx="60" cy="60" r="52" id="readiness-ring" />
                             </svg>
@@ -173,11 +174,11 @@
                     <!-- Bookmarked Questions -->
                     <div class="bookmark-section hidden" id="bookmark-section">
                         <h3 class="section-title">Bookmarked Questions</h3>
-                        <div class="preset-card card" id="bookmark-drill-card" style="cursor:pointer; padding: 12px 16px; display: flex; align-items: center; gap: 12px;">
-                            <span style="font-size: 24px;">🔖</span>
+                        <div class="preset-card card bookmark-drill-card" id="bookmark-drill-card">
+                            <span class="bookmark-icon" aria-hidden="true">🔖</span>
                             <div>
-                                <div style="font-weight: 600;">Review Bookmarks</div>
-                                <div class="text-secondary" style="font-size: 12px;" id="bookmark-count">0 saved</div>
+                                <div class="bookmark-title">Review Bookmarks</div>
+                                <div class="text-secondary bookmark-count" id="bookmark-count">0 saved</div>
                             </div>
                         </div>
                     </div>
@@ -236,7 +237,7 @@
                         <div class="sign-container hidden" id="question-signs"></div>
                         <div class="question-text-fr" id="question-fr"></div>
                         <div class="question-text-en" id="question-en"></div>
-                        <button class="tts-btn" id="tts-play-btn" title="Listen in French">🔊</button>
+                        <button class="tts-btn" id="tts-play-btn" title="Listen in French" aria-label="Listen to question in French">🔊</button>
                     </div>
 
                     <!-- Answer Options -->
@@ -305,7 +306,7 @@
                     <!-- Exam results -->
                     <div id="exam-results" class="hidden">
                         <div class="results-score-ring">
-                            <svg viewBox="0 0 160 160">
+                            <svg viewBox="0 0 160 160" aria-hidden="true">
                                 <circle class="results-bg" cx="80" cy="80" r="70" />
                                 <circle class="results-progress" cx="80" cy="80" r="70" id="results-ring" />
                             </svg>
@@ -413,7 +414,7 @@
                         <h3 class="section-title">AI Tutor</h3>
                         <div class="setting-item">
                             <label>Tutor API Endpoint</label>
-                            <input type="url" id="setting-tutor-endpoint" class="setting-input" placeholder="https://...workers.dev" style="max-width: 200px; font-size: 11px;">
+                            <input type="url" id="setting-tutor-endpoint" class="setting-input setting-input-sm" placeholder="https://...workers.dev">
                         </div>
                     </div>
                     <div class="settings-group">
@@ -438,25 +439,25 @@
             </main>
 
             <!-- Bottom Navigation -->
-            <nav id="bottom-nav">
-                <button class="nav-item active" data-view="home">
-                    <span class="nav-icon">🏠</span>
+            <nav id="bottom-nav" role="tablist" aria-label="Main navigation">
+                <button class="nav-item active" data-view="home" role="tab" aria-selected="true" aria-label="Home">
+                    <span class="nav-icon" aria-hidden="true">🏠</span>
                     <span class="nav-label">Home</span>
                 </button>
-                <button class="nav-item" data-view="practice">
-                    <span class="nav-icon">📚</span>
+                <button class="nav-item" data-view="practice" role="tab" aria-selected="false" aria-label="Practice">
+                    <span class="nav-icon" aria-hidden="true">📚</span>
                     <span class="nav-label">Practice</span>
                 </button>
-                <button class="nav-item" data-view="vocab">
-                    <span class="nav-icon">📖</span>
+                <button class="nav-item" data-view="vocab" role="tab" aria-selected="false" aria-label="Vocabulary">
+                    <span class="nav-icon" aria-hidden="true">📖</span>
                     <span class="nav-label">Vocab</span>
                 </button>
-                <button class="nav-item" data-view="progress">
-                    <span class="nav-icon">📊</span>
+                <button class="nav-item" data-view="progress" role="tab" aria-selected="false" aria-label="Progress">
+                    <span class="nav-icon" aria-hidden="true">📊</span>
                     <span class="nav-label">Progress</span>
                 </button>
-                <button class="nav-item" data-view="settings">
-                    <span class="nav-icon">⚙️</span>
+                <button class="nav-item" data-view="settings" role="tab" aria-selected="false" aria-label="Settings">
+                    <span class="nav-icon" aria-hidden="true">⚙️</span>
                     <span class="nav-label">Settings</span>
                 </button>
             </nav>
@@ -464,13 +465,13 @@
     </div>
 
     <!-- Confidence Modal -->
-    <div class="modal hidden" id="confidence-modal">
+    <div class="modal hidden" id="confidence-modal" role="dialog" aria-label="Confidence rating">
         <div class="modal-content confidence-content">
             <p>How sure were you?</p>
             <div class="confidence-options">
-                <button class="confidence-chip" data-confidence="1">🎲 Guessed</button>
-                <button class="confidence-chip" data-confidence="2">🤔 Unsure</button>
-                <button class="confidence-chip" data-confidence="3">✅ Sure</button>
+                <button class="confidence-chip" data-confidence="1" aria-label="Guessed">🎲 Guessed</button>
+                <button class="confidence-chip" data-confidence="2" aria-label="Unsure">🤔 Unsure</button>
+                <button class="confidence-chip" data-confidence="3" aria-label="Sure">✅ Sure</button>
             </div>
         </div>
     </div>

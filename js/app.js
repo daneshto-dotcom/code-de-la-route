@@ -158,7 +158,9 @@ const App = {
 
         // Update nav
         document.querySelectorAll('.nav-item').forEach(item => {
-            item.classList.toggle('active', item.dataset.view === viewName);
+            const isActive = item.dataset.view === viewName;
+            item.classList.toggle('active', isActive);
+            item.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
 
         // Update header

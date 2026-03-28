@@ -750,8 +750,8 @@
 
 .mastery-level-badge.novice { background: var(--error-light); color: var(--error-dark); }
 .mastery-level-badge.learning { background: var(--warning-light); color: var(--accent-dark); }
-.mastery-level-badge.competent { background: #FFF9C4; color: #F57F17; }
-.mastery-level-badge.proficient { background: #E3F2FD; color: #1565C0; }
+.mastery-level-badge.competent { background: var(--warning-light); color: var(--warning-dark); }
+.mastery-level-badge.proficient { background: var(--info-light); color: var(--info-dark); }
 .mastery-level-badge.mastered { background: var(--success-light); color: var(--success-dark); }
 
 .mastery-bar-container {
@@ -1438,3 +1438,37 @@
 .signs-next-btn {
     margin-top: var(--space-sm);
 }
+
+/* === Bookmark Drill Card === */
+.bookmark-drill-card {
+    cursor: pointer;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bookmark-icon {
+    font-size: 24px;
+}
+
+.bookmark-title {
+    font-weight: 600;
+}
+
+.bookmark-count {
+    font-size: 12px;
+}
+
+/* === Settings Input Small === */
+.setting-input-sm {
+    max-width: 200px;
+    font-size: 11px;
+}
+
+/* === Diagnostic Continue Button === */
+.diag-continue-btn {
+    margin-top: 20px;
+    width: 100%;
+}
+

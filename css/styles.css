@@ -25,6 +25,10 @@
     --error-dark: #C62828;
     --warning: #FF9800;
     --warning-light: #FFF3E0;
+    --warning-dark: #F57F17;
+    --info: #1976D2;
+    --info-light: #E3F2FD;
+    --info-dark: #1565C0;
     --missed: #FF9800;
 
     /* Neutrals */
