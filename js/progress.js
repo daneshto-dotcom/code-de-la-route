@@ -19,6 +19,9 @@ const Progress = {
         // Exam history
         this.renderExamHistory(exams);
 
+        // Spaced repetition analytics
+        this.renderSRAnalytics();
+
         // Study activity (last 7 days)
         this.renderStudyActivity();
     },
@@ -94,6 +97,91 @@ const Progress = {
             `;
             list.appendChild(item);
         });
+    },
+
+    renderSRAnalytics() {
+        const schedule = Storage.getReviewSchedule();
+        const entries = Object.entries(schedule);
+        const now = Date.now();
+
+        let active = 0, graduated = 0, due = 0;
+        const stuckQuestions = []; // questions with 5+ reviews but not graduating
+
+        for (const [qId, entry] of entries) {
+            if (entry.status === 'graduated') {
+                graduated++;
+            } else {
+                active++;
+                if (entry.nextReviewAt <= now) due++;
+                // "Stuck" = 5+ reviews, still active, low consecutive correct
+                if (entry.totalReviews >= 5 && entry.consecutiveCorrect < 2) {
+                    stuckQuestions.push({ id: qId, reviews: entry.totalReviews, consecutive: entry.consecutiveCorrect });
+                }
+            }
+        }
+
+        const total = active + graduated;
+
+        // Update stat numbers
+        document.getElementById('sr-active').textContent = active;
+        document.getElementById('sr-graduated').textContent = graduated;
+        document.getElementById('sr-due').textContent = due;
+
+        // Progress bar: graduated (green) | active (blue) | empty (grey)
+        const bar = document.getElementById('sr-progress-bar');
+        if (total > 0) {
+            const gradPct = Math.round((graduated / total) * 100);
+            const actPct = Math.round((active / total) * 100);
+            bar.innerHTML = `
+                <div class="sr-bar-track">
+                    <div class="sr-bar-graduated" style="width: ${gradPct}%"></div>
+                    <div class="sr-bar-active" style="width: ${actPct}%"></div>
+                </div>
+                <div class="sr-bar-label">${graduated} of ${total} questions graduated (${gradPct}%)</div>
+            `;
+        } else {
+            bar.innerHTML = `<div class="sr-bar-label">No questions in review yet. Start practicing!</div>`;
+        }
+
+        // Stuck questions list
+        const stuckList = document.getElementById('sr-stuck-list');
+        if (stuckQuestions.length > 0) {
+            stuckQuestions.sort((a, b) => b.reviews - a.reviews);
+            const shown = stuckQuestions.slice(0, 5);
+            stuckList.innerHTML = `
+                <div class="sr-stuck-header">Needs extra practice (${stuckQuestions.length} stuck)</div>
+                ${shown.map(sq => {
+                    const q = getQuestionById(sq.id);
+                    if (!q) return '';
+                    const topic = ETG_TOPICS.find(t => t.id === q.topic);
+                    return `<div class="sr-stuck-item" data-qid="${sq.id}">
+                        <span class="sr-stuck-topic">${topic?.icon || ''}</span>
+                        <span class="sr-stuck-text">${q.questionFr.substring(0, 60)}${q.questionFr.length > 60 ? '...' : ''}</span>
+                        <span class="sr-stuck-badge">${sq.reviews} tries</span>
+                    </div>`;
+                }).join('')}
+            `;
+            // Click to practice stuck questions
+            stuckList.querySelectorAll('.sr-stuck-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const q = getQuestionById(item.dataset.qid);
+                    if (q) {
+                        Practice.sessionType = 'review';
+                        Practice.sessionQuestions = stuckQuestions.map(sq => getQuestionById(sq.id)).filter(Boolean);
+                        Practice.sessionIndex = 0;
+                        Practice.sessionCorrect = 0;
+                        Practice.answered = false;
+                        Practice.selectedAnswers = [];
+                        App.navigate('practice');
+                        Practice.loadQuestion();
+                    }
+                });
+            });
+        } else if (total > 0) {
+            stuckList.innerHTML = `<div class="sr-stuck-header sr-no-stuck">No stuck questions — great progress!</div>`;
+        } else {
+            stuckList.innerHTML = '';
+        }
     },
 
     renderStudyActivity() {

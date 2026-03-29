@@ -154,6 +154,8 @@ const Exam = {
                     if (examSelected.length >= 1) {
                         confirmBtn.classList.remove('hidden');
                         confirmBtn.onclick = () => this.submitExamAnswer(q, examSelected);
+                        // Scroll confirm button into view on mobile
+                        setTimeout(() => confirmBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
                     } else {
                         confirmBtn.classList.add('hidden');
                     }

@@ -162,6 +162,8 @@ const Diagnostic = {
             if (this.currentSelected.length >= 1) {
                 confirmBtn.classList.remove('hidden');
                 confirmBtn.onclick = () => this.submitAnswer(q);
+                // Scroll confirm button into view on mobile
+                setTimeout(() => confirmBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
             } else {
                 confirmBtn.classList.add('hidden');
             }

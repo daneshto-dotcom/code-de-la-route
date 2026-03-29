@@ -233,6 +233,8 @@ const Practice = {
             if (this.selectedAnswers.length >= 1) {
                 confirmBtn.classList.remove('hidden');
                 confirmBtn.style.animation = 'fadeInUp 0.2s ease';
+                // Scroll confirm button into view on mobile
+                setTimeout(() => confirmBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
             } else {
                 confirmBtn.classList.add('hidden');
             }
@@ -316,6 +318,10 @@ const Practice = {
                 tile.querySelector('.answer-indicator').textContent = '✗';
             }
         });
+
+        // Scroll question card into view so feedback is visible on mobile
+        const card = document.getElementById('question-card');
+        if (card) setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
     },
 
     showConfidenceRating(attempt) {
@@ -440,6 +446,14 @@ const Practice = {
         };
 
         panel.classList.remove('hidden');
+
+        // Auto-scroll to explanation panel so "Next Question" is visible on mobile
+        setTimeout(() => {
+            panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Fallback: directly scroll the content area container
+            const contentArea = document.getElementById('content-area');
+            if (contentArea) contentArea.scrollTop = contentArea.scrollHeight;
+        }, 150);
     },
 
     endSession() {

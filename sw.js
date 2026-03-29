@@ -2,7 +2,7 @@
    Service Worker — Offline Support
    ============================================ */
 
-const CACHE_NAME = 'code-de-la-route-v8';
+const CACHE_NAME = 'code-de-la-route-v9';
 
 // Use relative paths so caching works on GitHub Pages subdirectory (/code-de-la-route/)
 const URLS_TO_CACHE = [
@@ -54,7 +54,7 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Fetch — cache-first for app assets, network-first for API calls
+// Fetch — stale-while-revalidate for app assets, network-first for API calls
 self.addEventListener('fetch', event => {
     const url = new URL(event.request.url);
 
@@ -70,10 +70,20 @@ self.addEventListener('fetch', event => {
         return;
     }
 
-    // Cache-first for everything else
+    // Stale-while-revalidate: serve from cache immediately, update cache in background
+    // This ensures users always see the app fast BUT get updates on next visit
     event.respondWith(
-        caches.match(event.request)
-            .then(response => response || fetch(event.request))
-            .catch(() => caches.match('./index.html'))
+        caches.open(CACHE_NAME).then(cache =>
+            cache.match(event.request).then(cachedResponse => {
+                const fetchPromise = fetch(event.request).then(networkResponse => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        cache.put(event.request, networkResponse.clone());
+                    }
+                    return networkResponse;
+                }).catch(() => cachedResponse);
+
+                return cachedResponse || fetchPromise;
+            })
+        )
     );
 });
