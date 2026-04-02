@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "game-server",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd Game/founding-realm && npm run server"],
+      "port": 3000
+    }
+  ]
+}

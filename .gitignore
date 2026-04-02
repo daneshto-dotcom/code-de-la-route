@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Sensitive
+CREDENTIALS.md
+
+# Build output
+dist/
+build/
+*.exe
+!Game/
+
+# Claude Code
+.claude/worktrees/
+.claude/session-port.json
+.claude/session-approvals.json
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Handoff (ephemeral workspace copies)
+/HANDOFF_*.md
+!.handoff-archive/

@@ -1,0 +1,1 @@
+Plan file created - content follows in structured output

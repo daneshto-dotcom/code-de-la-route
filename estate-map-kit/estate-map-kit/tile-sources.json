@@ -1,0 +1,41 @@
+{
+  "description": "IGN (Institut Geographique National) WMTS tile URLs — free, no API key required",
+  "provider": "data.geopf.fr (IGN France)",
+  "tileSize": 256,
+  "coordinateSystem": "EPSG:3857 (Web Mercator tiles)",
+  "sources": {
+    "aerial": {
+      "label": "Aerial Photography",
+      "url": "https://data.geopf.fr/wmts?service=WMTS&request=GetTile&version=1.0.0&tilematrixset=PM&tilematrix={z}&tilecol={x}&tilerow={y}&layer=ORTHOIMAGERY.ORTHOPHOTOS&format=image/jpeg&style=normal",
+      "format": "image/jpeg",
+      "layer": "ORTHOIMAGERY.ORTHOPHOTOS",
+      "description": "Current aerial/satellite imagery of France"
+    },
+    "topo": {
+      "label": "Topographic Map",
+      "url": "https://data.geopf.fr/wmts?service=WMTS&request=GetTile&version=1.0.0&tilematrixset=PM&tilematrix={z}&tilecol={x}&tilerow={y}&layer=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&format=image/png&style=normal",
+      "format": "image/png",
+      "layer": "GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2",
+      "description": "IGN topographic map with roads, contours, labels"
+    },
+    "cadastral": {
+      "label": "Cadastral Parcels",
+      "url": "https://data.geopf.fr/wmts?service=WMTS&request=GetTile&version=1.0.0&tilematrixset=PM&tilematrix={z}&tilecol={x}&tilerow={y}&layer=CADASTRALPARCELS.PARCELLAIRE_EXPRESS&format=image/png&style=normal",
+      "format": "image/png",
+      "layer": "CADASTRALPARCELS.PARCELLAIRE_EXPRESS",
+      "description": "Official French cadastral parcel boundaries"
+    },
+    "historical_etatmajor": {
+      "label": "Carte de l'Etat-Major (1820-1866)",
+      "url": "https://data.geopf.fr/wmts?service=WMTS&request=GetTile&version=1.0.0&tilematrixset=PM&tilematrix={z}&tilecol={x}&tilerow={y}&layer=GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40&format=image/jpeg&style=normal",
+      "format": "image/jpeg",
+      "layer": "GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40",
+      "description": "Oldest available map layer — hand-drawn military survey from 1820-1866"
+    }
+  },
+  "usage": {
+    "note": "Replace {z}, {x}, {y} with standard Web Mercator tile coordinates",
+    "freeForUse": true,
+    "attribution": "IGN France — data.geopf.fr"
+  }
+}
