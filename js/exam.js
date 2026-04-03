@@ -11,6 +11,7 @@ const Exam = {
     mode: 'exam', // 'exam' (French only) or 'practice' (with English)
     startTime: null,
     active: false,
+    _answered: false, // guard against double submission
 
     start(mode = 'exam') {
         this.mode = mode;
@@ -61,7 +62,7 @@ const Exam = {
         document.getElementById('quit-exam-btn').addEventListener('click', () => {
             if (confirm('Are you sure you want to quit the exam?')) {
                 this.active = false;
-                Practice.stopTimer();
+                this.stopExamTimer();
                 App.navigate('home');
                 this.resetExamView();
             }
@@ -113,6 +114,7 @@ const Exam = {
         optionsContainer.innerHTML = '';
         const letters = ['A', 'B', 'C', 'D'];
         let examSelected = [];
+        this._answered = false;
 
         for (const letter of letters) {
             const option = q.options[letter];
@@ -130,9 +132,10 @@ const Exam = {
                 <div class="answer-indicator"></div>
             `;
             tile.addEventListener('click', () => {
-                if (tile.classList.contains('locked')) return;
+                if (tile.classList.contains('locked') || this._answered) return;
 
                 if (q.answerCount === 1) {
+                    this._answered = true;
                     examSelected = [letter];
                     document.querySelectorAll('#exam-options .answer-tile').forEach(t => t.classList.remove('selected'));
                     tile.classList.add('selected');
@@ -151,6 +154,8 @@ const Exam = {
                     if (examSelected.length >= 1) {
                         confirmBtn.classList.remove('hidden');
                         confirmBtn.onclick = () => this.submitExamAnswer(q, examSelected);
+                        // Scroll confirm button into view on mobile
+                        setTimeout(() => confirmBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
                     } else {
                         confirmBtn.classList.add('hidden');
                     }
@@ -169,7 +174,9 @@ const Exam = {
 
         // Start 20-second timer
         this.startExamTimer(() => {
-            // Timer expired — submit whatever is selected
+            // Timer expired — guard against double submission
+            if (this._answered) return;
+            this._answered = true;
             if (examSelected.length > 0) {
                 this.submitExamAnswer(q, examSelected);
             } else {
@@ -182,6 +189,7 @@ const Exam = {
     },
 
     submitExamAnswer(question, selected) {
+        this._answered = true;
         this.stopExamTimer();
 
         const correct = selected.sort().join(',') === [...question.correctAnswers].sort().join(',');
@@ -227,8 +235,9 @@ const Exam = {
 
         // Next question after brief delay
         setTimeout(() => {
+            if (!this.active) return;
             this.currentIndex++;
-            document.getElementById('exam-confirm-btn').classList.add('hidden');
+            document.getElementById('exam-confirm-btn')?.classList.add('hidden');
             this.loadExamQuestion();
         }, 800);
     },

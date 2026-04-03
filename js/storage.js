@@ -14,7 +14,47 @@ const Storage = {
         BOOKMARKS: 'fdtta_bookmarks',
         STUDY_STREAK: 'fdtta_study_streak',
         LAST_STUDY_DATE: 'fdtta_last_study_date',
-        VOCAB_MEMORY: 'fdtta_vocab_memory'
+        VOCAB_MEMORY: 'fdtta_vocab_memory',
+        DIAGNOSTIC_RESULT: 'fdtta_diagnostic_result',
+        SIGN_PROGRESS: 'fdtta_sign_progress'
+    },
+
+    MAX_ATTEMPTS: 5000, // prune beyond this to prevent quota exhaustion
+
+    // Safe localStorage write — catches QuotaExceededError
+    _safeSet(key, value) {
+        try {
+            localStorage.setItem(key, value);
+            return true;
+        } catch (e) {
+            if (e.name === 'QuotaExceededError' || e.code === 22) {
+                // Try to free space by pruning old attempts
+                this._pruneAttempts();
+                try {
+                    localStorage.setItem(key, value);
+                    return true;
+                } catch (e2) {
+                    console.error('localStorage full even after pruning:', e2);
+                    if (typeof showToast === 'function') {
+                        showToast('Storage full — some data may not be saved.', 'error');
+                    }
+                    return false;
+                }
+            }
+            console.error('localStorage write failed:', e);
+            return false;
+        }
+    },
+
+    _pruneAttempts() {
+        const attempts = this.getAttempts();
+        if (attempts.length > 1000) {
+            // Keep only the most recent 1000 attempts
+            const pruned = attempts.slice(-1000);
+            try {
+                localStorage.setItem(this.KEYS.ATTEMPTS, JSON.stringify(pruned));
+            } catch (e) { /* last resort fallback */ }
+        }
     },
 
     // === ATTEMPTS ===
@@ -28,7 +68,11 @@ const Storage = {
             ...attempt,
             timestamp: Date.now()
         });
-        localStorage.setItem(this.KEYS.ATTEMPTS, JSON.stringify(attempts));
+        // Prune if exceeding max to prevent unbounded growth
+        if (attempts.length > this.MAX_ATTEMPTS) {
+            attempts.splice(0, attempts.length - this.MAX_ATTEMPTS);
+        }
+        this._safeSet(this.KEYS.ATTEMPTS, JSON.stringify(attempts));
         this.updateTopicMastery(attempt.topic, attempt.isCorrect);
         this.updateStreak();
         return attempts;
@@ -76,7 +120,7 @@ const Storage = {
         const sum = tm.recentResults.reduce((a, b) => a + b, 0);
         tm.accuracy = Math.round((sum / tm.recentResults.length) * 100);
         tm.lastPracticedAt = Date.now();
-        localStorage.setItem(this.KEYS.TOPIC_MASTERY, JSON.stringify(mastery));
+        this._safeSet(this.KEYS.TOPIC_MASTERY, JSON.stringify(mastery));
     },
 
     getTopicMasteryArray() {
@@ -143,7 +187,7 @@ const Storage = {
             }
         }
 
-        localStorage.setItem(this.KEYS.REVIEW_SCHEDULE, JSON.stringify(schedule));
+        this._safeSet(this.KEYS.REVIEW_SCHEDULE, JSON.stringify(schedule));
     },
 
     getDueReviews() {
@@ -170,7 +214,7 @@ const Storage = {
             ...result,
             timestamp: Date.now()
         });
-        localStorage.setItem(this.KEYS.EXAM_RESULTS, JSON.stringify(results));
+        this._safeSet(this.KEYS.EXAM_RESULTS, JSON.stringify(results));
     },
 
     // === BOOKMARKS ===
@@ -186,7 +230,7 @@ const Storage = {
         } else {
             bookmarks.push(questionId);
         }
-        localStorage.setItem(this.KEYS.BOOKMARKS, JSON.stringify(bookmarks));
+        this._safeSet(this.KEYS.BOOKMARKS, JSON.stringify(bookmarks));
         return bookmarks.includes(questionId);
     },
 
@@ -209,8 +253,8 @@ const Storage = {
             streak = 1; // Reset streak
         }
 
-        localStorage.setItem(this.KEYS.STUDY_STREAK, streak.toString());
-        localStorage.setItem(this.KEYS.LAST_STUDY_DATE, today);
+        this._safeSet(this.KEYS.STUDY_STREAK, streak.toString());
+        this._safeSet(this.KEYS.LAST_STUDY_DATE, today);
         return streak;
     },
 
@@ -239,7 +283,7 @@ const Storage = {
     saveSetting(key, value) {
         const settings = this.getSettings();
         settings[key] = value;
-        localStorage.setItem(this.KEYS.SETTINGS, JSON.stringify(settings));
+        this._safeSet(this.KEYS.SETTINGS, JSON.stringify(settings));
     },
 
     isFirstLaunch() {
@@ -247,25 +291,23 @@ const Storage = {
     },
 
     completeFirstLaunch() {
-        localStorage.setItem(this.KEYS.FIRST_LAUNCH, 'true');
+        this._safeSet(this.KEYS.FIRST_LAUNCH, 'true');
     },
 
     // === DIAGNOSTIC ===
-    DIAGNOSTIC_RESULT: 'fdtta_diagnostic_result',
-
     getDiagnosticResult() {
-        return JSON.parse(localStorage.getItem('fdtta_diagnostic_result') || 'null');
+        return JSON.parse(localStorage.getItem(this.KEYS.DIAGNOSTIC_RESULT) || 'null');
     },
 
     saveDiagnosticResult(result) {
-        localStorage.setItem('fdtta_diagnostic_result', JSON.stringify({
+        this._safeSet(this.KEYS.DIAGNOSTIC_RESULT, JSON.stringify({
             ...result,
             timestamp: Date.now()
         }));
     },
 
     hasDiagnostic() {
-        return localStorage.getItem('fdtta_diagnostic_result') !== null;
+        return localStorage.getItem(this.KEYS.DIAGNOSTIC_RESULT) !== null;
     },
 
     // === READINESS SCORE ===
@@ -328,7 +370,7 @@ const Storage = {
     // === DATA EXPORT / IMPORT ===
     exportData() {
         const data = {
-            version: 1,
+            version: 2,
             exportDate: new Date().toISOString(),
             attempts: this.getAttempts(),
             topicMastery: this.getTopicMastery(),
@@ -337,7 +379,10 @@ const Storage = {
             bookmarks: this.getBookmarks(),
             settings: this.getSettings(),
             streak: this.getStreak(),
-            lastStudyDate: localStorage.getItem(this.KEYS.LAST_STUDY_DATE)
+            lastStudyDate: localStorage.getItem(this.KEYS.LAST_STUDY_DATE),
+            diagnosticResult: this.getDiagnosticResult(),
+            signProgress: JSON.parse(localStorage.getItem(this.KEYS.SIGN_PROGRESS) || '{}'),
+            vocabMemory: JSON.parse(localStorage.getItem(this.KEYS.VOCAB_MEMORY) || '{}')
         };
         const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
@@ -351,15 +396,18 @@ const Storage = {
     importData(jsonString) {
         try {
             const data = JSON.parse(jsonString);
-            if (data.version !== 1) throw new Error('Incompatible backup version');
-            if (data.attempts) localStorage.setItem(this.KEYS.ATTEMPTS, JSON.stringify(data.attempts));
-            if (data.topicMastery) localStorage.setItem(this.KEYS.TOPIC_MASTERY, JSON.stringify(data.topicMastery));
-            if (data.examResults) localStorage.setItem(this.KEYS.EXAM_RESULTS, JSON.stringify(data.examResults));
-            if (data.reviewSchedule) localStorage.setItem(this.KEYS.REVIEW_SCHEDULE, JSON.stringify(data.reviewSchedule));
-            if (data.bookmarks) localStorage.setItem(this.KEYS.BOOKMARKS, JSON.stringify(data.bookmarks));
-            if (data.settings) localStorage.setItem(this.KEYS.SETTINGS, JSON.stringify(data.settings));
-            if (data.streak) localStorage.setItem(this.KEYS.STUDY_STREAK, data.streak.toString());
-            if (data.lastStudyDate) localStorage.setItem(this.KEYS.LAST_STUDY_DATE, data.lastStudyDate);
+            if (data.version !== 1 && data.version !== 2) throw new Error('Incompatible backup version');
+            if (data.attempts) this._safeSet(this.KEYS.ATTEMPTS, JSON.stringify(data.attempts));
+            if (data.topicMastery) this._safeSet(this.KEYS.TOPIC_MASTERY, JSON.stringify(data.topicMastery));
+            if (data.examResults) this._safeSet(this.KEYS.EXAM_RESULTS, JSON.stringify(data.examResults));
+            if (data.reviewSchedule) this._safeSet(this.KEYS.REVIEW_SCHEDULE, JSON.stringify(data.reviewSchedule));
+            if (data.bookmarks) this._safeSet(this.KEYS.BOOKMARKS, JSON.stringify(data.bookmarks));
+            if (data.settings) this._safeSet(this.KEYS.SETTINGS, JSON.stringify(data.settings));
+            if (data.streak) this._safeSet(this.KEYS.STUDY_STREAK, data.streak.toString());
+            if (data.lastStudyDate) this._safeSet(this.KEYS.LAST_STUDY_DATE, data.lastStudyDate);
+            if (data.diagnosticResult) this._safeSet(this.KEYS.DIAGNOSTIC_RESULT, JSON.stringify(data.diagnosticResult));
+            if (data.signProgress) this._safeSet(this.KEYS.SIGN_PROGRESS, JSON.stringify(data.signProgress));
+            if (data.vocabMemory) this._safeSet(this.KEYS.VOCAB_MEMORY, JSON.stringify(data.vocabMemory));
             return true;
         } catch (e) {
             console.error('Import failed:', e);

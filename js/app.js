@@ -7,6 +7,16 @@ const App = {
     currentView: 'home',
 
     init() {
+        // Apply theme immediately (before render to prevent flash)
+        this.applyTheme();
+
+        // Listen for OS dark mode changes (for auto theme)
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            if ((Storage.getSettings().theme || 'auto') === 'auto') {
+                this.applyTheme();
+            }
+        });
+
         // Show splash screen
         setTimeout(() => {
             // Init TTS
@@ -25,8 +35,41 @@ const App = {
         this.setupSettings();
         this.setupExamView();
 
+        // Init vocab/learn
+        Vocab.init();
+
         // Init tutor chat
         Tutor.init();
+
+        // Init content sync (check for OTA question updates)
+        ContentSync.init();
+
+        // Init notifications
+        Notifications.init();
+
+        // Listen for service worker update notifications
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.addEventListener('message', (event) => {
+                if (event.data?.type === 'SW_UPDATED') {
+                    showToast('App updated! Refresh for latest version.', 'success');
+                }
+            });
+        }
+    },
+
+    // === THEME MANAGEMENT ===
+    applyTheme() {
+        const settings = Storage.getSettings();
+        const theme = settings.theme || 'auto';
+        document.documentElement.setAttribute('data-theme', theme);
+
+        // Update meta theme-color for browser chrome
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) {
+            const isDark = theme === 'dark' ||
+                (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            meta.content = isDark ? '#1E1E1E' : '#2E5984';
+        }
     },
 
     showOnboarding() {
@@ -146,13 +189,16 @@ const App = {
 
         // Update nav
         document.querySelectorAll('.nav-item').forEach(item => {
-            item.classList.toggle('active', item.dataset.view === viewName);
+            const isActive = item.dataset.view === viewName;
+            item.classList.toggle('active', isActive);
+            item.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
 
         // Update header
         const titles = {
             home: 'Code de la Route',
             practice: 'Practice',
+            vocab: 'Vocabulaire',
             exam: 'Mock Exam',
             progress: 'Progress',
             settings: 'Settings'
@@ -170,6 +216,9 @@ const App = {
             case 'settings':
                 this.loadSettings();
                 break;
+            case 'vocab':
+                Vocab.render();
+                break;
             case 'exam':
                 Exam.resetExamView();
                 break;
@@ -179,8 +228,8 @@ const App = {
     renderHome() {
         // Greeting
         const hour = new Date().getHours();
-        let greeting = 'Bonjour!';
-        if (hour >= 17) greeting = 'Bonsoir!';
+        let greeting = 'Bonjour, Sara!';
+        if (hour >= 17) greeting = 'Bonsoir, Sara!';
         else if (hour < 5) greeting = 'Bonne nuit!';
         document.getElementById('greeting-text').textContent = greeting;
         document.getElementById('greeting-date').textContent =
@@ -221,6 +270,7 @@ const App = {
 
                 // Cramming mode: <7 days to exam
                 const countdownLabel = document.querySelector('.countdown-label');
+                countdownCard.classList.remove('cramming'); // reset before re-evaluating
                 if (daysLeft <= 0) {
                     countdownLabel.textContent = "Exam day! Bonne chance!";
                     countdownCard.classList.add('cramming');
@@ -240,9 +290,8 @@ const App = {
             countdownCard.classList.add('hidden');
         }
 
-        document.getElementById('set-exam-date-btn')?.addEventListener('click', () => {
-            this.navigate('settings');
-        });
+        const examDateBtn = document.getElementById('set-exam-date-btn');
+        if (examDateBtn) examDateBtn.onclick = () => this.navigate('settings');
 
         // Review count
         const dueReviews = Storage.getDueReviews().length;
@@ -271,6 +320,9 @@ const App = {
         } else {
             bookmarkSection.classList.add('hidden');
         }
+
+        // Smart recommendation
+        this.renderRecommendation();
 
         // Topic list (weak topics)
         this.renderTopicList();
@@ -325,6 +377,62 @@ const App = {
         }
     },
 
+    renderRecommendation() {
+        const card = document.getElementById('recommendation-card');
+        if (!card) return;
+
+        const stats = Storage.getOverallStats();
+        const dueReviews = Storage.getDueReviews();
+        const mastery = Storage.getTopicMasteryArray();
+        const attempts = Storage.getAttempts();
+        const uniqueSeen = new Set(attempts.map(a => a.questionId)).size;
+        const coveragePct = QUESTION_BANK.length > 0 ? Math.round((uniqueSeen / QUESTION_BANK.length) * 100) : 0;
+
+        let icon, title, desc, action;
+
+        if (stats.total === 0) {
+            // Never practiced — start with Quick 10
+            icon = '🚀'; title = 'Start your first session';
+            desc = 'Try 10 questions to get your baseline';
+            action = () => { Practice.startSession('quick10'); this.navigate('practice'); };
+        } else if (dueReviews.length >= 5) {
+            // Many reviews due — do reviews first
+            icon = '🔄'; title = `${dueReviews.length} reviews waiting`;
+            desc = 'Clear your review queue to lock in knowledge';
+            action = () => { Practice.startSession('review'); this.navigate('practice'); };
+        } else if (coveragePct < 50) {
+            // Low coverage — explore new questions
+            icon = '🗺️'; title = 'Discover new questions';
+            desc = `You've seen ${coveragePct}% of questions. Explore more!`;
+            action = () => { Practice.startSession('quick10'); this.navigate('practice'); };
+        } else {
+            // Find weakest topic
+            const weakest = mastery.filter(t => t.totalAttempts >= 3).sort((a, b) => a.accuracy - b.accuracy)[0];
+            if (weakest && weakest.accuracy < 70) {
+                icon = '🎯'; title = `Drill: ${weakest.nameEn}`;
+                desc = `Your weakest topic at ${weakest.accuracy}%`;
+                action = () => {
+                    Practice.startSession('drill', { topicFilter: weakest.id || weakest.topic, count: 10 });
+                    this.navigate('practice');
+                };
+            } else if (stats.exams === 0) {
+                icon = '📝'; title = 'Try a mock exam';
+                desc = 'Test yourself under exam conditions';
+                action = () => { this.navigate('exam'); };
+            } else {
+                icon = '💪'; title = 'Keep practicing';
+                desc = 'Mix of all topics to stay sharp';
+                action = () => { Practice.startSession('quick10'); this.navigate('practice'); };
+            }
+        }
+
+        card.classList.remove('hidden');
+        document.getElementById('rec-icon').textContent = icon;
+        document.getElementById('rec-title').textContent = title;
+        document.getElementById('rec-desc').textContent = desc;
+        document.getElementById('rec-action-btn').onclick = action;
+    },
+
     setupExamView() {
         document.getElementById('start-exam-btn').addEventListener('click', () => {
             Exam.start('exam');
@@ -337,6 +445,32 @@ const App = {
 
     setupSettings() {
         const settings = Storage.getSettings();
+
+        // Theme selector
+        const themeSelect = document.getElementById('setting-theme');
+        themeSelect.value = settings.theme || 'auto';
+        themeSelect.addEventListener('change', () => {
+            Storage.saveSetting('theme', themeSelect.value);
+            this.applyTheme();
+            showToast(`Theme: ${themeSelect.value === 'auto' ? 'System default' : themeSelect.value}`);
+        });
+
+        // Notification toggle card
+        const notifCard = document.getElementById('notification-toggle-card');
+        if (notifCard) {
+            notifCard.addEventListener('click', () => Notifications.toggle());
+        }
+
+        // Reminder time
+        const reminderTime = document.getElementById('setting-reminder-time');
+        if (reminderTime) {
+            reminderTime.value = settings.reminderTime || '19:00';
+            reminderTime.addEventListener('change', () => {
+                Storage.saveSetting('reminderTime', reminderTime.value);
+                Notifications.reschedule();
+                showToast(`Reminder set for ${reminderTime.value}`);
+            });
+        }
 
         // Show English toggle
         const showEnglish = document.getElementById('setting-show-english');
@@ -407,6 +541,20 @@ const App = {
             reader.readAsText(file);
         });
 
+        // Retake Diagnostic
+        document.getElementById('retake-diagnostic-btn').addEventListener('click', () => {
+            if (confirm('This will re-run the 15-question diagnostic assessment. Your previous diagnostic result will be replaced. Continue?')) {
+                // Clear previous diagnostic result
+                localStorage.removeItem(Storage.KEYS.DIAGNOSTIC_RESULT);
+                // Hide main app, start diagnostic
+                document.getElementById('main-app').classList.remove('active');
+                document.getElementById('diagnostic-screen').classList.add('active');
+                document.getElementById('diag-questions').classList.remove('hidden');
+                document.getElementById('diag-results').classList.add('hidden');
+                Diagnostic.start();
+            }
+        });
+
         // Reset
         document.getElementById('reset-data-btn').addEventListener('click', () => {
             if (confirm('This will delete ALL your progress. Are you sure?')) {
@@ -427,6 +575,9 @@ const App = {
         document.getElementById('setting-exam-date').value = settings.examDate || '';
         document.getElementById('setting-confidence').checked = settings.confidenceEnabled;
         document.getElementById('setting-tutor-endpoint').value = settings.tutorEndpoint || '';
+        document.getElementById('setting-theme').value = settings.theme || 'auto';
+        document.getElementById('setting-reminder-time').value = settings.reminderTime || '19:00';
+        Notifications.updateUI();
     }
 };
 
@@ -467,11 +618,18 @@ if ('serviceWorker' in navigator) {
 // === GLOBAL ERROR BOUNDARY ===
 window.addEventListener('error', (event) => {
     console.error('App error:', event.error);
-    showToast('Something went wrong. Try refreshing the page.', 'error');
+    // Only show toast if app is initialized (showToast exists)
+    if (typeof showToast === 'function') {
+        showToast('Something went wrong. Try refreshing the page.', 'error');
+    }
 });
 
 window.addEventListener('unhandledrejection', (event) => {
     console.error('Unhandled promise:', event.reason);
+    // Prevent unhandled promise rejection noise for non-critical errors
+    if (event.reason?.name === 'AbortError') {
+        event.preventDefault(); // AbortController timeouts are expected
+    }
 });
 
 // === OFFLINE DETECTION ===

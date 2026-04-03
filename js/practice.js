@@ -15,6 +15,8 @@ const Practice = {
     timerInterval: null,
     timerSeconds: 0,
     onTimerExpired: null,
+    retryQueue: [],      // wrong questions re-queued with English
+    isRetry: false,       // current question is a retry
 
     startSession(type = 'practice', options = {}) {
         this.sessionType = type;
@@ -23,6 +25,9 @@ const Practice = {
         this.topicFilter = options.topicFilter || null;
         this.answered = false;
         this.selectedAnswers = [];
+        this.retryQueue = [];
+        this.isRetry = false;
+        this.sessionStartTime = Date.now();
 
         // Select questions based on type
         const count = options.count || 10;
@@ -63,12 +68,24 @@ const Practice = {
     },
 
     loadQuestion() {
-        if (this.sessionIndex >= this.sessionQuestions.length) {
-            this.endSession();
-            return;
+        // Check if we should insert a retry question (every 3 new questions)
+        if (this.retryQueue.length > 0 && this.sessionIndex > 0 && this.sessionIndex % 3 === 0) {
+            this.currentQuestion = this.retryQueue.shift();
+            this.isRetry = true;
+        } else if (this.sessionIndex >= this.sessionQuestions.length) {
+            // No more new questions — drain retry queue
+            if (this.retryQueue.length > 0) {
+                this.currentQuestion = this.retryQueue.shift();
+                this.isRetry = true;
+            } else {
+                this.endSession();
+                return;
+            }
+        } else {
+            this.currentQuestion = this.sessionQuestions[this.sessionIndex];
+            this.isRetry = false;
         }
 
-        this.currentQuestion = this.sessionQuestions[this.sessionIndex];
         this.selectedAnswers = [];
         this.answered = false;
         this.renderQuestion();
@@ -105,13 +122,23 @@ const Practice = {
             signContainer.innerHTML = '';
         }
 
-        // Question text — French only during first attempt
+        // Question text — show English on retry, French-only on first attempt
         document.getElementById('question-fr').textContent = q.questionFr;
         const enEl = document.getElementById('question-en');
         enEl.textContent = q.questionEn;
-        enEl.style.display = 'none'; // English shown only in explanation/retry
+        enEl.style.display = this.isRetry ? 'block' : 'none';
 
-        // Answer options — French only during first attempt
+        // Retry banner
+        const existingBanner = document.querySelector('.retry-banner');
+        if (existingBanner) existingBanner.remove();
+        if (this.isRetry) {
+            const banner = document.createElement('div');
+            banner.className = 'retry-banner';
+            banner.textContent = 'Retry — you got this wrong before. English shown to help.';
+            document.getElementById('question-card').prepend(banner);
+        }
+
+        // Answer options — show English on retry
         const optionsContainer = document.getElementById('answer-options');
         optionsContainer.innerHTML = '';
         optionsContainer.classList.add('stagger-enter');
@@ -128,6 +155,7 @@ const Practice = {
                 <div class="answer-letter">${letter}</div>
                 <div class="answer-content">
                     <div class="answer-text-fr">${option.fr}</div>
+                    ${this.isRetry ? `<div class="answer-text-en">${option.en}</div>` : ''}
                 </div>
                 <div class="answer-indicator"></div>
             `;
@@ -156,6 +184,28 @@ const Practice = {
 
         // Animate card entrance
         document.getElementById('question-card').style.animation = 'fadeInUp 0.3s ease';
+
+        // Keyboard shortcuts — register ONCE, not per question
+        if (!this._keyHandlerRegistered) {
+            this._keyHandler = (e) => {
+                if (App.currentView !== 'practice') return;
+                const key = e.key.toUpperCase();
+                if (['A', 'B', 'C', 'D'].includes(key) && !this.answered) {
+                    this.selectAnswer(key);
+                } else if (e.key === 'Enter' && !this.answered) {
+                    const confirmBtn = document.getElementById('confirm-btn');
+                    if (confirmBtn && !confirmBtn.classList.contains('hidden')) {
+                        this.submitAnswer();
+                    }
+                } else if ((e.key === ' ' || e.key === 'Enter') && this.answered) {
+                    e.preventDefault();
+                    const nextBtn = document.getElementById('next-question-btn');
+                    if (nextBtn && !nextBtn.classList.contains('hidden')) nextBtn.click();
+                }
+            };
+            document.addEventListener('keydown', this._keyHandler);
+            this._keyHandlerRegistered = true;
+        }
     },
 
     selectAnswer(letter) {
@@ -183,6 +233,8 @@ const Practice = {
             if (this.selectedAnswers.length >= 1) {
                 confirmBtn.classList.remove('hidden');
                 confirmBtn.style.animation = 'fadeInUp 0.2s ease';
+                // Scroll confirm button into view on mobile
+                setTimeout(() => confirmBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
             } else {
                 confirmBtn.classList.add('hidden');
             }
@@ -208,6 +260,11 @@ const Practice = {
         const correct = this.selectedAnswers.sort().join(',') === [...q.correctAnswers].sort().join(',');
 
         if (correct) this.sessionCorrect++;
+
+        // Queue wrong questions for retry (not in exam mode, not already a retry)
+        if (!correct && this.sessionType !== 'exam' && !this.isRetry) {
+            this.retryQueue.push(q);
+        }
 
         // Haptic feedback
         if (navigator.vibrate) {
@@ -261,6 +318,10 @@ const Practice = {
                 tile.querySelector('.answer-indicator').textContent = '✗';
             }
         });
+
+        // Scroll question card into view so feedback is visible on mobile
+        const card = document.getElementById('question-card');
+        if (card) setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
     },
 
     showConfidenceRating(attempt) {
@@ -318,8 +379,7 @@ const Practice = {
         // Explanation
         document.getElementById('explanation-en').textContent = q.explanationEn;
         document.getElementById('explanation-fr').textContent = q.explanationFr;
-        document.getElementById('explanation-fr-section').style.display =
-            settings.showEnglish ? 'block' : 'block'; // Always show French explanation
+        document.getElementById('explanation-fr-section').style.display = 'block';
 
         // Trap note
         const trapSection = document.getElementById('trap-section');
@@ -377,16 +437,32 @@ const Practice = {
             };
         }
 
-        // Next button
+        // Next button — only advance index for non-retry questions
         document.getElementById('next-question-btn').onclick = () => {
-            this.sessionIndex++;
+            if (!this.isRetry) {
+                this.sessionIndex++;
+            }
             this.loadQuestion();
         };
 
         panel.classList.remove('hidden');
+
+        // Auto-scroll to explanation panel so "Next Question" is visible on mobile
+        setTimeout(() => {
+            panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Fallback: directly scroll the content area container
+            const contentArea = document.getElementById('content-area');
+            if (contentArea) contentArea.scrollTop = contentArea.scrollHeight;
+        }, 150);
     },
 
     endSession() {
+        // Remove keyboard handler
+        if (this._keyHandlerRegistered) {
+            document.removeEventListener('keydown', this._keyHandler);
+            this._keyHandlerRegistered = false;
+        }
+
         const total = this.sessionQuestions.length;
         if (total === 0) {
             App.navigate('home');
@@ -394,9 +470,13 @@ const Practice = {
         }
 
         const accuracy = Math.round((this.sessionCorrect / total) * 100);
+        const durationSecs = Math.round((Date.now() - (this.sessionStartTime || Date.now())) / 1000);
+        const mins = Math.floor(durationSecs / 60);
+        const secs = durationSecs % 60;
+        const timeStr = mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
 
         // Build per-topic stats from this session's attempts
-        const recentAttempts = Storage.getAttempts().slice(-total);
+        const recentAttempts = Storage.getAttempts().slice(-(total + this.retryQueue.length));
         const topicStats = {};
         for (const a of recentAttempts) {
             if (!topicStats[a.topic]) topicStats[a.topic] = { correct: 0, total: 0 };
@@ -420,16 +500,21 @@ const Practice = {
             verdict.innerHTML = `Session complete! ${this.sessionCorrect}/${total} (${accuracy}%)`;
         }
 
-        // Topic breakdown in explanation area
-        let topicHtml = '<strong>Topic Breakdown:</strong><br>';
+        // Enhanced summary with time and topic breakdown
+        let summaryHtml = `<div class="session-summary">`;
+        summaryHtml += `<div class="summary-stat"><span class="summary-label">Time</span><span class="summary-value">${timeStr}</span></div>`;
+        summaryHtml += `<div class="summary-stat"><span class="summary-label">Speed</span><span class="summary-value">${total > 0 ? Math.round(durationSecs / total) : 0}s/question</span></div>`;
+        summaryHtml += `</div>`;
+        summaryHtml += `<strong>Topic Breakdown:</strong><br>`;
+
         for (const [topicId, data] of Object.entries(topicStats)) {
             const topic = ETG_TOPICS.find(t => t.id === topicId);
             const pct = Math.round((data.correct / data.total) * 100);
             const emoji = pct >= 80 ? '✓' : pct >= 50 ? '~' : '✗';
-            topicHtml += `${emoji} ${topic?.icon || ''} ${topic?.nameEn || topicId}: ${data.correct}/${data.total}<br>`;
+            summaryHtml += `${emoji} ${topic?.icon || ''} ${topic?.nameEn || topicId}: ${data.correct}/${data.total}<br>`;
         }
 
-        document.getElementById('explanation-en').innerHTML = topicHtml;
+        document.getElementById('explanation-en').innerHTML = summaryHtml;
         document.getElementById('explanation-fr').textContent = '';
         document.getElementById('explanation-fr-section').style.display = 'none';
         document.getElementById('trap-section').classList.add('hidden');

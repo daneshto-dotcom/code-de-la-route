@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -7,14 +7,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Code de la Route">
-    <meta name="description" content="French Driving Theory Tutor — 104 bilingual questions, mock exams, spaced repetition. Prepare for the Code de la route exam.">
+    <meta name="description" content="French Driving Theory Tutor — 200+ bilingual questions, 35 road signs, mock exams, spaced repetition, AI tutor, dark mode. Prepare for the Code de la route exam.">
     <meta name="keywords" content="code de la route, french driving theory, ETG, exam preparation, permis de conduire">
     <meta property="og:title" content="Code de la Route — French Driving Theory Tutor">
-    <meta property="og:description" content="104 bilingual questions, mock exams with timer, adaptive learning. Free PWA.">
+    <meta property="og:description" content="200+ bilingual questions, 35 road signs, mock exams with timer, AI tutor, dark mode. Free PWA.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/icons/icon-512.png">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <title>Code de la Route</title>
+    <script>(function(){try{var s=JSON.parse(localStorage.getItem('fdtta_settings')||'{}');var t=s.theme||'auto';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','auto');}})()</script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
@@ -101,7 +103,7 @@
                     </div>
                     <h3 class="section-title">Your Strengths & Gaps</h3>
                     <div class="diag-topic-results" id="diag-topic-results"></div>
-                    <button class="btn btn-primary btn-lg" id="diag-continue-btn" style="margin-top: 20px; width: 100%;">Start Learning!</button>
+                    <button class="btn btn-primary btn-lg diag-continue-btn" id="diag-continue-btn">Start Learning!</button>
                 </div>
             </div>
         </div>
@@ -115,7 +117,7 @@
             </header>
 
             <!-- Content Area -->
-            <main id="content-area">
+            <main id="content-area" role="main">
                 <!-- Home View -->
                 <div id="home-view" class="view active">
                     <div class="home-greeting">
@@ -126,7 +128,7 @@
                     <!-- Readiness Score -->
                     <div class="readiness-card card" id="readiness-card">
                         <div class="readiness-ring">
-                            <svg viewBox="0 0 120 120">
+                            <svg viewBox="0 0 120 120" aria-hidden="true">
                                 <circle class="readiness-bg" cx="60" cy="60" r="52" />
                                 <circle class="readiness-progress" cx="60" cy="60" r="52" id="readiness-ring" />
                             </svg>
@@ -143,6 +145,16 @@
                         <div class="countdown-number" id="countdown-days">--</div>
                         <div class="countdown-label">days until exam</div>
                         <button class="btn btn-text btn-sm" id="set-exam-date-btn">Set exam date</button>
+                    </div>
+
+                    <!-- Smart Recommendation -->
+                    <div class="recommendation-card card hidden" id="recommendation-card">
+                        <div class="recommendation-icon" id="rec-icon"></div>
+                        <div class="recommendation-body">
+                            <div class="recommendation-title" id="rec-title"></div>
+                            <div class="recommendation-desc" id="rec-desc"></div>
+                        </div>
+                        <button class="btn btn-primary btn-sm" id="rec-action-btn">Go</button>
                     </div>
 
                     <!-- Quick Study Presets -->
@@ -173,11 +185,11 @@
                     <!-- Bookmarked Questions -->
                     <div class="bookmark-section hidden" id="bookmark-section">
                         <h3 class="section-title">Bookmarked Questions</h3>
-                        <div class="preset-card card" id="bookmark-drill-card" style="cursor:pointer; padding: 12px 16px; display: flex; align-items: center; gap: 12px;">
-                            <span style="font-size: 24px;">🔖</span>
+                        <div class="preset-card card bookmark-drill-card" id="bookmark-drill-card">
+                            <span class="bookmark-icon" aria-hidden="true">🔖</span>
                             <div>
-                                <div style="font-weight: 600;">Review Bookmarks</div>
-                                <div class="text-secondary" style="font-size: 12px;" id="bookmark-count">0 saved</div>
+                                <div class="bookmark-title">Review Bookmarks</div>
+                                <div class="text-secondary bookmark-count" id="bookmark-count">0 saved</div>
                             </div>
                         </div>
                     </div>
@@ -228,7 +240,7 @@
                     </div>
 
                     <!-- Question Card -->
-                    <div class="question-card card" id="question-card">
+                    <div class="question-card card" id="question-card" aria-live="polite">
                         <div class="question-badges">
                             <span class="topic-badge" id="question-topic"></span>
                             <span class="multi-badge hidden" id="multi-badge">Plusieurs réponses possibles</span>
@@ -236,7 +248,7 @@
                         <div class="sign-container hidden" id="question-signs"></div>
                         <div class="question-text-fr" id="question-fr"></div>
                         <div class="question-text-en" id="question-en"></div>
-                        <button class="tts-btn" id="tts-play-btn" title="Listen in French">🔊</button>
+                        <button class="tts-btn" id="tts-play-btn" title="Listen in French" aria-label="Listen to question in French">🔊</button>
                     </div>
 
                     <!-- Answer Options -->
@@ -305,7 +317,7 @@
                     <!-- Exam results -->
                     <div id="exam-results" class="hidden">
                         <div class="results-score-ring">
-                            <svg viewBox="0 0 160 160">
+                            <svg viewBox="0 0 160 160" aria-hidden="true">
                                 <circle class="results-bg" cx="80" cy="80" r="70" />
                                 <circle class="results-progress" cx="80" cy="80" r="70" id="results-ring" />
                             </svg>
@@ -339,6 +351,29 @@
                         </div>
                     </div>
 
+                    <h3 class="section-title">Study Activity (7 days)</h3>
+                    <div class="study-activity-chart" id="study-activity"></div>
+
+                    <h3 class="section-title">Spaced Repetition</h3>
+                    <div class="sr-analytics" id="sr-analytics">
+                        <div class="sr-summary-row">
+                            <div class="sr-stat">
+                                <div class="sr-stat-value" id="sr-active">0</div>
+                                <div class="sr-stat-label">Active</div>
+                            </div>
+                            <div class="sr-stat">
+                                <div class="sr-stat-value sr-graduated" id="sr-graduated">0</div>
+                                <div class="sr-stat-label">Graduated</div>
+                            </div>
+                            <div class="sr-stat">
+                                <div class="sr-stat-value sr-due" id="sr-due">0</div>
+                                <div class="sr-stat-label">Due Now</div>
+                            </div>
+                        </div>
+                        <div class="sr-progress-bar" id="sr-progress-bar"></div>
+                        <div class="sr-stuck-list" id="sr-stuck-list"></div>
+                    </div>
+
                     <h3 class="section-title">Topic Mastery</h3>
                     <div class="mastery-list" id="mastery-list"></div>
 
@@ -348,8 +383,47 @@
                     </div>
                 </div>
 
+                <!-- Vocab / Learn View -->
+                <div id="vocab-view" class="view">
+                    <div class="vocab-mode-toggle">
+                        <button class="vocab-mode-btn active" id="vocab-mode-btn">
+                            <span>📖</span> Vocabulaire
+                        </button>
+                        <button class="vocab-mode-btn" id="signs-mode-btn">
+                            <span>🪧</span> Panneaux
+                        </button>
+                    </div>
+                    <div id="vocab-content"></div>
+                </div>
+
                 <!-- Settings View -->
                 <div id="settings-view" class="view">
+                    <div class="settings-group">
+                        <h3 class="section-title">Appearance</h3>
+                        <div class="setting-item">
+                            <label>Theme</label>
+                            <select id="setting-theme" class="setting-select">
+                                <option value="auto">System default</option>
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="settings-group">
+                        <h3 class="section-title">Notifications</h3>
+                        <div class="notification-card" id="notification-toggle-card">
+                            <div class="notification-icon">🔔</div>
+                            <div class="notification-body">
+                                <div class="notification-title">Study Reminders</div>
+                                <div class="notification-desc" id="notification-desc">Get daily reminders to practice</div>
+                            </div>
+                            <span class="notification-status disabled" id="notification-status">Off</span>
+                        </div>
+                        <div class="setting-item hidden" id="notification-time-setting">
+                            <label>Reminder time</label>
+                            <input type="time" id="setting-reminder-time" class="setting-input" value="19:00">
+                        </div>
+                    </div>
                     <div class="settings-group">
                         <h3 class="section-title">Language</h3>
                         <div class="setting-item">
@@ -400,7 +474,7 @@
                         <h3 class="section-title">AI Tutor</h3>
                         <div class="setting-item">
                             <label>Tutor API Endpoint</label>
-                            <input type="url" id="setting-tutor-endpoint" class="setting-input" placeholder="https://...workers.dev" style="max-width: 200px; font-size: 11px;">
+                            <input type="url" id="setting-tutor-endpoint" class="setting-input setting-input-sm" placeholder="https://...workers.dev">
                         </div>
                     </div>
                     <div class="settings-group">
@@ -417,29 +491,34 @@
                         </div>
                     </div>
                     <div class="settings-about">
-                        <p>Code de la Route v2.0</p>
-                        <p class="text-secondary">104 questions | AI tutor | Adaptive learning</p>
+                        <p>Code de la Route v3.1</p>
+                        <p class="text-secondary" id="settings-question-count">200+ questions | 35 road signs | AI tutor | Vocab flashcards</p>
+                        <p class="text-secondary">Dark mode | Study reminders | Content sync</p>
                         <p class="text-secondary">Built with love 🇫🇷</p>
                     </div>
                 </div>
             </main>
 
             <!-- Bottom Navigation -->
-            <nav id="bottom-nav">
-                <button class="nav-item active" data-view="home">
-                    <span class="nav-icon">🏠</span>
+            <nav id="bottom-nav" role="tablist" aria-label="Main navigation">
+                <button class="nav-item active" data-view="home" role="tab" aria-selected="true" aria-label="Home">
+                    <span class="nav-icon" aria-hidden="true">🏠</span>
                     <span class="nav-label">Home</span>
                 </button>
-                <button class="nav-item" data-view="practice">
-                    <span class="nav-icon">📚</span>
+                <button class="nav-item" data-view="practice" role="tab" aria-selected="false" aria-label="Practice">
+                    <span class="nav-icon" aria-hidden="true">📚</span>
                     <span class="nav-label">Practice</span>
                 </button>
-                <button class="nav-item" data-view="progress">
-                    <span class="nav-icon">📊</span>
+                <button class="nav-item" data-view="vocab" role="tab" aria-selected="false" aria-label="Vocabulary">
+                    <span class="nav-icon" aria-hidden="true">📖</span>
+                    <span class="nav-label">Vocab</span>
+                </button>
+                <button class="nav-item" data-view="progress" role="tab" aria-selected="false" aria-label="Progress">
+                    <span class="nav-icon" aria-hidden="true">📊</span>
                     <span class="nav-label">Progress</span>
                 </button>
-                <button class="nav-item" data-view="settings">
-                    <span class="nav-icon">⚙️</span>
+                <button class="nav-item" data-view="settings" role="tab" aria-selected="false" aria-label="Settings">
+                    <span class="nav-icon" aria-hidden="true">⚙️</span>
                     <span class="nav-label">Settings</span>
                 </button>
             </nav>
@@ -447,19 +526,19 @@
     </div>
 
     <!-- Confidence Modal -->
-    <div class="modal hidden" id="confidence-modal">
+    <div class="modal hidden" id="confidence-modal" role="dialog" aria-label="Confidence rating">
         <div class="modal-content confidence-content">
             <p>How sure were you?</p>
             <div class="confidence-options">
-                <button class="confidence-chip" data-confidence="1">🎲 Guessed</button>
-                <button class="confidence-chip" data-confidence="2">🤔 Unsure</button>
-                <button class="confidence-chip" data-confidence="3">✅ Sure</button>
+                <button class="confidence-chip" data-confidence="1" aria-label="Guessed">🎲 Guessed</button>
+                <button class="confidence-chip" data-confidence="2" aria-label="Unsure">🤔 Unsure</button>
+                <button class="confidence-chip" data-confidence="3" aria-label="Sure">✅ Sure</button>
             </div>
         </div>
     </div>
 
     <!-- Toast Container -->
-    <div id="toast-container"></div>
+    <div id="toast-container" role="status" aria-live="polite"></div>
 
     <script src="js/data.js"></script>
     <script src="js/signs.js"></script>
@@ -470,6 +549,9 @@
     <script src="js/practice.js"></script>
     <script src="js/exam.js"></script>
     <script src="js/progress.js"></script>
+    <script src="js/vocab.js"></script>
+    <script src="js/content-sync.js"></script>
+    <script src="js/notifications.js"></script>
     <script src="js/tutor.js"></script>
     <script src="js/app.js"></script>
 </body>

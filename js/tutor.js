@@ -4,7 +4,8 @@
    ============================================ */
 
 const Tutor = {
-    ENDPOINT: null, // Set after deployment: 'https://code-de-la-route-tutor.<subdomain>.workers.dev/chat'
+    DEFAULT_ENDPOINT: 'https://code-de-la-route-tutor.saras-fdtta.workers.dev',
+    ENDPOINT: null,
     conversationHistory: [],
     isOpen: false,
     isLoading: false,
@@ -12,7 +13,7 @@ const Tutor = {
     init() {
         // Load saved endpoint from settings or use default
         const settings = Storage.getSettings();
-        this.ENDPOINT = settings.tutorEndpoint || null;
+        this.ENDPOINT = settings.tutorEndpoint || this.DEFAULT_ENDPOINT;
 
         // Create chat UI (hidden by default)
         this.createChatUI();
@@ -134,6 +135,9 @@ const Tutor = {
                 context.topicMastery = weak.join(', ');
             }
 
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 30000);
+
             const response = await fetch(this.ENDPOINT, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -141,8 +145,10 @@ const Tutor = {
                     messages: this.conversationHistory,
                     context,
                 }),
+                signal: controller.signal,
             });
 
+            clearTimeout(timeoutId);
             const data = await response.json();
 
             // Remove loading message
@@ -157,7 +163,11 @@ const Tutor = {
 
         } catch (err) {
             this.removeMessage(loadingId);
-            this.addMessage('Connection error. Check your internet and try again.', 'bot');
+            if (err.name === 'AbortError') {
+                this.addMessage('Request timed out. The tutor took too long to respond. Try again!', 'bot');
+            } else {
+                this.addMessage('Connection error. Check your internet and try again.', 'bot');
+            }
         }
 
         this.isLoading = false;
