@@ -1,0 +1,28 @@
+{
+  "name": "Domaine de Chazeuil",
+  "commune": "Chazeuil",
+  "communeCode": "03298",
+  "department": "Allier (03)",
+  "region": "Auvergne-Rhône-Alpes",
+  "country": "France",
+  "section": "B",
+  "center": [3.3919, 46.3320],
+  "bounds": {
+    "sw": [3.3853, 46.3285],
+    "ne": [3.3985, 46.3354]
+  },
+  "defaultZoom": 15,
+  "minZoom": 13,
+  "maxZoom": 18,
+  "crs": "EPSG:4326",
+  "approximateDimensions": {
+    "widthMeters": 1020,
+    "heightMeters": 770,
+    "totalAreaHectares": 34.46
+  },
+  "conversionFactors": {
+    "degreesLonToMeters": 77200,
+    "degreesLatToMeters": 111320,
+    "note": "At latitude 46.33°. Multiply (lon - center_lon) by 77200 for x_meters, (lat - center_lat) by 111320 for y_meters."
+  }
+}

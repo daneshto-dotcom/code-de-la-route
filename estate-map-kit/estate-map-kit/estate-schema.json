@@ -1,0 +1,86 @@
+{
+  "description": "Schema definitions for all estate map data structures",
+  "schemas": {
+    "ParcelType": {
+      "type": "enum",
+      "values": ["bois", "parc", "pre", "eau", "batiment", "chemin"],
+      "translations": {
+        "bois": "Forest & Copse",
+        "parc": "Park",
+        "pre": "Meadows & Fields",
+        "eau": "Water Feature",
+        "batiment": "Building",
+        "chemin": "Path & Courtyard"
+      }
+    },
+    "HotspotType": {
+      "type": "enum",
+      "values": ["building", "nature", "facility", "activity"]
+    },
+    "MapLayerMode": {
+      "type": "enum",
+      "values": ["aerial", "topo", "cadastral"]
+    },
+    "EstateParcelle": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Cadastral ID (e.g., 032980000B0194)" },
+        "cadastralNumber": { "type": "string", "description": "Short parcel number" },
+        "section": { "type": "string", "description": "Cadastral section (always 'B')" },
+        "type": { "type": "ParcelType" },
+        "area": { "type": "number", "unit": "hectares", "optional": true },
+        "hotspotId": { "type": "string", "optional": true, "description": "Links to hotspot" },
+        "historicalNotes": {
+          "type": "array",
+          "items": { "era": "string", "note": "string" },
+          "optional": true
+        }
+      }
+    },
+    "Hotspot": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "HotspotType" },
+        "gps": { "type": "[number, number]", "description": "[longitude, latitude]" },
+        "cadastralParcel": { "type": "string", "optional": true },
+        "description": { "type": "string" },
+        "details": { "type": "object", "optional": true }
+      }
+    },
+    "TimelinePeriod": {
+      "type": "object",
+      "properties": {
+        "position": { "type": "number", "range": "0-6" },
+        "year": { "type": "string" },
+        "era": { "type": "string", "values": ["construction", "revolution", "restoration", "modern", "renovation"] },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "mapLayer": {
+          "tiles": "string (key into tile-sources)",
+          "opacity": "number (0-1)",
+          "sepia": "boolean"
+        }
+      }
+    },
+    "GeoJSONParcelFeature": {
+      "type": "GeoJSON Feature",
+      "geometry": "Polygon",
+      "properties": {
+        "id": "string (cadastral ID)",
+        "estateType": "ParcelType",
+        "cadastralNumber": "string",
+        "hotspotId": "string (optional)"
+      }
+    },
+    "GeoJSONBuildingFeature": {
+      "type": "GeoJSON Feature",
+      "geometry": "MultiPolygon",
+      "properties": {
+        "type": "string (building classification code)",
+        "commune": "string"
+      }
+    }
+  }
+}
