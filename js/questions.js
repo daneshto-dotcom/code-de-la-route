@@ -1,5 +1,5 @@
 /* ============================================
-   Question Bank — 500 Bilingual Questions
+   Question Bank — 540 Bilingual Questions
    All 10 ETG themes, multi-answer support
    Based on French Code de la route public law
    ============================================ */
@@ -9316,16 +9316,12 @@ const QUESTION_BANK = [
             C: { fr: "Un piéton surgissant entre les voitures", en: "A pedestrian stepping out between cars" },
             D: { fr: "Toutes ces réponses", en: "All of these answers" }
         },
-        correctAnswers: ["D"],
-        answerCount: 1,
-        explanationFr: "En longeant des véhicules stationnés, les trois dangers principaux sont : l'ouverture de portières (zone de portière), un piéton surgissant entre les voitures, et un véhicule qui démarre ou recule. Il faut maintenir une distance latérale suffisante et réduire sa vitesse.",
-        explanationEn: "When driving alongside parked vehicles, the three main dangers are: doors opening (door zone), pedestrians stepping out between cars, and a vehicle pulling out or reversing. You must maintain sufficient lateral distance and reduce speed.",
-        trapNote: "Each individual option seems like a valid standalone answer, tempting students to pick just one. The correct response encompasses all three hazards.",
-        distractorNotes: {
-            A: "Correct hazard but incomplete — other dangers exist too.",
-            B: "Correct hazard but incomplete — other dangers exist too.",
-            C: "Correct hazard but incomplete — other dangers exist too."
-        },
+        correctAnswers: ["A", "B", "C"],
+        answerCount: 3,
+        explanationFr: "En longeant des véhicules stationnés, les trois dangers principaux sont : les feux de recul qui s'allument indiquant qu'un véhicule va sortir de sa place (A), l'ouverture soudaine d'une portière par un occupant (B), et un piéton surgissant entre les voitures, invisible jusqu'au dernier moment (C). Il faut maintenir une distance latérale suffisante et réduire sa vitesse.",
+        explanationEn: "When driving alongside parked vehicles, the three main dangers are: reversing lights turning on indicating a vehicle is pulling out (A), a door opening suddenly (B), and a pedestrian stepping out between cars, invisible until the last moment (C). You must maintain sufficient lateral distance and reduce speed.",
+        trapNote: "All three are real hazards — you must select all of them. Each is a frequent cause of urban accidents.",
+        distractorNotes: {},
         vocabulary: [
             { wordFr: "zone de portière", wordEn: "door zone", definition: "The area alongside parked cars where a suddenly opened door could strike a passing vehicle or cyclist" },
             { wordFr: "portière", wordEn: "car door", definition: "The hinged panel providing entry to a vehicle" }
@@ -12749,13 +12745,12 @@ const QUESTION_BANK = [
             C: { fr: "Ils indiquent une zone de travaux", en: "They indicate a work zone" },
             D: { fr: "La couleur n'a pas de signification particuliÃ¨re", en: "The colour has no particular meaning" }
         },
-        correctAnswers: ["B"],
-        answerCount: 1,
+        correctAnswers: ["A", "B"],
+        answerCount: 2,
         explanationFr: "Les dÃ©linÃ©ateurs blancs sont placÃ©s Ã  droite de la route et les rouges Ã  gauche. Ce systÃ¨me permet au conducteur de se repÃ©rer instantanÃ©ment, surtout de nuit, par brouillard ou en cas de perte de repÃ¨res visuels. Blanc Ã  droite = vous Ãªtes du bon cÃ´tÃ©.",
-        explanationEn: "White delineators are placed on the right side of the road and red on the left. This system allows drivers to orient themselves instantly, especially at night, in fog, or when visual references are lost. White on the right = you are on the correct side.",
+        explanationEn: "Road delineator posts use a standardised colour code: white posts are on the right and red on the left relative to direction of travel. A correctly describes the colour positions (white = right, red = left). B adds the practical purpose: helping drivers know which side of the road they are on. Both answers are correct.",
         trapNote: "Candidates often forget which colour goes on which side. Memory aid: 'blanc = bon cÃ´tÃ©' (white = correct side, i.e., right).",
         distractorNotes: {
-            A: "This reverses the perspective â€” white is on the right relative to the driver's direction, red on the left",
             C: "Work zones are indicated by orange/yellow signage, not by permanent delineator posts",
             D: "The colour distinction is crucial for safety and has a very specific meaning"
         },
@@ -13127,6 +13122,1048 @@ const QUESTION_BANK = [
             { wordFr: "camÃ©ra embarquÃ©e (dashcam)", wordEn: "dashcam", definition: "CamÃ©ra fixÃ©e sur le pare-brise enregistrant en continu la route devant le vÃ©hicule" },
             { wordFr: "RGPD", wordEn: "GDPR", definition: "RÃ¨glement GÃ©nÃ©ral sur la Protection des DonnÃ©es, lÃ©gislation europÃ©enne protÃ©geant les donnÃ©es personnelles" },
             { wordFr: "floutage", wordEn: "blurring", definition: "Technique de masquage rendant les visages et plaques d'immatriculation mÃ©connaissables" }
+        ]
+    }
+    ,
+    {
+        id: 'prio-051',
+        topic: 'priorite',
+        difficulty: 3,
+        questionFr: "Quelles sont vos obligations lorsque vous arrivez à une intersection avec un panneau STOP ?",
+        questionEn: "What are your obligations when you reach an intersection with a STOP sign?",
+        options: {
+            A: { fr: "Marquer un arrêt complet, même si aucun véhicule n'est visible", en: "Come to a complete stop, even if no vehicle is visible" },
+            B: { fr: "Céder le passage à tous les usagers de la route prioritaire", en: "Yield to all users on the priority road" },
+            C: { fr: "Ralentir suffisamment pour vérifier la circulation", en: "Slow down enough to check traffic" },
+            D: { fr: "S'arrêter uniquement si des véhicules arrivent", en: "Stop only if vehicles are approaching" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Un panneau STOP impose un arrêt complet obligatoire, même en l'absence de tout trafic visible. Après l'arrêt, vous devez céder le passage à tous les usagers circulant sur la route prioritaire avant de repartir. L'arrêt doit se faire à la ligne d'arrêt ou, à défaut, à la limite de la chaussée abordée.",
+        explanationEn: "A STOP sign requires a mandatory complete stop, even when no traffic is visible. After stopping, you must yield to all users on the priority road before proceeding. You must stop at the stop line or, if there is none, at the edge of the road you are joining.",
+        trapNote: "The key trap: STOP means a COMPLETE stop every time, not just slowing down. Many candidates think they can roll through if no traffic is visible.",
+        distractorNotes: {
+            C: "Slowing down is not enough — STOP requires a complete halt, unlike Cedez le passage.",
+            D: "The stop is mandatory regardless of whether vehicles are approaching."
+        },
+        vocabulary: [
+            { wordFr: "arrêt complet", wordEn: "complete stop", definition: "The vehicle must be fully stationary, wheels not turning" },
+            { wordFr: "ligne d'arrêt", wordEn: "stop line", definition: "A solid white line on the road marking where to stop" }
+        ]
+    }    ,
+    {
+        id: 'prio-052',
+        topic: 'priorite',
+        difficulty: 3,
+        questionFr: "Dans quelles situations un conducteur doit-il céder le passage aux piétons ?",
+        questionEn: "In which situations must a driver yield to pedestrians?",
+        options: {
+            A: { fr: "Lorsqu'un piéton est engagé sur un passage piéton", en: "When a pedestrian is on a pedestrian crossing" },
+            B: { fr: "Lorsqu'un piéton manifeste clairement l'intention de traverser sur un passage piéton", en: "When a pedestrian clearly shows the intention to cross at a pedestrian crossing" },
+            C: { fr: "Uniquement lorsque le piéton a déjà atteint le milieu de la chaussée", en: "Only when the pedestrian has already reached the middle of the road" },
+            D: { fr: "Uniquement lorsqu'un agent de la circulation l'ordonne", en: "Only when a traffic officer orders it" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Depuis la réforme de 2018, les conducteurs doivent céder le passage aux piétons engagés sur un passage piéton ET à ceux qui manifestent clairement l'intention de traverser. Il n'est plus nécessaire que le piéton soit déjà sur la chaussée — l'intention suffit. L'amende est de 135 euros et un retrait de 6 points.",
+        explanationEn: "Since the 2018 reform, drivers must yield to pedestrians on a crossing AND to those who clearly show the intention to cross. The pedestrian no longer needs to be on the road — the intention is enough. The fine is 135 euros and 6 points deducted.",
+        trapNote: "Since 2018, INTENTION to cross is enough. You do not have to wait until the pedestrian steps onto the road. This catches many candidates using old rules.",
+        distractorNotes: {
+            C: "You must yield as soon as the pedestrian is on the crossing or shows intention — not wait until the middle.",
+            D: "A traffic officer is not needed — the pedestrian's presence or intention at the crossing is sufficient."
+        },
+        vocabulary: [
+            { wordFr: "passage piéton", wordEn: "pedestrian crossing / crosswalk", definition: "Marked area on the road where pedestrians have priority to cross" },
+            { wordFr: "manifester l'intention", wordEn: "to show intention", definition: "Clearly indicating by body language or position that one intends to cross" }
+        ]
+    }    ,
+    {
+        id: 'prio-053',
+        topic: 'priorite',
+        difficulty: 2,
+        questionFr: "Quelles affirmations sont correctes concernant la priorité dans un rond-point ?",
+        questionEn: "Which statements are correct about priority in a roundabout?",
+        options: {
+            A: { fr: "Les véhicules déjà engagés dans le rond-point ont la priorité", en: "Vehicles already in the roundabout have priority" },
+            B: { fr: "Vous devez mettre votre clignotant à droite pour sortir du rond-point", en: "You must signal right when exiting the roundabout" },
+            C: { fr: "La priorité à droite s'applique dans un rond-point", en: "Priority to the right applies in a roundabout" },
+            D: { fr: "Vous pouvez entrer dans le rond-point sans regarder à gauche", en: "You can enter the roundabout without looking left" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Dans un rond-point (signalé par un panneau Cédez le passage à l'entrée), les véhicules à l'intérieur ont la priorité sur ceux qui entrent. Vous devez également signaler votre sortie avec le clignotant droit. Attention : ne pas confondre avec un carrefour giratoire sans Cédez le passage, où la priorité à droite pourrait s'appliquer.",
+        explanationEn: "In a roundabout (marked with a Give Way sign at entry), vehicles inside have priority over those entering. You must also signal right when exiting. Note: do not confuse with a circular junction without a Give Way sign, where priority to the right could apply.",
+        trapNote: "Priority to the right does NOT apply in a standard roundabout with a Cedez le passage sign. Also, many forget they must signal when exiting.",
+        distractorNotes: {
+            C: "In a standard roundabout with Cedez le passage signs, vehicles inside have priority — priority to the right does NOT apply.",
+            D: "You must always look left when entering a roundabout because traffic comes from your left."
+        },
+        vocabulary: [
+            { wordFr: "rond-point", wordEn: "roundabout", definition: "A circular junction where traffic flows in one direction around a central island" },
+            { wordFr: "clignotant", wordEn: "indicator / turn signal", definition: "The flashing light used to signal a change of direction" }
+        ]
+    }    ,
+    {
+        id: 'prio-054',
+        topic: 'priorite',
+        difficulty: 3,
+        questionFr: "Quelles sont les règles de priorité lorsque vous tournez à gauche à une intersection ?",
+        questionEn: "What are the priority rules when turning left at an intersection?",
+        options: {
+            A: { fr: "Vous devez céder le passage aux véhicules venant en face", en: "You must yield to oncoming vehicles" },
+            B: { fr: "Vous devez laisser passer les piétons qui traversent la rue dans laquelle vous vous engagez", en: "You must let pedestrians crossing the street you are turning into pass" },
+            C: { fr: "Vous avez la priorité sur les véhicules venant en face si vous avez le feu vert", en: "You have priority over oncoming vehicles if you have a green light" },
+            D: { fr: "Les piétons doivent attendre que vous ayez terminé votre manœuvre", en: "Pedestrians must wait until you have completed your manoeuvre" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "En tournant à gauche, vous devez céder le passage aux véhicules venant en sens inverse et aux piétons engagés sur la chaussée que vous vous apprêtez à emprunter. Même avec un feu vert, le feu autorise votre avancée dans l'intersection mais ne vous donne pas priorité sur le trafic en face qui va tout droit.",
+        explanationEn: "When turning left, you must yield to oncoming vehicles and to pedestrians crossing the road you are about to enter. Even with a green light, the light allows you to enter the intersection but does not give you priority over oncoming traffic going straight.",
+        trapNote: "A green light does NOT give you priority over oncoming traffic when turning left. You must also yield to pedestrians on your destination street.",
+        distractorNotes: {
+            C: "A green light lets you enter the intersection but you must still yield to oncoming traffic going straight.",
+            D: "Pedestrians have priority when crossing on a pedestrian crossing — you must yield to them."
+        },
+        vocabulary: [
+            { wordFr: "tourner à gauche", wordEn: "to turn left", definition: "Changing direction to the left at an intersection, crossing oncoming traffic" },
+            { wordFr: "sens inverse", wordEn: "oncoming direction / opposite direction", definition: "Vehicles traveling in the opposite direction on the same road" }
+        ]
+    }    ,
+    {
+        id: 'prio-055',
+        topic: 'priorite',
+        difficulty: 2,
+        questionFr: "Quelles précautions devez-vous prendre à l'approche d'une intersection sans signalisation ?",
+        questionEn: "What precautions must you take when approaching an unmarked intersection?",
+        options: {
+            A: { fr: "Appliquer la règle de la priorité à droite", en: "Apply the priority-to-the-right rule" },
+            B: { fr: "Ralentir et être prêt à s'arrêter", en: "Slow down and be ready to stop" },
+            C: { fr: "Le premier arrivé a la priorité", en: "The first to arrive has priority" },
+            D: { fr: "Le véhicule le plus gros a toujours la priorité", en: "The largest vehicle always has priority" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "En l'absence de toute signalisation, la règle de la priorité à droite s'applique : vous devez céder le passage aux véhicules venant de votre droite. De plus, vous devez ralentir à l'approche de l'intersection et être prêt à vous arrêter. L'ordre d'arrivée ou la taille du véhicule n'ont aucun effet sur la priorité.",
+        explanationEn: "Without any signage, the priority-to-the-right rule applies: you must yield to vehicles coming from your right. You must also slow down when approaching the intersection and be ready to stop. Arrival order or vehicle size have no effect on priority.",
+        trapNote: "Neither 'first arrival' nor 'biggest vehicle' determines priority. Without signs, it is always priority to the right.",
+        distractorNotes: {
+            C: "Arrival order never determines priority at an intersection in France.",
+            D: "Vehicle size has absolutely no bearing on priority rules."
+        },
+        vocabulary: [
+            { wordFr: "intersection sans signalisation", wordEn: "unmarked intersection", definition: "A crossroads with no signs, lights, or road markings indicating priority" },
+            { wordFr: "priorité à droite", wordEn: "priority to the right", definition: "The default rule: yield to vehicles coming from your right" }
+        ]
+    }    ,
+    {
+        id: 'prio-056',
+        topic: 'priorite',
+        difficulty: 3,
+        questionFr: "Quelles affirmations sont correctes concernant la priorité des tramways ?",
+        questionEn: "Which statements are correct about tram priority?",
+        options: {
+            A: { fr: "Le tramway a toujours la priorité, sauf indication contraire d'un agent ou d'un feu", en: "The tram always has priority, except when directed otherwise by an officer or traffic light" },
+            B: { fr: "Il est interdit de stationner sur les voies de tramway", en: "It is forbidden to park on tram tracks" },
+            C: { fr: "Le tramway doit respecter la priorité à droite comme les autres véhicules", en: "The tram must respect priority to the right like other vehicles" },
+            D: { fr: "Vous pouvez rouler sur les voies de tramway s'il n'y a pas de tramway en vue", en: "You can drive on tram tracks if no tram is in sight" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le tramway bénéficie d'une priorité quasi absolue sur les autres usagers de la route. Seuls un agent de la circulation ou un feu rouge peuvent l'arrêter. Il est strictement interdit de stationner sur les voies de tramway. Le tramway n'est PAS soumis à la priorité à droite — il a sa propre priorité.",
+        explanationEn: "The tram has near-absolute priority over other road users. Only a traffic officer or a red light can stop it. Parking on tram tracks is strictly forbidden. The tram is NOT subject to priority-to-the-right — it has its own priority.",
+        trapNote: "The tram does NOT follow priority-to-the-right rules. It has its own priority regime. Never park or linger on tram tracks.",
+        distractorNotes: {
+            C: "Trams are exempt from priority-to-the-right — they have their own priority rules.",
+            D: "Driving on tram tracks is only allowed where specifically authorized by signage, not whenever you feel like it."
+        },
+        vocabulary: [
+            { wordFr: "tramway", wordEn: "tram / streetcar", definition: "A rail vehicle running on tracks embedded in the road surface" },
+            { wordFr: "voies de tramway", wordEn: "tram tracks", definition: "The rails and designated area where trams operate" }
+        ]
+    }    ,
+    {
+        id: 'prio-057',
+        topic: 'priorite',
+        difficulty: 3,
+        questionFr: "Dans quelles situations le panneau « Cédez le passage » vous oblige-t-il à vous arrêter ?",
+        questionEn: "In which situations does the 'Give Way' sign require you to stop?",
+        options: {
+            A: { fr: "Lorsqu'un véhicule arrive sur la route prioritaire et que vous ne pouvez pas vous insérer en toute sécurité", en: "When a vehicle is coming on the priority road and you cannot merge safely" },
+            B: { fr: "Lorsque des piétons traversent sur un passage piéton de la route prioritaire", en: "When pedestrians are crossing at a pedestrian crossing on the priority road" },
+            C: { fr: "Toujours, comme pour un panneau STOP", en: "Always, just like a STOP sign" },
+            D: { fr: "Uniquement la nuit", en: "Only at night" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Contrairement au STOP, le Cédez le passage n'impose pas d'arrêt systématique. Vous devez vous arrêter seulement si la situation l'exige : quand un véhicule approche et que l'insertion n'est pas sûre, ou quand des piétons traversent. Si la voie est libre, vous pouvez passer sans vous arrêter en ayant préalablement ralenti.",
+        explanationEn: "Unlike a STOP sign, Give Way does not require a systematic stop. You must stop only when the situation demands it: when a vehicle is approaching and merging is not safe, or when pedestrians are crossing. If the road is clear, you may proceed without stopping, having first slowed down.",
+        trapNote: "Cedez le passage is NOT the same as STOP. You only stop when there is actually traffic or pedestrians requiring you to yield. If the road is clear, you proceed.",
+        distractorNotes: {
+            C: "Cedez le passage does NOT require a systematic stop like STOP does — only when traffic or pedestrians are present.",
+            D: "The obligation applies at all times of day, not just at night."
+        },
+        vocabulary: [
+            { wordFr: "cédez le passage", wordEn: "give way / yield", definition: "You must let other road users pass before proceeding, but a complete stop is not always required" },
+            { wordFr: "s'insérer", wordEn: "to merge / to join", definition: "To enter a flow of traffic from a secondary road" }
+        ]
+    }    ,
+    {
+        id: 'sign-051',
+        topic: 'signalisation',
+        difficulty: 2,
+        questionFr: "Quelles informations sont communiquées par les panneaux de forme triangulaire à bordure rouge ?",
+        questionEn: "What information is conveyed by triangular signs with a red border?",
+        options: {
+            A: { fr: "Ils signalent un danger à proximité", en: "They warn of a danger nearby" },
+            B: { fr: "Ils imposent au conducteur d'adapter sa vitesse et sa vigilance", en: "They require the driver to adjust speed and alertness" },
+            C: { fr: "Ils indiquent une interdiction formelle", en: "They indicate a strict prohibition" },
+            D: { fr: "Ils signalent une direction à suivre obligatoirement", en: "They indicate a mandatory direction to follow" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Les panneaux triangulaires à bordure rouge sont des panneaux de danger. Ils avertissent le conducteur d'un risque à venir (virage, descente, chaussée glissante, etc.) et impliquent une adaptation de la conduite : réduire la vitesse et augmenter la vigilance. Ils n'imposent pas une interdiction (panneaux ronds rouges) ni une direction (panneaux ronds bleus).",
+        explanationEn: "Triangular signs with a red border are danger warning signs. They alert the driver to an upcoming risk (bend, descent, slippery road, etc.) and imply adapting driving behaviour: reducing speed and increasing alertness. They do not impose a prohibition (round red signs) or a direction (round blue signs).",
+        trapNote: "Triangular = danger warning. Round red = prohibition. Round blue = obligation. Do not confuse the shapes.",
+        distractorNotes: {
+            C: "Prohibition signs are round with a red border, not triangular.",
+            D: "Mandatory direction signs are round with a blue background, not triangular."
+        },
+        vocabulary: [
+            { wordFr: "panneau de danger", wordEn: "danger warning sign", definition: "A triangular sign alerting to a hazard ahead" },
+            { wordFr: "bordure rouge", wordEn: "red border", definition: "The red frame around the triangular warning sign" }
+        ]
+    }    ,
+    {
+        id: 'sign-052',
+        topic: 'signalisation',
+        difficulty: 3,
+        questionFr: "Quelles affirmations sont correctes concernant les lignes de marquage au sol blanches continues ?",
+        questionEn: "Which statements are correct about continuous white road markings?",
+        options: {
+            A: { fr: "Il est interdit de les franchir ou de les chevaucher", en: "It is forbidden to cross or straddle them" },
+            B: { fr: "Elles séparent les sens de circulation opposés", en: "They separate opposite directions of traffic" },
+            C: { fr: "On peut les franchir en cas de dépassement si la visibilité est bonne", en: "You can cross them when overtaking if visibility is good" },
+            D: { fr: "Elles n'ont aucune valeur légale, ce sont de simples recommandations", en: "They have no legal value, they are just recommendations" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Une ligne continue blanche est infranchissable : il est strictement interdit de la franchir ou de la chevaucher pour dépasser, doubler ou changer de voie. Elle sépare les sens de circulation opposés et a pleine valeur réglementaire. L'infraction est passible d'une amende de 135 euros et d'un retrait de 3 points.",
+        explanationEn: "A continuous white line is uncrossable: it is strictly forbidden to cross or straddle it to overtake or change lanes. It separates opposite traffic flows and has full regulatory value. The offence carries a 135 euro fine and 3 points deducted.",
+        trapNote: "Good visibility does NOT allow you to cross a continuous line. Only a dashed line permits overtaking.",
+        distractorNotes: {
+            C: "Visibility is irrelevant — crossing a continuous line is always forbidden, regardless of conditions.",
+            D: "Road markings have full legal force under the Code de la route — they are not recommendations."
+        },
+        vocabulary: [
+            { wordFr: "ligne continue", wordEn: "continuous line / solid line", definition: "An unbroken white line on the road that must not be crossed" },
+            { wordFr: "franchir", wordEn: "to cross (a line)", definition: "To drive across a road marking" }
+        ]
+    }    ,
+    {
+        id: 'sign-053',
+        topic: 'signalisation',
+        difficulty: 2,
+        questionFr: "Que devez-vous faire lorsque le feu tricolore passe à l'orange fixe ?",
+        questionEn: "What must you do when the traffic light turns solid amber?",
+        options: {
+            A: { fr: "Vous arrêter avant la ligne d'arrêt si vous pouvez le faire en toute sécurité", en: "Stop before the stop line if you can do so safely" },
+            B: { fr: "Passer si vous êtes trop près pour vous arrêter en sécurité", en: "Proceed if you are too close to stop safely" },
+            C: { fr: "Accélérer pour passer avant le feu rouge", en: "Accelerate to pass before the red light" },
+            D: { fr: "Traiter le feu orange comme un feu vert", en: "Treat the amber light as a green light" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le feu orange fixe signifie arrêt. Vous devez vous arrêter si cela est possible en toute sécurité. Si vous êtes trop engagé ou trop proche pour freiner sans danger, vous pouvez dégager l'intersection. L'accélération au feu orange est interdite et dangereuse. L'amende pour franchissement de feu orange est de 35 euros.",
+        explanationEn: "A solid amber light means stop. You must stop if it is safe to do so. If you are too committed or too close to brake safely, you may clear the intersection. Accelerating through an amber light is forbidden and dangerous. The fine for running an amber light is 35 euros.",
+        trapNote: "Amber means STOP, not 'hurry up'. The only exception is if stopping would be unsafe (e.g., you are already in the intersection).",
+        distractorNotes: {
+            C: "Accelerating through amber is forbidden and is the opposite of what the law requires.",
+            D: "Amber is not green — it means prepare to stop, not continue freely."
+        },
+        vocabulary: [
+            { wordFr: "feu orange fixe", wordEn: "solid amber light", definition: "A steady amber traffic signal meaning stop if safely possible" },
+            { wordFr: "dégager l'intersection", wordEn: "to clear the intersection", definition: "To finish crossing if already committed when the light changes" }
+        ]
+    }    ,
+    {
+        id: 'sign-054',
+        topic: 'signalisation',
+        difficulty: 3,
+        questionFr: "Quelles sont les caractéristiques des panneaux d'obligation (ronds à fond bleu) ?",
+        questionEn: "What are the characteristics of mandatory signs (round with a blue background)?",
+        options: {
+            A: { fr: "Ils imposent un comportement obligatoire (direction, chaînes, piste cyclable, etc.)", en: "They impose mandatory behaviour (direction, chains, cycle lane, etc.)" },
+            B: { fr: "L'obligation prend fin au prochain panneau d'annulation ou à la prochaine intersection", en: "The obligation ends at the next cancellation sign or at the next intersection" },
+            C: { fr: "Ils indiquent simplement une suggestion de conduite", en: "They simply indicate a driving suggestion" },
+            D: { fr: "Ils n'ont de valeur que sur autoroute", en: "They only apply on motorways" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Les panneaux ronds à fond bleu imposent une obligation : direction obligatoire, vitesse minimale, chaînes obligatoires, piste cyclable obligatoire, etc. Cette obligation cesse au prochain panneau d'annulation (barré de rouge) ou, en l'absence de celui-ci, à la prochaine intersection. Ce ne sont pas des suggestions — ils ont force réglementaire sur tous types de routes.",
+        explanationEn: "Round blue signs impose an obligation: mandatory direction, minimum speed, mandatory chains, mandatory cycle lane, etc. The obligation ends at the next cancellation sign (crossed with red) or, in its absence, at the next intersection. These are not suggestions — they have regulatory force on all road types.",
+        trapNote: "Blue round signs are MANDATORY, not advisory. And the obligation ends at the next cancellation sign or intersection — not indefinitely.",
+        distractorNotes: {
+            C: "Mandatory signs have full legal force — they are not suggestions or recommendations.",
+            D: "Mandatory signs apply on all road types, not only motorways."
+        },
+        vocabulary: [
+            { wordFr: "panneau d'obligation", wordEn: "mandatory sign", definition: "A round blue sign imposing a required action or behaviour" },
+            { wordFr: "panneau d'annulation", wordEn: "cancellation sign / end-of-obligation sign", definition: "A sign with a red diagonal bar indicating the end of a previous obligation" }
+        ]
+    }    ,
+    {
+        id: 'sign-055',
+        topic: 'signalisation',
+        difficulty: 3,
+        questionFr: "Quelles affirmations sont vraies concernant les panneaux de signalisation temporaire (fond jaune) ?",
+        questionEn: "Which statements are true about temporary road signs (yellow background)?",
+        options: {
+            A: { fr: "Ils prévalent sur la signalisation permanente en cas de contradiction", en: "They override permanent signs when there is a contradiction" },
+            B: { fr: "Ils sont utilisés pour les zones de travaux et les déviations", en: "They are used for roadworks zones and diversions" },
+            C: { fr: "La signalisation permanente reste prioritaire même en présence de panneaux temporaires", en: "Permanent signs remain the priority even when temporary signs are present" },
+            D: { fr: "Ils ne s'appliquent que pendant les heures ouvrables", en: "They only apply during working hours" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Les panneaux à fond jaune sont des panneaux temporaires utilisés principalement pour les zones de travaux et les déviations. En cas de contradiction entre signalisation permanente et temporaire, la signalisation temporaire prévaut TOUJOURS. Ils s'appliquent 24h/24 tant qu'ils sont en place, pas seulement pendant les heures de travail.",
+        explanationEn: "Yellow background signs are temporary signs used mainly for roadworks and diversions. When there is a contradiction between permanent and temporary signage, the temporary signage ALWAYS takes priority. They apply 24/7 as long as they are in place, not just during working hours.",
+        trapNote: "Temporary (yellow) signs OVERRIDE permanent signs. And they apply at all hours, not just during daytime works.",
+        distractorNotes: {
+            C: "The opposite is true — temporary signs override permanent ones when they contradict each other.",
+            D: "Temporary signs apply continuously until removed, regardless of working hours."
+        },
+        vocabulary: [
+            { wordFr: "signalisation temporaire", wordEn: "temporary signage", definition: "Yellow-background signs used to indicate temporary road conditions, usually works" },
+            { wordFr: "déviation", wordEn: "diversion / detour", definition: "An alternative route around an obstacle or road closure" }
+        ]
+    }    ,
+    {
+        id: 'croi-051',
+        topic: 'croisement_depassement',
+        difficulty: 3,
+        questionFr: "Dans quelles situations le dépassement par la droite est-il autorisé ?",
+        questionEn: "In which situations is overtaking on the right permitted?",
+        options: {
+            A: { fr: "Lorsque le véhicule devant vous tourne à gauche ou signale qu'il va tourner à gauche", en: "When the vehicle ahead is turning left or signals it will turn left" },
+            B: { fr: "Dans les files parallèles de circulation en agglomération", en: "In parallel lanes of traffic in built-up areas" },
+            C: { fr: "Sur autoroute lorsque la voie de gauche roule lentement", en: "On a motorway when the left lane is moving slowly" },
+            D: { fr: "Lorsque vous êtes pressé et que la voie de gauche est occupée", en: "When you are in a hurry and the left lane is occupied" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le dépassement par la droite est exceptionnellement autorisé dans deux cas principaux : lorsque le véhicule devant signale ou effectue un virage à gauche, et dans les files parallèles en agglomération (quand chaque file avance à son rythme). Sur autoroute, le dépassement par la droite reste interdit — même si la voie de gauche est plus lente, vous devez la dépasser par la gauche.",
+        explanationEn: "Overtaking on the right is exceptionally permitted in two main cases: when the vehicle ahead signals or is turning left, and in parallel traffic lanes in built-up areas (when each lane moves at its own pace). On motorways, overtaking on the right remains forbidden — even if the left lane is slower, you must overtake on the left.",
+        trapNote: "Parallel lanes in town are NOT the same as motorway lanes. On motorways, overtaking on the right is ALWAYS forbidden.",
+        distractorNotes: {
+            C: "On motorways, you must always overtake on the left, even if the left lane is slower.",
+            D: "Being in a hurry is never a legal justification for overtaking on the right."
+        },
+        vocabulary: [
+            { wordFr: "dépassement par la droite", wordEn: "overtaking on the right", definition: "Passing another vehicle by moving to its right side — normally forbidden in France" },
+            { wordFr: "files parallèles", wordEn: "parallel lanes / queues", definition: "Multiple lanes of traffic moving side by side, each at its own speed" }
+        ]
+    }    ,
+    {
+        id: 'croi-052',
+        topic: 'croisement_depassement',
+        difficulty: 2,
+        questionFr: "Quelles précautions devez-vous prendre avant d'effectuer un dépassement ?",
+        questionEn: "What precautions must you take before overtaking?",
+        options: {
+            A: { fr: "Vérifier les rétroviseurs et l'angle mort", en: "Check mirrors and the blind spot" },
+            B: { fr: "Activer le clignotant gauche avant de déboîter", en: "Activate the left indicator before pulling out" },
+            C: { fr: "Klaxonner pour prévenir le véhicule devant", en: "Honk the horn to warn the vehicle ahead" },
+            D: { fr: "Accélérer avant de vérifier la voie opposée", en: "Accelerate before checking the opposite lane" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Avant de dépasser, vous devez vérifier les rétroviseurs (intérieur et extérieur gauche), contrôler l'angle mort en tournant brièvement la tête, puis activer le clignotant gauche avant de vous déporter. Klaxonner n'est obligatoire que hors agglomération et de nuit. Accélérer sans vérifier la voie opposée est extrêmement dangereux.",
+        explanationEn: "Before overtaking, you must check mirrors (interior and left exterior), check the blind spot by briefly turning your head, then activate the left indicator before pulling out. Honking is only mandatory outside built-up areas and at night. Accelerating without checking the opposite lane is extremely dangerous.",
+        trapNote: "Honking is NOT required in all situations when overtaking — only outside built-up areas. But mirrors + indicator are ALWAYS required.",
+        distractorNotes: {
+            C: "Honking is only mandatory when overtaking outside built-up areas, not in all situations.",
+            D: "You must always check the opposite lane BEFORE accelerating to overtake."
+        },
+        vocabulary: [
+            { wordFr: "angle mort", wordEn: "blind spot", definition: "The area not visible in mirrors, requiring a head check" },
+            { wordFr: "déboîter", wordEn: "to pull out (for overtaking)", definition: "To move out of your lane to begin an overtaking manoeuvre" }
+        ]
+    }    ,
+    {
+        id: 'croi-053',
+        topic: 'croisement_depassement',
+        difficulty: 3,
+        questionFr: "Dans quelles situations est-il interdit de dépasser un autre véhicule ?",
+        questionEn: "In which situations is it forbidden to overtake another vehicle?",
+        options: {
+            A: { fr: "À l'approche d'un sommet de côte sans visibilité suffisante", en: "When approaching the top of a hill without sufficient visibility" },
+            B: { fr: "Dans un virage sans visibilité", en: "On a blind bend" },
+            C: { fr: "Lorsque le véhicule devant roule à moins de 30 km/h", en: "When the vehicle ahead is driving under 30 km/h" },
+            D: { fr: "Sur une ligne droite avec bonne visibilité et ligne discontinue", en: "On a straight road with good visibility and a dashed line" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le dépassement est interdit en l'absence de visibilité suffisante : au sommet d'une côte et dans un virage sans visibilité. La vitesse du véhicule devant n'est pas un critère d'interdiction — même s'il roule lentement, vous ne pouvez pas dépasser si la visibilité est insuffisante. Un dépassement sur route droite avec ligne discontinue et bonne visibilité est autorisé.",
+        explanationEn: "Overtaking is forbidden when there is insufficient visibility: at the top of a hill and on a blind bend. The speed of the vehicle ahead is not a prohibition criterion — even if it is slow, you cannot overtake if visibility is insufficient. Overtaking on a straight road with a dashed line and good visibility is permitted.",
+        trapNote: "A slow vehicle ahead does NOT automatically authorize overtaking. Visibility conditions are what matter most.",
+        distractorNotes: {
+            C: "The speed of the vehicle ahead is irrelevant to the legality of overtaking — visibility and road markings determine it.",
+            D: "This describes a situation where overtaking IS permitted, not forbidden."
+        },
+        vocabulary: [
+            { wordFr: "sommet de côte", wordEn: "top of a hill / hilltop", definition: "The highest point of a hill where visibility of oncoming traffic is reduced" },
+            { wordFr: "virage sans visibilité", wordEn: "blind bend", definition: "A curve where you cannot see far enough ahead to overtake safely" }
+        ]
+    }    ,
+    {
+        id: 'croi-054',
+        topic: 'croisement_depassement',
+        difficulty: 3,
+        questionFr: "Quelles sont les règles lors du croisement de véhicules sur une route étroite en montagne ?",
+        questionEn: "What are the rules when passing oncoming vehicles on a narrow mountain road?",
+        options: {
+            A: { fr: "En l'absence de panneau, le véhicule descendant doit céder le passage au véhicule montant", en: "Without a sign, the descending vehicle must yield to the ascending vehicle" },
+            B: { fr: "Le véhicule descendant doit reculer pour trouver un emplacement de croisement si nécessaire", en: "The descending vehicle must reverse to find a passing place if necessary" },
+            C: { fr: "Le véhicule montant doit toujours reculer car il a de meilleurs freins en montée", en: "The ascending vehicle must always reverse because it has better brakes going uphill" },
+            D: { fr: "Le premier arrivé au point de croisement a la priorité", en: "The first to reach the passing point has priority" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Sur une route de montagne étroite sans signalisation spécifique, le véhicule qui descend doit céder le passage au véhicule qui monte. C'est parce que le véhicule montant a plus de difficulté à s'arrêter et à repartir en côte. Le véhicule descendant doit reculer si nécessaire pour trouver un emplacement de croisement. Cette règle peut être annulée par un panneau de priorité de passage.",
+        explanationEn: "On a narrow mountain road without specific signage, the descending vehicle must yield to the ascending vehicle. This is because the ascending vehicle has more difficulty stopping and restarting on a slope. The descending vehicle must reverse if necessary to find a passing place. This rule can be overridden by a passage priority sign.",
+        trapNote: "The descending vehicle yields — because stopping and restarting on an uphill slope is harder. But a priority sign overrides this default rule.",
+        distractorNotes: {
+            C: "The ascending vehicle has priority precisely because it is harder to stop and restart going uphill.",
+            D: "Arrival order does not determine priority on narrow mountain roads."
+        },
+        vocabulary: [
+            { wordFr: "croisement en montagne", wordEn: "passing on a mountain road", definition: "When two vehicles meet on a road too narrow for both to pass simultaneously" },
+            { wordFr: "emplacement de croisement", wordEn: "passing place", definition: "A widened section of road allowing vehicles to pass each other" }
+        ]
+    }    ,
+    {
+        id: 'arret-051',
+        topic: 'arret_stationnement',
+        difficulty: 2,
+        questionFr: "Quelles sont les différences entre l'arrêt et le stationnement ?",
+        questionEn: "What are the differences between stopping and parking?",
+        options: {
+            A: { fr: "L'arrêt est une immobilisation momentanée, le conducteur reste à proximité du véhicule", en: "Stopping is a brief immobilisation, the driver stays near the vehicle" },
+            B: { fr: "Le stationnement est une immobilisation prolongée ou lorsque le conducteur quitte le véhicule", en: "Parking is a prolonged immobilisation or when the driver leaves the vehicle" },
+            C: { fr: "L'arrêt est autorisé partout où le stationnement est interdit", en: "Stopping is allowed everywhere parking is forbidden" },
+            D: { fr: "Il n'y a aucune différence légale entre l'arrêt et le stationnement", en: "There is no legal difference between stopping and parking" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "L'arrêt est une immobilisation momentanée du véhicule pendant laquelle le conducteur reste à proximité (montée/descente de passagers, chargement rapide). Le stationnement est toute immobilisation prolongée ou lorsque le conducteur s'éloigne du véhicule. L'arrêt n'est PAS automatiquement autorisé là où le stationnement est interdit — certaines zones interdisent les deux.",
+        explanationEn: "Stopping is a brief immobilisation during which the driver stays nearby (picking up/dropping off passengers, quick loading). Parking is any prolonged immobilisation or when the driver leaves the vehicle. Stopping is NOT automatically allowed where parking is forbidden — some zones prohibit both.",
+        trapNote: "A zone with 'stationnement interdit' (no parking) usually allows stopping, but 'arret et stationnement interdit' forbids BOTH. Read the sign carefully.",
+        distractorNotes: {
+            C: "Some zones forbid both stopping AND parking — a no-parking sign does not automatically authorize stopping.",
+            D: "There is a clear legal distinction: stopping is brief with driver present; parking is prolonged or driver absent."
+        },
+        vocabulary: [
+            { wordFr: "arrêt", wordEn: "stopping", definition: "Brief vehicle immobilisation with the driver remaining nearby" },
+            { wordFr: "stationnement", wordEn: "parking", definition: "Prolonged immobilisation or any immobilisation where the driver leaves the vehicle" }
+        ]
+    }    ,
+    {
+        id: 'arret-052',
+        topic: 'arret_stationnement',
+        difficulty: 3,
+        questionFr: "Dans quels endroits le stationnement est-il toujours interdit ?",
+        questionEn: "In which places is parking always forbidden?",
+        options: {
+            A: { fr: "Sur les passages piétons et à moins de 5 mètres en amont", en: "On pedestrian crossings and within 5 metres before them" },
+            B: { fr: "En double file", en: "In double file (double parking)" },
+            C: { fr: "À plus de 20 mètres d'un feu tricolore", en: "More than 20 metres from a traffic light" },
+            D: { fr: "Sur un trottoir large de plus de 3 mètres", en: "On a pavement wider than 3 metres" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le stationnement est toujours interdit sur les passages piétons et dans les 5 mètres qui les précèdent (pour maintenir la visibilité des piétons). Le stationnement en double file est également toujours interdit car il gêne la circulation et peut bloquer d'autres véhicules. Stationner loin d'un feu tricolore n'est pas une infraction. Le stationnement sur le trottoir est interdit quelle que soit sa largeur.",
+        explanationEn: "Parking is always forbidden on pedestrian crossings and within 5 metres before them (to maintain pedestrian visibility). Double parking is also always forbidden as it obstructs traffic and can block other vehicles. Parking far from a traffic light is not an offence. Parking on the pavement is forbidden regardless of its width.",
+        trapNote: "The 5-metre rule applies BEFORE the crossing (upstream), to preserve pedestrian visibility for other drivers. Double parking is always illegal.",
+        distractorNotes: {
+            C: "Distance from a traffic light is not a parking prohibition criterion — this is not a real rule.",
+            D: "Pavement parking is forbidden regardless of pavement width, unless specifically authorized by local signage."
+        },
+        vocabulary: [
+            { wordFr: "double file", wordEn: "double parking / double file", definition: "Parking alongside a vehicle already parked at the kerb, blocking the lane" },
+            { wordFr: "en amont", wordEn: "upstream / before", definition: "On the approach side, before reaching the point in the direction of traffic" }
+        ]
+    }    ,
+    {
+        id: 'arret-053',
+        topic: 'arret_stationnement',
+        difficulty: 2,
+        questionFr: "Quelles précautions devez-vous prendre lorsque vous stationnez votre véhicule en côte ?",
+        questionEn: "What precautions must you take when parking your vehicle on a hill?",
+        options: {
+            A: { fr: "Serrer le frein à main", en: "Apply the handbrake" },
+            B: { fr: "Braquer les roues vers le trottoir (en montée : vers la route ; en descente : vers le trottoir)", en: "Turn the wheels towards the kerb (uphill: towards the road; downhill: towards the kerb)" },
+            C: { fr: "Laisser le moteur en marche pour pouvoir repartir facilement", en: "Leave the engine running to be able to restart easily" },
+            D: { fr: "Mettre uniquement le point mort, le frein à main est suffisant en terrain plat", en: "Only put in neutral, the handbrake is enough on flat ground" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Lorsque vous stationnez en côte, vous devez impérativement serrer le frein à main et braquer les roues de façon à ce que le véhicule se dirige vers le trottoir s'il recule. En descente, braquage vers le trottoir. En montée, braquage vers la chaussée (le véhicule reculera contre le trottoir). Il est recommandé d'engager une vitesse (1ère en montée, marche arrière en descente).",
+        explanationEn: "When parking on a hill, you must apply the handbrake and turn the wheels so that the vehicle would roll towards the kerb if it moves. Downhill: steer towards the kerb. Uphill: steer towards the road (the vehicle would roll back against the kerb). It is recommended to engage a gear (1st uphill, reverse downhill).",
+        trapNote: "The wheel direction depends on whether you are facing uphill or downhill. The goal is always: if the car rolls, it hits the kerb, not the road.",
+        distractorNotes: {
+            C: "Never leave the engine running while parked — it wastes fuel, pollutes, and risks theft.",
+            D: "Neutral alone is dangerous on a slope — always use the handbrake AND engage a gear."
+        },
+        vocabulary: [
+            { wordFr: "frein à main", wordEn: "handbrake / parking brake", definition: "A brake that mechanically locks the wheels when the vehicle is parked" },
+            { wordFr: "braquer les roues", wordEn: "to turn the wheels", definition: "To angle the steering so wheels point in a specific direction while parked" }
+        ]
+    }    ,
+    {
+        id: 'arret-054',
+        topic: 'arret_stationnement',
+        difficulty: 3,
+        questionFr: "Quelles sont les règles du stationnement alterné semi-mensuel ?",
+        questionEn: "What are the rules for semi-monthly alternating parking?",
+        options: {
+            A: { fr: "Du 1er au 15 du mois, on stationne du côté des numéros impairs", en: "From the 1st to the 15th of the month, you park on the odd-numbered side" },
+            B: { fr: "Du 16 au dernier jour du mois, on stationne du côté des numéros pairs", en: "From the 16th to the last day of the month, you park on the even-numbered side" },
+            C: { fr: "Le changement de côté se fait chaque lundi à 8h", en: "The side changes every Monday at 8am" },
+            D: { fr: "Ce système ne concerne que les rues à sens unique", en: "This system only applies to one-way streets" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le stationnement alterné semi-mensuel fonctionne selon les dates : du 1er au 15 inclus, on stationne du côté des numéros impairs de la rue ; du 16 au dernier jour du mois, du côté des numéros pairs. Le changement s'effectue le dernier jour de chaque période (veille du 16 et dernier jour du mois) entre 20h30 et 21h. Ce système peut s'appliquer à toute rue, pas seulement les rues à sens unique.",
+        explanationEn: "Semi-monthly alternating parking works by date: from the 1st to the 15th inclusive, you park on the odd-numbered side of the street; from the 16th to the last day of the month, on the even-numbered side. The changeover occurs on the last day of each period between 8:30 PM and 9:00 PM. This system can apply to any street, not just one-way streets.",
+        trapNote: "The changeover is semi-monthly (1st-15th / 16th-end), NOT weekly. And it applies to any street type, not just one-way.",
+        distractorNotes: {
+            C: "The change is semi-monthly (on the 15th/16th and last/1st of each month), not weekly on Mondays.",
+            D: "Semi-monthly alternating parking can apply to any street regardless of traffic direction."
+        },
+        vocabulary: [
+            { wordFr: "stationnement alterné semi-mensuel", wordEn: "semi-monthly alternating parking", definition: "A system where the permitted parking side of the street changes twice per month" },
+            { wordFr: "numéros pairs/impairs", wordEn: "even/odd numbers", definition: "The house numbers on each side of the street, used to determine parking sides" }
+        ]
+    }    ,
+    {
+        id: 'route-051',
+        topic: 'route',
+        difficulty: 3,
+        questionFr: "Quelles précautions devez-vous prendre lorsque vous circulez sur une route verglacée ?",
+        questionEn: "What precautions must you take when driving on an icy road?",
+        options: {
+            A: { fr: "Augmenter considérablement la distance de sécurité", en: "Significantly increase the safety distance" },
+            B: { fr: "Freiner brusquement pour tester l'adhérence", en: "Brake sharply to test grip" },
+            C: { fr: "Réduire sa vitesse et éviter les manœuvres brusques", en: "Reduce speed and avoid sudden maneuvers" },
+            D: { fr: "Rouler au milieu de la chaussée pour éviter les bords gelés", en: "Drive in the middle of the road to avoid icy edges" }
+        },
+        correctAnswers: ["A","C"],
+        answerCount: 2,
+        explanationFr: "Sur route verglacée, il faut augmenter fortement la distance de sécurité (elle peut être multipliée par 6 ou plus) et réduire sa vitesse en évitant toute manœuvre brusque (freinage, accélération, changement de direction). Freiner brusquement provoque un blocage des roues et une perte de contrôle.",
+        explanationEn: "On icy roads, you must significantly increase the safety distance (it can multiply by 6 or more) and reduce speed while avoiding any sudden maneuvers (braking, acceleration, direction changes). Sharp braking causes wheel lock-up and loss of control.",
+        trapNote: "Both A and C are correct — icy roads require BOTH increased distance AND reduced speed with smooth driving. Testing grip by braking hard is extremely dangerous.",
+        distractorNotes: {
+            B: "Braking sharply on ice causes wheel lock-up and loss of control — never 'test' grip this way.",
+            D: "Driving in the middle of the road is illegal and dangerous, especially with oncoming traffic."
+        },
+        vocabulary: [
+            { wordFr: "verglas", wordEn: "black ice", definition: "A thin, transparent layer of ice on the road surface, extremely slippery" },
+            { wordFr: "adhérence", wordEn: "grip / traction", definition: "The friction between tires and the road surface" },
+            { wordFr: "manœuvre brusque", wordEn: "sudden maneuver", definition: "Any abrupt steering, braking, or acceleration movement" }
+        ]
+    }    ,
+    {
+        id: 'route-052',
+        topic: 'route',
+        difficulty: 2,
+        questionFr: "Quelles sont les obligations du conducteur lorsqu'il circule dans une zone 30 ?",
+        questionEn: "What are the driver's obligations when driving in a Zone 30?",
+        options: {
+            A: { fr: "Respecter la limitation de vitesse à 30 km/h", en: "Observe the 30 km/h speed limit" },
+            B: { fr: "Céder le passage aux piétons qui s'engagent sur la chaussée", en: "Yield to pedestrians stepping onto the road" },
+            C: { fr: "Klaxonner pour avertir les piétons de sa présence", en: "Honk to warn pedestrians of your presence" },
+            D: { fr: "Stationner librement sur les trottoirs", en: "Park freely on sidewalks" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Dans une zone 30, la vitesse est limitée à 30 km/h et les piétons bénéficient d'une protection renforcée. Le conducteur doit céder le passage aux piétons qui s'engagent ou manifestent l'intention de traverser. Klaxonner en agglomération sans danger immédiat est interdit, et le stationnement sur les trottoirs est toujours interdit.",
+        explanationEn: "In a Zone 30, speed is limited to 30 km/h and pedestrians have enhanced protection. Drivers must yield to pedestrians stepping onto or showing intent to cross the road. Honking in built-up areas without immediate danger is prohibited, and parking on sidewalks is always prohibited.",
+        trapNote: "Zone 30 combines speed limits WITH enhanced pedestrian protection. Both A and B are mandatory obligations. Honking is not a valid warning method in town.",
+        distractorNotes: {
+            C: "Honking in built-up areas is only permitted in cases of immediate danger (Article R416-1). It is not a pedestrian warning tool.",
+            D: "Parking on sidewalks is prohibited everywhere in France, not just in Zone 30."
+        },
+        vocabulary: [
+            { wordFr: "zone 30", wordEn: "Zone 30", definition: "An area where speed is limited to 30 km/h with enhanced pedestrian safety" },
+            { wordFr: "s'engager sur la chaussée", wordEn: "to step onto the road", definition: "When a pedestrian begins to cross or shows clear intent to cross" }
+        ]
+    }    ,
+    {
+        id: 'route-053',
+        topic: 'route',
+        difficulty: 3,
+        questionFr: "Quels sont les risques liés à l'aquaplaning ?",
+        questionEn: "What are the risks associated with aquaplaning?",
+        options: {
+            A: { fr: "Perte totale de la direction du véhicule", en: "Total loss of vehicle steering" },
+            B: { fr: "Les freins deviennent plus efficaces grâce à l'eau", en: "Brakes become more efficient thanks to the water" },
+            C: { fr: "Impossibilité de freiner efficacement", en: "Inability to brake effectively" },
+            D: { fr: "Le véhicule accélère automatiquement", en: "The vehicle accelerates automatically" }
+        },
+        correctAnswers: ["A","C"],
+        answerCount: 2,
+        explanationFr: "L'aquaplaning se produit lorsque les pneus perdent le contact avec la route à cause d'un film d'eau. Les conséquences sont la perte totale de la direction (les roues ne répondent plus) et l'impossibilité de freiner (les roues glissent sur l'eau). Il faut lever le pied de l'accélérateur sans freiner brusquement et maintenir le volant droit.",
+        explanationEn: "Aquaplaning occurs when tires lose contact with the road due to a film of water. The consequences are total loss of steering (wheels no longer respond) and inability to brake (wheels slide on water). You must ease off the accelerator without braking sharply and keep the steering wheel straight.",
+        trapNote: "During aquaplaning, you lose BOTH steering AND braking — the tires are floating on water. Water never improves brake performance.",
+        distractorNotes: {
+            B: "Water between tires and road eliminates friction — brakes become completely ineffective, not more efficient.",
+            D: "The vehicle does not accelerate — it loses all traction and control."
+        },
+        vocabulary: [
+            { wordFr: "aquaplaning", wordEn: "aquaplaning / hydroplaning", definition: "When tires ride on top of water, losing all contact with the road" },
+            { wordFr: "adhérence", wordEn: "grip / traction", definition: "The friction between tires and the road surface" }
+        ]
+    }    ,
+    {
+        id: 'route-054',
+        topic: 'route',
+        difficulty: 2,
+        questionFr: "Dans quelles situations devez-vous allumer vos feux de croisement en plein jour ?",
+        questionEn: "In which situations must you turn on your dipped headlights during the day?",
+        options: {
+            A: { fr: "En cas de pluie nécessitant l'utilisation des essuie-glaces", en: "When rain requires the use of windshield wipers" },
+            B: { fr: "Lorsque la visibilité est bonne et le soleil brille", en: "When visibility is good and the sun is shining" },
+            C: { fr: "En cas de brouillard réduisant la visibilité", en: "In foggy conditions reducing visibility" },
+            D: { fr: "Uniquement la nuit", en: "Only at night" }
+        },
+        correctAnswers: ["A","C"],
+        answerCount: 2,
+        explanationFr: "Les feux de croisement doivent être allumés dès que la visibilité est insuffisante, y compris en plein jour : pluie, brouillard, neige, ou tout autre phénomène réduisant la visibilité. L'article R416-4 impose l'usage des feux de croisement quand les conditions de visibilité l'exigent, de jour comme de nuit.",
+        explanationEn: "Dipped headlights must be turned on whenever visibility is insufficient, including during the day: rain, fog, snow, or any other phenomenon reducing visibility. Article R416-4 requires dipped headlights when visibility conditions demand it, day or night.",
+        trapNote: "Dipped headlights are NOT just for nighttime. Rain requiring wipers AND fog both mandate their use, even in broad daylight.",
+        distractorNotes: {
+            B: "In good visibility with sunshine, daytime running lights (DRL) are sufficient — no need for dipped headlights.",
+            D: "Dipped headlights are required whenever visibility is reduced, not only at night."
+        },
+        vocabulary: [
+            { wordFr: "feux de croisement", wordEn: "dipped headlights / low beams", definition: "Headlights that illuminate the road without blinding oncoming drivers" },
+            { wordFr: "essuie-glaces", wordEn: "windshield wipers", definition: "The wipers that clear rain from the windshield" }
+        ]
+    }    ,
+    {
+        id: 'route-055',
+        topic: 'route',
+        difficulty: 3,
+        questionFr: "Quelles affirmations sont correctes concernant la conduite sur une route de montagne ?",
+        questionEn: "Which statements are correct about driving on a mountain road?",
+        options: {
+            A: { fr: "En descente, il faut utiliser le frein moteur pour éviter la surchauffe des freins", en: "Downhill, you must use engine braking to avoid brake overheating" },
+            B: { fr: "Le véhicule qui monte a la priorité dans un passage étroit sans signalisation", en: "The uphill vehicle has priority in a narrow passage without signs" },
+            C: { fr: "Il faut accélérer dans les virages pour maintenir la stabilité", en: "You must accelerate in curves to maintain stability" },
+            D: { fr: "En cas de croisement difficile, le véhicule descendant doit reculer si c'est plus facile pour lui", en: "In a difficult passing situation, the downhill vehicle must reverse if it is easier for them" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "En montagne, le frein moteur est essentiel en descente pour éviter le phénomène de fading (surchauffe des freins qui les rend inefficaces). Dans un passage étroit sans signalisation, le véhicule qui monte a la priorité car il est plus difficile de redémarrer en côte. Le véhicule descendant doit reculer si nécessaire.",
+        explanationEn: "In mountains, engine braking is essential downhill to prevent brake fade (overheated brakes becoming ineffective). In a narrow passage without signs, the uphill vehicle has priority because restarting on a slope is more difficult. The downhill vehicle must reverse if necessary.",
+        trapNote: "Both engine braking (A) and uphill priority (B) are fundamental mountain driving rules. D sounds close but the phrasing 'if easier for them' is not the legal rule — the downhill vehicle MUST yield regardless of ease.",
+        distractorNotes: {
+            C: "Accelerating in curves increases the risk of skidding and loss of control — you must slow down before the curve.",
+            D: "The downhill vehicle must yield to the uphill vehicle regardless of convenience. The rule is not 'if easier' — it is an obligation."
+        },
+        vocabulary: [
+            { wordFr: "frein moteur", wordEn: "engine braking", definition: "Using a lower gear to slow the vehicle without using the brakes" },
+            { wordFr: "fading", wordEn: "brake fade", definition: "Loss of braking power due to overheating of brake components" }
+        ]
+    }    ,
+    {
+        id: 'autr-051',
+        topic: 'autres_usagers',
+        difficulty: 2,
+        questionFr: "Quelles précautions devez-vous prendre en présence d'un cycliste ?",
+        questionEn: "What precautions must you take in the presence of a cyclist?",
+        options: {
+            A: { fr: "Laisser au moins 1 mètre de distance latérale en agglomération", en: "Leave at least 1 meter lateral distance in built-up areas" },
+            B: { fr: "Laisser au moins 1,50 mètre de distance latérale hors agglomération", en: "Leave at least 1.50 meters lateral distance outside built-up areas" },
+            C: { fr: "Klaxonner pour signaler votre dépassement", en: "Honk to signal your overtaking" },
+            D: { fr: "Accélérer pour dépasser rapidement", en: "Accelerate to overtake quickly" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Lors du dépassement d'un cycliste, la distance latérale minimale est de 1 mètre en agglomération et 1,50 mètre hors agglomération (Article R414-4 du Code de la route). Klaxonner peut effrayer le cycliste et provoquer une chute. Il ne faut jamais accélérer dangereusement.",
+        explanationEn: "When overtaking a cyclist, the minimum lateral distance is 1 meter in built-up areas and 1.50 meters outside built-up areas (Article R414-4 of the Highway Code). Honking can startle the cyclist and cause a fall. Never accelerate dangerously.",
+        trapNote: "The lateral distance changes between town (1m) and open road (1.5m). Both are correct and mandatory. Many candidates forget the distinction.",
+        distractorNotes: {
+            C: "Honking near a cyclist can startle them and cause a fall — it is not recommended and can be considered dangerous.",
+            D: "Accelerating to overtake quickly is dangerous and does not respect safe passing rules."
+        },
+        vocabulary: [
+            { wordFr: "distance latérale", wordEn: "lateral distance", definition: "The side gap between your vehicle and the cyclist when overtaking" },
+            { wordFr: "dépassement", wordEn: "overtaking", definition: "The act of passing another road user" }
+        ]
+    }    ,
+    {
+        id: 'autr-052',
+        topic: 'autres_usagers',
+        difficulty: 3,
+        questionFr: "Quelles affirmations sont correctes concernant les piétons ?",
+        questionEn: "Which statements are correct about pedestrians?",
+        options: {
+            A: { fr: "Un piéton engagé sur un passage piéton a toujours la priorité", en: "A pedestrian on a crosswalk always has priority" },
+            B: { fr: "Vous devez céder le passage au piéton qui manifeste l'intention de traverser", en: "You must yield to a pedestrian showing intent to cross" },
+            C: { fr: "Le piéton n'a la priorité que lorsque le feu piéton est vert", en: "Pedestrians only have priority when the pedestrian light is green" },
+            D: { fr: "Le non-respect de la priorité piéton est sanctionné par un retrait de 6 points", en: "Failing to yield to a pedestrian costs 6 points" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Un piéton engagé sur un passage piéton a TOUJOURS la priorité (Article R415-11). Depuis 2018, vous devez aussi céder le passage au piéton qui manifeste clairement son intention de traverser. Le non-respect entraîne une amende de 135 € et un retrait de 6 points. La priorité du piéton ne dépend pas uniquement des feux.",
+        explanationEn: "A pedestrian on a crosswalk ALWAYS has priority (Article R415-11). Since 2018, you must also yield to a pedestrian clearly showing intent to cross. Failure to yield results in a 135 euro fine and 6 point deduction. Pedestrian priority does not depend solely on traffic lights.",
+        trapNote: "Three correct answers here. D is the trap — many candidates underestimate the severity. 6 points is correct (half the total 12-point license). C is wrong because pedestrians have priority on crosswalks regardless of traffic light status.",
+        distractorNotes: {
+            C: "Pedestrians have priority on crosswalks at all times, not only when their light is green. Even at a red pedestrian light, a pedestrian already on the crosswalk has priority."
+        },
+        vocabulary: [
+            { wordFr: "passage piéton", wordEn: "pedestrian crossing / crosswalk", definition: "Marked area where pedestrians cross the road" },
+            { wordFr: "manifester l'intention", wordEn: "to show intent", definition: "When a pedestrian clearly indicates they want to cross (approaching the curb, looking, stepping forward)" },
+            { wordFr: "retrait de points", wordEn: "point deduction", definition: "Points removed from your 12-point driving license" }
+        ]
+    }    ,
+    {
+        id: 'autr-053',
+        topic: 'autres_usagers',
+        difficulty: 2,
+        questionFr: "Quels sont les dangers spécifiques liés aux poids lourds ?",
+        questionEn: "What are the specific dangers associated with heavy trucks?",
+        options: {
+            A: { fr: "Ils ont des angles morts plus importants que les voitures", en: "They have larger blind spots than cars" },
+            B: { fr: "Leur distance de freinage est plus longue", en: "Their braking distance is longer" },
+            C: { fr: "Ils peuvent s'arrêter plus vite grâce à leurs freins plus puissants", en: "They can stop faster thanks to their more powerful brakes" },
+            D: { fr: "Ils créent un effet de souffle lors du dépassement", en: "They create a wind blast effect when overtaking" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Les poids lourds présentent trois dangers majeurs : des angles morts très importants (devant, derrière, et sur les côtés), une distance de freinage beaucoup plus longue due à leur masse, et un effet de souffle (appel d'air) qui peut déstabiliser les véhicules légers et les deux-roues lors du croisement ou du dépassement.",
+        explanationEn: "Heavy trucks present three major dangers: very large blind spots (front, rear, and sides), a much longer braking distance due to their mass, and a wind blast effect (air displacement) that can destabilize lighter vehicles and motorcycles when passing or being passed.",
+        trapNote: "Three correct answers. C is the trap — despite having larger brakes, the enormous mass of trucks means they ALWAYS need MORE distance to stop, not less.",
+        distractorNotes: {
+            C: "Despite having powerful brakes, the mass of a heavy truck means its braking distance is always longer than a car's. More powerful brakes do not compensate for 20+ tons of weight."
+        },
+        vocabulary: [
+            { wordFr: "angle mort", wordEn: "blind spot", definition: "An area around the vehicle not visible in mirrors" },
+            { wordFr: "effet de souffle", wordEn: "wind blast / slipstream effect", definition: "The air displacement caused by a large vehicle at speed" },
+            { wordFr: "poids lourd", wordEn: "heavy goods vehicle (HGV) / truck", definition: "A vehicle weighing more than 3.5 tonnes" }
+        ]
+    }    ,
+    {
+        id: 'autr-054',
+        topic: 'autres_usagers',
+        difficulty: 3,
+        questionFr: "Quelles précautions devez-vous prendre à l'approche d'un bus scolaire à l'arrêt ?",
+        questionEn: "What precautions must you take when approaching a stopped school bus?",
+        options: {
+            A: { fr: "Ralentir et être prêt à s'arrêter car des enfants peuvent traverser", en: "Slow down and be ready to stop as children may cross" },
+            B: { fr: "Dépasser le bus rapidement pour ne pas bloquer la circulation", en: "Overtake the bus quickly to avoid blocking traffic" },
+            C: { fr: "Être vigilant car les enfants sont imprévisibles et peuvent surgir", en: "Be vigilant as children are unpredictable and may dart out" },
+            D: { fr: "Klaxonner pour avertir les enfants de votre présence", en: "Honk to warn children of your presence" }
+        },
+        correctAnswers: ["A","C"],
+        answerCount: 2,
+        explanationFr: "À l'approche d'un bus scolaire à l'arrêt, vous devez impérativement ralentir et être prêt à vous arrêter. Les enfants sont des usagers vulnérables et imprévisibles qui peuvent traverser brusquement. Il ne faut jamais dépasser un bus scolaire à l'arrêt sans précaution extrême, ni klaxonner ce qui pourrait effrayer les enfants.",
+        explanationEn: "When approaching a stopped school bus, you must slow down and be ready to stop. Children are vulnerable and unpredictable road users who may cross suddenly. Never overtake a stopped school bus without extreme caution, and do not honk as it could startle children.",
+        trapNote: "Both slowing down (A) and vigilance for unpredictable children (C) are correct. Honking near children is counterproductive — it can cause panic.",
+        distractorNotes: {
+            B: "Overtaking a stopped school bus quickly is extremely dangerous — children may be crossing or about to cross.",
+            D: "Honking near children can startle them and cause them to run into the road unpredictably."
+        },
+        vocabulary: [
+            { wordFr: "bus scolaire", wordEn: "school bus", definition: "A bus transporting children to and from school" },
+            { wordFr: "usager vulnérable", wordEn: "vulnerable road user", definition: "Pedestrians, cyclists, children, elderly — road users at higher risk" }
+        ]
+    }    ,
+    {
+        id: 'autr-055',
+        topic: 'autres_usagers',
+        difficulty: 2,
+        questionFr: "Quelles affirmations sont correctes concernant les deux-roues motorisés ?",
+        questionEn: "Which statements are correct about powered two-wheelers?",
+        options: {
+            A: { fr: "Ils sont plus difficiles à voir qu'une voiture", en: "They are harder to see than a car" },
+            B: { fr: "Ils peuvent circuler entre les files de voitures (interfiles) dans certaines conditions", en: "They can ride between lanes of cars (filtering) under certain conditions" },
+            C: { fr: "Ils ont toujours la priorité sur les voitures", en: "They always have priority over cars" },
+            D: { fr: "Leur stabilité est affectée par le vent latéral et les irrégularités de la chaussée", en: "Their stability is affected by crosswind and road surface irregularities" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Les deux-roues sont plus difficiles à voir (profil étroit), leur stabilité est affectée par le vent et les imperfections de la route, et la circulation interfiles est autorisée depuis 2021 sur certaines routes (autoroutes et routes à 2x2 voies séparées, quand le trafic est congestionné, à 50 km/h maximum). Ils n'ont aucune priorité spéciale sur les voitures.",
+        explanationEn: "Two-wheelers are harder to see (narrow profile), their stability is affected by wind and road imperfections, and lane filtering has been authorized since 2021 on certain roads (motorways and dual carriageways, when traffic is congested, at 50 km/h maximum). They have no special priority over cars.",
+        trapNote: "Three correct answers. C is the trap — two-wheelers have NO special priority over cars. Filtering (B) is legal under specific conditions since the 2021 law.",
+        distractorNotes: {
+            C: "Two-wheelers have no special priority. The same rules of the road apply to all vehicles equally."
+        },
+        vocabulary: [
+            { wordFr: "circulation interfiles", wordEn: "lane filtering / lane splitting", definition: "Riding between two lanes of slow or stopped traffic" },
+            { wordFr: "deux-roues motorisé", wordEn: "powered two-wheeler", definition: "Motorcycles, scooters, and mopeds" },
+            { wordFr: "vent latéral", wordEn: "crosswind", definition: "Wind blowing from the side, which can push a two-wheeler off course" }
+        ]
+    }    ,
+    {
+        id: 'tunn-051',
+        topic: 'tunnels_passages_niveau',
+        difficulty: 3,
+        questionFr: "Quelles sont les règles à respecter en entrant dans un tunnel ?",
+        questionEn: "What rules must you follow when entering a tunnel?",
+        options: {
+            A: { fr: "Allumer les feux de croisement même si le tunnel est éclairé", en: "Turn on dipped headlights even if the tunnel is lit" },
+            B: { fr: "Retirer les lunettes de soleil pour adapter la vision", en: "Remove sunglasses to adapt your vision" },
+            C: { fr: "Augmenter sa vitesse pour traverser le tunnel plus rapidement", en: "Increase speed to cross the tunnel faster" },
+            D: { fr: "Respecter les distances de sécurité indiquées", en: "Observe the indicated safety distances" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "En entrant dans un tunnel, vous devez obligatoirement allumer vos feux de croisement (même si le tunnel est éclairé), retirer vos lunettes de soleil pour permettre à vos yeux de s'adapter à la luminosité réduite, et respecter les distances de sécurité affichées. Il ne faut jamais augmenter sa vitesse dans un tunnel.",
+        explanationEn: "When entering a tunnel, you must turn on your dipped headlights (even if the tunnel is lit), remove your sunglasses to allow your eyes to adapt to reduced light, and observe the posted safety distances. Never increase speed in a tunnel.",
+        trapNote: "Three correct answers. Even in well-lit tunnels, dipped headlights are mandatory — they help OTHER drivers see YOU. Sunglasses removal is often forgotten but essential for vision adaptation.",
+        distractorNotes: {
+            C: "Speed must be reduced, not increased, in a tunnel. Tunnels have specific speed limits that must be respected."
+        },
+        vocabulary: [
+            { wordFr: "feux de croisement", wordEn: "dipped headlights", definition: "Low beam headlights that illuminate without blinding" },
+            { wordFr: "distance de sécurité", wordEn: "safety distance", definition: "The minimum gap between vehicles, often marked with signs in tunnels" },
+            { wordFr: "luminosité", wordEn: "light level / luminosity", definition: "The amount of light in the environment" }
+        ]
+    }    ,
+    {
+        id: 'tunn-052',
+        topic: 'tunnels_passages_niveau',
+        difficulty: 3,
+        questionFr: "Que devez-vous faire en cas d'incendie dans un tunnel ?",
+        questionEn: "What must you do in case of a fire in a tunnel?",
+        options: {
+            A: { fr: "Arrêter le véhicule, couper le moteur et laisser la clé sur le contact", en: "Stop the vehicle, turn off the engine and leave the key in the ignition" },
+            B: { fr: "Continuer à rouler pour sortir du tunnel le plus vite possible", en: "Keep driving to exit the tunnel as quickly as possible" },
+            C: { fr: "Se diriger vers les issues de secours en suivant la signalisation", en: "Head toward emergency exits following the signs" },
+            D: { fr: "Rester dans le véhicule portes et fenêtres fermées", en: "Stay in the vehicle with doors and windows closed" }
+        },
+        correctAnswers: ["A","C"],
+        answerCount: 2,
+        explanationFr: "En cas d'incendie dans un tunnel : arrêtez le véhicule, coupez le moteur, laissez la clé sur le contact (pour que les secours puissent déplacer le véhicule), ne prenez pas vos bagages, et dirigez-vous vers les issues de secours indiquées. Ne restez JAMAIS dans le véhicule et ne tentez pas de faire demi-tour.",
+        explanationEn: "In case of fire in a tunnel: stop the vehicle, turn off the engine, leave the key in the ignition (so emergency services can move the vehicle), do not take your luggage, and head toward the indicated emergency exits. NEVER stay in the vehicle and do not try to turn around.",
+        trapNote: "Leaving the key in the ignition is a crucial detail many forget — rescue teams need to move vehicles. Staying in the vehicle (D) is deadly due to toxic smoke.",
+        distractorNotes: {
+            B: "Continuing to drive could bring you closer to the fire. You must stop and evacuate on foot toward emergency exits.",
+            D: "Staying in the vehicle is extremely dangerous — toxic smoke fills the tunnel rapidly. You must evacuate on foot immediately."
+        },
+        vocabulary: [
+            { wordFr: "issue de secours", wordEn: "emergency exit", definition: "An exit leading to a safe area or another tunnel tube" },
+            { wordFr: "clé sur le contact", wordEn: "key in the ignition", definition: "Leaving the key so emergency services can move the vehicle" }
+        ]
+    }    ,
+    {
+        id: 'tunn-053',
+        topic: 'tunnels_passages_niveau',
+        difficulty: 2,
+        questionFr: "Quelles affirmations sont correctes concernant les passages à niveau ?",
+        questionEn: "Which statements are correct about level crossings?",
+        options: {
+            A: { fr: "Le feu rouge clignotant interdit le franchissement même si les barrières sont levées", en: "The flashing red light prohibits crossing even if the barriers are up" },
+            B: { fr: "On peut franchir un passage à niveau si les demi-barrières ne bloquent que la voie opposée", en: "You can cross a level crossing if the half-barriers only block the opposite lane" },
+            C: { fr: "Il est interdit de s'arrêter sur un passage à niveau", en: "It is forbidden to stop on a level crossing" },
+            D: { fr: "Le klaxon doit être utilisé avant chaque passage à niveau", en: "The horn must be used before each level crossing" }
+        },
+        correctAnswers: ["A","C"],
+        answerCount: 2,
+        explanationFr: "Le feu rouge clignotant interdit formellement le franchissement, même si les barrières sont encore levées ou si vous ne voyez pas de train. Il est également strictement interdit de s'arrêter sur les voies ferrées. Les demi-barrières bloquent votre voie — ne les contournez jamais. Le klaxon n'est pas requis aux passages à niveau.",
+        explanationEn: "The flashing red light strictly prohibits crossing, even if the barriers are still up or you cannot see a train. It is also strictly forbidden to stop on the railway tracks. Half-barriers block your lane — never drive around them. The horn is not required at level crossings.",
+        trapNote: "A is the key trap — many candidates think they can cross if barriers are still up. The flashing red light alone is sufficient to prohibit crossing. The train may be approaching at high speed.",
+        distractorNotes: {
+            B: "Half-barriers block YOUR lane specifically. It is absolutely forbidden to drive around them to cross. They are designed this way to allow vehicles already ON the crossing to exit.",
+            D: "There is no requirement to honk before a level crossing. Honking is only mandatory in specific mountain road situations."
+        },
+        vocabulary: [
+            { wordFr: "passage à niveau", wordEn: "level crossing / railroad crossing", definition: "Where a road intersects with railway tracks at the same level" },
+            { wordFr: "feu rouge clignotant", wordEn: "flashing red light", definition: "A red light that flashes to indicate a train is approaching" }
+        ]
+    }    ,
+    {
+        id: 'tunn-054',
+        topic: 'tunnels_passages_niveau',
+        difficulty: 3,
+        questionFr: "Que devez-vous faire si votre véhicule tombe en panne sur un passage à niveau ?",
+        questionEn: "What must you do if your vehicle breaks down on a level crossing?",
+        options: {
+            A: { fr: "Faire descendre tous les passagers immédiatement", en: "Have all passengers exit immediately" },
+            B: { fr: "Tenter de pousser le véhicule hors des voies", en: "Try to push the vehicle off the tracks" },
+            C: { fr: "Attendre dans le véhicule les secours", en: "Wait in the vehicle for help" },
+            D: { fr: "Appeler le numéro d'urgence affiché au passage à niveau", en: "Call the emergency number displayed at the level crossing" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "En cas de panne sur un passage à niveau : faites immédiatement descendre tous les passagers et éloignez-les des voies. Tentez de dégager le véhicule en le poussant. Appelez le numéro d'urgence affiché sur les panneaux du passage à niveau pour prévenir la SNCF. Ne restez JAMAIS dans le véhicule sur les voies ferrées.",
+        explanationEn: "If you break down on a level crossing: immediately have all passengers exit and move away from the tracks. Try to push the vehicle off the tracks. Call the emergency number displayed on the level crossing signs to alert SNCF. NEVER stay in the vehicle on the railway tracks.",
+        trapNote: "Three correct answers with one deadly wrong option. C is the trap — staying in a vehicle on railway tracks can be fatal. All three other actions are correct and should be done in that priority order.",
+        distractorNotes: {
+            C: "Staying in the vehicle on railway tracks is extremely dangerous. A train traveling at 160 km/h cannot stop in time. You MUST evacuate immediately."
+        },
+        vocabulary: [
+            { wordFr: "panne", wordEn: "breakdown", definition: "When a vehicle stops working and cannot move under its own power" },
+            { wordFr: "voie ferrée", wordEn: "railway track", definition: "The metal rails on which trains travel" },
+            { wordFr: "dégager", wordEn: "to clear / to move away", definition: "To remove the vehicle from the dangerous area" }
+        ]
+    }    ,
+    {
+        id: 'tunn-055',
+        topic: 'tunnels_passages_niveau',
+        difficulty: 2,
+        questionFr: "Quelles actions sont interdites dans un tunnel ?",
+        questionEn: "Which actions are prohibited in a tunnel?",
+        options: {
+            A: { fr: "Faire demi-tour ou marche arrière", en: "Making a U-turn or reversing" },
+            B: { fr: "Dépasser un véhicule dans un tunnel à une seule voie par sens", en: "Overtaking a vehicle in a single-lane tunnel" },
+            C: { fr: "Utiliser les feux de croisement", en: "Using dipped headlights" },
+            D: { fr: "Circuler à la vitesse indiquée par les panneaux", en: "Driving at the speed indicated by signs" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Dans un tunnel, il est strictement interdit de faire demi-tour ou marche arrière, et le dépassement est interdit dans les tunnels à une voie par sens de circulation (signalé par une ligne continue). Les feux de croisement sont obligatoires (pas interdits) et vous devez respecter la vitesse affichée.",
+        explanationEn: "In a tunnel, it is strictly forbidden to make U-turns or reverse, and overtaking is prohibited in single-lane tunnels (indicated by a continuous line). Dipped headlights are mandatory (not prohibited) and you must respect the posted speed limit.",
+        trapNote: "C and D are traps — they describe MANDATORY actions, not prohibited ones. Dipped headlights are required, and respecting speed signs is an obligation. Read the question carefully: it asks what is PROHIBITED.",
+        distractorNotes: {
+            C: "Dipped headlights are MANDATORY in tunnels, not prohibited. This is the opposite of what the question asks.",
+            D: "Driving at the posted speed is an obligation, not a prohibition. The question asks what is forbidden."
+        },
+        vocabulary: [
+            { wordFr: "faire demi-tour", wordEn: "to make a U-turn", definition: "Turning 180 degrees to go back the way you came" },
+            { wordFr: "marche arrière", wordEn: "reversing", definition: "Driving backwards" }
+        ]
+    }    ,
+    {
+        id: 'circ-051',
+        topic: 'circulation',
+        difficulty: 3,
+        questionFr: "Quelles affirmations sont correctes concernant le dépassement ?",
+        questionEn: "Which statements are correct about overtaking?",
+        options: {
+            A: { fr: "Le dépassement se fait par la gauche sauf exceptions prévues par le Code", en: "Overtaking is done on the left except for exceptions specified by the Code" },
+            B: { fr: "Il est interdit de dépasser lorsque la visibilité vers l'avant est insuffisante", en: "It is forbidden to overtake when forward visibility is insufficient" },
+            C: { fr: "On peut dépasser par la droite sur autoroute si la voie de gauche est libre", en: "You can overtake on the right on a motorway if the left lane is free" },
+            D: { fr: "Il faut vérifier les rétroviseurs et l'angle mort avant de dépasser", en: "You must check mirrors and blind spots before overtaking" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Le dépassement se fait par la gauche (Article R414-1), sauf dans certains cas (tramway, véhicule tournant à gauche). Il est interdit quand la visibilité est insuffisante (virage, sommet de côte). Avant tout dépassement, il faut vérifier les rétroviseurs et l'angle mort. Le dépassement par la droite sur autoroute est interdit.",
+        explanationEn: "Overtaking is done on the left (Article R414-1), except in certain cases (tram, vehicle turning left). It is prohibited when visibility is insufficient (curves, hilltops). Before any overtaking, you must check mirrors and blind spots. Overtaking on the right on a motorway is prohibited.",
+        trapNote: "Three correct answers. C is the trap — overtaking on the right is ALWAYS prohibited on motorways, even if the left lane appears free. The condition 'if the left lane is free' makes it sound reasonable but it is still illegal.",
+        distractorNotes: {
+            C: "Overtaking on the right is prohibited on motorways. If the left lane is free, you should be driving in it (keep-right rule), not using the right lane to overtake."
+        },
+        vocabulary: [
+            { wordFr: "dépassement", wordEn: "overtaking", definition: "Passing another vehicle that is moving in the same direction" },
+            { wordFr: "angle mort", wordEn: "blind spot", definition: "Area not visible in mirrors, requiring a head check" },
+            { wordFr: "rétroviseur", wordEn: "mirror", definition: "Interior or exterior mirror for observing traffic behind" }
+        ]
+    }    ,
+    {
+        id: 'circ-052',
+        topic: 'circulation',
+        difficulty: 2,
+        questionFr: "Quelles sont les règles concernant l'utilisation des voies sur une route à trois voies dans le même sens ?",
+        questionEn: "What are the rules regarding lane use on a three-lane road in the same direction?",
+        options: {
+            A: { fr: "La voie de droite est la voie normale de circulation", en: "The right lane is the normal driving lane" },
+            B: { fr: "La voie du milieu et de gauche servent au dépassement", en: "The middle and left lanes are for overtaking" },
+            C: { fr: "On peut rester sur la voie du milieu en permanence si on roule vite", en: "You can stay in the middle lane permanently if driving fast" },
+            D: { fr: "La voie de gauche est réservée aux véhicules d'urgence", en: "The left lane is reserved for emergency vehicles" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Sur une route à plusieurs voies dans le même sens, la voie de droite est la voie normale de circulation. Les voies du milieu et de gauche sont réservées au dépassement. Après tout dépassement, vous devez vous rabattre sur la voie la plus à droite. Rester sur la voie du milieu sans dépasser constitue une infraction.",
+        explanationEn: "On a road with multiple lanes in the same direction, the right lane is the normal driving lane. The middle and left lanes are reserved for overtaking. After any overtaking, you must return to the rightmost lane. Staying in the middle lane without overtaking is an offense.",
+        trapNote: "The keep-right rule is fundamental in France. Both A and B are correct. C is the common real-world mistake — 'middle lane hogging' is actually an infraction punishable by a fine.",
+        distractorNotes: {
+            C: "Staying in the middle lane without overtaking is an infraction (Article R412-9). You must return to the right lane after overtaking regardless of speed.",
+            D: "The left lane is not reserved for emergency vehicles — it is for overtaking. Emergency vehicles can use any lane."
+        },
+        vocabulary: [
+            { wordFr: "se rabattre", wordEn: "to move back (to the right lane)", definition: "Returning to the right lane after completing an overtaking maneuver" },
+            { wordFr: "voie de circulation", wordEn: "traffic lane", definition: "A marked lane for vehicle movement in one direction" }
+        ]
+    }    ,
+    {
+        id: 'circ-053',
+        topic: 'circulation',
+        difficulty: 3,
+        questionFr: "Dans quelles situations le dépassement est-il interdit ?",
+        questionEn: "In which situations is overtaking prohibited?",
+        options: {
+            A: { fr: "À l'approche d'un sommet de côte sans visibilité suffisante", en: "When approaching a hilltop without sufficient visibility" },
+            B: { fr: "Lorsqu'un véhicule derrière vous a commencé à vous dépasser", en: "When a vehicle behind you has started to overtake you" },
+            C: { fr: "Sur une ligne droite avec bonne visibilité et ligne discontinue", en: "On a straight road with good visibility and a broken line" },
+            D: { fr: "Dans un virage sans visibilité", en: "In a curve without visibility" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Le dépassement est interdit : au sommet d'une côte sans visibilité, dans un virage sans visibilité, lorsqu'un véhicule vous dépasse déjà (double dépassement interdit), et sur ligne continue. En revanche, sur une ligne droite avec bonne visibilité et ligne discontinue, le dépassement est autorisé si toutes les conditions de sécurité sont remplies.",
+        explanationEn: "Overtaking is prohibited: at a hilltop without visibility, in a curve without visibility, when a vehicle is already overtaking you (double overtaking prohibited), and on a continuous line. However, on a straight road with good visibility and a broken line, overtaking is permitted if all safety conditions are met.",
+        trapNote: "Three situations where overtaking is banned. C is the one case where overtaking IS allowed — straight road, good visibility, broken line. The question asks where it is PROHIBITED.",
+        distractorNotes: {
+            C: "This describes ideal overtaking conditions — straight road, good visibility, broken center line. Overtaking is permitted here, not prohibited."
+        },
+        vocabulary: [
+            { wordFr: "sommet de côte", wordEn: "hilltop / crest", definition: "The top of a hill where visibility of oncoming traffic is limited" },
+            { wordFr: "ligne discontinue", wordEn: "broken / dashed line", definition: "A road marking that permits crossing or overtaking" },
+            { wordFr: "ligne continue", wordEn: "continuous / solid line", definition: "A road marking that prohibits crossing or overtaking" }
+        ]
+    }    ,
+    {
+        id: 'div-051',
+        topic: 'notions_diverses',
+        difficulty: 2,
+        questionFr: "Quelles sont les obligations en cas d'accident matériel sans blessé ?",
+        questionEn: "What are the obligations in case of a material accident with no injuries?",
+        options: {
+            A: { fr: "Remplir un constat amiable avec l'autre conducteur", en: "Fill out a joint accident report with the other driver" },
+            B: { fr: "Appeler obligatoirement la police", en: "Mandatory call to the police" },
+            C: { fr: "Échanger les coordonnées et informations d'assurance", en: "Exchange contact details and insurance information" },
+            D: { fr: "Déplacer les véhicules si possible pour ne pas gêner la circulation", en: "Move the vehicles if possible so as not to obstruct traffic" }
+        },
+        correctAnswers: ["A","C","D"],
+        answerCount: 3,
+        explanationFr: "En cas d'accident matériel sans blessé, vous devez : remplir un constat amiable (déclaration de sinistre), échanger les coordonnées et informations d'assurance avec l'autre conducteur, et si possible déplacer les véhicules pour dégager la chaussée. Appeler la police n'est pas obligatoire s'il n'y a ni blessé, ni délit de fuite, ni désaccord entre conducteurs.",
+        explanationEn: "In a material accident with no injuries, you must: fill out an accident report form, exchange contact details and insurance information with the other driver, and if possible move the vehicles to clear the road. Calling the police is not mandatory if there are no injuries, no hit-and-run, and no disagreement between drivers.",
+        trapNote: "Three correct answers. B is the trap — police involvement is NOT mandatory for minor material damage with no injuries. Most candidates assume police must always be called.",
+        distractorNotes: {
+            B: "Police are not required for a material-only accident without injuries. They should be called only if there is a disagreement, a hit-and-run, or if someone is injured."
+        },
+        vocabulary: [
+            { wordFr: "constat amiable", wordEn: "joint accident report / European accident statement", definition: "A standardized form filled by both drivers to document an accident" },
+            { wordFr: "accident matériel", wordEn: "material / property damage accident", definition: "An accident causing damage to vehicles or property but no bodily injuries" },
+            { wordFr: "assurance", wordEn: "insurance", definition: "Mandatory vehicle liability coverage" }
+        ]
+    }    ,
+    {
+        id: 'div-052',
+        topic: 'notions_diverses',
+        difficulty: 3,
+        questionFr: "Quelles affirmations sont correctes concernant le permis à points ?",
+        questionEn: "Which statements are correct about the points-based license system?",
+        options: {
+            A: { fr: "Le permis de conduire comporte un capital maximum de 12 points", en: "The driving license has a maximum of 12 points" },
+            B: { fr: "Un stage de récupération permet de récupérer jusqu'à 4 points", en: "A recovery course allows you to regain up to 4 points" },
+            C: { fr: "Lorsque le solde atteint 0 point, le permis est annulé automatiquement", en: "When the balance reaches 0 points, the license is automatically cancelled" },
+            D: { fr: "Les points sont retirés dès la constatation de l'infraction", en: "Points are deducted as soon as the offense is recorded" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Le permis français comporte 12 points (6 pour les permis probatoires). Un stage de sensibilisation à la sécurité routière permet de récupérer 4 points (sans dépasser le plafond de 12). À 0 point, le permis est automatiquement invalidé. Les points ne sont pas retirés immédiatement — ils sont retirés après le paiement de l'amende ou après la condamnation définitive.",
+        explanationEn: "The French license has 12 points (6 for probationary licenses). A road safety awareness course allows recovery of 4 points (without exceeding the 12-point maximum). At 0 points, the license is automatically invalidated. Points are not deducted immediately — they are deducted after the fine is paid or after the final conviction.",
+        trapNote: "D is the subtle trap. Points are NOT deducted immediately upon recording — they are deducted after the fine is paid or after a final court conviction. This delay is a frequently tested detail.",
+        distractorNotes: {
+            D: "Points are not deducted at the moment of the offense. They are deducted only after payment of the fine (for fixed penalties) or after a definitive court ruling."
+        },
+        vocabulary: [
+            { wordFr: "permis à points", wordEn: "points-based license", definition: "The French system where driving offenses result in point deductions from a 12-point total" },
+            { wordFr: "stage de sensibilisation", wordEn: "road safety awareness course", definition: "A paid 2-day course that restores up to 4 points on your license" },
+            { wordFr: "invalidation", wordEn: "invalidation / cancellation", definition: "Automatic loss of your license when your point balance reaches zero" }
         ]
     }
 ];
