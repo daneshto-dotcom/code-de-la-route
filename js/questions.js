@@ -3050,7 +3050,7 @@ const QUESTION_BANK = [
 
     // === CIRCULATION 12-20 ===
     {
-        id: 'circ-012', topic: 'circulation', difficulty: 2, signs: ['roundabout'],
+        id: 'circ-012', topic: 'circulation', difficulty: 2, signs: ['roundabout'], scenario: 'multi_lane_roundabout',
         questionFr: "Dans un carrefour giratoire, qui a la priorité ?",
         questionEn: "In a roundabout, who has priority?",
         options: {
@@ -3759,7 +3759,7 @@ const QUESTION_BANK = [
         ]
     },
     {
-        id: 'autr-015', topic: 'autres_usagers', difficulty: 2, signs: ['pedestrian_crossing'],
+        id: 'autr-015', topic: 'autres_usagers', difficulty: 2, signs: ['pedestrian_crossing'], scenario: 'pedestrian_crossing',
         questionFr: "Un piéton est engagé sur un passage piétons. Que devez-vous faire ?",
         questionEn: "A pedestrian is on a pedestrian crossing. What must you do?",
         options: {
@@ -5444,6 +5444,7 @@ const QUESTION_BANK = [
         id: 'prio-027',
         topic: 'priorite',
         difficulty: 3,
+        scenario: 'highway_entry',
         questionFr: "Lorsque vous vous insérez sur une autoroute depuis une voie d'accélération, qui a la priorité ?",
         questionEn: "When merging onto a motorway from an acceleration lane, who has priority?",
         options: {
@@ -6661,7 +6662,7 @@ const QUESTION_BANK = [
         ]
     },
     {
-        id: 'croi-022', topic: 'croisement_depassement', difficulty: 2, signs: ['pedestrian_crossing'],
+        id: 'croi-022', topic: 'croisement_depassement', difficulty: 2, signs: ['pedestrian_crossing'], scenario: 'pedestrian_crossing',
         questionFr: "Quelles sont les règles de dépassement à l'approche d'un passage piétons ?",
         questionEn: "What are the overtaking rules near a pedestrian crossing?",
         options: {
@@ -7981,6 +7982,7 @@ const QUESTION_BANK = [
         id: 'circ-034',
         topic: 'circulation',
         difficulty: 2,
+        scenario: 'highway_entry',
         questionFr: "Sur une voie d'accélération d'autoroute, que devez-vous faire ?",
         questionEn: "On a motorway acceleration lane, what must you do?",
         options: {
@@ -8925,6 +8927,7 @@ const QUESTION_BANK = [
         id: 'prio-033',
         topic: 'priorite',
         difficulty: 3,
+        scenario: 'mountain_road',
         questionFr: "Quelle est la règle de priorité lorsque deux véhicules se rencontrent sur un passage étroit ne permettant qu'un seul véhicule ?",
         questionEn: "What is the priority rule when two vehicles meet at a narrow passage allowing only one vehicle?",
         options: {
@@ -9006,6 +9009,7 @@ const QUESTION_BANK = [
         id: 'prio-036',
         topic: 'priorite',
         difficulty: 2,
+        scenario: 'lane_merge',
         questionFr: "Lors d'une réduction de voie (par exemple de 3 voies à 2), quelle est la règle de priorité ?",
         questionEn: "During a lane reduction (for example from 3 lanes to 2), what is the priority rule?",
         options: {
@@ -9195,6 +9199,7 @@ const QUESTION_BANK = [
         id: 'croi-034',
         topic: 'croisement_depassement',
         difficulty: 2,
+        scenario: 'mountain_road',
         questionFr: "Sur une route de montagne étroite, lors d'un croisement difficile, quel véhicule doit reculer en priorité ?",
         questionEn: "On a narrow mountain road, during a difficult meeting situation, which vehicle must reverse as a priority?",
         options: {
