@@ -75,7 +75,7 @@ const Progress = {
             return;
         }
 
-        list.innerHTML = '';
+        list.innerHTML = this.renderExamTrend(exams);
         [...exams].reverse().forEach((exam) => {
             const passed = exam.passed;
             const date = new Date(exam.timestamp);
@@ -210,7 +210,7 @@ const Progress = {
                 </div>
             </div>`;
 
-        // 30-day calendar grid
+        // 30-day calendar grid with accuracy overlay
         const dates = Object.keys(activityMap);
         const cellsHtml = dates.map(dateStr => {
             const d = activityMap[dateStr];
@@ -221,7 +221,17 @@ const Progress = {
             if (d.total >= 16) level = 3;
             else if (d.total >= 6) level = 2;
             else if (d.total >= 1) level = 1;
-            return `<div class="cal-cell cal-level-${level}${isToday ? ' cal-today' : ''}" title="${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}: ${d.total} questions (${d.correct} correct)"><span class="cal-day">${dayNum}</span></div>`;
+
+            // Accuracy border
+            let accClass = '';
+            if (d.total > 0) {
+                const acc = Math.round((d.correct / d.total) * 100);
+                accClass = acc >= 80 ? ' cal-acc-good' : acc >= 50 ? ' cal-acc-mid' : ' cal-acc-low';
+            }
+            const accPct = d.total > 0 ? Math.round((d.correct / d.total) * 100) + '%' : '';
+            const tooltip = `${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}: ${d.total} questions (${d.correct} correct)${accPct ? ' — ' + accPct : ''}`;
+
+            return `<div class="cal-cell cal-level-${level}${accClass}${isToday ? ' cal-today' : ''}" title="${tooltip}"><span class="cal-day">${dayNum}</span></div>`;
         }).join('');
 
         const legendHtml = `
@@ -232,10 +242,80 @@ const Progress = {
                 <div class="cal-cell cal-level-2 cal-legend-cell"></div>
                 <div class="cal-cell cal-level-3 cal-legend-cell"></div>
                 <span class="cal-legend-label">More</span>
+                <span class="cal-legend-sep">|</span>
+                <span class="cal-legend-label">Accuracy:</span>
+                <div class="cal-cell cal-acc-good cal-legend-cell"></div>
+                <div class="cal-cell cal-acc-mid cal-legend-cell"></div>
+                <div class="cal-cell cal-acc-low cal-legend-cell"></div>
             </div>`;
+
+        // Weekly accuracy trend (4 weeks)
+        const weeklyTrendHtml = this.renderWeeklyTrend(activityMap);
 
         container.innerHTML = statsHtml +
             `<div class="cal-grid">${cellsHtml}</div>` +
-            legendHtml;
+            legendHtml + weeklyTrendHtml;
+    },
+
+    renderWeeklyTrend(activityMap) {
+        const dates = Object.keys(activityMap);
+        const weeks = [[], [], [], []];
+        // Split 28 most recent days into 4 weeks
+        const recent = dates.slice(-28);
+        recent.forEach((d, i) => weeks[Math.floor(i / 7)].push(activityMap[d]));
+
+        const weekData = weeks.map((days, i) => {
+            let total = 0, correct = 0;
+            days.forEach(d => { total += d.total; correct += d.correct; });
+            const acc = total > 0 ? Math.round((correct / total) * 100) : 0;
+            return { label: `W${i + 1}`, acc, total };
+        });
+
+        // Only show if there's any activity
+        if (weekData.every(w => w.total === 0)) return '';
+
+        const bars = weekData.map(w => {
+            const colorClass = w.total === 0 ? 'trend-empty' : w.acc >= 80 ? 'trend-good' : w.acc >= 50 ? 'trend-mid' : 'trend-low';
+            return `<div class="trend-col">
+                <div class="trend-bar-wrapper">
+                    <div class="trend-bar ${colorClass}" style="height: ${Math.max(w.acc, 4)}%"></div>
+                </div>
+                <div class="trend-val">${w.total > 0 ? w.acc + '%' : '—'}</div>
+                <div class="trend-label">${w.label}</div>
+            </div>`;
+        }).join('');
+
+        return `<div class="weekly-trend">
+            <div class="trend-title">Weekly Accuracy</div>
+            <div class="trend-chart">${bars}</div>
+        </div>`;
+    },
+
+    renderExamTrend(exams) {
+        if (exams.length < 2) return '';
+        const recent = [...exams].slice(-5);
+        const maxScore = 40;
+        const passLine = (EXAM_PASS_THRESHOLD / maxScore) * 100;
+
+        const bars = recent.map((exam, i) => {
+            const pct = Math.round((exam.correctCount / maxScore) * 100);
+            const passed = exam.passed;
+            const date = new Date(exam.timestamp);
+            const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            return `<div class="exam-trend-col">
+                <div class="exam-trend-bar-wrapper">
+                    <div class="exam-trend-bar ${passed ? 'exam-trend-pass' : 'exam-trend-fail'}" style="height: ${pct}%"></div>
+                </div>
+                <div class="exam-trend-score">${exam.correctCount}</div>
+                <div class="exam-trend-date">${label}</div>
+            </div>`;
+        }).join('');
+
+        return `<div class="exam-trend">
+            <div class="exam-trend-chart">
+                <div class="exam-trend-pass-line" style="bottom: ${passLine}%" title="Pass: ${EXAM_PASS_THRESHOLD}/${maxScore}"></div>
+                ${bars}
+            </div>
+        </div>`;
     }
 };
