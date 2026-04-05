@@ -19,11 +19,20 @@ const Progress = {
         // Exam history
         this.renderExamHistory(exams);
 
+        // Achievements
+        this.renderAchievements();
+
         // Spaced repetition analytics
         this.renderSRAnalytics();
 
         // Study activity (last 7 days)
         this.renderStudyActivity();
+    },
+
+    renderAchievements() {
+        const container = document.getElementById('achievements-section');
+        if (!container) return;
+        container.innerHTML = Achievements.renderSection();
     },
 
     renderMasteryList(mastery) {

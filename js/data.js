@@ -40,3 +40,52 @@ const EXAM_TOTAL_QUESTIONS = 40;
 const EXAM_TIMER_SECONDS = 25;
 const EXAM_TOTAL_TIME = 1800; // 30 minutes in seconds
 const NATIONAL_PASS_RATE = 50.7;
+
+/* ============================================
+   Achievements & Gamification
+   ============================================ */
+
+const ACHIEVEMENTS = [
+    // Streak achievements
+    { id: 'streak_3', title: 'Getting Started', desc: '3-day study streak', icon: '🔥', category: 'streak', trigger: 'streak', value: 3 },
+    { id: 'streak_7', title: 'Week Warrior', desc: '7-day study streak', icon: '🔥', category: 'streak', trigger: 'streak', value: 7 },
+    { id: 'streak_14', title: 'Fortnight Focus', desc: '14-day study streak', icon: '🔥', category: 'streak', trigger: 'streak', value: 14 },
+    { id: 'streak_30', title: 'Monthly Master', desc: '30-day study streak', icon: '🔥', category: 'streak', trigger: 'streak', value: 30 },
+
+    // Practice achievements
+    { id: 'first_question', title: 'First Steps', desc: 'Answer your first question', icon: '👣', category: 'practice', trigger: 'attempts', value: 1 },
+    { id: 'questions_100', title: 'Century', desc: 'Answer 100 questions', icon: '💯', category: 'practice', trigger: 'attempts', value: 100 },
+    { id: 'questions_500', title: 'Dedicated', desc: 'Answer 500 questions', icon: '📚', category: 'practice', trigger: 'attempts', value: 500 },
+    { id: 'perfect_topic', title: 'Topic Ace', desc: '100% accuracy on any topic (10+ attempts)', icon: '🎯', category: 'practice', trigger: 'perfect_topic', value: 10 },
+
+    // Exam achievements
+    { id: 'first_exam', title: 'Exam Debut', desc: 'Complete your first mock exam', icon: '📝', category: 'exam', trigger: 'exams', value: 1 },
+    { id: 'first_pass', title: 'Passed!', desc: 'Pass a mock exam (35/40)', icon: '🎉', category: 'exam', trigger: 'exam_pass', value: 1 },
+    { id: 'three_passes', title: 'Consistent', desc: 'Pass 3 mock exams', icon: '🏆', category: 'exam', trigger: 'exam_pass', value: 3 },
+    { id: 'perfect_exam', title: 'Perfect Score', desc: 'Score 40/40 on a mock exam', icon: '👑', category: 'exam', trigger: 'perfect_exam', value: 1 },
+
+    // Mastery achievements
+    { id: 'first_mastery', title: 'First Mastery', desc: 'Master any topic (95%+, 40+ attempts)', icon: '⭐', category: 'mastery', trigger: 'topics_mastered', value: 1 },
+    { id: 'five_mastery', title: 'Halfway There', desc: 'Master 5 topics', icon: '⭐', category: 'mastery', trigger: 'topics_mastered', value: 5 },
+    { id: 'all_mastery', title: 'Complete Mastery', desc: 'Master all 10 topics', icon: '🌟', category: 'mastery', trigger: 'topics_mastered', value: 10 },
+    { id: 'vocab_100', title: 'Word Learner', desc: 'Learn 100 vocabulary words', icon: '📖', category: 'mastery', trigger: 'vocab_learned', value: 100 },
+    { id: 'vocab_all', title: 'Lexicon Complete', desc: 'Learn all vocabulary words', icon: '🏅', category: 'mastery', trigger: 'vocab_all', value: 1 }
+];
+
+const CHALLENGE_TYPES = [
+    { id: 'answer_10', desc: 'Answer 10 questions today', target: 10, track: 'attempts_today' },
+    { id: 'correct_5_topic', desc: 'Get 5 correct in {topic}', target: 5, track: 'correct_topic_today' },
+    { id: 'vocab_10', desc: 'Review 10 vocabulary words', target: 10, track: 'vocab_today' },
+    { id: 'exam_complete', desc: 'Complete a mock exam', target: 1, track: 'exams_today' },
+    { id: 'accuracy_80', desc: 'Maintain 80%+ accuracy today (min 10 Qs)', target: 80, track: 'accuracy_today' },
+    { id: 'streak_extend', desc: 'Extend your study streak', target: 1, track: 'streak_extended' }
+];
+
+const STREAK_MILESTONES = [3, 7, 14, 30];
+
+const STREAK_MESSAGES = {
+    3: { title: 'Hat Trick!', msg: '3 days in a row — building a habit!' },
+    7: { title: 'Week Warrior!', msg: '7 days strong — you\'re on fire!' },
+    14: { title: 'Two Weeks!', msg: '14 days — discipline like this will get you through the exam!' },
+    30: { title: 'Monthly Master!', msg: '30 days — incredible dedication, Sara!' }
+};

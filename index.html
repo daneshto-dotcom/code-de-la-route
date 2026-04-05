@@ -222,6 +222,12 @@
                         <button class="btn btn-primary btn-lg" id="start-custom-btn">Start Practice</button>
                     </div>
 
+                    <!-- Daily Challenge + Streak Shield -->
+                    <div class="gamification-row">
+                        <div id="streak-shield" class="streak-shield"></div>
+                        <div id="daily-challenge" class="daily-challenge-container"></div>
+                    </div>
+
                     <!-- Topic Drill (quick access) -->
                     <h3 class="section-title">Quick Topic Drill</h3>
                     <div class="topic-list" id="topic-list"></div>
@@ -381,6 +387,9 @@
                         </div>
                     </div>
 
+                    <h3 class="section-title">Achievements</h3>
+                    <div id="achievements-section"></div>
+
                     <h3 class="section-title">Study Activity (30 days)</h3>
                     <div class="study-activity-chart" id="study-activity"></div>
 
@@ -525,7 +534,7 @@
                         </div>
                     </div>
                     <div class="settings-about">
-                        <p>Code de la Route v3.6</p>
+                        <p>Code de la Route v3.8</p>
                         <p class="text-secondary" id="settings-question-count">540 questions | 35 road signs | 15 intersection diagrams | AI tutor | Vocab flashcards</p>
                         <p class="text-secondary">Dark mode | Study reminders | Knowledge graph | Content sync</p>
                         <p class="text-secondary">Built with love 🇫🇷</p>
@@ -586,6 +595,8 @@
     <script src="js/exam.js"></script>
     <script src="js/progress.js"></script>
     <script src="js/vocab.js"></script>
+    <script src="js/achievements.js"></script>
+    <script src="js/challenges.js"></script>
     <script src="js/content-sync.js"></script>
     <script src="js/notifications.js"></script>
     <script src="js/tutor.js"></script>

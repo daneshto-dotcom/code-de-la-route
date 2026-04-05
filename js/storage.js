@@ -17,7 +17,10 @@ const Storage = {
         VOCAB_MEMORY: 'fdtta_vocab_memory',
         DIAGNOSTIC_RESULT: 'fdtta_diagnostic_result',
         SIGN_PROGRESS: 'fdtta_sign_progress',
-        BEST_STREAK: 'fdtta_best_streak'
+        BEST_STREAK: 'fdtta_best_streak',
+        ACHIEVEMENTS: 'fdtta_achievements',
+        DAILY_CHALLENGE: 'fdtta_daily_challenge',
+        STREAK_FREEZES: 'fdtta_streak_freezes'
     },
 
     MAX_ATTEMPTS: 5000, // prune beyond this to prevent quota exhaustion
@@ -76,6 +79,9 @@ const Storage = {
         this._safeSet(this.KEYS.ATTEMPTS, JSON.stringify(attempts));
         this.updateTopicMastery(attempt.topic, attempt.isCorrect);
         this.updateStreak();
+        // Trigger gamification checks (if modules loaded)
+        if (typeof Achievements !== 'undefined') Achievements.checkAll();
+        if (typeof Challenges !== 'undefined') Challenges.updateProgress();
         return attempts;
     },
 
@@ -216,6 +222,9 @@ const Storage = {
             timestamp: Date.now()
         });
         this._safeSet(this.KEYS.EXAM_RESULTS, JSON.stringify(results));
+        // Trigger gamification checks (if modules loaded)
+        if (typeof Achievements !== 'undefined') Achievements.checkAll();
+        if (typeof Challenges !== 'undefined') Challenges.updateProgress();
     },
 
     // === BOOKMARKS ===
@@ -407,6 +416,68 @@ const Storage = {
         };
     },
 
+    // === ACHIEVEMENTS ===
+    getAchievements() {
+        return JSON.parse(localStorage.getItem(this.KEYS.ACHIEVEMENTS) || '{}');
+    },
+
+    unlockAchievement(id) {
+        const achievements = this.getAchievements();
+        if (achievements[id]) return false; // Already unlocked
+        achievements[id] = { unlockedAt: Date.now(), notified: false };
+        this._safeSet(this.KEYS.ACHIEVEMENTS, JSON.stringify(achievements));
+        return true;
+    },
+
+    isAchievementUnlocked(id) {
+        return !!this.getAchievements()[id];
+    },
+
+    markAchievementNotified(id) {
+        const achievements = this.getAchievements();
+        if (achievements[id]) {
+            achievements[id].notified = true;
+            this._safeSet(this.KEYS.ACHIEVEMENTS, JSON.stringify(achievements));
+        }
+    },
+
+    getUnlockedCount() {
+        return Object.keys(this.getAchievements()).length;
+    },
+
+    // === DAILY CHALLENGE ===
+    getDailyChallenge() {
+        const stored = JSON.parse(localStorage.getItem(this.KEYS.DAILY_CHALLENGE) || 'null');
+        const today = new Date().toISOString().slice(0, 10);
+        if (stored && stored.date === today) return stored;
+        return null; // Expired or not set
+    },
+
+    saveDailyChallenge(challenge) {
+        this._safeSet(this.KEYS.DAILY_CHALLENGE, JSON.stringify(challenge));
+    },
+
+    // === STREAK FREEZES ===
+    getStreakFreezes() {
+        return parseInt(localStorage.getItem(this.KEYS.STREAK_FREEZES) || '0');
+    },
+
+    addStreakFreeze() {
+        const current = this.getStreakFreezes();
+        if (current < 2) {
+            this._safeSet(this.KEYS.STREAK_FREEZES, (current + 1).toString());
+        }
+    },
+
+    useStreakFreeze() {
+        const current = this.getStreakFreezes();
+        if (current > 0) {
+            this._safeSet(this.KEYS.STREAK_FREEZES, (current - 1).toString());
+            return true;
+        }
+        return false;
+    },
+
     // === DATA EXPORT / IMPORT ===
     exportData() {
         const data = {
@@ -423,7 +494,10 @@ const Storage = {
             lastStudyDate: localStorage.getItem(this.KEYS.LAST_STUDY_DATE),
             diagnosticResult: this.getDiagnosticResult(),
             signProgress: JSON.parse(localStorage.getItem(this.KEYS.SIGN_PROGRESS) || '{}'),
-            vocabMemory: JSON.parse(localStorage.getItem(this.KEYS.VOCAB_MEMORY) || '{}')
+            vocabMemory: JSON.parse(localStorage.getItem(this.KEYS.VOCAB_MEMORY) || '{}'),
+            achievements: this.getAchievements(),
+            dailyChallenge: this.getDailyChallenge(),
+            streakFreezes: this.getStreakFreezes()
         };
         const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
@@ -450,6 +524,9 @@ const Storage = {
             if (data.diagnosticResult) this._safeSet(this.KEYS.DIAGNOSTIC_RESULT, JSON.stringify(data.diagnosticResult));
             if (data.signProgress) this._safeSet(this.KEYS.SIGN_PROGRESS, JSON.stringify(data.signProgress));
             if (data.vocabMemory) this._safeSet(this.KEYS.VOCAB_MEMORY, JSON.stringify(data.vocabMemory));
+            if (data.achievements) this._safeSet(this.KEYS.ACHIEVEMENTS, JSON.stringify(data.achievements));
+            if (data.dailyChallenge) this._safeSet(this.KEYS.DAILY_CHALLENGE, JSON.stringify(data.dailyChallenge));
+            if (data.streakFreezes) this._safeSet(this.KEYS.STREAK_FREEZES, data.streakFreezes.toString());
             return true;
         } catch (e) {
             console.error('Import failed:', e);

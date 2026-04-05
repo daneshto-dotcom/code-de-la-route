@@ -50,6 +50,10 @@ const App = {
         // Init notifications
         Notifications.init();
 
+        // Check achievements on load (in case state changed while app was closed)
+        Achievements.checkAll();
+        Challenges.updateProgress();
+
         // Listen for service worker update notifications
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.addEventListener('message', (event) => {
@@ -388,6 +392,32 @@ const App = {
             };
         } else {
             bookmarkSection.classList.add('hidden');
+        }
+
+        // Daily challenge card
+        const challengeContainer = document.getElementById('daily-challenge');
+        if (challengeContainer) {
+            challengeContainer.innerHTML = Challenges.renderCard();
+        }
+
+        // Streak shield
+        const streakShield = document.getElementById('streak-shield');
+        if (streakShield) {
+            const streak = Storage.getStreak();
+            const freezes = Storage.getStreakFreezes();
+            let level = 0;
+            if (streak >= 30) level = 3;
+            else if (streak >= 14) level = 2;
+            else if (streak >= 7) level = 1;
+            else if (streak >= 3) level = 0;
+            const icons = ['🔥', '🔥', '🔥', '🔥'];
+            streakShield.innerHTML = `
+                <div class="streak-shield-icon streak-level-${level}">${icons[level]}</div>
+                <div class="streak-shield-info">
+                    <div class="streak-shield-count">${streak} day${streak !== 1 ? 's' : ''}</div>
+                    <div class="streak-shield-freezes">${freezes > 0 ? '🛡️'.repeat(freezes) + ' freeze' + (freezes > 1 ? 's' : '') : ''}</div>
+                </div>
+            `;
         }
 
         // Smart recommendation
