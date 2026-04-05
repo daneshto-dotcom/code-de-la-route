@@ -10360,7 +10360,7 @@ const QUESTION_BANK = [
         id: 'circ-041',
         topic: 'circulation',
         difficulty: 1,
-        questionFr: "Quelle est la vitesse maximale autorisÃ©e pour un vÃ©hicule agricole sur route ?",
+        questionFr: "Quelle est la vitesse maximale autorisée pour un véhicule agricole sur route ?",
         questionEn: "What is the maximum speed allowed for an agricultural vehicle on the road?",
         options: {
             A: { fr: "25 km/h", en: "25 km/h" },
@@ -10370,7 +10370,7 @@ const QUESTION_BANK = [
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les vÃ©hicules agricoles sont limitÃ©s Ã  40 km/h sur route, sauf si leur carte grise indique une vitesse infÃ©rieure.",
+        explanationFr: "Les véhicules agricoles sont limités à 40 km/h sur route, sauf si leur carte grise indique une vitesse inférieure.",
         explanationEn: "Agricultural vehicles are limited to 40 km/h on the road, unless their registration document indicates a lower speed.",
         trapNote: "Many confuse 25 km/h (old regulation or specific machinery) with the current 40 km/h limit for most agricultural vehicles.",
         distractorNotes: {
@@ -10379,7 +10379,7 @@ const QUESTION_BANK = [
             D: "45 km/h is the limit for mopeds (cyclomoteurs), not agricultural vehicles"
         },
         vocabulary: [
-            { wordFr: "vÃ©hicule agricole", wordEn: "agricultural vehicle", definition: "Vehicle designed for farming use, subject to specific speed limits on public roads" },
+            { wordFr: "véhicule agricole", wordEn: "agricultural vehicle", definition: "Vehicle designed for farming use, subject to specific speed limits on public roads" },
             { wordFr: "carte grise", wordEn: "vehicle registration document", definition: "Official document containing technical details and legal limits of a vehicle" }
         ]
     },
@@ -10387,7 +10387,7 @@ const QUESTION_BANK = [
         id: 'circ-042',
         topic: 'circulation',
         difficulty: 2,
-        questionFr: "Dans un espace partagÃ© (zone de rencontre), quelle est la vitesse maximale autorisÃ©e ?",
+        questionFr: "Dans un espace partagé (zone de rencontre), quelle est la vitesse maximale autorisée ?",
         questionEn: "In a shared space (meeting zone), what is the maximum speed allowed?",
         options: {
             A: { fr: "30 km/h", en: "30 km/h" },
@@ -10397,7 +10397,7 @@ const QUESTION_BANK = [
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "La zone de rencontre impose une vitesse maximale de 20 km/h. Les piÃ©tons y ont la prioritÃ© et peuvent circuler sur la chaussÃ©e.",
+        explanationFr: "La zone de rencontre impose une vitesse maximale de 20 km/h. Les piétons y ont la priorité et peuvent circuler sur la chaussée.",
         explanationEn: "A meeting zone imposes a maximum speed of 20 km/h. Pedestrians have priority and may walk on the roadway.",
         trapNote: "Candidates often confuse zone de rencontre (20 km/h) with zone 30 (30 km/h). The key difference is pedestrian priority on the roadway.",
         distractorNotes: {
@@ -10407,25 +10407,25 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "zone de rencontre", wordEn: "meeting zone / shared space", definition: "Urban area limited to 20 km/h where pedestrians have absolute priority" },
-            { wordFr: "chaussÃ©e", wordEn: "roadway", definition: "The part of the road intended for vehicle traffic" },
-            { wordFr: "piÃ©ton", wordEn: "pedestrian", definition: "Person traveling on foot" }
+            { wordFr: "chaussée", wordEn: "roadway", definition: "The part of the road intended for vehicle traffic" },
+            { wordFr: "piéton", wordEn: "pedestrian", definition: "Person traveling on foot" }
         ]
     },
     {
         id: 'circ-043',
         topic: 'circulation',
         difficulty: 2,
-        questionFr: "Lors de la traversÃ©e d'une zone de travaux avec limitation temporaire Ã  50 km/h sur autoroute, quand pouvez-vous reprendre la vitesse normale ?",
+        questionFr: "Lors de la traversée d'une zone de travaux avec limitation temporaire à 50 km/h sur autoroute, quand pouvez-vous reprendre la vitesse normale ?",
         questionEn: "When passing through a roadworks zone with a temporary 50 km/h limit on a motorway, when can you resume normal speed?",
         options: {
-            A: { fr: "DÃ¨s que les travaux ne sont plus visibles", en: "As soon as the works are no longer visible" },
-            B: { fr: "AprÃ¨s le panneau de fin de limitation", en: "After the end-of-restriction sign" },
-            C: { fr: "AprÃ¨s 200 mÃ¨tres sans travaux visibles", en: "After 200 metres with no visible works" },
-            D: { fr: "DÃ¨s que la voie redevient Ã  deux files", en: "As soon as the lane returns to two lanes" }
+            A: { fr: "Dès que les travaux ne sont plus visibles", en: "As soon as the works are no longer visible" },
+            B: { fr: "Après le panneau de fin de limitation", en: "After the end-of-restriction sign" },
+            C: { fr: "Après 200 mètres sans travaux visibles", en: "After 200 metres with no visible works" },
+            D: { fr: "Dès que la voie redevient à deux files", en: "As soon as the lane returns to two lanes" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Une limitation temporaire de vitesse reste en vigueur jusqu'au panneau de fin de limitation ou de rappel d'une autre vitesse, jamais sur apprÃ©ciation visuelle.",
+        explanationFr: "Une limitation temporaire de vitesse reste en vigueur jusqu'au panneau de fin de limitation ou de rappel d'une autre vitesse, jamais sur appréciation visuelle.",
         explanationEn: "A temporary speed limit remains in force until the end-of-restriction sign or a sign indicating a different speed, never based on visual judgment.",
         trapNote: "Many drivers resume speed once works are no longer visible, but the restriction is legally binding until the official sign cancels it.",
         distractorNotes: {
@@ -10442,17 +10442,17 @@ const QUESTION_BANK = [
         id: 'circ-044',
         topic: 'circulation',
         difficulty: 2,
-        questionFr: "En cas de brouillard dense, quels feux devez-vous utiliser en complÃ©ment des feux de croisement ?",
+        questionFr: "En cas de brouillard dense, quels feux devez-vous utiliser en complément des feux de croisement ?",
         questionEn: "In dense fog, which lights should you use in addition to dipped headlights?",
         options: {
             A: { fr: "Les feux de route", en: "Full beam headlights" },
             B: { fr: "Les feux de brouillard avant uniquement", en: "Front fog lights only" },
-            C: { fr: "Les feux de brouillard avant et arriÃ¨re", en: "Front and rear fog lights" },
-            D: { fr: "Les feux de dÃ©tresse", en: "Hazard warning lights" }
+            C: { fr: "Les feux de brouillard avant et arrière", en: "Front and rear fog lights" },
+            D: { fr: "Les feux de détresse", en: "Hazard warning lights" }
         },
         correctAnswers: ["C"],
         answerCount: 1,
-        explanationFr: "En cas de brouillard dense (visibilitÃ© infÃ©rieure Ã  50 m), vous devez utiliser les feux de croisement accompagnÃ©s des feux de brouillard avant et arriÃ¨re. La vitesse est alors limitÃ©e Ã  50 km/h.",
+        explanationFr: "En cas de brouillard dense (visibilité inférieure à 50 m), vous devez utiliser les feux de croisement accompagnés des feux de brouillard avant et arrière. La vitesse est alors limitée à 50 km/h.",
         explanationEn: "In dense fog (visibility under 50 m), you must use dipped headlights with both front and rear fog lights. Speed is then limited to 50 km/h.",
         trapNote: "Candidates often forget the rear fog light or think front fog lights alone are sufficient. Both front AND rear are required in dense fog.",
         distractorNotes: {
@@ -10463,24 +10463,24 @@ const QUESTION_BANK = [
         vocabulary: [
             { wordFr: "feux de brouillard", wordEn: "fog lights", definition: "Specialized lights designed to improve visibility in fog, rain, or snow" },
             { wordFr: "feux de croisement", wordEn: "dipped headlights / low beams", definition: "Standard headlights that illuminate without blinding oncoming traffic" },
-            { wordFr: "visibilitÃ© rÃ©duite", wordEn: "reduced visibility", definition: "Conditions where seeing distance is significantly decreased" }
+            { wordFr: "visibilité réduite", wordEn: "reduced visibility", definition: "Conditions where seeing distance is significantly decreased" }
         ]
     },
     {
         id: 'circ-045',
         topic: 'circulation',
         difficulty: 3,
-        questionFr: "Quelles rÃ¨gles s'appliquent au stationnement en zone bleue ? (2 rÃ©ponses)",
+        questionFr: "Quelles règles s'appliquent au stationnement en zone bleue ? (2 réponses)",
         questionEn: "Which rules apply to parking in a blue zone? (2 answers)",
         options: {
             A: { fr: "Le disque de stationnement est obligatoire", en: "A parking disc is mandatory" },
-            B: { fr: "Le stationnement est limitÃ© Ã  1h30 en gÃ©nÃ©ral", en: "Parking is generally limited to 1h30" },
+            B: { fr: "Le stationnement est limité à 1h30 en général", en: "Parking is generally limited to 1h30" },
             C: { fr: "Le stationnement est payant avec horodateur", en: "Parking is paid with a parking meter" },
-            D: { fr: "Le stationnement est illimitÃ© le dimanche uniquement", en: "Parking is unlimited on Sundays only" }
+            D: { fr: "Le stationnement est illimité le dimanche uniquement", en: "Parking is unlimited on Sundays only" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "En zone bleue, le disque de stationnement est obligatoire et la durÃ©e est gÃ©nÃ©ralement limitÃ©e Ã  1h30. Ce n'est pas un stationnement payant â€” c'est un systÃ¨me de rotation gratuit contrÃ´lÃ© par le disque.",
+        explanationFr: "En zone bleue, le disque de stationnement est obligatoire et la durée est généralement limitée à 1h30. Ce n'est pas un stationnement payant â€” c'est un système de rotation gratuit contrôlé par le disque.",
         explanationEn: "In a blue zone, a parking disc is mandatory and duration is generally limited to 1h30. It is not paid parking â€” it is a free rotation system controlled by the disc.",
         trapNote: "Many confuse blue zones (free with disc) with paid parking zones. Others think the time limit varies widely, but 1h30 is the standard default.",
         distractorNotes: {
@@ -10497,17 +10497,17 @@ const QUESTION_BANK = [
         id: 'circ-046',
         topic: 'circulation',
         difficulty: 2,
-        questionFr: "Quelle est la rÃ¨gle concernant la recharge d'un vÃ©hicule Ã©lectrique sur une borne publique ?",
+        questionFr: "Quelle est la règle concernant la recharge d'un véhicule électrique sur une borne publique ?",
         questionEn: "What is the rule regarding charging an electric vehicle at a public charging station?",
         options: {
-            A: { fr: "Vous pouvez rester stationnÃ© aprÃ¨s la charge complÃ¨te sans limite", en: "You can remain parked after full charge without time limit" },
-            B: { fr: "Vous devez libÃ©rer la place dÃ¨s que la charge est terminÃ©e", en: "You must free the space as soon as charging is complete" },
-            C: { fr: "Seuls les vÃ©hicules 100% Ã©lectriques peuvent utiliser les bornes", en: "Only 100% electric vehicles can use charging stations" },
+            A: { fr: "Vous pouvez rester stationné après la charge complète sans limite", en: "You can remain parked after full charge without time limit" },
+            B: { fr: "Vous devez libérer la place dès que la charge est terminée", en: "You must free the space as soon as charging is complete" },
+            C: { fr: "Seuls les véhicules 100% électriques peuvent utiliser les bornes", en: "Only 100% electric vehicles can use charging stations" },
             D: { fr: "La charge est interdite la nuit sur voie publique", en: "Charging is prohibited at night on public roads" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Un vÃ©hicule Ã©lectrique ou hybride rechargeable doit libÃ©rer la place de stationnement dÃ©diÃ©e Ã  la recharge dÃ¨s que la charge est terminÃ©e. Rester stationnÃ© sans charger est considÃ©rÃ© comme une occupation abusive.",
+        explanationFr: "Un véhicule électrique ou hybride rechargeable doit libérer la place de stationnement dédiée à la recharge dès que la charge est terminée. Rester stationné sans charger est considéré comme une occupation abusive.",
         explanationEn: "An electric or plug-in hybrid vehicle must free the dedicated charging space as soon as charging is complete. Remaining parked without charging is considered improper use.",
         trapNote: "Many drivers treat charging spots as regular parking after charging is done. The space is reserved for active charging, not general parking.",
         distractorNotes: {
@@ -10517,24 +10517,24 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "borne de recharge", wordEn: "charging station", definition: "Public or private installation for recharging electric vehicle batteries" },
-            { wordFr: "vÃ©hicule hybride rechargeable", wordEn: "plug-in hybrid vehicle", definition: "Vehicle combining an internal combustion engine with a rechargeable electric motor" }
+            { wordFr: "véhicule hybride rechargeable", wordEn: "plug-in hybrid vehicle", definition: "Vehicle combining an internal combustion engine with a rechargeable electric motor" }
         ]
     },
     {
         id: 'circ-047',
         topic: 'circulation',
         difficulty: 3,
-        questionFr: "Lors d'un arrÃªt d'urgence sur autoroute, oÃ¹ devez-vous vous placer aprÃ¨s avoir immobilisÃ© votre vÃ©hicule sur la bande d'arrÃªt d'urgence ?",
+        questionFr: "Lors d'un arrêt d'urgence sur autoroute, où devez-vous vous placer après avoir immobilisé votre véhicule sur la bande d'arrêt d'urgence ?",
         questionEn: "During an emergency stop on a motorway, where should you position yourself after stopping your vehicle on the hard shoulder?",
         options: {
-            A: { fr: "Rester dans le vÃ©hicule avec la ceinture attachÃ©e", en: "Stay in the vehicle with seatbelt fastened" },
-            B: { fr: "Se placer derriÃ¨re la glissiÃ¨re de sÃ©curitÃ©, le plus loin possible du vÃ©hicule", en: "Position yourself behind the safety barrier, as far as possible from the vehicle" },
-            C: { fr: "Se tenir devant le vÃ©hicule pour signaler sa prÃ©sence", en: "Stand in front of the vehicle to signal your presence" },
-            D: { fr: "Rester Ã  cÃ´tÃ© du vÃ©hicule sur la bande d'arrÃªt d'urgence", en: "Stay next to the vehicle on the hard shoulder" }
+            A: { fr: "Rester dans le véhicule avec la ceinture attachée", en: "Stay in the vehicle with seatbelt fastened" },
+            B: { fr: "Se placer derrière la glissière de sécurité, le plus loin possible du véhicule", en: "Position yourself behind the safety barrier, as far as possible from the vehicle" },
+            C: { fr: "Se tenir devant le véhicule pour signaler sa présence", en: "Stand in front of the vehicle to signal your presence" },
+            D: { fr: "Rester à côté du véhicule sur la bande d'arrêt d'urgence", en: "Stay next to the vehicle on the hard shoulder" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "En cas d'arrÃªt d'urgence sur autoroute, tous les occupants doivent quitter le vÃ©hicule par le cÃ´tÃ© droit et se placer derriÃ¨re la glissiÃ¨re de sÃ©curitÃ©, en s'Ã©loignant du vÃ©hicule pour Ã©viter tout risque de collision.",
+        explanationFr: "En cas d'arrêt d'urgence sur autoroute, tous les occupants doivent quitter le véhicule par le côté droit et se placer derrière la glissière de sécurité, en s'éloignant du véhicule pour éviter tout risque de collision.",
         explanationEn: "In case of an emergency stop on a motorway, all occupants must exit the vehicle from the right side and position themselves behind the safety barrier, moving away from the vehicle to avoid collision risks.",
         trapNote: "The instinct is to stay in the car or stand nearby, but the hard shoulder is extremely dangerous â€” vehicles are hit from behind regularly.",
         distractorNotes: {
@@ -10543,25 +10543,25 @@ const QUESTION_BANK = [
             D: "The hard shoulder itself is a dangerous zone â€” you must get behind the barrier"
         },
         vocabulary: [
-            { wordFr: "bande d'arrÃªt d'urgence", wordEn: "hard shoulder / emergency lane", definition: "The strip along the right side of a motorway reserved for emergency stops" },
-            { wordFr: "glissiÃ¨re de sÃ©curitÃ©", wordEn: "safety barrier / guardrail", definition: "Metal barrier separating the road from the verge, designed to protect in case of collision" }
+            { wordFr: "bande d'arrêt d'urgence", wordEn: "hard shoulder / emergency lane", definition: "The strip along the right side of a motorway reserved for emergency stops" },
+            { wordFr: "glissière de sécurité", wordEn: "safety barrier / guardrail", definition: "Metal barrier separating the road from the verge, designed to protect in case of collision" }
         ]
     },
     {
         id: 'circ-048',
         topic: 'circulation',
         difficulty: 2,
-        questionFr: "Quelles sont les obligations lors du croisement d'un tramway Ã  un arrÃªt ? (2 rÃ©ponses)",
+        questionFr: "Quelles sont les obligations lors du croisement d'un tramway à un arrêt ? (2 réponses)",
         questionEn: "What are the obligations when passing a tram at a stop? (2 answers)",
         options: {
-            A: { fr: "S'arrÃªter si des piÃ©tons traversent pour rejoindre le trottoir", en: "Stop if pedestrians are crossing to reach the pavement" },
-            B: { fr: "Ralentir et Ãªtre prÃªt Ã  s'arrÃªter", en: "Slow down and be ready to stop" },
-            C: { fr: "AccÃ©lÃ©rer pour dÃ©passer rapidement le tramway", en: "Accelerate to pass the tram quickly" },
-            D: { fr: "Klaxonner pour avertir les piÃ©tons", en: "Honk to warn pedestrians" }
+            A: { fr: "S'arrêter si des piétons traversent pour rejoindre le trottoir", en: "Stop if pedestrians are crossing to reach the pavement" },
+            B: { fr: "Ralentir et être prêt à s'arrêter", en: "Slow down and be ready to stop" },
+            C: { fr: "Accélérer pour dépasser rapidement le tramway", en: "Accelerate to pass the tram quickly" },
+            D: { fr: "Klaxonner pour avertir les piétons", en: "Honk to warn pedestrians" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Ã€ l'approche d'un arrÃªt de tramway, vous devez ralentir et Ãªtre prÃªt Ã  vous arrÃªter. Si des piÃ©tons traversent pour rejoindre le trottoir, l'arrÃªt est obligatoire. Le tramway bÃ©nÃ©ficie d'une prioritÃ© quasi absolue.",
+        explanationFr: "À l'approche d'un arrêt de tramway, vous devez ralentir et être prêt à vous arrêter. Si des piétons traversent pour rejoindre le trottoir, l'arrêt est obligatoire. Le tramway bénéficie d'une priorité quasi absolue.",
         explanationEn: "When approaching a tram stop, you must slow down and be ready to stop. If pedestrians are crossing to reach the pavement, stopping is mandatory. Trams have near-absolute priority.",
         trapNote: "Candidates often think they only need to slow down OR stop, but both obligations apply: always slow down, and stop if pedestrians are crossing.",
         distractorNotes: {
@@ -10570,7 +10570,7 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "tramway", wordEn: "tram / streetcar", definition: "Urban rail vehicle running on tracks embedded in the road surface" },
-            { wordFr: "arrÃªt de tramway", wordEn: "tram stop", definition: "Designated area where trams stop to allow passengers to board or alight" },
+            { wordFr: "arrêt de tramway", wordEn: "tram stop", definition: "Designated area where trams stop to allow passengers to board or alight" },
             { wordFr: "trottoir", wordEn: "pavement / sidewalk", definition: "Raised path alongside a road reserved for pedestrians" }
         ]
     },
@@ -10578,17 +10578,17 @@ const QUESTION_BANK = [
         id: 'circ-049',
         topic: 'circulation',
         difficulty: 3,
-        questionFr: "Dans un convoi de vÃ©hicules, quelle distance minimale doit sÃ©parer chaque vÃ©hicule du convoi ?",
+        questionFr: "Dans un convoi de véhicules, quelle distance minimale doit séparer chaque véhicule du convoi ?",
         questionEn: "In a vehicle convoy, what minimum distance must separate each vehicle in the convoy?",
         options: {
-            A: { fr: "50 mÃ¨tres", en: "50 metres" },
-            B: { fr: "100 mÃ¨tres", en: "100 metres" },
-            C: { fr: "150 mÃ¨tres", en: "150 metres" },
-            D: { fr: "200 mÃ¨tres", en: "200 metres" }
+            A: { fr: "50 mètres", en: "50 metres" },
+            B: { fr: "100 mètres", en: "100 metres" },
+            C: { fr: "150 mètres", en: "150 metres" },
+            D: { fr: "200 mètres", en: "200 metres" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Les vÃ©hicules d'un convoi doivent maintenir une distance d'au moins 50 mÃ¨tres entre eux pour permettre aux autres usagers de dÃ©passer en sÃ©curitÃ© un vÃ©hicule Ã  la fois.",
+        explanationFr: "Les véhicules d'un convoi doivent maintenir une distance d'au moins 50 mètres entre eux pour permettre aux autres usagers de dépasser en sécurité un véhicule à la fois.",
         explanationEn: "Vehicles in a convoy must maintain a distance of at least 50 metres between them to allow other road users to safely overtake one vehicle at a time.",
         trapNote: "Candidates often confuse this with the 2-second rule or poids lourd (heavy vehicle) 50m rule on motorways. Here it specifically concerns organized convoys.",
         distractorNotes: {
@@ -10598,24 +10598,24 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "convoi", wordEn: "convoy", definition: "A group of vehicles traveling together in formation on public roads" },
-            { wordFr: "distance de sÃ©curitÃ©", wordEn: "safe following distance", definition: "Minimum space required between vehicles for safe stopping" }
+            { wordFr: "distance de sécurité", wordEn: "safe following distance", definition: "Minimum space required between vehicles for safe stopping" }
         ]
     },
     {
         id: 'circ-050',
         topic: 'circulation',
         difficulty: 3,
-        questionFr: "Quelle est la rÃ¨gle d'Ã©co-conduite concernant le rÃ©gime moteur optimal ?",
+        questionFr: "Quelle est la règle d'éco-conduite concernant le régime moteur optimal ?",
         questionEn: "What is the eco-driving rule regarding optimal engine speed?",
         options: {
             A: { fr: "Monter dans les tours avant de changer de vitesse pour un meilleur rendement", en: "Rev up before changing gear for better efficiency" },
-            B: { fr: "Passer le rapport supÃ©rieur avant 2 500 tr/min en essence et 2 000 tr/min en diesel", en: "Shift up before 2,500 rpm for petrol and 2,000 rpm for diesel" },
-            C: { fr: "Rester en 3Ã¨me vitesse le plus longtemps possible", en: "Stay in 3rd gear as long as possible" },
-            D: { fr: "Utiliser le point mort en descente pour Ã©conomiser du carburant", en: "Use neutral gear downhill to save fuel" }
+            B: { fr: "Passer le rapport supérieur avant 2 500 tr/min en essence et 2 000 tr/min en diesel", en: "Shift up before 2,500 rpm for petrol and 2,000 rpm for diesel" },
+            C: { fr: "Rester en 3ème vitesse le plus longtemps possible", en: "Stay in 3rd gear as long as possible" },
+            D: { fr: "Utiliser le point mort en descente pour économiser du carburant", en: "Use neutral gear downhill to save fuel" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "L'Ã©co-conduite recommande de passer le rapport supÃ©rieur avant 2 500 tr/min pour un moteur essence et avant 2 000 tr/min pour un moteur diesel afin de rÃ©duire la consommation de carburant.",
+        explanationFr: "L'éco-conduite recommande de passer le rapport supérieur avant 2 500 tr/min pour un moteur essence et avant 2 000 tr/min pour un moteur diesel afin de réduire la consommation de carburant.",
         explanationEn: "Eco-driving recommends shifting up before 2,500 rpm for petrol engines and before 2,000 rpm for diesel engines to reduce fuel consumption.",
         trapNote: "Many think higher revs give better power output (true) but confuse power with fuel efficiency. Also, neutral gear downhill is dangerous and does NOT save fuel on modern cars.",
         distractorNotes: {
@@ -10624,20 +10624,20 @@ const QUESTION_BANK = [
             D: "Neutral gear downhill removes engine braking (dangerous) and modern fuel injection already cuts fuel at zero throttle in gear"
         },
         vocabulary: [
-            { wordFr: "Ã©co-conduite", wordEn: "eco-driving", definition: "Driving techniques aimed at reducing fuel consumption and emissions" },
-            { wordFr: "rÃ©gime moteur", wordEn: "engine speed / RPM", definition: "The number of revolutions per minute of the engine crankshaft" },
-            { wordFr: "rapport supÃ©rieur", wordEn: "higher gear", definition: "The next gear up in the transmission sequence" }
+            { wordFr: "éco-conduite", wordEn: "eco-driving", definition: "Driving techniques aimed at reducing fuel consumption and emissions" },
+            { wordFr: "régime moteur", wordEn: "engine speed / RPM", definition: "The number of revolutions per minute of the engine crankshaft" },
+            { wordFr: "rapport supérieur", wordEn: "higher gear", definition: "The next gear up in the transmission sequence" }
         ]
     },
     {
         id: 'cond-041',
         topic: 'conducteur',
         difficulty: 1,
-        questionFr: "Un conducteur dont la vue nÃ©cessite une correction est-il obligÃ© de porter ses lunettes ou lentilles en conduisant ?",
+        questionFr: "Un conducteur dont la vue nécessite une correction est-il obligé de porter ses lunettes ou lentilles en conduisant ?",
         questionEn: "Is a driver whose vision requires correction obligated to wear glasses or contact lenses while driving?",
         options: {
-            A: { fr: "Oui, c'est obligatoire et mentionnÃ© sur le permis", en: "Yes, it is mandatory and noted on the licence" },
-            B: { fr: "Non, c'est seulement recommandÃ©", en: "No, it is only recommended" },
+            A: { fr: "Oui, c'est obligatoire et mentionné sur le permis", en: "Yes, it is mandatory and noted on the licence" },
+            B: { fr: "Non, c'est seulement recommandé", en: "No, it is only recommended" },
             C: { fr: "Oui, mais uniquement sur autoroute", en: "Yes, but only on motorways" },
             D: { fr: "Non, sauf pour les conducteurs professionnels", en: "No, except for professional drivers" }
         },
@@ -10660,17 +10660,17 @@ const QUESTION_BANK = [
         id: 'cond-042',
         topic: 'conducteur',
         difficulty: 2,
-        questionFr: "Quel est le taux d'alcool maximal autorisÃ© dans le sang pour un conducteur en pÃ©riode probatoire ?",
+        questionFr: "Quel est le taux d'alcool maximal autorisé dans le sang pour un conducteur en période probatoire ?",
         questionEn: "What is the maximum blood alcohol level allowed for a driver in the probationary period?",
         options: {
             A: { fr: "0,5 g/l de sang", en: "0.5 g/l of blood" },
             B: { fr: "0,2 g/l de sang", en: "0.2 g/l of blood" },
-            C: { fr: "0,0 g/l de sang (tolÃ©rance zÃ©ro)", en: "0.0 g/l of blood (zero tolerance)" },
+            C: { fr: "0,0 g/l de sang (tolérance zéro)", en: "0.0 g/l of blood (zero tolerance)" },
             D: { fr: "0,8 g/l de sang", en: "0.8 g/l of blood" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les conducteurs en pÃ©riode probatoire (permis de moins de 3 ans, ou 2 ans en conduite accompagnÃ©e) sont soumis Ã  un taux maximal de 0,2 g/l de sang, soit pratiquement zÃ©ro verre d'alcool.",
+        explanationFr: "Les conducteurs en période probatoire (permis de moins de 3 ans, ou 2 ans en conduite accompagnée) sont soumis à un taux maximal de 0,2 g/l de sang, soit pratiquement zéro verre d'alcool.",
         explanationEn: "Drivers in the probationary period (licence held for less than 3 years, or 2 years with supervised driving) are subject to a maximum of 0.2 g/l of blood, meaning practically zero glasses of alcohol.",
         trapNote: "0.2 g/l is NOT zero tolerance â€” it allows for trace amounts from medication or food. But practically, it means no alcohol at all.",
         distractorNotes: {
@@ -10679,25 +10679,25 @@ const QUESTION_BANK = [
             D: "0.8 g/l is the old criminal threshold and has no relevance to probationary drivers"
         },
         vocabulary: [
-            { wordFr: "pÃ©riode probatoire", wordEn: "probationary period", definition: "The first 3 years (or 2 with conduite accompagnÃ©e) after obtaining a driving licence" },
-            { wordFr: "taux d'alcoolÃ©mie", wordEn: "blood alcohol level", definition: "The concentration of alcohol in the bloodstream, measured in grams per litre" }
+            { wordFr: "période probatoire", wordEn: "probationary period", definition: "The first 3 years (or 2 with conduite accompagnée) after obtaining a driving licence" },
+            { wordFr: "taux d'alcoolémie", wordEn: "blood alcohol level", definition: "The concentration of alcohol in the bloodstream, measured in grams per litre" }
         ]
     },
     {
         id: 'cond-043',
         topic: 'conducteur',
         difficulty: 2,
-        questionFr: "Lors d'un dÃ©pistage de stupÃ©fiants par les forces de l'ordre, que se passe-t-il si le test salivaire est positif ?",
+        questionFr: "Lors d'un dépistage de stupéfiants par les forces de l'ordre, que se passe-t-il si le test salivaire est positif ?",
         questionEn: "During a drug screening by law enforcement, what happens if the saliva test is positive?",
         options: {
-            A: { fr: "Le permis est immÃ©diatement annulÃ© dÃ©finitivement", en: "The licence is immediately cancelled permanently" },
-            B: { fr: "Une prise de sang est proposÃ©e pour confirmation", en: "A blood test is offered for confirmation" },
-            C: { fr: "Le conducteur reÃ§oit un simple avertissement", en: "The driver receives a simple warning" },
-            D: { fr: "Le vÃ©hicule est immÃ©diatement confisquÃ©", en: "The vehicle is immediately confiscated" }
+            A: { fr: "Le permis est immédiatement annulé définitivement", en: "The licence is immediately cancelled permanently" },
+            B: { fr: "Une prise de sang est proposée pour confirmation", en: "A blood test is offered for confirmation" },
+            C: { fr: "Le conducteur reçoit un simple avertissement", en: "The driver receives a simple warning" },
+            D: { fr: "Le véhicule est immédiatement confisqué", en: "The vehicle is immediately confiscated" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "En cas de test salivaire positif aux stupÃ©fiants, le conducteur peut demander une vÃ©rification par prise de sang. Le permis peut Ãªtre retenu immÃ©diatement, mais l'annulation dÃ©finitive requiert une dÃ©cision judiciaire.",
+        explanationFr: "En cas de test salivaire positif aux stupéfiants, le conducteur peut demander une vérification par prise de sang. Le permis peut être retenu immédiatement, mais l'annulation définitive requiert une décision judiciaire.",
         explanationEn: "If the saliva test is positive for drugs, the driver can request verification by blood test. The licence may be retained immediately, but permanent cancellation requires a judicial decision.",
         trapNote: "Candidates confuse licence retention (immediate administrative measure) with cancellation (judicial decision). The blood test is a right, not automatic.",
         distractorNotes: {
@@ -10706,7 +10706,7 @@ const QUESTION_BANK = [
             D: "Vehicle confiscation is a possible judicial penalty but not an immediate automatic measure at the roadside"
         },
         vocabulary: [
-            { wordFr: "dÃ©pistage de stupÃ©fiants", wordEn: "drug screening", definition: "A test conducted by law enforcement to detect the presence of illegal drugs" },
+            { wordFr: "dépistage de stupéfiants", wordEn: "drug screening", definition: "A test conducted by law enforcement to detect the presence of illegal drugs" },
             { wordFr: "test salivaire", wordEn: "saliva test", definition: "A quick screening method using saliva to detect recent drug use" },
             { wordFr: "prise de sang", wordEn: "blood test", definition: "A laboratory analysis of blood used to confirm drug or alcohol presence" }
         ]
@@ -10715,26 +10715,26 @@ const QUESTION_BANK = [
         id: 'cond-044',
         topic: 'conducteur',
         difficulty: 3,
-        questionFr: "Qu'est-ce qu'un Ã©thylotest anti-dÃ©marrage (EAD) et quand peut-il Ãªtre imposÃ© ?",
+        questionFr: "Qu'est-ce qu'un éthylotest anti-démarrage (EAD) et quand peut-il être imposé ?",
         questionEn: "What is an alcohol interlock device (EAD) and when can it be imposed?",
         options: {
-            A: { fr: "Un dispositif obligatoire sur tous les vÃ©hicules neufs depuis 2024", en: "A device mandatory on all new vehicles since 2024" },
-            B: { fr: "Un dispositif imposÃ© par le juge en alternative Ã  la suspension du permis pour conduite en Ã©tat d'ivresse", en: "A device imposed by the judge as an alternative to licence suspension for drunk driving" },
-            C: { fr: "Un contrÃ´le technique supplÃ©mentaire pour les vÃ©hicules de plus de 10 ans", en: "An additional technical inspection for vehicles over 10 years old" },
-            D: { fr: "Un Ã©thylotest chimique que chaque conducteur doit avoir dans son vÃ©hicule", en: "A chemical breathalyser that every driver must have in their vehicle" }
+            A: { fr: "Un dispositif obligatoire sur tous les véhicules neufs depuis 2024", en: "A device mandatory on all new vehicles since 2024" },
+            B: { fr: "Un dispositif imposé par le juge en alternative à la suspension du permis pour conduite en état d'ivresse", en: "A device imposed by the judge as an alternative to licence suspension for drunk driving" },
+            C: { fr: "Un contrôle technique supplémentaire pour les véhicules de plus de 10 ans", en: "An additional technical inspection for vehicles over 10 years old" },
+            D: { fr: "Un éthylotest chimique que chaque conducteur doit avoir dans son véhicule", en: "A chemical breathalyser that every driver must have in their vehicle" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "L'EAD est un dispositif installÃ© dans le vÃ©hicule qui empÃªche le dÃ©marrage si le taux d'alcool du conducteur dÃ©passe le seuil autorisÃ©. Il peut Ãªtre imposÃ© par un juge comme alternative Ã  la suspension ou annulation du permis en cas de conduite en Ã©tat d'ivresse.",
+        explanationFr: "L'EAD est un dispositif installé dans le véhicule qui empêche le démarrage si le taux d'alcool du conducteur dépasse le seuil autorisé. Il peut être imposé par un juge comme alternative à la suspension ou annulation du permis en cas de conduite en état d'ivresse.",
         explanationEn: "The EAD is a device installed in the vehicle that prevents starting if the driver's alcohol level exceeds the permitted threshold. It can be imposed by a judge as an alternative to licence suspension or cancellation for drunk driving.",
-        trapNote: "Many confuse the EAD (judicial device) with the chemical breathalyser (Ã©thylotest) that was once required in all vehicles. They are completely different things.",
+        trapNote: "Many confuse the EAD (judicial device) with the chemical breathalyser (éthylotest) that was once required in all vehicles. They are completely different things.",
         distractorNotes: {
             A: "The EAD is not mandatory on all vehicles â€” it is a judicial measure imposed on specific offenders",
-            C: "The EAD has nothing to do with technical inspections (contrÃ´le technique)",
+            C: "The EAD has nothing to do with technical inspections (contrôle technique)",
             D: "The in-vehicle breathalyser requirement was removed in 2020 â€” and it was never the same as an EAD"
         },
         vocabulary: [
-            { wordFr: "Ã©thylotest anti-dÃ©marrage (EAD)", wordEn: "alcohol interlock device", definition: "A device that requires the driver to blow into a breathalyser before the engine will start" },
+            { wordFr: "éthylotest anti-démarrage (EAD)", wordEn: "alcohol interlock device", definition: "A device that requires the driver to blow into a breathalyser before the engine will start" },
             { wordFr: "suspension du permis", wordEn: "licence suspension", definition: "Temporary withdrawal of the right to drive as an administrative or judicial penalty" }
         ]
     },
@@ -10742,7 +10742,7 @@ const QUESTION_BANK = [
         id: 'cond-045',
         topic: 'conducteur',
         difficulty: 2,
-        questionFr: "Combien de points un conducteur rÃ©cupÃ¨re-t-il aprÃ¨s un stage de sensibilisation Ã  la sÃ©curitÃ© routiÃ¨re ?",
+        questionFr: "Combien de points un conducteur récupère-t-il après un stage de sensibilisation à la sécurité routière ?",
         questionEn: "How many points does a driver recover after a road safety awareness course?",
         options: {
             A: { fr: "2 points", en: "2 points" },
@@ -10752,7 +10752,7 @@ const QUESTION_BANK = [
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Un stage de sensibilisation Ã  la sÃ©curitÃ© routiÃ¨re permet de rÃ©cupÃ©rer 4 points, dans la limite du plafond de 12 points (ou 6 points en pÃ©riode probatoire). Un seul stage par an est autorisÃ©.",
+        explanationFr: "Un stage de sensibilisation à la sécurité routière permet de récupérer 4 points, dans la limite du plafond de 12 points (ou 6 points en période probatoire). Un seul stage par an est autorisé.",
         explanationEn: "A road safety awareness course allows recovery of 4 points, up to the maximum of 12 points (or 6 in the probationary period). Only one course per year is allowed.",
         trapNote: "Candidates often think they recover all lost points or only 2. The fixed recovery is 4 points regardless of how many were lost.",
         distractorNotes: {
@@ -10769,17 +10769,17 @@ const QUESTION_BANK = [
         id: 'cond-046',
         topic: 'conducteur',
         difficulty: 3,
-        questionFr: "Quelle est la diffÃ©rence principale entre la conduite accompagnÃ©e (AAC) et la conduite supervisÃ©e ?",
+        questionFr: "Quelle est la différence principale entre la conduite accompagnée (AAC) et la conduite supervisée ?",
         questionEn: "What is the main difference between accompanied driving (AAC) and supervised driving?",
         options: {
-            A: { fr: "L'AAC est accessible dÃ¨s 15 ans, la conduite supervisÃ©e Ã  partir de 18 ans", en: "AAC is accessible from age 15, supervised driving from age 18" },
-            B: { fr: "La conduite supervisÃ©e n'exige aucune formation en auto-Ã©cole", en: "Supervised driving requires no driving school training" },
-            C: { fr: "L'AAC dure 3 ans minimum, la conduite supervisÃ©e n'a pas de durÃ©e minimale", en: "AAC lasts at least 3 years, supervised driving has no minimum duration" },
-            D: { fr: "La conduite supervisÃ©e permet de conduire seul aprÃ¨s 6 mois", en: "Supervised driving allows driving alone after 6 months" }
+            A: { fr: "L'AAC est accessible dès 15 ans, la conduite supervisée à partir de 18 ans", en: "AAC is accessible from age 15, supervised driving from age 18" },
+            B: { fr: "La conduite supervisée n'exige aucune formation en auto-école", en: "Supervised driving requires no driving school training" },
+            C: { fr: "L'AAC dure 3 ans minimum, la conduite supervisée n'a pas de durée minimale", en: "AAC lasts at least 3 years, supervised driving has no minimum duration" },
+            D: { fr: "La conduite supervisée permet de conduire seul après 6 mois", en: "Supervised driving allows driving alone after 6 months" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "L'apprentissage anticipÃ© de la conduite (AAC) est accessible dÃ¨s 15 ans avec un minimum de 3 000 km sur au moins 1 an. La conduite supervisÃ©e est accessible Ã  partir de 18 ans, aprÃ¨s un Ã©chec Ã  l'examen ou en complÃ©ment de formation, avec au moins 1 000 km sans durÃ©e minimale imposÃ©e.",
+        explanationFr: "L'apprentissage anticipé de la conduite (AAC) est accessible dès 15 ans avec un minimum de 3 000 km sur au moins 1 an. La conduite supervisée est accessible à partir de 18 ans, après un échec à l'examen ou en complément de formation, avec au moins 1 000 km sans durée minimale imposée.",
         explanationEn: "Early driving training (AAC) is accessible from age 15 with a minimum of 3,000 km over at least 1 year. Supervised driving is accessible from age 18, after failing the test or as additional training, with at least 1,000 km and no minimum duration.",
         trapNote: "Many confuse the two programmes. AAC is longer and starts younger; supervised driving is a shorter option for adults, often after a failed test.",
         distractorNotes: {
@@ -10788,8 +10788,8 @@ const QUESTION_BANK = [
             D: "Neither programme allows solo driving â€” a supervising driver must always be present until the licence is obtained"
         },
         vocabulary: [
-            { wordFr: "conduite accompagnÃ©e (AAC)", wordEn: "accompanied driving", definition: "Early driving programme from age 15 requiring 3,000 km over at least 1 year with a supervisor" },
-            { wordFr: "conduite supervisÃ©e", wordEn: "supervised driving", definition: "Post-training driving programme from age 18 requiring 1,000 km with a supervisor" },
+            { wordFr: "conduite accompagnée (AAC)", wordEn: "accompanied driving", definition: "Early driving programme from age 15 requiring 3,000 km over at least 1 year with a supervisor" },
+            { wordFr: "conduite supervisée", wordEn: "supervised driving", definition: "Post-training driving programme from age 18 requiring 1,000 km with a supervisor" },
             { wordFr: "accompagnateur", wordEn: "supervising driver", definition: "An experienced driver who supervises a learner during accompanied or supervised driving" }
         ]
     },
@@ -10797,17 +10797,17 @@ const QUESTION_BANK = [
         id: 'cond-047',
         topic: 'conducteur',
         difficulty: 2,
-        questionFr: "Quelles sont les obligations d'un conducteur concernant l'assurance automobile ? (2 rÃ©ponses)",
+        questionFr: "Quelles sont les obligations d'un conducteur concernant l'assurance automobile ? (2 réponses)",
         questionEn: "What are a driver's obligations regarding car insurance? (2 answers)",
         options: {
-            A: { fr: "L'assurance responsabilitÃ© civile (au tiers) est le minimum obligatoire", en: "Third-party liability insurance is the minimum requirement" },
-            B: { fr: "L'attestation d'assurance doit pouvoir Ãªtre prÃ©sentÃ©e lors d'un contrÃ´le", en: "The insurance certificate must be producible during a check" },
-            C: { fr: "L'assurance tous risques est obligatoire pour les vÃ©hicules de moins de 5 ans", en: "Comprehensive insurance is mandatory for vehicles under 5 years old" },
+            A: { fr: "L'assurance responsabilité civile (au tiers) est le minimum obligatoire", en: "Third-party liability insurance is the minimum requirement" },
+            B: { fr: "L'attestation d'assurance doit pouvoir être présentée lors d'un contrôle", en: "The insurance certificate must be producible during a check" },
+            C: { fr: "L'assurance tous risques est obligatoire pour les véhicules de moins de 5 ans", en: "Comprehensive insurance is mandatory for vehicles under 5 years old" },
             D: { fr: "L'assurance n'est obligatoire que pour circuler sur autoroute", en: "Insurance is only mandatory for motorway driving" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Tout vÃ©hicule terrestre Ã  moteur doit Ãªtre couvert au minimum par une assurance responsabilitÃ© civile (au tiers). L'attestation d'assurance (carte verte ou mÃ©mo VÃ©hicule AssurÃ©) doit Ãªtre prÃ©sentable lors de tout contrÃ´le routier.",
+        explanationFr: "Tout véhicule terrestre à moteur doit être couvert au minimum par une assurance responsabilité civile (au tiers). L'attestation d'assurance (carte verte ou mémo Véhicule Assuré) doit être présentable lors de tout contrôle routier.",
         explanationEn: "Every motor land vehicle must be covered at minimum by third-party liability insurance. The insurance certificate (green card or Vehicle Insured memo) must be producible during any road check.",
         trapNote: "Some think comprehensive (tous risques) is legally required â€” only third-party is mandatory. Also, the green card was replaced by a digital system but proof must still be available.",
         distractorNotes: {
@@ -10815,7 +10815,7 @@ const QUESTION_BANK = [
             D: "Insurance is mandatory on ALL roads and even for vehicles that are simply parked, not just on motorways"
         },
         vocabulary: [
-            { wordFr: "assurance responsabilitÃ© civile", wordEn: "third-party liability insurance", definition: "The minimum mandatory insurance covering damage caused to others by the insured vehicle" },
+            { wordFr: "assurance responsabilité civile", wordEn: "third-party liability insurance", definition: "The minimum mandatory insurance covering damage caused to others by the insured vehicle" },
             { wordFr: "attestation d'assurance", wordEn: "insurance certificate", definition: "Document proving that a vehicle is insured, must be available for presentation to authorities" },
             { wordFr: "assurance tous risques", wordEn: "comprehensive insurance", definition: "Full coverage insurance including damage to one's own vehicle â€” optional, not legally required" }
         ]
@@ -10824,17 +10824,17 @@ const QUESTION_BANK = [
         id: 'cond-048',
         topic: 'conducteur',
         difficulty: 2,
-        questionFr: "Un conducteur Ã©tranger rÃ©sidant en France depuis plus d'un an doit-il Ã©changer son permis de conduire ?",
+        questionFr: "Un conducteur étranger résidant en France depuis plus d'un an doit-il échanger son permis de conduire ?",
         questionEn: "Must a foreign driver residing in France for more than one year exchange their driving licence?",
         options: {
-            A: { fr: "Non, un permis Ã©tranger est valable indÃ©finiment en France", en: "No, a foreign licence is valid indefinitely in France" },
-            B: { fr: "Oui, l'Ã©change est obligatoire dans l'annÃ©e suivant l'installation en France pour les permis non-europÃ©ens", en: "Yes, exchange is mandatory within the year following establishment in France for non-European licences" },
+            A: { fr: "Non, un permis étranger est valable indéfiniment en France", en: "No, a foreign licence is valid indefinitely in France" },
+            B: { fr: "Oui, l'échange est obligatoire dans l'année suivant l'installation en France pour les permis non-européens", en: "Yes, exchange is mandatory within the year following establishment in France for non-European licences" },
             C: { fr: "Oui, mais uniquement pour les conducteurs professionnels", en: "Yes, but only for professional drivers" },
             D: { fr: "Non, un permis international suffit", en: "No, an international licence is sufficient" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les titulaires d'un permis non-europÃ©en doivent l'Ã©changer contre un permis franÃ§ais dans l'annÃ©e suivant l'Ã©tablissement de leur rÃ©sidence en France. Les permis europÃ©ens (UE/EEE) sont reconnus sans Ã©change.",
+        explanationFr: "Les titulaires d'un permis non-européen doivent l'échanger contre un permis français dans l'année suivant l'établissement de leur résidence en France. Les permis européens (UE/EEE) sont reconnus sans échange.",
         explanationEn: "Holders of a non-European licence must exchange it for a French licence within one year of establishing residence in France. European licences (EU/EEA) are recognised without exchange.",
         trapNote: "EU/EEA licence holders do not need to exchange, but non-European licence holders do. Many forget the one-year deadline.",
         distractorNotes: {
@@ -10843,7 +10843,7 @@ const QUESTION_BANK = [
             D: "An international driving permit is only valid for temporary stays, not for residents"
         },
         vocabulary: [
-            { wordFr: "Ã©change de permis", wordEn: "licence exchange", definition: "The administrative process of converting a foreign driving licence to a French one" },
+            { wordFr: "échange de permis", wordEn: "licence exchange", definition: "The administrative process of converting a foreign driving licence to a French one" },
             { wordFr: "permis international", wordEn: "international driving permit", definition: "A translation document valid only temporarily alongside the original licence" }
         ]
     },
@@ -10855,13 +10855,13 @@ const QUESTION_BANK = [
         questionEn: "What is the mandatory continuous training (FCO) for professional drivers?",
         options: {
             A: { fr: "Une formation de 35 heures tous les 5 ans pour conserver la qualification CPC", en: "A 35-hour course every 5 years to maintain the CPC qualification" },
-            B: { fr: "Un examen mÃ©dical annuel obligatoire", en: "A mandatory annual medical examination" },
+            B: { fr: "Un examen médical annuel obligatoire", en: "A mandatory annual medical examination" },
             C: { fr: "Un stage de conduite de 10 heures tous les 3 ans", en: "A 10-hour driving course every 3 years" },
-            D: { fr: "Une mise Ã  jour du permis tous les 10 ans", en: "A licence renewal every 10 years" }
+            D: { fr: "Une mise à jour du permis tous les 10 ans", en: "A licence renewal every 10 years" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "La FCO (Formation Continue Obligatoire) est une formation de 35 heures rÃ©alisÃ©e tous les 5 ans. Elle est obligatoire pour les conducteurs professionnels de transport de marchandises ou de voyageurs pour renouveler leur carte de qualification de conducteur (CPC).",
+        explanationFr: "La FCO (Formation Continue Obligatoire) est une formation de 35 heures réalisée tous les 5 ans. Elle est obligatoire pour les conducteurs professionnels de transport de marchandises ou de voyageurs pour renouveler leur carte de qualification de conducteur (CPC).",
         explanationEn: "The FCO (Mandatory Continuous Training) is a 35-hour course taken every 5 years. It is mandatory for professional drivers of goods or passenger transport to renew their Driver Certificate of Professional Competence (CPC).",
         trapNote: "Candidates confuse FCO (professional training) with the general licence validity period or medical checks. The 35-hour/5-year cycle is very specific to CPC holders.",
         distractorNotes: {
@@ -10878,17 +10878,17 @@ const QUESTION_BANK = [
         id: 'cond-050',
         topic: 'conducteur',
         difficulty: 1,
-        questionFr: "En tant que conducteur, Ãªtes-vous responsable des passagers non attachÃ©s dans votre vÃ©hicule ?",
+        questionFr: "En tant que conducteur, êtes-vous responsable des passagers non attachés dans votre véhicule ?",
         questionEn: "As a driver, are you responsible for unbelted passengers in your vehicle?",
         options: {
             A: { fr: "Non, chaque passager est responsable de sa propre ceinture", en: "No, each passenger is responsible for their own seatbelt" },
             B: { fr: "Oui, pour les passagers mineurs uniquement", en: "Yes, for minor passengers only" },
-            C: { fr: "Oui, pour tous les passagers quel que soit leur Ã¢ge", en: "Yes, for all passengers regardless of age" },
+            C: { fr: "Oui, pour tous les passagers quel que soit leur âge", en: "Yes, for all passengers regardless of age" },
             D: { fr: "Oui, mais uniquement sur autoroute", en: "Yes, but only on motorways" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Le conducteur est responsable du port de la ceinture pour les passagers mineurs (moins de 18 ans). Les passagers adultes sont personnellement responsables et reÃ§oivent eux-mÃªmes l'amende en cas de non-port.",
+        explanationFr: "Le conducteur est responsable du port de la ceinture pour les passagers mineurs (moins de 18 ans). Les passagers adultes sont personnellement responsables et reçoivent eux-mêmes l'amende en cas de non-port.",
         explanationEn: "The driver is responsible for seatbelt wearing by minor passengers (under 18). Adult passengers are personally responsible and receive the fine themselves if unbelted.",
         trapNote: "Many think the driver is responsible for ALL passengers or for NONE. The distinction is age: minors = driver's responsibility, adults = their own.",
         distractorNotes: {
@@ -10897,7 +10897,7 @@ const QUESTION_BANK = [
             D: "The driver's responsibility for minor passengers applies on all roads, not just motorways"
         },
         vocabulary: [
-            { wordFr: "ceinture de sÃ©curitÃ©", wordEn: "seatbelt", definition: "Safety restraint required for all vehicle occupants in France" },
+            { wordFr: "ceinture de sécurité", wordEn: "seatbelt", definition: "Safety restraint required for all vehicle occupants in France" },
             { wordFr: "passager mineur", wordEn: "minor passenger", definition: "A vehicle occupant under 18 years of age, for whom the driver bears legal responsibility" }
         ]
     },
@@ -10905,17 +10905,17 @@ const QUESTION_BANK = [
         id: 'rout-041',
         topic: 'route',
         difficulty: 2,
-        questionFr: "Qu'est-ce que l'aquaplaning et Ã  partir de quelle Ã©paisseur d'eau le risque devient-il critique ?",
+        questionFr: "Qu'est-ce que l'aquaplaning et à partir de quelle épaisseur d'eau le risque devient-il critique ?",
         questionEn: "What is aquaplaning and from what depth of water does the risk become critical?",
         options: {
-            A: { fr: "Perte d'adhÃ©rence sur sol mouillÃ©, risque critique Ã  partir de 2-3 mm d'eau", en: "Loss of grip on wet road, critical risk from 2-3 mm of water" },
-            B: { fr: "Blocage des freins par l'eau, risque Ã  partir de 10 cm d'eau", en: "Brake lock from water, risk from 10 cm of water" },
-            C: { fr: "DÃ©rapage dÃ» au verglas, risque Ã  partir de 0Â°C", en: "Skidding due to black ice, risk from 0Â°C" },
-            D: { fr: "Usure accÃ©lÃ©rÃ©e des pneus par l'eau, risque au-dessus de 50 km/h", en: "Accelerated tyre wear from water, risk above 50 km/h" }
+            A: { fr: "Perte d'adhérence sur sol mouillé, risque critique à partir de 2-3 mm d'eau", en: "Loss of grip on wet road, critical risk from 2-3 mm of water" },
+            B: { fr: "Blocage des freins par l'eau, risque à partir de 10 cm d'eau", en: "Brake lock from water, risk from 10 cm of water" },
+            C: { fr: "Dérapage dû au verglas, risque à partir de 0Â°C", en: "Skidding due to black ice, risk from 0Â°C" },
+            D: { fr: "Usure accélérée des pneus par l'eau, risque au-dessus de 50 km/h", en: "Accelerated tyre wear from water, risk above 50 km/h" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "L'aquaplaning se produit lorsqu'une pellicule d'eau s'interpose entre les pneus et la chaussÃ©e, entraÃ®nant une perte totale d'adhÃ©rence. Le risque devient critique Ã  partir de seulement 2-3 mm d'eau, surtout Ã  grande vitesse ou avec des pneus usÃ©s.",
+        explanationFr: "L'aquaplaning se produit lorsqu'une pellicule d'eau s'interpose entre les pneus et la chaussée, entraînant une perte totale d'adhérence. Le risque devient critique à partir de seulement 2-3 mm d'eau, surtout à grande vitesse ou avec des pneus usés.",
         explanationEn: "Aquaplaning occurs when a film of water forms between the tyres and the road surface, causing total loss of grip. The risk becomes critical from just 2-3 mm of water, especially at high speed or with worn tyres.",
         trapNote: "Most people think you need deep water for aquaplaning. In reality, just 2-3 mm is enough at highway speeds with worn tyres.",
         distractorNotes: {
@@ -10925,7 +10925,7 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "aquaplaning", wordEn: "aquaplaning / hydroplaning", definition: "Loss of tyre contact with the road due to a layer of water between the tyre and road surface" },
-            { wordFr: "adhÃ©rence", wordEn: "grip / traction", definition: "The ability of tyres to maintain contact and friction with the road surface" },
+            { wordFr: "adhérence", wordEn: "grip / traction", definition: "The ability of tyres to maintain contact and friction with the road surface" },
             { wordFr: "pellicule d'eau", wordEn: "film of water", definition: "A thin layer of water on the road surface that can cause aquaplaning" }
         ]
     },
@@ -10933,17 +10933,17 @@ const QUESTION_BANK = [
         id: 'rout-042',
         topic: 'route',
         difficulty: 3,
-        questionFr: "Comment peut-on dÃ©tecter la prÃ©sence de verglas sur la route ?",
+        questionFr: "Comment peut-on détecter la présence de verglas sur la route ?",
         questionEn: "How can you detect the presence of black ice on the road?",
         options: {
-            A: { fr: "La route apparaÃ®t brillante et lÃ©gÃ¨rement plus foncÃ©e que d'habitude", en: "The road appears shiny and slightly darker than usual" },
+            A: { fr: "La route apparaît brillante et légèrement plus foncée que d'habitude", en: "The road appears shiny and slightly darker than usual" },
             B: { fr: "La route est toujours blanche et visible comme du givre", en: "The road is always white and visible like frost" },
-            C: { fr: "Le verglas est toujours annoncÃ© par un panneau de signalisation", en: "Black ice is always announced by a road sign" },
+            C: { fr: "Le verglas est toujours annoncé par un panneau de signalisation", en: "Black ice is always announced by a road sign" },
             D: { fr: "Le verglas ne se forme qu'en dessous de -10Â°C", en: "Black ice only forms below -10Â°C" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Le verglas est une fine couche de glace transparente qui rend la route brillante et lÃ©gÃ¨rement plus foncÃ©e. Contrairement au givre (blanc), le verglas est presque invisible, d'oÃ¹ son nom anglais 'black ice'. Il se forme dÃ¨s que la tempÃ©rature au sol est proche de 0Â°C.",
+        explanationFr: "Le verglas est une fine couche de glace transparente qui rend la route brillante et légèrement plus foncée. Contrairement au givre (blanc), le verglas est presque invisible, d'où son nom anglais 'black ice'. Il se forme dès que la température au sol est proche de 0Â°C.",
         explanationEn: "Black ice is a thin layer of transparent ice that makes the road shiny and slightly darker. Unlike frost (white), black ice is nearly invisible, hence its English name. It forms when the ground temperature is near 0Â°C.",
         trapNote: "The biggest danger of black ice is that it's nearly invisible. Many expect ice to look white like frost, but black ice is transparent and blends with the asphalt.",
         distractorNotes: {
@@ -10954,7 +10954,7 @@ const QUESTION_BANK = [
         vocabulary: [
             { wordFr: "verglas", wordEn: "black ice", definition: "A thin, transparent layer of ice on the road surface, nearly invisible and extremely slippery" },
             { wordFr: "givre", wordEn: "frost", definition: "White ice crystals visible on surfaces, formed by freezing moisture in the air" },
-            { wordFr: "tempÃ©rature au sol", wordEn: "ground temperature", definition: "The temperature at road surface level, which can differ from air temperature" }
+            { wordFr: "température au sol", wordEn: "ground temperature", definition: "The temperature at road surface level, which can differ from air temperature" }
         ]
     },
     {
@@ -10964,14 +10964,14 @@ const QUESTION_BANK = [
         questionFr: "Que signifie un panneau triangulaire indiquant une pente de 10% ?",
         questionEn: "What does a triangular sign indicating a 10% gradient mean?",
         options: {
-            A: { fr: "La route monte de 10 mÃ¨tres pour chaque 100 mÃ¨tres parcourus", en: "The road rises 10 metres for every 100 metres travelled" },
-            B: { fr: "La route est Ã  10 mÃ¨tres d'altitude", en: "The road is at 10 metres altitude" },
-            C: { fr: "La vitesse doit Ãªtre rÃ©duite de 10%", en: "Speed must be reduced by 10%" },
-            D: { fr: "La chaussÃ©e est rÃ©trÃ©cie de 10%", en: "The roadway is narrowed by 10%" }
+            A: { fr: "La route monte de 10 mètres pour chaque 100 mètres parcourus", en: "The road rises 10 metres for every 100 metres travelled" },
+            B: { fr: "La route est à 10 mètres d'altitude", en: "The road is at 10 metres altitude" },
+            C: { fr: "La vitesse doit être réduite de 10%", en: "Speed must be reduced by 10%" },
+            D: { fr: "La chaussée est rétrécie de 10%", en: "The roadway is narrowed by 10%" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Un gradient de 10% signifie que pour chaque 100 mÃ¨tres de distance horizontale, la route monte (ou descend) de 10 mÃ¨tres. Une pente forte nÃ©cessite d'adapter sa vitesse et d'utiliser le frein moteur en descente.",
+        explanationFr: "Un gradient de 10% signifie que pour chaque 100 mètres de distance horizontale, la route monte (ou descend) de 10 mètres. Une pente forte nécessite d'adapter sa vitesse et d'utiliser le frein moteur en descente.",
         explanationEn: "A 10% gradient means that for every 100 metres of horizontal distance, the road rises (or falls) by 10 metres. A steep gradient requires adapting speed and using engine braking on descents.",
         trapNote: "Many interpret the percentage as a speed reduction instruction or confuse it with a distance marker. It is purely about elevation change relative to distance.",
         distractorNotes: {
@@ -10982,24 +10982,24 @@ const QUESTION_BANK = [
         vocabulary: [
             { wordFr: "pente", wordEn: "gradient / slope", definition: "The steepness of a road expressed as a percentage of vertical rise over horizontal distance" },
             { wordFr: "frein moteur", wordEn: "engine braking", definition: "Using a lower gear to slow the vehicle without relying solely on the brake pedal" },
-            { wordFr: "dÃ©clivitÃ©", wordEn: "descent / downhill slope", definition: "A section of road that goes downhill" }
+            { wordFr: "déclivité", wordEn: "descent / downhill slope", definition: "A section of road that goes downhill" }
         ]
     },
     {
         id: 'rout-044',
         topic: 'route',
         difficulty: 2,
-        questionFr: "Quel est le rÃ´le des bandes sonores (bandes rugueuses) sur les bords de la chaussÃ©e ?",
+        questionFr: "Quel est le rôle des bandes sonores (bandes rugueuses) sur les bords de la chaussée ?",
         questionEn: "What is the purpose of rumble strips on the edges of the roadway?",
         options: {
-            A: { fr: "RÃ©duire le bruit de la circulation pour les riverains", en: "Reduce traffic noise for local residents" },
-            B: { fr: "Alerter le conducteur qui dÃ©rive vers le bord de la route par des vibrations et du bruit", en: "Alert the driver drifting towards the road edge through vibrations and noise" },
-            C: { fr: "AmÃ©liorer l'adhÃ©rence des pneus en cas de pluie", en: "Improve tyre grip in rainy conditions" },
-            D: { fr: "Indiquer une zone de stationnement autorisÃ©", en: "Indicate an authorized parking zone" }
+            A: { fr: "Réduire le bruit de la circulation pour les riverains", en: "Reduce traffic noise for local residents" },
+            B: { fr: "Alerter le conducteur qui dérive vers le bord de la route par des vibrations et du bruit", en: "Alert the driver drifting towards the road edge through vibrations and noise" },
+            C: { fr: "Améliorer l'adhérence des pneus en cas de pluie", en: "Improve tyre grip in rainy conditions" },
+            D: { fr: "Indiquer une zone de stationnement autorisé", en: "Indicate an authorized parking zone" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les bandes sonores (ou bandes rugueuses) sont des rainures ou reliefs sur le revÃªtement qui produisent des vibrations et un bruit caractÃ©ristique lorsqu'un vÃ©hicule les franchit. Elles alertent le conducteur somnolent ou inattentif qu'il quitte sa voie.",
+        explanationFr: "Les bandes sonores (ou bandes rugueuses) sont des rainures ou reliefs sur le revêtement qui produisent des vibrations et un bruit caractéristique lorsqu'un véhicule les franchit. Elles alertent le conducteur somnolent ou inattentif qu'il quitte sa voie.",
         explanationEn: "Rumble strips are grooves or raised profiles on the road surface that produce vibrations and a characteristic noise when a vehicle crosses them. They alert drowsy or inattentive drivers that they are leaving their lane.",
         trapNote: "The name 'bandes sonores' (sound strips) might suggest they relate to noise management. Their purpose is the opposite: to CREATE noise and vibration as a safety alert.",
         distractorNotes: {
@@ -11020,13 +11020,13 @@ const QUESTION_BANK = [
         questionEn: "What do temporary yellow road markings mean?",
         options: {
             A: { fr: "Ils indiquent une zone de stationnement payant", en: "They indicate a paid parking zone" },
-            B: { fr: "Ils remplacent les marquages blancs permanents et doivent Ãªtre suivis en prioritÃ©", en: "They replace permanent white markings and must be followed as priority" },
+            B: { fr: "Ils remplacent les marquages blancs permanents et doivent être suivis en priorité", en: "They replace permanent white markings and must be followed as priority" },
             C: { fr: "Ils indiquent une piste cyclable temporaire", en: "They indicate a temporary cycle lane" },
-            D: { fr: "Ils n'ont aucune valeur rÃ©glementaire", en: "They have no regulatory value" }
+            D: { fr: "Ils n'ont aucune valeur réglementaire", en: "They have no regulatory value" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les marquages jaunes sont des marquages temporaires qui prÃ©valent sur les marquages blancs permanents. Ils sont utilisÃ©s lors de travaux ou de dÃ©viations et dÃ©finissent les nouvelles voies de circulation Ã  suivre.",
+        explanationFr: "Les marquages jaunes sont des marquages temporaires qui prévalent sur les marquages blancs permanents. Ils sont utilisés lors de travaux ou de déviations et définissent les nouvelles voies de circulation à suivre.",
         explanationEn: "Yellow markings are temporary markings that take precedence over permanent white markings. They are used during roadworks or diversions and define the new traffic lanes to follow.",
         trapNote: "When both yellow and white markings are visible, drivers must follow the YELLOW ones. Many instinctively follow the more familiar white lines.",
         distractorNotes: {
@@ -11037,7 +11037,7 @@ const QUESTION_BANK = [
         vocabulary: [
             { wordFr: "marquage temporaire", wordEn: "temporary road marking", definition: "Yellow road markings used during works that override permanent white markings" },
             { wordFr: "marquage permanent", wordEn: "permanent road marking", definition: "Standard white road markings defining lanes, edges, and traffic flow" },
-            { wordFr: "dÃ©viation", wordEn: "diversion / detour", definition: "An alternative route set up to redirect traffic around an obstruction" }
+            { wordFr: "déviation", wordEn: "diversion / detour", definition: "An alternative route set up to redirect traffic around an obstruction" }
         ]
     },
     {
@@ -11048,13 +11048,13 @@ const QUESTION_BANK = [
         questionEn: "What is the purpose of an emergency refuge area on a motorway?",
         options: {
             A: { fr: "Permettre aux conducteurs de se reposer et dormir", en: "Allow drivers to rest and sleep" },
-            B: { fr: "Offrir un espace sÃ»r pour s'arrÃªter en cas de panne ou d'urgence entre deux aires de repos", en: "Provide a safe space to stop in case of breakdown or emergency between rest areas" },
-            C: { fr: "Permettre aux poids lourds de vÃ©rifier leur chargement", en: "Allow heavy vehicles to check their load" },
-            D: { fr: "Servir de point de contrÃ´le pour les pÃ©ages", en: "Serve as a checkpoint for tolls" }
+            B: { fr: "Offrir un espace sûr pour s'arrêter en cas de panne ou d'urgence entre deux aires de repos", en: "Provide a safe space to stop in case of breakdown or emergency between rest areas" },
+            C: { fr: "Permettre aux poids lourds de vérifier leur chargement", en: "Allow heavy vehicles to check their load" },
+            D: { fr: "Servir de point de contrôle pour les péages", en: "Serve as a checkpoint for tolls" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les aires de refuge sont des espaces amÃ©nagÃ©s sur les autoroutes, gÃ©nÃ©ralement tous les 2 km, permettant aux conducteurs de s'arrÃªter en sÃ©curitÃ© en cas d'urgence. Elles disposent d'un poste d'appel d'urgence.",
+        explanationFr: "Les aires de refuge sont des espaces aménagés sur les autoroutes, généralement tous les 2 km, permettant aux conducteurs de s'arrêter en sécurité en cas d'urgence. Elles disposent d'un poste d'appel d'urgence.",
         explanationEn: "Emergency refuge areas are spaces set up on motorways, typically every 2 km, allowing drivers to stop safely in an emergency. They have an emergency telephone.",
         trapNote: "Refuge areas are NOT rest areas â€” they are for emergencies only, not for planned stops, sleeping, or checking cargo.",
         distractorNotes: {
@@ -11071,17 +11071,17 @@ const QUESTION_BANK = [
         id: 'rout-047',
         topic: 'route',
         difficulty: 2,
-        questionFr: "Quels facteurs augmentent le risque d'aquaplaning ? (2 rÃ©ponses)",
+        questionFr: "Quels facteurs augmentent le risque d'aquaplaning ? (2 réponses)",
         questionEn: "Which factors increase the risk of aquaplaning? (2 answers)",
         options: {
-            A: { fr: "Des pneus usÃ©s avec une profondeur de sculpture infÃ©rieure Ã  1,6 mm", en: "Worn tyres with tread depth below 1.6 mm" },
-            B: { fr: "Une vitesse Ã©levÃ©e sur route mouillÃ©e", en: "High speed on a wet road" },
+            A: { fr: "Des pneus usés avec une profondeur de sculpture inférieure à 1,6 mm", en: "Worn tyres with tread depth below 1.6 mm" },
+            B: { fr: "Une vitesse élevée sur route mouillée", en: "High speed on a wet road" },
             C: { fr: "L'utilisation du frein moteur", en: "Using engine braking" },
-            D: { fr: "Une pression des pneus trop Ã©levÃ©e", en: "Tyre pressure that is too high" }
+            D: { fr: "Une pression des pneus trop élevée", en: "Tyre pressure that is too high" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "L'aquaplaning est favorisÃ© principalement par des pneus usÃ©s (qui ne peuvent plus Ã©vacuer l'eau) et une vitesse Ã©levÃ©e (qui augmente la pression de l'eau sous le pneu). La profondeur minimale lÃ©gale est de 1,6 mm mais les experts recommandent de changer les pneus dÃ¨s 3 mm.",
+        explanationFr: "L'aquaplaning est favorisé principalement par des pneus usés (qui ne peuvent plus évacuer l'eau) et une vitesse élevée (qui augmente la pression de l'eau sous le pneu). La profondeur minimale légale est de 1,6 mm mais les experts recommandent de changer les pneus dès 3 mm.",
         explanationEn: "Aquaplaning is primarily caused by worn tyres (which can no longer disperse water) and high speed (which increases water pressure under the tyre). The legal minimum depth is 1.6 mm but experts recommend changing tyres at 3 mm.",
         trapNote: "Over-inflated tyres can reduce contact patch but are not a primary aquaplaning factor. The key factors are speed and tread depth.",
         distractorNotes: {
@@ -11090,7 +11090,7 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "profondeur de sculpture", wordEn: "tread depth", definition: "The depth of the grooves in a tyre that channel water away from the contact patch" },
-            { wordFr: "pneu usÃ©", wordEn: "worn tyre", definition: "A tyre whose tread has been reduced by use, decreasing its ability to grip and evacuate water" },
+            { wordFr: "pneu usé", wordEn: "worn tyre", definition: "A tyre whose tread has been reduced by use, decreasing its ability to grip and evacuate water" },
             { wordFr: "pression des pneus", wordEn: "tyre pressure", definition: "The air pressure inside a tyre, measured in bars or PSI" }
         ]
     },
@@ -11098,17 +11098,17 @@ const QUESTION_BANK = [
         id: 'rout-048',
         topic: 'route',
         difficulty: 3,
-        questionFr: "Que signifie une manche Ã  air (indicateur de vent) sur le bord de la route ?",
+        questionFr: "Que signifie une manche à air (indicateur de vent) sur le bord de la route ?",
         questionEn: "What does a windsock (wind indicator) on the roadside mean?",
         options: {
-            A: { fr: "Elle indique la proximitÃ© d'un aÃ©rodrome", en: "It indicates the proximity of an airfield" },
-            B: { fr: "Elle signale une zone exposÃ©e aux vents latÃ©raux dangereux et indique leur force", en: "It signals an area exposed to dangerous crosswinds and indicates their strength" },
-            C: { fr: "Elle indique la direction de la dÃ©viation la plus proche", en: "It indicates the direction of the nearest diversion" },
-            D: { fr: "Elle signale une zone oÃ¹ la vitesse est limitÃ©e en cas de vent", en: "It signals a zone where speed is limited in case of wind" }
+            A: { fr: "Elle indique la proximité d'un aérodrome", en: "It indicates the proximity of an airfield" },
+            B: { fr: "Elle signale une zone exposée aux vents latéraux dangereux et indique leur force", en: "It signals an area exposed to dangerous crosswinds and indicates their strength" },
+            C: { fr: "Elle indique la direction de la déviation la plus proche", en: "It indicates the direction of the nearest diversion" },
+            D: { fr: "Elle signale une zone où la vitesse est limitée en cas de vent", en: "It signals a zone where speed is limited in case of wind" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les manches Ã  air installÃ©es sur les routes (ponts, viaducs, zones ouvertes) signalent des zones exposÃ©es aux vents latÃ©raux. L'horizontalitÃ© de la manche indique la force du vent : horizontale = vent trÃ¨s fort (danger maximal).",
+        explanationFr: "Les manches à air installées sur les routes (ponts, viaducs, zones ouvertes) signalent des zones exposées aux vents latéraux. L'horizontalité de la manche indique la force du vent : horizontale = vent très fort (danger maximal).",
         explanationEn: "Windsocks installed on roads (bridges, viaducts, open areas) signal zones exposed to crosswinds. The angle of the sock indicates wind strength: horizontal = very strong wind (maximum danger).",
         trapNote: "Many associate windsocks only with airports. On roads, they serve as real-time wind indicators for drivers, especially on bridges and exposed stretches.",
         distractorNotes: {
@@ -11117,8 +11117,8 @@ const QUESTION_BANK = [
             D: "No automatic speed limit is triggered by windsocks â€” they provide information for the driver to adapt"
         },
         vocabulary: [
-            { wordFr: "manche Ã  air", wordEn: "windsock", definition: "A fabric tube mounted on a pole that indicates wind direction and strength" },
-            { wordFr: "vent latÃ©ral", wordEn: "crosswind / side wind", definition: "Wind blowing perpendicular to the direction of travel, which can destabilize vehicles" },
+            { wordFr: "manche à air", wordEn: "windsock", definition: "A fabric tube mounted on a pole that indicates wind direction and strength" },
+            { wordFr: "vent latéral", wordEn: "crosswind / side wind", definition: "Wind blowing perpendicular to the direction of travel, which can destabilize vehicles" },
             { wordFr: "viaduc", wordEn: "viaduct", definition: "A long elevated bridge carrying a road over a valley or other obstacle" }
         ]
     },
@@ -11126,17 +11126,17 @@ const QUESTION_BANK = [
         id: 'rout-049',
         topic: 'route',
         difficulty: 2,
-        questionFr: "Lors de l'approche d'un pÃ©age sur autoroute, que devez-vous faire ?",
+        questionFr: "Lors de l'approche d'un péage sur autoroute, que devez-vous faire ?",
         questionEn: "When approaching a motorway toll booth, what should you do?",
         options: {
-            A: { fr: "Maintenir votre vitesse jusqu'Ã  la barriÃ¨re de pÃ©age", en: "Maintain your speed until the toll barrier" },
-            B: { fr: "Ralentir progressivement et choisir la file correspondant Ã  votre mode de paiement", en: "Slow down gradually and choose the lane matching your payment method" },
-            C: { fr: "S'arrÃªter sur la bande d'arrÃªt d'urgence pour prÃ©parer votre paiement", en: "Stop on the hard shoulder to prepare your payment" },
+            A: { fr: "Maintenir votre vitesse jusqu'à la barrière de péage", en: "Maintain your speed until the toll barrier" },
+            B: { fr: "Ralentir progressivement et choisir la file correspondant à votre mode de paiement", en: "Slow down gradually and choose the lane matching your payment method" },
+            C: { fr: "S'arrêter sur la bande d'arrêt d'urgence pour préparer votre paiement", en: "Stop on the hard shoulder to prepare your payment" },
             D: { fr: "Changer de file au dernier moment pour trouver la plus courte", en: "Change lanes at the last moment to find the shortest one" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Ã€ l'approche d'un pÃ©age, vous devez ralentir progressivement et vous diriger vers la file correspondant Ã  votre mode de paiement (tÃ©lÃ©pÃ©age, carte bancaire, espÃ¨ces). Les voies sont signalÃ©es par des pictogrammes au-dessus de chaque file.",
+        explanationFr: "À l'approche d'un péage, vous devez ralentir progressivement et vous diriger vers la file correspondant à votre mode de paiement (télépéage, carte bancaire, espèces). Les voies sont signalées par des pictogrammes au-dessus de chaque file.",
         explanationEn: "When approaching a toll, you must slow down gradually and head for the lane matching your payment method (electronic toll, bank card, cash). Lanes are marked by pictograms above each lane.",
         trapNote: "Last-minute lane changes near toll booths are a major accident cause. Drivers should choose their lane well in advance based on payment method signs.",
         distractorNotes: {
@@ -11145,26 +11145,26 @@ const QUESTION_BANK = [
             D: "Last-minute lane changes at toll approaches are extremely dangerous and cause many accidents"
         },
         vocabulary: [
-            { wordFr: "pÃ©age", wordEn: "toll booth / toll gate", definition: "A point on a motorway where drivers pay for road usage" },
-            { wordFr: "tÃ©lÃ©pÃ©age", wordEn: "electronic toll", definition: "An automatic payment system using an in-vehicle transponder to pass tolls without stopping" },
-            { wordFr: "barriÃ¨re de pÃ©age", wordEn: "toll barrier", definition: "The physical barrier at a toll station that lifts after payment" }
+            { wordFr: "péage", wordEn: "toll booth / toll gate", definition: "A point on a motorway where drivers pay for road usage" },
+            { wordFr: "télépéage", wordEn: "electronic toll", definition: "An automatic payment system using an in-vehicle transponder to pass tolls without stopping" },
+            { wordFr: "barrière de péage", wordEn: "toll barrier", definition: "The physical barrier at a toll station that lifts after payment" }
         ]
     },
     {
         id: 'rout-050',
         topic: 'route',
         difficulty: 3,
-        questionFr: "Quels sont les panneaux qui signalent une zone de frÃ©quence Ã©levÃ©e de traversÃ©e d'animaux sauvages ? (2 rÃ©ponses)",
+        questionFr: "Quels sont les panneaux qui signalent une zone de fréquence élevée de traversée d'animaux sauvages ? (2 réponses)",
         questionEn: "Which signs indicate a zone of high frequency of wild animal crossings? (2 answers)",
         options: {
             A: { fr: "Un panneau triangulaire avec une silhouette de cerf", en: "A triangular sign with a deer silhouette" },
-            B: { fr: "Un panonceau indiquant la distance de la zone concernÃ©e", en: "A supplementary plate indicating the distance of the affected zone" },
+            B: { fr: "Un panonceau indiquant la distance de la zone concernée", en: "A supplementary plate indicating the distance of the affected zone" },
             C: { fr: "Un panneau rond bleu avec un animal", en: "A round blue sign with an animal" },
             D: { fr: "Un feu orange clignotant permanent", en: "A permanent flashing amber light" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Les zones de traversÃ©e d'animaux sauvages sont signalÃ©es par un panneau triangulaire de danger (type A15a) montrant une silhouette d'animal, souvent accompagnÃ© d'un panonceau de distance prÃ©cisant l'Ã©tendue de la zone dangereuse.",
+        explanationFr: "Les zones de traversée d'animaux sauvages sont signalées par un panneau triangulaire de danger (type A15a) montrant une silhouette d'animal, souvent accompagné d'un panonceau de distance précisant l'étendue de la zone dangereuse.",
         explanationEn: "Wild animal crossing zones are marked with a triangular danger sign (type A15a) showing an animal silhouette, often accompanied by a distance plate specifying the extent of the danger zone.",
         trapNote: "Many forget the distance plate that accompanies the animal crossing sign. Without it, drivers don't know how long to remain vigilant.",
         distractorNotes: {
@@ -11174,24 +11174,24 @@ const QUESTION_BANK = [
         vocabulary: [
             { wordFr: "panneau de danger", wordEn: "danger/warning sign", definition: "A triangular sign with red border warning of a specific hazard ahead" },
             { wordFr: "panonceau", wordEn: "supplementary plate", definition: "A small rectangular sign placed below a main sign providing additional information" },
-            { wordFr: "traversÃ©e d'animaux", wordEn: "animal crossing", definition: "A zone where wild animals frequently cross the road" }
+            { wordFr: "traversée d'animaux", wordEn: "animal crossing", definition: "A zone where wild animals frequently cross the road" }
         ]
     },
     {
         id: 'autr-041',
         topic: 'autres_usagers',
         difficulty: 1,
-        questionFr: "Un piÃ©ton accompagnÃ© d'un chien guide d'aveugle traverse la route. Que devez-vous faire ?",
+        questionFr: "Un piéton accompagné d'un chien guide d'aveugle traverse la route. Que devez-vous faire ?",
         questionEn: "A pedestrian accompanied by a guide dog for the blind is crossing the road. What should you do?",
         options: {
-            A: { fr: "Klaxonner pour signaler votre prÃ©sence", en: "Honk to signal your presence" },
-            B: { fr: "S'arrÃªter et lui laisser la prioritÃ© absolue", en: "Stop and give them absolute priority" },
+            A: { fr: "Klaxonner pour signaler votre présence", en: "Honk to signal your presence" },
+            B: { fr: "S'arrêter et lui laisser la priorité absolue", en: "Stop and give them absolute priority" },
             C: { fr: "Ralentir et le contourner prudemment", en: "Slow down and carefully go around them" },
             D: { fr: "Faire des appels de phares pour l'avertir", en: "Flash your headlights to warn them" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Une personne aveugle ou malvoyante avec un chien guide ou une canne blanche bÃ©nÃ©ficie d'une prioritÃ© absolue. Tout conducteur doit s'arrÃªter et attendre que la personne ait terminÃ© sa traversÃ©e. Le klaxon ou les appels de phares sont inutiles et peuvent dÃ©sorienter le chien guide.",
+        explanationFr: "Une personne aveugle ou malvoyante avec un chien guide ou une canne blanche bénéficie d'une priorité absolue. Tout conducteur doit s'arrêter et attendre que la personne ait terminé sa traversée. Le klaxon ou les appels de phares sont inutiles et peuvent désorienter le chien guide.",
         explanationEn: "A blind or visually impaired person with a guide dog or white cane has absolute priority. All drivers must stop and wait until the person has completed their crossing. Honking or flashing lights is useless and can disorient the guide dog.",
         trapNote: "Honking or flashing seems helpful but is counterproductive â€” it can confuse the guide dog and disorient the person. Complete stop and patience is required.",
         distractorNotes: {
@@ -11202,24 +11202,24 @@ const QUESTION_BANK = [
         vocabulary: [
             { wordFr: "chien guide d'aveugle", wordEn: "guide dog for the blind", definition: "A specially trained dog that helps visually impaired people navigate safely" },
             { wordFr: "canne blanche", wordEn: "white cane", definition: "A mobility aid used by visually impaired people to detect obstacles" },
-            { wordFr: "prioritÃ© absolue", wordEn: "absolute priority", definition: "The highest level of right of way, requiring all other road users to stop" }
+            { wordFr: "priorité absolue", wordEn: "absolute priority", definition: "The highest level of right of way, requiring all other road users to stop" }
         ]
     },
     {
         id: 'autr-042',
         topic: 'autres_usagers',
         difficulty: 2,
-        questionFr: "Comment sont classÃ©s les fauteuils roulants Ã©lectriques (scooters de mobilitÃ©) dans le Code de la Route ?",
+        questionFr: "Comment sont classés les fauteuils roulants électriques (scooters de mobilité) dans le Code de la Route ?",
         questionEn: "How are electric wheelchairs (mobility scooters) classified in the Highway Code?",
         options: {
-            A: { fr: "Comme des vÃ©hicules Ã  moteur soumis au permis", en: "As motor vehicles requiring a licence" },
-            B: { fr: "Comme des piÃ©tons lorsqu'ils circulent Ã  allure du pas", en: "As pedestrians when they travel at walking pace" },
+            A: { fr: "Comme des véhicules à moteur soumis au permis", en: "As motor vehicles requiring a licence" },
+            B: { fr: "Comme des piétons lorsqu'ils circulent à allure du pas", en: "As pedestrians when they travel at walking pace" },
             C: { fr: "Comme des cyclistes devant emprunter les pistes cyclables", en: "As cyclists who must use cycle lanes" },
-            D: { fr: "Comme des cyclomoteurs limitÃ©s Ã  45 km/h", en: "As mopeds limited to 45 km/h" }
+            D: { fr: "Comme des cyclomoteurs limités à 45 km/h", en: "As mopeds limited to 45 km/h" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les personnes en fauteuil roulant Ã©lectrique ou scooter de mobilitÃ© sont assimilÃ©es aux piÃ©tons lorsqu'elles circulent Ã  allure du pas. Elles peuvent emprunter les trottoirs et les passages piÃ©tons et bÃ©nÃ©ficient des mÃªmes droits et protections.",
+        explanationFr: "Les personnes en fauteuil roulant électrique ou scooter de mobilité sont assimilées aux piétons lorsqu'elles circulent à allure du pas. Elles peuvent emprunter les trottoirs et les passages piétons et bénéficient des mêmes droits et protections.",
         explanationEn: "People in electric wheelchairs or mobility scooters are classified as pedestrians when travelling at walking pace. They may use pavements and pedestrian crossings and benefit from the same rights and protections.",
         trapNote: "Despite being motorised, mobility scooters at walking pace are legally pedestrians â€” not vehicles, cyclists, or mopeds.",
         distractorNotes: {
@@ -11228,28 +11228,28 @@ const QUESTION_BANK = [
             D: "Mobility scooters are limited to walking pace (6 km/h), nowhere near the 45 km/h moped classification"
         },
         vocabulary: [
-            { wordFr: "fauteuil roulant Ã©lectrique", wordEn: "electric wheelchair", definition: "A motorised chair used by people with mobility impairments" },
+            { wordFr: "fauteuil roulant électrique", wordEn: "electric wheelchair", definition: "A motorised chair used by people with mobility impairments" },
             { wordFr: "allure du pas", wordEn: "walking pace", definition: "A speed equivalent to that of a pedestrian, approximately 6 km/h" },
-            { wordFr: "scooter de mobilitÃ©", wordEn: "mobility scooter", definition: "A small motorised vehicle for people with reduced mobility" }
+            { wordFr: "scooter de mobilité", wordEn: "mobility scooter", definition: "A small motorised vehicle for people with reduced mobility" }
         ]
     },
     {
         id: 'autr-043',
         topic: 'autres_usagers',
         difficulty: 2,
-        questionFr: "Quelles rÃ¨gles s'appliquent aux quads (VTT Ã  moteur) sur la voie publique ?",
+        questionFr: "Quelles règles s'appliquent aux quads (VTT à moteur) sur la voie publique ?",
         questionEn: "What rules apply to quad bikes on public roads?",
         options: {
             A: { fr: "Ils sont interdits sur toutes les voies publiques", en: "They are prohibited on all public roads" },
-            B: { fr: "Ils sont autorisÃ©s s'ils sont homologuÃ©s route, immatriculÃ©s et assurÃ©s", en: "They are allowed if road-approved, registered and insured" },
-            C: { fr: "Ils sont autorisÃ©s uniquement sur les chemins ruraux", en: "They are allowed only on rural paths" },
-            D: { fr: "Ils sont autorisÃ©s sans restriction sur toutes les routes", en: "They are allowed without restriction on all roads" }
+            B: { fr: "Ils sont autorisés s'ils sont homologués route, immatriculés et assurés", en: "They are allowed if road-approved, registered and insured" },
+            C: { fr: "Ils sont autorisés uniquement sur les chemins ruraux", en: "They are allowed only on rural paths" },
+            D: { fr: "Ils sont autorisés sans restriction sur toutes les routes", en: "They are allowed without restriction on all roads" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les quads peuvent circuler sur la voie publique Ã  condition d'Ãªtre homologuÃ©s route, immatriculÃ©s et assurÃ©s. Le conducteur doit possÃ©der le permis appropriÃ© (B ou AM selon la cylindrÃ©e) et porter un casque homologuÃ©.",
+        explanationFr: "Les quads peuvent circuler sur la voie publique à condition d'être homologués route, immatriculés et assurés. Le conducteur doit posséder le permis approprié (B ou AM selon la cylindrée) et porter un casque homologué.",
         explanationEn: "Quad bikes may use public roads provided they are road-approved, registered and insured. The driver must hold the appropriate licence (B or AM depending on engine size) and wear an approved helmet.",
-        trapNote: "Many think all quads can go on the road or that none can. Only road-homologated (homologuÃ© route) quads with proper registration are legal on public roads.",
+        trapNote: "Many think all quads can go on the road or that none can. Only road-homologated (homologué route) quads with proper registration are legal on public roads.",
         distractorNotes: {
             A: "Quads are not entirely banned from public roads â€” road-approved models are permitted",
             C: "Homologated quads can use all public roads, not just rural paths",
@@ -11257,7 +11257,7 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "quad", wordEn: "quad bike / ATV", definition: "A four-wheeled all-terrain vehicle that may or may not be approved for road use" },
-            { wordFr: "homologuÃ© route", wordEn: "road-approved", definition: "A vehicle that meets all safety and equipment standards required for public road use" },
+            { wordFr: "homologué route", wordEn: "road-approved", definition: "A vehicle that meets all safety and equipment standards required for public road use" },
             { wordFr: "immatriculation", wordEn: "registration", definition: "The official recording of a vehicle with authorities, resulting in a number plate" }
         ]
     },
@@ -11268,14 +11268,14 @@ const QUESTION_BANK = [
         questionFr: "Lorsque vous croisez des cavaliers sur la route, que devez-vous faire ?",
         questionEn: "When you encounter horse riders on the road, what should you do?",
         options: {
-            A: { fr: "Klaxonner pour signaler votre prÃ©sence au cheval", en: "Honk to signal your presence to the horse" },
+            A: { fr: "Klaxonner pour signaler votre présence au cheval", en: "Honk to signal your presence to the horse" },
             B: { fr: "Ralentir fortement, laisser un large espace et ne pas klaxonner", en: "Slow down significantly, leave a wide space and do not honk" },
-            C: { fr: "AccÃ©lÃ©rer pour les dÃ©passer rapidement", en: "Accelerate to pass them quickly" },
+            C: { fr: "Accélérer pour les dépasser rapidement", en: "Accelerate to pass them quickly" },
             D: { fr: "Faire des appels de phares pour avertir le cavalier", en: "Flash your headlights to warn the rider" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les chevaux sont des animaux sensibles qui peuvent Ãªtre effrayÃ©s par le bruit ou les mouvements brusques. Il faut ralentir fortement, laisser au minimum 1,5 mÃ¨tre en agglomÃ©ration et 2 mÃ¨tres hors agglomÃ©ration, et ne jamais klaxonner.",
+        explanationFr: "Les chevaux sont des animaux sensibles qui peuvent être effrayés par le bruit ou les mouvements brusques. Il faut ralentir fortement, laisser au minimum 1,5 mètre en agglomération et 2 mètres hors agglomération, et ne jamais klaxonner.",
         explanationEn: "Horses are sensitive animals that can be frightened by noise or sudden movements. You must slow down significantly, leave at least 1.5 metres in built-up areas and 2 metres outside, and never honk.",
         trapNote: "The instinct to honk or flash lights to 'warn' the rider is exactly what can cause the horse to bolt. Silence and distance are essential.",
         distractorNotes: {
@@ -11285,24 +11285,24 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "cavalier", wordEn: "horse rider", definition: "A person riding a horse on the road, considered a road user with specific protections" },
-            { wordFr: "intervalle de sÃ©curitÃ©", wordEn: "safety gap / passing distance", definition: "The minimum lateral distance required when overtaking vulnerable road users" }
+            { wordFr: "intervalle de sécurité", wordEn: "safety gap / passing distance", definition: "The minimum lateral distance required when overtaking vulnerable road users" }
         ]
     },
     {
         id: 'autr-045',
         topic: 'autres_usagers',
         difficulty: 3,
-        questionFr: "Quelles sont vos obligations lorsqu'un cortÃ¨ge funÃ©raire circule sur la route ? (2 rÃ©ponses)",
+        questionFr: "Quelles sont vos obligations lorsqu'un cortège funéraire circule sur la route ? (2 réponses)",
         questionEn: "What are your obligations when a funeral procession is on the road? (2 answers)",
         options: {
-            A: { fr: "Ne pas couper le cortÃ¨ge en s'insÃ©rant entre les vÃ©hicules", en: "Do not cut through the procession by inserting between vehicles" },
-            B: { fr: "Laisser la prioritÃ© au cortÃ¨ge aux intersections", en: "Give priority to the procession at intersections" },
-            C: { fr: "Klaxonner pour exprimer vos condolÃ©ances", en: "Honk to express your condolences" },
-            D: { fr: "DÃ©passer le cortÃ¨ge par la droite si possible", en: "Overtake the procession on the right if possible" }
+            A: { fr: "Ne pas couper le cortège en s'insérant entre les véhicules", en: "Do not cut through the procession by inserting between vehicles" },
+            B: { fr: "Laisser la priorité au cortège aux intersections", en: "Give priority to the procession at intersections" },
+            C: { fr: "Klaxonner pour exprimer vos condoléances", en: "Honk to express your condolences" },
+            D: { fr: "Dépasser le cortège par la droite si possible", en: "Overtake the procession on the right if possible" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Un cortÃ¨ge funÃ©raire bÃ©nÃ©ficie de rÃ¨gles spÃ©ciales : il ne doit pas Ãªtre coupÃ© (interdiction de s'insÃ©rer entre les vÃ©hicules) et il a prioritÃ© aux intersections. Les conducteurs doivent faire preuve de respect et de patience.",
+        explanationFr: "Un cortège funéraire bénéficie de règles spéciales : il ne doit pas être coupé (interdiction de s'insérer entre les véhicules) et il a priorité aux intersections. Les conducteurs doivent faire preuve de respect et de patience.",
         explanationEn: "A funeral procession benefits from special rules: it must not be cut through (no inserting between vehicles) and it has priority at intersections. Drivers must show respect and patience.",
         trapNote: "Many drivers don't realise funeral processions have legal priority at intersections, not just social courtesy. Cutting through is an offence.",
         distractorNotes: {
@@ -11310,7 +11310,7 @@ const QUESTION_BANK = [
             D: "Overtaking a funeral procession, especially on the right, is both dangerous and disrespectful"
         },
         vocabulary: [
-            { wordFr: "cortÃ¨ge funÃ©raire", wordEn: "funeral procession", definition: "A line of vehicles following a hearse to a cemetery or funeral service" },
+            { wordFr: "cortège funéraire", wordEn: "funeral procession", definition: "A line of vehicles following a hearse to a cemetery or funeral service" },
             { wordFr: "corbillard", wordEn: "hearse", definition: "The vehicle carrying the coffin in a funeral procession" },
             { wordFr: "intersection", wordEn: "intersection / junction", definition: "A point where two or more roads meet" }
         ]
@@ -11319,17 +11319,17 @@ const QUESTION_BANK = [
         id: 'autr-046',
         topic: 'autres_usagers',
         difficulty: 2,
-        questionFr: "Lorsqu'un vÃ©hicule de secours arrive derriÃ¨re vous avec sirÃ¨ne et gyrophare, que devez-vous faire ?",
+        questionFr: "Lorsqu'un véhicule de secours arrive derrière vous avec sirène et gyrophare, que devez-vous faire ?",
         questionEn: "When an emergency vehicle approaches from behind with siren and flashing lights, what should you do?",
         options: {
-            A: { fr: "AccÃ©lÃ©rer pour vous Ã©loigner le plus vite possible", en: "Accelerate to get away as fast as possible" },
-            B: { fr: "Vous ranger immÃ©diatement sur le cÃ´tÃ© droit et vous arrÃªter si nÃ©cessaire", en: "Pull over immediately to the right side and stop if necessary" },
-            C: { fr: "Freiner brusquement et vous arrÃªter sur place", en: "Brake suddenly and stop where you are" },
-            D: { fr: "Continuer Ã  rouler normalement car ils vous dÃ©passeront", en: "Continue driving normally as they will pass you" }
+            A: { fr: "Accélérer pour vous éloigner le plus vite possible", en: "Accelerate to get away as fast as possible" },
+            B: { fr: "Vous ranger immédiatement sur le côté droit et vous arrêter si nécessaire", en: "Pull over immediately to the right side and stop if necessary" },
+            C: { fr: "Freiner brusquement et vous arrêter sur place", en: "Brake suddenly and stop where you are" },
+            D: { fr: "Continuer à rouler normalement car ils vous dépasseront", en: "Continue driving normally as they will pass you" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Ã€ l'approche d'un vÃ©hicule prioritaire (sirÃ¨ne et gyrophare), vous devez faciliter son passage en vous rangeant sur la droite et en vous arrÃªtant si nÃ©cessaire. Ne freinez jamais brusquement et ne restez pas au milieu de la chaussÃ©e.",
+        explanationFr: "À l'approche d'un véhicule prioritaire (sirène et gyrophare), vous devez faciliter son passage en vous rangeant sur la droite et en vous arrêtant si nécessaire. Ne freinez jamais brusquement et ne restez pas au milieu de la chaussée.",
         explanationEn: "When a priority vehicle approaches (siren and flashing lights), you must facilitate its passage by pulling over to the right and stopping if necessary. Never brake suddenly and do not remain in the middle of the road.",
         trapNote: "Braking suddenly can cause a rear-end collision with following vehicles. The correct action is to pull over smoothly to the right, not to stop abruptly.",
         distractorNotes: {
@@ -11338,26 +11338,26 @@ const QUESTION_BANK = [
             D: "Continuing normally without making way delays emergency services and is an offence"
         },
         vocabulary: [
-            { wordFr: "vÃ©hicule prioritaire", wordEn: "priority / emergency vehicle", definition: "A vehicle with legal right of way (police, fire, ambulance) when using sirens and flashing lights" },
+            { wordFr: "véhicule prioritaire", wordEn: "priority / emergency vehicle", definition: "A vehicle with legal right of way (police, fire, ambulance) when using sirens and flashing lights" },
             { wordFr: "gyrophare", wordEn: "flashing light / beacon", definition: "A rotating or flashing warning light on emergency vehicles" },
-            { wordFr: "sirÃ¨ne", wordEn: "siren", definition: "An audible warning device used by emergency vehicles to alert other road users" }
+            { wordFr: "sirène", wordEn: "siren", definition: "An audible warning device used by emergency vehicles to alert other road users" }
         ]
     },
     {
         id: 'autr-047',
         topic: 'autres_usagers',
         difficulty: 3,
-        questionFr: "Quelles sont les rÃ¨gles lorsque vous approchez d'un autobus scolaire Ã  l'arrÃªt avec ses feux de dÃ©tresse allumÃ©s ?",
+        questionFr: "Quelles sont les règles lorsque vous approchez d'un autobus scolaire à l'arrêt avec ses feux de détresse allumés ?",
         questionEn: "What are the rules when approaching a school bus stopped with its hazard lights on?",
         options: {
-            A: { fr: "Vous pouvez le dÃ©passer Ã  vitesse rÃ©duite sans vous arrÃªter", en: "You may pass it at reduced speed without stopping" },
-            B: { fr: "Vous devez vous arrÃªter et attendre que les enfants aient fini de traverser", en: "You must stop and wait until children have finished crossing" },
+            A: { fr: "Vous pouvez le dépasser à vitesse réduite sans vous arrêter", en: "You may pass it at reduced speed without stopping" },
+            B: { fr: "Vous devez vous arrêter et attendre que les enfants aient fini de traverser", en: "You must stop and wait until children have finished crossing" },
             C: { fr: "Vous devez klaxonner pour avertir les enfants", en: "You must honk to warn the children" },
-            D: { fr: "Vous pouvez le dÃ©passer normalement car les feux de dÃ©tresse ne sont qu'informatifs", en: "You may pass normally as hazard lights are only informational" }
+            D: { fr: "Vous pouvez le dépasser normalement car les feux de détresse ne sont qu'informatifs", en: "You may pass normally as hazard lights are only informational" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Ã€ l'approche d'un autobus scolaire Ã  l'arrÃªt avec les feux de dÃ©tresse, vous devez vous arrÃªter et attendre que tous les enfants aient fini de monter ou descendre et de traverser. Les enfants sont imprÃ©visibles et peuvent surgir Ã  tout moment.",
+        explanationFr: "À l'approche d'un autobus scolaire à l'arrêt avec les feux de détresse, vous devez vous arrêter et attendre que tous les enfants aient fini de monter ou descendre et de traverser. Les enfants sont imprévisibles et peuvent surgir à tout moment.",
         explanationEn: "When approaching a stopped school bus with hazard lights, you must stop and wait until all children have finished boarding or alighting and crossing. Children are unpredictable and may dart out at any moment.",
         trapNote: "Unlike regular buses, school buses require extra caution. Children may cross the road unexpectedly, and passing at reduced speed is insufficient.",
         distractorNotes: {
@@ -11367,24 +11367,24 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "autobus scolaire", wordEn: "school bus", definition: "A vehicle designated for transporting schoolchildren, with specific priority rules at stops" },
-            { wordFr: "feux de dÃ©tresse", wordEn: "hazard warning lights", definition: "Simultaneously flashing indicators used to warn of a hazard or stopped vehicle" }
+            { wordFr: "feux de détresse", wordEn: "hazard warning lights", definition: "Simultaneously flashing indicators used to warn of a hazard or stopped vehicle" }
         ]
     },
     {
         id: 'autr-048',
         topic: 'autres_usagers',
         difficulty: 2,
-        questionFr: "Quelles sont les rÃ¨gles pour les agents de travaux routiers qui dirigent la circulation ?",
+        questionFr: "Quelles sont les règles pour les agents de travaux routiers qui dirigent la circulation ?",
         questionEn: "What are the rules regarding road workers directing traffic?",
         options: {
             A: { fr: "Leurs signaux n'ont qu'une valeur indicative", en: "Their signals are only advisory" },
-            B: { fr: "Leurs signaux ont la mÃªme valeur que ceux des forces de l'ordre", en: "Their signals have the same authority as those of law enforcement" },
-            C: { fr: "Vous pouvez les ignorer si vous voyez que la route est dÃ©gagÃ©e", en: "You can ignore them if you see the road is clear" },
+            B: { fr: "Leurs signaux ont la même valeur que ceux des forces de l'ordre", en: "Their signals have the same authority as those of law enforcement" },
+            C: { fr: "Vous pouvez les ignorer si vous voyez que la route est dégagée", en: "You can ignore them if you see the road is clear" },
             D: { fr: "Ils ne peuvent diriger la circulation que sur autoroute", en: "They can only direct traffic on motorways" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les signaleurs de chantier (agents munis d'un panneau K10 ou d'un piquet) ont autoritÃ© pour rÃ©gler la circulation dans la zone de travaux. Leurs instructions sont contraignantes et s'imposent aux conducteurs, comme celles des forces de l'ordre.",
+        explanationFr: "Les signaleurs de chantier (agents munis d'un panneau K10 ou d'un piquet) ont autorité pour régler la circulation dans la zone de travaux. Leurs instructions sont contraignantes et s'imposent aux conducteurs, comme celles des forces de l'ordre.",
         explanationEn: "Road work flaggers (agents equipped with a K10 sign or a stake) have authority to direct traffic in the works zone. Their instructions are binding and must be followed by drivers, just like those of law enforcement.",
         trapNote: "Many drivers view road worker signals as mere suggestions. They have full legal authority in the works zone, and disobeying is an offence.",
         distractorNotes: {
@@ -11402,17 +11402,17 @@ const QUESTION_BANK = [
         id: 'autr-049',
         topic: 'autres_usagers',
         difficulty: 1,
-        questionFr: "OÃ¹ doivent circuler les rollers (patineurs en ligne) en ville ?",
+        questionFr: "Où doivent circuler les rollers (patineurs en ligne) en ville ?",
         questionEn: "Where should inline skaters travel in the city?",
         options: {
-            A: { fr: "Sur la chaussÃ©e avec les voitures", en: "On the roadway with cars" },
-            B: { fr: "Sur le trottoir, Ã  allure du pas", en: "On the pavement, at walking pace" },
+            A: { fr: "Sur la chaussée avec les voitures", en: "On the roadway with cars" },
+            B: { fr: "Sur le trottoir, à allure du pas", en: "On the pavement, at walking pace" },
             C: { fr: "Sur les pistes cyclables exclusivement", en: "On cycle lanes exclusively" },
             D: { fr: "Ils sont interdits en ville", en: "They are prohibited in the city" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les patineurs en ligne sont assimilÃ©s aux piÃ©tons. Ils doivent circuler sur le trottoir Ã  allure du pas. Ils peuvent emprunter les pistes cyclables dans certaines communes si autorisÃ© par arrÃªtÃ© municipal.",
+        explanationFr: "Les patineurs en ligne sont assimilés aux piétons. Ils doivent circuler sur le trottoir à allure du pas. Ils peuvent emprunter les pistes cyclables dans certaines communes si autorisé par arrêté municipal.",
         explanationEn: "Inline skaters are classified as pedestrians. They must travel on the pavement at walking pace. They may use cycle lanes in some municipalities if authorised by local decree.",
         trapNote: "Rollerbladers seem like they should use cycle lanes, but legally they are pedestrians and must use pavements at walking pace unless locally authorised otherwise.",
         distractorNotes: {
@@ -11422,24 +11422,24 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "patineur en ligne", wordEn: "inline skater / rollerblader", definition: "A person using inline skates, classified as a pedestrian in French traffic law" },
-            { wordFr: "arrÃªtÃ© municipal", wordEn: "municipal decree", definition: "A local regulation issued by the mayor that may modify general traffic rules within the commune" }
+            { wordFr: "arrêté municipal", wordEn: "municipal decree", definition: "A local regulation issued by the mayor that may modify general traffic rules within the commune" }
         ]
     },
     {
         id: 'autr-050',
         topic: 'autres_usagers',
         difficulty: 3,
-        questionFr: "Quelles rÃ¨gles s'appliquent Ã  un tandem (vÃ©lo Ã  deux places) sur la route ? (2 rÃ©ponses)",
+        questionFr: "Quelles règles s'appliquent à un tandem (vélo à deux places) sur la route ? (2 réponses)",
         questionEn: "What rules apply to a tandem bicycle on the road? (2 answers)",
         options: {
-            A: { fr: "Il est soumis aux mÃªmes rÃ¨gles qu'un vÃ©lo classique", en: "It follows the same rules as a standard bicycle" },
-            B: { fr: "Il nÃ©cessite un Ã©clairage renforcÃ© en raison de sa longueur", en: "It requires enhanced lighting due to its length" },
-            C: { fr: "Il nÃ©cessite un permis de conduire spÃ©cifique", en: "It requires a specific driving licence" },
+            A: { fr: "Il est soumis aux mêmes règles qu'un vélo classique", en: "It follows the same rules as a standard bicycle" },
+            B: { fr: "Il nécessite un éclairage renforcé en raison de sa longueur", en: "It requires enhanced lighting due to its length" },
+            C: { fr: "Il nécessite un permis de conduire spécifique", en: "It requires a specific driving licence" },
             D: { fr: "Il est interdit sur les pistes cyclables", en: "It is prohibited on cycle lanes" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Un tandem est soumis aux mÃªmes rÃ¨gles de circulation qu'un vÃ©lo classique (Code de la Route cycliste). En raison de sa longueur supÃ©rieure, il nÃ©cessite un Ã©clairage et une signalisation renforcÃ©s pour Ãªtre mieux visible, notamment un catadioptre arriÃ¨re et latÃ©ral.",
+        explanationFr: "Un tandem est soumis aux mêmes règles de circulation qu'un vélo classique (Code de la Route cycliste). En raison de sa longueur supérieure, il nécessite un éclairage et une signalisation renforcés pour être mieux visible, notamment un catadioptre arrière et latéral.",
         explanationEn: "A tandem follows the same traffic rules as a standard bicycle. Due to its greater length, it requires enhanced lighting and signalling to be more visible, including rear and side reflectors.",
         trapNote: "People assume tandems need special licences or are banned from bike paths. They follow standard bicycle rules but need better visibility equipment due to their length.",
         distractorNotes: {
@@ -11449,24 +11449,24 @@ const QUESTION_BANK = [
         vocabulary: [
             { wordFr: "tandem", wordEn: "tandem bicycle", definition: "A bicycle designed for two riders sitting one behind the other" },
             { wordFr: "catadioptre", wordEn: "reflector", definition: "A passive reflective device on a vehicle that reflects light back to its source" },
-            { wordFr: "Ã©clairage renforcÃ©", wordEn: "enhanced lighting", definition: "Additional lighting equipment required for longer or wider vehicles to ensure visibility" }
+            { wordFr: "éclairage renforcé", wordEn: "enhanced lighting", definition: "Additional lighting equipment required for longer or wider vehicles to ensure visibility" }
         ]
     },
     {
         id: 'prio-041',
         topic: 'priorite',
         difficulty: 2,
-        questionFr: "Quelle est la rÃ¨gle de prioritÃ© dans un rond-point Ã©quipÃ© de feux tricolores ?",
+        questionFr: "Quelle est la règle de priorité dans un rond-point équipé de feux tricolores ?",
         questionEn: "What is the priority rule at a roundabout with traffic lights?",
         options: {
-            A: { fr: "Les feux tricolores prÃ©valent sur la rÃ¨gle du rond-point", en: "Traffic lights take precedence over roundabout rules" },
-            B: { fr: "La prioritÃ© Ã  droite s'applique mÃªme si les feux sont verts", en: "Priority to the right applies even if lights are green" },
-            C: { fr: "Les vÃ©hicules dans le rond-point ont toujours la prioritÃ©", en: "Vehicles in the roundabout always have priority" },
+            A: { fr: "Les feux tricolores prévalent sur la règle du rond-point", en: "Traffic lights take precedence over roundabout rules" },
+            B: { fr: "La priorité à droite s'applique même si les feux sont verts", en: "Priority to the right applies even if lights are green" },
+            C: { fr: "Les véhicules dans le rond-point ont toujours la priorité", en: "Vehicles in the roundabout always have priority" },
             D: { fr: "Les feux sont seulement indicatifs dans un rond-point", en: "Traffic lights are only advisory in a roundabout" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Lorsqu'un rond-point est Ã©quipÃ© de feux tricolores, ce sont les feux qui dÃ©terminent la prioritÃ©, et non la rÃ¨gle habituelle de prioritÃ© aux vÃ©hicules circulant dans le rond-point. Les feux prÃ©valent toujours sur les rÃ¨gles de base.",
+        explanationFr: "Lorsqu'un rond-point est équipé de feux tricolores, ce sont les feux qui déterminent la priorité, et non la règle habituelle de priorité aux véhicules circulant dans le rond-point. Les feux prévalent toujours sur les règles de base.",
         explanationEn: "When a roundabout is equipped with traffic lights, the lights determine priority, not the usual rule of priority for vehicles already in the roundabout. Traffic lights always take precedence over basic rules.",
         trapNote: "Drivers in the roundabout expect to always have priority, but when traffic lights are present, they must obey the lights even if they are already in the roundabout.",
         distractorNotes: {
@@ -11483,17 +11483,17 @@ const QUESTION_BANK = [
         id: 'prio-042',
         topic: 'priorite',
         difficulty: 1,
-        questionFr: "Qui a la prioritÃ© dans un parking privÃ© ou public ?",
+        questionFr: "Qui a la priorité dans un parking privé ou public ?",
         questionEn: "Who has priority in a private or public car park?",
         options: {
-            A: { fr: "Le vÃ©hicule qui circule dans l'allÃ©e principale", en: "The vehicle driving in the main aisle" },
-            B: { fr: "La prioritÃ© Ã  droite s'applique sauf signalisation contraire", en: "Priority to the right applies unless signage indicates otherwise" },
-            C: { fr: "Le vÃ©hicule qui sort de sa place de stationnement", en: "The vehicle leaving its parking space" },
-            D: { fr: "Il n'y a aucune rÃ¨gle de prioritÃ© dans les parkings", en: "There are no priority rules in car parks" }
+            A: { fr: "Le véhicule qui circule dans l'allée principale", en: "The vehicle driving in the main aisle" },
+            B: { fr: "La priorité à droite s'applique sauf signalisation contraire", en: "Priority to the right applies unless signage indicates otherwise" },
+            C: { fr: "Le véhicule qui sort de sa place de stationnement", en: "The vehicle leaving its parking space" },
+            D: { fr: "Il n'y a aucune règle de priorité dans les parkings", en: "There are no priority rules in car parks" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Dans les parkings, le Code de la Route s'applique : la prioritÃ© Ã  droite est la rÃ¨gle par dÃ©faut, sauf si la signalisation indique autrement. Les vÃ©hicules sortant de leur place de stationnement doivent cÃ©der le passage aux vÃ©hicules circulant dans les allÃ©es.",
+        explanationFr: "Dans les parkings, le Code de la Route s'applique : la priorité à droite est la règle par défaut, sauf si la signalisation indique autrement. Les véhicules sortant de leur place de stationnement doivent céder le passage aux véhicules circulant dans les allées.",
         explanationEn: "In car parks, the Highway Code applies: priority to the right is the default rule unless signage indicates otherwise. Vehicles leaving their parking space must give way to vehicles driving in the aisles.",
         trapNote: "Many think car parks have no rules or that the main aisle always has priority. Standard road rules apply, including priority to the right.",
         distractorNotes: {
@@ -11503,7 +11503,7 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "parking", wordEn: "car park", definition: "An area designated for parking vehicles, either private or public" },
-            { wordFr: "allÃ©e de circulation", wordEn: "driving aisle", definition: "The lane within a car park used to access parking spaces" },
+            { wordFr: "allée de circulation", wordEn: "driving aisle", definition: "The lane within a car park used to access parking spaces" },
             { wordFr: "place de stationnement", wordEn: "parking space", definition: "A marked area designated for a single parked vehicle" }
         ]
     },
@@ -11511,17 +11511,17 @@ const QUESTION_BANK = [
         id: 'prio-043',
         topic: 'priorite',
         difficulty: 2,
-        questionFr: "Quelle est la rÃ¨gle de prioritÃ© lorsque la route se rÃ©trÃ©cit et qu'un vÃ©hicule arrive en face ?",
+        questionFr: "Quelle est la règle de priorité lorsque la route se rétrécit et qu'un véhicule arrive en face ?",
         questionEn: "What is the priority rule when the road narrows and a vehicle is approaching from the opposite direction?",
         options: {
-            A: { fr: "Le vÃ©hicule qui monte a toujours la prioritÃ©", en: "The vehicle going uphill always has priority" },
-            B: { fr: "Le premier arrivÃ© au rÃ©trÃ©cissement a la prioritÃ©", en: "The first to arrive at the narrowing has priority" },
-            C: { fr: "Le vÃ©hicule le plus lourd a la prioritÃ©", en: "The heavier vehicle has priority" },
-            D: { fr: "La signalisation dÃ©termine qui doit cÃ©der, sinon le vÃ©hicule qui monte est prioritaire", en: "Signage determines who must yield, otherwise the vehicle going uphill has priority" }
+            A: { fr: "Le véhicule qui monte a toujours la priorité", en: "The vehicle going uphill always has priority" },
+            B: { fr: "Le premier arrivé au rétrécissement a la priorité", en: "The first to arrive at the narrowing has priority" },
+            C: { fr: "Le véhicule le plus lourd a la priorité", en: "The heavier vehicle has priority" },
+            D: { fr: "La signalisation détermine qui doit céder, sinon le véhicule qui monte est prioritaire", en: "Signage determines who must yield, otherwise the vehicle going uphill has priority" }
         },
         correctAnswers: ["D"],
         answerCount: 1,
-        explanationFr: "En cas de rÃ©trÃ©cissement de la chaussÃ©e, la signalisation (panneaux de prioritÃ© ou de cÃ©dez le passage) dÃ©termine qui a la prioritÃ©. En l'absence de signalisation, le vÃ©hicule qui monte a la prioritÃ© car il est plus difficile de redÃ©marrer en cÃ´te.",
+        explanationFr: "En cas de rétrécissement de la chaussée, la signalisation (panneaux de priorité ou de cédez le passage) détermine qui a la priorité. En l'absence de signalisation, le véhicule qui monte a la priorité car il est plus difficile de redémarrer en côte.",
         explanationEn: "When the road narrows, signage (priority or give-way signs) determines who has priority. In the absence of signage, the vehicle going uphill has priority because restarting on a slope is more difficult.",
         trapNote: "The uphill priority only applies when there is NO signage. When signs are present, they always take precedence regardless of slope direction.",
         distractorNotes: {
@@ -11530,26 +11530,26 @@ const QUESTION_BANK = [
             C: "Vehicle weight has no bearing on priority at road narrowing â€” only signage and slope matter"
         },
         vocabulary: [
-            { wordFr: "rÃ©trÃ©cissement de chaussÃ©e", wordEn: "road narrowing", definition: "A section where the road becomes too narrow for two vehicles to pass simultaneously" },
-            { wordFr: "cÃ©der le passage", wordEn: "give way / yield", definition: "To allow another road user to proceed first" },
-            { wordFr: "cÃ´te", wordEn: "hill / slope", definition: "An inclined section of road going upward" }
+            { wordFr: "rétrécissement de chaussée", wordEn: "road narrowing", definition: "A section where the road becomes too narrow for two vehicles to pass simultaneously" },
+            { wordFr: "céder le passage", wordEn: "give way / yield", definition: "To allow another road user to proceed first" },
+            { wordFr: "côte", wordEn: "hill / slope", definition: "An inclined section of road going upward" }
         ]
     },
     {
         id: 'prio-044',
         topic: 'priorite',
         difficulty: 2,
-        questionFr: "Un vÃ©hicule sort d'un garage ou d'une propriÃ©tÃ© privÃ©e. Qui a la prioritÃ© ?",
+        questionFr: "Un véhicule sort d'un garage ou d'une propriété privée. Qui a la priorité ?",
         questionEn: "A vehicle is exiting a garage or private property. Who has priority?",
         options: {
-            A: { fr: "Le vÃ©hicule qui sort, car il est dÃ©jÃ  engagÃ©", en: "The exiting vehicle, because it is already committed" },
-            B: { fr: "Les usagers circulant sur la voie publique ont la prioritÃ©", en: "Road users on the public road have priority" },
-            C: { fr: "La prioritÃ© Ã  droite s'applique normalement", en: "Priority to the right applies normally" },
-            D: { fr: "Les piÃ©tons uniquement ont la prioritÃ©", en: "Only pedestrians have priority" }
+            A: { fr: "Le véhicule qui sort, car il est déjà engagé", en: "The exiting vehicle, because it is already committed" },
+            B: { fr: "Les usagers circulant sur la voie publique ont la priorité", en: "Road users on the public road have priority" },
+            C: { fr: "La priorité à droite s'applique normalement", en: "Priority to the right applies normally" },
+            D: { fr: "Les piétons uniquement ont la priorité", en: "Only pedestrians have priority" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Tout vÃ©hicule sortant d'un accÃ¨s riverain (garage, propriÃ©tÃ© privÃ©e, parking privÃ©) doit cÃ©der le passage Ã  tous les usagers de la voie publique : vÃ©hicules, cyclistes et piÃ©tons. La sortie d'un accÃ¨s privÃ© ne donne aucune prioritÃ©.",
+        explanationFr: "Tout véhicule sortant d'un accès riverain (garage, propriété privée, parking privé) doit céder le passage à tous les usagers de la voie publique : véhicules, cyclistes et piétons. La sortie d'un accès privé ne donne aucune priorité.",
         explanationEn: "Any vehicle exiting a driveway (garage, private property, private car park) must give way to all users on the public road: vehicles, cyclists and pedestrians. Exiting from private access gives no priority.",
         trapNote: "Being 'already committed' or having started the manoeuvre gives no priority. The public road always takes precedence over private access exits.",
         distractorNotes: {
@@ -11558,7 +11558,7 @@ const QUESTION_BANK = [
             D: "All public road users have priority, not just pedestrians"
         },
         vocabulary: [
-            { wordFr: "accÃ¨s riverain", wordEn: "driveway / property access", definition: "An entrance or exit from private property onto a public road" },
+            { wordFr: "accès riverain", wordEn: "driveway / property access", definition: "An entrance or exit from private property onto a public road" },
             { wordFr: "voie publique", wordEn: "public road", definition: "Any road open to general public traffic" }
         ]
     },
@@ -11566,17 +11566,17 @@ const QUESTION_BANK = [
         id: 'prio-045',
         topic: 'priorite',
         difficulty: 3,
-        questionFr: "Quelle est la prioritÃ© d'un vÃ©hicule de chantier sortant d'un site de construction sur la voie publique ?",
+        questionFr: "Quelle est la priorité d'un véhicule de chantier sortant d'un site de construction sur la voie publique ?",
         questionEn: "What is the priority of a construction vehicle exiting a building site onto the public road?",
         options: {
-            A: { fr: "Il a la prioritÃ© car il est signalÃ© par un panneau de sortie d'engins", en: "It has priority because it is indicated by a 'construction vehicle exit' sign" },
-            B: { fr: "Il doit cÃ©der le passage aux usagers de la voie publique malgrÃ© le panneau", en: "It must give way to public road users despite the sign" },
-            C: { fr: "Il a la prioritÃ© uniquement s'il est accompagnÃ© d'un signaleur", en: "It has priority only if accompanied by a flagger" },
-            D: { fr: "La prioritÃ© Ã  droite s'applique", en: "Priority to the right applies" }
+            A: { fr: "Il a la priorité car il est signalé par un panneau de sortie d'engins", en: "It has priority because it is indicated by a 'construction vehicle exit' sign" },
+            B: { fr: "Il doit céder le passage aux usagers de la voie publique malgré le panneau", en: "It must give way to public road users despite the sign" },
+            C: { fr: "Il a la priorité uniquement s'il est accompagné d'un signaleur", en: "It has priority only if accompanied by a flagger" },
+            D: { fr: "La priorité à droite s'applique", en: "Priority to the right applies" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Le panneau 'sortie d'engins' (A14) avertit les usagers de la route du danger mais ne confÃ¨re aucune prioritÃ© aux vÃ©hicules de chantier. Ceux-ci doivent toujours cÃ©der le passage aux usagers de la voie publique, comme tout vÃ©hicule sortant d'un accÃ¨s privÃ©.",
+        explanationFr: "Le panneau 'sortie d'engins' (A14) avertit les usagers de la route du danger mais ne confère aucune priorité aux véhicules de chantier. Ceux-ci doivent toujours céder le passage aux usagers de la voie publique, comme tout véhicule sortant d'un accès privé.",
         explanationEn: "The 'construction vehicle exit' sign (A14) warns road users of the danger but gives no priority to construction vehicles. They must always give way to public road users, like any vehicle exiting private access.",
         trapNote: "The warning sign makes drivers think construction vehicles have priority. The sign warns OTHER road users of the danger but grants NO priority to the exiting vehicles.",
         distractorNotes: {
@@ -11593,17 +11593,17 @@ const QUESTION_BANK = [
         id: 'prio-046',
         topic: 'priorite',
         difficulty: 2,
-        questionFr: "Dans quel cas le tramway n'a-t-il PAS la prioritÃ© ?",
+        questionFr: "Dans quel cas le tramway n'a-t-il PAS la priorité ?",
         questionEn: "In which case does the tram NOT have priority?",
         options: {
             A: { fr: "Lorsqu'il franchit un feu rouge", en: "When it runs a red light" },
-            B: { fr: "Lorsqu'il circule dans une zone piÃ©tonne", en: "When it travels through a pedestrian zone" },
-            C: { fr: "Lorsqu'il tourne Ã  gauche dans une intersection", en: "When it turns left at an intersection" },
-            D: { fr: "Lorsqu'il est face Ã  un signal qui lui est propre indiquant l'arrÃªt", en: "When it faces its own signal indicating stop" }
+            B: { fr: "Lorsqu'il circule dans une zone piétonne", en: "When it travels through a pedestrian zone" },
+            C: { fr: "Lorsqu'il tourne à gauche dans une intersection", en: "When it turns left at an intersection" },
+            D: { fr: "Lorsqu'il est face à un signal qui lui est propre indiquant l'arrêt", en: "When it faces its own signal indicating stop" }
         },
         correctAnswers: ["D"],
         answerCount: 1,
-        explanationFr: "Le tramway bÃ©nÃ©ficie d'une prioritÃ© quasi absolue, mais il doit obÃ©ir Ã  sa propre signalisation. Lorsque son signal spÃ©cifique (barre horizontale) lui impose l'arrÃªt, il n'a pas la prioritÃ©. Les feux classiques ne s'appliquent gÃ©nÃ©ralement pas aux tramways.",
+        explanationFr: "Le tramway bénéficie d'une priorité quasi absolue, mais il doit obéir à sa propre signalisation. Lorsque son signal spécifique (barre horizontale) lui impose l'arrêt, il n'a pas la priorité. Les feux classiques ne s'appliquent généralement pas aux tramways.",
         explanationEn: "The tram benefits from near-absolute priority, but it must obey its own dedicated signalling. When its specific signal (horizontal bar) requires it to stop, it does not have priority. Standard traffic lights generally do not apply to trams.",
         trapNote: "Trams have near-absolute priority, so candidates assume they ALWAYS have priority. They must still obey their own dedicated signals.",
         distractorNotes: {
@@ -11614,24 +11614,24 @@ const QUESTION_BANK = [
         vocabulary: [
             { wordFr: "signalisation propre au tramway", wordEn: "tram-specific signalling", definition: "Dedicated signals using bars and shapes that control tram movements independently of traffic lights" },
             { wordFr: "barre horizontale", wordEn: "horizontal bar (tram signal)", definition: "A tram-specific signal meaning the tram must stop" },
-            { wordFr: "prioritÃ© quasi absolue", wordEn: "near-absolute priority", definition: "Priority that applies in almost all situations, with very few exceptions" }
+            { wordFr: "priorité quasi absolue", wordEn: "near-absolute priority", definition: "Priority that applies in almost all situations, with very few exceptions" }
         ]
     },
     {
         id: 'prio-047',
         topic: 'priorite',
         difficulty: 3,
-        questionFr: "Ã€ un carrefour non signalisÃ© en zone rurale, quelle rÃ¨gle de prioritÃ© s'applique ?",
+        questionFr: "À un carrefour non signalisé en zone rurale, quelle règle de priorité s'applique ?",
         questionEn: "At an unsigned crossroads in a rural area, which priority rule applies?",
         options: {
-            A: { fr: "Le vÃ©hicule le plus rapide a la prioritÃ©", en: "The fastest vehicle has priority" },
-            B: { fr: "La prioritÃ© Ã  droite s'applique", en: "Priority to the right applies" },
-            C: { fr: "Le vÃ©hicule venant de la route la plus large a la prioritÃ©", en: "The vehicle from the wider road has priority" },
-            D: { fr: "Il n'y a aucune rÃ¨gle, les conducteurs doivent nÃ©gocier", en: "There is no rule, drivers must negotiate" }
+            A: { fr: "Le véhicule le plus rapide a la priorité", en: "The fastest vehicle has priority" },
+            B: { fr: "La priorité à droite s'applique", en: "Priority to the right applies" },
+            C: { fr: "Le véhicule venant de la route la plus large a la priorité", en: "The vehicle from the wider road has priority" },
+            D: { fr: "Il n'y a aucune règle, les conducteurs doivent négocier", en: "There is no rule, drivers must negotiate" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "En l'absence de toute signalisation Ã  un carrefour, la rÃ¨gle de base du Code de la Route franÃ§ais s'applique : la prioritÃ© Ã  droite. Tout vÃ©hicule arrivant par la droite a la prioritÃ©, quelle que soit la largeur ou l'importance apparente des routes.",
+        explanationFr: "En l'absence de toute signalisation à un carrefour, la règle de base du Code de la Route français s'applique : la priorité à droite. Tout véhicule arrivant par la droite a la priorité, quelle que soit la largeur ou l'importance apparente des routes.",
         explanationEn: "In the absence of any signage at a crossroads, the basic rule of the French Highway Code applies: priority to the right. Any vehicle arriving from the right has priority, regardless of road width or apparent importance.",
         trapNote: "On rural roads, drivers often assume the wider or better-maintained road has priority. Without signage, ONLY priority to the right applies â€” road width is irrelevant.",
         distractorNotes: {
@@ -11640,8 +11640,8 @@ const QUESTION_BANK = [
             D: "There IS a clear rule â€” priority to the right â€” which applies whenever no other signage overrides it"
         },
         vocabulary: [
-            { wordFr: "carrefour non signalisÃ©", wordEn: "unsigned crossroads", definition: "An intersection with no traffic signs, lights, or markings to indicate priority" },
-            { wordFr: "prioritÃ© Ã  droite", wordEn: "priority to the right", definition: "The default French traffic rule where vehicles approaching from the right have right of way" },
+            { wordFr: "carrefour non signalisé", wordEn: "unsigned crossroads", definition: "An intersection with no traffic signs, lights, or markings to indicate priority" },
+            { wordFr: "priorité à droite", wordEn: "priority to the right", definition: "The default French traffic rule where vehicles approaching from the right have right of way" },
             { wordFr: "zone rurale", wordEn: "rural area", definition: "An area outside built-up zones, typically with fewer signs and less traffic" }
         ]
     },
@@ -11649,17 +11649,17 @@ const QUESTION_BANK = [
         id: 'prio-048',
         topic: 'priorite',
         difficulty: 3,
-        questionFr: "Quatre vÃ©hicules arrivent simultanÃ©ment Ã  un carrefour en croix sans signalisation. Comment rÃ©soudre cette situation ?",
+        questionFr: "Quatre véhicules arrivent simultanément à un carrefour en croix sans signalisation. Comment résoudre cette situation ?",
         questionEn: "Four vehicles arrive simultaneously at an unsigned cross-shaped intersection. How is this situation resolved?",
         options: {
-            A: { fr: "Le vÃ©hicule le plus Ã  droite passe en premier", en: "The rightmost vehicle goes first" },
-            B: { fr: "Tous les vÃ©hicules doivent s'arrÃªter et l'un d'eux doit cÃ©der le passage par courtoisie pour dÃ©bloquer la situation", en: "All vehicles must stop and one must yield by courtesy to unblock the situation" },
-            C: { fr: "Les vÃ©hicules passent dans le sens des aiguilles d'une montre", en: "Vehicles proceed clockwise" },
-            D: { fr: "Le vÃ©hicule le plus lourd a la prioritÃ©", en: "The heaviest vehicle has priority" }
+            A: { fr: "Le véhicule le plus à droite passe en premier", en: "The rightmost vehicle goes first" },
+            B: { fr: "Tous les véhicules doivent s'arrêter et l'un d'eux doit céder le passage par courtoisie pour débloquer la situation", en: "All vehicles must stop and one must yield by courtesy to unblock the situation" },
+            C: { fr: "Les véhicules passent dans le sens des aiguilles d'une montre", en: "Vehicles proceed clockwise" },
+            D: { fr: "Le véhicule le plus lourd a la priorité", en: "The heaviest vehicle has priority" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Lorsque quatre vÃ©hicules arrivent simultanÃ©ment Ã  un carrefour en croix, chacun a un vÃ©hicule Ã  sa droite, crÃ©ant un blocage de la prioritÃ© Ã  droite. La solution est que l'un des conducteurs cÃ¨de volontairement le passage par courtoisie pour dÃ©bloquer la chaÃ®ne.",
+        explanationFr: "Lorsque quatre véhicules arrivent simultanément à un carrefour en croix, chacun a un véhicule à sa droite, créant un blocage de la priorité à droite. La solution est que l'un des conducteurs cède volontairement le passage par courtoisie pour débloquer la chaîne.",
         explanationEn: "When four vehicles arrive simultaneously at a cross-shaped intersection, each has a vehicle to its right, creating a priority deadlock. The solution is for one driver to voluntarily yield by courtesy to break the chain.",
         trapNote: "This is the famous 'priority deadlock' scenario. There is no automatic rule â€” courtesy and communication between drivers are the only solution.",
         distractorNotes: {
@@ -11669,7 +11669,7 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "carrefour en croix", wordEn: "cross-shaped intersection", definition: "An intersection where four roads meet at right angles" },
-            { wordFr: "blocage de prioritÃ©", wordEn: "priority deadlock", definition: "A situation where priority rules create a circular dependency with no clear resolution" },
+            { wordFr: "blocage de priorité", wordEn: "priority deadlock", definition: "A situation where priority rules create a circular dependency with no clear resolution" },
             { wordFr: "courtoisie", wordEn: "courtesy", definition: "Voluntary yielding to resolve a traffic situation that rules alone cannot resolve" }
         ]
     },
@@ -11677,17 +11677,17 @@ const QUESTION_BANK = [
         id: 'prio-049',
         topic: 'priorite',
         difficulty: 2,
-        questionFr: "Que signifie un feu orange clignotant Ã  une intersection ?",
+        questionFr: "Que signifie un feu orange clignotant à une intersection ?",
         questionEn: "What does a flashing amber light at an intersection mean?",
         options: {
             A: { fr: "Le feu est en panne, ignorez-le", en: "The light is broken, ignore it" },
-            B: { fr: "Vous devez vous arrÃªter obligatoirement", en: "You must stop mandatorily" },
-            C: { fr: "La prioritÃ© Ã  droite s'applique et vous devez ralentir", en: "Priority to the right applies and you must slow down" },
-            D: { fr: "Vous avez la prioritÃ© sur toutes les directions", en: "You have priority over all directions" }
+            B: { fr: "Vous devez vous arrêter obligatoirement", en: "You must stop mandatorily" },
+            C: { fr: "La priorité à droite s'applique et vous devez ralentir", en: "Priority to the right applies and you must slow down" },
+            D: { fr: "Vous avez la priorité sur toutes les directions", en: "You have priority over all directions" }
         },
         correctAnswers: ["C"],
         answerCount: 1,
-        explanationFr: "Un feu orange clignotant signifie que les feux tricolores ne rÃ©gulent plus l'intersection. Les rÃ¨gles de prioritÃ© habituelles s'appliquent, notamment la prioritÃ© Ã  droite (sauf signalisation contraire). Vous devez ralentir et Ãªtre vigilant.",
+        explanationFr: "Un feu orange clignotant signifie que les feux tricolores ne régulent plus l'intersection. Les règles de priorité habituelles s'appliquent, notamment la priorité à droite (sauf signalisation contraire). Vous devez ralentir et être vigilant.",
         explanationEn: "A flashing amber light means the traffic lights are no longer regulating the intersection. Normal priority rules apply, particularly priority to the right (unless signage indicates otherwise). You must slow down and be vigilant.",
         trapNote: "Flashing amber does NOT mean the light is broken to ignore â€” it means the intersection reverts to standard priority rules (usually priority to the right).",
         distractorNotes: {
@@ -11704,17 +11704,17 @@ const QUESTION_BANK = [
         id: 'prio-050',
         topic: 'priorite',
         difficulty: 1,
-        questionFr: "Un vÃ©hicule sort d'une voie sans issue (impasse). Qui a la prioritÃ© ? (2 rÃ©ponses)",
+        questionFr: "Un véhicule sort d'une voie sans issue (impasse). Qui a la priorité ? (2 réponses)",
         questionEn: "A vehicle exits a dead-end street. Who has priority? (2 answers)",
         options: {
-            A: { fr: "Les vÃ©hicules circulant sur la voie principale", en: "Vehicles driving on the main road" },
-            B: { fr: "Les piÃ©tons traversant la sortie de l'impasse", en: "Pedestrians crossing the exit of the dead-end street" },
-            C: { fr: "Le vÃ©hicule sortant de l'impasse car il a la prioritÃ© Ã  droite", en: "The vehicle exiting the dead-end because it has priority to the right" },
-            D: { fr: "Le vÃ©hicule sortant de l'impasse car les impasses sont considÃ©rÃ©es comme des voies prioritaires", en: "The vehicle exiting the dead-end because dead-ends are considered priority roads" }
+            A: { fr: "Les véhicules circulant sur la voie principale", en: "Vehicles driving on the main road" },
+            B: { fr: "Les piétons traversant la sortie de l'impasse", en: "Pedestrians crossing the exit of the dead-end street" },
+            C: { fr: "Le véhicule sortant de l'impasse car il a la priorité à droite", en: "The vehicle exiting the dead-end because it has priority to the right" },
+            D: { fr: "Le véhicule sortant de l'impasse car les impasses sont considérées comme des voies prioritaires", en: "The vehicle exiting the dead-end because dead-ends are considered priority roads" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Un vÃ©hicule sortant d'une impasse doit cÃ©der le passage Ã  tous les usagers de la voie principale (vÃ©hicules et piÃ©tons). L'impasse est traitÃ©e comme un accÃ¨s secondaire, et la prioritÃ© Ã  droite ne s'y applique pas automatiquement.",
+        explanationFr: "Un véhicule sortant d'une impasse doit céder le passage à tous les usagers de la voie principale (véhicules et piétons). L'impasse est traitée comme un accès secondaire, et la priorité à droite ne s'y applique pas automatiquement.",
         explanationEn: "A vehicle exiting a dead-end street must give way to all users on the main road (vehicles and pedestrians). The dead-end is treated as a secondary access, and priority to the right does not automatically apply.",
         trapNote: "Drivers exiting a dead-end sometimes think priority to the right applies. Dead-end exits are treated like minor road junctions where the main road has priority.",
         distractorNotes: {
@@ -11731,17 +11731,17 @@ const QUESTION_BANK = [
         id: 'croi-041',
         topic: 'croisement_depassement',
         difficulty: 2,
-        questionFr: "Quelle est la distance latÃ©rale minimale Ã  respecter pour dÃ©passer un cycliste en agglomÃ©ration dans une zone 30 ?",
+        questionFr: "Quelle est la distance latérale minimale à respecter pour dépasser un cycliste en agglomération dans une zone 30 ?",
         questionEn: "What is the minimum lateral distance required when overtaking a cyclist in a 30 km/h zone in a built-up area?",
         options: {
-            A: { fr: "0,50 mÃ¨tre", en: "0.50 metre" },
-            B: { fr: "1 mÃ¨tre", en: "1 metre" },
-            C: { fr: "1,50 mÃ¨tre", en: "1.50 metres" },
+            A: { fr: "0,50 mètre", en: "0.50 metre" },
+            B: { fr: "1 mètre", en: "1 metre" },
+            C: { fr: "1,50 mètre", en: "1.50 metres" },
             D: { fr: "Aucune distance minimale en zone 30", en: "No minimum distance in a 30 zone" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "En agglomÃ©ration, la distance latÃ©rale minimale pour dÃ©passer un cycliste est de 1 mÃ¨tre. Hors agglomÃ©ration, elle est de 1,50 mÃ¨tre. La zone 30 reste en agglomÃ©ration, donc la rÃ¨gle du 1 mÃ¨tre s'applique.",
+        explanationFr: "En agglomération, la distance latérale minimale pour dépasser un cycliste est de 1 mètre. Hors agglomération, elle est de 1,50 mètre. La zone 30 reste en agglomération, donc la règle du 1 mètre s'applique.",
         explanationEn: "In built-up areas, the minimum lateral distance to overtake a cyclist is 1 metre. Outside built-up areas, it is 1.50 metres. A 30 zone is still within a built-up area, so the 1-metre rule applies.",
         trapNote: "Many candidates confuse the 1.50m rule (which applies outside built-up areas) with in-town rules, or think a 30 zone has special exemptions.",
         distractorNotes: {
@@ -11750,26 +11750,26 @@ const QUESTION_BANK = [
             D: "Some think the low speed limit removes the distance requirement, but it never does"
         },
         vocabulary: [
-            { wordFr: "zone 30", wordEn: "30 km/h zone", definition: "Zone urbaine oÃ¹ la vitesse est limitÃ©e Ã  30 km/h pour la sÃ©curitÃ© des usagers vulnÃ©rables" },
-            { wordFr: "distance latÃ©rale", wordEn: "lateral distance", definition: "Espace mesurÃ© entre le vÃ©hicule qui dÃ©passe et l'usager dÃ©passÃ©" },
-            { wordFr: "en agglomÃ©ration", wordEn: "in a built-up area", definition: "Ã€ l'intÃ©rieur des limites d'une ville ou d'un village signalÃ©es par des panneaux d'entrÃ©e et de sortie" }
+            { wordFr: "zone 30", wordEn: "30 km/h zone", definition: "Zone urbaine où la vitesse est limitée à 30 km/h pour la sécurité des usagers vulnérables" },
+            { wordFr: "distance latérale", wordEn: "lateral distance", definition: "Espace mesuré entre le véhicule qui dépasse et l'usager dépassé" },
+            { wordFr: "en agglomération", wordEn: "in a built-up area", definition: "À l'intérieur des limites d'une ville ou d'un village signalées par des panneaux d'entrée et de sortie" }
         ]
     },
     {
         id: 'croi-042',
         topic: 'croisement_depassement',
         difficulty: 2,
-        questionFr: "Un bus est arrÃªtÃ© Ã  un arrÃªt et ses feux de dÃ©tresse clignotent. Que devez-vous faire ?",
+        questionFr: "Un bus est arrêté à un arrêt et ses feux de détresse clignotent. Que devez-vous faire ?",
         questionEn: "A bus is stopped at a bus stop with its hazard lights flashing. What must you do?",
         options: {
-            A: { fr: "Le dÃ©passer immÃ©diatement par la gauche", en: "Overtake it immediately on the left" },
-            B: { fr: "Ralentir et Ãªtre prÃªt Ã  vous arrÃªter car des piÃ©tons peuvent traverser", en: "Slow down and be ready to stop as pedestrians may cross" },
-            C: { fr: "Klaxonner pour avertir les piÃ©tons", en: "Sound your horn to warn pedestrians" },
-            D: { fr: "Attendre obligatoirement que le bus redÃ©marre", en: "Wait until the bus moves off â€” it is compulsory" }
+            A: { fr: "Le dépasser immédiatement par la gauche", en: "Overtake it immediately on the left" },
+            B: { fr: "Ralentir et être prêt à vous arrêter car des piétons peuvent traverser", en: "Slow down and be ready to stop as pedestrians may cross" },
+            C: { fr: "Klaxonner pour avertir les piétons", en: "Sound your horn to warn pedestrians" },
+            D: { fr: "Attendre obligatoirement que le bus redémarre", en: "Wait until the bus moves off â€” it is compulsory" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Lorsqu'un bus est arrÃªtÃ© Ã  un arrÃªt, vous devez ralentir et redoubler de vigilance car des passagers descendent et peuvent traverser. Il n'est pas obligatoire d'attendre le redÃ©marrage du bus, mais la prudence est de rigueur.",
+        explanationFr: "Lorsqu'un bus est arrêté à un arrêt, vous devez ralentir et redoubler de vigilance car des passagers descendent et peuvent traverser. Il n'est pas obligatoire d'attendre le redémarrage du bus, mais la prudence est de rigueur.",
         explanationEn: "When a bus is stopped at a bus stop, you must slow down and be extra vigilant because passengers are alighting and may cross. You are not required to wait for the bus to pull away, but caution is essential.",
         trapNote: "Some candidates think you must always wait for the bus to leave (as in some other countries), but French law requires caution, not a mandatory stop.",
         distractorNotes: {
@@ -11778,26 +11778,26 @@ const QUESTION_BANK = [
             D: "There is no legal obligation to wait for the bus to restart â€” only to exercise caution"
         },
         vocabulary: [
-            { wordFr: "arrÃªt de bus", wordEn: "bus stop", definition: "Emplacement amÃ©nagÃ© pour la montÃ©e et la descente des passagers d'un autobus" },
-            { wordFr: "feux de dÃ©tresse", wordEn: "hazard lights", definition: "Clignotants simultanÃ©s signalant un danger ou un arrÃªt temporaire" },
-            { wordFr: "redoubler de vigilance", wordEn: "exercise extra caution", definition: "Augmenter son attention face Ã  un risque accru" }
+            { wordFr: "arrêt de bus", wordEn: "bus stop", definition: "Emplacement aménagé pour la montée et la descente des passagers d'un autobus" },
+            { wordFr: "feux de détresse", wordEn: "hazard lights", definition: "Clignotants simultanés signalant un danger ou un arrêt temporaire" },
+            { wordFr: "redoubler de vigilance", wordEn: "exercise extra caution", definition: "Augmenter son attention face à un risque accru" }
         ]
     },
     {
         id: 'croi-043',
         topic: 'croisement_depassement',
         difficulty: 3,
-        questionFr: "Sur autoroute, dans quelles situations le dÃ©passement par la droite est-il autorisÃ© ?",
+        questionFr: "Sur autoroute, dans quelles situations le dépassement par la droite est-il autorisé ?",
         questionEn: "On a motorway, in which situations is overtaking on the right permitted?",
         options: {
-            A: { fr: "Lorsque les vÃ©hicules de la file de gauche roulent plus lentement que ceux de votre file", en: "When vehicles in the left lane are moving more slowly than those in your lane" },
-            B: { fr: "Lorsque la circulation est dense et que toutes les voies sont occupÃ©es", en: "When traffic is heavy and all lanes are occupied" },
-            C: { fr: "Lorsque vous roulez Ã  la vitesse maximale autorisÃ©e", en: "When you are driving at the maximum permitted speed" },
-            D: { fr: "Jamais, le dÃ©passement par la droite est toujours interdit", en: "Never â€” overtaking on the right is always prohibited" }
+            A: { fr: "Lorsque les véhicules de la file de gauche roulent plus lentement que ceux de votre file", en: "When vehicles in the left lane are moving more slowly than those in your lane" },
+            B: { fr: "Lorsque la circulation est dense et que toutes les voies sont occupées", en: "When traffic is heavy and all lanes are occupied" },
+            C: { fr: "Lorsque vous roulez à la vitesse maximale autorisée", en: "When you are driving at the maximum permitted speed" },
+            D: { fr: "Jamais, le dépassement par la droite est toujours interdit", en: "Never â€” overtaking on the right is always prohibited" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Le dÃ©passement par la droite est exceptionnellement autorisÃ© lorsque la file de gauche roule plus lentement (files parallÃ¨les Ã  vitesses diffÃ©rentes) ou lorsque la circulation est dense et que toutes les voies sont occupÃ©es. Ce n'est pas un dÃ©passement actif mais un Ã©coulement naturel du trafic.",
+        explanationFr: "Le dépassement par la droite est exceptionnellement autorisé lorsque la file de gauche roule plus lentement (files parallèles à vitesses différentes) ou lorsque la circulation est dense et que toutes les voies sont occupées. Ce n'est pas un dépassement actif mais un écoulement naturel du trafic.",
         explanationEn: "Overtaking on the right is exceptionally permitted when the left lane is moving more slowly (parallel lanes at different speeds) or when traffic is heavy and all lanes are occupied. This is not active overtaking but natural traffic flow.",
         trapNote: "Many candidates believe overtaking on the right is always forbidden on motorways, ignoring the congestion and differential-speed exceptions.",
         distractorNotes: {
@@ -11805,26 +11805,26 @@ const QUESTION_BANK = [
             D: "This absolute statement is incorrect â€” French law allows right-side passing in specific congestion situations"
         },
         vocabulary: [
-            { wordFr: "dÃ©passement par la droite", wordEn: "overtaking on the right", definition: "Action de dÃ©passer un vÃ©hicule en passant par son cÃ´tÃ© droit, normalement interdit sauf exceptions" },
-            { wordFr: "files parallÃ¨les", wordEn: "parallel lanes", definition: "Voies de circulation adjacentes oÃ¹ les vÃ©hicules circulent dans la mÃªme direction" },
-            { wordFr: "circulation dense", wordEn: "heavy traffic", definition: "Situation oÃ¹ le volume de vÃ©hicules rÃ©duit significativement la vitesse d'Ã©coulement" }
+            { wordFr: "dépassement par la droite", wordEn: "overtaking on the right", definition: "Action de dépasser un véhicule en passant par son côté droit, normalement interdit sauf exceptions" },
+            { wordFr: "files parallèles", wordEn: "parallel lanes", definition: "Voies de circulation adjacentes où les véhicules circulent dans la même direction" },
+            { wordFr: "circulation dense", wordEn: "heavy traffic", definition: "Situation où le volume de véhicules réduit significativement la vitesse d'écoulement" }
         ]
     },
     {
         id: 'croi-044',
         topic: 'croisement_depassement',
         difficulty: 2,
-        questionFr: "Vous arrivez sur un pont Ã©troit muni d'un feu de signalisation. Le feu est rouge. Un vÃ©hicule arrive en face. Que faites-vous ?",
+        questionFr: "Vous arrivez sur un pont étroit muni d'un feu de signalisation. Le feu est rouge. Un véhicule arrive en face. Que faites-vous ?",
         questionEn: "You arrive at a narrow bridge controlled by a traffic light. The light is red. A vehicle is approaching from the opposite direction. What do you do?",
         options: {
-            A: { fr: "Vous vous engagez rapidement avant que le vÃ©hicule d'en face n'arrive", en: "You enter quickly before the oncoming vehicle arrives" },
+            A: { fr: "Vous vous engagez rapidement avant que le véhicule d'en face n'arrive", en: "You enter quickly before the oncoming vehicle arrives" },
             B: { fr: "Vous attendez que le feu passe au vert avant de vous engager", en: "You wait for the light to turn green before entering" },
-            C: { fr: "Vous laissez la prioritÃ© au vÃ©hicule le plus large", en: "You give priority to the wider vehicle" },
-            D: { fr: "Vous klaxonnez pour signaler votre prÃ©sence", en: "You sound your horn to signal your presence" }
+            C: { fr: "Vous laissez la priorité au véhicule le plus large", en: "You give priority to the wider vehicle" },
+            D: { fr: "Vous klaxonnez pour signaler votre présence", en: "You sound your horn to signal your presence" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Lorsqu'un pont Ã©troit est rÃ©gulÃ© par des feux de signalisation, vous devez impÃ©rativement respecter le feu. Un feu rouge signifie que vous devez attendre, mÃªme si la voie semble libre. Le feu assure l'alternance de la circulation.",
+        explanationFr: "Lorsqu'un pont étroit est régulé par des feux de signalisation, vous devez impérativement respecter le feu. Un feu rouge signifie que vous devez attendre, même si la voie semble libre. Le feu assure l'alternance de la circulation.",
         explanationEn: "When a narrow bridge is controlled by traffic lights, you must obey the light. A red light means you must wait, even if the road appears clear. The lights ensure alternating traffic flow.",
         trapNote: "Some candidates think the size of the vehicle determines priority on a narrow bridge, but when lights are present, they override any informal rules.",
         distractorNotes: {
@@ -11833,26 +11833,26 @@ const QUESTION_BANK = [
             D: "Sounding the horn does not give you right of way and is inappropriate here"
         },
         vocabulary: [
-            { wordFr: "pont Ã©troit", wordEn: "narrow bridge", definition: "Pont dont la largeur ne permet pas le croisement de deux vÃ©hicules" },
-            { wordFr: "feu de signalisation", wordEn: "traffic light", definition: "Signal lumineux tricolore rÃ©glant la circulation alternÃ©e" },
-            { wordFr: "s'engager", wordEn: "to enter / to proceed", definition: "Commencer Ã  circuler sur une portion de route Ã  accÃ¨s rÃ©glementÃ©" }
+            { wordFr: "pont étroit", wordEn: "narrow bridge", definition: "Pont dont la largeur ne permet pas le croisement de deux véhicules" },
+            { wordFr: "feu de signalisation", wordEn: "traffic light", definition: "Signal lumineux tricolore réglant la circulation alternée" },
+            { wordFr: "s'engager", wordEn: "to enter / to proceed", definition: "Commencer à circuler sur une portion de route à accès réglementé" }
         ]
     },
     {
         id: 'croi-045',
         topic: 'croisement_depassement',
         difficulty: 3,
-        questionFr: "Il est interdit de dÃ©passer Ã  l'approche d'un passage piÃ©ton. Que risquez-vous si vous dÃ©passez un vÃ©hicule qui s'arrÃªte devant un passage piÃ©ton ?",
+        questionFr: "Il est interdit de dépasser à l'approche d'un passage piéton. Que risquez-vous si vous dépassez un véhicule qui s'arrête devant un passage piéton ?",
         questionEn: "Overtaking near a pedestrian crossing is prohibited. What do you risk if you overtake a vehicle that is stopping at a pedestrian crossing?",
         options: {
             A: { fr: "Une amende de 135 â‚¬ et un retrait de 4 points", en: "A fine of â‚¬135 and a 4-point deduction" },
             B: { fr: "Une amende de 135 â‚¬ et un retrait de 6 points", en: "A fine of â‚¬135 and a 6-point deduction" },
             C: { fr: "Une amende de 35 â‚¬ seulement", en: "A fine of only â‚¬35" },
-            D: { fr: "Aucune sanction si le passage piÃ©ton est vide", en: "No penalty if the pedestrian crossing is empty" }
+            D: { fr: "Aucune sanction si le passage piéton est vide", en: "No penalty if the pedestrian crossing is empty" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "DÃ©passer un vÃ©hicule arrÃªtÃ© devant un passage piÃ©ton est une infraction de 4e classe, sanctionnÃ©e d'une amende de 135 â‚¬ et d'un retrait de 4 points. L'infraction existe que des piÃ©tons soient prÃ©sents ou non.",
+        explanationFr: "Dépasser un véhicule arrêté devant un passage piéton est une infraction de 4e classe, sanctionnée d'une amende de 135 â‚¬ et d'un retrait de 4 points. L'infraction existe que des piétons soient présents ou non.",
         explanationEn: "Overtaking a vehicle stopped at a pedestrian crossing is a 4th class offence, punishable by a â‚¬135 fine and a 4-point deduction. The offence applies whether or not pedestrians are present.",
         trapNote: "Candidates often think the penalty is only applicable when pedestrians are actually crossing, but the prohibition is absolute near a pedestrian crossing.",
         distractorNotes: {
@@ -11861,26 +11861,26 @@ const QUESTION_BANK = [
             D: "The prohibition applies regardless of whether pedestrians are present or not"
         },
         vocabulary: [
-            { wordFr: "passage piÃ©ton", wordEn: "pedestrian crossing", definition: "Marquage au sol zÃ©brÃ© permettant aux piÃ©tons de traverser la chaussÃ©e en sÃ©curitÃ©" },
-            { wordFr: "retrait de points", wordEn: "point deduction", definition: "Perte de points sur le permis de conduire suite Ã  une infraction" },
-            { wordFr: "infraction de 4e classe", wordEn: "4th class offence", definition: "CatÃ©gorie d'infraction routiÃ¨re passible d'une amende forfaitaire de 135 â‚¬" }
+            { wordFr: "passage piéton", wordEn: "pedestrian crossing", definition: "Marquage au sol zébré permettant aux piétons de traverser la chaussée en sécurité" },
+            { wordFr: "retrait de points", wordEn: "point deduction", definition: "Perte de points sur le permis de conduire suite à une infraction" },
+            { wordFr: "infraction de 4e classe", wordEn: "4th class offence", definition: "Catégorie d'infraction routière passible d'une amende forfaitaire de 135 â‚¬" }
         ]
     },
     {
         id: 'croi-046',
         topic: 'croisement_depassement',
         difficulty: 1,
-        questionFr: "Une ligne continue blanche sÃ©pare les deux sens de circulation. Un tracteur roule Ã  20 km/h devant vous. Pouvez-vous le dÃ©passer ?",
+        questionFr: "Une ligne continue blanche sépare les deux sens de circulation. Un tracteur roule à 20 km/h devant vous. Pouvez-vous le dépasser ?",
         questionEn: "A solid white centre line separates the two directions. A tractor is travelling at 20 km/h ahead of you. May you overtake it?",
         options: {
-            A: { fr: "Oui, car le tracteur roule Ã  moins de 30 km/h", en: "Yes, because the tractor is travelling at less than 30 km/h" },
-            B: { fr: "Oui, mais uniquement si la visibilitÃ© est suffisante", en: "Yes, but only if visibility is sufficient" },
-            C: { fr: "Non, une ligne continue interdit tout dÃ©passement", en: "No â€” a solid line prohibits all overtaking" },
+            A: { fr: "Oui, car le tracteur roule à moins de 30 km/h", en: "Yes, because the tractor is travelling at less than 30 km/h" },
+            B: { fr: "Oui, mais uniquement si la visibilité est suffisante", en: "Yes, but only if visibility is sufficient" },
+            C: { fr: "Non, une ligne continue interdit tout dépassement", en: "No â€” a solid line prohibits all overtaking" },
             D: { fr: "Oui, si vous ne franchissez pas la ligne continue", en: "Yes, if you do not cross the solid line" }
         },
         correctAnswers: ["C"],
         answerCount: 1,
-        explanationFr: "Une ligne continue interdit formellement le dÃ©passement, quelle que soit la vitesse du vÃ©hicule devant vous. MÃªme si un tracteur roule trÃ¨s lentement, vous devez rester derriÃ¨re lui jusqu'Ã  ce que la ligne devienne discontinue.",
+        explanationFr: "Une ligne continue interdit formellement le dépassement, quelle que soit la vitesse du véhicule devant vous. Même si un tracteur roule très lentement, vous devez rester derrière lui jusqu'à ce que la ligne devienne discontinue.",
         explanationEn: "A solid line strictly prohibits overtaking regardless of the speed of the vehicle ahead. Even if a tractor is moving very slowly, you must stay behind it until the line becomes broken.",
         trapNote: "The myth that slow vehicles under 30 km/h can always be passed is widespread but false â€” the line marking is the deciding factor.",
         distractorNotes: {
@@ -11889,8 +11889,8 @@ const QUESTION_BANK = [
             D: "In practice, overtaking a wide tractor without crossing the line is nearly impossible and the rule still prohibits it"
         },
         vocabulary: [
-            { wordFr: "ligne continue", wordEn: "solid white line", definition: "Marquage au sol continu interdisant le franchissement et le dÃ©passement" },
-            { wordFr: "tracteur", wordEn: "tractor", definition: "VÃ©hicule agricole Ã  moteur circulant Ã  faible vitesse" },
+            { wordFr: "ligne continue", wordEn: "solid white line", definition: "Marquage au sol continu interdisant le franchissement et le dépassement" },
+            { wordFr: "tracteur", wordEn: "tractor", definition: "Véhicule agricole à moteur circulant à faible vitesse" },
             { wordFr: "franchir", wordEn: "to cross (a line)", definition: "Rouler par-dessus une ligne de marquage au sol, interdit pour les lignes continues" }
         ]
     },
@@ -11898,17 +11898,17 @@ const QUESTION_BANK = [
         id: 'croi-047',
         topic: 'croisement_depassement',
         difficulty: 2,
-        questionFr: "Par temps de pluie, quelle est la distance latÃ©rale minimale pour dÃ©passer un piÃ©ton marchant sur le bord de la route hors agglomÃ©ration ?",
+        questionFr: "Par temps de pluie, quelle est la distance latérale minimale pour dépasser un piéton marchant sur le bord de la route hors agglomération ?",
         questionEn: "In rainy conditions, what is the minimum lateral distance to overtake a pedestrian walking on the road edge outside a built-up area?",
         options: {
-            A: { fr: "1 mÃ¨tre", en: "1 metre" },
-            B: { fr: "1,50 mÃ¨tre", en: "1.50 metres" },
-            C: { fr: "2 mÃ¨tres", en: "2 metres" },
-            D: { fr: "1,50 mÃ¨tre minimum, davantage si possible pour Ã©viter les Ã©claboussures", en: "1.50 metres minimum, more if possible to avoid splashing" }
+            A: { fr: "1 mètre", en: "1 metre" },
+            B: { fr: "1,50 mètre", en: "1.50 metres" },
+            C: { fr: "2 mètres", en: "2 metres" },
+            D: { fr: "1,50 mètre minimum, davantage si possible pour éviter les éclaboussures", en: "1.50 metres minimum, more if possible to avoid splashing" }
         },
         correctAnswers: ["D"],
         answerCount: 1,
-        explanationFr: "Hors agglomÃ©ration, la distance latÃ©rale minimale est de 1,50 mÃ¨tre pour les usagers vulnÃ©rables (piÃ©tons, cyclistes). Par temps de pluie, le conducteur doit augmenter cette distance autant que possible pour Ã©viter de projeter de l'eau sur le piÃ©ton. Ã‰clabousser un piÃ©ton constitue une infraction.",
+        explanationFr: "Hors agglomération, la distance latérale minimale est de 1,50 mètre pour les usagers vulnérables (piétons, cyclistes). Par temps de pluie, le conducteur doit augmenter cette distance autant que possible pour éviter de projeter de l'eau sur le piéton. Éclabousser un piéton constitue une infraction.",
         explanationEn: "Outside built-up areas, the minimum lateral distance is 1.50 metres for vulnerable road users (pedestrians, cyclists). In the rain, the driver must increase this distance as much as possible to avoid splashing the pedestrian. Splashing a pedestrian is an offence.",
         trapNote: "Many candidates pick 1.50m as the complete answer, forgetting that rain conditions require additional distance and that splashing is actually punishable.",
         distractorNotes: {
@@ -11917,26 +11917,26 @@ const QUESTION_BANK = [
             C: "2 metres is not a legally defined distance â€” the law states 1.50m minimum with an obligation to increase when conditions require it"
         },
         vocabulary: [
-            { wordFr: "Ã©claboussure", wordEn: "splash", definition: "Projection d'eau causÃ©e par le passage d'un vÃ©hicule dans une flaque" },
-            { wordFr: "usager vulnÃ©rable", wordEn: "vulnerable road user", definition: "PiÃ©ton, cycliste ou tout usager non protÃ©gÃ© par un habitacle" },
-            { wordFr: "hors agglomÃ©ration", wordEn: "outside built-up area", definition: "En dehors des limites d'une ville ou d'un village" }
+            { wordFr: "éclaboussure", wordEn: "splash", definition: "Projection d'eau causée par le passage d'un véhicule dans une flaque" },
+            { wordFr: "usager vulnérable", wordEn: "vulnerable road user", definition: "Piéton, cycliste ou tout usager non protégé par un habitacle" },
+            { wordFr: "hors agglomération", wordEn: "outside built-up area", definition: "En dehors des limites d'une ville ou d'un village" }
         ]
     },
     {
         id: 'croi-048',
         topic: 'croisement_depassement',
         difficulty: 3,
-        questionFr: "Lors d'un croisement sur une route Ã©troite sans marquage ni signalisation, quel vÃ©hicule doit reculer ?",
+        questionFr: "Lors d'un croisement sur une route étroite sans marquage ni signalisation, quel véhicule doit reculer ?",
         questionEn: "When two vehicles meet on a narrow road with no markings or signs, which vehicle must reverse?",
         options: {
             A: { fr: "Celui qui monte, car il est plus facile de reculer en descente", en: "The one going uphill, because it is easier to reverse downhill" },
-            B: { fr: "Celui qui descend, sauf s'il y a un endroit pour se ranger avant la zone Ã©troite", en: "The one going downhill, unless there is a pull-in before the narrow section" },
-            C: { fr: "Le vÃ©hicule le plus lÃ©ger", en: "The lighter vehicle" },
-            D: { fr: "Le dernier arrivÃ© dans la zone Ã©troite", en: "The last one to enter the narrow section" }
+            B: { fr: "Celui qui descend, sauf s'il y a un endroit pour se ranger avant la zone étroite", en: "The one going downhill, unless there is a pull-in before the narrow section" },
+            C: { fr: "Le véhicule le plus léger", en: "The lighter vehicle" },
+            D: { fr: "Le dernier arrivé dans la zone étroite", en: "The last one to enter the narrow section" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "En rÃ¨gle gÃ©nÃ©rale, c'est le vÃ©hicule qui descend qui doit reculer pour laisser passer celui qui monte, car il est plus difficile de redÃ©marrer en cÃ´te. Toutefois, si un emplacement de dÃ©gagement existe du cÃ´tÃ© du vÃ©hicule descendant, il doit s'y ranger.",
+        explanationFr: "En règle générale, c'est le véhicule qui descend qui doit reculer pour laisser passer celui qui monte, car il est plus difficile de redémarrer en côte. Toutefois, si un emplacement de dégagement existe du côté du véhicule descendant, il doit s'y ranger.",
         explanationEn: "As a general rule, the vehicle going downhill must reverse to let the uphill vehicle pass, because it is more difficult to restart on a slope. However, if a pull-in is available on the downhill side, the descending vehicle should use it.",
         trapNote: "Candidates often think the uphill vehicle reverses because going backwards downhill seems easier, but the rule protects the uphill driver from a difficult restart.",
         distractorNotes: {
@@ -11945,26 +11945,26 @@ const QUESTION_BANK = [
             D: "Arrival order is not the determining factor on a slope â€” the gradient rule applies"
         },
         vocabulary: [
-            { wordFr: "croisement", wordEn: "meeting (of vehicles)", definition: "Situation oÃ¹ deux vÃ©hicules circulant en sens inverse se rencontrent" },
-            { wordFr: "reculer", wordEn: "to reverse", definition: "Faire marche arriÃ¨re pour libÃ©rer le passage" },
-            { wordFr: "emplacement de dÃ©gagement", wordEn: "pull-in / passing place", definition: "Ã‰largissement de la chaussÃ©e permettant Ã  un vÃ©hicule de se ranger pour laisser passer un autre" }
+            { wordFr: "croisement", wordEn: "meeting (of vehicles)", definition: "Situation où deux véhicules circulant en sens inverse se rencontrent" },
+            { wordFr: "reculer", wordEn: "to reverse", definition: "Faire marche arrière pour libérer le passage" },
+            { wordFr: "emplacement de dégagement", wordEn: "pull-in / passing place", definition: "Élargissement de la chaussée permettant à un véhicule de se ranger pour laisser passer un autre" }
         ]
     },
     {
         id: 'croi-049',
         topic: 'croisement_depassement',
         difficulty: 2,
-        questionFr: "Vous souhaitez dÃ©passer un engin agricole de nuit sur une route dÃ©partementale. Quelles prÃ©cautions supplÃ©mentaires devez-vous prendre ?",
+        questionFr: "Vous souhaitez dépasser un engin agricole de nuit sur une route départementale. Quelles précautions supplémentaires devez-vous prendre ?",
         questionEn: "You want to overtake agricultural machinery at night on a departmental road. What additional precautions must you take?",
         options: {
             A: { fr: "Utiliser les feux de route pour mieux voir", en: "Use full beam headlights to see better" },
-            B: { fr: "Utiliser l'avertisseur sonore pour prÃ©venir le conducteur de l'engin", en: "Use the horn to warn the machinery driver" },
-            C: { fr: "S'assurer de la largeur de l'engin et de la place disponible, puis passer en feux de croisement pendant le dÃ©passement", en: "Check the width of the machinery and available space, then switch to dipped headlights during the overtaking manoeuvre" },
-            D: { fr: "DÃ©passer rapidement en accÃ©lÃ©rant au maximum", en: "Overtake quickly by accelerating to maximum speed" }
+            B: { fr: "Utiliser l'avertisseur sonore pour prévenir le conducteur de l'engin", en: "Use the horn to warn the machinery driver" },
+            C: { fr: "S'assurer de la largeur de l'engin et de la place disponible, puis passer en feux de croisement pendant le dépassement", en: "Check the width of the machinery and available space, then switch to dipped headlights during the overtaking manoeuvre" },
+            D: { fr: "Dépasser rapidement en accélérant au maximum", en: "Overtake quickly by accelerating to maximum speed" }
         },
         correctAnswers: ["C"],
         answerCount: 1,
-        explanationFr: "Les engins agricoles sont souvent trÃ¨s larges et mal Ã©clairÃ©s. De nuit, vous devez Ã©valuer la largeur de l'engin, vous assurer qu'il y a suffisamment d'espace, puis passer en feux de croisement pour ne pas Ã©blouir le conducteur de l'engin ni les vÃ©hicules venant en face.",
+        explanationFr: "Les engins agricoles sont souvent très larges et mal éclairés. De nuit, vous devez évaluer la largeur de l'engin, vous assurer qu'il y a suffisamment d'espace, puis passer en feux de croisement pour ne pas éblouir le conducteur de l'engin ni les véhicules venant en face.",
         explanationEn: "Agricultural machinery is often very wide and poorly lit. At night, you must assess the width of the machinery, ensure there is sufficient space, then switch to dipped headlights so as not to dazzle the machinery driver or oncoming vehicles.",
         trapNote: "Candidates instinctively want to use full beam to see better, but this would dazzle both the machinery driver and any oncoming traffic.",
         distractorNotes: {
@@ -11973,26 +11973,26 @@ const QUESTION_BANK = [
             D: "Excessive acceleration increases risk, especially given the uncertain width of agricultural machinery"
         },
         vocabulary: [
-            { wordFr: "engin agricole", wordEn: "agricultural machinery", definition: "VÃ©hicule ou Ã©quipement utilisÃ© pour les travaux agricoles, souvent lent et large" },
-            { wordFr: "feux de croisement", wordEn: "dipped headlights / low beam", definition: "Ã‰clairage avant qui n'Ã©blouit pas les autres usagers, obligatoire lors du croisement" },
-            { wordFr: "route dÃ©partementale", wordEn: "departmental road", definition: "Route gÃ©rÃ©e par le dÃ©partement, souvent Ã  double sens sans sÃ©parateur central" }
+            { wordFr: "engin agricole", wordEn: "agricultural machinery", definition: "Véhicule ou équipement utilisé pour les travaux agricoles, souvent lent et large" },
+            { wordFr: "feux de croisement", wordEn: "dipped headlights / low beam", definition: "Éclairage avant qui n'éblouit pas les autres usagers, obligatoire lors du croisement" },
+            { wordFr: "route départementale", wordEn: "departmental road", definition: "Route gérée par le département, souvent à double sens sans séparateur central" }
         ]
     },
     {
         id: 'croi-050',
         topic: 'croisement_depassement',
         difficulty: 1,
-        questionFr: "Vous suivez une file de vÃ©hicules sur une route nationale. Le vÃ©hicule devant vous commence Ã  dÃ©passer. Que devez-vous faire ?",
+        questionFr: "Vous suivez une file de véhicules sur une route nationale. Le véhicule devant vous commence à dépasser. Que devez-vous faire ?",
         questionEn: "You are following a line of vehicles on a national road. The vehicle ahead of you begins to overtake. What should you do?",
         options: {
-            A: { fr: "DÃ©passer en mÃªme temps pour profiter de l'espace crÃ©Ã©", en: "Overtake at the same time to use the gap created" },
-            B: { fr: "Attendre que le vÃ©hicule devant ait terminÃ© son dÃ©passement avant d'envisager le vÃ´tre", en: "Wait until the vehicle ahead has completed its overtaking before considering yours" },
-            C: { fr: "AccÃ©lÃ©rer pour vous rapprocher et dÃ©passer juste aprÃ¨s lui", en: "Accelerate to close the gap and overtake just behind it" },
+            A: { fr: "Dépasser en même temps pour profiter de l'espace créé", en: "Overtake at the same time to use the gap created" },
+            B: { fr: "Attendre que le véhicule devant ait terminé son dépassement avant d'envisager le vôtre", en: "Wait until the vehicle ahead has completed its overtaking before considering yours" },
+            C: { fr: "Accélérer pour vous rapprocher et dépasser juste après lui", en: "Accelerate to close the gap and overtake just behind it" },
             D: { fr: "Faire un appel de phares pour demander le passage", en: "Flash your headlights to request passage" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Il est interdit de dÃ©passer en chaÃ®ne. Vous devez attendre que le vÃ©hicule devant vous ait terminÃ© son dÃ©passement et se soit rabattu avant d'envisager votre propre manÅ“uvre. DÃ©passer simultanÃ©ment crÃ©e un risque majeur d'accident frontal.",
+        explanationFr: "Il est interdit de dépasser en chaîne. Vous devez attendre que le véhicule devant vous ait terminé son dépassement et se soit rabattu avant d'envisager votre propre manÅ“uvre. Dépasser simultanément crée un risque majeur d'accident frontal.",
         explanationEn: "Chain overtaking is prohibited. You must wait until the vehicle ahead has completed its manoeuvre and pulled back in before considering your own. Simultaneous overtaking creates a major risk of head-on collision.",
         trapNote: "Impatient drivers often follow the car ahead into an overtaking manoeuvre, creating a chain effect that is extremely dangerous and illegal.",
         distractorNotes: {
@@ -12001,9 +12001,9 @@ const QUESTION_BANK = [
             D: "Flashing headlights does not grant priority and is not a substitute for safe procedure"
         },
         vocabulary: [
-            { wordFr: "dÃ©passement en chaÃ®ne", wordEn: "chain overtaking", definition: "Plusieurs vÃ©hicules dÃ©passant simultanÃ©ment, interdit car extrÃªmement dangereux" },
-            { wordFr: "se rabattre", wordEn: "to pull back in", definition: "Revenir dans sa voie aprÃ¨s un dÃ©passement" },
-            { wordFr: "route nationale", wordEn: "national road", definition: "Axe routier important gÃ©rÃ© par l'Ã‰tat" }
+            { wordFr: "dépassement en chaîne", wordEn: "chain overtaking", definition: "Plusieurs véhicules dépassant simultanément, interdit car extrêmement dangereux" },
+            { wordFr: "se rabattre", wordEn: "to pull back in", definition: "Revenir dans sa voie après un dépassement" },
+            { wordFr: "route nationale", wordEn: "national road", definition: "Axe routier important géré par l'État" }
         ]
     },
     {
@@ -12015,12 +12015,12 @@ const QUESTION_BANK = [
         options: {
             A: { fr: "Vous recevez une contravention classique de 35 â‚¬", en: "You receive a standard fine of â‚¬35" },
             B: { fr: "Vous recevez un forfait post-stationnement (FPS) dont le montant varie selon la ville", en: "You receive a post-parking charge (FPS) whose amount varies by city" },
-            C: { fr: "Votre vÃ©hicule est immÃ©diatement mis en fourriÃ¨re", en: "Your vehicle is immediately impounded" },
-            D: { fr: "Aucune sanction si le dÃ©passement est infÃ©rieur Ã  15 minutes", en: "No penalty if the overstay is less than 15 minutes" }
+            C: { fr: "Votre véhicule est immédiatement mis en fourrière", en: "Your vehicle is immediately impounded" },
+            D: { fr: "Aucune sanction si le dépassement est inférieur à 15 minutes", en: "No penalty if the overstay is less than 15 minutes" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Depuis 2018, le stationnement payant est dÃ©centralisÃ©. Le non-paiement ou le dÃ©passement du temps payÃ© entraÃ®ne un forfait post-stationnement (FPS) fixÃ© par chaque commune. Ce n'est plus une contravention pÃ©nale mais une redevance d'occupation du domaine public.",
+        explanationFr: "Depuis 2018, le stationnement payant est décentralisé. Le non-paiement ou le dépassement du temps payé entraîne un forfait post-stationnement (FPS) fixé par chaque commune. Ce n'est plus une contravention pénale mais une redevance d'occupation du domaine public.",
         explanationEn: "Since 2018, paid parking has been decentralised. Failure to pay or overstaying results in a post-parking charge (FPS) set by each municipality. It is no longer a criminal fine but a charge for occupying public space.",
         trapNote: "Many candidates still think the old 17â‚¬ or 35â‚¬ fine system applies, but it was replaced by the FPS system in 2018.",
         distractorNotes: {
@@ -12029,26 +12029,26 @@ const QUESTION_BANK = [
             D: "No grace period exists â€” the charge applies as soon as the ticket expires"
         },
         vocabulary: [
-            { wordFr: "horodateur", wordEn: "parking meter", definition: "Appareil dÃ©livrant un ticket de stationnement payant avec heure de fin autorisÃ©e" },
-            { wordFr: "forfait post-stationnement (FPS)", wordEn: "post-parking charge", definition: "Redevance fixÃ©e par la commune en cas de non-paiement ou de dÃ©passement du stationnement payant" },
-            { wordFr: "contravention", wordEn: "fine / penalty notice", definition: "Sanction pÃ©cuniaire pour infraction au Code de la route" }
+            { wordFr: "horodateur", wordEn: "parking meter", definition: "Appareil délivrant un ticket de stationnement payant avec heure de fin autorisée" },
+            { wordFr: "forfait post-stationnement (FPS)", wordEn: "post-parking charge", definition: "Redevance fixée par la commune en cas de non-paiement ou de dépassement du stationnement payant" },
+            { wordFr: "contravention", wordEn: "fine / penalty notice", definition: "Sanction pécuniaire pour infraction au Code de la route" }
         ]
     },
     {
         id: 'arret-042',
         topic: 'arret_stationnement',
         difficulty: 2,
-        questionFr: "Un rÃ©sident possÃ¨de une carte de stationnement rÃ©sidentiel. Quels avantages lui confÃ¨re-t-elle ?",
+        questionFr: "Un résident possède une carte de stationnement résidentiel. Quels avantages lui confère-t-elle ?",
         questionEn: "A resident holds a residential parking card. What advantages does it give them?",
         options: {
-            A: { fr: "Le stationnement gratuit et illimitÃ© dans toute la ville", en: "Free and unlimited parking throughout the city" },
-            B: { fr: "Un tarif prÃ©fÃ©rentiel dans la zone de stationnement payant de son quartier", en: "A preferential rate in the paid parking zone of their neighbourhood" },
+            A: { fr: "Le stationnement gratuit et illimité dans toute la ville", en: "Free and unlimited parking throughout the city" },
+            B: { fr: "Un tarif préférentiel dans la zone de stationnement payant de son quartier", en: "A preferential rate in the paid parking zone of their neighbourhood" },
             C: { fr: "Le droit de stationner en double file", en: "The right to double-park" },
             D: { fr: "Une exemption de toute verbalisation", en: "An exemption from any parking ticket" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "La carte de stationnement rÃ©sidentiel permet de bÃ©nÃ©ficier d'un tarif trÃ¨s rÃ©duit dans la zone payante de son quartier de rÃ©sidence. Elle ne donne pas un droit de stationnement gratuit ni illimitÃ© et ne permet pas de stationner en infraction.",
+        explanationFr: "La carte de stationnement résidentiel permet de bénéficier d'un tarif très réduit dans la zone payante de son quartier de résidence. Elle ne donne pas un droit de stationnement gratuit ni illimité et ne permet pas de stationner en infraction.",
         explanationEn: "The residential parking card provides a significantly reduced rate in the paid parking zone of the holder's neighbourhood. It does not provide free or unlimited parking, nor does it allow parking in violation of rules.",
         trapNote: "Residents often believe the card means free parking, but it only reduces the rate â€” they still need to validate their parking.",
         distractorNotes: {
@@ -12057,26 +12057,26 @@ const QUESTION_BANK = [
             D: "The card does not protect against any type of penalty â€” violations are still enforceable"
         },
         vocabulary: [
-            { wordFr: "carte de stationnement rÃ©sidentiel", wordEn: "residential parking card", definition: "Titre permettant aux rÃ©sidents de bÃ©nÃ©ficier d'un tarif rÃ©duit dans leur zone de stationnement" },
-            { wordFr: "tarif prÃ©fÃ©rentiel", wordEn: "preferential rate", definition: "Prix rÃ©duit accordÃ© Ã  certaines catÃ©gories d'usagers" },
-            { wordFr: "zone payante", wordEn: "paid parking zone", definition: "Secteur oÃ¹ le stationnement est soumis au paiement d'une redevance" }
+            { wordFr: "carte de stationnement résidentiel", wordEn: "residential parking card", definition: "Titre permettant aux résidents de bénéficier d'un tarif réduit dans leur zone de stationnement" },
+            { wordFr: "tarif préférentiel", wordEn: "preferential rate", definition: "Prix réduit accordé à certaines catégories d'usagers" },
+            { wordFr: "zone payante", wordEn: "paid parking zone", definition: "Secteur où le stationnement est soumis au paiement d'une redevance" }
         ]
     },
     {
         id: 'arret-043',
         topic: 'arret_stationnement',
         difficulty: 3,
-        questionFr: "Un vÃ©hicule est garÃ© sur une place rÃ©servÃ©e aux vÃ©hicules Ã©lectriques en cours de recharge sans Ãªtre branchÃ©. Que risque le conducteur ?",
+        questionFr: "Un véhicule est garé sur une place réservée aux véhicules électriques en cours de recharge sans être branché. Que risque le conducteur ?",
         questionEn: "A vehicle is parked in a space reserved for electric vehicles being charged without being plugged in. What does the driver risk?",
         options: {
-            A: { fr: "Aucune sanction car la place n'est pas rÃ©servÃ©e aux handicapÃ©s", en: "No penalty because the space is not reserved for disabled persons" },
-            B: { fr: "Une amende de 35 â‚¬ pour stationnement gÃªnant", en: "A fine of â‚¬35 for obstructive parking" },
-            C: { fr: "Une amende de 135 â‚¬ pour stationnement trÃ¨s gÃªnant et une possible mise en fourriÃ¨re", en: "A fine of â‚¬135 for very obstructive parking and possible impounding" },
+            A: { fr: "Aucune sanction car la place n'est pas réservée aux handicapés", en: "No penalty because the space is not reserved for disabled persons" },
+            B: { fr: "Une amende de 35 â‚¬ pour stationnement gênant", en: "A fine of â‚¬35 for obstructive parking" },
+            C: { fr: "Une amende de 135 â‚¬ pour stationnement très gênant et une possible mise en fourrière", en: "A fine of â‚¬135 for very obstructive parking and possible impounding" },
             D: { fr: "Un simple avertissement verbal", en: "A simple verbal warning" }
         },
         correctAnswers: ["C"],
         answerCount: 1,
-        explanationFr: "Occuper une place de recharge pour vÃ©hicules Ã©lectriques sans Ãªtre en cours de recharge constitue un stationnement trÃ¨s gÃªnant (article R417-11 du Code de la route), passible d'une amende de 135 â‚¬ et d'une mise en fourriÃ¨re possible.",
+        explanationFr: "Occuper une place de recharge pour véhicules électriques sans être en cours de recharge constitue un stationnement très gênant (article R417-11 du Code de la route), passible d'une amende de 135 â‚¬ et d'une mise en fourrière possible.",
         explanationEn: "Occupying an electric vehicle charging space without actually charging constitutes very obstructive parking (article R417-11 of the Highway Code), punishable by a â‚¬135 fine and possible impounding.",
         trapNote: "Many think only disabled parking spaces carry heavy penalties, but EV charging spots are now equally protected under the very obstructive parking category.",
         distractorNotes: {
@@ -12085,26 +12085,26 @@ const QUESTION_BANK = [
             D: "This is a formal offence, not something handled by verbal warning"
         },
         vocabulary: [
-            { wordFr: "vÃ©hicule Ã©lectrique", wordEn: "electric vehicle", definition: "VÃ©hicule propulsÃ© par un ou plusieurs moteurs Ã©lectriques alimentÃ©s par batterie" },
-            { wordFr: "borne de recharge", wordEn: "charging station", definition: "Installation permettant de recharger la batterie d'un vÃ©hicule Ã©lectrique" },
-            { wordFr: "stationnement trÃ¨s gÃªnant", wordEn: "very obstructive parking", definition: "Infraction de 4e classe entraÃ®nant une amende de 135 â‚¬ et un possible enlÃ¨vement du vÃ©hicule" }
+            { wordFr: "véhicule électrique", wordEn: "electric vehicle", definition: "Véhicule propulsé par un ou plusieurs moteurs électriques alimentés par batterie" },
+            { wordFr: "borne de recharge", wordEn: "charging station", definition: "Installation permettant de recharger la batterie d'un véhicule électrique" },
+            { wordFr: "stationnement très gênant", wordEn: "very obstructive parking", definition: "Infraction de 4e classe entraînant une amende de 135 â‚¬ et un possible enlèvement du véhicule" }
         ]
     },
     {
         id: 'arret-044',
         topic: 'arret_stationnement',
         difficulty: 3,
-        questionFr: "Quelle est la sanction pour un conducteur valide qui stationne sur une place rÃ©servÃ©e aux personnes handicapÃ©es ?",
+        questionFr: "Quelle est la sanction pour un conducteur valide qui stationne sur une place réservée aux personnes handicapées ?",
         questionEn: "What is the penalty for an able-bodied driver who parks in a space reserved for disabled persons?",
         options: {
             A: { fr: "Une amende de 135 â‚¬ et un retrait de 2 points", en: "A fine of â‚¬135 and a 2-point deduction" },
-            B: { fr: "Une amende de 135 â‚¬ sans retrait de points mais avec mise en fourriÃ¨re possible", en: "A fine of â‚¬135 with no point deduction but possible impounding" },
+            B: { fr: "Une amende de 135 â‚¬ sans retrait de points mais avec mise en fourrière possible", en: "A fine of â‚¬135 with no point deduction but possible impounding" },
             C: { fr: "Une amende de 35 â‚¬", en: "A fine of â‚¬35" },
             D: { fr: "Une amende de 750 â‚¬ et un retrait de 6 points", en: "A fine of â‚¬750 and a 6-point deduction" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Stationner sur une place handicapÃ©e sans y Ãªtre autorisÃ© est une infraction de 4e classe sanctionnÃ©e d'une amende de 135 â‚¬. Il n'y a pas de retrait de points, mais le vÃ©hicule peut Ãªtre mis en fourriÃ¨re. L'amende majorÃ©e peut atteindre 375 â‚¬.",
+        explanationFr: "Stationner sur une place handicapée sans y être autorisé est une infraction de 4e classe sanctionnée d'une amende de 135 â‚¬. Il n'y a pas de retrait de points, mais le véhicule peut être mis en fourrière. L'amende majorée peut atteindre 375 â‚¬.",
         explanationEn: "Parking in a disabled space without authorisation is a 4th class offence punishable by a â‚¬135 fine. There is no point deduction, but the vehicle may be impounded. The increased fine can reach â‚¬375.",
         trapNote: "Candidates often assume point deductions accompany this offence, but parking violations in France generally do not result in point loss.",
         distractorNotes: {
@@ -12113,26 +12113,26 @@ const QUESTION_BANK = [
             D: "750â‚¬ with 6 points is wildly disproportionate and does not correspond to any parking offence"
         },
         vocabulary: [
-            { wordFr: "place handicapÃ©e", wordEn: "disabled parking space", definition: "Emplacement de stationnement rÃ©servÃ© aux titulaires d'une carte mobilitÃ© inclusion" },
-            { wordFr: "carte mobilitÃ© inclusion (CMI)", wordEn: "mobility inclusion card", definition: "Carte officielle attestant d'un handicap et donnant droit Ã  certains avantages, dont le stationnement rÃ©servÃ©" },
-            { wordFr: "mise en fourriÃ¨re", wordEn: "impounding", definition: "EnlÃ¨vement et mise en dÃ©pÃ´t d'un vÃ©hicule par les forces de l'ordre" }
+            { wordFr: "place handicapée", wordEn: "disabled parking space", definition: "Emplacement de stationnement réservé aux titulaires d'une carte mobilité inclusion" },
+            { wordFr: "carte mobilité inclusion (CMI)", wordEn: "mobility inclusion card", definition: "Carte officielle attestant d'un handicap et donnant droit à certains avantages, dont le stationnement réservé" },
+            { wordFr: "mise en fourrière", wordEn: "impounding", definition: "Enlèvement et mise en dépôt d'un véhicule par les forces de l'ordre" }
         ]
     },
     {
         id: 'arret-045',
         topic: 'arret_stationnement',
         difficulty: 2,
-        questionFr: "Un livreur doit effectuer une livraison dans une zone piÃ©tonne. Quelles sont les rÃ¨gles Ã  respecter ?",
+        questionFr: "Un livreur doit effectuer une livraison dans une zone piétonne. Quelles sont les règles à respecter ?",
         questionEn: "A delivery driver needs to make a delivery in a pedestrian zone. What rules must be followed?",
         options: {
-            A: { fr: "Les livraisons sont autorisÃ©es uniquement pendant les horaires affichÃ©s, et le vÃ©hicule doit Ãªtre garÃ© sur les emplacements prÃ©vus", en: "Deliveries are only allowed during posted hours, and the vehicle must park in designated spots" },
-            B: { fr: "Les livraisons sont interdites Ã  tout moment dans les zones piÃ©tonnes", en: "Deliveries are prohibited at all times in pedestrian zones" },
-            C: { fr: "Les livraisons sont autorisÃ©es Ã  tout moment Ã  condition de ne pas rester plus de 5 minutes", en: "Deliveries are allowed at any time provided the stop is under 5 minutes" },
-            D: { fr: "Seuls les vÃ©hicules Ã©lectriques peuvent livrer en zone piÃ©tonne", en: "Only electric vehicles may deliver in pedestrian zones" }
+            A: { fr: "Les livraisons sont autorisées uniquement pendant les horaires affichés, et le véhicule doit être garé sur les emplacements prévus", en: "Deliveries are only allowed during posted hours, and the vehicle must park in designated spots" },
+            B: { fr: "Les livraisons sont interdites à tout moment dans les zones piétonnes", en: "Deliveries are prohibited at all times in pedestrian zones" },
+            C: { fr: "Les livraisons sont autorisées à tout moment à condition de ne pas rester plus de 5 minutes", en: "Deliveries are allowed at any time provided the stop is under 5 minutes" },
+            D: { fr: "Seuls les véhicules électriques peuvent livrer en zone piétonne", en: "Only electric vehicles may deliver in pedestrian zones" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Les zones piÃ©tonnes prÃ©voient gÃ©nÃ©ralement des crÃ©neaux horaires spÃ©cifiques pour les livraisons, souvent le matin tÃ´t. Les vÃ©hicules de livraison doivent respecter ces horaires et utiliser les emplacements dÃ©diÃ©s. En dehors de ces horaires, l'accÃ¨s motorisÃ© est interdit.",
+        explanationFr: "Les zones piétonnes prévoient généralement des créneaux horaires spécifiques pour les livraisons, souvent le matin tôt. Les véhicules de livraison doivent respecter ces horaires et utiliser les emplacements dédiés. En dehors de ces horaires, l'accès motorisé est interdit.",
         explanationEn: "Pedestrian zones generally provide specific time windows for deliveries, often early in the morning. Delivery vehicles must respect these times and use designated spaces. Outside these hours, motorised access is prohibited.",
         trapNote: "Candidates might think all deliveries are banned in pedestrian zones, or that a quick stop is always allowed.",
         distractorNotes: {
@@ -12141,26 +12141,26 @@ const QUESTION_BANK = [
             D: "While some cities encourage EV deliveries, there is no national rule restricting deliveries to electric vehicles only"
         },
         vocabulary: [
-            { wordFr: "zone piÃ©tonne", wordEn: "pedestrian zone", definition: "Espace rÃ©servÃ© Ã  la circulation des piÃ©tons, interdit aux vÃ©hicules motorisÃ©s sauf exceptions" },
-            { wordFr: "crÃ©neau horaire", wordEn: "time window", definition: "PÃ©riode de temps dÃ©finie pendant laquelle une activitÃ© est autorisÃ©e" },
-            { wordFr: "emplacement de livraison", wordEn: "delivery bay", definition: "Place rÃ©servÃ©e au stationnement temporaire des vÃ©hicules de livraison" }
+            { wordFr: "zone piétonne", wordEn: "pedestrian zone", definition: "Espace réservé à la circulation des piétons, interdit aux véhicules motorisés sauf exceptions" },
+            { wordFr: "créneau horaire", wordEn: "time window", definition: "Période de temps définie pendant laquelle une activité est autorisée" },
+            { wordFr: "emplacement de livraison", wordEn: "delivery bay", definition: "Place réservée au stationnement temporaire des véhicules de livraison" }
         ]
     },
     {
         id: 'arret-046',
         topic: 'arret_stationnement',
         difficulty: 2,
-        questionFr: "Est-il autorisÃ© de stationner sur un pont ?",
+        questionFr: "Est-il autorisé de stationner sur un pont ?",
         questionEn: "Is it permitted to park on a bridge?",
         options: {
             A: { fr: "Oui, si le pont est suffisamment large", en: "Yes, if the bridge is wide enough" },
             B: { fr: "Non, le stationnement est interdit sur les ponts et dans les tunnels", en: "No, parking is prohibited on bridges and in tunnels" },
-            C: { fr: "Oui, Ã  condition de laisser au moins 3 mÃ¨tres de passage", en: "Yes, provided at least 3 metres of clearance is left" },
+            C: { fr: "Oui, à condition de laisser au moins 3 mètres de passage", en: "Yes, provided at least 3 metres of clearance is left" },
             D: { fr: "Uniquement la nuit lorsque la circulation est faible", en: "Only at night when traffic is light" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Le stationnement est interdit sur les ponts, les passages souterrains et les tunnels. Ces ouvrages d'art prÃ©sentent des risques particuliers en cas d'incendie ou d'accident, et le stationnement y gÃªnerait l'Ã©vacuation et l'accÃ¨s des secours.",
+        explanationFr: "Le stationnement est interdit sur les ponts, les passages souterrains et les tunnels. Ces ouvrages d'art présentent des risques particuliers en cas d'incendie ou d'accident, et le stationnement y gênerait l'évacuation et l'accès des secours.",
         explanationEn: "Parking is prohibited on bridges, underpasses, and tunnels. These structures present particular risks in case of fire or accident, and parking would impede evacuation and emergency access.",
         trapNote: "Some candidates think that a wide bridge might allow parking, but the prohibition is absolute regardless of width.",
         distractorNotes: {
@@ -12169,26 +12169,26 @@ const QUESTION_BANK = [
             D: "Time of day does not affect the prohibition â€” it is permanent"
         },
         vocabulary: [
-            { wordFr: "pont", wordEn: "bridge", definition: "Ouvrage d'art permettant de franchir un cours d'eau, une vallÃ©e ou une voie de communication" },
-            { wordFr: "ouvrage d'art", wordEn: "civil engineering structure", definition: "Construction importante intÃ©grÃ©e Ã  une infrastructure routiÃ¨re (pont, tunnel, viaduc)" },
-            { wordFr: "Ã©vacuation", wordEn: "evacuation", definition: "Action de quitter un lieu dangereux de maniÃ¨re organisÃ©e" }
+            { wordFr: "pont", wordEn: "bridge", definition: "Ouvrage d'art permettant de franchir un cours d'eau, une vallée ou une voie de communication" },
+            { wordFr: "ouvrage d'art", wordEn: "civil engineering structure", definition: "Construction importante intégrée à une infrastructure routière (pont, tunnel, viaduc)" },
+            { wordFr: "évacuation", wordEn: "evacuation", definition: "Action de quitter un lieu dangereux de manière organisée" }
         ]
     },
     {
         id: 'arret-047',
         topic: 'arret_stationnement',
         difficulty: 1,
-        questionFr: "Quelle est la diffÃ©rence entre une ligne jaune continue et une ligne jaune discontinue peinte sur le bord du trottoir ?",
+        questionFr: "Quelle est la différence entre une ligne jaune continue et une ligne jaune discontinue peinte sur le bord du trottoir ?",
         questionEn: "What is the difference between a solid yellow line and a broken yellow line painted on the kerb edge?",
         options: {
-            A: { fr: "Ligne continue : arrÃªt et stationnement interdits. Ligne discontinue : stationnement interdit mais arrÃªt autorisÃ©", en: "Solid line: stopping and parking prohibited. Broken line: parking prohibited but stopping allowed" },
+            A: { fr: "Ligne continue : arrêt et stationnement interdits. Ligne discontinue : stationnement interdit mais arrêt autorisé", en: "Solid line: stopping and parking prohibited. Broken line: parking prohibited but stopping allowed" },
             B: { fr: "Ligne continue : stationnement payant. Ligne discontinue : stationnement gratuit", en: "Solid line: paid parking. Broken line: free parking" },
-            C: { fr: "Elles ont la mÃªme signification", en: "They have the same meaning" },
-            D: { fr: "Ligne continue : rÃ©servÃ© aux bus. Ligne discontinue : rÃ©servÃ© aux taxis", en: "Solid line: reserved for buses. Broken line: reserved for taxis" }
+            C: { fr: "Elles ont la même signification", en: "They have the same meaning" },
+            D: { fr: "Ligne continue : réservé aux bus. Ligne discontinue : réservé aux taxis", en: "Solid line: reserved for buses. Broken line: reserved for taxis" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Une ligne jaune continue sur le bord du trottoir interdit Ã  la fois l'arrÃªt et le stationnement. Une ligne jaune discontinue interdit le stationnement mais autorise l'arrÃªt temporaire (montÃ©e/descente de passagers, chargement rapide).",
+        explanationFr: "Une ligne jaune continue sur le bord du trottoir interdit à la fois l'arrêt et le stationnement. Une ligne jaune discontinue interdit le stationnement mais autorise l'arrêt temporaire (montée/descente de passagers, chargement rapide).",
         explanationEn: "A solid yellow line on the kerb edge prohibits both stopping and parking. A broken yellow line prohibits parking but allows temporary stopping (picking up/dropping off passengers, quick loading).",
         trapNote: "The distinction between stopping (brief, driver present) and parking (longer, driver may leave) is key and often confused.",
         distractorNotes: {
@@ -12197,26 +12197,26 @@ const QUESTION_BANK = [
             D: "Yellow kerb lines are general restrictions, not reservations for specific vehicle types"
         },
         vocabulary: [
-            { wordFr: "ligne jaune continue", wordEn: "solid yellow line", definition: "Marquage sur le bord du trottoir interdisant l'arrÃªt et le stationnement" },
-            { wordFr: "ligne jaune discontinue", wordEn: "broken yellow line", definition: "Marquage sur le bord du trottoir interdisant le stationnement mais autorisant l'arrÃªt" },
-            { wordFr: "arrÃªt", wordEn: "stopping", definition: "Immobilisation momentanÃ©e du vÃ©hicule, moteur en marche, conducteur Ã  proximitÃ©" }
+            { wordFr: "ligne jaune continue", wordEn: "solid yellow line", definition: "Marquage sur le bord du trottoir interdisant l'arrêt et le stationnement" },
+            { wordFr: "ligne jaune discontinue", wordEn: "broken yellow line", definition: "Marquage sur le bord du trottoir interdisant le stationnement mais autorisant l'arrêt" },
+            { wordFr: "arrêt", wordEn: "stopping", definition: "Immobilisation momentanée du véhicule, moteur en marche, conducteur à proximité" }
         ]
     },
     {
         id: 'arret-048',
         topic: 'arret_stationnement',
         difficulty: 2,
-        questionFr: "En France, dans quel sens devez-vous garer votre vÃ©hicule par rapport au sens de circulation ?",
+        questionFr: "En France, dans quel sens devez-vous garer votre véhicule par rapport au sens de circulation ?",
         questionEn: "In France, in which direction must you park your vehicle relative to the traffic flow?",
         options: {
-            A: { fr: "Dans le sens de la circulation, cÃ´tÃ© droit de la chaussÃ©e", en: "In the direction of traffic, on the right side of the road" },
-            B: { fr: "Dans n'importe quel sens, Ã  condition de ne pas gÃªner la circulation", en: "In any direction, as long as you do not obstruct traffic" },
-            C: { fr: "En sens inverse pour faciliter le dÃ©part", en: "Facing the opposite direction to make departure easier" },
-            D: { fr: "Perpendiculairement Ã  la chaussÃ©e uniquement", en: "Perpendicular to the road only" }
+            A: { fr: "Dans le sens de la circulation, côté droit de la chaussée", en: "In the direction of traffic, on the right side of the road" },
+            B: { fr: "Dans n'importe quel sens, à condition de ne pas gêner la circulation", en: "In any direction, as long as you do not obstruct traffic" },
+            C: { fr: "En sens inverse pour faciliter le départ", en: "Facing the opposite direction to make departure easier" },
+            D: { fr: "Perpendiculairement à la chaussée uniquement", en: "Perpendicular to the road only" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "En France, le stationnement doit se faire dans le sens de la marche, du cÃ´tÃ© droit de la chaussÃ©e. Stationner en sens inverse est interdit car cela implique d'avoir traversÃ© la voie de circulation opposÃ©e, ce qui est dangereux et constitue une infraction.",
+        explanationFr: "En France, le stationnement doit se faire dans le sens de la marche, du côté droit de la chaussée. Stationner en sens inverse est interdit car cela implique d'avoir traversé la voie de circulation opposée, ce qui est dangereux et constitue une infraction.",
         explanationEn: "In France, parking must be in the direction of traffic flow, on the right side of the road. Parking facing oncoming traffic is prohibited because it implies having crossed the opposing lane, which is dangerous and constitutes an offence.",
         trapNote: "In some countries parking on either side is common, leading foreign candidates to overlook this French rule.",
         distractorNotes: {
@@ -12225,26 +12225,26 @@ const QUESTION_BANK = [
             D: "Perpendicular parking exists in marked bays but is not the default rule for roadside parking"
         },
         vocabulary: [
-            { wordFr: "sens de la circulation", wordEn: "direction of traffic", definition: "Direction dans laquelle les vÃ©hicules circulent sur une voie donnÃ©e" },
-            { wordFr: "cÃ´tÃ© droit", wordEn: "right side", definition: "Le cÃ´tÃ© de la chaussÃ©e correspondant au sens de la marche en France" },
-            { wordFr: "stationnement en sens inverse", wordEn: "parking against traffic", definition: "Fait de garer son vÃ©hicule face au sens de circulation, ce qui est interdit" }
+            { wordFr: "sens de la circulation", wordEn: "direction of traffic", definition: "Direction dans laquelle les véhicules circulent sur une voie donnée" },
+            { wordFr: "côté droit", wordEn: "right side", definition: "Le côté de la chaussée correspondant au sens de la marche en France" },
+            { wordFr: "stationnement en sens inverse", wordEn: "parking against traffic", definition: "Fait de garer son véhicule face au sens de circulation, ce qui est interdit" }
         ]
     },
     {
         id: 'arret-049',
         topic: 'arret_stationnement',
         difficulty: 3,
-        questionFr: "Quelles rÃ¨gles s'appliquent au stationnement d'une remorque non attelÃ©e Ã  un vÃ©hicule sur la voie publique ?",
+        questionFr: "Quelles règles s'appliquent au stationnement d'une remorque non attelée à un véhicule sur la voie publique ?",
         questionEn: "What rules apply to parking an unhitched trailer on a public road?",
         options: {
-            A: { fr: "Le stationnement est autorisÃ© sans limitation de durÃ©e", en: "Parking is allowed without time limit" },
-            B: { fr: "Le stationnement est limitÃ© Ã  7 jours consÃ©cutifs au mÃªme endroit", en: "Parking is limited to 7 consecutive days in the same spot" },
-            C: { fr: "Le stationnement d'une remorque non attelÃ©e est interdit sur la voie publique", en: "Parking an unhitched trailer on a public road is prohibited" },
-            D: { fr: "Le stationnement est autorisÃ© uniquement de nuit", en: "Parking is only allowed at night" }
+            A: { fr: "Le stationnement est autorisé sans limitation de durée", en: "Parking is allowed without time limit" },
+            B: { fr: "Le stationnement est limité à 7 jours consécutifs au même endroit", en: "Parking is limited to 7 consecutive days in the same spot" },
+            C: { fr: "Le stationnement d'une remorque non attelée est interdit sur la voie publique", en: "Parking an unhitched trailer on a public road is prohibited" },
+            D: { fr: "Le stationnement est autorisé uniquement de nuit", en: "Parking is only allowed at night" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Une remorque non attelÃ©e peut stationner sur la voie publique mais pour une durÃ©e maximale de 7 jours consÃ©cutifs au mÃªme emplacement. Au-delÃ , elle est considÃ©rÃ©e comme un vÃ©hicule Ã©pave et peut Ãªtre enlevÃ©e par les autoritÃ©s.",
+        explanationFr: "Une remorque non attelée peut stationner sur la voie publique mais pour une durée maximale de 7 jours consécutifs au même emplacement. Au-delà, elle est considérée comme un véhicule épave et peut être enlevée par les autorités.",
         explanationEn: "An unhitched trailer may park on a public road but for a maximum of 7 consecutive days in the same spot. Beyond that, it is treated as an abandoned vehicle and may be removed by authorities.",
         trapNote: "Some believe unhitched trailers are completely banned from public roads, while others think there is no time limit at all.",
         distractorNotes: {
@@ -12253,53 +12253,53 @@ const QUESTION_BANK = [
             D: "Time of day is irrelevant â€” the 7-day rule applies around the clock"
         },
         vocabulary: [
-            { wordFr: "remorque", wordEn: "trailer", definition: "VÃ©hicule sans moteur destinÃ© Ã  Ãªtre tractÃ© par un vÃ©hicule Ã  moteur" },
-            { wordFr: "non attelÃ©e", wordEn: "unhitched / detached", definition: "Remorque qui n'est pas reliÃ©e Ã  un vÃ©hicule tracteur" },
-            { wordFr: "vÃ©hicule Ã©pave", wordEn: "abandoned vehicle", definition: "VÃ©hicule laissÃ© en stationnement prolongÃ©, considÃ©rÃ© comme abandonnÃ© par les autoritÃ©s" }
+            { wordFr: "remorque", wordEn: "trailer", definition: "Véhicule sans moteur destiné à être tracté par un véhicule à moteur" },
+            { wordFr: "non attelée", wordEn: "unhitched / detached", definition: "Remorque qui n'est pas reliée à un véhicule tracteur" },
+            { wordFr: "véhicule épave", wordEn: "abandoned vehicle", definition: "Véhicule laissé en stationnement prolongé, considéré comme abandonné par les autorités" }
         ]
     },
     {
         id: 'arret-050',
         topic: 'arret_stationnement',
         difficulty: 1,
-        questionFr: "Quelles sont les conditions nÃ©cessaires pour effectuer un arrÃªt sur une route Ã  double sens de circulation ?",
+        questionFr: "Quelles sont les conditions nécessaires pour effectuer un arrêt sur une route à double sens de circulation ?",
         questionEn: "What conditions are required to make a stop on a two-way road?",
         options: {
-            A: { fr: "Stationner sur le cÃ´tÃ© droit uniquement et ne pas gÃªner la circulation", en: "Stop on the right side only and not obstruct traffic" },
-            B: { fr: "Mettre les feux de dÃ©tresse et rester dans le vÃ©hicule", en: "Turn on hazard lights and stay in the vehicle" },
-            C: { fr: "Stationner sur le cÃ´tÃ© droit, mettre les feux de dÃ©tresse et rester Ã  proximitÃ© du vÃ©hicule", en: "Stop on the right side, turn on hazard lights, and stay near the vehicle" },
-            D: { fr: "Pouvoir repartir rapidement sans gÃªner et s'arrÃªter cÃ´tÃ© droit", en: "Be able to leave quickly without obstruction and stop on the right side" }
+            A: { fr: "Stationner sur le côté droit uniquement et ne pas gêner la circulation", en: "Stop on the right side only and not obstruct traffic" },
+            B: { fr: "Mettre les feux de détresse et rester dans le véhicule", en: "Turn on hazard lights and stay in the vehicle" },
+            C: { fr: "Stationner sur le côté droit, mettre les feux de détresse et rester à proximité du véhicule", en: "Stop on the right side, turn on hazard lights, and stay near the vehicle" },
+            D: { fr: "Pouvoir repartir rapidement sans gêner et s'arrêter côté droit", en: "Be able to leave quickly without obstruction and stop on the right side" }
         },
         correctAnswers: ["B", "D"],
         answerCount: 2,
-        explanationFr: "L'arrÃªt est une immobilisation momentanÃ©e. Le conducteur doit rester Ã  proximitÃ© ou dans le vÃ©hicule, pouvoir repartir rapidement, et s'arrÃªter du cÃ´tÃ© droit de la chaussÃ©e sans gÃªner la circulation. Les feux de dÃ©tresse sont recommandÃ©s pour signaler l'arrÃªt.",
+        explanationFr: "L'arrêt est une immobilisation momentanée. Le conducteur doit rester à proximité ou dans le véhicule, pouvoir repartir rapidement, et s'arrêter du côté droit de la chaussée sans gêner la circulation. Les feux de détresse sont recommandés pour signaler l'arrêt.",
         explanationEn: "A stop is a momentary immobilisation. The driver must stay near or in the vehicle, be able to leave quickly, and stop on the right side of the road without obstructing traffic. Hazard lights are recommended to signal the stop.",
-        trapNote: "Candidates confuse 'arrÃªt' (temporary stop, driver present) with 'stationnement' (parking, driver may leave). Both B and D describe valid requirements for a stop.",
+        trapNote: "Candidates confuse 'arrêt' (temporary stop, driver present) with 'stationnement' (parking, driver may leave). Both B and D describe valid requirements for a stop.",
         distractorNotes: {
             A: "This is incomplete â€” it only mentions the side and obstruction but omits the driver presence requirement",
             C: "This mixes stop and parking rules â€” hazard lights plus staying nearby is redundant with the stop definition that already requires presence"
         },
         vocabulary: [
-            { wordFr: "arrÃªt", wordEn: "stop / temporary halt", definition: "Immobilisation momentanÃ©e d'un vÃ©hicule, le conducteur restant Ã  proximitÃ© pour pouvoir le dÃ©placer" },
-            { wordFr: "stationnement", wordEn: "parking", definition: "Immobilisation prolongÃ©e d'un vÃ©hicule, le conducteur pouvant s'Ã©loigner" },
-            { wordFr: "feux de dÃ©tresse", wordEn: "hazard lights", definition: "Clignotants simultanÃ©s signalant un arrÃªt ou un danger" }
+            { wordFr: "arrêt", wordEn: "stop / temporary halt", definition: "Immobilisation momentanée d'un véhicule, le conducteur restant à proximité pour pouvoir le déplacer" },
+            { wordFr: "stationnement", wordEn: "parking", definition: "Immobilisation prolongée d'un véhicule, le conducteur pouvant s'éloigner" },
+            { wordFr: "feux de détresse", wordEn: "hazard lights", definition: "Clignotants simultanés signalant un arrêt ou un danger" }
         ]
     },
     {
         id: 'tunn-041',
         topic: 'tunnels_passages_niveau',
         difficulty: 2,
-        questionFr: "En France, quelle frÃ©quence radio devez-vous sÃ©lectionner lorsque vous entrez dans un tunnel autoroutier Ã©quipÃ© ?",
+        questionFr: "En France, quelle fréquence radio devez-vous sélectionner lorsque vous entrez dans un tunnel autoroutier équipé ?",
         questionEn: "In France, which radio frequency should you select when entering an equipped motorway tunnel?",
         options: {
-            A: { fr: "La frÃ©quence FM 107.7, dÃ©diÃ©e Ã  l'information routiÃ¨re autoroutiÃ¨re", en: "FM frequency 107.7, dedicated to motorway traffic information" },
+            A: { fr: "La fréquence FM 107.7, dédiée à l'information routière autoroutière", en: "FM frequency 107.7, dedicated to motorway traffic information" },
             B: { fr: "N'importe quelle station FM locale", en: "Any local FM station" },
-            C: { fr: "La frÃ©quence AM 1620", en: "AM frequency 1620" },
+            C: { fr: "La fréquence AM 1620", en: "AM frequency 1620" },
             D: { fr: "Aucune â€” la radio ne fonctionne pas dans les tunnels", en: "None â€” radio does not work in tunnels" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "La frÃ©quence 107.7 FM est la frÃ©quence d'information routiÃ¨re sur les autoroutes franÃ§aises. Dans les tunnels Ã©quipÃ©s, cette frÃ©quence est relayÃ©e et diffuse les consignes de sÃ©curitÃ© en cas d'incident. Des panneaux Ã  l'entrÃ©e des tunnels rappellent de se caler sur cette frÃ©quence.",
+        explanationFr: "La fréquence 107.7 FM est la fréquence d'information routière sur les autoroutes françaises. Dans les tunnels équipés, cette fréquence est relayée et diffuse les consignes de sécurité en cas d'incident. Des panneaux à l'entrée des tunnels rappellent de se caler sur cette fréquence.",
         explanationEn: "107.7 FM is the motorway traffic information frequency in France. In equipped tunnels, this frequency is relayed and broadcasts safety instructions in case of an incident. Signs at tunnel entrances remind drivers to tune to this frequency.",
         trapNote: "Candidates may not know the specific frequency or may think all radio stations work equally well in tunnels.",
         distractorNotes: {
@@ -12308,26 +12308,26 @@ const QUESTION_BANK = [
             D: "Equipped tunnels have radio relay systems specifically for 107.7 FM"
         },
         vocabulary: [
-            { wordFr: "frÃ©quence 107.7", wordEn: "107.7 frequency", definition: "Station FM dÃ©diÃ©e Ã  l'information trafic sur le rÃ©seau autoroutier franÃ§ais" },
-            { wordFr: "tunnel Ã©quipÃ©", wordEn: "equipped tunnel", definition: "Tunnel dotÃ© de systÃ¨mes de sÃ©curitÃ© avancÃ©s : ventilation, radio, camÃ©ras, issues de secours" },
-            { wordFr: "consignes de sÃ©curitÃ©", wordEn: "safety instructions", definition: "Directives Ã  suivre en cas d'urgence dans un tunnel" }
+            { wordFr: "fréquence 107.7", wordEn: "107.7 frequency", definition: "Station FM dédiée à l'information trafic sur le réseau autoroutier français" },
+            { wordFr: "tunnel équipé", wordEn: "equipped tunnel", definition: "Tunnel doté de systèmes de sécurité avancés : ventilation, radio, caméras, issues de secours" },
+            { wordFr: "consignes de sécurité", wordEn: "safety instructions", definition: "Directives à suivre en cas d'urgence dans un tunnel" }
         ]
     },
     {
         id: 'tunn-042',
         topic: 'tunnels_passages_niveau',
         difficulty: 2,
-        questionFr: "Tous les combien de mÃ¨tres trouve-t-on gÃ©nÃ©ralement un extincteur et un poste d'appel d'urgence dans un tunnel autoroutier franÃ§ais ?",
+        questionFr: "Tous les combien de mètres trouve-t-on généralement un extincteur et un poste d'appel d'urgence dans un tunnel autoroutier français ?",
         questionEn: "At what interval are fire extinguishers and emergency phones typically found in a French motorway tunnel?",
         options: {
-            A: { fr: "Tous les 50 mÃ¨tres", en: "Every 50 metres" },
-            B: { fr: "Tous les 200 mÃ¨tres", en: "Every 200 metres" },
-            C: { fr: "Tous les 500 mÃ¨tres", en: "Every 500 metres" },
-            D: { fr: "Il n'y a pas de rÃ¨gle fixe", en: "There is no fixed rule" }
+            A: { fr: "Tous les 50 mètres", en: "Every 50 metres" },
+            B: { fr: "Tous les 200 mètres", en: "Every 200 metres" },
+            C: { fr: "Tous les 500 mètres", en: "Every 500 metres" },
+            D: { fr: "Il n'y a pas de règle fixe", en: "There is no fixed rule" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Dans les tunnels autoroutiers franÃ§ais, les niches de sÃ©curitÃ© contenant un extincteur et un poste d'appel d'urgence sont gÃ©nÃ©ralement espacÃ©es de 200 mÃ¨tres. Les issues de secours sont quant Ã  elles espacÃ©es de 200 Ã  400 mÃ¨tres selon la longueur du tunnel.",
+        explanationFr: "Dans les tunnels autoroutiers français, les niches de sécurité contenant un extincteur et un poste d'appel d'urgence sont généralement espacées de 200 mètres. Les issues de secours sont quant à elles espacées de 200 à 400 mètres selon la longueur du tunnel.",
         explanationEn: "In French motorway tunnels, safety recesses containing a fire extinguisher and emergency phone are generally spaced 200 metres apart. Emergency exits are spaced 200 to 400 metres apart depending on tunnel length.",
         trapNote: "Candidates might guess 500m (too far for effective safety) or 50m (unrealistically frequent). The 200m standard is important to know for exam and real emergencies.",
         distractorNotes: {
@@ -12336,26 +12336,26 @@ const QUESTION_BANK = [
             D: "French tunnel safety regulations set clear spacing requirements"
         },
         vocabulary: [
-            { wordFr: "niche de sÃ©curitÃ©", wordEn: "safety recess", definition: "Renfoncement dans la paroi du tunnel contenant un extincteur et un tÃ©lÃ©phone d'urgence" },
-            { wordFr: "extincteur", wordEn: "fire extinguisher", definition: "Appareil portatif permettant d'Ã©teindre un dÃ©but d'incendie" },
-            { wordFr: "poste d'appel d'urgence", wordEn: "emergency phone", definition: "TÃ©lÃ©phone reliÃ© directement aux services de secours du tunnel" }
+            { wordFr: "niche de sécurité", wordEn: "safety recess", definition: "Renfoncement dans la paroi du tunnel contenant un extincteur et un téléphone d'urgence" },
+            { wordFr: "extincteur", wordEn: "fire extinguisher", definition: "Appareil portatif permettant d'éteindre un début d'incendie" },
+            { wordFr: "poste d'appel d'urgence", wordEn: "emergency phone", definition: "Téléphone relié directement aux services de secours du tunnel" }
         ]
     },
     {
         id: 'tunn-043',
         topic: 'tunnels_passages_niveau',
         difficulty: 3,
-        questionFr: "Quelle est la distance de sÃ©curitÃ© minimale Ã  respecter entre deux vÃ©hicules dans un tunnel autoroutier ?",
+        questionFr: "Quelle est la distance de sécurité minimale à respecter entre deux véhicules dans un tunnel autoroutier ?",
         questionEn: "What is the minimum safe following distance between two vehicles in a motorway tunnel?",
         options: {
             A: { fr: "2 secondes, comme sur autoroute en conditions normales", en: "2 seconds, as on a motorway in normal conditions" },
-            B: { fr: "50 mÃ¨tres minimum, ou deux traits de signalisation au sol", en: "50 metres minimum, or two road markings" },
-            C: { fr: "100 mÃ¨tres minimum", en: "100 metres minimum" },
-            D: { fr: "La longueur d'un vÃ©hicule par tranche de 10 km/h", en: "One vehicle length per 10 km/h" }
+            B: { fr: "50 mètres minimum, ou deux traits de signalisation au sol", en: "50 metres minimum, or two road markings" },
+            C: { fr: "100 mètres minimum", en: "100 metres minimum" },
+            D: { fr: "La longueur d'un véhicule par tranche de 10 km/h", en: "One vehicle length per 10 km/h" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "La rÃ¨gle des 2 secondes s'applique dans les tunnels comme sur le reste de l'autoroute. Cependant, de nombreux tunnels disposent de marquages au sol spÃ©ciaux (chevrons, flÃ¨ches) qui aident Ã  maintenir cette distance. En pratique, cela correspond Ã  environ 50 mÃ¨tres Ã  90 km/h.",
+        explanationFr: "La règle des 2 secondes s'applique dans les tunnels comme sur le reste de l'autoroute. Cependant, de nombreux tunnels disposent de marquages au sol spéciaux (chevrons, flèches) qui aident à maintenir cette distance. En pratique, cela correspond à environ 50 mètres à 90 km/h.",
         explanationEn: "The 2-second rule applies in tunnels just as on the rest of the motorway. However, many tunnels have special road markings (chevrons, arrows) to help maintain this distance. In practice, this corresponds to about 50 metres at 90 km/h.",
         trapNote: "Some candidates think tunnels require a specific longer distance, but the same 2-second rule applies â€” the tunnel markings simply help drivers measure it.",
         distractorNotes: {
@@ -12364,26 +12364,26 @@ const QUESTION_BANK = [
             D: "The vehicle-length formula is an outdated and inaccurate method not used in modern driving instruction"
         },
         vocabulary: [
-            { wordFr: "distance de sÃ©curitÃ©", wordEn: "safe following distance", definition: "Intervalle entre deux vÃ©hicules permettant un arrÃªt d'urgence sans collision" },
-            { wordFr: "rÃ¨gle des 2 secondes", wordEn: "2-second rule", definition: "MÃ©thode pour Ã©valuer la distance de sÃ©curitÃ© en comptant deux secondes entre le passage d'un repÃ¨re par le vÃ©hicule devant et le vÃ´tre" },
-            { wordFr: "chevrons de signalisation", wordEn: "chevron markings", definition: "Marquages au sol en forme de V aidant les conducteurs Ã  Ã©valuer leur distance de suivi" }
+            { wordFr: "distance de sécurité", wordEn: "safe following distance", definition: "Intervalle entre deux véhicules permettant un arrêt d'urgence sans collision" },
+            { wordFr: "règle des 2 secondes", wordEn: "2-second rule", definition: "Méthode pour évaluer la distance de sécurité en comptant deux secondes entre le passage d'un repère par le véhicule devant et le vôtre" },
+            { wordFr: "chevrons de signalisation", wordEn: "chevron markings", definition: "Marquages au sol en forme de V aidant les conducteurs à évaluer leur distance de suivi" }
         ]
     },
     {
         id: 'tunn-044',
         topic: 'tunnels_passages_niveau',
         difficulty: 2,
-        questionFr: "Au passage Ã  niveau, les demi-barriÃ¨res commencent Ã  se baisser. Vous Ãªtes Ã  10 mÃ¨tres. Que faites-vous ?",
+        questionFr: "Au passage à niveau, les demi-barrières commencent à se baisser. Vous êtes à 10 mètres. Que faites-vous ?",
         questionEn: "At a level crossing, the half-barriers are starting to lower. You are 10 metres away. What do you do?",
         options: {
-            A: { fr: "Vous accÃ©lÃ©rez pour passer avant que les barriÃ¨res soient complÃ¨tement baissÃ©es", en: "You accelerate to pass before the barriers are fully down" },
-            B: { fr: "Vous vous arrÃªtez et attendez que les barriÃ¨res se relÃ¨vent complÃ¨tement", en: "You stop and wait for the barriers to rise completely" },
-            C: { fr: "Vous passez lentement en contournant la demi-barriÃ¨re", en: "You pass slowly by going around the half-barrier" },
+            A: { fr: "Vous accélérez pour passer avant que les barrières soient complètement baissées", en: "You accelerate to pass before the barriers are fully down" },
+            B: { fr: "Vous vous arrêtez et attendez que les barrières se relèvent complètement", en: "You stop and wait for the barriers to rise completely" },
+            C: { fr: "Vous passez lentement en contournant la demi-barrière", en: "You pass slowly by going around the half-barrier" },
             D: { fr: "Vous reculez pour laisser de la place", en: "You reverse to make room" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "DÃ¨s que les barriÃ¨res commencent Ã  se baisser, vous devez vous arrÃªter impÃ©rativement. Le franchissement d'un passage Ã  niveau alors que les barriÃ¨res sont en mouvement est extrÃªmement dangereux et passible de 750 â‚¬ d'amende et 4 points de retrait.",
+        explanationFr: "Dès que les barrières commencent à se baisser, vous devez vous arrêter impérativement. Le franchissement d'un passage à niveau alors que les barrières sont en mouvement est extrêmement dangereux et passible de 750 â‚¬ d'amende et 4 points de retrait.",
         explanationEn: "As soon as the barriers start lowering, you must stop immediately. Crossing a level crossing while barriers are in motion is extremely dangerous and punishable by a â‚¬750 fine and 4-point deduction.",
         trapNote: "The temptation to pass 'quickly before the barriers close' is the number one cause of level crossing accidents in France.",
         distractorNotes: {
@@ -12392,26 +12392,26 @@ const QUESTION_BANK = [
             D: "Reversing could cause a collision with vehicles behind you â€” stopping in place is correct"
         },
         vocabulary: [
-            { wordFr: "passage Ã  niveau", wordEn: "level crossing", definition: "Intersection Ã  mÃªme niveau entre une route et une voie ferrÃ©e" },
-            { wordFr: "demi-barriÃ¨re", wordEn: "half-barrier", definition: "BarriÃ¨re ne fermant que la moitiÃ© de la chaussÃ©e, permettant l'Ã©vacuation d'un vÃ©hicule dÃ©jÃ  engagÃ©" },
-            { wordFr: "franchissement", wordEn: "crossing / passing through", definition: "Action de traverser un passage Ã  niveau ou un carrefour" }
+            { wordFr: "passage à niveau", wordEn: "level crossing", definition: "Intersection à même niveau entre une route et une voie ferrée" },
+            { wordFr: "demi-barrière", wordEn: "half-barrier", definition: "Barrière ne fermant que la moitié de la chaussée, permettant l'évacuation d'un véhicule déjà engagé" },
+            { wordFr: "franchissement", wordEn: "crossing / passing through", definition: "Action de traverser un passage à niveau ou un carrefour" }
         ]
     },
     {
         id: 'tunn-045',
         topic: 'tunnels_passages_niveau',
         difficulty: 3,
-        questionFr: "Votre vÃ©hicule tombe en panne dans un tunnel. Quelles actions devez-vous effectuer ?",
+        questionFr: "Votre véhicule tombe en panne dans un tunnel. Quelles actions devez-vous effectuer ?",
         questionEn: "Your vehicle breaks down in a tunnel. What actions must you take?",
         options: {
-            A: { fr: "Allumer les feux de dÃ©tresse, couper le moteur, laisser la clÃ© sur le contact, rejoindre une issue de secours Ã  pied", en: "Turn on hazard lights, turn off the engine, leave the key in the ignition, walk to an emergency exit" },
-            B: { fr: "Rester dans le vÃ©hicule et attendre les secours en laissant le moteur tourner", en: "Stay in the vehicle and wait for help with the engine running" },
-            C: { fr: "Pousser le vÃ©hicule jusqu'Ã  la sortie du tunnel", en: "Push the vehicle to the tunnel exit" },
-            D: { fr: "Allumer les feux de dÃ©tresse et appeler les secours depuis votre tÃ©lÃ©phone portable", en: "Turn on hazard lights and call emergency services from your mobile phone" }
+            A: { fr: "Allumer les feux de détresse, couper le moteur, laisser la clé sur le contact, rejoindre une issue de secours à pied", en: "Turn on hazard lights, turn off the engine, leave the key in the ignition, walk to an emergency exit" },
+            B: { fr: "Rester dans le véhicule et attendre les secours en laissant le moteur tourner", en: "Stay in the vehicle and wait for help with the engine running" },
+            C: { fr: "Pousser le véhicule jusqu'à la sortie du tunnel", en: "Push the vehicle to the tunnel exit" },
+            D: { fr: "Allumer les feux de détresse et appeler les secours depuis votre téléphone portable", en: "Turn on hazard lights and call emergency services from your mobile phone" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "En cas de panne en tunnel : allumez les feux de dÃ©tresse, coupez le moteur (pour rÃ©duire les Ã©missions), laissez la clÃ© sur le contact (pour permettre aux secours de dÃ©placer le vÃ©hicule), ne fermez pas Ã  clÃ©, et rejoignez la niche de sÃ©curitÃ© ou l'issue de secours la plus proche Ã  pied.",
+        explanationFr: "En cas de panne en tunnel : allumez les feux de détresse, coupez le moteur (pour réduire les émissions), laissez la clé sur le contact (pour permettre aux secours de déplacer le véhicule), ne fermez pas à clé, et rejoignez la niche de sécurité ou l'issue de secours la plus proche à pied.",
         explanationEn: "If you break down in a tunnel: turn on hazard lights, switch off the engine (to reduce emissions), leave the key in the ignition (so emergency services can move the vehicle), do not lock it, and walk to the nearest safety recess or emergency exit.",
         trapNote: "Leaving the key in the ignition is counter-intuitive but essential â€” it allows rescue services to move the vehicle without delay.",
         distractorNotes: {
@@ -12420,26 +12420,26 @@ const QUESTION_BANK = [
             D: "Mobile phones may not work in tunnels â€” use the emergency phones in safety recesses instead"
         },
         vocabulary: [
-            { wordFr: "panne", wordEn: "breakdown", definition: "ArrÃªt involontaire d'un vÃ©hicule dÃ» Ã  un dysfonctionnement mÃ©canique ou Ã©lectrique" },
-            { wordFr: "issue de secours", wordEn: "emergency exit", definition: "Sortie spÃ©cialement amÃ©nagÃ©e pour l'Ã©vacuation en cas d'urgence" },
-            { wordFr: "clÃ© sur le contact", wordEn: "key in the ignition", definition: "Laisser la clÃ© de dÃ©marrage en place pour permettre le dÃ©placement du vÃ©hicule par les secours" }
+            { wordFr: "panne", wordEn: "breakdown", definition: "Arrêt involontaire d'un véhicule dû à un dysfonctionnement mécanique ou électrique" },
+            { wordFr: "issue de secours", wordEn: "emergency exit", definition: "Sortie spécialement aménagée pour l'évacuation en cas d'urgence" },
+            { wordFr: "clé sur le contact", wordEn: "key in the ignition", definition: "Laisser la clé de démarrage en place pour permettre le déplacement du véhicule par les secours" }
         ]
     },
     {
         id: 'tunn-046',
         topic: 'tunnels_passages_niveau',
         difficulty: 2,
-        questionFr: "Quelles prÃ©cautions un motocycliste doit-il prendre en entrant dans un tunnel ?",
+        questionFr: "Quelles précautions un motocycliste doit-il prendre en entrant dans un tunnel ?",
         questionEn: "What precautions must a motorcyclist take when entering a tunnel?",
         options: {
             A: { fr: "Retirer son casque pour mieux entendre les annonces sonores", en: "Remove the helmet to hear audio announcements better" },
-            B: { fr: "Allumer les feux de croisement, relever la visiÃ¨re et rÃ©duire la vitesse", en: "Turn on dipped headlights, raise the visor, and reduce speed" },
-            C: { fr: "Allumer les feux de croisement et garder la visiÃ¨re baissÃ©e", en: "Turn on dipped headlights and keep the visor down" },
-            D: { fr: "Rouler au centre de la voie pour Ãªtre mieux vu", en: "Ride in the centre of the lane to be more visible" }
+            B: { fr: "Allumer les feux de croisement, relever la visière et réduire la vitesse", en: "Turn on dipped headlights, raise the visor, and reduce speed" },
+            C: { fr: "Allumer les feux de croisement et garder la visière baissée", en: "Turn on dipped headlights and keep the visor down" },
+            D: { fr: "Rouler au centre de la voie pour être mieux vu", en: "Ride in the centre of the lane to be more visible" }
         },
         correctAnswers: ["C"],
         answerCount: 1,
-        explanationFr: "En entrant dans un tunnel, un motocycliste doit allumer ses feux de croisement pour Ãªtre visible et garder la visiÃ¨re baissÃ©e pour se protÃ©ger des fumÃ©es en cas d'incendie. Il doit aussi respecter les distances de sÃ©curitÃ© et rÃ©duire sa vitesse si nÃ©cessaire.",
+        explanationFr: "En entrant dans un tunnel, un motocycliste doit allumer ses feux de croisement pour être visible et garder la visière baissée pour se protéger des fumées en cas d'incendie. Il doit aussi respecter les distances de sécurité et réduire sa vitesse si nécessaire.",
         explanationEn: "When entering a tunnel, a motorcyclist must turn on dipped headlights for visibility and keep the visor down to protect against smoke in case of fire. They must also maintain safe following distances and reduce speed if necessary.",
         trapNote: "Raising the visor seems logical to see better in dim conditions, but keeping it down protects against smoke inhalation in an emergency.",
         distractorNotes: {
@@ -12448,26 +12448,26 @@ const QUESTION_BANK = [
             D: "Lane positioning in a tunnel follows normal rules â€” centre riding is not specifically required or recommended"
         },
         vocabulary: [
-            { wordFr: "visiÃ¨re", wordEn: "visor", definition: "Ã‰cran transparent du casque protÃ©geant le visage du motocycliste" },
-            { wordFr: "feux de croisement", wordEn: "dipped headlights", definition: "Ã‰clairage avant obligatoire n'Ã©blouissant pas les autres usagers" },
-            { wordFr: "fumÃ©es", wordEn: "smoke / fumes", definition: "Gaz et particules produits par un incendie, particuliÃ¨rement dangereux en espace confinÃ©" }
+            { wordFr: "visière", wordEn: "visor", definition: "Écran transparent du casque protégeant le visage du motocycliste" },
+            { wordFr: "feux de croisement", wordEn: "dipped headlights", definition: "Éclairage avant obligatoire n'éblouissant pas les autres usagers" },
+            { wordFr: "fumées", wordEn: "smoke / fumes", definition: "Gaz et particules produits par un incendie, particulièrement dangereux en espace confiné" }
         ]
     },
     {
         id: 'tunn-047',
         topic: 'tunnels_passages_niveau',
         difficulty: 1,
-        questionFr: "Un passage Ã  niveau est Ã©quipÃ© de feux rouges clignotants sans barriÃ¨re. Les feux se mettent Ã  clignoter. Que devez-vous faire ?",
+        questionFr: "Un passage à niveau est équipé de feux rouges clignotants sans barrière. Les feux se mettent à clignoter. Que devez-vous faire ?",
         questionEn: "A level crossing has flashing red lights but no barrier. The lights start flashing. What must you do?",
         options: {
             A: { fr: "Ralentir et passer prudemment", en: "Slow down and pass carefully" },
-            B: { fr: "S'arrÃªter impÃ©rativement avant le passage Ã  niveau", en: "Stop before the level crossing â€” it is mandatory" },
-            C: { fr: "AccÃ©lÃ©rer pour traverser rapidement", en: "Accelerate to cross quickly" },
-            D: { fr: "S'arrÃªter uniquement si vous voyez un train approcher", en: "Stop only if you see a train approaching" }
+            B: { fr: "S'arrêter impérativement avant le passage à niveau", en: "Stop before the level crossing â€” it is mandatory" },
+            C: { fr: "Accélérer pour traverser rapidement", en: "Accelerate to cross quickly" },
+            D: { fr: "S'arrêter uniquement si vous voyez un train approcher", en: "Stop only if you see a train approaching" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les feux rouges clignotants Ã  un passage Ã  niveau ont la mÃªme valeur qu'un feu rouge fixe : l'arrÃªt est obligatoire. Un train peut arriver Ã  grande vitesse et Ãªtre invisible dans une courbe. Ne jamais traverser tant que les feux clignotent.",
+        explanationFr: "Les feux rouges clignotants à un passage à niveau ont la même valeur qu'un feu rouge fixe : l'arrêt est obligatoire. Un train peut arriver à grande vitesse et être invisible dans une courbe. Ne jamais traverser tant que les feux clignotent.",
         explanationEn: "Flashing red lights at a level crossing have the same value as a steady red light: stopping is mandatory. A train may be approaching at high speed and be invisible around a curve. Never cross while the lights are flashing.",
         trapNote: "Without barriers, candidates feel they can judge for themselves whether a train is coming â€” but the flashing lights are an absolute stop signal.",
         distractorNotes: {
@@ -12476,26 +12476,26 @@ const QUESTION_BANK = [
             D: "You cannot rely on visual confirmation â€” trains are faster and quieter than expected"
         },
         vocabulary: [
-            { wordFr: "feux rouges clignotants", wordEn: "flashing red lights", definition: "Signaux lumineux alternÃ©s indiquant l'approche imminente d'un train" },
-            { wordFr: "passage Ã  niveau sans barriÃ¨re", wordEn: "unbarriered level crossing", definition: "Croisement route-rail sans barriÃ¨re physique, signalÃ© uniquement par des feux et des panneaux" },
-            { wordFr: "arrÃªt obligatoire", wordEn: "mandatory stop", definition: "Obligation lÃ©gale de s'immobiliser complÃ¨tement, sans exception" }
+            { wordFr: "feux rouges clignotants", wordEn: "flashing red lights", definition: "Signaux lumineux alternés indiquant l'approche imminente d'un train" },
+            { wordFr: "passage à niveau sans barrière", wordEn: "unbarriered level crossing", definition: "Croisement route-rail sans barrière physique, signalé uniquement par des feux et des panneaux" },
+            { wordFr: "arrêt obligatoire", wordEn: "mandatory stop", definition: "Obligation légale de s'immobiliser complètement, sans exception" }
         ]
     },
     {
         id: 'tunn-048',
         topic: 'tunnels_passages_niveau',
         difficulty: 3,
-        questionFr: "En cas d'incendie dans un tunnel, dans quelle direction devez-vous Ã©vacuer ?",
+        questionFr: "En cas d'incendie dans un tunnel, dans quelle direction devez-vous évacuer ?",
         questionEn: "In case of fire in a tunnel, in which direction should you evacuate?",
         options: {
             A: { fr: "Toujours vers la sortie la plus proche du tunnel", en: "Always towards the nearest tunnel exit" },
-            B: { fr: "Toujours dans le sens opposÃ© Ã  la fumÃ©e, en utilisant les issues de secours latÃ©rales", en: "Always in the opposite direction to the smoke, using lateral emergency exits" },
-            C: { fr: "Dans le sens de la circulation pour retrouver votre vÃ©hicule ensuite", en: "In the direction of traffic to get back to your vehicle later" },
-            D: { fr: "Rester dans votre vÃ©hicule et attendre les pompiers", en: "Stay in your vehicle and wait for the fire service" }
+            B: { fr: "Toujours dans le sens opposé à la fumée, en utilisant les issues de secours latérales", en: "Always in the opposite direction to the smoke, using lateral emergency exits" },
+            C: { fr: "Dans le sens de la circulation pour retrouver votre véhicule ensuite", en: "In the direction of traffic to get back to your vehicle later" },
+            D: { fr: "Rester dans votre véhicule et attendre les pompiers", en: "Stay in your vehicle and wait for the fire service" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "En cas d'incendie en tunnel, Ã©vacuez en vous Ã©loignant de la fumÃ©e. Utilisez les issues de secours latÃ©rales (portes coupe-feu) qui mÃ¨nent vers un couloir de secours ou le tube voisin. La fumÃ©e est le premier danger mortel en tunnel â€” fuyez-la en restant le plus bas possible.",
+        explanationFr: "En cas d'incendie en tunnel, évacuez en vous éloignant de la fumée. Utilisez les issues de secours latérales (portes coupe-feu) qui mènent vers un couloir de secours ou le tube voisin. La fumée est le premier danger mortel en tunnel â€” fuyez-la en restant le plus bas possible.",
         explanationEn: "In case of fire in a tunnel, evacuate away from the smoke. Use the lateral emergency exits (fire doors) that lead to a service corridor or the neighbouring tube. Smoke is the primary fatal danger in a tunnel â€” flee from it, staying as low as possible.",
         trapNote: "Going to the nearest exit seems logical, but if the fire is between you and the exit, you would walk into the smoke â€” always go away from smoke.",
         distractorNotes: {
@@ -12504,26 +12504,26 @@ const QUESTION_BANK = [
             D: "Staying in your vehicle during a tunnel fire can be fatal due to smoke and heat accumulation"
         },
         vocabulary: [
-            { wordFr: "incendie en tunnel", wordEn: "tunnel fire", definition: "Feu se dÃ©clarant Ã  l'intÃ©rieur d'un tunnel, crÃ©ant un danger majeur dÃ» Ã  la fumÃ©e en espace confinÃ©" },
-            { wordFr: "issue de secours latÃ©rale", wordEn: "lateral emergency exit", definition: "Porte dans la paroi du tunnel menant Ã  un couloir de secours ou au tube adjacent" },
-            { wordFr: "porte coupe-feu", wordEn: "fire door", definition: "Porte rÃ©sistante au feu sÃ©parant le tunnel de la voie d'Ã©vacuation" }
+            { wordFr: "incendie en tunnel", wordEn: "tunnel fire", definition: "Feu se déclarant à l'intérieur d'un tunnel, créant un danger majeur dû à la fumée en espace confiné" },
+            { wordFr: "issue de secours latérale", wordEn: "lateral emergency exit", definition: "Porte dans la paroi du tunnel menant à un couloir de secours ou au tube adjacent" },
+            { wordFr: "porte coupe-feu", wordEn: "fire door", definition: "Porte résistante au feu séparant le tunnel de la voie d'évacuation" }
         ]
     },
     {
         id: 'tunn-049',
         topic: 'tunnels_passages_niveau',
         difficulty: 2,
-        questionFr: "Combien de temps en moyenne s'Ã©coule-t-il entre le dÃ©but du clignotement des feux et l'arrivÃ©e du train Ã  un passage Ã  niveau automatique ?",
+        questionFr: "Combien de temps en moyenne s'écoule-t-il entre le début du clignotement des feux et l'arrivée du train à un passage à niveau automatique ?",
         questionEn: "On average, how much time elapses between the lights starting to flash and the train arriving at an automatic level crossing?",
         options: {
             A: { fr: "5 secondes", en: "5 seconds" },
             B: { fr: "25 secondes environ", en: "About 25 seconds" },
             C: { fr: "1 minute", en: "1 minute" },
-            D: { fr: "Le temps varie trop pour Ãªtre estimÃ©", en: "The time varies too much to estimate" }
+            D: { fr: "Le temps varie trop pour être estimé", en: "The time varies too much to estimate" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "En moyenne, les feux commencent Ã  clignoter environ 25 secondes avant l'arrivÃ©e du train. Ce dÃ©lai est calculÃ© pour permettre la fermeture des barriÃ¨res et l'Ã©vacuation de la zone. Il est trop court pour tenter de passer aprÃ¨s le dÃ©but du clignotement.",
+        explanationFr: "En moyenne, les feux commencent à clignoter environ 25 secondes avant l'arrivée du train. Ce délai est calculé pour permettre la fermeture des barrières et l'évacuation de la zone. Il est trop court pour tenter de passer après le début du clignotement.",
         explanationEn: "On average, the lights start flashing about 25 seconds before the train arrives. This delay is calculated to allow the barriers to close and the crossing to clear. It is too short to attempt crossing after the lights begin.",
         trapNote: "25 seconds feels like a long time when waiting, leading impatient drivers to think they can still cross â€” but a train covers hundreds of metres in that time.",
         distractorNotes: {
@@ -12532,26 +12532,26 @@ const QUESTION_BANK = [
             D: "While exact timing varies, 25 seconds is a well-established average for the French rail network"
         },
         vocabulary: [
-            { wordFr: "passage Ã  niveau automatique", wordEn: "automatic level crossing", definition: "Passage Ã  niveau dont les barriÃ¨res et signaux fonctionnent automatiquement Ã  l'approche d'un train" },
-            { wordFr: "signal d'annonce", wordEn: "advance warning signal", definition: "Signal lumineux ou sonore prÃ©venant de l'arrivÃ©e imminente d'un train" },
-            { wordFr: "voie ferrÃ©e", wordEn: "railway track", definition: "Ensemble de rails sur lesquels circulent les trains" }
+            { wordFr: "passage à niveau automatique", wordEn: "automatic level crossing", definition: "Passage à niveau dont les barrières et signaux fonctionnent automatiquement à l'approche d'un train" },
+            { wordFr: "signal d'annonce", wordEn: "advance warning signal", definition: "Signal lumineux ou sonore prévenant de l'arrivée imminente d'un train" },
+            { wordFr: "voie ferrée", wordEn: "railway track", definition: "Ensemble de rails sur lesquels circulent les trains" }
         ]
     },
     {
         id: 'tunn-050',
         topic: 'tunnels_passages_niveau',
         difficulty: 2,
-        questionFr: "Que signifient les camÃ©ras de surveillance visibles Ã  l'intÃ©rieur d'un tunnel routier ?",
+        questionFr: "Que signifient les caméras de surveillance visibles à l'intérieur d'un tunnel routier ?",
         questionEn: "What do the surveillance cameras visible inside a road tunnel signify?",
         options: {
-            A: { fr: "Elles servent uniquement Ã  verbaliser les excÃ¨s de vitesse", en: "They are used only to issue speeding fines" },
-            B: { fr: "Elles permettent au PC de sÃ©curitÃ© de surveiller le trafic et de dÃ©tecter rapidement les incidents", en: "They allow the safety control room to monitor traffic and quickly detect incidents" },
-            C: { fr: "Elles enregistrent les plaques pour le pÃ©age automatique", en: "They record number plates for automatic toll payment" },
+            A: { fr: "Elles servent uniquement à verbaliser les excès de vitesse", en: "They are used only to issue speeding fines" },
+            B: { fr: "Elles permettent au PC de sécurité de surveiller le trafic et de détecter rapidement les incidents", en: "They allow the safety control room to monitor traffic and quickly detect incidents" },
+            C: { fr: "Elles enregistrent les plaques pour le péage automatique", en: "They record number plates for automatic toll payment" },
             D: { fr: "Elles ne fonctionnent que la nuit", en: "They only operate at night" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les camÃ©ras dans les tunnels sont connectÃ©es au poste de commandement (PC) de sÃ©curitÃ© du tunnel. Elles permettent de surveiller le trafic en temps rÃ©el, de dÃ©tecter les incidents (pannes, accidents, incendies) et de dÃ©clencher rapidement les procÃ©dures d'urgence.",
+        explanationFr: "Les caméras dans les tunnels sont connectées au poste de commandement (PC) de sécurité du tunnel. Elles permettent de surveiller le trafic en temps réel, de détecter les incidents (pannes, accidents, incendies) et de déclencher rapidement les procédures d'urgence.",
         explanationEn: "Cameras in tunnels are connected to the tunnel's safety control room. They enable real-time traffic monitoring, incident detection (breakdowns, accidents, fires), and rapid activation of emergency procedures.",
         trapNote: "Drivers often assume tunnel cameras are speed cameras, but their primary purpose is safety monitoring and incident detection.",
         distractorNotes: {
@@ -12560,26 +12560,26 @@ const QUESTION_BANK = [
             D: "Tunnel cameras operate 24/7 for continuous safety monitoring"
         },
         vocabulary: [
-            { wordFr: "camÃ©ra de surveillance", wordEn: "surveillance camera", definition: "Dispositif vidÃ©o permettant la surveillance Ã  distance d'un espace" },
-            { wordFr: "PC de sÃ©curitÃ©", wordEn: "safety control room", definition: "Centre de commandement supervisant la sÃ©curitÃ© d'un tunnel en temps rÃ©el" },
-            { wordFr: "procÃ©dure d'urgence", wordEn: "emergency procedure", definition: "Ensemble d'actions prÃ©dÃ©finies Ã  exÃ©cuter en cas d'incident grave" }
+            { wordFr: "caméra de surveillance", wordEn: "surveillance camera", definition: "Dispositif vidéo permettant la surveillance à distance d'un espace" },
+            { wordFr: "PC de sécurité", wordEn: "safety control room", definition: "Centre de commandement supervisant la sécurité d'un tunnel en temps réel" },
+            { wordFr: "procédure d'urgence", wordEn: "emergency procedure", definition: "Ensemble d'actions prédéfinies à exécuter en cas d'incident grave" }
         ]
     },
     {
         id: 'sign-041',
         topic: 'signalisation',
         difficulty: 2,
-        questionFr: "Que signifient les plots rÃ©trorÃ©flÃ©chissants (catadioptres) de couleur blanche sur l'autoroute ?",
+        questionFr: "Que signifient les plots rétroréfléchissants (catadioptres) de couleur blanche sur l'autoroute ?",
         questionEn: "What do white retroreflective road studs (cat's eyes) on a motorway signify?",
         options: {
-            A: { fr: "Ils dÃ©limitent les voies de circulation entre elles", en: "They mark the lane boundaries between traffic lanes" },
-            B: { fr: "Ils indiquent le bord droit de la chaussÃ©e", en: "They indicate the right edge of the road" },
+            A: { fr: "Ils délimitent les voies de circulation entre elles", en: "They mark the lane boundaries between traffic lanes" },
+            B: { fr: "Ils indiquent le bord droit de la chaussée", en: "They indicate the right edge of the road" },
             C: { fr: "Ils signalent une zone de danger", en: "They signal a danger zone" },
-            D: { fr: "Ils indiquent une aire de repos Ã  proximitÃ©", en: "They indicate a rest area nearby" }
+            D: { fr: "Ils indiquent une aire de repos à proximité", en: "They indicate a rest area nearby" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Les plots blancs sÃ©parent les voies de circulation. Les plots rouges marquent le bord droit (accotement), les plots jaunes le terre-plein central (cÃ´tÃ© gauche), et les plots verts signalent les bretelles d'accÃ¨s ou de sortie. Ce code couleur aide Ã  s'orienter de nuit ou par mauvais temps.",
+        explanationFr: "Les plots blancs séparent les voies de circulation. Les plots rouges marquent le bord droit (accotement), les plots jaunes le terre-plein central (côté gauche), et les plots verts signalent les bretelles d'accès ou de sortie. Ce code couleur aide à s'orienter de nuit ou par mauvais temps.",
         explanationEn: "White studs separate traffic lanes. Red studs mark the right edge (hard shoulder), yellow studs mark the central reservation (left side), and green studs indicate slip roads. This colour code helps orientation at night or in poor weather.",
         trapNote: "Many candidates do not know the colour coding of road studs, especially confusing white (lane separation) with red (right edge).",
         distractorNotes: {
@@ -12588,26 +12588,26 @@ const QUESTION_BANK = [
             D: "Rest area proximity is indicated by signs, not by road stud colour"
         },
         vocabulary: [
-            { wordFr: "plot rÃ©trorÃ©flÃ©chissant", wordEn: "retroreflective road stud", definition: "Dispositif au sol rÃ©flÃ©chissant la lumiÃ¨re des phares pour guider les conducteurs" },
-            { wordFr: "catadioptre", wordEn: "cat's eye", definition: "Ã‰lÃ©ment rÃ©flecteur intÃ©grÃ© Ã  la chaussÃ©e pour le guidage nocturne" },
-            { wordFr: "accotement", wordEn: "hard shoulder / verge", definition: "Bande latÃ©rale non circulable bordant la chaussÃ©e" }
+            { wordFr: "plot rétroréfléchissant", wordEn: "retroreflective road stud", definition: "Dispositif au sol réfléchissant la lumière des phares pour guider les conducteurs" },
+            { wordFr: "catadioptre", wordEn: "cat's eye", definition: "Élément réflecteur intégré à la chaussée pour le guidage nocturne" },
+            { wordFr: "accotement", wordEn: "hard shoulder / verge", definition: "Bande latérale non circulable bordant la chaussée" }
         ]
     },
     {
         id: 'sign-042',
         topic: 'signalisation',
         difficulty: 2,
-        questionFr: "Que signifient les panneaux Ã  chevrons alternÃ©s bleus et blancs placÃ©s dans les virages ?",
+        questionFr: "Que signifient les panneaux à chevrons alternés bleus et blancs placés dans les virages ?",
         questionEn: "What do signs with alternating blue and white chevrons placed on curves mean?",
         options: {
             A: { fr: "Ils indiquent un virage dangereux et guident la trajectoire du conducteur", en: "They indicate a dangerous curve and guide the driver's trajectory" },
-            B: { fr: "Ils signalent une zone de dÃ©passement autorisÃ©", en: "They signal an overtaking permitted zone" },
+            B: { fr: "Ils signalent une zone de dépassement autorisé", en: "They signal an overtaking permitted zone" },
             C: { fr: "Ils marquent la fin d'une limitation de vitesse", en: "They mark the end of a speed limit" },
-            D: { fr: "Ils indiquent un passage piÃ©ton Ã  proximitÃ©", en: "They indicate a nearby pedestrian crossing" }
+            D: { fr: "Ils indiquent un passage piéton à proximité", en: "They indicate a nearby pedestrian crossing" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Les balises de virage Ã  chevrons bleus et blancs (panneaux J4) guident le conducteur dans les courbes. Elles indiquent le sens du virage et permettent de mieux anticiper la trajectoire, surtout de nuit ou par visibilitÃ© rÃ©duite.",
+        explanationFr: "Les balises de virage à chevrons bleus et blancs (panneaux J4) guident le conducteur dans les courbes. Elles indiquent le sens du virage et permettent de mieux anticiper la trajectoire, surtout de nuit ou par visibilité réduite.",
         explanationEn: "Chevron alignment markers with blue and white stripes (J4 signs) guide drivers through curves. They indicate the direction of the bend and help anticipate the trajectory, especially at night or in reduced visibility.",
         trapNote: "Candidates might confuse these directional chevrons with other blue-and-white signage. They are purely trajectory guides, not speed or permission indicators.",
         distractorNotes: {
@@ -12616,26 +12616,26 @@ const QUESTION_BANK = [
             D: "Pedestrian crossings are indicated by specific triangular warning signs and road markings"
         },
         vocabulary: [
-            { wordFr: "balise de virage", wordEn: "chevron alignment marker", definition: "Panneau directionnel placÃ© dans les courbes pour guider les conducteurs" },
-            { wordFr: "panneau J4", wordEn: "J4 sign", definition: "Balise de position Ã  chevrons indiquant le sens d'un virage" },
-            { wordFr: "trajectoire", wordEn: "trajectory", definition: "Ligne de conduite suivie par un vÃ©hicule dans un virage" }
+            { wordFr: "balise de virage", wordEn: "chevron alignment marker", definition: "Panneau directionnel placé dans les courbes pour guider les conducteurs" },
+            { wordFr: "panneau J4", wordEn: "J4 sign", definition: "Balise de position à chevrons indiquant le sens d'un virage" },
+            { wordFr: "trajectoire", wordEn: "trajectory", definition: "Ligne de conduite suivie par un véhicule dans un virage" }
         ]
     },
     {
         id: 'sign-043',
         topic: 'signalisation',
         difficulty: 3,
-        questionFr: "Sur une autoroute, un panneau Ã  message variable (PMV) affiche Â« Bouchon 5 km â€” Ralentir Â». Quelle est la valeur rÃ©glementaire de ce message ?",
+        questionFr: "Sur une autoroute, un panneau à message variable (PMV) affiche Â« Bouchon 5 km â€” Ralentir Â». Quelle est la valeur réglementaire de ce message ?",
         questionEn: "On a motorway, a variable message sign (VMS) displays 'Congestion 5 km â€” Slow down'. What is the regulatory value of this message?",
         options: {
-            A: { fr: "C'est un simple conseil sans valeur rÃ©glementaire", en: "It is simply advice with no regulatory value" },
-            B: { fr: "C'est une indication obligatoire ayant la mÃªme force qu'un panneau permanent", en: "It is a mandatory instruction with the same force as a permanent sign" },
-            C: { fr: "Il a une valeur rÃ©glementaire uniquement s'il affiche une limitation de vitesse", en: "It has regulatory value only if it displays a speed limit" },
+            A: { fr: "C'est un simple conseil sans valeur réglementaire", en: "It is simply advice with no regulatory value" },
+            B: { fr: "C'est une indication obligatoire ayant la même force qu'un panneau permanent", en: "It is a mandatory instruction with the same force as a permanent sign" },
+            C: { fr: "Il a une valeur réglementaire uniquement s'il affiche une limitation de vitesse", en: "It has regulatory value only if it displays a speed limit" },
             D: { fr: "Il ne concerne que les poids lourds", en: "It only applies to heavy goods vehicles" }
         },
         correctAnswers: ["C"],
         answerCount: 1,
-        explanationFr: "Les PMV qui affichent une limitation de vitesse ou un signal rÃ©glementaire (comme une interdiction de dÃ©passer) ont une valeur rÃ©glementaire et doivent Ãªtre respectÃ©s. Les messages d'information comme Â« Bouchon 5 km Â» sont des indications utiles mais n'ont pas de force obligatoire en tant que telles.",
+        explanationFr: "Les PMV qui affichent une limitation de vitesse ou un signal réglementaire (comme une interdiction de dépasser) ont une valeur réglementaire et doivent être respectés. Les messages d'information comme Â« Bouchon 5 km Â» sont des indications utiles mais n'ont pas de force obligatoire en tant que telles.",
         explanationEn: "VMSs that display a speed limit or regulatory signal (such as an overtaking prohibition) have regulatory value and must be obeyed. Information messages like 'Congestion 5 km' are useful advice but do not have mandatory force as such.",
         trapNote: "The distinction between regulatory displays (speed limits on PMV) and information messages is subtle but important for the exam.",
         distractorNotes: {
@@ -12644,8 +12644,8 @@ const QUESTION_BANK = [
             D: "PMV messages apply to all road users, not just heavy goods vehicles"
         },
         vocabulary: [
-            { wordFr: "panneau Ã  message variable (PMV)", wordEn: "variable message sign (VMS)", definition: "Panneau Ã©lectronique affichant des informations de trafic en temps rÃ©el sur autoroute" },
-            { wordFr: "valeur rÃ©glementaire", wordEn: "regulatory value", definition: "Force juridique obligeant les usagers Ã  respecter l'indication affichÃ©e" },
+            { wordFr: "panneau à message variable (PMV)", wordEn: "variable message sign (VMS)", definition: "Panneau électronique affichant des informations de trafic en temps réel sur autoroute" },
+            { wordFr: "valeur réglementaire", wordEn: "regulatory value", definition: "Force juridique obligeant les usagers à respecter l'indication affichée" },
             { wordFr: "bouchon", wordEn: "traffic jam / congestion", definition: "Embouteillage causant un ralentissement important de la circulation" }
         ]
     },
@@ -12653,17 +12653,17 @@ const QUESTION_BANK = [
         id: 'sign-044',
         topic: 'signalisation',
         difficulty: 2,
-        questionFr: "Ã€ quoi servent les panneaux de dÃ©compte (300 m, 200 m, 100 m) placÃ©s avant une sortie d'autoroute ?",
+        questionFr: "À quoi servent les panneaux de décompte (300 m, 200 m, 100 m) placés avant une sortie d'autoroute ?",
         questionEn: "What is the purpose of countdown markers (300 m, 200 m, 100 m) placed before a motorway exit?",
         options: {
-            A: { fr: "Ils indiquent la distance restante avant la sortie pour prÃ©parer la dÃ©cÃ©lÃ©ration et le changement de voie", en: "They indicate the remaining distance before the exit to prepare for deceleration and lane change" },
-            B: { fr: "Ils indiquent la vitesse maximale autorisÃ©e sur la bretelle de sortie", en: "They indicate the maximum speed allowed on the exit slip road" },
-            C: { fr: "Ils marquent le dÃ©but d'une zone de non-dÃ©passement", en: "They mark the beginning of a no-overtaking zone" },
-            D: { fr: "Ils indiquent la distance jusqu'Ã  la prochaine aire de service", en: "They indicate the distance to the next service area" }
+            A: { fr: "Ils indiquent la distance restante avant la sortie pour préparer la décélération et le changement de voie", en: "They indicate the remaining distance before the exit to prepare for deceleration and lane change" },
+            B: { fr: "Ils indiquent la vitesse maximale autorisée sur la bretelle de sortie", en: "They indicate the maximum speed allowed on the exit slip road" },
+            C: { fr: "Ils marquent le début d'une zone de non-dépassement", en: "They mark the beginning of a no-overtaking zone" },
+            D: { fr: "Ils indiquent la distance jusqu'à la prochaine aire de service", en: "They indicate the distance to the next service area" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Les panneaux de dÃ©compte (3 barres obliques Ã  300 m, 2 Ã  200 m, 1 Ã  100 m) permettent au conducteur de se prÃ©parer Ã  quitter l'autoroute. Ils aident Ã  anticiper la dÃ©cÃ©lÃ©ration et le rabattement vers la voie de dÃ©cÃ©lÃ©ration.",
+        explanationFr: "Les panneaux de décompte (3 barres obliques à 300 m, 2 à 200 m, 1 à 100 m) permettent au conducteur de se préparer à quitter l'autoroute. Ils aident à anticiper la décélération et le rabattement vers la voie de décélération.",
         explanationEn: "Countdown markers (3 diagonal bars at 300 m, 2 at 200 m, 1 at 100 m) help drivers prepare to leave the motorway. They aid in anticipating deceleration and moving into the deceleration lane.",
         trapNote: "Candidates sometimes confuse these with speed indicators or service area markers. They are purely distance countdown markers.",
         distractorNotes: {
@@ -12672,26 +12672,26 @@ const QUESTION_BANK = [
             D: "Service area distances are shown on green or blue information panels"
         },
         vocabulary: [
-            { wordFr: "panneau de dÃ©compte", wordEn: "countdown marker", definition: "Balise Ã  barres obliques indiquant la distance restante avant une sortie d'autoroute" },
-            { wordFr: "voie de dÃ©cÃ©lÃ©ration", wordEn: "deceleration lane", definition: "Voie auxiliaire permettant de rÃ©duire sa vitesse avant de quitter l'autoroute" },
-            { wordFr: "bretelle de sortie", wordEn: "exit slip road", definition: "Voie reliant l'autoroute au rÃ©seau routier secondaire" }
+            { wordFr: "panneau de décompte", wordEn: "countdown marker", definition: "Balise à barres obliques indiquant la distance restante avant une sortie d'autoroute" },
+            { wordFr: "voie de décélération", wordEn: "deceleration lane", definition: "Voie auxiliaire permettant de réduire sa vitesse avant de quitter l'autoroute" },
+            { wordFr: "bretelle de sortie", wordEn: "exit slip road", definition: "Voie reliant l'autoroute au réseau routier secondaire" }
         ]
     },
     {
         id: 'sign-045',
         topic: 'signalisation',
         difficulty: 1,
-        questionFr: "Que signifie un panneau rond Ã  fond bleu avec une flÃ¨che blanche pointant vers le haut ?",
+        questionFr: "Que signifie un panneau rond à fond bleu avec une flèche blanche pointant vers le haut ?",
         questionEn: "What does a round sign with a blue background and a white arrow pointing upward mean?",
         options: {
             A: { fr: "Direction obligatoire tout droit", en: "Mandatory direction: straight ahead" },
             B: { fr: "Sens interdit", en: "No entry" },
-            C: { fr: "DÃ©but d'autoroute", en: "Start of motorway" },
-            D: { fr: "PrioritÃ© aux vÃ©hicules venant d'en face", en: "Priority for oncoming traffic" }
+            C: { fr: "Début d'autoroute", en: "Start of motorway" },
+            D: { fr: "Priorité aux véhicules venant d'en face", en: "Priority for oncoming traffic" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Un panneau rond Ã  fond bleu est un panneau d'obligation. La flÃ¨che blanche pointant vers le haut signifie que la seule direction autorisÃ©e est tout droit. Ce panneau interdit de tourner Ã  droite ou Ã  gauche au prochain carrefour.",
+        explanationFr: "Un panneau rond à fond bleu est un panneau d'obligation. La flèche blanche pointant vers le haut signifie que la seule direction autorisée est tout droit. Ce panneau interdit de tourner à droite ou à gauche au prochain carrefour.",
         explanationEn: "A round sign with a blue background is a mandatory sign. A white arrow pointing up means the only permitted direction is straight ahead. This sign prohibits turning right or left at the next junction.",
         trapNote: "Blue round signs indicate obligations (must do), not prohibitions â€” candidates often confuse this with red-bordered prohibition signs.",
         distractorNotes: {
@@ -12700,8 +12700,8 @@ const QUESTION_BANK = [
             D: "Priority for oncoming traffic uses a different sign with two opposing arrows"
         },
         vocabulary: [
-            { wordFr: "panneau d'obligation", wordEn: "mandatory sign", definition: "Panneau rond Ã  fond bleu imposant une direction ou un comportement obligatoire" },
-            { wordFr: "direction obligatoire", wordEn: "mandatory direction", definition: "Sens de circulation imposÃ© par la signalisation" },
+            { wordFr: "panneau d'obligation", wordEn: "mandatory sign", definition: "Panneau rond à fond bleu imposant une direction ou un comportement obligatoire" },
+            { wordFr: "direction obligatoire", wordEn: "mandatory direction", definition: "Sens de circulation imposé par la signalisation" },
             { wordFr: "carrefour", wordEn: "junction / crossroads", definition: "Point de rencontre de deux ou plusieurs voies de circulation" }
         ]
     },
@@ -12709,17 +12709,17 @@ const QUESTION_BANK = [
         id: 'sign-046',
         topic: 'signalisation',
         difficulty: 3,
-        questionFr: "Que signifient les flÃ¨ches de rabattement peintes au sol sur une voie d'autoroute ?",
+        questionFr: "Que signifient les flèches de rabattement peintes au sol sur une voie d'autoroute ?",
         questionEn: "What do lane reduction arrows painted on the road surface on a motorway lane mean?",
         options: {
             A: { fr: "Vous devez changer de voie car votre voie va se terminer", en: "You must change lanes because your lane is about to end" },
-            B: { fr: "Vous pouvez dÃ©passer par la droite", en: "You may overtake on the right" },
-            C: { fr: "La voie est rÃ©servÃ©e aux vÃ©hicules lents", en: "The lane is reserved for slow vehicles" },
-            D: { fr: "La vitesse maximale est rÃ©duite sur cette voie", en: "The maximum speed is reduced on this lane" }
+            B: { fr: "Vous pouvez dépasser par la droite", en: "You may overtake on the right" },
+            C: { fr: "La voie est réservée aux véhicules lents", en: "The lane is reserved for slow vehicles" },
+            D: { fr: "La vitesse maximale est réduite sur cette voie", en: "The maximum speed is reduced on this lane" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Les flÃ¨ches de rabattement (flÃ¨ches obliques au sol) indiquent que la voie sur laquelle vous circulez va se terminer. Vous devez vous rabattre sur la voie adjacente dans la direction indiquÃ©e par la flÃ¨che, en cÃ©dant le passage aux vÃ©hicules dÃ©jÃ  sur cette voie.",
+        explanationFr: "Les flèches de rabattement (flèches obliques au sol) indiquent que la voie sur laquelle vous circulez va se terminer. Vous devez vous rabattre sur la voie adjacente dans la direction indiquée par la flèche, en cédant le passage aux véhicules déjà sur cette voie.",
         explanationEn: "Lane reduction arrows (diagonal arrows on the road surface) indicate that the lane you are driving on is about to end. You must merge into the adjacent lane in the direction shown by the arrow, giving way to vehicles already in that lane.",
         trapNote: "These arrows are different from directional arrows at junctions â€” they specifically indicate lane merging, not direction choice.",
         distractorNotes: {
@@ -12728,53 +12728,53 @@ const QUESTION_BANK = [
             D: "Speed reductions are indicated by circular signs, not road markings"
         },
         vocabulary: [
-            { wordFr: "flÃ¨che de rabattement", wordEn: "lane reduction arrow", definition: "Marquage au sol indiquant qu'une voie se termine et qu'il faut se rabattre" },
+            { wordFr: "flèche de rabattement", wordEn: "lane reduction arrow", definition: "Marquage au sol indiquant qu'une voie se termine et qu'il faut se rabattre" },
             { wordFr: "se rabattre", wordEn: "to merge / to move over", definition: "Changer de voie pour rejoindre une voie adjacente" },
-            { wordFr: "voie adjacente", wordEn: "adjacent lane", definition: "Voie de circulation immÃ©diatement Ã  cÃ´tÃ© de celle sur laquelle on circule" }
+            { wordFr: "voie adjacente", wordEn: "adjacent lane", definition: "Voie de circulation immédiatement à côté de celle sur laquelle on circule" }
         ]
     },
     {
         id: 'sign-047',
         topic: 'signalisation',
         difficulty: 2,
-        questionFr: "Quelles informations donnent les dÃ©linÃ©ateurs (piquets) de couleur blanche et rouge le long des routes ?",
+        questionFr: "Quelles informations donnent les délinéateurs (piquets) de couleur blanche et rouge le long des routes ?",
         questionEn: "What information do white and red delineator posts along roads provide?",
         options: {
-            A: { fr: "Les piquets blancs indiquent le cÃ´tÃ© droit et les rouges le cÃ´tÃ© gauche de la route", en: "White posts indicate the right side and red posts the left side of the road" },
-            B: { fr: "Les piquets blancs sont Ã  droite et les rouges Ã  gauche, permettant de connaÃ®tre le cÃ´tÃ© de la route oÃ¹ l'on se trouve", en: "White posts are on the right and red on the left, helping drivers know which side of the road they are on" },
+            A: { fr: "Les piquets blancs indiquent le côté droit et les rouges le côté gauche de la route", en: "White posts indicate the right side and red posts the left side of the road" },
+            B: { fr: "Les piquets blancs sont à droite et les rouges à gauche, permettant de connaître le côté de la route où l'on se trouve", en: "White posts are on the right and red on the left, helping drivers know which side of the road they are on" },
             C: { fr: "Ils indiquent une zone de travaux", en: "They indicate a work zone" },
-            D: { fr: "La couleur n'a pas de signification particuliÃ¨re", en: "The colour has no particular meaning" }
+            D: { fr: "La couleur n'a pas de signification particulière", en: "The colour has no particular meaning" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Les dÃ©linÃ©ateurs blancs sont placÃ©s Ã  droite de la route et les rouges Ã  gauche. Ce systÃ¨me permet au conducteur de se repÃ©rer instantanÃ©ment, surtout de nuit, par brouillard ou en cas de perte de repÃ¨res visuels. Blanc Ã  droite = vous Ãªtes du bon cÃ´tÃ©.",
+        explanationFr: "Les délinéateurs blancs sont placés à droite de la route et les rouges à gauche. Ce système permet au conducteur de se repérer instantanément, surtout de nuit, par brouillard ou en cas de perte de repères visuels. Blanc à droite = vous êtes du bon côté.",
         explanationEn: "Road delineator posts use a standardised colour code: white posts are on the right and red on the left relative to direction of travel. A correctly describes the colour positions (white = right, red = left). B adds the practical purpose: helping drivers know which side of the road they are on. Both answers are correct.",
-        trapNote: "Candidates often forget which colour goes on which side. Memory aid: 'blanc = bon cÃ´tÃ©' (white = correct side, i.e., right).",
+        trapNote: "Candidates often forget which colour goes on which side. Memory aid: 'blanc = bon côté' (white = correct side, i.e., right).",
         distractorNotes: {
             C: "Work zones are indicated by orange/yellow signage, not by permanent delineator posts",
             D: "The colour distinction is crucial for safety and has a very specific meaning"
         },
         vocabulary: [
-            { wordFr: "dÃ©linÃ©ateur", wordEn: "delineator post", definition: "Piquet rÃ©flÃ©chissant placÃ© au bord de la chaussÃ©e pour guider les conducteurs" },
-            { wordFr: "repÃ¨re visuel", wordEn: "visual reference", definition: "Point de repÃ¨re permettant de s'orienter sur la route" },
-            { wordFr: "brouillard", wordEn: "fog", definition: "Conditions mÃ©tÃ©orologiques rÃ©duisant fortement la visibilitÃ©" }
+            { wordFr: "délinéateur", wordEn: "delineator post", definition: "Piquet réfléchissant placé au bord de la chaussée pour guider les conducteurs" },
+            { wordFr: "repère visuel", wordEn: "visual reference", definition: "Point de repère permettant de s'orienter sur la route" },
+            { wordFr: "brouillard", wordEn: "fog", definition: "Conditions météorologiques réduisant fortement la visibilité" }
         ]
     },
     {
         id: 'sign-048',
         topic: 'signalisation',
         difficulty: 1,
-        questionFr: "Que signifie un panneau rond Ã  fond blanc barrÃ© d'un trait noir oblique ?",
+        questionFr: "Que signifie un panneau rond à fond blanc barré d'un trait noir oblique ?",
         questionEn: "What does a round sign with a white background crossed by a diagonal black line mean?",
         options: {
-            A: { fr: "Fin de toutes les interdictions prÃ©cÃ©demment signalÃ©es", en: "End of all previously signalled prohibitions" },
+            A: { fr: "Fin de toutes les interdictions précédemment signalées", en: "End of all previously signalled prohibitions" },
             B: { fr: "Interdiction de circuler", en: "No traffic allowed" },
             C: { fr: "Fin de zone 30", en: "End of 30 zone" },
-            D: { fr: "Route barrÃ©e", en: "Road closed" }
+            D: { fr: "Route barrée", en: "Road closed" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Ce panneau (B31) marque la fin de toutes les interdictions imposÃ©es par des panneaux antÃ©rieurs (limitation de vitesse, interdiction de dÃ©passer, etc.). AprÃ¨s ce panneau, les rÃ¨gles gÃ©nÃ©rales du Code de la route s'appliquent de nouveau.",
+        explanationFr: "Ce panneau (B31) marque la fin de toutes les interdictions imposées par des panneaux antérieurs (limitation de vitesse, interdiction de dépasser, etc.). Après ce panneau, les règles générales du Code de la route s'appliquent de nouveau.",
         explanationEn: "This sign (B31) marks the end of all prohibitions imposed by previous signs (speed limits, overtaking bans, etc.). After this sign, the general rules of the Highway Code apply again.",
         trapNote: "Candidates sometimes confuse this general end-of-restriction sign with specific end-of-speed-limit signs.",
         distractorNotes: {
@@ -12783,26 +12783,26 @@ const QUESTION_BANK = [
             D: "Road closed uses a completely different sign â€” typically a red bar across the road"
         },
         vocabulary: [
-            { wordFr: "panneau de fin d'interdiction", wordEn: "end-of-restriction sign", definition: "Panneau annulant toutes les interdictions prÃ©cÃ©demment imposÃ©es sur la route" },
-            { wordFr: "panneau B31", wordEn: "B31 sign", definition: "Panneau rond blanc barrÃ© d'un trait noir oblique signifiant fin de toutes interdictions" },
-            { wordFr: "rÃ¨gles gÃ©nÃ©rales", wordEn: "general rules", definition: "Dispositions du Code de la route applicables en l'absence de signalisation spÃ©cifique" }
+            { wordFr: "panneau de fin d'interdiction", wordEn: "end-of-restriction sign", definition: "Panneau annulant toutes les interdictions précédemment imposées sur la route" },
+            { wordFr: "panneau B31", wordEn: "B31 sign", definition: "Panneau rond blanc barré d'un trait noir oblique signifiant fin de toutes interdictions" },
+            { wordFr: "règles générales", wordEn: "general rules", definition: "Dispositions du Code de la route applicables en l'absence de signalisation spécifique" }
         ]
     },
     {
         id: 'sign-049',
         topic: 'signalisation',
         difficulty: 3,
-        questionFr: "Quels types d'informations peuvent Ãªtre affichÃ©s sur les panneaux de signalisation dynamique aux abords des pÃ©ages ?",
+        questionFr: "Quels types d'informations peuvent être affichés sur les panneaux de signalisation dynamique aux abords des péages ?",
         questionEn: "What types of information can be displayed on dynamic signs near toll plazas?",
         options: {
-            A: { fr: "Uniquement le tarif du pÃ©age", en: "Only the toll price" },
-            B: { fr: "Le mode de paiement acceptÃ© par chaque voie, le tarif et le temps d'attente estimÃ©", en: "The payment method accepted by each lane, the price, and the estimated waiting time" },
-            C: { fr: "La vitesse maximale autorisÃ©e uniquement", en: "The maximum permitted speed only" },
-            D: { fr: "Les prÃ©visions mÃ©tÃ©orologiques", en: "Weather forecasts" }
+            A: { fr: "Uniquement le tarif du péage", en: "Only the toll price" },
+            B: { fr: "Le mode de paiement accepté par chaque voie, le tarif et le temps d'attente estimé", en: "The payment method accepted by each lane, the price, and the estimated waiting time" },
+            C: { fr: "La vitesse maximale autorisée uniquement", en: "The maximum permitted speed only" },
+            D: { fr: "Les prévisions météorologiques", en: "Weather forecasts" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les panneaux dynamiques aux pÃ©ages indiquent le type de paiement acceptÃ© par chaque voie (tÃ©lÃ©pÃ©age, carte bancaire, espÃ¨ces), les tarifs applicables et parfois le temps d'attente estimÃ©. Ils guident le conducteur vers la voie la plus adaptÃ©e.",
+        explanationFr: "Les panneaux dynamiques aux péages indiquent le type de paiement accepté par chaque voie (télépéage, carte bancaire, espèces), les tarifs applicables et parfois le temps d'attente estimé. Ils guident le conducteur vers la voie la plus adaptée.",
         explanationEn: "Dynamic signs at toll plazas indicate the payment type accepted by each lane (electronic toll, card, cash), applicable rates, and sometimes the estimated waiting time. They guide the driver to the most suitable lane.",
         trapNote: "Candidates may oversimplify and think toll signs only show prices, missing the important lane guidance function.",
         distractorNotes: {
@@ -12811,9 +12811,9 @@ const QUESTION_BANK = [
             D: "Weather information appears on motorway PMV signs, not on toll-specific displays"
         },
         vocabulary: [
-            { wordFr: "pÃ©age", wordEn: "toll plaza", definition: "Point de paiement sur autoroute oÃ¹ les usagers acquittent un droit de passage" },
-            { wordFr: "tÃ©lÃ©pÃ©age", wordEn: "electronic toll collection", definition: "SystÃ¨me permettant le paiement automatique du pÃ©age via un badge embarquÃ©" },
-            { wordFr: "signalisation dynamique", wordEn: "dynamic signage", definition: "Panneaux Ã©lectroniques affichant des informations en temps rÃ©el" }
+            { wordFr: "péage", wordEn: "toll plaza", definition: "Point de paiement sur autoroute où les usagers acquittent un droit de passage" },
+            { wordFr: "télépéage", wordEn: "electronic toll collection", definition: "Système permettant le paiement automatique du péage via un badge embarqué" },
+            { wordFr: "signalisation dynamique", wordEn: "dynamic signage", definition: "Panneaux électroniques affichant des informations en temps réel" }
         ]
     },
     {
@@ -12823,42 +12823,42 @@ const QUESTION_BANK = [
         questionFr: "Que signifie un panneau rectangulaire bleu avec un Â« P Â» blanc suivi de Â« +R Â» ?",
         questionEn: "What does a rectangular blue sign with a white 'P' followed by '+R' mean?",
         options: {
-            A: { fr: "Parking rÃ©servÃ© aux rÃ©sidents", en: "Parking reserved for residents" },
-            B: { fr: "Parking relais : stationnement avec possibilitÃ© de correspondance vers les transports en commun", en: "Park and ride: parking with connection to public transport" },
-            C: { fr: "Parking avec recharge Ã©lectrique", en: "Parking with electric charging" },
-            D: { fr: "Parking avec restaurant Ã  proximitÃ©", en: "Parking with restaurant nearby" }
+            A: { fr: "Parking réservé aux résidents", en: "Parking reserved for residents" },
+            B: { fr: "Parking relais : stationnement avec possibilité de correspondance vers les transports en commun", en: "Park and ride: parking with connection to public transport" },
+            C: { fr: "Parking avec recharge électrique", en: "Parking with electric charging" },
+            D: { fr: "Parking avec restaurant à proximité", en: "Parking with restaurant nearby" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Le panneau P+R (Park and Ride) indique un parking relais situÃ© Ã  proximitÃ© d'une station de transport en commun (mÃ©tro, tramway, bus). Il encourage les automobilistes Ã  garer leur vÃ©hicule et Ã  poursuivre leur trajet en transport en commun.",
+        explanationFr: "Le panneau P+R (Park and Ride) indique un parking relais situé à proximité d'une station de transport en commun (métro, tramway, bus). Il encourage les automobilistes à garer leur véhicule et à poursuivre leur trajet en transport en commun.",
         explanationEn: "The P+R (Park and Ride) sign indicates a relay parking area located near a public transport station (metro, tram, bus). It encourages drivers to park their vehicle and continue their journey by public transport.",
         trapNote: "The '+R' is sometimes misread as 'reserved' or 'recharge' instead of its actual meaning: relay (park and ride).",
         distractorNotes: {
-            A: "Resident parking has its own specific signage mentioning 'rÃ©sidents', not '+R'",
+            A: "Resident parking has its own specific signage mentioning 'résidents', not '+R'",
             C: "Electric charging parking uses a specific plug/lightning symbol, not '+R'",
             D: "Restaurant proximity is indicated by service signs, not by parking designation signs"
         },
         vocabulary: [
-            { wordFr: "parking relais (P+R)", wordEn: "park and ride", definition: "Parking situÃ© en pÃ©riphÃ©rie permettant de poursuivre son trajet en transport en commun" },
-            { wordFr: "correspondance", wordEn: "connection / transfer", definition: "PossibilitÃ© de passer d'un mode de transport Ã  un autre" },
-            { wordFr: "transport en commun", wordEn: "public transport", definition: "RÃ©seau de transport collectif (bus, mÃ©tro, tramway, train)" }
+            { wordFr: "parking relais (P+R)", wordEn: "park and ride", definition: "Parking situé en périphérie permettant de poursuivre son trajet en transport en commun" },
+            { wordFr: "correspondance", wordEn: "connection / transfer", definition: "Possibilité de passer d'un mode de transport à un autre" },
+            { wordFr: "transport en commun", wordEn: "public transport", definition: "Réseau de transport collectif (bus, métro, tramway, train)" }
         ]
     },
     {
         id: 'div-041',
         topic: 'notions_diverses',
         difficulty: 2,
-        questionFr: "Qu'est-ce que l'Ã©co-conduite et quel est son principal bÃ©nÃ©fice ?",
+        questionFr: "Qu'est-ce que l'éco-conduite et quel est son principal bénéfice ?",
         questionEn: "What is eco-driving and what is its main benefit?",
         options: {
             A: { fr: "Une conduite sportive qui optimise les performances du moteur", en: "Sporty driving that optimises engine performance" },
-            B: { fr: "Un style de conduite souple qui rÃ©duit la consommation de carburant et les Ã©missions de CO2", en: "A smooth driving style that reduces fuel consumption and CO2 emissions" },
-            C: { fr: "Une obligation lÃ©gale uniquement pour les conducteurs professionnels", en: "A legal obligation only for professional drivers" },
+            B: { fr: "Un style de conduite souple qui réduit la consommation de carburant et les émissions de CO2", en: "A smooth driving style that reduces fuel consumption and CO2 emissions" },
+            C: { fr: "Une obligation légale uniquement pour les conducteurs professionnels", en: "A legal obligation only for professional drivers" },
             D: { fr: "Une conduite lente qui impose de rouler 20 km/h en dessous des limites", en: "Slow driving that requires driving 20 km/h below the limits" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "L'Ã©co-conduite est un ensemble de bonnes pratiques de conduite visant Ã  rÃ©duire la consommation de carburant (jusqu'Ã  15 %) et les Ã©missions polluantes. Elle inclut des accÃ©lÃ©rations progressives, le passage rapide aux rapports supÃ©rieurs, l'anticipation et le maintien d'une vitesse stable.",
+        explanationFr: "L'éco-conduite est un ensemble de bonnes pratiques de conduite visant à réduire la consommation de carburant (jusqu'à 15 %) et les émissions polluantes. Elle inclut des accélérations progressives, le passage rapide aux rapports supérieurs, l'anticipation et le maintien d'une vitesse stable.",
         explanationEn: "Eco-driving is a set of good driving practices aimed at reducing fuel consumption (by up to 15%) and pollutant emissions. It includes gradual acceleration, early upshifting, anticipation, and maintaining a steady speed.",
         trapNote: "Eco-driving does not mean driving slowly â€” it means driving smoothly and efficiently at normal speeds.",
         distractorNotes: {
@@ -12867,9 +12867,9 @@ const QUESTION_BANK = [
             D: "Eco-driving does not require driving below speed limits â€” it focuses on driving style, not speed reduction"
         },
         vocabulary: [
-            { wordFr: "Ã©co-conduite", wordEn: "eco-driving", definition: "Ensemble de techniques de conduite visant Ã  rÃ©duire la consommation et les Ã©missions" },
-            { wordFr: "consommation de carburant", wordEn: "fuel consumption", definition: "QuantitÃ© de carburant utilisÃ©e par un vÃ©hicule pour parcourir une distance donnÃ©e" },
-            { wordFr: "Ã©missions de CO2", wordEn: "CO2 emissions", definition: "QuantitÃ© de dioxyde de carbone rejetÃ©e par un vÃ©hicule dans l'atmosphÃ¨re" }
+            { wordFr: "éco-conduite", wordEn: "eco-driving", definition: "Ensemble de techniques de conduite visant à réduire la consommation et les émissions" },
+            { wordFr: "consommation de carburant", wordEn: "fuel consumption", definition: "Quantité de carburant utilisée par un véhicule pour parcourir une distance donnée" },
+            { wordFr: "émissions de CO2", wordEn: "CO2 emissions", definition: "Quantité de dioxyde de carbone rejetée par un véhicule dans l'atmosphère" }
         ]
     },
     {
@@ -12879,14 +12879,14 @@ const QUESTION_BANK = [
         questionFr: "Qu'est-ce qu'une voie de covoiturage et qui peut l'emprunter ?",
         questionEn: "What is a car-sharing lane and who may use it?",
         options: {
-            A: { fr: "Une voie rÃ©servÃ©e aux taxis et aux bus uniquement", en: "A lane reserved for taxis and buses only" },
-            B: { fr: "Une voie rÃ©servÃ©e aux vÃ©hicules transportant au moins 2 occupants, ainsi qu'aux vÃ©hicules Ã  trÃ¨s faibles Ã©missions", en: "A lane reserved for vehicles carrying at least 2 occupants, as well as very low emission vehicles" },
-            C: { fr: "Une voie accessible Ã  tous les vÃ©hicules aux heures creuses", en: "A lane accessible to all vehicles during off-peak hours" },
-            D: { fr: "Une voie uniquement pour les vÃ©hicules Ã©lectriques", en: "A lane only for electric vehicles" }
+            A: { fr: "Une voie réservée aux taxis et aux bus uniquement", en: "A lane reserved for taxis and buses only" },
+            B: { fr: "Une voie réservée aux véhicules transportant au moins 2 occupants, ainsi qu'aux véhicules à très faibles émissions", en: "A lane reserved for vehicles carrying at least 2 occupants, as well as very low emission vehicles" },
+            C: { fr: "Une voie accessible à tous les véhicules aux heures creuses", en: "A lane accessible to all vehicles during off-peak hours" },
+            D: { fr: "Une voie uniquement pour les véhicules électriques", en: "A lane only for electric vehicles" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les voies de covoiturage sont rÃ©servÃ©es aux vÃ©hicules transportant au moins 2 personnes (conducteur inclus) et aux vÃ©hicules Ã  trÃ¨s faibles Ã©missions (vignette Crit'Air 0 ou Ã©lectriques), ainsi qu'aux taxis et transports en commun. L'objectif est de rÃ©duire le trafic et la pollution.",
+        explanationFr: "Les voies de covoiturage sont réservées aux véhicules transportant au moins 2 personnes (conducteur inclus) et aux véhicules à très faibles émissions (vignette Crit'Air 0 ou électriques), ainsi qu'aux taxis et transports en commun. L'objectif est de réduire le trafic et la pollution.",
         explanationEn: "Car-sharing lanes are reserved for vehicles carrying at least 2 people (including the driver) and very low emission vehicles (Crit'Air 0 sticker or electric), as well as taxis and public transport. The goal is to reduce traffic and pollution.",
         trapNote: "Candidates may think only buses and taxis can use these lanes, or that only electric vehicles qualify â€” the occupancy rule is the key criterion.",
         distractorNotes: {
@@ -12895,26 +12895,26 @@ const QUESTION_BANK = [
             D: "Electric vehicles benefit from access, but the lane is not exclusively for them"
         },
         vocabulary: [
-            { wordFr: "voie de covoiturage", wordEn: "car-sharing lane / HOV lane", definition: "Voie rÃ©servÃ©e aux vÃ©hicules transportant plusieurs occupants pour encourager le partage de trajets" },
-            { wordFr: "Crit'Air", wordEn: "Crit'Air sticker", definition: "Vignette environnementale classant les vÃ©hicules selon leur niveau d'Ã©missions polluantes" },
-            { wordFr: "covoiturage", wordEn: "carpooling / car-sharing", definition: "Partage d'un vÃ©hicule entre plusieurs personnes effectuant un trajet similaire" }
+            { wordFr: "voie de covoiturage", wordEn: "car-sharing lane / HOV lane", definition: "Voie réservée aux véhicules transportant plusieurs occupants pour encourager le partage de trajets" },
+            { wordFr: "Crit'Air", wordEn: "Crit'Air sticker", definition: "Vignette environnementale classant les véhicules selon leur niveau d'émissions polluantes" },
+            { wordFr: "covoiturage", wordEn: "carpooling / car-sharing", definition: "Partage d'un véhicule entre plusieurs personnes effectuant un trajet similaire" }
         ]
     },
     {
         id: 'div-043',
         topic: 'notions_diverses',
         difficulty: 2,
-        questionFr: "Ã€ quelle frÃ©quence un vÃ©hicule particulier de moins de 3,5 tonnes doit-il passer le contrÃ´le technique en France ?",
+        questionFr: "À quelle fréquence un véhicule particulier de moins de 3,5 tonnes doit-il passer le contrôle technique en France ?",
         questionEn: "How often must a private vehicle under 3.5 tonnes undergo a technical inspection in France?",
         options: {
-            A: { fr: "Tous les ans dÃ¨s la mise en circulation", en: "Every year from the date of first registration" },
-            B: { fr: "Dans les 6 mois prÃ©cÃ©dant le 4e anniversaire de la premiÃ¨re mise en circulation, puis tous les 2 ans", en: "Within 6 months before the 4th anniversary of first registration, then every 2 years" },
+            A: { fr: "Tous les ans dès la mise en circulation", en: "Every year from the date of first registration" },
+            B: { fr: "Dans les 6 mois précédant le 4e anniversaire de la première mise en circulation, puis tous les 2 ans", en: "Within 6 months before the 4th anniversary of first registration, then every 2 years" },
             C: { fr: "Tous les 3 ans", en: "Every 3 years" },
-            D: { fr: "Uniquement lors de la vente du vÃ©hicule", en: "Only when selling the vehicle" }
+            D: { fr: "Uniquement lors de la vente du véhicule", en: "Only when selling the vehicle" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Le premier contrÃ´le technique doit Ãªtre effectuÃ© dans les 6 mois prÃ©cÃ©dant le 4e anniversaire de la premiÃ¨re mise en circulation du vÃ©hicule. Ensuite, il doit Ãªtre renouvelÃ© tous les 2 ans. En cas de vente, un contrÃ´le de moins de 6 mois est exigÃ©.",
+        explanationFr: "Le premier contrôle technique doit être effectué dans les 6 mois précédant le 4e anniversaire de la première mise en circulation du véhicule. Ensuite, il doit être renouvelé tous les 2 ans. En cas de vente, un contrôle de moins de 6 mois est exigé.",
         explanationEn: "The first technical inspection must be carried out within 6 months before the 4th anniversary of the vehicle's first registration. After that, it must be renewed every 2 years. When selling, an inspection less than 6 months old is required.",
         trapNote: "Many candidates confuse the frequency (every 2 years) with the first inspection timing (4th year), or think annual inspections are required.",
         distractorNotes: {
@@ -12923,9 +12923,9 @@ const QUESTION_BANK = [
             D: "A sale requires a recent inspection, but regular inspections are mandatory regardless of sale"
         },
         vocabulary: [
-            { wordFr: "contrÃ´le technique", wordEn: "technical inspection / MOT", definition: "Examen obligatoire vÃ©rifiant l'Ã©tat de sÃ©curitÃ© et de conformitÃ© d'un vÃ©hicule" },
-            { wordFr: "mise en circulation", wordEn: "first registration", definition: "Date Ã  laquelle un vÃ©hicule neuf est immatriculÃ© et autorisÃ© Ã  circuler pour la premiÃ¨re fois" },
-            { wordFr: "contre-visite", wordEn: "re-inspection", definition: "ContrÃ´le complÃ©mentaire obligatoire lorsque des dÃ©fauts critiques ont Ã©tÃ© dÃ©tectÃ©s" }
+            { wordFr: "contrôle technique", wordEn: "technical inspection / MOT", definition: "Examen obligatoire vérifiant l'état de sécurité et de conformité d'un véhicule" },
+            { wordFr: "mise en circulation", wordEn: "first registration", definition: "Date à laquelle un véhicule neuf est immatriculé et autorisé à circuler pour la première fois" },
+            { wordFr: "contre-visite", wordEn: "re-inspection", definition: "Contrôle complémentaire obligatoire lorsque des défauts critiques ont été détectés" }
         ]
     },
     {
@@ -12935,14 +12935,14 @@ const QUESTION_BANK = [
         questionFr: "Qu'est-ce que la carte verte d'assurance automobile et est-elle encore obligatoire ?",
         questionEn: "What is the green insurance card for motor vehicles and is it still mandatory?",
         options: {
-            A: { fr: "Elle est obligatoire et doit Ãªtre affichÃ©e sur le pare-brise", en: "It is mandatory and must be displayed on the windscreen" },
-            B: { fr: "Depuis avril 2024, la carte verte et la vignette d'assurance ne sont plus obligatoires â€” l'assurance est vÃ©rifiable via le fichier des vÃ©hicules assurÃ©s (FVA)", en: "Since April 2024, the green card and insurance sticker are no longer mandatory â€” insurance is verifiable via the insured vehicles database (FVA)" },
-            C: { fr: "Elle est uniquement nÃ©cessaire pour les dÃ©placements Ã  l'Ã©tranger", en: "It is only needed for travel abroad" },
-            D: { fr: "Elle a Ã©tÃ© remplacÃ©e par la vignette Crit'Air", en: "It has been replaced by the Crit'Air sticker" }
+            A: { fr: "Elle est obligatoire et doit être affichée sur le pare-brise", en: "It is mandatory and must be displayed on the windscreen" },
+            B: { fr: "Depuis avril 2024, la carte verte et la vignette d'assurance ne sont plus obligatoires â€” l'assurance est vérifiable via le fichier des véhicules assurés (FVA)", en: "Since April 2024, the green card and insurance sticker are no longer mandatory â€” insurance is verifiable via the insured vehicles database (FVA)" },
+            C: { fr: "Elle est uniquement nécessaire pour les déplacements à l'étranger", en: "It is only needed for travel abroad" },
+            D: { fr: "Elle a été remplacée par la vignette Crit'Air", en: "It has been replaced by the Crit'Air sticker" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Depuis le 1er avril 2024, la carte verte (attestation d'assurance) et la vignette apposÃ©e sur le pare-brise ne sont plus obligatoires en France. Les forces de l'ordre vÃ©rifient l'assurance via le Fichier des VÃ©hicules AssurÃ©s (FVA). L'assurance elle-mÃªme reste Ã©videmment obligatoire.",
+        explanationFr: "Depuis le 1er avril 2024, la carte verte (attestation d'assurance) et la vignette apposée sur le pare-brise ne sont plus obligatoires en France. Les forces de l'ordre vérifient l'assurance via le Fichier des Véhicules Assurés (FVA). L'assurance elle-même reste évidemment obligatoire.",
         explanationEn: "Since 1 April 2024, the green card (insurance certificate) and the windscreen sticker are no longer mandatory in France. Law enforcement checks insurance via the Insured Vehicles Database (FVA). Insurance itself obviously remains compulsory.",
         trapNote: "This is a recent change â€” candidates studying with older materials will still think the green card is required. The obligation to be insured has not changed.",
         distractorNotes: {
@@ -12952,25 +12952,25 @@ const QUESTION_BANK = [
         },
         vocabulary: [
             { wordFr: "carte verte", wordEn: "green card (insurance)", definition: "Ancienne attestation d'assurance automobile, document papier vert remis par l'assureur" },
-            { wordFr: "Fichier des VÃ©hicules AssurÃ©s (FVA)", wordEn: "Insured Vehicles Database", definition: "Base de donnÃ©es numÃ©rique centralisant les informations d'assurance de tous les vÃ©hicules" },
-            { wordFr: "assurance obligatoire", wordEn: "compulsory insurance", definition: "Garantie responsabilitÃ© civile minimale obligatoire pour tout vÃ©hicule circulant sur la voie publique" }
+            { wordFr: "Fichier des Véhicules Assurés (FVA)", wordEn: "Insured Vehicles Database", definition: "Base de données numérique centralisant les informations d'assurance de tous les véhicules" },
+            { wordFr: "assurance obligatoire", wordEn: "compulsory insurance", definition: "Garantie responsabilité civile minimale obligatoire pour tout véhicule circulant sur la voie publique" }
         ]
     },
     {
         id: 'div-045',
         topic: 'notions_diverses',
         difficulty: 3,
-        questionFr: "Quelles sont les rÃ¨gles concernant les siÃ¨ges auto pour enfants en France ?",
+        questionFr: "Quelles sont les règles concernant les sièges auto pour enfants en France ?",
         questionEn: "What are the rules regarding child car seats in France?",
         options: {
-            A: { fr: "Un siÃ¨ge auto est obligatoire jusqu'Ã  l'Ã¢ge de 10 ans ou 135 cm", en: "A car seat is mandatory until the age of 10 or 135 cm" },
-            B: { fr: "Un dispositif de retenue adaptÃ© est obligatoire jusqu'Ã  l'Ã¢ge de 10 ans ou une taille de 135 cm, sauf si la ceinture est adaptÃ©e Ã  la morphologie de l'enfant", en: "A suitable child restraint is mandatory until age 10 or a height of 135 cm, unless the seatbelt fits the child's build" },
-            C: { fr: "Un siÃ¨ge auto est obligatoire uniquement jusqu'Ã  4 ans", en: "A car seat is mandatory only until age 4" },
-            D: { fr: "La ceinture de sÃ©curitÃ© seule suffit dÃ¨s l'Ã¢ge de 5 ans", en: "The seatbelt alone is sufficient from age 5" }
+            A: { fr: "Un siège auto est obligatoire jusqu'à l'âge de 10 ans ou 135 cm", en: "A car seat is mandatory until the age of 10 or 135 cm" },
+            B: { fr: "Un dispositif de retenue adapté est obligatoire jusqu'à l'âge de 10 ans ou une taille de 135 cm, sauf si la ceinture est adaptée à la morphologie de l'enfant", en: "A suitable child restraint is mandatory until age 10 or a height of 135 cm, unless the seatbelt fits the child's build" },
+            C: { fr: "Un siège auto est obligatoire uniquement jusqu'à 4 ans", en: "A car seat is mandatory only until age 4" },
+            D: { fr: "La ceinture de sécurité seule suffit dès l'âge de 5 ans", en: "The seatbelt alone is sufficient from age 5" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "En France, les enfants de moins de 10 ans doivent utiliser un dispositif de retenue homologuÃ© et adaptÃ© Ã  leur morphologie (poids et taille). L'exception existe lorsque la ceinture de sÃ©curitÃ© est directement adaptÃ©e Ã  la morphologie de l'enfant ou en cas de 3 enfants Ã  l'arriÃ¨re.",
+        explanationFr: "En France, les enfants de moins de 10 ans doivent utiliser un dispositif de retenue homologué et adapté à leur morphologie (poids et taille). L'exception existe lorsque la ceinture de sécurité est directement adaptée à la morphologie de l'enfant ou en cas de 3 enfants à l'arrière.",
         explanationEn: "In France, children under 10 must use an approved restraint system suited to their build (weight and height). An exception exists when the seatbelt directly fits the child's build or when there are 3 children in the rear.",
         trapNote: "The age/height threshold and the exceptions are frequently tested. Candidates often think 135 cm alone is the rule without knowing the age criterion.",
         distractorNotes: {
@@ -12979,26 +12979,26 @@ const QUESTION_BANK = [
             D: "The seatbelt alone is not sufficient at 5 â€” the child must still meet the size/age criteria"
         },
         vocabulary: [
-            { wordFr: "dispositif de retenue", wordEn: "child restraint system", definition: "SiÃ¨ge auto, rehausseur ou tout Ã©quipement homologuÃ© pour la sÃ©curitÃ© des enfants en voiture" },
-            { wordFr: "rehausseur", wordEn: "booster seat", definition: "SiÃ¨ge surÃ©levant l'enfant pour que la ceinture de sÃ©curitÃ© soit correctement positionnÃ©e" },
-            { wordFr: "homologuÃ©", wordEn: "approved / certified", definition: "Conforme aux normes de sÃ©curitÃ© europÃ©ennes et autorisÃ© Ã  la vente" }
+            { wordFr: "dispositif de retenue", wordEn: "child restraint system", definition: "Siège auto, rehausseur ou tout équipement homologué pour la sécurité des enfants en voiture" },
+            { wordFr: "rehausseur", wordEn: "booster seat", definition: "Siège surélevant l'enfant pour que la ceinture de sécurité soit correctement positionnée" },
+            { wordFr: "homologué", wordEn: "approved / certified", definition: "Conforme aux normes de sécurité européennes et autorisé à la vente" }
         ]
     },
     {
         id: 'div-046',
         topic: 'notions_diverses',
         difficulty: 2,
-        questionFr: "Quelles sont les conditions pour remorquer un vÃ©hicule en panne sur la route ?",
+        questionFr: "Quelles sont les conditions pour remorquer un véhicule en panne sur la route ?",
         questionEn: "What are the conditions for towing a broken-down vehicle on the road?",
         options: {
-            A: { fr: "Le remorquage est autorisÃ© sans condition avec n'importe quel cÃ¢ble", en: "Towing is allowed without conditions with any cable" },
-            B: { fr: "Le vÃ©hicule remorquÃ© doit avoir ses feux de dÃ©tresse allumÃ©s, la barre ou le cÃ¢ble ne doit pas dÃ©passer une certaine longueur et la vitesse est limitÃ©e Ã  25 km/h", en: "The towed vehicle must have hazard lights on, the bar or cable must not exceed a certain length, and speed is limited to 25 km/h" },
-            C: { fr: "Seul un dÃ©panneur professionnel est autorisÃ© Ã  remorquer un vÃ©hicule", en: "Only a professional tow truck is allowed to tow a vehicle" },
-            D: { fr: "Le remorquage est interdit sur autoroute mais autorisÃ© sur les autres routes", en: "Towing is prohibited on motorways but allowed on other roads" }
+            A: { fr: "Le remorquage est autorisé sans condition avec n'importe quel câble", en: "Towing is allowed without conditions with any cable" },
+            B: { fr: "Le véhicule remorqué doit avoir ses feux de détresse allumés, la barre ou le câble ne doit pas dépasser une certaine longueur et la vitesse est limitée à 25 km/h", en: "The towed vehicle must have hazard lights on, the bar or cable must not exceed a certain length, and speed is limited to 25 km/h" },
+            C: { fr: "Seul un dépanneur professionnel est autorisé à remorquer un véhicule", en: "Only a professional tow truck is allowed to tow a vehicle" },
+            D: { fr: "Le remorquage est interdit sur autoroute mais autorisé sur les autres routes", en: "Towing is prohibited on motorways but allowed on other roads" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Le remorquage d'un vÃ©hicule en panne est autorisÃ© sous conditions : feux de dÃ©tresse allumÃ©s sur le vÃ©hicule remorquÃ©, distance maximale de 2 mÃ¨tres pour une barre rigide (ou signalisation du cÃ¢ble si souple), vitesse limitÃ©e Ã  25 km/h. Sur autoroute, seul le remorquage jusqu'Ã  la prochaine sortie est tolÃ©rÃ©.",
+        explanationFr: "Le remorquage d'un véhicule en panne est autorisé sous conditions : feux de détresse allumés sur le véhicule remorqué, distance maximale de 2 mètres pour une barre rigide (ou signalisation du câble si souple), vitesse limitée à 25 km/h. Sur autoroute, seul le remorquage jusqu'à la prochaine sortie est toléré.",
         explanationEn: "Towing a broken-down vehicle is permitted under conditions: hazard lights on the towed vehicle, maximum 2-metre tow bar (or cable must be marked if flexible), speed limited to 25 km/h. On motorways, only towing to the nearest exit is tolerated.",
         trapNote: "Many think private towing is completely forbidden and only professionals can do it â€” but it is allowed under strict conditions.",
         distractorNotes: {
@@ -13007,9 +13007,9 @@ const QUESTION_BANK = [
             D: "Towing on motorways is not completely prohibited â€” it is allowed to the nearest exit"
         },
         vocabulary: [
-            { wordFr: "remorquage", wordEn: "towing", definition: "Action de tracter un vÃ©hicule en panne Ã  l'aide d'un autre vÃ©hicule" },
-            { wordFr: "barre de remorquage", wordEn: "tow bar", definition: "Dispositif rigide reliant le vÃ©hicule tracteur au vÃ©hicule remorquÃ©" },
-            { wordFr: "dÃ©panneur", wordEn: "tow truck / breakdown service", definition: "VÃ©hicule professionnel Ã©quipÃ© pour le remorquage et le dÃ©pannage" }
+            { wordFr: "remorquage", wordEn: "towing", definition: "Action de tracter un véhicule en panne à l'aide d'un autre véhicule" },
+            { wordFr: "barre de remorquage", wordEn: "tow bar", definition: "Dispositif rigide reliant le véhicule tracteur au véhicule remorqué" },
+            { wordFr: "dépanneur", wordEn: "tow truck / breakdown service", definition: "Véhicule professionnel équipé pour le remorquage et le dépannage" }
         ]
     },
     {
@@ -13019,14 +13019,14 @@ const QUESTION_BANK = [
         questionFr: "Quels champs figurent obligatoirement sur le certificat d'immatriculation (carte grise) ?",
         questionEn: "Which fields must appear on the vehicle registration certificate (carte grise)?",
         options: {
-            A: { fr: "Uniquement le numÃ©ro d'immatriculation et la marque du vÃ©hicule", en: "Only the registration number and vehicle make" },
-            B: { fr: "Le numÃ©ro d'immatriculation, l'identitÃ© du titulaire, les caractÃ©ristiques techniques du vÃ©hicule et la date de premiÃ¨re mise en circulation", en: "Registration number, holder's identity, vehicle technical characteristics, and date of first registration" },
-            C: { fr: "Le nom du propriÃ©taire et le numÃ©ro de chÃ¢ssis uniquement", en: "The owner's name and chassis number only" },
-            D: { fr: "L'historique complet des contrÃ´les techniques du vÃ©hicule", en: "The complete history of the vehicle's technical inspections" }
+            A: { fr: "Uniquement le numéro d'immatriculation et la marque du véhicule", en: "Only the registration number and vehicle make" },
+            B: { fr: "Le numéro d'immatriculation, l'identité du titulaire, les caractéristiques techniques du véhicule et la date de première mise en circulation", en: "Registration number, holder's identity, vehicle technical characteristics, and date of first registration" },
+            C: { fr: "Le nom du propriétaire et le numéro de châssis uniquement", en: "The owner's name and chassis number only" },
+            D: { fr: "L'historique complet des contrôles techniques du véhicule", en: "The complete history of the vehicle's technical inspections" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Le certificat d'immatriculation contient de nombreuses informations codifiÃ©es : le numÃ©ro d'immatriculation (A), l'identitÃ© du titulaire (C.1), la marque (D.1), le type (D.2), la puissance (P.6), le type de carburant (P.3), la date de premiÃ¨re immatriculation (B) et bien d'autres caractÃ©ristiques techniques.",
+        explanationFr: "Le certificat d'immatriculation contient de nombreuses informations codifiées : le numéro d'immatriculation (A), l'identité du titulaire (C.1), la marque (D.1), le type (D.2), la puissance (P.6), le type de carburant (P.3), la date de première immatriculation (B) et bien d'autres caractéristiques techniques.",
         explanationEn: "The registration certificate contains numerous coded fields: registration number (A), holder's identity (C.1), make (D.1), type (D.2), power (P.6), fuel type (P.3), date of first registration (B), and many other technical characteristics.",
         trapNote: "Candidates often only think of the registration number, but the carte grise is a comprehensive document with dozens of coded fields.",
         distractorNotes: {
@@ -13035,26 +13035,26 @@ const QUESTION_BANK = [
             D: "Technical inspection history is not recorded on the carte grise â€” it appears on the inspection report"
         },
         vocabulary: [
-            { wordFr: "certificat d'immatriculation", wordEn: "vehicle registration certificate", definition: "Document officiel identifiant un vÃ©hicule et son propriÃ©taire, communÃ©ment appelÃ© carte grise" },
+            { wordFr: "certificat d'immatriculation", wordEn: "vehicle registration certificate", definition: "Document officiel identifiant un véhicule et son propriétaire, communément appelé carte grise" },
             { wordFr: "carte grise", wordEn: "grey card", definition: "Nom courant du certificat d'immatriculation en France" },
-            { wordFr: "numÃ©ro de chÃ¢ssis (VIN)", wordEn: "chassis number (VIN)", definition: "NumÃ©ro d'identification unique gravÃ© sur le chÃ¢ssis du vÃ©hicule" }
+            { wordFr: "numéro de châssis (VIN)", wordEn: "chassis number (VIN)", definition: "Numéro d'identification unique gravé sur le châssis du véhicule" }
         ]
     },
     {
         id: 'div-048',
         topic: 'notions_diverses',
         difficulty: 3,
-        questionFr: "Que peut faire un automobiliste en cas de contestation de la catÃ©gorie Crit'Air attribuÃ©e Ã  son vÃ©hicule ?",
+        questionFr: "Que peut faire un automobiliste en cas de contestation de la catégorie Crit'Air attribuée à son véhicule ?",
         questionEn: "What can a driver do if they wish to dispute the Crit'Air category assigned to their vehicle?",
         options: {
-            A: { fr: "Rien â€” la catÃ©gorie est dÃ©finitive et ne peut pas Ãªtre contestÃ©e", en: "Nothing â€” the category is final and cannot be disputed" },
-            B: { fr: "DÃ©poser une rÃ©clamation auprÃ¨s du service de dÃ©livrance des certificats qualitÃ© de l'air dans les 2 mois suivant la rÃ©ception", en: "File a complaint with the air quality certificate issuing service within 2 months of receipt" },
-            C: { fr: "Changer le vÃ©hicule pour obtenir une meilleure catÃ©gorie", en: "Change the vehicle to get a better category" },
-            D: { fr: "Contacter directement le constructeur du vÃ©hicule", en: "Contact the vehicle manufacturer directly" }
+            A: { fr: "Rien â€” la catégorie est définitive et ne peut pas être contestée", en: "Nothing â€” the category is final and cannot be disputed" },
+            B: { fr: "Déposer une réclamation auprès du service de délivrance des certificats qualité de l'air dans les 2 mois suivant la réception", en: "File a complaint with the air quality certificate issuing service within 2 months of receipt" },
+            C: { fr: "Changer le véhicule pour obtenir une meilleure catégorie", en: "Change the vehicle to get a better category" },
+            D: { fr: "Contacter directement le constructeur du véhicule", en: "Contact the vehicle manufacturer directly" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Si un automobiliste estime que la catÃ©gorie Crit'Air attribuÃ©e est erronÃ©e, il peut dÃ©poser une rÃ©clamation auprÃ¨s du service de dÃ©livrance dans un dÃ©lai de 2 mois. Il doit fournir les justificatifs techniques prouvant que son vÃ©hicule devrait Ãªtre classÃ© dans une catÃ©gorie diffÃ©rente.",
+        explanationFr: "Si un automobiliste estime que la catégorie Crit'Air attribuée est erronée, il peut déposer une réclamation auprès du service de délivrance dans un délai de 2 mois. Il doit fournir les justificatifs techniques prouvant que son véhicule devrait être classé dans une catégorie différente.",
         explanationEn: "If a driver believes the assigned Crit'Air category is incorrect, they can file a complaint with the issuing service within 2 months. They must provide technical documentation proving their vehicle should be classified in a different category.",
         trapNote: "Many drivers assume Crit'Air classifications are unchallengeable, but a formal dispute process exists.",
         distractorNotes: {
@@ -13063,26 +13063,26 @@ const QUESTION_BANK = [
             D: "The manufacturer is not responsible for Crit'Air classification â€” it is handled by the issuing authority"
         },
         vocabulary: [
-            { wordFr: "vignette Crit'Air", wordEn: "Crit'Air sticker", definition: "Certificat qualitÃ© de l'air classant les vÃ©hicules selon leur niveau d'Ã©missions polluantes" },
-            { wordFr: "rÃ©clamation", wordEn: "complaint / dispute", definition: "Demande formelle contestant une dÃ©cision administrative" },
-            { wordFr: "certificat qualitÃ© de l'air", wordEn: "air quality certificate", definition: "Document officiel attestant du niveau d'Ã©missions polluantes d'un vÃ©hicule" }
+            { wordFr: "vignette Crit'Air", wordEn: "Crit'Air sticker", definition: "Certificat qualité de l'air classant les véhicules selon leur niveau d'émissions polluantes" },
+            { wordFr: "réclamation", wordEn: "complaint / dispute", definition: "Demande formelle contestant une décision administrative" },
+            { wordFr: "certificat qualité de l'air", wordEn: "air quality certificate", definition: "Document officiel attestant du niveau d'émissions polluantes d'un véhicule" }
         ]
     },
     {
         id: 'div-049',
         topic: 'notions_diverses',
         difficulty: 1,
-        questionFr: "Un triangle de prÃ©signalisation et un gilet de haute visibilitÃ© sont-ils obligatoires dans un vÃ©hicule en France ?",
+        questionFr: "Un triangle de présignalisation et un gilet de haute visibilité sont-ils obligatoires dans un véhicule en France ?",
         questionEn: "Are a warning triangle and a high-visibility vest mandatory in a vehicle in France?",
         options: {
             A: { fr: "Seul le gilet est obligatoire", en: "Only the vest is mandatory" },
-            B: { fr: "Les deux sont obligatoires et doivent Ãªtre accessibles dans le vÃ©hicule", en: "Both are mandatory and must be accessible in the vehicle" },
+            B: { fr: "Les deux sont obligatoires et doivent être accessibles dans le véhicule", en: "Both are mandatory and must be accessible in the vehicle" },
             C: { fr: "Aucun des deux n'est obligatoire", en: "Neither is mandatory" },
             D: { fr: "Seul le triangle est obligatoire", en: "Only the triangle is mandatory" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Le gilet de haute visibilitÃ© (norme EN 471 ou EN ISO 20471) et le triangle de prÃ©signalisation sont tous les deux obligatoires dans chaque vÃ©hicule. Le gilet doit Ãªtre Ã  portÃ©e de main (pas dans le coffre) et le triangle doit pouvoir Ãªtre placÃ© Ã  30 mÃ¨tres en amont du vÃ©hicule.",
+        explanationFr: "Le gilet de haute visibilité (norme EN 471 ou EN ISO 20471) et le triangle de présignalisation sont tous les deux obligatoires dans chaque véhicule. Le gilet doit être à portée de main (pas dans le coffre) et le triangle doit pouvoir être placé à 30 mètres en amont du véhicule.",
         explanationEn: "The high-visibility vest (standard EN 471 or EN ISO 20471) and the warning triangle are both mandatory in every vehicle. The vest must be within reach (not in the boot) and the triangle must be placed 30 metres before the vehicle.",
         trapNote: "Some candidates think the triangle was removed from the mandatory list â€” both items remain required equipment.",
         distractorNotes: {
@@ -13091,26 +13091,26 @@ const QUESTION_BANK = [
             D: "Both are required â€” the triangle alone is not sufficient"
         },
         vocabulary: [
-            { wordFr: "triangle de prÃ©signalisation", wordEn: "warning triangle", definition: "Dispositif rÃ©flÃ©chissant placÃ© sur la route pour signaler un vÃ©hicule arrÃªtÃ©" },
-            { wordFr: "gilet de haute visibilitÃ©", wordEn: "high-visibility vest", definition: "VÃªtement fluorescent et rÃ©flÃ©chissant portÃ© pour Ãªtre visible de jour comme de nuit" },
-            { wordFr: "Ã  portÃ©e de main", wordEn: "within reach", definition: "Accessible immÃ©diatement sans avoir Ã  fouiller le vÃ©hicule" }
+            { wordFr: "triangle de présignalisation", wordEn: "warning triangle", definition: "Dispositif réfléchissant placé sur la route pour signaler un véhicule arrêté" },
+            { wordFr: "gilet de haute visibilité", wordEn: "high-visibility vest", definition: "Vêtement fluorescent et réfléchissant porté pour être visible de jour comme de nuit" },
+            { wordFr: "à portée de main", wordEn: "within reach", definition: "Accessible immédiatement sans avoir à fouiller le véhicule" }
         ]
     },
     {
         id: 'div-050',
         topic: 'notions_diverses',
         difficulty: 2,
-        questionFr: "Quel est le statut lÃ©gal des camÃ©ras embarquÃ©es (dashcams) en France ?",
+        questionFr: "Quel est le statut légal des caméras embarquées (dashcams) en France ?",
         questionEn: "What is the legal status of dashcams in France?",
         options: {
             A: { fr: "Elles sont totalement interdites en France", en: "They are completely prohibited in France" },
-            B: { fr: "Elles sont autorisÃ©es pour un usage privÃ©, mais les images sont soumises au RGPD et ne peuvent Ãªtre diffusÃ©es publiquement sans floutage des visages et plaques", en: "They are permitted for private use, but footage is subject to GDPR and cannot be publicly shared without blurring faces and plates" },
-            C: { fr: "Elles sont autorisÃ©es et les images peuvent Ãªtre librement partagÃ©es sur internet", en: "They are permitted and footage can be freely shared online" },
-            D: { fr: "Elles sont autorisÃ©es uniquement par les forces de l'ordre", en: "They are only permitted for law enforcement" }
+            B: { fr: "Elles sont autorisées pour un usage privé, mais les images sont soumises au RGPD et ne peuvent être diffusées publiquement sans floutage des visages et plaques", en: "They are permitted for private use, but footage is subject to GDPR and cannot be publicly shared without blurring faces and plates" },
+            C: { fr: "Elles sont autorisées et les images peuvent être librement partagées sur internet", en: "They are permitted and footage can be freely shared online" },
+            D: { fr: "Elles sont autorisées uniquement par les forces de l'ordre", en: "They are only permitted for law enforcement" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
-        explanationFr: "Les dashcams sont lÃ©gales en France pour un usage privÃ© (preuve en cas d'accident, par exemple). Cependant, les enregistrements sont soumis au RÃ¨glement GÃ©nÃ©ral sur la Protection des DonnÃ©es (RGPD). Toute diffusion publique nÃ©cessite le floutage des visages et plaques d'immatriculation.",
+        explanationFr: "Les dashcams sont légales en France pour un usage privé (preuve en cas d'accident, par exemple). Cependant, les enregistrements sont soumis au Règlement Général sur la Protection des Données (RGPD). Toute diffusion publique nécessite le floutage des visages et plaques d'immatriculation.",
         explanationEn: "Dashcams are legal in France for private use (evidence in case of an accident, for example). However, recordings are subject to the General Data Protection Regulation (GDPR). Any public distribution requires blurring of faces and number plates.",
         trapNote: "Candidates may think dashcams are either fully legal without restrictions or completely banned â€” the reality involves GDPR privacy constraints.",
         distractorNotes: {
@@ -13119,9 +13119,9 @@ const QUESTION_BANK = [
             D: "Private citizens may use dashcams â€” they are not restricted to law enforcement"
         },
         vocabulary: [
-            { wordFr: "camÃ©ra embarquÃ©e (dashcam)", wordEn: "dashcam", definition: "CamÃ©ra fixÃ©e sur le pare-brise enregistrant en continu la route devant le vÃ©hicule" },
-            { wordFr: "RGPD", wordEn: "GDPR", definition: "RÃ¨glement GÃ©nÃ©ral sur la Protection des DonnÃ©es, lÃ©gislation europÃ©enne protÃ©geant les donnÃ©es personnelles" },
-            { wordFr: "floutage", wordEn: "blurring", definition: "Technique de masquage rendant les visages et plaques d'immatriculation mÃ©connaissables" }
+            { wordFr: "caméra embarquée (dashcam)", wordEn: "dashcam", definition: "Caméra fixée sur le pare-brise enregistrant en continu la route devant le véhicule" },
+            { wordFr: "RGPD", wordEn: "GDPR", definition: "Règlement Général sur la Protection des Données, législation européenne protégeant les données personnelles" },
+            { wordFr: "floutage", wordEn: "blurring", definition: "Technique de masquage rendant les visages et plaques d'immatriculation méconnaissables" }
         ]
     }
     ,
