@@ -2,7 +2,7 @@
    Service Worker — Offline Support
    ============================================ */
 
-const CACHE_NAME = 'code-de-la-route-v25';
+const CACHE_NAME = 'code-de-la-route-v26';
 
 // Use relative paths so caching works on GitHub Pages subdirectory (/code-de-la-route/)
 const URLS_TO_CACHE = [
