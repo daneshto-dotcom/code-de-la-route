@@ -1,0 +1,9 @@
+{
+  "name": "code-de-la-route",
+  "version": "3.9.0",
+  "private": true,
+  "description": "French driving theory tutor PWA for Sara",
+  "scripts": {
+    "build:questions": "node scripts/build-questions.js"
+  }
+}

@@ -347,3 +347,14 @@ console.log(`Generated js/questions.js`);
 console.log(`  Questions: ${questions.length}`);
 console.log(`  Topics: ${Object.keys(topics).length}`);
 console.log(`  File size: ${(Buffer.byteLength(output) / 1024).toFixed(1)} KB`);
+
+// Update content-manifest.json
+const MANIFEST_PATH = path.join(ROOT, 'content-manifest.json');
+let manifest = { version: 0 };
+try { manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8')); } catch (e) {}
+manifest.version = (manifest.version || 0) + 1;
+manifest.questionsUrl = './data/questions.json';
+manifest.questionCount = questions.length;
+manifest.lastUpdated = new Date().toISOString().slice(0, 10);
+fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n', 'utf8');
+console.log(`  Manifest: v${manifest.version} (${manifest.questionCount} questions)`);
