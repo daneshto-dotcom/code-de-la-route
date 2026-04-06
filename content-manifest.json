@@ -1,6 +1,6 @@
 {
-  "version": 5,
+  "version": 6,
   "questionsUrl": "./data/questions.json",
-  "questionCount": 550,
+  "questionCount": 572,
   "lastUpdated": "2026-04-06"
 }
