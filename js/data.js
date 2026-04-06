@@ -69,7 +69,14 @@ const ACHIEVEMENTS = [
     { id: 'five_mastery', title: 'Halfway There', desc: 'Master 5 topics', icon: '⭐', category: 'mastery', trigger: 'topics_mastered', value: 5 },
     { id: 'all_mastery', title: 'Complete Mastery', desc: 'Master all 10 topics', icon: '🌟', category: 'mastery', trigger: 'topics_mastered', value: 10 },
     { id: 'vocab_100', title: 'Word Learner', desc: 'Learn 100 vocabulary words', icon: '📖', category: 'mastery', trigger: 'vocab_learned', value: 100 },
-    { id: 'vocab_all', title: 'Lexicon Complete', desc: 'Learn all vocabulary words', icon: '🏅', category: 'mastery', trigger: 'vocab_all', value: 1 }
+    { id: 'vocab_all', title: 'Lexicon Complete', desc: 'Learn all vocabulary words', icon: '🏅', category: 'mastery', trigger: 'vocab_all', value: 1 },
+
+    // Media / scenario achievements
+    { id: 'media_first', title: 'Picture This', desc: 'Answer your first photo scenario question', icon: '📸', category: 'practice', trigger: 'media_attempted', value: 1 },
+    { id: 'media_all', title: 'Eagle Eye', desc: 'Answer all photo scenario questions', icon: '🦅', category: 'practice', trigger: 'media_attempted', value: 10 },
+
+    // Speed achievements
+    { id: 'speed_10', title: 'Speed Demon', desc: 'Answer 10 questions correctly in under 3 minutes', icon: '⚡', category: 'practice', trigger: 'speed_session', value: 1 }
 ];
 
 const CHALLENGE_TYPES = [
@@ -78,7 +85,8 @@ const CHALLENGE_TYPES = [
     { id: 'vocab_10', desc: 'Review 10 vocabulary words', target: 10, track: 'vocab_today' },
     { id: 'exam_complete', desc: 'Complete a mock exam', target: 1, track: 'exams_today' },
     { id: 'accuracy_80', desc: 'Maintain 80%+ accuracy today (min 10 Qs)', target: 80, track: 'accuracy_today' },
-    { id: 'streak_extend', desc: 'Extend your study streak', target: 1, track: 'streak_extended' }
+    { id: 'streak_extend', desc: 'Extend your study streak', target: 1, track: 'streak_extended' },
+    { id: 'timed_5', desc: 'Get 5 correct in under 2 minutes', target: 5, track: 'timed_correct_today' }
 ];
 
 const STREAK_MILESTONES = [3, 7, 14, 30];

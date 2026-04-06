@@ -552,6 +552,15 @@ const Practice = {
         const secs = durationSecs % 60;
         const timeStr = mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
 
+        // Save speed record for achievement tracking
+        if (this.sessionCorrect >= 10 && durationSecs <= 180) {
+            try {
+                const records = JSON.parse(localStorage.getItem('fdtta_speed_records') || '[]');
+                records.push({ correct: this.sessionCorrect, durationSec: durationSecs, date: new Date().toISOString() });
+                localStorage.setItem('fdtta_speed_records', JSON.stringify(records.slice(-20)));
+            } catch (e) {}
+        }
+
         // Build per-topic stats from this session's attempts
         const recentAttempts = Storage.getAttempts().slice(-(total + this.retryQueue.length));
         const topicStats = {};

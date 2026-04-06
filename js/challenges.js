@@ -102,6 +102,14 @@ const Challenges = {
             case 'streak_extended':
                 progress = Storage.getStreak() > 0 ? 1 : 0;
                 break;
+
+            case 'timed_correct_today': {
+                // Check speed records from today
+                const records = JSON.parse(localStorage.getItem('fdtta_speed_records') || '[]');
+                const todayRecords = records.filter(r => r.date && r.date.slice(0, 10) === today);
+                progress = todayRecords.reduce((max, r) => Math.max(max, r.correct), 0);
+                break;
+            }
         }
 
         challenge.progress = progress;

@@ -91,6 +91,19 @@ const Achievements = {
                     knownCount >= VOCAB_DATA.length;
             }
 
+            case 'media_attempted': {
+                const attempts = Storage.getAttempts();
+                const mediaIds = new Set(QUESTION_BANK.filter(q => q.media).map(q => q.id));
+                const mediaAttempted = new Set(attempts.filter(a => mediaIds.has(a.questionId)).map(a => a.questionId));
+                return mediaAttempted.size >= achievement.value;
+            }
+
+            case 'speed_session': {
+                // Check if any practice session had 10+ correct in under 3 minutes
+                const speedRecords = JSON.parse(localStorage.getItem('fdtta_speed_records') || '[]');
+                return speedRecords.some(r => r.correct >= 10 && r.durationSec <= 180);
+            }
+
             default:
                 return false;
         }
