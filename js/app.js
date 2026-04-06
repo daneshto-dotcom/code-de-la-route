@@ -47,6 +47,13 @@ const App = {
         // Init content sync (check for OTA question updates)
         ContentSync.init();
 
+        // Dynamic question count in settings
+        const qcEl = document.getElementById('settings-question-count');
+        if (qcEl) {
+            const mediaCount = QUESTION_BANK.filter(q => q.media).length;
+            qcEl.textContent = `${QUESTION_BANK.length} questions | 35 road signs | 15 intersection diagrams | ${mediaCount} photo scenarios | AI tutor | Vocab flashcards`;
+        }
+
         // Init notifications
         Notifications.init();
 
