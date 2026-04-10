@@ -15,6 +15,13 @@ const Tutor = {
         const settings = Storage.getSettings();
         this.ENDPOINT = settings.tutorEndpoint || this.DEFAULT_ENDPOINT;
 
+        // Generate or retrieve persistent session ID for conversation memory
+        this.sessionId = localStorage.getItem('tutorSessionId');
+        if (!this.sessionId) {
+            this.sessionId = crypto.randomUUID();
+            localStorage.setItem('tutorSessionId', this.sessionId);
+        }
+
         // Create chat UI (hidden by default)
         this.createChatUI();
 
@@ -180,6 +187,7 @@ const Tutor = {
                 body: JSON.stringify({
                     messages: this.conversationHistory,
                     context,
+                    sessionId: this.sessionId,
                 }),
                 signal: controller.signal,
             });
