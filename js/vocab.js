@@ -282,11 +282,11 @@ const Vocab = {
             <div class="vocab-front ${this.revealed ? 'flipped' : ''}">
                 <div class="vocab-topic-tag">${topic?.icon || ''} ${topic?.nameFr || ''}</div>
                 <div class="vocab-badges-row">${statusBadge}${reviewBadge}</div>
-                <div class="vocab-word-fr">${word.wordFr}</div>
+                <div class="vocab-word-fr">${word.wordFr}${typeof VocabAudio !== 'undefined' && VocabAudio.hasAudio(word.wordFr) ? ' <button class="vocab-pronounce-btn" data-word="' + word.wordFr.replace(/"/g, '&quot;') + '" title="Hear pronunciation" aria-label="Pronounce">&#128264;</button>' : ''}</div>
                 <div class="vocab-hint">Tap to see translation</div>
             </div>
             <div class="vocab-back ${this.revealed ? 'visible' : ''}">
-                <div class="vocab-word-fr">${word.wordFr}</div>
+                <div class="vocab-word-fr">${word.wordFr}${typeof VocabAudio !== 'undefined' && VocabAudio.hasAudio(word.wordFr) ? ' <button class="vocab-pronounce-btn" data-word="' + word.wordFr.replace(/"/g, '&quot;') + '" title="Hear pronunciation" aria-label="Pronounce">&#128264;</button>' : ''}</div>
                 <div class="vocab-word-en">${word.wordEn}</div>
                 ${word.definition ? `<div class="vocab-definition">${word.definition}</div>` : ''}
             </div>
@@ -313,10 +313,29 @@ const Vocab = {
 
             document.getElementById('vocab-learning-btn').addEventListener('click', () => this.rateWord('learning'));
             document.getElementById('vocab-known-btn').addEventListener('click', () => this.rateWord('known'));
+            this.wirePronounceButtons();
         };
 
-        card.addEventListener('click', reveal);
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.vocab-pronounce-btn')) return; // don't reveal on pronounce click
+            reveal();
+        });
         revealBtn.addEventListener('click', reveal);
+
+        // Wire pronunciation buttons
+        this.wirePronounceButtons();
+    },
+
+    wirePronounceButtons() {
+        document.querySelectorAll('.vocab-pronounce-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const word = btn.dataset.word;
+                if (typeof VocabAudio !== 'undefined') {
+                    VocabAudio.play(word);
+                }
+            });
+        });
     },
 
     rateWord(status) {
