@@ -15059,17 +15059,6 @@ function getAdaptiveQuestions(count = 10) {
         if (a.isCorrect) questionAccuracy[a.questionId].correct++;
     }
 
-    // Difficulty progression: target difficulty per topic based on mastery
-    const topicAccuracy = {};
-    for (const m of mastery) {
-        const tid = m.id || m.topic;
-        topicAccuracy[tid] = m.totalAttempts > 0 ? m.accuracy / 100 : 0;
-    }
-    function getTargetDiff(topic) {
-        const acc = topicAccuracy[topic] || 0;
-        return Math.min(3, 1 + Math.floor(acc * 2));
-    }
-
     // Slot allocation: 25% reviews, 30% weak topics, 15% recently-wrong, 15% unseen, 15% random
     const reviewSlots = Math.round(count * 0.25);
     const weakSlots = Math.round(count * 0.30);
@@ -15077,14 +15066,9 @@ function getAdaptiveQuestions(count = 10) {
     const unseenSlots = Math.round(count * 0.15);
 
     function fillBucket(pool, maxSlots) {
-        // Sort by proximity to target difficulty per topic, randomize within same distance
-        const scored = [...pool].map(q => ({
-            q,
-            dist: Math.abs((q.difficulty || 2) - getTargetDiff(q.topic)),
-            rand: Math.random()
-        })).sort((a, b) => a.dist - b.dist || a.rand - b.rand);
+        const shuffled = [...pool].sort(() => Math.random() - 0.5);
         let added = 0;
-        for (const { q } of scored) {
+        for (const q of shuffled) {
             if (added >= maxSlots) break;
             if (!usedIds.has(q.id)) {
                 selected.push(q);
