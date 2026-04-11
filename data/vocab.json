@@ -798,6 +798,13 @@
     "questionId": "autr-066"
   },
   {
+    "wordFr": "feu piéton",
+    "wordEn": "pedestrian light",
+    "definition": "A traffic signal specifically for pedestrians showing when they may cross",
+    "topic": "autres_usagers",
+    "questionId": "autr-078"
+  },
+  {
     "wordFr": "feux clignotants",
     "wordEn": "flashing lights",
     "definition": "Warning lights that blink on and off",
@@ -1083,6 +1090,13 @@
     "definition": "A tractor or farm machine used on public roads",
     "topic": "autres_usagers",
     "questionId": "autr-023"
+  },
+  {
+    "wordFr": "véhicule d'intérêt général prioritaire",
+    "wordEn": "priority public-interest vehicle",
+    "definition": "Emergency vehicles (fire, ambulance, police) with absolute priority when lights and siren are active",
+    "topic": "autres_usagers",
+    "questionId": "autr-076"
   },
   {
     "wordFr": "véhicule pilote",
@@ -2954,6 +2968,13 @@
     "questionId": "div-041"
   },
   {
+    "wordFr": "éthylotest anti-démarrage",
+    "wordEn": "alcohol ignition interlock",
+    "definition": "A device that prevents a vehicle from starting if the driver's blood alcohol exceeds the limit",
+    "topic": "notions_diverses",
+    "questionId": "div-119"
+  },
+  {
     "wordFr": "feuillets autocopiants",
     "wordEn": "carbon copy sheets",
     "definition": "Layered pages that create a duplicate when written on",
@@ -3157,6 +3178,13 @@
     "questionId": "div-021"
   },
   {
+    "wordFr": "rétention du véhicule",
+    "wordEn": "vehicle retention",
+    "definition": "The police keeping your vehicle on the spot after a serious offence",
+    "topic": "notions_diverses",
+    "questionId": "div-116"
+  },
+  {
     "wordFr": "RGPD",
     "wordEn": "GDPR",
     "definition": "Règlement Général sur la Protection des Données, législation européenne protégeant les données personnelles",
@@ -3197,6 +3225,13 @@
     "definition": "When tyre pressure is below the recommended level",
     "topic": "notions_diverses",
     "questionId": "div-025"
+  },
+  {
+    "wordFr": "stage de récupération de points",
+    "wordEn": "points recovery course",
+    "definition": "A 2-day road safety course that restores up to 4 licence points",
+    "topic": "notions_diverses",
+    "questionId": "div-117"
   },
   {
     "wordFr": "telephone au volant",
@@ -4466,6 +4501,13 @@
     "questionId": "media-031"
   },
   {
+    "wordFr": "balise de délinéation",
+    "wordEn": "delineation marker",
+    "definition": "Reflective studs or posts at road edges and between lanes to guide drivers",
+    "topic": "signalisation",
+    "questionId": "sign-060"
+  },
+  {
     "wordFr": "balise de virage",
     "wordEn": "chevron alignment marker",
     "definition": "Panneau directionnel placé dans les courbes pour guider les conducteurs",
@@ -4669,6 +4711,13 @@
     "questionId": "sign-003"
   },
   {
+    "wordFr": "ligne de dissuasion",
+    "wordEn": "dissuasion line",
+    "definition": "A dashed line with closely spaced dashes warning of an approaching continuous line",
+    "topic": "signalisation",
+    "questionId": "sign-063"
+  },
+  {
     "wordFr": "ligne de rive",
     "wordEn": "edge line",
     "definition": "The line marking the edge of the usable road surface",
@@ -4702,6 +4751,13 @@
     "definition": "A certification mark indicating conformity with European health, safety, and environmental standards",
     "topic": "signalisation",
     "questionId": "sign-031"
+  },
+  {
+    "wordFr": "marquage en damier",
+    "wordEn": "chequered marking",
+    "definition": "Alternating coloured bands on the road surface marking a non-drivable zone",
+    "topic": "signalisation",
+    "questionId": "sign-061"
   },
   {
     "wordFr": "marquage zébré",
@@ -4851,6 +4907,13 @@
     "questionId": "sign-050"
   },
   {
+    "wordFr": "plot réfléchissant",
+    "wordEn": "reflective stud",
+    "definition": "A small raised marker on the road surface that reflects headlights",
+    "topic": "signalisation",
+    "questionId": "sign-060"
+  },
+  {
     "wordFr": "plot rétroréfléchissant",
     "wordEn": "retroreflective road stud",
     "definition": "Dispositif au sol réfléchissant la lumière des phares pour guider les conducteurs",
@@ -4968,6 +5031,13 @@
     "definition": "Voie de circulation immédiatement à côté de celle sur laquelle on circule",
     "topic": "signalisation",
     "questionId": "sign-046"
+  },
+  {
+    "wordFr": "zone tampon",
+    "wordEn": "buffer zone",
+    "definition": "A protected area on the road that vehicles must not enter",
+    "topic": "signalisation",
+    "questionId": "sign-061"
   },
   {
     "wordFr": "abri",
