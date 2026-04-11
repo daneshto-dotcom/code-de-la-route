@@ -2,7 +2,7 @@
    Service Worker — Offline Support
    ============================================ */
 
-const CACHE_NAME = 'code-de-la-route-v61';
+const CACHE_NAME = 'code-de-la-route-v62';
 
 // Use relative paths so caching works on GitHub Pages subdirectory (/code-de-la-route/)
 const URLS_TO_CACHE = [
@@ -421,6 +421,47 @@ const URLS_TO_CACHE = [
     './assets/audio/vocab/duree-de-validite.mp3',
     './assets/audio/vocab/allure-du-pas.mp3',
     './assets/audio/vocab/abords-d-une-ecole.mp3',
+    // Batch 9: 40 new words (Session 28)
+    './assets/audio/vocab/borne-d-appel-d-urgence.mp3',
+    './assets/audio/vocab/panneau-d-indication.mp3',
+    './assets/audio/vocab/demi-barriere.mp3',
+    './assets/audio/vocab/gaz-d-echappement.mp3',
+    './assets/audio/vocab/stationnement-alterne.mp3',
+    './assets/audio/vocab/ceder-le-passage-aux-pietons.mp3',
+    './assets/audio/vocab/eclairage-renforce.mp3',
+    './assets/audio/vocab/engin-de-deplacement-personnel-motorise.mp3',
+    './assets/audio/vocab/fauteuil-roulant-electrique.mp3',
+    './assets/audio/vocab/feu-jaune-clignotant.mp3',
+    './assets/audio/vocab/homologue-route.mp3',
+    './assets/audio/vocab/manifester-l-intention-de-traverser.mp3',
+    './assets/audio/vocab/panneau-k10.mp3',
+    './assets/audio/vocab/pieton-engage.mp3',
+    './assets/audio/vocab/proteger-alerter-secourir.mp3',
+    './assets/audio/vocab/remontee-de-file.mp3',
+    './assets/audio/vocab/scooter-de-mobilite.mp3',
+    './assets/audio/vocab/signaleur-de-chantier.mp3',
+    './assets/audio/vocab/sortie-d-ecole.mp3',
+    './assets/audio/vocab/vehicule-d-interet-general-prioritaire.mp3',
+    './assets/audio/vocab/zone-de-depassement.mp3',
+    './assets/audio/vocab/arret-de-tramway.mp3',
+    './assets/audio/vocab/chaussees-separees.mp3',
+    './assets/audio/vocab/contresens.mp3',
+    './assets/audio/vocab/demi-tour-interdit.mp3',
+    './assets/audio/vocab/depassement-dans-les-deux-sens.mp3',
+    './assets/audio/vocab/dos-d-ane.mp3',
+    './assets/audio/vocab/double-sens-cyclable.mp3',
+    './assets/audio/vocab/feux-d-affectation-de-voie.mp3',
+    './assets/audio/vocab/limitation-de-hauteur.mp3',
+    './assets/audio/vocab/limitation-de-poids.mp3',
+    './assets/audio/vocab/limitation-temporaire.mp3',
+    './assets/audio/vocab/panneau-d-autoroute.mp3',
+    './assets/audio/vocab/panneau-de-fin-de-limitation.mp3',
+    './assets/audio/vocab/priorite-aux-pietons.mp3',
+    './assets/audio/vocab/rapport-superieur.mp3',
+    './assets/audio/vocab/regime-moteur.mp3',
+    './assets/audio/vocab/repere-de-distance.mp3',
+    './assets/audio/vocab/sauf-indication-contraire.mp3',
+    './assets/audio/vocab/separateur-central.mp3',
     // Sign images (Imagen 4 compressed WebP)
     './assets/images/signs/stop-sign.webp',
     './assets/images/signs/yield-sign.webp',
