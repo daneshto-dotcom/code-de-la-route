@@ -45596,5 +45596,1115 @@
       "C": "The garage entrance prohibition applies 24/7, not just during office hours.",
       "D": "Right-side parking in built-up areas is the normal rule, not forbidden."
     }
+  },
+  {
+    "id": "prio-154",
+    "topic": "priorite",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sur la priorité à droite sont correctes ?",
+    "questionEn": "Which statements about priority to the right are correct?",
+    "options": {
+      "A": {
+        "fr": "Elle s'applique par défaut à toute intersection sans signalisation",
+        "en": "It applies by default at any intersection without signage"
+      },
+      "B": {
+        "fr": "Elle s'applique même si la route venant de droite est plus petite",
+        "en": "It applies even if the road from the right is smaller"
+      },
+      "C": {
+        "fr": "Elle ne s'applique pas sur les routes nationales",
+        "en": "It does not apply on national roads"
+      },
+      "D": {
+        "fr": "Elle s'applique uniquement en agglomération",
+        "en": "It only applies in built-up areas"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "La priorité à droite est la règle par défaut en France : à toute intersection sans signalisation, le véhicule venant de droite a la priorité, quelle que soit la taille de la route. Elle s'applique partout (agglomération et hors agglomération) et sur tout type de route sauf indication contraire.",
+    "explanationEn": "Priority to the right is the default rule in France: at any intersection without signage, the vehicle from the right has priority, regardless of road size. It applies everywhere (in and outside built-up areas) and on all road types unless indicated otherwise.",
+    "trapNote": "Road size doesn't matter — a tiny side street has priority over a major road if there's no sign.",
+    "distractorNotes": {
+      "C": "Priority to the right applies on ALL roads including national roads, unless signposted otherwise.",
+      "D": "It applies everywhere — urban and rural areas alike."
+    }
+  },
+  {
+    "id": "prio-155",
+    "topic": "priorite",
+    "difficulty": 3,
+    "answerCount": 2,
+    "questionFr": "Dans quels cas perdez-vous votre priorité même si vous êtes sur une route prioritaire ?",
+    "questionEn": "In which cases do you lose your priority even if you are on a priority road?",
+    "options": {
+      "A": {
+        "fr": "Face à un véhicule prioritaire (sirène et gyrophare en marche)",
+        "en": "When facing a priority vehicle (siren and lights active)"
+      },
+      "B": {
+        "fr": "Quand un agent de police vous fait signe de vous arrêter",
+        "en": "When a police officer signals you to stop"
+      },
+      "C": {
+        "fr": "Quand un piéton traverse sur un passage non protégé",
+        "en": "When a pedestrian crosses at an unprotected crossing"
+      },
+      "D": {
+        "fr": "Quand il pleut et que la visibilité est réduite",
+        "en": "When it's raining and visibility is reduced"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Un véhicule prioritaire avec sirène et gyrophare en marche a toujours la priorité absolue, même sur votre route prioritaire. Un agent de police a autorité sur toute signalisation — son geste prime sur les feux et panneaux. Les piétons ont la priorité sur les passages protégés, mais pas automatiquement ailleurs. La pluie ne modifie pas les règles de priorité.",
+    "explanationEn": "A priority vehicle with siren and lights active always has absolute priority, even on your priority road. A police officer has authority over all signage — their gesture overrides lights and signs. Pedestrians have priority at protected crossings, but not automatically elsewhere. Rain does not change priority rules.",
+    "trapNote": "Police officer gestures override ALL signs, lights, and markings. Always obey them first.",
+    "distractorNotes": {
+      "C": "Pedestrians have priority at marked crossings, not at any random point on a priority road.",
+      "D": "Weather conditions require caution but don't change the legal priority rules."
+    }
+  },
+  {
+    "id": "prio-156",
+    "topic": "priorite",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles règles s'appliquent à un carrefour giratoire (rond-point) ?",
+    "questionEn": "Which rules apply at a roundabout?",
+    "options": {
+      "A": {
+        "fr": "Les véhicules déjà engagés dans le giratoire ont la priorité",
+        "en": "Vehicles already in the roundabout have priority"
+      },
+      "B": {
+        "fr": "Vous devez céder le passage avant d'entrer dans le giratoire",
+        "en": "You must yield before entering the roundabout"
+      },
+      "C": {
+        "fr": "La priorité à droite s'applique dans le giratoire",
+        "en": "Priority to the right applies in the roundabout"
+      },
+      "D": {
+        "fr": "Vous pouvez entrer directement si aucun véhicule n'est visible",
+        "en": "You can enter directly if no vehicle is visible"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Dans un carrefour giratoire (signalé par un panneau 'cédez le passage'), les véhicules dans le giratoire ont la priorité. Vous devez céder le passage avant d'y entrer. La priorité à droite ne s'applique PAS dans un giratoire. Même si la voie semble libre, vous devez vérifier et être prêt à céder le passage.",
+    "explanationEn": "At a roundabout (marked with a yield sign), vehicles in the roundabout have priority. You must yield before entering. Priority to the right does NOT apply in a roundabout. Even if the road seems clear, you must check and be ready to yield.",
+    "trapNote": "Roundabouts REVERSE the normal priority to the right — those inside have priority. Common exam trap.",
+    "distractorNotes": {
+      "C": "Roundabouts are an exception to priority to the right — vehicles inside have priority.",
+      "D": "You must always slow down and yield at the entry, even if the roundabout appears empty."
+    }
+  },
+  {
+    "id": "prio-157",
+    "topic": "priorite",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sur les passages piétons sont correctes ?",
+    "questionEn": "Which statements about pedestrian crossings are correct?",
+    "options": {
+      "A": {
+        "fr": "Un piéton engagé sur un passage piéton a toujours la priorité",
+        "en": "A pedestrian on a crossing always has priority"
+      },
+      "B": {
+        "fr": "Vous devez vous arrêter dès qu'un piéton manifeste l'intention de traverser",
+        "en": "You must stop as soon as a pedestrian shows intention to cross"
+      },
+      "C": {
+        "fr": "Les piétons n'ont la priorité que si le feu piéton est vert",
+        "en": "Pedestrians only have priority if the pedestrian light is green"
+      },
+      "D": {
+        "fr": "Vous pouvez passer derrière un piéton qui a déjà traversé votre voie",
+        "en": "You can pass behind a pedestrian who has already crossed your lane"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Un piéton engagé ou manifestant l'intention de traverser sur un passage piéton a toujours la priorité, avec ou sans feu. Depuis 2018, la loi impose de s'arrêter dès que le piéton montre son intention de traverser (pas seulement quand il est déjà engagé). Ne pas respecter cette règle = 6 points + 135 €.",
+    "explanationEn": "A pedestrian on or showing intention to cross at a pedestrian crossing always has priority, with or without lights. Since 2018, the law requires stopping as soon as the pedestrian shows intention to cross (not only when they're already on the road). Violation = 6 points + €135.",
+    "trapNote": "6 points + €135 fine — one of the heaviest penalties. Must stop for INTENTION to cross, not just actual crossing.",
+    "distractorNotes": {
+      "C": "Pedestrians have priority at crossings regardless of traffic light status.",
+      "D": "You must wait until the pedestrian has fully cleared the crossing."
+    }
+  },
+  {
+    "id": "prio-158",
+    "topic": "priorite",
+    "difficulty": 3,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sont correctes concernant la priorité aux intersections signalées par un cédez le passage ?",
+    "questionEn": "Which statements are correct about priority at intersections with a yield sign?",
+    "options": {
+      "A": {
+        "fr": "Vous devez laisser passer les véhicules sur la route prioritaire",
+        "en": "You must let vehicles on the priority road pass"
+      },
+      "B": {
+        "fr": "Vous pouvez passer sans vous arrêter si la voie est clairement libre",
+        "en": "You can proceed without stopping if the road is clearly free"
+      },
+      "C": {
+        "fr": "Vous devez obligatoirement vous arrêter comme à un STOP",
+        "en": "You must stop like at a STOP sign"
+      },
+      "D": {
+        "fr": "Le cédez le passage s'annule quand il pleut",
+        "en": "The yield sign is cancelled when it rains"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Au cédez le passage, vous devez laisser la priorité aux véhicules sur la route principale. Contrairement au STOP, vous n'êtes pas obligé de vous arrêter complètement si la voie est dégagée — vous pouvez passer au ralenti. Le cédez le passage est permanent, quelles que soient les conditions météo.",
+    "explanationEn": "At a yield sign, you must give way to vehicles on the main road. Unlike a STOP sign, you don't have to come to a complete stop if the road is clear — you can proceed slowly. The yield sign is permanent regardless of weather.",
+    "trapNote": "Key difference: STOP = mandatory full stop. Yield = stop only if traffic is present.",
+    "distractorNotes": {
+      "C": "Unlike STOP, a yield sign allows proceeding without stopping if safe.",
+      "D": "Weather has no effect on road sign requirements."
+    }
+  },
+  {
+    "id": "prio-159",
+    "topic": "priorite",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles règles de priorité s'appliquent à une sortie de parking ou de propriété privée ?",
+    "questionEn": "Which priority rules apply when exiting a car park or private property?",
+    "options": {
+      "A": {
+        "fr": "Vous devez céder le passage à tous les usagers sur la voie publique",
+        "en": "You must yield to all users on the public road"
+      },
+      "B": {
+        "fr": "Les piétons sur le trottoir ont la priorité sur vous",
+        "en": "Pedestrians on the pavement have priority over you"
+      },
+      "C": {
+        "fr": "Vous avez la priorité si vous avez le clignotant",
+        "en": "You have priority if you use your indicator"
+      },
+      "D": {
+        "fr": "La priorité à droite s'applique normalement",
+        "en": "Normal priority to the right applies"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "En sortant d'un parking, garage ou propriété privée, vous n'avez AUCUNE priorité. Vous devez céder le passage à tous les usagers de la voie publique : voitures, vélos, piétons sur le trottoir. Le clignotant signale votre intention mais ne vous donne aucun droit de priorité. La priorité à droite ne s'applique pas ici.",
+    "explanationEn": "When exiting a car park, garage, or private property, you have NO priority. You must yield to all public road users: cars, bikes, pedestrians on the pavement. The indicator signals your intention but gives you no right of way. Priority to the right does not apply here.",
+    "trapNote": "Exiting private property = zero priority. Indicator ≠ right of way.",
+    "distractorNotes": {
+      "C": "Using your indicator is mandatory but gives you absolutely no priority.",
+      "D": "Priority to the right does not apply when exiting private property."
+    }
+  },
+  {
+    "id": "prio-160",
+    "topic": "priorite",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles règles s'appliquent quand un bus quitte son arrêt en agglomération ?",
+    "questionEn": "Which rules apply when a bus leaves its stop in a built-up area?",
+    "options": {
+      "A": {
+        "fr": "Vous devez faciliter sa réinsertion dans la circulation",
+        "en": "You must facilitate its re-entry into traffic"
+      },
+      "B": {
+        "fr": "Le bus a la priorité quand il signale son intention de repartir",
+        "en": "The bus has priority when it signals its intention to depart"
+      },
+      "C": {
+        "fr": "Le bus n'a aucune priorité, c'est à lui de s'insérer",
+        "en": "The bus has no priority, it must merge on its own"
+      },
+      "D": {
+        "fr": "Cette règle ne s'applique qu'aux bus scolaires",
+        "en": "This rule only applies to school buses"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "En agglomération, quand un bus de transport en commun signale qu'il veut quitter son arrêt (clignotant), vous devez lui faciliter la réinsertion et lui céder le passage si nécessaire. Cette règle s'applique à tous les bus de transport en commun en agglomération, pas seulement aux bus scolaires.",
+    "explanationEn": "In built-up areas, when a public transport bus signals it wants to leave its stop (indicator), you must facilitate its re-entry and yield if necessary. This rule applies to all public transport buses in built-up areas, not just school buses.",
+    "trapNote": "Bus priority when leaving a stop only applies IN built-up areas and to public transport buses.",
+    "distractorNotes": {
+      "C": "French law gives buses departing stops a priority right in built-up areas.",
+      "D": "The rule covers ALL public transport buses, not just school buses."
+    }
+  },
+  {
+    "id": "prio-161",
+    "topic": "priorite",
+    "difficulty": 3,
+    "answerCount": 2,
+    "questionFr": "Quelle est la hiérarchie de priorité entre les différentes signalisations ?",
+    "questionEn": "What is the priority hierarchy between different types of signage?",
+    "options": {
+      "A": {
+        "fr": "L'agent de police prime sur les feux et les panneaux",
+        "en": "A police officer overrides lights and signs"
+      },
+      "B": {
+        "fr": "Les feux tricolores priment sur les panneaux de priorité",
+        "en": "Traffic lights override priority signs"
+      },
+      "C": {
+        "fr": "Les panneaux priment toujours sur les feux",
+        "en": "Signs always override lights"
+      },
+      "D": {
+        "fr": "Le marquage au sol prime sur les panneaux",
+        "en": "Road markings override signs"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "La hiérarchie est : 1) Agent de police, 2) Feux tricolores, 3) Panneaux, 4) Marquage au sol, 5) Règles générales (priorité à droite). L'agent prime sur tout. Les feux en fonctionnement priment sur les panneaux. Les panneaux priment sur le marquage.",
+    "explanationEn": "The hierarchy is: 1) Police officer, 2) Traffic lights, 3) Signs, 4) Road markings, 5) General rules (priority to the right). The officer overrides everything. Working lights override signs. Signs override markings.",
+    "trapNote": "Officer > Lights > Signs > Markings > Default rules. Memorize this hierarchy for the exam.",
+    "distractorNotes": {
+      "C": "Signs only take over when traffic lights are OFF or flashing yellow.",
+      "D": "Road markings are the lowest tier of signage — signs always override them."
+    }
+  },
+  {
+    "id": "prio-162",
+    "topic": "priorite",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sur les intersections avec feux tricolores sont correctes ?",
+    "questionEn": "Which statements about intersections with traffic lights are correct?",
+    "options": {
+      "A": {
+        "fr": "Un feu rouge impose un arrêt absolu avant la ligne d'effet du feu",
+        "en": "A red light requires an absolute stop before the signal's stop line"
+      },
+      "B": {
+        "fr": "Un feu orange fixe signifie que vous devez vous arrêter sauf si vous ne pouvez plus le faire en sécurité",
+        "en": "A steady amber light means you must stop unless you can no longer do so safely"
+      },
+      "C": {
+        "fr": "Vous pouvez passer au rouge si aucun véhicule n'arrive en face",
+        "en": "You can go through a red light if no vehicle is coming"
+      },
+      "D": {
+        "fr": "Le feu orange autorise à accélérer pour passer avant le rouge",
+        "en": "The amber light allows accelerating to pass before it turns red"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Le feu rouge impose un arrêt complet avant la ligne. Le feu orange fixe signifie 'arrêtez-vous' sauf si vous êtes trop engagé pour freiner en sécurité. Griller un feu rouge = 4 points + 135 €. Accélérer au feu orange est dangereux et verbalisable.",
+    "explanationEn": "A red light requires a complete stop before the line. A steady amber means 'stop' unless you're too committed to brake safely. Running a red = 4 points + €135. Accelerating through amber is dangerous and fineable.",
+    "trapNote": "Amber means STOP, not 'hurry up'. Only exception: already too close to stop safely.",
+    "distractorNotes": {
+      "C": "Running a red light is always illegal regardless of traffic conditions.",
+      "D": "Accelerating through amber is an infraction — amber means prepare to stop."
+    }
+  },
+  {
+    "id": "prio-163",
+    "topic": "priorite",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sont correctes sur la priorité des tramways ?",
+    "questionEn": "Which statements about tram priority are correct?",
+    "options": {
+      "A": {
+        "fr": "Les tramways ont toujours la priorité sauf signalisation contraire",
+        "en": "Trams always have priority unless signage says otherwise"
+      },
+      "B": {
+        "fr": "Il est interdit de stationner ou de s'arrêter sur les voies de tramway",
+        "en": "It is forbidden to park or stop on tram tracks"
+      },
+      "C": {
+        "fr": "Les tramways doivent respecter les feux tricolores comme les voitures",
+        "en": "Trams must obey traffic lights like cars"
+      },
+      "D": {
+        "fr": "Le tramway peut s'arrêter rapidement, vous n'avez pas besoin d'anticiper",
+        "en": "The tram can stop quickly, you don't need to anticipate"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Les tramways bénéficient d'une priorité quasi-absolue : ils ont la priorité à toutes les intersections sauf signalisation spécifique contraire. Il est strictement interdit de stationner ou de s'arrêter sur les voies de tramway. Les tramways ont leurs propres signaux (pas les feux classiques). Un tramway ne peut PAS s'arrêter rapidement — distance de freinage très longue.",
+    "explanationEn": "Trams have near-absolute priority: they have right of way at all intersections unless specific signage says otherwise. Parking or stopping on tram tracks is strictly forbidden. Trams have their own signals (not standard traffic lights). A tram CANNOT stop quickly — very long braking distance.",
+    "trapNote": "Trams have 30-50m braking distance — you must ALWAYS anticipate. Tram priority is near-absolute.",
+    "distractorNotes": {
+      "C": "Trams have their own signal system, separate from standard traffic lights.",
+      "D": "Trams have very long braking distances (30-50m) — always anticipate and give way."
+    }
+  },
+  {
+    "id": "tunn-155",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Que devez-vous faire avant d'entrer dans un tunnel ?",
+    "questionEn": "What must you do before entering a tunnel?",
+    "options": {
+      "A": {
+        "fr": "Allumer les feux de croisement même en plein jour",
+        "en": "Turn on dipped headlights even in broad daylight"
+      },
+      "B": {
+        "fr": "Retirer vos lunettes de soleil",
+        "en": "Remove your sunglasses"
+      },
+      "C": {
+        "fr": "Allumer les feux de brouillard pour mieux voir",
+        "en": "Turn on fog lights to see better"
+      },
+      "D": {
+        "fr": "Accélérer pour entrer rapidement",
+        "en": "Accelerate to enter quickly"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Avant d'entrer dans un tunnel, allumez vos feux de croisement (obligatoires même de jour) et retirez vos lunettes de soleil pour vous adapter à la luminosité réduite. Les feux de brouillard sont interdits en tunnel (éblouissement). N'accélérez pas — maintenez une vitesse régulière.",
+    "explanationEn": "Before entering a tunnel, turn on dipped headlights (mandatory even by day) and remove sunglasses to adapt to reduced light. Fog lights are prohibited in tunnels (glare). Don't accelerate — maintain a steady speed.",
+    "trapNote": "Fog lights cause dangerous glare in tunnels due to reflections off walls.",
+    "distractorNotes": {
+      "C": "Fog lights in tunnels create blinding reflections — they're prohibited.",
+      "D": "Accelerating into a tunnel is dangerous. Maintain steady speed."
+    }
+  },
+  {
+    "id": "tunn-156",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 3,
+    "answerCount": 2,
+    "questionFr": "Que devez-vous faire en cas d'incendie dans un tunnel ?",
+    "questionEn": "What should you do in case of fire in a tunnel?",
+    "options": {
+      "A": {
+        "fr": "Vous arrêter, couper le moteur et laisser la clé sur le contact",
+        "en": "Stop, turn off the engine and leave the key in the ignition"
+      },
+      "B": {
+        "fr": "Évacuer à pied vers la sortie de secours la plus proche en restant bas",
+        "en": "Evacuate on foot to the nearest emergency exit, staying low"
+      },
+      "C": {
+        "fr": "Rester dans votre véhicule portes et fenêtres fermées",
+        "en": "Stay in your vehicle with doors and windows closed"
+      },
+      "D": {
+        "fr": "Faire demi-tour pour sortir du tunnel par l'entrée",
+        "en": "Make a U-turn to exit through the entrance"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "En cas d'incendie dans un tunnel : arrêtez-vous, coupez le moteur, laissez la clé (ou ne verrouillez pas) pour permettre aux secours de déplacer le véhicule. Évacuez à pied vers la sortie de secours la plus proche en restant bas (la fumée monte). Ne restez jamais dans le véhicule. Ne faites jamais demi-tour.",
+    "explanationEn": "In case of fire in a tunnel: stop, turn off the engine, leave the key (or don't lock) so rescuers can move the vehicle. Evacuate on foot to the nearest emergency exit staying low (smoke rises). Never stay in the vehicle. Never make a U-turn.",
+    "trapNote": "Leave the key so firefighters can move your car. Never U-turn in a tunnel fire — smoke and flames block the view.",
+    "distractorNotes": {
+      "C": "Your vehicle is NOT a safe shelter in a tunnel fire — smoke will fill it.",
+      "D": "U-turns create chaos and are extremely dangerous in a tunnel emergency."
+    }
+  },
+  {
+    "id": "tunn-157",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles sont les distances de sécurité à respecter dans un tunnel ?",
+    "questionEn": "What safety distances must be maintained in a tunnel?",
+    "options": {
+      "A": {
+        "fr": "Au moins une distance de sécurité de 2 secondes ou 50 mètres minimum",
+        "en": "At least a 2-second safety distance or minimum 50 metres"
+      },
+      "B": {
+        "fr": "Les marques de balisage lumineux aident à évaluer la distance",
+        "en": "Light markers help evaluate the distance"
+      },
+      "C": {
+        "fr": "La distance peut être réduite car il n'y a pas de croisement",
+        "en": "The distance can be reduced because there are no intersections"
+      },
+      "D": {
+        "fr": "Il suffit de voir les feux arrière du véhicule devant vous",
+        "en": "Seeing the taillights of the vehicle ahead is sufficient"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Dans un tunnel, la distance de sécurité est au minimum de 2 secondes (ou environ 50 m à 100 km/h). Les marques de balisage lumineux (plots ou bandes réfléchissantes) aident à évaluer cette distance. L'absence de croisement ne réduit pas la distance nécessaire. Voir les feux arrière ne garantit pas une distance suffisante.",
+    "explanationEn": "In a tunnel, the safety distance is at least 2 seconds (about 50m at 100 km/h). Light markers (reflective studs or strips) help evaluate this distance. No intersections doesn't mean reduced distance. Seeing taillights doesn't guarantee sufficient distance.",
+    "trapNote": "Tunnel distance rules are the same or stricter than open roads — not relaxed.",
+    "distractorNotes": {
+      "C": "Tunnels have limited escape routes — maintain or increase normal distances.",
+      "D": "Visible taillights don't guarantee a safe stopping distance."
+    }
+  },
+  {
+    "id": "tunn-158",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sur les passages à niveau sont correctes ?",
+    "questionEn": "Which statements about level crossings are correct?",
+    "options": {
+      "A": {
+        "fr": "Vous devez vous arrêter dès que les feux rouges clignotent, même si les barrières sont levées",
+        "en": "You must stop as soon as the red lights flash, even if barriers are up"
+      },
+      "B": {
+        "fr": "Il est interdit de s'engager si vous n'êtes pas sûr de pouvoir dégager le passage à niveau",
+        "en": "It is forbidden to enter if you're not sure you can clear the crossing"
+      },
+      "C": {
+        "fr": "Vous pouvez zigzaguer entre les demi-barrières si la voie est libre",
+        "en": "You can weave between half-barriers if the road is clear"
+      },
+      "D": {
+        "fr": "Les feux clignotants ne s'allument que 5 secondes avant le train",
+        "en": "The flashing lights only activate 5 seconds before the train"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Les feux rouges clignotants imposent un arrêt absolu, même si les barrières ne sont pas encore baissées. Il est interdit de s'engager si vous risquez de rester bloqué sur les voies. Contourner les barrières est un délit grave. Les feux s'allument bien avant l'arrivée du train (25-30 secondes minimum).",
+    "explanationEn": "Flashing red lights require an absolute stop, even if barriers aren't down yet. You must not enter if you risk being stuck on the tracks. Going around barriers is a serious offence. Lights activate well before the train arrives (25-30 seconds minimum).",
+    "trapNote": "Red flashing lights = STOP immediately. Don't wait for barriers to lower.",
+    "distractorNotes": {
+      "C": "Weaving between half-barriers is a criminal offence, not just a traffic violation.",
+      "D": "Lights activate 25-30 seconds before the train — plenty of warning."
+    }
+  },
+  {
+    "id": "tunn-159",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 3,
+    "answerCount": 2,
+    "questionFr": "Que faire si votre véhicule tombe en panne sur un passage à niveau ?",
+    "questionEn": "What should you do if your vehicle breaks down on a level crossing?",
+    "options": {
+      "A": {
+        "fr": "Faire descendre tous les passagers immédiatement et les éloigner des voies",
+        "en": "Get all passengers out immediately and away from the tracks"
+      },
+      "B": {
+        "fr": "Appeler le numéro d'urgence indiqué sur le panneau du passage à niveau",
+        "en": "Call the emergency number shown on the level crossing sign"
+      },
+      "C": {
+        "fr": "Attendre dans le véhicule que les secours arrivent",
+        "en": "Wait in the vehicle for help to arrive"
+      },
+      "D": {
+        "fr": "Essayer de redémarrer pendant au moins 5 minutes avant d'évacuer",
+        "en": "Try to restart for at least 5 minutes before evacuating"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "En cas de panne sur un passage à niveau : évacuez immédiatement tous les passagers et éloignez-les des voies. Appelez le numéro d'urgence figurant sur le panneau du PN (chaque passage à niveau a un numéro unique). N'attendez jamais dans le véhicule — un train peut arriver à tout moment. Chaque seconde compte.",
+    "explanationEn": "If broken down on a level crossing: evacuate all passengers immediately and move away from the tracks. Call the emergency number on the level crossing sign (each crossing has a unique number). Never wait in the vehicle — a train can arrive at any moment. Every second counts.",
+    "trapNote": "Every level crossing has a unique emergency phone number on its sign. Memorize this fact for the exam.",
+    "distractorNotes": {
+      "C": "NEVER stay in a vehicle on level crossing tracks — evacuate immediately.",
+      "D": "Don't waste time trying to restart — evacuate first, deal with the car later."
+    }
+  },
+  {
+    "id": "tunn-160",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles sont les équipements de sécurité obligatoires dans les tunnels routiers ?",
+    "questionEn": "What mandatory safety equipment is found in road tunnels?",
+    "options": {
+      "A": {
+        "fr": "Des niches de sécurité avec téléphone et extincteur tous les 200 mètres",
+        "en": "Safety recesses with phone and fire extinguisher every 200 metres"
+      },
+      "B": {
+        "fr": "Des issues de secours signalées par des panneaux lumineux verts",
+        "en": "Emergency exits indicated by green illuminated signs"
+      },
+      "C": {
+        "fr": "Des distributeurs d'eau potable",
+        "en": "Drinking water dispensers"
+      },
+      "D": {
+        "fr": "Des caméras uniquement à l'entrée et à la sortie",
+        "en": "Cameras only at the entrance and exit"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Les tunnels routiers sont équipés de niches de sécurité (SOS) avec téléphone et extincteur environ tous les 200 m, et d'issues de secours signalées par des panneaux verts lumineux. Il n'y a pas de distributeurs d'eau. Les caméras de surveillance sont réparties tout le long du tunnel, pas seulement aux extrémités.",
+    "explanationEn": "Road tunnels have safety recesses (SOS) with phone and fire extinguisher about every 200m, and emergency exits marked by green illuminated signs. There are no water dispensers. Surveillance cameras are distributed throughout the tunnel, not just at the ends.",
+    "trapNote": "Know the safety equipment locations — the exam tests tunnel emergency procedures frequently.",
+    "distractorNotes": {
+      "C": "There are no drinking water dispensers in tunnels — that's not standard equipment.",
+      "D": "Cameras cover the entire tunnel length, not just entry and exit points."
+    }
+  },
+  {
+    "id": "tunn-161",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles actions sont interdites dans un tunnel ?",
+    "questionEn": "Which actions are forbidden in a tunnel?",
+    "options": {
+      "A": {
+        "fr": "Faire demi-tour ou marche arrière",
+        "en": "Making a U-turn or reversing"
+      },
+      "B": {
+        "fr": "Dépasser un autre véhicule dans un tunnel à une seule voie par sens",
+        "en": "Overtaking another vehicle in a single-lane tunnel"
+      },
+      "C": {
+        "fr": "Allumer la radio",
+        "en": "Turning on the radio"
+      },
+      "D": {
+        "fr": "Utiliser les feux de croisement",
+        "en": "Using dipped headlights"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Dans un tunnel, il est interdit de faire demi-tour, de reculer, et de dépasser dans un tunnel à voie unique par sens. La radio est autorisée (les tunnels ont souvent une fréquence d'information dédiée). Les feux de croisement sont obligatoires dans un tunnel.",
+    "explanationEn": "In a tunnel, U-turns, reversing, and overtaking in a single-lane tunnel are forbidden. Radio is allowed (tunnels often have a dedicated info frequency). Dipped headlights are mandatory in a tunnel.",
+    "trapNote": "Tunnel radio frequencies (107.7 MHz) broadcast safety info — listen to them.",
+    "distractorNotes": {
+      "C": "Radio is allowed and even recommended — tune to 107.7 for tunnel safety info.",
+      "D": "Dipped headlights are mandatory in tunnels, not forbidden."
+    }
+  },
+  {
+    "id": "tunn-162",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sur les passages à niveau sans barrière sont correctes ?",
+    "questionEn": "Which statements about level crossings without barriers are correct?",
+    "options": {
+      "A": {
+        "fr": "Ils sont signalés par une croix de Saint-André",
+        "en": "They are marked by a Saint Andrew's cross"
+      },
+      "B": {
+        "fr": "Vous devez vous assurer qu'aucun train n'approche avant de traverser",
+        "en": "You must make sure no train is approaching before crossing"
+      },
+      "C": {
+        "fr": "Ils n'existent plus en France depuis 2020",
+        "en": "They no longer exist in France since 2020"
+      },
+      "D": {
+        "fr": "Les trains doivent ralentir à ces passages",
+        "en": "Trains must slow down at these crossings"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Les passages à niveau sans barrière sont signalés par une croix de Saint-André (simple voie : une croix, double voie : deux croix superposées). Vous devez regarder des deux côtés et vous assurer qu'aucun train n'arrive. Ces passages existent encore en France. Les trains n'ont aucune obligation de ralentir — c'est au conducteur routier d'être vigilant.",
+    "explanationEn": "Level crossings without barriers are marked by a Saint Andrew's cross (single track: one cross, double track: two stacked). You must look both ways and ensure no train is coming. These crossings still exist in France. Trains have no obligation to slow down — it's the road driver's responsibility to be vigilant.",
+    "trapNote": "Trains do NOT slow down at unguarded crossings. They weigh hundreds of tonnes and cannot stop quickly.",
+    "distractorNotes": {
+      "C": "Thousands of level crossings without barriers still exist across France.",
+      "D": "Trains have absolute priority and no obligation to reduce speed at crossings."
+    }
+  },
+  {
+    "id": "tunn-163",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 3,
+    "answerCount": 2,
+    "questionFr": "Quelles précautions supplémentaires devez-vous prendre dans un tunnel bidirectionnel ?",
+    "questionEn": "What extra precautions should you take in a two-way tunnel?",
+    "options": {
+      "A": {
+        "fr": "Rester strictement dans votre voie — ne jamais franchir la ligne continue",
+        "en": "Stay strictly in your lane — never cross the continuous line"
+      },
+      "B": {
+        "fr": "Augmenter votre distance de sécurité par rapport à un tunnel unidirectionnel",
+        "en": "Increase your safety distance compared to a one-way tunnel"
+      },
+      "C": {
+        "fr": "Utiliser les feux de route pour mieux voir les véhicules en face",
+        "en": "Use full beam to better see oncoming vehicles"
+      },
+      "D": {
+        "fr": "Rouler plus vite pour réduire le temps passé dans le tunnel",
+        "en": "Drive faster to reduce time spent in the tunnel"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Dans un tunnel bidirectionnel, restez impérativement dans votre voie (ligne continue) et augmentez la distance de sécurité car le risque de collision frontale est accru. Les feux de route sont interdits en tunnel (éblouissement des véhicules en face). Rouler plus vite augmente le danger, pas la sécurité.",
+    "explanationEn": "In a two-way tunnel, stay strictly in your lane (continuous line) and increase safety distance as the risk of head-on collision is higher. Full beam is forbidden in tunnels (blinding oncoming traffic). Driving faster increases danger, not safety.",
+    "trapNote": "Two-way tunnels are the most dangerous — head-on collision risk. Extra caution mandatory.",
+    "distractorNotes": {
+      "C": "Full beam blinds oncoming drivers in the confined space of a tunnel.",
+      "D": "Speeding through a tunnel reduces reaction time and increases collision severity."
+    }
+  },
+  {
+    "id": "tunn-164",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quels véhicules ont des restrictions spéciales dans les tunnels ?",
+    "questionEn": "Which vehicles have special restrictions in tunnels?",
+    "options": {
+      "A": {
+        "fr": "Les véhicules transportant des matières dangereuses (TMD)",
+        "en": "Vehicles carrying dangerous goods (TMD)"
+      },
+      "B": {
+        "fr": "Les véhicules de plus de 3,5 tonnes peuvent avoir des restrictions de hauteur",
+        "en": "Vehicles over 3.5 tonnes may have height restrictions"
+      },
+      "C": {
+        "fr": "Les motos sont interdites dans tous les tunnels",
+        "en": "Motorcycles are forbidden in all tunnels"
+      },
+      "D": {
+        "fr": "Les véhicules électriques ne peuvent pas entrer dans les tunnels",
+        "en": "Electric vehicles cannot enter tunnels"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Les véhicules TMD (matières dangereuses) ont des restrictions sévères dans les tunnels (catégories A à E). Les poids lourds peuvent être limités par la hauteur et le tonnage du tunnel. Les motos sont autorisées dans les tunnels. Les véhicules électriques circulent normalement dans les tunnels.",
+    "explanationEn": "Dangerous goods vehicles (TMD) have strict tunnel restrictions (categories A to E). Heavy vehicles may be limited by tunnel height and tonnage. Motorcycles are allowed in tunnels. Electric vehicles travel normally through tunnels.",
+    "trapNote": "TMD tunnel categories (A-E) are an important exam topic — know that restrictions exist.",
+    "distractorNotes": {
+      "C": "Motorcycles are fully allowed in tunnels with the same rules as other vehicles.",
+      "D": "Electric vehicles have no special tunnel restrictions."
+    }
+  },
+  {
+    "id": "noti-121",
+    "topic": "notions_diverses",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sur le constat amiable sont correctes ?",
+    "questionEn": "Which statements about the accident report form are correct?",
+    "options": {
+      "A": {
+        "fr": "Il doit être rempli par les deux conducteurs sur les lieux de l'accident",
+        "en": "It must be filled in by both drivers at the scene of the accident"
+      },
+      "B": {
+        "fr": "Le croquis est une partie essentielle du constat",
+        "en": "The sketch is an essential part of the report"
+      },
+      "C": {
+        "fr": "Vous avez 30 jours pour l'envoyer à votre assurance",
+        "en": "You have 30 days to send it to your insurance"
+      },
+      "D": {
+        "fr": "Il n'est obligatoire que pour les accidents avec blessés",
+        "en": "It is only mandatory for accidents with injuries"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Le constat amiable doit être rempli sur place par les deux conducteurs. Le croquis est essentiel pour déterminer les responsabilités. Vous avez 5 jours ouvrés (pas 30) pour l'envoyer à votre assurance. Le constat est utilisé pour tous les accidents matériels, pas seulement ceux avec blessés.",
+    "explanationEn": "The accident report must be filled in on site by both drivers. The sketch is essential for determining liability. You have 5 working days (not 30) to send it to your insurance. The report is used for all material damage accidents, not just those with injuries.",
+    "trapNote": "5 working days, not 30! This is a common exam trick.",
+    "distractorNotes": {
+      "C": "The deadline is 5 working days, not 30 calendar days.",
+      "D": "The report is for all accidents with material damage, not just injuries."
+    }
+  },
+  {
+    "id": "noti-122",
+    "topic": "notions_diverses",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles sont les obligations d'assurance pour conduire en France ?",
+    "questionEn": "What are the insurance requirements for driving in France?",
+    "options": {
+      "A": {
+        "fr": "L'assurance responsabilité civile (au tiers) est le minimum obligatoire",
+        "en": "Third-party liability insurance is the mandatory minimum"
+      },
+      "B": {
+        "fr": "Conduire sans assurance est un délit passible d'une amende de 3 750 €",
+        "en": "Driving without insurance is an offence carrying a €3,750 fine"
+      },
+      "C": {
+        "fr": "L'assurance tous risques est obligatoire pour les véhicules neufs",
+        "en": "Comprehensive insurance is mandatory for new vehicles"
+      },
+      "D": {
+        "fr": "L'assurance n'est pas obligatoire si le véhicule a plus de 15 ans",
+        "en": "Insurance is not mandatory if the vehicle is over 15 years old"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "L'assurance responsabilité civile (au tiers) est le minimum légal en France. Conduire sans assurance est un délit : 3 750 € d'amende, possibilité de suspension de permis et de confiscation du véhicule. L'assurance tous risques n'est jamais obligatoire. L'obligation d'assurance s'applique à tous les véhicules, quel que soit leur âge.",
+    "explanationEn": "Third-party liability insurance is the legal minimum in France. Driving uninsured is a criminal offence: €3,750 fine, possible licence suspension and vehicle confiscation. Comprehensive insurance is never mandatory. Insurance obligation applies to all vehicles regardless of age.",
+    "trapNote": "€3,750 fine for no insurance — one of the heaviest driving penalties. Know this number.",
+    "distractorNotes": {
+      "C": "Comprehensive insurance is optional for any vehicle, new or old.",
+      "D": "All vehicles must be insured regardless of age or value."
+    }
+  },
+  {
+    "id": "noti-123",
+    "topic": "notions_diverses",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles sont les obligations après un accident corporel ?",
+    "questionEn": "What are the obligations after an accident with injuries?",
+    "options": {
+      "A": {
+        "fr": "Protéger, alerter, secourir (PAS)",
+        "en": "Protect, alert, rescue (PAS)"
+      },
+      "B": {
+        "fr": "Appeler le 15 (SAMU) ou le 112 (numéro européen d'urgence)",
+        "en": "Call 15 (SAMU) or 112 (European emergency number)"
+      },
+      "C": {
+        "fr": "Déplacer les blessés avant l'arrivée des secours",
+        "en": "Move the injured before help arrives"
+      },
+      "D": {
+        "fr": "Quitter les lieux si vous n'êtes pas responsable",
+        "en": "Leave the scene if you are not at fault"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Après un accident corporel : Protéger (baliser, feux de détresse), Alerter (15 SAMU, 18 Pompiers, 112 européen), Secourir (premiers soins sans aggraver). Ne déplacez JAMAIS un blessé sauf danger immédiat (incendie). Le délit de fuite est un crime — ne quittez jamais les lieux.",
+    "explanationEn": "After an injury accident: Protect (mark the scene, hazard lights), Alert (15 SAMU, 18 Fire, 112 European), Rescue (first aid without worsening). NEVER move an injured person unless immediate danger (fire). Hit and run is a crime — never leave the scene.",
+    "trapNote": "PAS = Protéger, Alerter, Secourir. Moving an injured person can cause spinal damage.",
+    "distractorNotes": {
+      "C": "Moving injured people risks worsening spinal injuries — only move if immediate danger.",
+      "D": "Leaving the scene of an injury accident is a hit-and-run crime regardless of fault."
+    }
+  },
+  {
+    "id": "noti-124",
+    "topic": "notions_diverses",
+    "difficulty": 3,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sur le permis probatoire sont correctes ?",
+    "questionEn": "Which statements about the probationary licence are correct?",
+    "options": {
+      "A": {
+        "fr": "Le permis probatoire dure 3 ans (2 ans avec conduite accompagnée)",
+        "en": "The probationary licence lasts 3 years (2 years with supervised driving)"
+      },
+      "B": {
+        "fr": "Le capital initial est de 6 points au lieu de 12",
+        "en": "The initial capital is 6 points instead of 12"
+      },
+      "C": {
+        "fr": "Les limitations de vitesse sont les mêmes que pour les conducteurs confirmés",
+        "en": "Speed limits are the same as for experienced drivers"
+      },
+      "D": {
+        "fr": "Le permis probatoire ne s'applique pas si vous avez plus de 25 ans",
+        "en": "The probationary licence doesn't apply if you're over 25"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Le permis probatoire dure 3 ans (2 ans pour ceux ayant fait la conduite accompagnée AAC). Le capital est de 6 points, augmentant de 2 ou 3 points par an sans infraction. Les jeunes conducteurs ont des limites de vitesse réduites (110 au lieu de 130 sur autoroute). Le probatoire s'applique à tout nouveau conducteur, quel que soit l'âge.",
+    "explanationEn": "The probationary licence lasts 3 years (2 years for those who did supervised driving AAC). The capital is 6 points, increasing by 2 or 3 per year without violations. New drivers have reduced speed limits (110 instead of 130 on motorway). Probationary period applies to all new drivers regardless of age.",
+    "trapNote": "AAC = 2 years instead of 3. Speed limits are LOWER for probationary drivers.",
+    "distractorNotes": {
+      "C": "Probationary drivers have lower speed limits: 110 on motorway, 100 on expressway, 80 on road.",
+      "D": "The probationary period applies to all new licence holders regardless of age."
+    }
+  },
+  {
+    "id": "noti-125",
+    "topic": "notions_diverses",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles sont les obligations concernant le contrôle technique ?",
+    "questionEn": "What are the obligations regarding the technical inspection?",
+    "options": {
+      "A": {
+        "fr": "Le premier contrôle a lieu dans les 6 mois avant le 4e anniversaire du véhicule",
+        "en": "The first inspection takes place within 6 months before the vehicle's 4th anniversary"
+      },
+      "B": {
+        "fr": "Ensuite il est renouvelé tous les 2 ans",
+        "en": "Then it is renewed every 2 years"
+      },
+      "C": {
+        "fr": "Le contrôle technique n'est pas obligatoire pour les véhicules de moins de 5 ans",
+        "en": "Technical inspection is not mandatory for vehicles under 5 years old"
+      },
+      "D": {
+        "fr": "Il suffit de faire le contrôle une seule fois dans la vie du véhicule",
+        "en": "The inspection only needs to be done once in the vehicle's lifetime"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Le premier contrôle technique doit être effectué avant le 4e anniversaire de la première mise en circulation (dans les 6 mois précédents). Ensuite, il est renouvelé tous les 2 ans. Le non-respect peut entraîner une amende et une immobilisation du véhicule.",
+    "explanationEn": "The first technical inspection must be done before the 4th anniversary of first registration (within the preceding 6 months). Then it's renewed every 2 years. Non-compliance can result in a fine and vehicle immobilization.",
+    "trapNote": "4 years then every 2 years. Not 5 years, not once — it's recurring.",
+    "distractorNotes": {
+      "C": "The first inspection is at 4 years, not 5. Under 4 years = no inspection needed.",
+      "D": "Technical inspections must be repeated every 2 years after the first one."
+    }
+  },
+  {
+    "id": "noti-126",
+    "topic": "notions_diverses",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sur les vignettes Crit'Air sont correctes ?",
+    "questionEn": "Which statements about Crit'Air stickers are correct?",
+    "options": {
+      "A": {
+        "fr": "Elles classent les véhicules selon leur niveau de pollution",
+        "en": "They classify vehicles according to their pollution level"
+      },
+      "B": {
+        "fr": "Elles sont obligatoires pour circuler dans les ZFE (zones à faibles émissions)",
+        "en": "They are mandatory to drive in LEZ (low emission zones)"
+      },
+      "C": {
+        "fr": "Tous les véhicules reçoivent automatiquement une vignette",
+        "en": "All vehicles automatically receive a sticker"
+      },
+      "D": {
+        "fr": "Elles ne concernent que les véhicules diesel",
+        "en": "They only apply to diesel vehicles"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Les vignettes Crit'Air classent les véhicules de 0 (électrique) à 5 (très polluant) selon leur niveau d'émissions. Elles sont obligatoires dans les ZFE et pendant les pics de pollution. Il faut la commander en ligne (elle n'est pas automatique). Elles concernent tous les véhicules motorisés, pas seulement les diesels.",
+    "explanationEn": "Crit'Air stickers classify vehicles from 0 (electric) to 5 (very polluting) by emission level. They're mandatory in LEZ and during pollution peaks. You must order it online (it's not automatic). They apply to all motorized vehicles, not just diesels.",
+    "trapNote": "ZFE restrictions are expanding in France — more cities require Crit'Air. Know the numbering system 0-5.",
+    "distractorNotes": {
+      "C": "You must apply and pay for your Crit'Air sticker — it's not sent automatically.",
+      "D": "Both petrol and diesel vehicles need Crit'Air — the classification applies to all."
+    }
+  },
+  {
+    "id": "noti-127",
+    "topic": "notions_diverses",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles sont les règles concernant le transport d'enfants en voiture ?",
+    "questionEn": "What are the rules about transporting children in a car?",
+    "options": {
+      "A": {
+        "fr": "Un dispositif de retenue adapté est obligatoire jusqu'à 10 ans ou 1,35 m",
+        "en": "An appropriate child restraint is mandatory until age 10 or 1.35m"
+      },
+      "B": {
+        "fr": "Les enfants de moins de 10 ans doivent voyager à l'arrière sauf exceptions",
+        "en": "Children under 10 must travel in the rear except in certain cases"
+      },
+      "C": {
+        "fr": "Un enfant peut voyager à l'avant dès qu'il a 8 ans",
+        "en": "A child can travel in the front from age 8"
+      },
+      "D": {
+        "fr": "Le rehausseur n'est plus nécessaire après 5 ans",
+        "en": "A booster seat is no longer needed after age 5"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Les enfants doivent utiliser un dispositif de retenue adapté (siège auto, rehausseur) jusqu'à 10 ans ou 1,35 m de taille. Ils doivent voyager à l'arrière sauf : pas de siège arrière, siège arrière occupé par d'autres enfants, siège dos à la route avec airbag désactivé. Un enfant ne peut passer à l'avant avant 10 ans (sauf exceptions). Le rehausseur est utilisé jusqu'à la taille minimale.",
+    "explanationEn": "Children must use an appropriate restraint (car seat, booster) until age 10 or 1.35m tall. They must ride in the rear except: no rear seats, rear occupied by other children, rear-facing seat with airbag disabled. A child cannot sit in front before age 10 (except exceptions). Booster is used until minimum height.",
+    "trapNote": "10 years or 1.35m — whichever comes first. Exceptions to the rear-seat rule are limited.",
+    "distractorNotes": {
+      "C": "The front seat is only for children 10+ (with exceptions for rear-facing baby seats).",
+      "D": "Booster seats are needed until 1.35m height, regardless of age."
+    }
+  },
+  {
+    "id": "noti-128",
+    "topic": "notions_diverses",
+    "difficulty": 3,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sur l'éco-conduite sont correctes ?",
+    "questionEn": "Which statements about eco-driving are correct?",
+    "options": {
+      "A": {
+        "fr": "Passer les vitesses tôt (avant 2500 tr/min en essence, 2000 en diesel) économise du carburant",
+        "en": "Shifting early (before 2500 rpm petrol, 2000 diesel) saves fuel"
+      },
+      "B": {
+        "fr": "Maintenir une vitesse stable consomme moins que des accélérations-freinages répétés",
+        "en": "Maintaining steady speed uses less fuel than repeated acceleration-braking"
+      },
+      "C": {
+        "fr": "Rouler en sous-régime économise toujours du carburant",
+        "en": "Driving in too low a gear always saves fuel"
+      },
+      "D": {
+        "fr": "Couper la climatisation n'a aucun effet sur la consommation",
+        "en": "Turning off air conditioning has no effect on consumption"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "L'éco-conduite recommande de passer les vitesses tôt (2000-2500 tr/min) et de maintenir une vitesse stable (anticipation). Rouler en sous-régime fait forcer le moteur et peut augmenter la consommation. La climatisation augmente la consommation de 5 à 20% — la couper a un effet significatif.",
+    "explanationEn": "Eco-driving recommends early gear changes (2000-2500 rpm) and maintaining steady speed (anticipation). Driving in too low RPM strains the engine and can increase consumption. A/C increases consumption by 5-20% — turning it off makes a significant difference.",
+    "trapNote": "Under-revving is NOT eco-driving — the engine labours and consumes more. There's an optimal RPM range.",
+    "distractorNotes": {
+      "C": "Under-revving causes the engine to strain and can actually increase consumption.",
+      "D": "A/C increases fuel consumption by 5-20%, especially in city driving."
+    }
+  },
+  {
+    "id": "noti-129",
+    "topic": "notions_diverses",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles sont les sanctions pour le délit de fuite ?",
+    "questionEn": "What are the penalties for hit and run?",
+    "options": {
+      "A": {
+        "fr": "Jusqu'à 3 ans d'emprisonnement et 75 000 € d'amende",
+        "en": "Up to 3 years imprisonment and €75,000 fine"
+      },
+      "B": {
+        "fr": "Retrait de 6 points et suspension ou annulation du permis",
+        "en": "6 points deducted and licence suspension or cancellation"
+      },
+      "C": {
+        "fr": "Uniquement une amende de 135 € comme une infraction routière",
+        "en": "Only a €135 fine like a traffic offence"
+      },
+      "D": {
+        "fr": "Aucune sanction si l'accident est matériel uniquement",
+        "en": "No penalty if the accident is material damage only"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "Le délit de fuite est un délit pénal grave : jusqu'à 3 ans de prison, 75 000 € d'amende, 6 points retirés, suspension ou annulation du permis. Il s'applique à TOUT accident, même matériel. Ce n'est pas une simple infraction — c'est un délit.",
+    "explanationEn": "Hit and run is a serious criminal offence: up to 3 years prison, €75,000 fine, 6 points deducted, licence suspension or cancellation. It applies to ALL accidents, even material damage only. It's not a simple traffic offence — it's a crime.",
+    "trapNote": "Hit and run applies even for fender-benders with no injuries. 3 years prison + €75,000.",
+    "distractorNotes": {
+      "C": "Hit and run is a criminal offence with prison time, not a simple €135 fine.",
+      "D": "Hit and run applies to ALL accidents including those with only material damage."
+    }
+  },
+  {
+    "id": "noti-130",
+    "topic": "notions_diverses",
+    "difficulty": 2,
+    "answerCount": 2,
+    "questionFr": "Quelles affirmations sur la fatigue au volant sont correctes ?",
+    "questionEn": "Which statements about driver fatigue are correct?",
+    "options": {
+      "A": {
+        "fr": "La fatigue est impliquée dans environ 20% des accidents mortels",
+        "en": "Fatigue is involved in about 20% of fatal accidents"
+      },
+      "B": {
+        "fr": "La seule solution efficace contre la somnolence est de s'arrêter et dormir 15-20 minutes",
+        "en": "The only effective solution for drowsiness is to stop and sleep 15-20 minutes"
+      },
+      "C": {
+        "fr": "Ouvrir la fenêtre ou monter la musique permet de lutter efficacement contre la fatigue",
+        "en": "Opening the window or turning up music effectively fights fatigue"
+      },
+      "D": {
+        "fr": "Le café fait effet immédiatement et suffit pour rester éveillé",
+        "en": "Coffee takes effect immediately and is enough to stay awake"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "explanationFr": "La fatigue est un facteur dans environ 20% des accidents mortels sur autoroute. La seule solution vraiment efficace est une pause avec sieste de 15-20 minutes. Ouvrir la fenêtre, monter le son, ou boire de l'eau froide ne sont que des solutions temporaires et inefficaces. Le café met 15-30 minutes à agir et ne remplace pas le sommeil.",
+    "explanationEn": "Fatigue is a factor in about 20% of fatal motorway accidents. The only truly effective solution is a break with a 15-20 minute nap. Opening windows, turning up music, or drinking cold water are only temporary and ineffective. Coffee takes 15-30 minutes to kick in and doesn't replace sleep.",
+    "trapNote": "Window open + loud music = FALSE sense of alertness. Only a nap truly helps.",
+    "distractorNotes": {
+      "C": "Fresh air and music provide a false sense of alertness — they don't combat drowsiness.",
+      "D": "Coffee takes 15-30 minutes to work and is NOT a substitute for sleep."
+    }
   }
 ]
