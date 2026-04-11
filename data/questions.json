@@ -38580,6 +38580,170 @@
     ]
   },
   {
+    "id": "media-137",
+    "topic": "route",
+    "difficulty": 1,
+    "signs": ["railway_crossing"],
+    "media": { "type": "image", "src": "assets/images/signs/railway-crossing-sign.webp", "alt": "Triangle sign with black X cross" },
+    "questionFr": "Que signifie ce panneau triangulaire avec une croix noire ?",
+    "questionEn": "What does this triangular sign with a black X cross mean?",
+    "options": {
+      "A": { "fr": "Passage à niveau sans barrière", "en": "Level crossing without barriers" },
+      "B": { "fr": "Carrefour dangereux", "en": "Dangerous crossroads" },
+      "C": { "fr": "Interdiction de dépasser", "en": "No overtaking" },
+      "D": { "fr": "Fin de priorité", "en": "End of priority" }
+    },
+    "correctAnswers": ["A"],
+    "answerCount": 1,
+    "explanationFr": "Ce panneau triangulaire avec une croix de Saint-André indique un passage à niveau sans barrière. Vous devez ralentir et vérifier qu'aucun train n'arrive.",
+    "explanationEn": "This triangular sign with a Saint Andrew's cross indicates a level crossing without barriers. You must slow down and check no train is coming.",
+    "trapNote": "The X-cross (croix de Saint-André) specifically marks unguarded level crossings — crossroads use a different symbol.",
+    "distractorNotes": {
+      "B": "Dangerous crossroads uses a different X-pattern inside the triangle.",
+      "C": "No overtaking is a round red prohibition sign.",
+      "D": "End of priority is a different sign entirely."
+    },
+    "vocabulary": [
+      { "wordFr": "croix de Saint-André", "wordEn": "Saint Andrew's cross", "definition": "The X-shaped marker at an unguarded railway crossing" }
+    ]
+  },
+  {
+    "id": "media-138",
+    "topic": "route",
+    "difficulty": 2,
+    "signs": ["railway_crossing"],
+    "media": { "type": "image", "src": "assets/images/signs/railway-crossing-sign.webp", "alt": "Triangle sign with black X cross" },
+    "questionFr": "Vous approchez de ce panneau. Quelles actions devez-vous effectuer ? (2 réponses)",
+    "questionEn": "You are approaching this sign. What actions must you take? (2 answers)",
+    "options": {
+      "A": { "fr": "Ralentir et regarder des deux côtés", "en": "Slow down and look both ways" },
+      "B": { "fr": "S'arrêter obligatoirement avant les voies", "en": "Stop obligatorily before the tracks" },
+      "C": { "fr": "Ne pas s'engager si un train est visible ou audible", "en": "Do not proceed if a train is visible or audible" },
+      "D": { "fr": "Klaxonner pour signaler votre présence", "en": "Honk to signal your presence" }
+    },
+    "correctAnswers": ["A", "C"],
+    "answerCount": 2,
+    "explanationFr": "À un passage à niveau sans barrière, vous devez ralentir, vérifier des deux côtés et ne pas vous engager si un train approche. L'arrêt n'est obligatoire que si un train est en vue.",
+    "explanationEn": "At a level crossing without barriers, you must slow down, check both ways and not proceed if a train is approaching. Stopping is only mandatory if a train is in sight.",
+    "trapNote": "Unlike a STOP sign, you don't have to stop completely at an unguarded crossing — but you MUST check both ways.",
+    "distractorNotes": {
+      "B": "Stopping is mandatory only at crossings with a STOP sign, not all unguarded crossings.",
+      "D": "Honking serves no purpose and could startle other road users."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "media-139",
+    "topic": "circulation",
+    "difficulty": 1,
+    "signs": ["no_u_turn"],
+    "media": { "type": "image", "src": "assets/images/signs/no-u-turn-sign.webp", "alt": "Round red prohibition sign with U-turn arrow crossed out" },
+    "questionFr": "Que signifie ce panneau rond rouge avec une flèche de demi-tour barrée ?",
+    "questionEn": "What does this round red sign with a crossed-out U-turn arrow mean?",
+    "options": {
+      "A": { "fr": "Interdiction de faire demi-tour", "en": "No U-turn allowed" },
+      "B": { "fr": "Interdiction de tourner à gauche", "en": "No left turn" },
+      "C": { "fr": "Sens interdit", "en": "No entry" },
+      "D": { "fr": "Interdiction de reculer", "en": "No reversing" }
+    },
+    "correctAnswers": ["A"],
+    "answerCount": 1,
+    "explanationFr": "Ce panneau interdit le demi-tour à cet endroit. Il est souvent placé sur des routes à sens unique ou des voies rapides.",
+    "explanationEn": "This sign prohibits U-turns at this location. It is often placed on one-way roads or expressways.",
+    "trapNote": "No left turn is a different sign (straight arrow turning left, crossed out). This specifically shows a U-turn shape.",
+    "distractorNotes": {
+      "B": "No left turn uses a different arrow shape — a 90-degree turn.",
+      "C": "No entry is a plain red circle with a white horizontal bar.",
+      "D": "No reversing would show a downward-pointing arrow."
+    },
+    "vocabulary": [
+      { "wordFr": "demi-tour", "wordEn": "U-turn", "definition": "A 180-degree turn to reverse direction on a road" }
+    ]
+  },
+  {
+    "id": "media-140",
+    "topic": "arret_stationnement",
+    "difficulty": 1,
+    "signs": ["dead_end"],
+    "media": { "type": "image", "src": "assets/images/signs/dead-end-sign.webp", "alt": "Blue square sign with white T-shape" },
+    "questionFr": "Que signifie ce panneau carré bleu avec un T blanc ?",
+    "questionEn": "What does this blue square sign with a white T-shape mean?",
+    "options": {
+      "A": { "fr": "Voie sans issue (impasse)", "en": "Dead end (cul-de-sac)" },
+      "B": { "fr": "Sens unique", "en": "One-way street" },
+      "C": { "fr": "Arrêt de bus", "en": "Bus stop" },
+      "D": { "fr": "Parking autorisé", "en": "Parking allowed" }
+    },
+    "correctAnswers": ["A"],
+    "answerCount": 1,
+    "explanationFr": "Ce panneau indique une voie sans issue (impasse). La route ne débouche pas — vous devrez faire demi-tour pour sortir.",
+    "explanationEn": "This sign indicates a dead end. The road does not lead through — you will have to turn around to exit.",
+    "trapNote": "The T-shape represents a road that ends — the horizontal bar shows the dead end.",
+    "distractorNotes": {
+      "B": "One-way is a blue square with an upward arrow, not a T-shape.",
+      "C": "Bus stops have a different pictogram.",
+      "D": "Parking signs use a P symbol."
+    },
+    "vocabulary": [
+      { "wordFr": "voie sans issue", "wordEn": "dead end / cul-de-sac", "definition": "A road that does not lead through to another road" },
+      { "wordFr": "impasse", "wordEn": "dead end", "definition": "A street closed at one end" }
+    ]
+  },
+  {
+    "id": "media-141",
+    "topic": "circulation",
+    "difficulty": 1,
+    "signs": ["no_horn"],
+    "media": { "type": "image", "src": "assets/images/signs/no-horn-sign.webp", "alt": "Round red prohibition sign with horn crossed out" },
+    "questionFr": "Que signifie ce panneau d'interdiction avec un klaxon barré ?",
+    "questionEn": "What does this prohibition sign with a crossed-out horn mean?",
+    "options": {
+      "A": { "fr": "Interdiction de klaxonner", "en": "No honking allowed" },
+      "B": { "fr": "Zone de silence (hôpital)", "en": "Quiet zone (hospital)" },
+      "C": { "fr": "Interdiction de stationner", "en": "No parking" },
+      "D": { "fr": "Fin de zone 30", "en": "End of 30 km/h zone" }
+    },
+    "correctAnswers": ["A"],
+    "answerCount": 1,
+    "explanationFr": "Ce panneau interdit l'utilisation du klaxon sauf en cas de danger immédiat. Il est souvent placé en agglomération, près des hôpitaux ou dans les zones résidentielles.",
+    "explanationEn": "This sign prohibits honking except in case of immediate danger. It is often placed in built-up areas, near hospitals or in residential zones.",
+    "trapNote": "Even in no-honking zones, you MAY honk in case of immediate danger — it's an exception to the prohibition.",
+    "distractorNotes": {
+      "B": "Hospital quiet zones exist but use different signage.",
+      "C": "No parking uses a different sign (blue circle with red X).",
+      "D": "End of zone 30 uses a grey-striped circle with 30."
+    },
+    "vocabulary": [
+      { "wordFr": "klaxon", "wordEn": "horn/honk", "definition": "The audible warning device on a vehicle" },
+      { "wordFr": "avertisseur sonore", "wordEn": "audible warning device", "definition": "The official term for a vehicle horn in the Code de la route" }
+    ]
+  },
+  {
+    "id": "media-142",
+    "topic": "circulation",
+    "difficulty": 2,
+    "signs": ["no_horn"],
+    "media": { "type": "image", "src": "assets/images/signs/no-horn-sign.webp", "alt": "Round red prohibition sign with horn crossed out" },
+    "questionFr": "Dans quelles situations pouvez-vous klaxonner malgré ce panneau ? (2 réponses)",
+    "questionEn": "In which situations may you honk despite this sign? (2 answers)",
+    "options": {
+      "A": { "fr": "Danger immédiat (piéton sur la chaussée)", "en": "Immediate danger (pedestrian on the road)" },
+      "B": { "fr": "Pour prévenir un accident imminent", "en": "To prevent an imminent accident" },
+      "C": { "fr": "Pour saluer un ami", "en": "To greet a friend" },
+      "D": { "fr": "Pour signaler votre impatience dans un embouteillage", "en": "To signal your impatience in traffic" }
+    },
+    "correctAnswers": ["A", "B"],
+    "answerCount": 2,
+    "explanationFr": "Même dans une zone d'interdiction de klaxonner, l'usage du klaxon reste autorisé en cas de danger immédiat ou pour prévenir un accident. Le klaxon de courtoisie ou d'impatience est toujours interdit.",
+    "explanationEn": "Even in a no-honking zone, the horn may still be used in case of immediate danger or to prevent an accident. Courtesy or impatience honking is always prohibited.",
+    "trapNote": "The danger exception is the ONLY valid reason to honk in a no-honking zone.",
+    "distractorNotes": {
+      "C": "Greeting someone with your horn is an offence punishable by a fine.",
+      "D": "Honking in traffic out of frustration is always prohibited everywhere."
+    },
+    "vocabulary": []
+  },
+  {
     "id": "autr-069",
     "topic": "autres_usagers",
     "difficulty": 3,
