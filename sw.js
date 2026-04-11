@@ -2,7 +2,7 @@
    Service Worker — Offline Support
    ============================================ */
 
-const CACHE_NAME = 'code-de-la-route-v57';
+const CACHE_NAME = 'code-de-la-route-v58';
 
 // Use relative paths so caching works on GitHub Pages subdirectory (/code-de-la-route/)
 const URLS_TO_CACHE = [
@@ -380,6 +380,47 @@ const URLS_TO_CACHE = [
     './assets/audio/vocab/zigzag-jaune.mp3',
     './assets/audio/vocab/zone-de-livraison.mp3',
     './assets/audio/vocab/zone-payante.mp3',
+    // Batch 8: 40 new words (Session 27)
+    './assets/audio/vocab/croix-de-saint-andre.mp3',
+    './assets/audio/vocab/avertisseur-sonore.mp3',
+    './assets/audio/vocab/conduite-accompagnee.mp3',
+    './assets/audio/vocab/ethylotest-anti-demarrage.mp3',
+    './assets/audio/vocab/accident-materiel.mp3',
+    './assets/audio/vocab/voie-sans-issue.mp3',
+    './assets/audio/vocab/passage-a-niveau-sans-barriere.mp3',
+    './assets/audio/vocab/cavalier.mp3',
+    './assets/audio/vocab/bande-cyclable.mp3',
+    './assets/audio/vocab/circulation-interfiles.mp3',
+    './assets/audio/vocab/convoi-militaire.mp3',
+    './assets/audio/vocab/cortege-funeraire.mp3',
+    './assets/audio/vocab/de-front.mp3',
+    './assets/audio/vocab/ecart-lateral.mp3',
+    './assets/audio/vocab/feu-pieton.mp3',
+    './assets/audio/vocab/feux-clignotants.mp3',
+    './assets/audio/vocab/intervalle-de-securite.mp3',
+    './assets/audio/vocab/personne-a-mobilite-reduite.mp3',
+    './assets/audio/vocab/rehausseur.mp3',
+    './assets/audio/vocab/tracteur-agricole.mp3',
+    './assets/audio/vocab/vehicule-pilote.mp3',
+    './assets/audio/vocab/vetement-reflechissant.mp3',
+    './assets/audio/vocab/voie-de-tramway.mp3',
+    './assets/audio/vocab/zone-de-chantier.mp3',
+    './assets/audio/vocab/arret-dangereux.mp3',
+    './assets/audio/vocab/balise-de-delineation.mp3',
+    './assets/audio/vocab/marquage-en-damier.mp3',
+    './assets/audio/vocab/zone-tampon.mp3',
+    './assets/audio/vocab/ligne-de-dissuasion.mp3',
+    './assets/audio/vocab/retention-du-vehicule.mp3',
+    './assets/audio/vocab/stage-de-recuperation-de-points.mp3',
+    './assets/audio/vocab/panneau-d-obligation.mp3',
+    './assets/audio/vocab/serrer-a-droite.mp3',
+    './assets/audio/vocab/chaussee-etroite.mp3',
+    './assets/audio/vocab/jours-ouvres.mp3',
+    './assets/audio/vocab/visite-medicale.mp3',
+    './assets/audio/vocab/permis-b.mp3',
+    './assets/audio/vocab/duree-de-validite.mp3',
+    './assets/audio/vocab/allure-du-pas.mp3',
+    './assets/audio/vocab/abords-d-une-ecole.mp3',
     // Sign images (Imagen 4 compressed WebP)
     './assets/images/signs/stop-sign.webp',
     './assets/images/signs/yield-sign.webp',
