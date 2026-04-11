@@ -2,7 +2,7 @@
    Service Worker — Offline Support
    ============================================ */
 
-const CACHE_NAME = 'code-de-la-route-v53';
+const CACHE_NAME = 'code-de-la-route-v54';
 
 // Use relative paths so caching works on GitHub Pages subdirectory (/code-de-la-route/)
 const URLS_TO_CACHE = [
@@ -340,6 +340,46 @@ const URLS_TO_CACHE = [
     './assets/audio/vocab/feu-clignotant.mp3',
     './assets/audio/vocab/griller-un-feu-rouge.mp3',
     './assets/audio/vocab/marquage-en-zigzag.mp3',
+    // Batch 7: 40 new words (Session 26)
+    './assets/audio/vocab/priorite-a-droite.mp3',
+    './assets/audio/vocab/carte-mobilite-inclusion.mp3',
+    './assets/audio/vocab/convoi-exceptionnel.mp3',
+    './assets/audio/vocab/conduite-accompagnee.mp3',
+    './assets/audio/vocab/ethylotest-anti-demarrage.mp3',
+    './assets/audio/vocab/accident-corporel.mp3',
+    './assets/audio/vocab/ceder-le-passage.mp3',
+    './assets/audio/vocab/bateau-de-trottoir.mp3',
+    './assets/audio/vocab/carte-de-stationnement-residentiel.mp3',
+    './assets/audio/vocab/cmi-stationnement.mp3',
+    './assets/audio/vocab/cote-descendante.mp3',
+    './assets/audio/vocab/cote-montante.mp3',
+    './assets/audio/vocab/creneau-horaire.mp3',
+    './assets/audio/vocab/emplacement-de-livraison.mp3',
+    './assets/audio/vocab/emplacement-de-stationnement.mp3',
+    './assets/audio/vocab/emplacement-handicape.mp3',
+    './assets/audio/vocab/emplacement-materialise.mp3',
+    './assets/audio/vocab/emplacement-reserve.mp3',
+    './assets/audio/vocab/entree-de-garage.mp3',
+    './assets/audio/vocab/forfait-post-stationnement.mp3',
+    './assets/audio/vocab/frais-d-enlevement.mp3',
+    './assets/audio/vocab/garde-journaliere.mp3',
+    './assets/audio/vocab/ligne-jaune-discontinue.mp3',
+    './assets/audio/vocab/marquage-jaune.mp3',
+    './assets/audio/vocab/non-attelee.mp3',
+    './assets/audio/vocab/numeros-pairs-impairs.mp3',
+    './assets/audio/vocab/ouvrage-d-art.mp3',
+    './assets/audio/vocab/pente-montante.mp3',
+    './assets/audio/vocab/place-reservee.mp3',
+    './assets/audio/vocab/stationnement-alterne-semi-mensuel.mp3',
+    './assets/audio/vocab/stationnement-dangereux.mp3',
+    './assets/audio/vocab/stationnement-en-double-file.mp3',
+    './assets/audio/vocab/stationnement-en-epi.mp3',
+    './assets/audio/vocab/stationnement-en-sens-inverse.mp3',
+    './assets/audio/vocab/tarif-preferentiel.mp3',
+    './assets/audio/vocab/vehicule-epave.mp3',
+    './assets/audio/vocab/zigzag-jaune.mp3',
+    './assets/audio/vocab/zone-de-livraison.mp3',
+    './assets/audio/vocab/zone-payante.mp3',
     // Sign images (Imagen 4 compressed WebP)
     './assets/images/signs/stop-sign.webp',
     './assets/images/signs/yield-sign.webp',
