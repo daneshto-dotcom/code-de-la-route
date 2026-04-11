@@ -1,5 +1,5 @@
 /* ============================================
-   Question Bank — 726 Bilingual Questions
+   Question Bank — 746 Bilingual Questions
    All 10 ETG themes, multi-answer support
    Based on French Code de la route public law
    ============================================
@@ -3123,6 +3123,121 @@ const QUESTION_BANK = [
         vocabulary: [
             { wordFr: "fatigue", wordEn: "fatigue", definition: "Exhaustion impairing driving" },
             { wordFr: "temps de réaction", wordEn: "reaction time", definition: "Time to perceive and act" }
+        ]
+    },
+    {
+        id: "cond-099",
+        topic: "conducteur",
+        difficulty: 1,
+        questionFr: "Quel est le taux d'alcoolémie maximal autorisé pour un conducteur novice ?",
+        questionEn: "What is the maximum blood alcohol level allowed for a novice driver?",
+        options: {
+            A: { fr: "0,5 g/l de sang", en: "0.5 g/l of blood" },
+            B: { fr: "0,2 g/l de sang", en: "0.2 g/l of blood" },
+            C: { fr: "0,8 g/l de sang", en: "0.8 g/l of blood" },
+            D: { fr: "0,0 g/l de sang", en: "0.0 g/l of blood" }
+        },
+        correctAnswers: ["B"],
+        answerCount: 1,
+        explanationFr: "Pour un conducteur novice (permis probatoire), le taux d'alcoolémie maximal est de 0,2 g/l de sang, soit pratiquement zéro verre d'alcool.",
+        explanationEn: "For a novice driver (probationary licence), the maximum blood alcohol level is 0.2 g/l of blood, meaning practically zero alcoholic drinks.",
+        trapNote: "0.2 g/l is NOT zero — it accounts for trace alcohol in food/medicine. But effectively means no drinking.",
+        distractorNotes: { A: "0.5 g/l is the limit for experienced drivers, not novices.", C: "0.8 g/l is not a legal threshold in France.", D: "The limit is 0.2, not absolute zero." },
+        vocabulary: [
+            { wordFr: "permis probatoire", wordEn: "probationary licence", definition: "The licence period for new drivers (3 years, or 2 with accompanied driving)" },
+            { wordFr: "alcoolémie", wordEn: "blood alcohol level", definition: "The concentration of alcohol in the blood" }
+        ]
+    },
+    {
+        id: "cond-100",
+        topic: "conducteur",
+        difficulty: 1,
+        questionFr: "Combien de points comporte le permis de conduire en France ?",
+        questionEn: "How many points does a driving licence have in France?",
+        options: {
+            A: { fr: "6 points", en: "6 points" },
+            B: { fr: "10 points", en: "10 points" },
+            C: { fr: "12 points", en: "12 points" },
+            D: { fr: "20 points", en: "20 points" }
+        },
+        correctAnswers: ["C"],
+        answerCount: 1,
+        explanationFr: "Le permis de conduire français comporte un capital de 12 points. Les infractions entraînent des retraits de points. À 0 point, le permis est annulé.",
+        explanationEn: "The French driving licence has a total of 12 points. Offences result in point deductions. At 0 points, the licence is cancelled.",
+        trapNote: "Novice drivers start with only 6 points and gain points progressively over the probationary period.",
+        distractorNotes: { A: "6 is the starting balance for novice drivers, not the full amount.", B: "10 is not a threshold used in the French system.", D: "20 points is not used in any French licence category." },
+        vocabulary: [
+            { wordFr: "capital de points", wordEn: "point balance", definition: "The total number of points on your licence" },
+            { wordFr: "annulation du permis", wordEn: "licence cancellation", definition: "When all points are lost and the licence becomes invalid" }
+        ]
+    },
+    {
+        id: "cond-101",
+        topic: "conducteur",
+        difficulty: 1,
+        questionFr: "Quels sont les effets de la fatigue sur la conduite ?",
+        questionEn: "What are the effects of fatigue on driving?",
+        options: {
+            A: { fr: "Diminution de la vigilance et allongement du temps de réaction", en: "Reduced alertness and longer reaction time" },
+            B: { fr: "Amélioration de la concentration", en: "Improved concentration" },
+            C: { fr: "Aucun effet si le trajet est court", en: "No effect if the journey is short" },
+            D: { fr: "Uniquement un risque sur autoroute", en: "Only a risk on motorways" }
+        },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "La fatigue diminue la vigilance, allonge le temps de réaction et peut provoquer des micro-sommeils très dangereux. Elle est responsable d'environ 20% des accidents mortels.",
+        explanationEn: "Fatigue reduces alertness, increases reaction time, and can cause dangerous micro-sleeps. It is responsible for around 20% of fatal accidents.",
+        trapNote: "Fatigue affects you on ALL roads, not just motorways. Even a 15-minute journey can be dangerous if you are exhausted.",
+        distractorNotes: { B: "Fatigue never improves concentration — it always degrades it.", C: "Fatigue affects driving regardless of distance.", D: "Fatigue is dangerous on all roads, not just motorways." },
+        vocabulary: [
+            { wordFr: "micro-sommeil", wordEn: "micro-sleep", definition: "A brief involuntary episode of sleep lasting a few seconds" },
+            { wordFr: "vigilance", wordEn: "alertness", definition: "The state of being watchful and attentive" }
+        ]
+    },
+    {
+        id: "cond-102",
+        topic: "conducteur",
+        difficulty: 1,
+        questionFr: "Que risquez-vous si vous conduisez sans permis de conduire valide ?",
+        questionEn: "What do you risk if you drive without a valid driving licence?",
+        options: {
+            A: { fr: "Une simple amende de 35 euros", en: "A simple fine of 35 euros" },
+            B: { fr: "Un an d'emprisonnement et 15 000 euros d'amende", en: "One year imprisonment and 15,000 euro fine" },
+            C: { fr: "Un avertissement verbal", en: "A verbal warning" },
+            D: { fr: "Une amende de 135 euros", en: "A fine of 135 euros" }
+        },
+        correctAnswers: ["B"],
+        answerCount: 1,
+        explanationFr: "Conduire sans permis est un délit puni d'un an d'emprisonnement et de 15 000 euros d'amende. Le véhicule peut être immobilisé et confisqué.",
+        explanationEn: "Driving without a licence is a criminal offence punishable by one year imprisonment and a 15,000 euro fine. The vehicle can be immobilised and confiscated.",
+        trapNote: "This is a CRIMINAL offence (délit), not just a traffic infraction. It goes on your criminal record.",
+        distractorNotes: { A: "35 euros is for minor parking infractions, not driving without a licence.", C: "There is no warning for this serious offence.", D: "135 euros is for common traffic infractions — driving without a licence is far more severe." },
+        vocabulary: [
+            { wordFr: "délit", wordEn: "criminal offence", definition: "A serious offence tried in a criminal court, more serious than a contravention" },
+            { wordFr: "immobilisation", wordEn: "vehicle immobilisation", definition: "When police prevent you from moving your vehicle" }
+        ]
+    },
+    {
+        id: "cond-103",
+        topic: "conducteur",
+        difficulty: 1,
+        questionFr: "À partir de quel âge peut-on conduire une voiture en conduite accompagnée ?",
+        questionEn: "From what age can you drive a car with accompanied driving?",
+        options: {
+            A: { fr: "16 ans", en: "16 years old" },
+            B: { fr: "15 ans", en: "15 years old" },
+            C: { fr: "17 ans", en: "17 years old" },
+            D: { fr: "18 ans", en: "18 years old" }
+        },
+        correctAnswers: ["B"],
+        answerCount: 1,
+        explanationFr: "La conduite accompagnée (AAC) est possible dès 15 ans, après avoir obtenu le code de la route et effectué 20 heures de formation en auto-école.",
+        explanationEn: "Accompanied driving (AAC) is possible from age 15, after passing the theory test and completing 20 hours of driving school training.",
+        trapNote: "15 is for accompanied driving only. You cannot drive alone until 18 (or 17 with the new \"permis à 17 ans\" law).",
+        distractorNotes: { A: "16 was the old minimum age — it changed to 15 in 2014.", C: "17 is the age for solo driving under the new law, not accompanied.", D: "18 is the standard age for a full licence without accompanied driving." },
+        vocabulary: [
+            { wordFr: "conduite accompagnée", wordEn: "accompanied driving", definition: "A system allowing learners from 15 to drive with an approved adult companion" },
+            { wordFr: "auto-école", wordEn: "driving school", definition: "A school where you learn to drive" }
         ]
     },
     // === ROUTE ===,
@@ -10139,6 +10254,121 @@ const QUESTION_BANK = [
             { wordFr: "clignotant", wordEn: "indicator/turn signal", definition: "The flashing light used to signal a change of direction" }
         ]
     },
+    {
+        id: "croi-111",
+        topic: "croisement_depassement",
+        difficulty: 1,
+        questionFr: "Par quel côté devez-vous dépasser un véhicule ?",
+        questionEn: "On which side must you overtake a vehicle?",
+        options: {
+            A: { fr: "Par la gauche", en: "On the left" },
+            B: { fr: "Par la droite", en: "On the right" },
+            C: { fr: "Par le côté le plus large", en: "On the wider side" },
+            D: { fr: "Par n'importe quel côté", en: "On either side" }
+        },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "En France, le dépassement se fait toujours par la gauche. Dépasser par la droite est interdit sauf exceptions très rares (véhicule tournant à gauche).",
+        explanationEn: "In France, overtaking is always done on the left. Overtaking on the right is prohibited except in very rare cases (vehicle turning left).",
+        trapNote: "Exception: you may pass on the right if the vehicle ahead is signalling a left turn and has moved to the left.",
+        distractorNotes: { B: "Overtaking on the right is illegal in most situations.", C: "Road width does not determine overtaking side.", D: "You cannot choose — the rule is always left." },
+        vocabulary: [
+            { wordFr: "dépassement", wordEn: "overtaking", definition: "Passing another vehicle that is moving in the same direction" },
+            { wordFr: "par la gauche", wordEn: "on the left", definition: "The mandatory side for overtaking in France" }
+        ]
+    },
+    {
+        id: "croi-112",
+        topic: "croisement_depassement",
+        difficulty: 1,
+        questionFr: "Dans quelle situation le dépassement est-il interdit ?",
+        questionEn: "In which situation is overtaking prohibited?",
+        options: {
+            A: { fr: "Au sommet d'une côte sans visibilité", en: "At the top of a hill without visibility" },
+            B: { fr: "Sur une route nationale", en: "On a national road" },
+            C: { fr: "En dehors de l'agglomération", en: "Outside built-up areas" },
+            D: { fr: "Sur une route à deux voies", en: "On a two-lane road" }
+        },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "Le dépassement est interdit au sommet d'une côte sans visibilité suffisante, car vous ne pouvez pas voir les véhicules arrivant en sens inverse.",
+        explanationEn: "Overtaking is prohibited at the top of a hill without sufficient visibility, because you cannot see vehicles coming from the opposite direction.",
+        trapNote: "Also prohibited: in curves, near pedestrian crossings, at intersections (unless priority road), and when a continuous white line is present.",
+        distractorNotes: { B: "National roads allow overtaking when conditions are safe.", C: "Overtaking outside built-up areas is generally allowed.", D: "Two-lane roads allow overtaking when the opposite lane is clear." },
+        vocabulary: [
+            { wordFr: "sommet d'une côte", wordEn: "hilltop/crest", definition: "The highest point of a hill where forward visibility may be limited" },
+            { wordFr: "visibilité insuffisante", wordEn: "insufficient visibility", definition: "When you cannot see far enough ahead to overtake safely" }
+        ]
+    },
+    {
+        id: "croi-113",
+        topic: "croisement_depassement",
+        difficulty: 1,
+        questionFr: "Lors d'un croisement sur une route étroite, qui doit reculer ?",
+        questionEn: "When passing on a narrow road, who must reverse?",
+        options: {
+            A: { fr: "Le véhicule qui descend", en: "The vehicle going downhill" },
+            B: { fr: "Le véhicule qui monte", en: "The vehicle going uphill" },
+            C: { fr: "Le plus petit véhicule", en: "The smaller vehicle" },
+            D: { fr: "Le dernier arrivé", en: "The last to arrive" }
+        },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "Sur une route étroite en pente, c'est le véhicule qui descend qui doit reculer pour laisser passer celui qui monte, car reculer en montée est plus difficile.",
+        explanationEn: "On a narrow road on a slope, the vehicle going downhill must reverse to let the uphill vehicle pass, because reversing uphill is more difficult.",
+        trapNote: "Exception: if one vehicle is much closer to a passing place, that vehicle should use it regardless of direction.",
+        distractorNotes: { B: "The uphill vehicle has priority because reversing uphill is harder and more dangerous.", C: "Vehicle size is not the determining factor.", D: "Arrival order does not determine priority in this situation." },
+        vocabulary: [
+            { wordFr: "croisement", wordEn: "passing/meeting", definition: "When two vehicles going in opposite directions meet on the road" },
+            { wordFr: "reculer", wordEn: "to reverse", definition: "To drive backwards" }
+        ]
+    },
+    {
+        id: "croi-114",
+        topic: "croisement_depassement",
+        difficulty: 1,
+        questionFr: "Quelle est la distance latérale minimale pour dépasser un cycliste en agglomération ?",
+        questionEn: "What is the minimum lateral distance for overtaking a cyclist in a built-up area?",
+        options: {
+            A: { fr: "50 cm", en: "50 cm" },
+            B: { fr: "1 mètre", en: "1 metre" },
+            C: { fr: "1,5 mètre", en: "1.5 metres" },
+            D: { fr: "2 mètres", en: "2 metres" }
+        },
+        correctAnswers: ["B"],
+        answerCount: 1,
+        explanationFr: "En agglomération, la distance latérale minimale pour dépasser un cycliste est de 1 mètre. Hors agglomération, cette distance passe à 1,5 mètre.",
+        explanationEn: "In built-up areas, the minimum lateral distance for overtaking a cyclist is 1 metre. Outside built-up areas, this distance increases to 1.5 metres.",
+        trapNote: "1 metre in town, 1.5 metres outside town. Many exam questions try to swap these values.",
+        distractorNotes: { A: "50 cm is dangerously close and illegal.", C: "1.5 metres is the rule outside built-up areas, not inside.", D: "2 metres is recommended but not the legal minimum." },
+        vocabulary: [
+            { wordFr: "distance latérale", wordEn: "lateral distance", definition: "The sideways gap between your vehicle and the cyclist when overtaking" },
+            { wordFr: "en agglomération", wordEn: "in a built-up area", definition: "Within city or town limits, marked by the town name sign" }
+        ]
+    },
+    {
+        id: "croi-115",
+        topic: "croisement_depassement",
+        difficulty: 1,
+        questionFr: "Une ligne continue blanche au sol signifie :",
+        questionEn: "A continuous white line on the road means:",
+        options: {
+            A: { fr: "Interdiction de dépasser en la franchissant", en: "Overtaking by crossing it is prohibited" },
+            B: { fr: "Ralentir", en: "Slow down" },
+            C: { fr: "Voie réservée aux bus", en: "Bus lane" },
+            D: { fr: "Zone de stationnement", en: "Parking zone" }
+        },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "Une ligne continue blanche interdit le franchissement. Vous ne pouvez pas la traverser pour dépasser un véhicule.",
+        explanationEn: "A continuous white line prohibits crossing. You may not cross it to overtake a vehicle.",
+        trapNote: "You may not even straddle a continuous line. If there is a broken line on your side and a continuous line on the other, you may overtake.",
+        distractorNotes: { B: "A continuous line does not mean slow down — it means no crossing.", C: "Bus lanes are marked with \"BUS\" text, not just a line.", D: "Parking zones have different markings." },
+        vocabulary: [
+            { wordFr: "ligne continue", wordEn: "continuous line", definition: "An unbroken white line on the road that may not be crossed" },
+            { wordFr: "franchissement", wordEn: "crossing (a line)", definition: "Driving over or across a road marking" }
+        ]
+    },
     // === ARRET & STATIONNEMENT (Stopping & Parking) ===,
     {
         id: "arret-001",
@@ -13606,6 +13836,121 @@ const QUESTION_BANK = [
             { wordFr: "balise", wordEn: "countdown marker", definition: "A sign with red bars indicating distance to a level crossing" }
         ]
     },
+    {
+        id: "tunn-098",
+        topic: "tunnels_passages_niveau",
+        difficulty: 1,
+        questionFr: "Que devez-vous faire en entrant dans un tunnel ?",
+        questionEn: "What must you do when entering a tunnel?",
+        options: {
+            A: { fr: "Allumer vos feux de croisement", en: "Turn on your dipped headlights" },
+            B: { fr: "Accélérer pour traverser rapidement", en: "Accelerate to cross quickly" },
+            C: { fr: "Retirer vos lunettes de soleil et klaxonner", en: "Remove your sunglasses and honk" },
+            D: { fr: "Allumer vos feux de détresse", en: "Turn on your hazard lights" }
+        },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "En entrant dans un tunnel, vous devez allumer vos feux de croisement pour voir et être vu, même si le tunnel est éclairé.",
+        explanationEn: "When entering a tunnel, you must turn on your dipped headlights to see and be seen, even if the tunnel is lit.",
+        trapNote: "Use dipped headlights, NOT full beam (which would blind other drivers in the enclosed space). Also remove sunglasses, but that alone is not sufficient.",
+        distractorNotes: { B: "You should maintain a safe speed, not accelerate.", C: "Removing sunglasses is wise but not the main requirement; honking is unnecessary.", D: "Hazard lights are for emergencies, not routine tunnel entry." },
+        vocabulary: [
+            { wordFr: "feux de croisement", wordEn: "dipped headlights", definition: "Low-beam headlights that illuminate the road without blinding oncoming drivers" },
+            { wordFr: "tunnel éclairé", wordEn: "lit tunnel", definition: "A tunnel with artificial lighting" }
+        ]
+    },
+    {
+        id: "tunn-099",
+        topic: "tunnels_passages_niveau",
+        difficulty: 1,
+        questionFr: "À un passage à niveau, le feu rouge clignote. Que faites-vous ?",
+        questionEn: "At a level crossing, the red light is flashing. What do you do?",
+        options: {
+            A: { fr: "Vous passez rapidement avant le train", en: "You pass quickly before the train" },
+            B: { fr: "Vous vous arrêtez avant le passage à niveau", en: "You stop before the level crossing" },
+            C: { fr: "Vous ralentissez et passez prudemment", en: "You slow down and cross carefully" },
+            D: { fr: "Vous faites demi-tour", en: "You make a U-turn" }
+        },
+        correctAnswers: ["B"],
+        answerCount: 1,
+        explanationFr: "Quand le feu rouge clignote à un passage à niveau, l'arrêt est obligatoire. Un train approche ou les barrières vont se fermer.",
+        explanationEn: "When the red light flashes at a level crossing, stopping is mandatory. A train is approaching or the barriers are about to close.",
+        trapNote: "You must stop even if you cannot see or hear a train. The flashing light means STOP, period.",
+        distractorNotes: { A: "Never try to beat a train — this causes fatal accidents.", C: "Slowing down is not enough — you must come to a complete stop.", D: "A U-turn is not required; just stop and wait." },
+        vocabulary: [
+            { wordFr: "passage à niveau", wordEn: "level crossing", definition: "Where a road crosses a railway line at the same level" },
+            { wordFr: "feu rouge clignotant", wordEn: "flashing red light", definition: "A warning light that flashes to indicate danger or mandatory stop" }
+        ]
+    },
+    {
+        id: "tunn-100",
+        topic: "tunnels_passages_niveau",
+        difficulty: 1,
+        questionFr: "En cas de panne dans un tunnel, que devez-vous faire ?",
+        questionEn: "If you break down in a tunnel, what must you do?",
+        options: {
+            A: { fr: "Rester dans le véhicule et attendre", en: "Stay in the vehicle and wait" },
+            B: { fr: "Couper le moteur, allumer les feux de détresse et rejoindre un abri de sécurité", en: "Turn off the engine, turn on hazard lights, and reach a safety shelter" },
+            C: { fr: "Pousser le véhicule hors du tunnel", en: "Push the vehicle out of the tunnel" },
+            D: { fr: "Faire demi-tour pour sortir du tunnel", en: "Make a U-turn to exit the tunnel" }
+        },
+        correctAnswers: ["B"],
+        answerCount: 1,
+        explanationFr: "En cas de panne dans un tunnel : coupez le moteur, allumez les feux de détresse, et dirigez-vous vers l'abri de sécurité le plus proche. Ne restez jamais dans le véhicule.",
+        explanationEn: "If you break down in a tunnel: turn off the engine, switch on hazard lights, and head to the nearest safety shelter. Never stay in the vehicle.",
+        trapNote: "NEVER stay in the car in a tunnel breakdown — fire risk is the main danger. Always use the emergency shelters.",
+        distractorNotes: { A: "Staying in the vehicle is dangerous due to fire and smoke risks.", C: "Pushing the vehicle in a tunnel is extremely dangerous.", D: "U-turns are strictly prohibited in tunnels." },
+        vocabulary: [
+            { wordFr: "abri de sécurité", wordEn: "safety shelter", definition: "An emergency refuge area in a tunnel, protected from fire and smoke" },
+            { wordFr: "feux de détresse", wordEn: "hazard lights", definition: "Four-way flashing indicators used to signal an emergency or hazard" }
+        ]
+    },
+    {
+        id: "tunn-101",
+        topic: "tunnels_passages_niveau",
+        difficulty: 1,
+        questionFr: "Quelle distance de sécurité devez-vous respecter dans un tunnel ?",
+        questionEn: "What safety distance must you maintain in a tunnel?",
+        options: {
+            A: { fr: "La distance normale de 2 secondes", en: "The normal 2-second distance" },
+            B: { fr: "Une distance renforcée, au moins 4 secondes ou selon les panneaux", en: "An increased distance, at least 4 seconds or as indicated by signs" },
+            C: { fr: "Aucune distance particulière", en: "No particular distance" },
+            D: { fr: "Coller au véhicule devant pour sortir plus vite", en: "Tailgate the vehicle ahead to exit faster" }
+        },
+        correctAnswers: ["B"],
+        answerCount: 1,
+        explanationFr: "Dans un tunnel, la distance de sécurité est renforcée. Des panneaux lumineux indiquent souvent la distance à respecter. En l'absence de panneau, maintenez au moins 4 secondes.",
+        explanationEn: "In a tunnel, the safety distance is increased. Electronic signs often indicate the required distance. Without signs, maintain at least 4 seconds.",
+        trapNote: "Tunnels have specific distance markers (chevrons or metre indicators). Follow them — they override the standard 2-second rule.",
+        distractorNotes: { A: "2 seconds is the MINIMUM on open roads — tunnels require more.", C: "Tunnels always require increased safety distances.", D: "Tailgating is always dangerous and especially so in tunnels." },
+        vocabulary: [
+            { wordFr: "distance de sécurité renforcée", wordEn: "increased safety distance", definition: "A greater following distance required in specific conditions like tunnels" },
+            { wordFr: "panneaux lumineux", wordEn: "electronic signs", definition: "Variable message signs that display real-time information" }
+        ]
+    },
+    {
+        id: "tunn-102",
+        topic: "tunnels_passages_niveau",
+        difficulty: 1,
+        questionFr: "Un passage à niveau sans barrière ni feu : que faites-vous ?",
+        questionEn: "A level crossing with no barriers or lights: what do you do?",
+        options: {
+            A: { fr: "Vous passez sans vous arrêter", en: "You cross without stopping" },
+            B: { fr: "Vous marquez l'arrêt, regardez des deux côtés, puis passez", en: "You stop, look both ways, then cross" },
+            C: { fr: "Vous klaxonnez et passez", en: "You honk and cross" },
+            D: { fr: "Vous accélérez pour passer vite", en: "You accelerate to cross quickly" }
+        },
+        correctAnswers: ["B"],
+        answerCount: 1,
+        explanationFr: "À un passage à niveau sans barrière ni signalisation lumineuse, vous devez marquer l'arrêt, vérifier qu'aucun train n'approche des deux côtés, puis passer.",
+        explanationEn: "At a level crossing without barriers or lights, you must stop, check that no train is approaching from either direction, then cross.",
+        trapNote: "A croix de Saint-André (X-shaped sign) marks these crossings. Always stop — even if you think no train is coming.",
+        distractorNotes: { A: "You must always stop at unprotected level crossings.", C: "Honking does not make crossing safe.", D: "Accelerating is dangerous at any level crossing." },
+        vocabulary: [
+            { wordFr: "croix de Saint-André", wordEn: "St. Andrew's cross", definition: "An X-shaped sign marking a level crossing" },
+            { wordFr: "passage à niveau non gardé", wordEn: "unprotected level crossing", definition: "A level crossing without automatic barriers or warning lights" }
+        ]
+    },
     // === SIGNALISATION (Signs & Signals) ===,
     {
         id: "sign-001",
@@ -16977,6 +17322,121 @@ const QUESTION_BANK = [
         vocabulary: [
             { wordFr: "alcoolémie", wordEn: "blood alcohol level", definition: "The concentration of alcohol in the blood" },
             { wordFr: "air expiré", wordEn: "exhaled air", definition: "Breath used in breathalyser tests to measure alcohol" }
+        ]
+    },
+    {
+        id: "div-106",
+        topic: "notions_diverses",
+        difficulty: 1,
+        questionFr: "Quel document devez-vous toujours avoir dans votre véhicule ?",
+        questionEn: "Which document must you always have in your vehicle?",
+        options: {
+            A: { fr: "La carte grise (certificat d'immatriculation)", en: "The vehicle registration certificate" },
+            B: { fr: "Le contrat d'achat du véhicule", en: "The vehicle purchase contract" },
+            C: { fr: "Le carnet d'entretien", en: "The service booklet" },
+            D: { fr: "La facture du dernier plein d'essence", en: "The last fuel receipt" }
+        },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "La carte grise (certificat d'immatriculation) doit toujours se trouver dans le véhicule. Lors d'un contrôle, vous devez pouvoir la présenter.",
+        explanationEn: "The vehicle registration certificate must always be in the vehicle. During a police check, you must be able to present it.",
+        trapNote: "Three documents required: carte grise, attestation d'assurance (insurance), and permis de conduire (but the licence can be on your person, not in the car).",
+        distractorNotes: { B: "The purchase contract is not required in the vehicle.", C: "The service booklet is useful but not legally required.", D: "Fuel receipts are never required." },
+        vocabulary: [
+            { wordFr: "carte grise", wordEn: "vehicle registration certificate", definition: "The official document proving a vehicle's registration, also called certificat d'immatriculation" },
+            { wordFr: "contrôle routier", wordEn: "traffic check", definition: "When police stop you to check your documents and vehicle" }
+        ]
+    },
+    {
+        id: "div-107",
+        topic: "notions_diverses",
+        difficulty: 1,
+        questionFr: "Que signifie le terme \"éco-conduite\" ?",
+        questionEn: "What does the term \"eco-driving\" mean?",
+        options: {
+            A: { fr: "Conduire de manière économique et écologique", en: "Driving in an economical and ecological way" },
+            B: { fr: "Conduire uniquement des véhicules électriques", en: "Driving only electric vehicles" },
+            C: { fr: "Rouler le plus vite possible", en: "Driving as fast as possible" },
+            D: { fr: "Utiliser le frein moteur en permanence", en: "Using engine braking at all times" }
+        },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "L'éco-conduite consiste à adopter un style de conduite souple et anticipatif pour réduire la consommation de carburant et les émissions de CO2.",
+        explanationEn: "Eco-driving means adopting a smooth and anticipatory driving style to reduce fuel consumption and CO2 emissions.",
+        trapNote: "Eco-driving tips: shift up early, maintain steady speed, anticipate stops, check tyre pressure, remove roof boxes when not needed.",
+        distractorNotes: { B: "Eco-driving applies to all vehicles, not just electric ones.", C: "Driving fast increases fuel consumption — the opposite of eco-driving.", D: "Engine braking is one technique but not the whole concept." },
+        vocabulary: [
+            { wordFr: "éco-conduite", wordEn: "eco-driving", definition: "A driving style that minimises fuel consumption and environmental impact" },
+            { wordFr: "conduite anticipative", wordEn: "anticipatory driving", definition: "Looking ahead and planning actions to avoid sudden braking or acceleration" }
+        ]
+    },
+    {
+        id: "div-108",
+        topic: "notions_diverses",
+        difficulty: 1,
+        questionFr: "Quand devez-vous faire le contrôle technique de votre véhicule ?",
+        questionEn: "When must you have your vehicle's technical inspection?",
+        options: {
+            A: { fr: "Tous les ans", en: "Every year" },
+            B: { fr: "Dans les 6 mois précédant le 4e anniversaire de la mise en circulation, puis tous les 2 ans", en: "Within 6 months before the 4th anniversary of registration, then every 2 years" },
+            C: { fr: "Uniquement avant la vente du véhicule", en: "Only before selling the vehicle" },
+            D: { fr: "Tous les 5 ans", en: "Every 5 years" }
+        },
+        correctAnswers: ["B"],
+        answerCount: 1,
+        explanationFr: "Le premier contrôle technique doit être effectué dans les 6 mois précédant le 4e anniversaire de la première mise en circulation, puis tous les 2 ans.",
+        explanationEn: "The first technical inspection must be done within 6 months before the 4th anniversary of first registration, then every 2 years.",
+        trapNote: "For used cars being sold, the seller must provide a contrôle technique of less than 6 months. This is in addition to the regular schedule.",
+        distractorNotes: { A: "Annual inspections are not required in France (unlike some countries).", C: "The inspection is required periodically, not just at sale.", D: "Every 5 years is too infrequent." },
+        vocabulary: [
+            { wordFr: "contrôle technique", wordEn: "technical inspection (MOT)", definition: "A mandatory periodic check of a vehicle's safety and emissions" },
+            { wordFr: "mise en circulation", wordEn: "first registration", definition: "The date a vehicle was first registered for road use" }
+        ]
+    },
+    {
+        id: "div-109",
+        topic: "notions_diverses",
+        difficulty: 1,
+        questionFr: "Que devez-vous faire si vous êtes impliqué dans un accident corporel ?",
+        questionEn: "What must you do if you are involved in an injury accident?",
+        options: {
+            A: { fr: "Protéger, alerter, secourir (PAS)", en: "Protect, alert, rescue (PAS)" },
+            B: { fr: "Déplacer les blessés immédiatement", en: "Move the injured immediately" },
+            C: { fr: "Quitter les lieux et appeler plus tard", en: "Leave the scene and call later" },
+            D: { fr: "Prendre des photos et partir", en: "Take photos and leave" }
+        },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "En cas d'accident corporel, appliquez la règle PAS : Protéger la zone, Alerter les secours (15, 18, ou 112), et Secourir les victimes sans les déplacer sauf danger immédiat.",
+        explanationEn: "In case of an injury accident, apply the PAS rule: Protect the area, Alert emergency services (15, 18, or 112), and help the victims without moving them unless there is immediate danger.",
+        trapNote: "NEVER move an injured person unless there is immediate danger (fire, explosion). Moving them can worsen spinal injuries.",
+        distractorNotes: { B: "Moving injured people can cause further injuries, especially spinal.", C: "Leaving the scene of an injury accident is a criminal offence (hit and run).", D: "You must stay at the scene and help — leaving is illegal." },
+        vocabulary: [
+            { wordFr: "PAS (Protéger Alerter Secourir)", wordEn: "PAS (Protect Alert Rescue)", definition: "The three-step emergency response protocol taught in French driving theory" },
+            { wordFr: "accident corporel", wordEn: "injury accident", definition: "An accident where people are physically hurt" }
+        ]
+    },
+    {
+        id: "div-110",
+        topic: "notions_diverses",
+        difficulty: 1,
+        questionFr: "Quel numéro appelez-vous pour joindre les secours en Europe ?",
+        questionEn: "What number do you call for emergency services in Europe?",
+        options: {
+            A: { fr: "911", en: "911" },
+            B: { fr: "112", en: "112" },
+            C: { fr: "999", en: "999" },
+            D: { fr: "118", en: "118" }
+        },
+        correctAnswers: ["B"],
+        answerCount: 1,
+        explanationFr: "Le 112 est le numéro d'urgence européen, accessible gratuitement depuis n'importe quel téléphone dans tous les pays de l'Union européenne.",
+        explanationEn: "112 is the European emergency number, available free of charge from any phone in all EU countries.",
+        trapNote: "In France, you can also use 15 (SAMU/medical), 17 (police), 18 (fire brigade). But 112 works everywhere in Europe.",
+        distractorNotes: { A: "911 is the North American emergency number, not European.", C: "999 is used in the UK, not across Europe.", D: "118 is for directory enquiries, not emergencies." },
+        vocabulary: [
+            { wordFr: "numéro d'urgence européen", wordEn: "European emergency number", definition: "112 — the universal emergency number across all EU countries" },
+            { wordFr: "SAMU", wordEn: "emergency medical service", definition: "Service d'Aide Médicale Urgente — reached at 15 in France" }
         ]
     }
 ];
