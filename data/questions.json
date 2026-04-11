@@ -38578,5 +38578,392 @@
     "vocabulary": [
       { "wordFr": "cyclomoteur", "wordEn": "moped", "definition": "A small motorised two-wheeler with limited speed, requiring registration" }
     ]
+  },
+  {
+    "id": "autr-069",
+    "topic": "autres_usagers",
+    "difficulty": 3,
+    "questionFr": "Quelles affirmations sont correctes concernant le dépassement d'un groupe de cyclistes ? (2 réponses)",
+    "questionEn": "Which statements are correct about overtaking a group of cyclists? (2 answers)",
+    "options": {
+      "A": { "fr": "Vous devez dépasser le groupe entier en une seule manœuvre", "en": "You must overtake the entire group in a single manoeuvre" },
+      "B": { "fr": "Vous pouvez dépasser les cyclistes un par un si la route est dégagée", "en": "You can overtake cyclists one by one if the road is clear" },
+      "C": { "fr": "Les cyclistes en groupe peuvent rouler à deux de front", "en": "Cyclists in a group may ride two abreast" },
+      "D": { "fr": "La distance de sécurité latérale est réduite à 50 cm pour un groupe", "en": "The lateral safety distance is reduced to 50 cm for a group" }
+    },
+    "correctAnswers": ["A", "C"],
+    "answerCount": 2,
+    "explanationFr": "Vous devez dépasser tout le groupe en une fois pour éviter de vous rabattre entre les cyclistes. Les cyclistes ont le droit de rouler à deux de front (article R431-7).",
+    "explanationEn": "You must overtake the entire group at once to avoid cutting back between cyclists. Cyclists are allowed to ride two abreast (article R431-7).",
+    "trapNote": "The lateral distance (1m in town, 1.5m outside) is never reduced — it applies per cyclist group too.",
+    "distractorNotes": {
+      "B": "Overtaking one by one forces dangerous cutting-back between cyclists.",
+      "D": "The 1m/1.5m lateral distance applies regardless of whether it's one cyclist or a group."
+    },
+    "vocabulary": [
+      { "wordFr": "de front", "wordEn": "abreast/side by side", "definition": "Riding next to each other in the same lane" }
+    ]
+  },
+  {
+    "id": "autr-070",
+    "topic": "autres_usagers",
+    "difficulty": 3,
+    "questionFr": "Un cavalier sur la route lève le bras droit. Que signifie ce geste ?",
+    "questionEn": "A horse rider on the road raises their right arm. What does this gesture mean?",
+    "options": {
+      "A": { "fr": "Il demande aux véhicules de ralentir", "en": "They are asking vehicles to slow down" },
+      "B": { "fr": "Il va tourner à droite", "en": "They are going to turn right" },
+      "C": { "fr": "Il vous invite à le dépasser", "en": "They are inviting you to overtake" },
+      "D": { "fr": "Il signale un danger devant", "en": "They are signalling a danger ahead" }
+    },
+    "correctAnswers": ["A"],
+    "answerCount": 1,
+    "explanationFr": "Un cavalier qui lève le bras demande aux véhicules de ralentir. Les chevaux sont imprévisibles et peuvent être effrayés par le bruit ou la vitesse.",
+    "explanationEn": "A horse rider raising their arm is asking vehicles to slow down. Horses are unpredictable and can be startled by noise or speed.",
+    "trapNote": "Unlike cyclists' arm signals for turns, a rider's raised arm always means 'slow down'.",
+    "distractorNotes": {
+      "B": "Horse riders use different signals than cyclists for turning.",
+      "C": "A raised arm means slow down, not an invitation to pass.",
+      "D": "The signal is specifically about speed, not a general danger warning."
+    },
+    "vocabulary": [
+      { "wordFr": "cavalier", "wordEn": "horse rider", "definition": "A person riding a horse on the road, classified as a vulnerable road user" }
+    ]
+  },
+  {
+    "id": "autr-071",
+    "topic": "autres_usagers",
+    "difficulty": 3,
+    "questionFr": "De nuit, vous croisez un cycliste sans éclairage sur une route départementale. Quelles actions devez-vous effectuer ? (2 réponses)",
+    "questionEn": "At night, you encounter a cyclist without lights on a departmental road. What actions must you take? (2 answers)",
+    "options": {
+      "A": { "fr": "Réduire votre vitesse immédiatement", "en": "Reduce your speed immediately" },
+      "B": { "fr": "Augmenter la distance latérale au-delà du minimum", "en": "Increase the lateral distance beyond the minimum" },
+      "C": { "fr": "Klaxonner pour avertir le cycliste de son infraction", "en": "Honk to warn the cyclist of their offence" },
+      "D": { "fr": "Allumer vos feux de route pour l'éclairer", "en": "Turn on high beams to illuminate them" }
+    },
+    "correctAnswers": ["A", "B"],
+    "answerCount": 2,
+    "explanationFr": "Face à un cycliste sans éclairage de nuit, réduisez votre vitesse et augmentez la distance latérale car sa trajectoire est difficile à anticiper. Ne klaxonnez pas (risque de surprise) et n'utilisez pas les feux de route (éblouissement).",
+    "explanationEn": "When encountering a cyclist without lights at night, reduce speed and increase lateral distance as their path is hard to predict. Don't honk (could startle) or use high beams (dazzling).",
+    "trapNote": "Honking could startle the cyclist into swerving, and high beams would dazzle them — both increase danger.",
+    "distractorNotes": {
+      "C": "Honking could startle the cyclist and cause them to swerve into traffic.",
+      "D": "High beams would dazzle the cyclist and any oncoming traffic."
+    },
+    "vocabulary": [
+      { "wordFr": "route départementale", "wordEn": "departmental road", "definition": "A secondary road maintained by the département, usually numbered with a D prefix" }
+    ]
+  },
+  {
+    "id": "autr-072",
+    "topic": "autres_usagers",
+    "difficulty": 3,
+    "questionFr": "Quelles obligations avez-vous envers un convoi exceptionnel signalé par des véhicules d'escorte ? (2 réponses)",
+    "questionEn": "What obligations do you have towards an exceptional convoy signalled by escort vehicles? (2 answers)",
+    "options": {
+      "A": { "fr": "Ne pas dépasser le convoi tant que les véhicules d'escorte ne l'autorisent pas", "en": "Do not overtake the convoy until escort vehicles allow it" },
+      "B": { "fr": "Serrer à droite pour faciliter le passage", "en": "Move right to facilitate passage" },
+      "C": { "fr": "Accélérer pour dépasser avant le convoi", "en": "Accelerate to overtake before the convoy" },
+      "D": { "fr": "Allumer vos feux de détresse", "en": "Turn on your hazard lights" }
+    },
+    "correctAnswers": ["A", "B"],
+    "answerCount": 2,
+    "explanationFr": "Face à un convoi exceptionnel, vous devez obéir aux instructions des véhicules d'escorte (ne pas dépasser) et serrer à droite pour laisser de la place au gabarit hors norme du convoi.",
+    "explanationEn": "When facing an exceptional convoy, you must obey escort vehicle instructions (no overtaking) and move right to make room for the convoy's oversized dimensions.",
+    "trapNote": "Hazard lights are not required — they're only for breakdowns or sudden dangers, not normal traffic situations.",
+    "distractorNotes": {
+      "C": "Accelerating to pass a convoy is extremely dangerous given its size and escort.",
+      "D": "Hazard lights are not required in this situation — they could confuse other drivers."
+    },
+    "vocabulary": [
+      { "wordFr": "convoi exceptionnel", "wordEn": "exceptional/oversized convoy", "definition": "A transport exceeding normal size or weight limits, requiring special authorisation and escort" }
+    ]
+  },
+  {
+    "id": "autr-073",
+    "topic": "autres_usagers",
+    "difficulty": 3,
+    "questionFr": "Un piéton aveugle avec une canne blanche traverse en dehors d'un passage piéton. Que devez-vous faire ?",
+    "questionEn": "A blind pedestrian with a white cane is crossing outside a pedestrian crossing. What must you do?",
+    "options": {
+      "A": { "fr": "Vous arrêter et le laisser traverser", "en": "Stop and let them cross" },
+      "B": { "fr": "Klaxonner pour le prévenir du danger", "en": "Honk to warn them of danger" },
+      "C": { "fr": "Le contourner en maintenant une distance de sécurité", "en": "Go around them maintaining a safe distance" },
+      "D": { "fr": "Continuer car il traverse hors passage piéton", "en": "Continue because they are crossing outside a pedestrian crossing" }
+    },
+    "correctAnswers": ["A"],
+    "answerCount": 1,
+    "explanationFr": "Les piétons aveugles avec une canne blanche bénéficient d'une priorité absolue, même en dehors des passages piétons. Vous devez vous arrêter et attendre qu'ils aient fini de traverser.",
+    "explanationEn": "Blind pedestrians with a white cane have absolute priority, even outside pedestrian crossings. You must stop and wait until they have finished crossing.",
+    "trapNote": "Blind pedestrians have unconditional priority everywhere — the white cane grants absolute right of way.",
+    "distractorNotes": {
+      "B": "Honking could disorient or frighten a blind person.",
+      "C": "Going around is risky — the pedestrian may change direction unexpectedly.",
+      "D": "The white cane grants absolute priority regardless of crossing location."
+    },
+    "vocabulary": [
+      { "wordFr": "canne blanche", "wordEn": "white cane", "definition": "A mobility aid used by visually impaired people, granting them absolute traffic priority" }
+    ]
+  },
+  {
+    "id": "arret-055",
+    "topic": "arret_stationnement",
+    "difficulty": 3,
+    "questionFr": "Quelles affirmations sont correctes concernant le stationnement en zone bleue ? (2 réponses)",
+    "questionEn": "Which statements are correct about parking in a blue zone? (2 answers)",
+    "options": {
+      "A": { "fr": "Vous devez utiliser un disque de stationnement visible derrière le pare-brise", "en": "You must use a parking disc visible behind the windshield" },
+      "B": { "fr": "La durée maximale est généralement de 1h30", "en": "The maximum duration is usually 1h30" },
+      "C": { "fr": "Le disque doit indiquer l'heure de départ prévue", "en": "The disc must show the planned departure time" },
+      "D": { "fr": "Les résidents sont toujours exemptés du disque", "en": "Residents are always exempt from the disc" }
+    },
+    "correctAnswers": ["A", "B"],
+    "answerCount": 2,
+    "explanationFr": "En zone bleue, le disque de stationnement doit être posé sur le tableau de bord, visible depuis l'extérieur. La durée est généralement limitée à 1h30. Le disque indique l'heure d'arrivée, pas de départ.",
+    "explanationEn": "In a blue zone, the parking disc must be placed on the dashboard, visible from outside. Duration is usually limited to 1h30. The disc shows arrival time, not departure time.",
+    "trapNote": "The disc shows arrival time arrondie to the next half hour, NOT departure time.",
+    "distractorNotes": {
+      "C": "The disc shows the arrival time rounded to the next half hour, not the departure time.",
+      "D": "Resident exemptions depend on local municipality rules — they are not automatic."
+    },
+    "vocabulary": [
+      { "wordFr": "zone bleue", "wordEn": "blue zone", "definition": "A regulated parking area requiring a disc, usually limited to 1h30" },
+      { "wordFr": "disque de stationnement", "wordEn": "parking disc", "definition": "A cardboard or plastic disc placed on the dashboard showing arrival time" }
+    ]
+  },
+  {
+    "id": "arret-056",
+    "topic": "arret_stationnement",
+    "difficulty": 3,
+    "questionFr": "Vous devez stationner en côte descendante le long du trottoir. Comment positionner vos roues avant ?",
+    "questionEn": "You need to park on a downhill slope alongside the kerb. How should you position your front wheels?",
+    "options": {
+      "A": { "fr": "Braquées vers le trottoir", "en": "Turned towards the kerb" },
+      "B": { "fr": "Braquées vers la chaussée", "en": "Turned towards the road" },
+      "C": { "fr": "Droites, parallèles au trottoir", "en": "Straight, parallel to the kerb" },
+      "D": { "fr": "La position n'a pas d'importance avec le frein à main", "en": "The position doesn't matter with the handbrake on" }
+    },
+    "correctAnswers": ["A"],
+    "answerCount": 1,
+    "explanationFr": "En côte descendante, braquez les roues vers le trottoir. Si le véhicule roule, il sera arrêté par le trottoir au lieu de descendre sur la chaussée.",
+    "explanationEn": "On a downhill slope, turn the wheels towards the kerb. If the vehicle rolls, it will be stopped by the kerb instead of rolling into the road.",
+    "trapNote": "Downhill = wheels towards kerb. Uphill = wheels AWAY from kerb. A frequent exam confusion.",
+    "distractorNotes": {
+      "B": "Turning towards the road would send the car into traffic if it rolls.",
+      "C": "Straight wheels offer no protection if the handbrake fails.",
+      "D": "Handbrakes can fail — wheel positioning is a secondary safety measure."
+    },
+    "vocabulary": [
+      { "wordFr": "côte descendante", "wordEn": "downhill slope", "definition": "A road that goes downward in the direction of travel" },
+      { "wordFr": "braquer", "wordEn": "to turn (the steering wheel)", "definition": "To rotate the steering wheel to angle the front wheels" }
+    ]
+  },
+  {
+    "id": "arret-057",
+    "topic": "arret_stationnement",
+    "difficulty": 3,
+    "questionFr": "Quelles sont les conséquences d'un stationnement très gênant ? (2 réponses)",
+    "questionEn": "What are the consequences of very obstructive parking? (2 answers)",
+    "options": {
+      "A": { "fr": "Amende de 135 €", "en": "€135 fine" },
+      "B": { "fr": "Mise en fourrière possible", "en": "Vehicle may be towed" },
+      "C": { "fr": "Retrait de 3 points", "en": "Loss of 3 points" },
+      "D": { "fr": "Simple avertissement", "en": "Simple warning" }
+    },
+    "correctAnswers": ["A", "B"],
+    "answerCount": 2,
+    "explanationFr": "Le stationnement très gênant (sur trottoir, passage piéton, place handicapé, piste cyclable) est sanctionné par une amende forfaitaire de 135 € et la mise en fourrière est possible.",
+    "explanationEn": "Very obstructive parking (on pavement, pedestrian crossing, disabled space, cycle lane) is punished by a €135 fixed fine and the vehicle may be towed.",
+    "trapNote": "No points are lost for parking offences — only fines and towing apply.",
+    "distractorNotes": {
+      "C": "Parking offences never result in point loss — only moving violations do.",
+      "D": "Very obstructive parking always results in a fine, never just a warning."
+    },
+    "vocabulary": [
+      { "wordFr": "stationnement très gênant", "wordEn": "very obstructive parking", "definition": "Parking that significantly obstructs traffic or access, such as on pavements or crossings" },
+      { "wordFr": "mise en fourrière", "wordEn": "towing/impounding", "definition": "The removal and storage of a vehicle by authorities" }
+    ]
+  },
+  {
+    "id": "arret-058",
+    "topic": "arret_stationnement",
+    "difficulty": 3,
+    "questionFr": "Vous trouvez un horodateur en panne. Pouvez-vous stationner gratuitement ?",
+    "questionEn": "You find a parking meter out of order. Can you park for free?",
+    "options": {
+      "A": { "fr": "Oui, pour la durée maximale indiquée sur la signalisation", "en": "Yes, for the maximum duration shown on the signage" },
+      "B": { "fr": "Non, vous devez trouver un autre emplacement", "en": "No, you must find another spot" },
+      "C": { "fr": "Oui, sans limite de temps", "en": "Yes, with no time limit" },
+      "D": { "fr": "Non, vous devez payer par application mobile", "en": "No, you must pay by mobile app" }
+    },
+    "correctAnswers": ["A"],
+    "answerCount": 1,
+    "explanationFr": "Si l'horodateur est en panne et qu'aucun autre moyen de paiement n'est disponible, vous pouvez stationner gratuitement pour la durée maximale autorisée sur la signalisation.",
+    "explanationEn": "If the parking meter is broken and no other payment method is available, you may park for free for the maximum authorised duration shown on signage.",
+    "trapNote": "Free parking is limited to the maximum posted duration — not unlimited.",
+    "distractorNotes": {
+      "B": "You are not required to leave — a broken meter entitles you to free parking.",
+      "C": "Free parking still respects the maximum duration posted on signs.",
+      "D": "If no mobile app is available, the broken meter rule applies."
+    },
+    "vocabulary": [
+      { "wordFr": "horodateur", "wordEn": "parking meter", "definition": "A machine that issues tickets for paid street parking" }
+    ]
+  },
+  {
+    "id": "arret-059",
+    "topic": "arret_stationnement",
+    "difficulty": 3,
+    "questionFr": "À quelle distance minimale d'un passage piéton est-il interdit de stationner ?",
+    "questionEn": "What is the minimum distance from a pedestrian crossing where parking is prohibited?",
+    "options": {
+      "A": { "fr": "5 mètres en amont", "en": "5 metres before" },
+      "B": { "fr": "10 mètres en amont", "en": "10 metres before" },
+      "C": { "fr": "3 mètres en amont", "en": "3 metres before" },
+      "D": { "fr": "Aucune distance, seul l'arrêt est interdit", "en": "No distance, only stopping is prohibited" }
+    },
+    "correctAnswers": ["A"],
+    "answerCount": 1,
+    "explanationFr": "Il est interdit de stationner à moins de 5 mètres en amont d'un passage piéton pour ne pas masquer la visibilité des piétons aux autres usagers.",
+    "explanationEn": "Parking is prohibited within 5 metres before a pedestrian crossing to avoid blocking visibility of pedestrians to other road users.",
+    "trapNote": "5 metres applies before the crossing. After it, parking rules depend on local signage.",
+    "distractorNotes": {
+      "B": "10 metres is the rule for intersections, not pedestrian crossings.",
+      "C": "3 metres is too close — the legal minimum is 5 metres.",
+      "D": "Both stopping and parking are restricted near crossings."
+    },
+    "vocabulary": [
+      { "wordFr": "en amont", "wordEn": "before/upstream", "definition": "On the approach side of a crossing or intersection, in the direction of traffic flow" }
+    ]
+  },
+  {
+    "id": "cond-109",
+    "topic": "conducteur",
+    "difficulty": 3,
+    "questionFr": "Quelles sanctions s'appliquent pour un excès de vitesse supérieur à 50 km/h ? (2 réponses)",
+    "questionEn": "What penalties apply for speeding more than 50 km/h over the limit? (2 answers)",
+    "options": {
+      "A": { "fr": "Retrait de 6 points", "en": "Loss of 6 points" },
+      "B": { "fr": "Suspension immédiate du permis", "en": "Immediate licence suspension" },
+      "C": { "fr": "Retrait de 4 points", "en": "Loss of 4 points" },
+      "D": { "fr": "Amende de 135 € seulement", "en": "€135 fine only" }
+    },
+    "correctAnswers": ["A", "B"],
+    "answerCount": 2,
+    "explanationFr": "Un excès de vitesse supérieur à 50 km/h entraîne le retrait de 6 points, une amende pouvant atteindre 1 500 €, la suspension immédiate du permis (jusqu'à 3 ans) et la confiscation du véhicule possible.",
+    "explanationEn": "Speeding more than 50 km/h over the limit results in loss of 6 points, a fine up to €1,500, immediate licence suspension (up to 3 years) and possible vehicle confiscation.",
+    "trapNote": "This is a contravention de 5e classe — the most serious speeding offence before criminal charges.",
+    "distractorNotes": {
+      "C": "4 points is for 40-50 km/h excess. Over 50 km/h costs 6 points.",
+      "D": "€135 is for minor speeding — over 50 km/h can cost up to €1,500."
+    },
+    "vocabulary": [
+      { "wordFr": "suspension du permis", "wordEn": "licence suspension", "definition": "Temporary withdrawal of driving privileges by administrative or judicial decision" },
+      { "wordFr": "confiscation du véhicule", "wordEn": "vehicle confiscation", "definition": "Seizure of the vehicle by authorities, which may become permanent" }
+    ]
+  },
+  {
+    "id": "cond-110",
+    "topic": "conducteur",
+    "difficulty": 3,
+    "questionFr": "Quelles affirmations sont correctes concernant l'usage du cannabis et la conduite ? (2 réponses)",
+    "questionEn": "Which statements are correct about cannabis use and driving? (2 answers)",
+    "options": {
+      "A": { "fr": "La conduite sous l'emprise du cannabis est un délit", "en": "Driving under the influence of cannabis is a criminal offence" },
+      "B": { "fr": "La sanction est de 2 ans d'emprisonnement et 4 500 € d'amende", "en": "The penalty is 2 years imprisonment and €4,500 fine" },
+      "C": { "fr": "Le cannabis n'affecte pas les réflexes", "en": "Cannabis does not affect reflexes" },
+      "D": { "fr": "Seul le cannabis fumé récemment est détectable", "en": "Only recently smoked cannabis is detectable" }
+    },
+    "correctAnswers": ["A", "B"],
+    "answerCount": 2,
+    "explanationFr": "La conduite sous l'emprise de stupéfiants est un délit passible de 2 ans de prison et 4 500 € d'amende, plus le retrait de 6 points. Le cannabis altère la perception, les réflexes et la concentration.",
+    "explanationEn": "Driving under the influence of drugs is a criminal offence punishable by 2 years in prison and a €4,500 fine, plus loss of 6 points. Cannabis impairs perception, reflexes and concentration.",
+    "trapNote": "Cannabis + alcohol combined doubles the penalties to 3 years and €9,000.",
+    "distractorNotes": {
+      "C": "Cannabis significantly impairs reaction time, judgment and coordination.",
+      "D": "THC can be detected in saliva for several hours and in blood for days."
+    },
+    "vocabulary": [
+      { "wordFr": "stupéfiants", "wordEn": "narcotics/drugs", "definition": "Illegal substances that impair mental and physical function" }
+    ]
+  },
+  {
+    "id": "cond-111",
+    "topic": "conducteur",
+    "difficulty": 3,
+    "questionFr": "Vous êtes impliqué dans un accident corporel. Quelles obligations avez-vous ? (2 réponses)",
+    "questionEn": "You are involved in an accident with injuries. What obligations do you have? (2 answers)",
+    "options": {
+      "A": { "fr": "Protéger, alerter et secourir", "en": "Protect, alert and rescue" },
+      "B": { "fr": "Rester sur place jusqu'à l'arrivée des secours", "en": "Stay at the scene until emergency services arrive" },
+      "C": { "fr": "Déplacer immédiatement les blessés hors de la route", "en": "Immediately move the injured off the road" },
+      "D": { "fr": "Prendre des photos avant tout", "en": "Take photos before anything else" }
+    },
+    "correctAnswers": ["A", "B"],
+    "answerCount": 2,
+    "explanationFr": "En cas d'accident corporel, vous devez appliquer la règle PAS (Protéger, Alerter, Secourir) et rester sur les lieux. Quitter les lieux est un délit de fuite passible de 3 ans de prison.",
+    "explanationEn": "In an accident with injuries, you must apply the PAS rule (Protect, Alert, Rescue) and stay at the scene. Leaving the scene is a hit-and-run offence punishable by 3 years in prison.",
+    "trapNote": "Never move an injured person unless there is immediate danger (fire, explosion) — spinal injuries can be worsened.",
+    "distractorNotes": {
+      "C": "Moving injured people can worsen spinal injuries — only move them if there's immediate danger like fire.",
+      "D": "Photos can wait — the priority is protecting the scene and helping the injured."
+    },
+    "vocabulary": [
+      { "wordFr": "accident corporel", "wordEn": "accident with injuries", "definition": "A traffic accident in which at least one person is physically hurt" },
+      { "wordFr": "délit de fuite", "wordEn": "hit and run", "definition": "The criminal offence of leaving the scene of an accident without stopping" }
+    ]
+  },
+  {
+    "id": "cond-112",
+    "topic": "conducteur",
+    "difficulty": 3,
+    "questionFr": "Quelles conditions rendent un contrôle technique défavorable pour non-contre-visite obligatoire ? (2 réponses)",
+    "questionEn": "Which conditions make a vehicle inspection result in a mandatory re-inspection? (2 answers)",
+    "options": {
+      "A": { "fr": "Défaillance majeure du système de freinage", "en": "Major failure of the braking system" },
+      "B": { "fr": "Pneus avec une profondeur de sculpture inférieure à 1,6 mm", "en": "Tyres with tread depth below 1.6 mm" },
+      "C": { "fr": "Un feu de recul défectueux", "en": "A faulty reverse light" },
+      "D": { "fr": "Un rétroviseur intérieur fissuré", "en": "A cracked interior mirror" }
+    },
+    "correctAnswers": ["A", "B"],
+    "answerCount": 2,
+    "explanationFr": "Les défaillances majeures du freinage et les pneus usés en dessous de 1,6 mm sont des défauts critiques nécessitant une contre-visite dans les 2 mois. Un feu de recul ou un rétroviseur intérieur sont des défauts mineurs.",
+    "explanationEn": "Major braking failures and tyres worn below 1.6 mm are critical defects requiring re-inspection within 2 months. A reverse light or interior mirror are minor defects.",
+    "trapNote": "1.6 mm is the legal minimum tread depth — below this the vehicle fails inspection and is illegal to drive.",
+    "distractorNotes": {
+      "C": "A faulty reverse light is a minor defect noted on the report but does not require re-inspection.",
+      "D": "A cracked interior mirror is a minor observation — the two exterior mirrors are the legally required ones."
+    },
+    "vocabulary": [
+      { "wordFr": "contrôle technique", "wordEn": "vehicle inspection/MOT", "definition": "A mandatory periodic inspection of vehicle safety and emissions" },
+      { "wordFr": "contre-visite", "wordEn": "re-inspection", "definition": "A follow-up inspection required when critical defects are found" }
+    ]
+  },
+  {
+    "id": "cond-113",
+    "topic": "conducteur",
+    "difficulty": 3,
+    "questionFr": "En cas de brouillard dense, quels feux devez-vous utiliser ? (2 réponses)",
+    "questionEn": "In dense fog, which lights must you use? (2 answers)",
+    "options": {
+      "A": { "fr": "Feux de croisement", "en": "Dipped headlights" },
+      "B": { "fr": "Feux de brouillard avant (si équipé)", "en": "Front fog lights (if equipped)" },
+      "C": { "fr": "Feux de route", "en": "High beams" },
+      "D": { "fr": "Feux de détresse", "en": "Hazard lights" }
+    },
+    "correctAnswers": ["A", "B"],
+    "answerCount": 2,
+    "explanationFr": "En brouillard dense, utilisez les feux de croisement et les feux de brouillard avant. Les feux de route sont interdits car ils créent un mur de lumière réfléchi par le brouillard.",
+    "explanationEn": "In dense fog, use dipped headlights and front fog lights. High beams are prohibited as they create a wall of light reflected by the fog.",
+    "trapNote": "High beams in fog are worse than useless — the fog reflects the light back, reducing visibility further.",
+    "distractorNotes": {
+      "C": "High beams reflect off fog particles and blind you — always use dipped headlights.",
+      "D": "Hazard lights are for stationary vehicles or sudden stops, not for driving in fog."
+    },
+    "vocabulary": [
+      { "wordFr": "feux de brouillard", "wordEn": "fog lights", "definition": "Low-mounted lights designed to illuminate the road surface in fog without reflection" },
+      { "wordFr": "feux de croisement", "wordEn": "dipped headlights", "definition": "The standard forward lights angled downward to avoid dazzling oncoming drivers" }
+    ]
   }
 ]

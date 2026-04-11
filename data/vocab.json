@@ -105,6 +105,13 @@
     "questionId": "arret-037"
   },
   {
+    "wordFr": "côte descendante",
+    "wordEn": "downhill slope",
+    "definition": "A road that goes downward in the direction of travel",
+    "topic": "arret_stationnement",
+    "questionId": "arret-056"
+  },
+  {
     "wordFr": "côté droit",
     "wordEn": "right side",
     "definition": "Le côté de la chaussée correspondant au sens de la marche en France",
@@ -712,6 +719,13 @@
     "definition": "A small motorised two-wheeler with limited speed, requiring registration",
     "topic": "autres_usagers",
     "questionId": "autr-068"
+  },
+  {
+    "wordFr": "de front",
+    "wordEn": "abreast/side by side",
+    "definition": "Riding next to each other in the same lane",
+    "topic": "autres_usagers",
+    "questionId": "autr-069"
   },
   {
     "wordFr": "dépasser",
@@ -1769,6 +1783,13 @@
     "definition": "Post-training driving programme from age 18 requiring 1,000 km with a supervisor",
     "topic": "conducteur",
     "questionId": "cond-046"
+  },
+  {
+    "wordFr": "confiscation du véhicule",
+    "wordEn": "vehicle confiscation",
+    "definition": "Seizure of the vehicle by authorities, which may become permanent",
+    "topic": "conducteur",
+    "questionId": "cond-109"
   },
   {
     "wordFr": "contre-indication",
