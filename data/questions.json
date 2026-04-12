@@ -49166,5 +49166,1186 @@
       "B": "Other vehicles' passenger counts are completely irrelevant to your pre-trip check.",
       "D": "Washer fluid color doesn't matter — what matters is having enough fluid."
     }
+  },
+  {
+    "id": "prio-164",
+    "topic": "priorite",
+    "difficulty": 2,
+    "signs": [
+      "yield",
+      "roundabout"
+    ],
+    "questionFr": "À l'approche d'un rond-point, quelles règles de priorité s'appliquent ?",
+    "questionEn": "When approaching a roundabout, which priority rules apply?",
+    "options": {
+      "A": {
+        "fr": "Vous devez céder le passage aux véhicules déjà engagés dans le rond-point",
+        "en": "You must yield to vehicles already in the roundabout"
+      },
+      "B": {
+        "fr": "Vous pouvez accélérer pour entrer avant les véhicules venant de la gauche",
+        "en": "You can accelerate to enter before vehicles coming from the left"
+      },
+      "C": {
+        "fr": "Un panneau 'cédez le passage' confirme cette obligation",
+        "en": "A yield sign confirms this obligation"
+      },
+      "D": {
+        "fr": "Les véhicules dans le rond-point doivent vous laisser entrer",
+        "en": "Vehicles in the roundabout must let you enter"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ],
+    "answerCount": 2,
+    "explanationFr": "En France, les véhicules entrant dans un rond-point doivent céder le passage à ceux qui y circulent déjà, sauf indication contraire. Le panneau 'cédez le passage' confirme cette règle.",
+    "explanationEn": "In France, vehicles entering a roundabout must yield to those already circulating, unless otherwise indicated. The yield sign confirms this rule.",
+    "trapNote": "Don't confuse with old-style roundabouts where priority was to the right (entering vehicles). Modern roundabouts always give priority to those already inside.",
+    "distractorNotes": {
+      "B": "Never accelerate to force entry — you must wait for a safe gap.",
+      "D": "The opposite is true: vehicles inside have priority, not those entering."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "prio-165",
+    "topic": "priorite",
+    "difficulty": 3,
+    "signs": [
+      "priority_road"
+    ],
+    "questionFr": "Vous circulez sur une route prioritaire. Parmi ces propositions, lesquelles sont correctes ?",
+    "questionEn": "You are driving on a priority road. Which of these statements are correct?",
+    "options": {
+      "A": {
+        "fr": "Les véhicules venant des routes secondaires doivent vous céder le passage",
+        "en": "Vehicles from secondary roads must yield to you"
+      },
+      "B": {
+        "fr": "Vous gardez la priorité même si vous tournez à gauche à une intersection",
+        "en": "You keep priority even when turning left at an intersection"
+      },
+      "C": {
+        "fr": "La priorité reste valable tant qu'aucun panneau ne l'annule",
+        "en": "The priority remains valid until a sign cancels it"
+      },
+      "D": {
+        "fr": "Vous n'avez jamais besoin de ralentir aux intersections sur cette route",
+        "en": "You never need to slow down at intersections on this road"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ],
+    "answerCount": 2,
+    "explanationFr": "Sur une route prioritaire, les véhicules des voies secondaires doivent vous céder le passage. Cette priorité reste en vigueur jusqu'à un panneau de fin de priorité. Cependant, tourner à gauche nécessite de céder le passage aux véhicules en face.",
+    "explanationEn": "On a priority road, vehicles from secondary roads must yield. This priority stays in effect until an end-of-priority sign. However, turning left requires yielding to oncoming vehicles.",
+    "trapNote": "Turning left on a priority road does NOT keep your priority over oncoming traffic — you must yield to them. And you should always stay alert at intersections.",
+    "distractorNotes": {
+      "B": "When turning left, you lose priority over oncoming traffic even on a priority road.",
+      "D": "Prudence is always required. A priority road doesn't mean blind speed through intersections."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "prio-166",
+    "topic": "priorite",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "Un véhicule de pompiers arrive derrière vous avec le gyrophare et la sirène. Que devez-vous faire ?",
+    "questionEn": "A fire truck approaches from behind with flashing lights and siren. What must you do?",
+    "options": {
+      "A": {
+        "fr": "Vous ranger sur le côté droit de la chaussée dès que possible",
+        "en": "Pull over to the right side of the road as soon as possible"
+      },
+      "B": {
+        "fr": "Accélérer pour dégager la voie plus rapidement",
+        "en": "Accelerate to clear the way faster"
+      },
+      "C": {
+        "fr": "Réduire votre vitesse pour faciliter son dépassement",
+        "en": "Reduce your speed to facilitate its passing"
+      },
+      "D": {
+        "fr": "Continuer normalement car les pompiers doivent vous contourner",
+        "en": "Continue normally because the fire truck must go around you"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ],
+    "answerCount": 2,
+    "explanationFr": "Face à un véhicule prioritaire (sirène + gyrophare), vous devez vous ranger à droite et ralentir pour faciliter son passage. Accélérer est dangereux et continuer sans réagir est interdit.",
+    "explanationEn": "When encountering a priority vehicle (siren + flashing light), you must pull to the right and slow down to facilitate its passage. Accelerating is dangerous and continuing without reacting is prohibited.",
+    "trapNote": "Both actions are required: move right AND slow down. Just doing one isn't enough.",
+    "distractorNotes": {
+      "B": "Accelerating is dangerous — it makes the situation more unpredictable for the emergency vehicle.",
+      "D": "You have a legal obligation to facilitate passage of emergency vehicles with active sirens."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "prio-167",
+    "topic": "priorite",
+    "difficulty": 3,
+    "signs": [
+      "stop"
+    ],
+    "questionFr": "Quelles sont les obligations à un panneau STOP ?",
+    "questionEn": "What are the obligations at a STOP sign?",
+    "options": {
+      "A": {
+        "fr": "Marquer un arrêt complet, même si aucun véhicule n'est visible",
+        "en": "Come to a complete stop, even if no vehicle is visible"
+      },
+      "B": {
+        "fr": "Ralentir suffisamment pour vérifier l'absence de danger",
+        "en": "Slow down enough to check for danger"
+      },
+      "C": {
+        "fr": "S'arrêter à la ligne d'arrêt ou au bord de la chaussée",
+        "en": "Stop at the stop line or at the edge of the road"
+      },
+      "D": {
+        "fr": "Céder le passage à tous les usagers circulant sur la route croisée",
+        "en": "Yield to all road users on the crossed road"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Le STOP impose trois obligations : un arrêt complet (pas un simple ralentissement), à la ligne d'arrêt ou au bord de la route, puis céder le passage à tous les usagers de la voie croisée.",
+    "explanationEn": "A STOP sign imposes three obligations: a complete stop (not just slowing down), at the stop line or road edge, then yielding to all users on the crossed road.",
+    "trapNote": "Slowing down is NOT enough — a STOP requires wheels to stop completely, even at an empty intersection.",
+    "distractorNotes": {
+      "B": "A STOP sign requires a full stop, not just slowing down. That's the difference with a yield sign."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "prio-168",
+    "topic": "priorite",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "À une intersection sans signalisation, quelles règles s'appliquent ?",
+    "questionEn": "At an intersection with no signs, which rules apply?",
+    "options": {
+      "A": {
+        "fr": "La priorité à droite s'applique",
+        "en": "Priority to the right applies"
+      },
+      "B": {
+        "fr": "Le véhicule le plus rapide a la priorité",
+        "en": "The fastest vehicle has priority"
+      },
+      "C": {
+        "fr": "Vous devez céder le passage aux véhicules venant de votre droite",
+        "en": "You must yield to vehicles coming from your right"
+      },
+      "D": {
+        "fr": "Le véhicule arrivé le premier passe en premier",
+        "en": "The vehicle that arrived first goes first"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ],
+    "answerCount": 2,
+    "explanationFr": "En l'absence de signalisation, c'est la règle de la priorité à droite qui s'applique : vous devez céder le passage aux véhicules arrivant de votre droite.",
+    "explanationEn": "Without signs, the priority-to-the-right rule applies: you must yield to vehicles approaching from your right.",
+    "trapNote": "Neither speed nor order of arrival matters. Only the position (right side) determines priority.",
+    "distractorNotes": {
+      "B": "Speed has absolutely nothing to do with priority. This is a dangerous misconception.",
+      "D": "Order of arrival is not a legal priority rule in France — only signage and position matter."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "prio-169",
+    "topic": "priorite",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Un tramway arrive à une intersection. Quelles affirmations sont vraies ?",
+    "questionEn": "A tram approaches an intersection. Which statements are true?",
+    "options": {
+      "A": {
+        "fr": "Le tramway a toujours la priorité, quelle que soit la signalisation",
+        "en": "The tram always has priority regardless of signage"
+      },
+      "B": {
+        "fr": "Le tramway ne peut pas s'arrêter aussi rapidement qu'une voiture",
+        "en": "The tram cannot stop as quickly as a car"
+      },
+      "C": {
+        "fr": "Vous devez lui céder le passage même sans panneau spécifique",
+        "en": "You must yield to it even without a specific sign"
+      },
+      "D": {
+        "fr": "Le tramway suit les mêmes règles de priorité que les voitures",
+        "en": "The tram follows the same priority rules as cars"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Le tramway bénéficie d'une priorité absolue sur tous les autres véhicules. Sa distance de freinage est beaucoup plus longue qu'une voiture, ce qui justifie cette règle. Vous devez toujours lui céder le passage.",
+    "explanationEn": "Trams have absolute priority over all other vehicles. Their braking distance is much longer than a car's, which justifies this rule. You must always yield to them.",
+    "trapNote": "Trams are NOT like regular vehicles. They ALWAYS have priority — this is a very common exam question.",
+    "distractorNotes": {
+      "D": "Trams have special priority rules that override normal vehicle priority. They don't follow car rules."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "prio-170",
+    "topic": "priorite",
+    "difficulty": 2,
+    "signs": [
+      "pedestrian_crossing"
+    ],
+    "questionFr": "Un piéton s'engage sur un passage protégé. Quelles sont vos obligations ?",
+    "questionEn": "A pedestrian steps onto a crosswalk. What are your obligations?",
+    "options": {
+      "A": {
+        "fr": "Vous devez vous arrêter pour le laisser traverser",
+        "en": "You must stop to let them cross"
+      },
+      "B": {
+        "fr": "Vous pouvez klaxonner pour qu'il se dépêche",
+        "en": "You can honk to make them hurry"
+      },
+      "C": {
+        "fr": "Cette obligation s'applique même si le piéton est encore sur le trottoir et manifeste l'intention de traverser",
+        "en": "This obligation applies even if the pedestrian is still on the sidewalk and shows intent to cross"
+      },
+      "D": {
+        "fr": "Vous pouvez continuer s'il reste sur l'autre moitié de la chaussée",
+        "en": "You can continue if they're still on the other half of the road"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ],
+    "answerCount": 2,
+    "explanationFr": "Tout conducteur doit céder le passage au piéton engagé sur un passage protégé ou manifestant clairement l'intention de traverser. Klaxonner ou ignorer un piéton sur la chaussée est interdit.",
+    "explanationEn": "Every driver must yield to pedestrians on a crosswalk or clearly showing intent to cross. Honking or ignoring a pedestrian on the road is prohibited.",
+    "trapNote": "Since 2018, the law extends to pedestrians showing intent to cross — they don't need to be on the road yet.",
+    "distractorNotes": {
+      "B": "Honking at pedestrians on crosswalks is prohibited and can be fined.",
+      "D": "You must stop completely regardless of which half of the road the pedestrian is on."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "prio-171",
+    "topic": "priorite",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Vous arrivez à une intersection où un agent de police dirige la circulation. Parmi ces affirmations, lesquelles sont exactes ?",
+    "questionEn": "You arrive at an intersection where a police officer is directing traffic. Which statements are correct?",
+    "options": {
+      "A": {
+        "fr": "Les gestes de l'agent prévalent sur les feux tricolores",
+        "en": "The officer's gestures take precedence over traffic lights"
+      },
+      "B": {
+        "fr": "Les gestes de l'agent prévalent sur les panneaux de signalisation",
+        "en": "The officer's gestures take precedence over road signs"
+      },
+      "C": {
+        "fr": "Vous devez suivre les feux car ils sont automatiques",
+        "en": "You must follow the lights because they are automatic"
+      },
+      "D": {
+        "fr": "L'agent ne peut diriger que les piétons, pas les véhicules",
+        "en": "The officer can only direct pedestrians, not vehicles"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "answerCount": 2,
+    "explanationFr": "Un agent de police a autorité sur toute la signalisation, y compris les feux tricolores et les panneaux. Ses gestes prévalent sur tout le reste.",
+    "explanationEn": "A police officer has authority over all signage, including traffic lights and road signs. Their gestures override everything else.",
+    "trapNote": "The hierarchy is: police officer > traffic lights > road signs > priority to the right. Officer always wins.",
+    "distractorNotes": {
+      "C": "When an officer is directing traffic, their instructions override the traffic lights.",
+      "D": "Police officers direct all road users — vehicles, cyclists, and pedestrians alike."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "prio-172",
+    "topic": "priorite",
+    "difficulty": 2,
+    "signs": [
+      "yield"
+    ],
+    "questionFr": "Quelle est la différence entre un panneau 'cédez le passage' et un panneau STOP ?",
+    "questionEn": "What is the difference between a yield sign and a STOP sign?",
+    "options": {
+      "A": {
+        "fr": "Le STOP impose un arrêt complet, le cédez-le-passage permet de passer si la voie est libre",
+        "en": "STOP requires a complete stop; yield allows passing if the way is clear"
+      },
+      "B": {
+        "fr": "Les deux imposent de céder le passage aux usagers de la voie croisée",
+        "en": "Both require yielding to users on the crossed road"
+      },
+      "C": {
+        "fr": "Le cédez-le-passage autorise à ne pas s'arrêter s'il n'y a aucun danger",
+        "en": "Yield allows not stopping if there is no danger"
+      },
+      "D": {
+        "fr": "Le STOP et le cédez-le-passage sont exactement équivalents",
+        "en": "STOP and yield are exactly equivalent"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Les deux panneaux imposent de céder le passage. La différence : le STOP exige un arrêt complet dans tous les cas, tandis que le cédez-le-passage permet de passer sans s'arrêter si aucun usager n'arrive.",
+    "explanationEn": "Both signs require yielding. The difference: STOP demands a complete stop in all cases, while yield allows passing without stopping if no other user is approaching.",
+    "trapNote": "Both share the yielding rule — the ONLY difference is whether you must stop completely or not.",
+    "distractorNotes": {
+      "D": "They are not equivalent. STOP always requires a full stop; yield does not."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "prio-173",
+    "topic": "priorite",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Vous sortez d'un parking privé pour rejoindre la chaussée. Quelles règles devez-vous respecter ?",
+    "questionEn": "You are exiting a private parking lot to join the road. Which rules must you follow?",
+    "options": {
+      "A": {
+        "fr": "Vous devez céder le passage à tous les usagers circulant sur la chaussée",
+        "en": "You must yield to all road users on the roadway"
+      },
+      "B": {
+        "fr": "Les piétons sur le trottoir que vous traversez ont la priorité",
+        "en": "Pedestrians on the sidewalk you cross have priority"
+      },
+      "C": {
+        "fr": "Vous avez la priorité car vous venez de la droite",
+        "en": "You have priority because you're coming from the right"
+      },
+      "D": {
+        "fr": "Seuls les véhicules ont la priorité, pas les cyclistes",
+        "en": "Only vehicles have priority, not cyclists"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "answerCount": 2,
+    "explanationFr": "En sortant d'un accès privé (parking, garage), vous n'avez aucune priorité. Vous devez céder le passage à tous les usagers de la chaussée et du trottoir, y compris piétons et cyclistes.",
+    "explanationEn": "When exiting a private access (parking, garage), you have no priority. You must yield to all road and sidewalk users, including pedestrians and cyclists.",
+    "trapNote": "Priority to the right does NOT apply when exiting a private property — you always yield to everyone.",
+    "distractorNotes": {
+      "C": "Priority to the right never applies when leaving private property. You have zero priority.",
+      "D": "Cyclists have the same priority as other road users — you must yield to them too."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "arret-078",
+    "topic": "arret_stationnement",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "Quelles sont les différences entre un arrêt et un stationnement ?",
+    "questionEn": "What are the differences between stopping and parking?",
+    "options": {
+      "A": {
+        "fr": "L'arrêt est de courte durée, le conducteur reste à proximité",
+        "en": "Stopping is short-term, the driver stays nearby"
+      },
+      "B": {
+        "fr": "Le stationnement signifie que le véhicule est immobilisé pour une durée plus longue",
+        "en": "Parking means the vehicle is immobilized for a longer duration"
+      },
+      "C": {
+        "fr": "L'arrêt et le stationnement sont exactement la même chose",
+        "en": "Stopping and parking are exactly the same thing"
+      },
+      "D": {
+        "fr": "Pendant un arrêt, le moteur doit obligatoirement rester allumé",
+        "en": "During a stop, the engine must stay running"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "answerCount": 2,
+    "explanationFr": "L'arrêt est une immobilisation momentanée (montée/descente de passagers, chargement) avec le conducteur à proximité. Le stationnement est une immobilisation prolongée, que le conducteur soit présent ou non.",
+    "explanationEn": "Stopping is a momentary immobilization (picking up/dropping off, loading) with the driver nearby. Parking is a prolonged immobilization, whether the driver is present or not.",
+    "trapNote": "The key distinction is duration and driver proximity — not whether the engine is on or off.",
+    "distractorNotes": {
+      "C": "They are legally distinct — penalties and rules differ for each.",
+      "D": "There is no legal requirement to keep the engine running during a stop."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "arret-079",
+    "topic": "arret_stationnement",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Dans quels cas le stationnement est-il considéré comme dangereux ?",
+    "questionEn": "In which cases is parking considered dangerous?",
+    "options": {
+      "A": {
+        "fr": "À proximité d'un virage sans visibilité suffisante",
+        "en": "Near a bend without sufficient visibility"
+      },
+      "B": {
+        "fr": "Au sommet d'une côte sans visibilité",
+        "en": "At the top of a hill without visibility"
+      },
+      "C": {
+        "fr": "Dans un parking souterrain bien éclairé",
+        "en": "In a well-lit underground parking garage"
+      },
+      "D": {
+        "fr": "À proximité d'une intersection sans visibilité",
+        "en": "Near an intersection without visibility"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Le stationnement est dangereux quand il réduit la visibilité pour les autres usagers : près d'un virage, au sommet d'une côte, ou près d'une intersection sans visibilité. Un parking prévu à cet effet n'est pas concerné.",
+    "explanationEn": "Parking is dangerous when it reduces visibility for other road users: near a bend, at a hilltop, or near an intersection without visibility. A designated parking area is not affected.",
+    "trapNote": "The common thread is visibility — any location where your parked car blocks the view of other drivers is considered dangerous.",
+    "distractorNotes": {
+      "C": "A designated parking garage is a safe and legal place to park by design."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "arret-080",
+    "topic": "arret_stationnement",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "Quelles précautions devez-vous prendre en stationnant en côte montante ?",
+    "questionEn": "What precautions should you take when parking on an uphill slope?",
+    "options": {
+      "A": {
+        "fr": "Tourner les roues vers le trottoir",
+        "en": "Turn the wheels toward the curb"
+      },
+      "B": {
+        "fr": "Serrer le frein à main",
+        "en": "Engage the parking brake"
+      },
+      "C": {
+        "fr": "Laisser le véhicule en point mort",
+        "en": "Leave the vehicle in neutral"
+      },
+      "D": {
+        "fr": "Engager une vitesse (première)",
+        "en": "Engage a gear (first)"
+      }
+    },
+    "correctAnswers": [
+      "B",
+      "D"
+    ],
+    "answerCount": 2,
+    "explanationFr": "En côte montante, serrez le frein à main et engagez la première vitesse pour empêcher le véhicule de reculer. Tourner les roues vers le trottoir est pour la descente, pas la montée.",
+    "explanationEn": "On an uphill slope, engage the parking brake and leave in first gear to prevent rolling backward. Turning wheels toward the curb is for downhill, not uphill.",
+    "trapNote": "Uphill = first gear + handbrake. Downhill = reverse gear + handbrake + wheels toward curb. Don't mix them up!",
+    "distractorNotes": {
+      "A": "Wheels toward the curb is for downhill parking, so the car rolls into the curb if brakes fail.",
+      "C": "Never leave in neutral on a slope — the car could roll away."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "arret-081",
+    "topic": "arret_stationnement",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "Le stationnement est interdit à moins de combien de mètres d'une intersection en l'absence de signalisation ?",
+    "questionEn": "Parking is prohibited within how many meters of an intersection without signage?",
+    "options": {
+      "A": {
+        "fr": "5 mètres",
+        "en": "5 meters"
+      },
+      "B": {
+        "fr": "Le stationnement gênant près d'une intersection masque la visibilité",
+        "en": "Obstructive parking near an intersection blocks visibility"
+      },
+      "C": {
+        "fr": "12 mètres",
+        "en": "12 meters"
+      },
+      "D": {
+        "fr": "Cette interdiction vise à protéger la sécurité de tous les usagers",
+        "en": "This prohibition aims to protect the safety of all road users"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Le stationnement est interdit à moins de 5 mètres d'une intersection. Cette règle existe car un véhicule stationné trop près masque la visibilité et met en danger les usagers qui s'engagent.",
+    "explanationEn": "Parking is prohibited within 5 meters of an intersection. This rule exists because a vehicle parked too close blocks visibility and endangers users entering the intersection.",
+    "trapNote": "5 meters, not 12. This is a frequently tested distance on the exam.",
+    "distractorNotes": {
+      "C": "12 meters is not the correct distance — the rule specifies 5 meters."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "arret-082",
+    "topic": "arret_stationnement",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Quelles sont les conséquences d'un stationnement sur un passage piéton ?",
+    "questionEn": "What are the consequences of parking on a pedestrian crossing?",
+    "options": {
+      "A": {
+        "fr": "Une contravention de 4ème classe (135 €)",
+        "en": "A 4th-class fine (€135)"
+      },
+      "B": {
+        "fr": "Le véhicule peut être mis en fourrière",
+        "en": "The vehicle can be towed"
+      },
+      "C": {
+        "fr": "Cela met en danger les piétons qui doivent contourner le véhicule",
+        "en": "It endangers pedestrians who must go around the vehicle"
+      },
+      "D": {
+        "fr": "Un simple avertissement sans amende",
+        "en": "A simple warning without a fine"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Stationner sur un passage piéton est une infraction grave : contravention de 135 €, mise en fourrière possible, et surtout mise en danger des piétons obligés de contourner dans la circulation.",
+    "explanationEn": "Parking on a crosswalk is a serious offense: €135 fine, possible towing, and most importantly it endangers pedestrians forced to walk around the vehicle into traffic.",
+    "trapNote": "This is not a minor infraction — it's a 4th-class offense with towing risk, not just a warning.",
+    "distractorNotes": {
+      "D": "There is no warning for this — it's directly a fine with possible towing."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "arret-083",
+    "topic": "arret_stationnement",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "Quelles règles s'appliquent au stationnement sur une place réservée aux personnes handicapées ?",
+    "questionEn": "What rules apply to parking in a space reserved for disabled persons?",
+    "options": {
+      "A": {
+        "fr": "Seuls les véhicules avec une carte de stationnement pour handicapé peuvent s'y garer",
+        "en": "Only vehicles with a disabled parking card can park there"
+      },
+      "B": {
+        "fr": "Vous pouvez y stationner quelques minutes si vous restez dans le véhicule",
+        "en": "You can park there for a few minutes if you stay in the vehicle"
+      },
+      "C": {
+        "fr": "L'amende pour stationnement abusif sur ces places est de 135 €",
+        "en": "The fine for illegal parking in these spaces is €135"
+      },
+      "D": {
+        "fr": "Ces places sont plus larges pour permettre l'accès en fauteuil roulant",
+        "en": "These spaces are wider to allow wheelchair access"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Les places handicapées sont exclusivement réservées aux détenteurs d'une carte appropriée. Elles sont plus larges pour l'accessibilité. L'usage abusif est passible de 135 € d'amende.",
+    "explanationEn": "Disabled spaces are exclusively reserved for holders of an appropriate card. They are wider for accessibility. Misuse carries a €135 fine.",
+    "trapNote": "No exceptions — even staying in the car doesn't make it legal. The card must be displayed.",
+    "distractorNotes": {
+      "B": "There is no exception for 'staying in the vehicle' — the space is strictly reserved."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "arret-084",
+    "topic": "arret_stationnement",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Quelles affirmations sont correctes concernant le stationnement en double file ?",
+    "questionEn": "Which statements are correct about double parking?",
+    "options": {
+      "A": {
+        "fr": "Il est interdit car il gêne la circulation",
+        "en": "It is prohibited because it obstructs traffic"
+      },
+      "B": {
+        "fr": "Il est toléré si vous mettez vos feux de détresse",
+        "en": "It is tolerated if you put on your hazard lights"
+      },
+      "C": {
+        "fr": "Il peut empêcher les véhicules garés de sortir",
+        "en": "It can prevent parked vehicles from leaving"
+      },
+      "D": {
+        "fr": "Il est considéré comme un stationnement gênant",
+        "en": "It is considered obstructive parking"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Le stationnement en double file est interdit et considéré comme gênant. Il bloque la circulation et empêche les véhicules garés de partir. Les feux de détresse ne rendent pas cette pratique légale.",
+    "explanationEn": "Double parking is prohibited and considered obstructive. It blocks traffic and prevents parked vehicles from leaving. Hazard lights do not make this practice legal.",
+    "trapNote": "Hazard lights never make illegal parking legal — this is a very common misconception tested on the exam.",
+    "distractorNotes": {
+      "B": "Hazard lights signal a problem but do not legalize prohibited parking."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "arret-085",
+    "topic": "arret_stationnement",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "La nuit, quelles obligations avez-vous si votre véhicule est stationné sur la chaussée hors agglomération ?",
+    "questionEn": "At night, what are your obligations if your vehicle is parked on the road outside a built-up area?",
+    "options": {
+      "A": {
+        "fr": "Allumer les feux de position du côté de la circulation",
+        "en": "Turn on the parking lights on the traffic side"
+      },
+      "B": {
+        "fr": "Aucun éclairage n'est nécessaire si le véhicule est visible",
+        "en": "No lighting is needed if the vehicle is visible"
+      },
+      "C": {
+        "fr": "Placer un triangle de présignalisation si nécessaire",
+        "en": "Place a warning triangle if necessary"
+      },
+      "D": {
+        "fr": "Allumer les feux de croisement toute la nuit",
+        "en": "Keep dipped headlights on all night"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ],
+    "answerCount": 2,
+    "explanationFr": "Hors agglomération de nuit, un véhicule stationné sur la chaussée doit être signalé par les feux de position côté circulation. Un triangle peut être nécessaire pour renforcer la visibilité.",
+    "explanationEn": "Outside built-up areas at night, a vehicle parked on the road must be signaled by parking lights on the traffic side. A warning triangle may be needed to enhance visibility.",
+    "trapNote": "Parking lights, not dipped headlights. And 'visible' alone isn't enough — active lighting is required.",
+    "distractorNotes": {
+      "B": "Passive visibility isn't sufficient at night outside built-up areas — active lighting is mandatory.",
+      "D": "Dipped headlights drain the battery. Parking lights are the correct choice."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "arret-086",
+    "topic": "arret_stationnement",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "Quelles sont les règles du stationnement en zone bleue ?",
+    "questionEn": "What are the rules for parking in a blue zone?",
+    "options": {
+      "A": {
+        "fr": "Un disque de stationnement doit être placé de manière visible",
+        "en": "A parking disc must be placed visibly"
+      },
+      "B": {
+        "fr": "La durée de stationnement est limitée (généralement 1h30)",
+        "en": "Parking duration is limited (usually 1h30)"
+      },
+      "C": {
+        "fr": "Le stationnement est gratuit et illimité",
+        "en": "Parking is free and unlimited"
+      },
+      "D": {
+        "fr": "L'heure d'arrivée doit être indiquée sur le disque",
+        "en": "The arrival time must be indicated on the disc"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "En zone bleue, le stationnement est gratuit mais limité dans le temps. Vous devez afficher un disque de stationnement avec votre heure d'arrivée de manière visible sur le pare-brise.",
+    "explanationEn": "In a blue zone, parking is free but time-limited. You must display a parking disc with your arrival time visibly on the windshield.",
+    "trapNote": "Blue zone = free but LIMITED. You need the disc. Without it, you can be fined even if under the time limit.",
+    "distractorNotes": {
+      "C": "It's free but definitely not unlimited — exceeding the time limit results in a fine."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "arret-087",
+    "topic": "arret_stationnement",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Quelles infractions de stationnement peuvent entraîner une mise en fourrière ?",
+    "questionEn": "Which parking violations can result in towing?",
+    "options": {
+      "A": {
+        "fr": "Stationnement sur un passage piéton",
+        "en": "Parking on a pedestrian crossing"
+      },
+      "B": {
+        "fr": "Stationnement sur un emplacement réservé aux bus",
+        "en": "Parking in a bus-only space"
+      },
+      "C": {
+        "fr": "Dépassement de 5 minutes sur un horodateur",
+        "en": "Exceeding a parking meter by 5 minutes"
+      },
+      "D": {
+        "fr": "Stationnement devant une sortie de garage privé",
+        "en": "Parking in front of a private garage exit"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Le stationnement gênant ou dangereux (passage piéton, emplacement bus, sortie de garage) peut entraîner la mise en fourrière. Un simple dépassement de temps sur horodateur ne justifie généralement pas la fourrière.",
+    "explanationEn": "Obstructive or dangerous parking (crosswalk, bus space, garage exit) can result in towing. Simply exceeding a parking meter typically does not justify towing.",
+    "trapNote": "Towing is for obstructive/dangerous situations, not for minor meter violations.",
+    "distractorNotes": {
+      "C": "A small meter overage results in a fine, not towing — the vehicle isn't obstructing anything."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "tunn-165",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "Quelles précautions devez-vous prendre avant d'entrer dans un tunnel ?",
+    "questionEn": "What precautions should you take before entering a tunnel?",
+    "options": {
+      "A": {
+        "fr": "Allumer les feux de croisement",
+        "en": "Turn on dipped headlights"
+      },
+      "B": {
+        "fr": "Retirer vos lunettes de soleil",
+        "en": "Remove your sunglasses"
+      },
+      "C": {
+        "fr": "Augmenter votre vitesse pour traverser rapidement",
+        "en": "Increase speed to cross quickly"
+      },
+      "D": {
+        "fr": "Respecter les distances de sécurité indiquées",
+        "en": "Maintain the indicated safety distances"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Avant un tunnel : allumez les feux de croisement pour être vu, retirez vos lunettes de soleil pour vous adapter à la luminosité réduite, et respectez les distances de sécurité. N'accélérez jamais.",
+    "explanationEn": "Before a tunnel: turn on dipped headlights to be seen, remove sunglasses to adapt to reduced light, and maintain safety distances. Never accelerate.",
+    "trapNote": "Three actions to remember: lights ON, sunglasses OFF, distances maintained. Speed should decrease, not increase.",
+    "distractorNotes": {
+      "C": "Speeding in a tunnel is extremely dangerous due to confined space and reduced visibility."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "tunn-166",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "En cas d'incendie dans un tunnel, que devez-vous faire ?",
+    "questionEn": "In case of fire in a tunnel, what should you do?",
+    "options": {
+      "A": {
+        "fr": "Arrêter le véhicule, couper le moteur et laisser la clé sur le contact",
+        "en": "Stop the vehicle, turn off the engine and leave the key in the ignition"
+      },
+      "B": {
+        "fr": "Quitter le véhicule et se diriger vers les issues de secours",
+        "en": "Leave the vehicle and head for emergency exits"
+      },
+      "C": {
+        "fr": "Faire demi-tour pour sortir du tunnel",
+        "en": "Turn around to exit the tunnel"
+      },
+      "D": {
+        "fr": "Ne pas verrouiller le véhicule pour permettre son déplacement",
+        "en": "Do not lock the vehicle to allow it to be moved"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "En cas d'incendie : arrêtez-vous, coupez le moteur, laissez la clé (ou le démarrage accessible), ne verrouillez pas, et dirigez-vous vers les issues de secours. Ne faites jamais demi-tour.",
+    "explanationEn": "In case of fire: stop, turn off the engine, leave the key (or make the start accessible), don't lock, and head for emergency exits. Never turn around.",
+    "trapNote": "Leave the key so firefighters can move your car. NEVER turn around — emergency exits are your escape route.",
+    "distractorNotes": {
+      "C": "Turning around creates chaos and blocks emergency vehicles. Always use the emergency exits."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "tunn-167",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "Quels équipements de sécurité trouve-t-on généralement dans un tunnel ?",
+    "questionEn": "What safety equipment is typically found in a tunnel?",
+    "options": {
+      "A": {
+        "fr": "Des niches de sécurité avec téléphone et extincteur",
+        "en": "Safety recesses with phone and fire extinguisher"
+      },
+      "B": {
+        "fr": "Des issues de secours signalées par des panneaux lumineux verts",
+        "en": "Emergency exits marked by green illuminated signs"
+      },
+      "C": {
+        "fr": "Des radars de vitesse à chaque entrée",
+        "en": "Speed cameras at every entrance"
+      },
+      "D": {
+        "fr": "Un système de ventilation pour évacuer les fumées",
+        "en": "A ventilation system to evacuate smoke"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Les tunnels sont équipés de niches de sécurité (téléphone + extincteur), d'issues de secours avec panneaux verts lumineux, et d'un système de ventilation. Les radars ne sont pas un équipement de sécurité standard.",
+    "explanationEn": "Tunnels are equipped with safety recesses (phone + extinguisher), emergency exits with green illuminated signs, and a ventilation system. Speed cameras are not standard safety equipment.",
+    "trapNote": "Know the 3 key safety features: recesses, exits, ventilation. Speed cameras are enforcement, not safety equipment.",
+    "distractorNotes": {
+      "C": "Speed cameras may exist but they are traffic enforcement devices, not safety equipment."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "tunn-168",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Votre véhicule tombe en panne dans un tunnel. Que devez-vous faire ?",
+    "questionEn": "Your vehicle breaks down in a tunnel. What should you do?",
+    "options": {
+      "A": {
+        "fr": "Si possible, rejoindre une niche de sécurité ou un garage",
+        "en": "If possible, reach a safety recess or a lay-by"
+      },
+      "B": {
+        "fr": "Allumer les feux de détresse immédiatement",
+        "en": "Turn on hazard lights immediately"
+      },
+      "C": {
+        "fr": "Rester dans le véhicule et attendre les secours",
+        "en": "Stay in the vehicle and wait for rescue"
+      },
+      "D": {
+        "fr": "Utiliser le téléphone de la niche de sécurité pour signaler la panne",
+        "en": "Use the safety recess phone to report the breakdown"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "En panne dans un tunnel : allumez les feux de détresse, essayez de rejoindre une niche de sécurité, et utilisez le téléphone d'urgence pour prévenir l'opérateur. Ne restez pas dans le véhicule.",
+    "explanationEn": "Breakdown in a tunnel: turn on hazard lights, try to reach a safety recess, and use the emergency phone to alert the operator. Do not stay in the vehicle.",
+    "trapNote": "Never stay in the vehicle in a tunnel — it's a confined space with traffic. Get to a safety recess.",
+    "distractorNotes": {
+      "C": "Staying in the vehicle is dangerous — other vehicles might not see you in time in the confined space."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "tunn-169",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "À l'approche d'un passage à niveau, quelles précautions prenez-vous ?",
+    "questionEn": "When approaching a level crossing, what precautions do you take?",
+    "options": {
+      "A": {
+        "fr": "Ralentir et vérifier qu'aucun train n'approche",
+        "en": "Slow down and check that no train is approaching"
+      },
+      "B": {
+        "fr": "Ne jamais s'engager si les barrières commencent à se baisser",
+        "en": "Never proceed if the barriers are starting to lower"
+      },
+      "C": {
+        "fr": "Accélérer pour passer avant la fermeture des barrières",
+        "en": "Accelerate to pass before the barriers close"
+      },
+      "D": {
+        "fr": "S'assurer que vous pouvez dégager complètement le passage",
+        "en": "Ensure you can completely clear the crossing"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Passage à niveau : ralentissez, vérifiez l'absence de train, ne vous engagez jamais si les barrières bougent, et assurez-vous de pouvoir dégager totalement le passage avant de vous engager.",
+    "explanationEn": "Level crossing: slow down, check for trains, never enter if barriers are moving, and make sure you can fully clear the crossing before entering.",
+    "trapNote": "If there's a traffic jam ahead, DO NOT enter the crossing even if barriers are up — you must be able to clear it completely.",
+    "distractorNotes": {
+      "C": "Racing barriers is extremely dangerous and illegal — trains cannot stop in time."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "tunn-170",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Les feux rouges clignotants à un passage à niveau signifient que :",
+    "questionEn": "Flashing red lights at a level crossing mean that:",
+    "options": {
+      "A": {
+        "fr": "Un train approche ou traverse le passage",
+        "en": "A train is approaching or crossing"
+      },
+      "B": {
+        "fr": "Vous devez vous arrêter avant la ligne d'arrêt",
+        "en": "You must stop before the stop line"
+      },
+      "C": {
+        "fr": "Vous pouvez passer prudemment si vous ne voyez pas de train",
+        "en": "You can cross carefully if you don't see a train"
+      },
+      "D": {
+        "fr": "Il est interdit de s'engager sur le passage",
+        "en": "It is prohibited to enter the crossing"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Des feux rouges clignotants signifient qu'un train approche ou passe. Vous devez vous arrêter et ne pas vous engager, même si vous ne voyez pas le train — il peut être masqué par un virage.",
+    "explanationEn": "Flashing red lights mean a train is approaching or passing. You must stop and not enter, even if you can't see the train — it may be hidden by a curve.",
+    "trapNote": "Even if you can't see the train, the lights mean STOP. Trains can approach from blind spots.",
+    "distractorNotes": {
+      "C": "The inability to see a train does NOT mean it's safe. Flashing reds are an absolute prohibition."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "tunn-171",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "Quelles affirmations sont vraies concernant la conduite dans un tunnel ?",
+    "questionEn": "Which statements are true about driving in a tunnel?",
+    "options": {
+      "A": {
+        "fr": "Il est interdit de faire demi-tour",
+        "en": "Turning around is prohibited"
+      },
+      "B": {
+        "fr": "Il est interdit de s'arrêter sauf en cas d'urgence",
+        "en": "Stopping is prohibited except in an emergency"
+      },
+      "C": {
+        "fr": "Vous pouvez dépasser si le tunnel a deux voies dans votre sens",
+        "en": "You can overtake if the tunnel has two lanes in your direction"
+      },
+      "D": {
+        "fr": "La marche arrière est autorisée pour corriger votre trajectoire",
+        "en": "Reversing is permitted to correct your trajectory"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ],
+    "answerCount": 2,
+    "explanationFr": "Dans un tunnel, le demi-tour et l'arrêt sont strictement interdits (sauf urgence). Le dépassement peut être autorisé si les marquages le permettent, mais la marche arrière est toujours interdite.",
+    "explanationEn": "In a tunnel, turning around and stopping are strictly prohibited (except in emergencies). Overtaking may be allowed if road markings permit it, but reversing is always prohibited.",
+    "trapNote": "C is a trap — overtaking CAN be allowed in some tunnels with proper markings, so it's not universally true or false. The question asks what's always true.",
+    "distractorNotes": {
+      "C": "Overtaking depends on road markings, not a blanket rule. It's sometimes allowed, sometimes not.",
+      "D": "Reversing in a tunnel is extremely dangerous and always prohibited."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "tunn-172",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Que devez-vous faire si vous êtes bloqué sur un passage à niveau et que les barrières se ferment ?",
+    "questionEn": "What should you do if you're stuck on a level crossing and the barriers are closing?",
+    "options": {
+      "A": {
+        "fr": "Avancer et casser la barrière — elles sont conçues pour céder",
+        "en": "Drive forward and break through the barrier — they are designed to give way"
+      },
+      "B": {
+        "fr": "Appuyer sur le bouton d'alerte s'il y en a un",
+        "en": "Press the alert button if there is one"
+      },
+      "C": {
+        "fr": "Rester dans le véhicule et attendre l'ouverture des barrières",
+        "en": "Stay in the vehicle and wait for the barriers to open"
+      },
+      "D": {
+        "fr": "Quitter le véhicule si vous ne pouvez pas le dégager",
+        "en": "Leave the vehicle if you cannot move it clear"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Les barrières de passage à niveau sont conçues pour être cassées par un véhicule — foncez à travers. Si impossible, appuyez sur le bouton d'alerte et quittez le véhicule. Ne restez jamais dans le véhicule sur les voies.",
+    "explanationEn": "Level crossing barriers are designed to be broken by a vehicle — drive through them. If that's not possible, press the alert button and leave the vehicle. Never stay in the vehicle on the tracks.",
+    "trapNote": "Yes, you CAN break the barriers — they're designed to break easily. This surprises many candidates.",
+    "distractorNotes": {
+      "C": "Never wait on the tracks. A train could arrive at any moment and cannot stop in time."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "tunn-173",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 2,
+    "signs": [],
+    "questionFr": "À quel type de passage à niveau les barrières sont-elles absentes ?",
+    "questionEn": "At what type of level crossing are there no barriers?",
+    "options": {
+      "A": {
+        "fr": "Les passages à niveau avec une croix de Saint-André seule",
+        "en": "Level crossings with a Saint Andrew's cross alone"
+      },
+      "B": {
+        "fr": "Ces passages exigent une vigilance accrue du conducteur",
+        "en": "These crossings require increased driver vigilance"
+      },
+      "C": {
+        "fr": "Tous les passages à niveau ont obligatoirement des barrières",
+        "en": "All level crossings must have barriers"
+      },
+      "D": {
+        "fr": "Le conducteur doit vérifier lui-même l'absence de train",
+        "en": "The driver must personally check for approaching trains"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "Certains passages à niveau n'ont qu'une croix de Saint-André, sans barrières ni feux. Le conducteur doit redoubler de vigilance et vérifier personnellement qu'aucun train n'approche avant de traverser.",
+    "explanationEn": "Some level crossings only have a Saint Andrew's cross, without barriers or lights. The driver must be extra vigilant and personally verify no train is approaching before crossing.",
+    "trapNote": "Not all level crossings have barriers! The Saint Andrew's cross alone means YOU are responsible for checking.",
+    "distractorNotes": {
+      "C": "This is false — many rural crossings have only a cross, no barriers. These are the most dangerous."
+    },
+    "vocabulary": []
+  },
+  {
+    "id": "tunn-174",
+    "topic": "tunnels_passages_niveau",
+    "difficulty": 3,
+    "signs": [],
+    "questionFr": "Quelles sont les règles de distance de sécurité dans un tunnel ?",
+    "questionEn": "What are the safety distance rules in a tunnel?",
+    "options": {
+      "A": {
+        "fr": "La distance minimale est souvent de 100 mètres entre les véhicules",
+        "en": "The minimum distance is often 100 meters between vehicles"
+      },
+      "B": {
+        "fr": "Des repères visuels au sol ou sur les murs indiquent cette distance",
+        "en": "Visual markers on the ground or walls indicate this distance"
+      },
+      "C": {
+        "fr": "La distance peut être réduite si la visibilité est bonne",
+        "en": "The distance can be reduced if visibility is good"
+      },
+      "D": {
+        "fr": "Ces distances sont plus grandes que sur route ouverte à cause de l'espace confiné",
+        "en": "These distances are larger than on open road due to the confined space"
+      }
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "answerCount": 3,
+    "explanationFr": "En tunnel, la distance de sécurité est renforcée (souvent 100 m minimum) car l'espace confiné rend tout accident plus grave. Des repères visuels aident les conducteurs à évaluer cette distance.",
+    "explanationEn": "In tunnels, safety distance is increased (often 100m minimum) because the confined space makes any accident more serious. Visual markers help drivers estimate this distance.",
+    "trapNote": "100 meters is much more than the usual 2-second rule. Tunnels have stricter rules because escape options are limited.",
+    "distractorNotes": {
+      "C": "Good visibility doesn't reduce the risk in a tunnel — the confined space remains dangerous regardless."
+    },
+    "vocabulary": []
   }
 ]
