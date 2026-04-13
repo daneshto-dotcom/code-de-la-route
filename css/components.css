@@ -2765,3 +2765,180 @@
     background: var(--primary-dark, #1a3d5c);
 }
 
+
+/* ============================================
+   Focus Areas — B03 v1 (S36)
+   ============================================ */
+.focus-areas-card {
+    background: var(--card-bg, #fff);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--primary, #2E5984);
+}
+.focus-areas-card.focus-empty {
+    border-left-color: var(--warning, #f0ad4e);
+}
+.focus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.focus-header h3 { margin: 0; font-size: 1.15rem; }
+.focus-data-note { font-size: 0.75rem; color: var(--text-muted, #888); }
+.focus-avg-time { margin-left: 8px; }
+.focus-empty-msg { margin: 8px 0; font-size: 0.95rem; }
+.focus-empty-detail { font-size: 0.85rem; color: var(--text-muted, #888); }
+
+.focus-topics-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+@media (min-width: 600px) {
+    .focus-topics-list { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+}
+.focus-topic-card {
+    background: var(--bg-subtle, #f7f9fc);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.focus-topic-card:hover,
+.focus-topic-card:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    outline: none;
+}
+.focus-topic-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.focus-topic-icon { font-size: 1.5rem; }
+.focus-topic-name { font-weight: 600; font-size: 0.95rem; }
+.focus-topic-name-fr { font-size: 0.8rem; color: var(--text-muted, #888); font-weight: 400; }
+.focus-topic-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.focus-topic-accuracy { font-size: 1.25rem; font-weight: 700; }
+.focus-topic-attempts { font-size: 0.75rem; color: var(--text-muted, #888); }
+.focus-topic-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    align-self: flex-start;
+}
+
+.focus-missed-details {
+    margin-top: 12px;
+    border-top: 1px solid var(--border, #e0e0e0);
+    padding-top: 10px;
+}
+.focus-missed-details summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 4px 0;
+    font-size: 0.9rem;
+}
+.focus-missed-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+.focus-missed-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-size: 0.85rem;
+}
+.focus-missed-row:hover,
+.focus-missed-row:focus {
+    background: var(--bg-subtle, #f0f3f8);
+    outline: none;
+}
+.focus-missed-id {
+    font-family: monospace;
+    color: var(--text-muted, #888);
+    flex: 1;
+}
+.focus-missed-stats { color: var(--danger, #d9534f); font-weight: 600; }
+
+/* Focus Review Modal */
+#focus-review-modal .focus-review-content {
+    max-width: 560px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 24px;
+    position: relative;
+}
+#focus-review-modal .modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-muted, #888);
+    padding: 4px 10px;
+    line-height: 1;
+}
+#focus-review-modal .review-topic {
+    font-size: 0.9rem;
+    color: var(--text-muted, #888);
+    margin-bottom: 8px;
+}
+#focus-review-modal .review-question {
+    margin: 8px 0 4px 0;
+    font-size: 1.1rem;
+}
+#focus-review-modal .review-question-en {
+    font-style: italic;
+    color: var(--text-muted, #888);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+#focus-review-modal .review-section { margin: 16px 0; }
+#focus-review-modal .review-section h4 {
+    margin: 0 0 6px 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary, #2E5984);
+}
+#focus-review-modal .review-correct {
+    background: rgba(76, 175, 80, 0.08);
+    border-left: 3px solid var(--success, #4caf50);
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+#focus-review-modal .review-explanation {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 6px 0;
+}
+#focus-review-modal .review-explanation-en {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-muted, #888);
+}
+#focus-review-modal .review-drill-btn {
+    width: 100%;
+    margin-top: 12px;
+}

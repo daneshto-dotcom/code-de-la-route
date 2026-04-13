@@ -16,6 +16,9 @@ const Progress = {
         // Compute exam topic trends (shared between mastery + exam sections)
         this._examTopicTrends = this._computeExamTopicTrends(exams);
 
+        // Focus Areas (B03 v1 — top of screen, action-oriented)
+        this.renderFocusAreas();
+
         // Mastery list (with exam trend indicators)
         this.renderMasteryList(mastery);
 
@@ -36,6 +39,155 @@ const Progress = {
         const container = document.getElementById('achievements-section');
         if (!container) return;
         container.innerHTML = Achievements.renderSection();
+    },
+
+    // === FOCUS AREAS (B03 v1) ===
+    // Action-oriented weakness dashboard. Topic-first (prominent) + Qs collapsible.
+    renderFocusAreas() {
+        const container = document.getElementById('focus-areas-section');
+        if (!container) return;
+
+        let focus;
+        try {
+            focus = Storage.getFocusAreas();
+        } catch (e) {
+            console.error('Focus Areas render failed:', e);
+            container.innerHTML = '';
+            return;
+        }
+        const MIN_ATTEMPTS_FOR_SIGNAL = 20;
+
+        // Empty state — not enough data yet
+        if (focus.totalAttempts < MIN_ATTEMPTS_FOR_SIGNAL) {
+            const needed = MIN_ATTEMPTS_FOR_SIGNAL - focus.totalAttempts;
+            container.innerHTML = `
+                <div class="focus-areas-card focus-empty">
+                    <h3>🎯 Focus Areas</h3>
+                    <p class="focus-empty-msg">Complete ${needed} more practice question${needed === 1 ? '' : 's'} to unlock your personalized focus recommendations.</p>
+                    <p class="focus-empty-detail">Your Focus Areas will show which topics need the most work — so you can study smarter, not longer.</p>
+                </div>
+            `;
+            return;
+        }
+
+        // Build weak-topics cards (prominent)
+        let topicsHtml = '';
+        if (focus.weakTopics.length > 0) {
+            topicsHtml = '<div class="focus-topics-list">' + focus.weakTopics.map(t => {
+                const topic = ETG_TOPICS.find(x => x.id === t.topic);
+                const pct = Math.round(t.accuracy * 100);
+                const icon = topic?.icon || '📚';
+                const name = topic?.nameEn || t.topic;
+                const nameFr = topic?.nameFr || '';
+                const color = pct < 50 ? 'var(--danger)' : pct < 70 ? 'var(--warning)' : 'var(--success)';
+                return `
+                    <div class="focus-topic-card" data-topic="${t.topic}" tabindex="0" role="button" aria-label="Practice ${name}">
+                        <div class="focus-topic-header">
+                            <span class="focus-topic-icon">${icon}</span>
+                            <div class="focus-topic-name">
+                                <div>${name}</div>
+                                <div class="focus-topic-name-fr">${nameFr}</div>
+                            </div>
+                        </div>
+                        <div class="focus-topic-stats">
+                            <div class="focus-topic-accuracy" style="color: ${color};">${pct}%</div>
+                            <div class="focus-topic-attempts">${t.attempts} attempts</div>
+                        </div>
+                        <button class="btn btn-primary btn-sm focus-topic-btn" data-topic="${t.topic}">Practice this topic →</button>
+                    </div>
+                `;
+            }).join('') + '</div>';
+        } else {
+            topicsHtml = '<p class="focus-empty-msg">No weak topics detected — all topics at similar accuracy. Keep practicing!</p>';
+        }
+
+        // Build missed-Qs collapsible
+        let missedHtml = '';
+        if (focus.mostMissed.length > 0) {
+            const rows = focus.mostMissed.map(m => {
+                const pct = Math.round(m.errorRate * 100);
+                const topic = ETG_TOPICS.find(x => x.id === m.topic);
+                const topicIcon = topic?.icon || '📚';
+                // Short hash for privacy-minded listing
+                const shortId = m.questionId.length > 12 ? m.questionId.substring(0, 12) : m.questionId;
+                return `
+                    <li class="focus-missed-row" data-qid="${m.questionId}" tabindex="0" role="button">
+                        <span class="focus-missed-icon">${topicIcon}</span>
+                        <span class="focus-missed-id">${shortId}</span>
+                        <span class="focus-missed-stats">${m.wrongs}/${m.attempts} wrong (${pct}%)</span>
+                    </li>
+                `;
+            }).join('');
+            missedHtml = `
+                <details class="focus-missed-details">
+                    <summary>Questions to review (${focus.mostMissed.length})</summary>
+                    <ul class="focus-missed-list">${rows}</ul>
+                </details>
+            `;
+        }
+
+        const avgTimeHtml = focus.avgResponseMs
+            ? `<span class="focus-avg-time">Avg response: ${(focus.avgResponseMs / 1000).toFixed(1)}s</span>`
+            : '';
+
+        container.innerHTML = `
+            <div class="focus-areas-card">
+                <div class="focus-header">
+                    <h3>🎯 Focus Areas</h3>
+                    <span class="focus-data-note">Based on last 90 days · ${focus.totalAttempts} practice attempts ${avgTimeHtml}</span>
+                </div>
+                ${topicsHtml}
+                ${missedHtml}
+            </div>
+        `;
+
+        // Wire up topic practice buttons
+        container.querySelectorAll('.focus-topic-btn, .focus-topic-card').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const topicId = el.dataset.topic;
+                if (!topicId) return;
+                const count = getQuestionsByTopic(topicId).length;
+                Practice.startSession('drill', { topicFilter: topicId, count: Math.min(count, 15) });
+            });
+        });
+
+        // Wire up missed-Q clicks → show explanation modal
+        container.querySelectorAll('.focus-missed-row').forEach(row => {
+            row.addEventListener('click', () => {
+                const qid = row.dataset.qid;
+                this.showQuestionReviewModal(qid);
+            });
+        });
+    },
+
+    // Show a modal with the full question, correct answer, explanation,
+    // and a "Drill topic" CTA. Pedagogy-first per Gemini council synthesis.
+    showQuestionReviewModal(questionId) {
+        const q = QUESTION_BANK.find(x => x.id === questionId);
+        if (!q) return;
+        const topic = ETG_TOPICS.find(t => t.id === q.topic);
+        const correctLetters = q.correctAnswers.join(', ');
+        const correctTexts = q.correctAnswers.map(letter => {
+            const opt = q.options[letter];
+            return opt ? `<strong>${letter})</strong> ${opt.fr}` : letter;
+        }).join('<br>');
+
+        const modal = document.getElementById('focus-review-modal');
+        if (!modal) return;
+        modal.querySelector('.review-topic').innerHTML = `${topic?.icon || ''} ${topic?.nameEn || q.topic}`;
+        modal.querySelector('.review-question').textContent = q.questionFr;
+        modal.querySelector('.review-question-en').textContent = q.questionEn || '';
+        modal.querySelector('.review-correct').innerHTML = correctTexts;
+        modal.querySelector('.review-explanation').textContent = q.explanationFr || '';
+        modal.querySelector('.review-explanation-en').textContent = q.explanationEn || '';
+        const drillBtn = modal.querySelector('.review-drill-btn');
+        drillBtn.onclick = () => {
+            modal.classList.add('hidden');
+            const count = getQuestionsByTopic(q.topic).length;
+            Practice.startSession('drill', { topicFilter: q.topic, count: Math.min(count, 15) });
+        };
+        modal.classList.remove('hidden');
     },
 
     renderMasteryList(mastery) {

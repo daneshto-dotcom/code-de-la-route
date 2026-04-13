@@ -387,6 +387,8 @@
                         </div>
                     </div>
 
+                    <div id="focus-areas-section"></div>
+
                     <h3 class="section-title">Achievements</h3>
                     <div id="achievements-section"></div>
 
@@ -593,6 +595,26 @@
                 <button class="confidence-chip" data-confidence="2" aria-label="Unsure">🤔 Unsure</button>
                 <button class="confidence-chip" data-confidence="3" aria-label="Sure">✅ Sure</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Focus Area Question Review Modal (B03) -->
+    <div class="modal hidden" id="focus-review-modal" role="dialog" aria-label="Question review">
+        <div class="modal-content focus-review-content">
+            <button class="modal-close" aria-label="Close" onclick="document.getElementById('focus-review-modal').classList.add('hidden')">×</button>
+            <div class="review-topic"></div>
+            <h3 class="review-question"></h3>
+            <p class="review-question-en"></p>
+            <div class="review-section">
+                <h4>Correct answer</h4>
+                <div class="review-correct"></div>
+            </div>
+            <div class="review-section">
+                <h4>Why</h4>
+                <p class="review-explanation"></p>
+                <p class="review-explanation-en"></p>
+            </div>
+            <button class="btn btn-primary review-drill-btn">Drill this topic</button>
         </div>
     </div>
 

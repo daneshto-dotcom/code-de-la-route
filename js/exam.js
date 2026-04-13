@@ -248,7 +248,8 @@ const Exam = {
             selectedAnswers: selected,
             isCorrect: correct,
             confidence: null,
-            sessionType: 'exam'
+            sessionType: 'exam',
+            responseMs: this._questionStartTime ? (Date.now() - this._questionStartTime) : null
         });
 
         // If wrong, schedule for review
@@ -351,7 +352,7 @@ const Exam = {
             const correct = selected.sort().join(',') === [...q.correctAnswers].sort().join(',');
             if (correct) this.correctCount++;
             this.results.push({ questionId: q.id, topic: q.topic, selected, correct, timeTaken });
-            Storage.saveAttempt({ questionId: q.id, topic: q.topic, selectedAnswers: selected, isCorrect: correct, confidence: null, sessionType: 'exam' });
+            Storage.saveAttempt({ questionId: q.id, topic: q.topic, selectedAnswers: selected, isCorrect: correct, confidence: null, sessionType: 'exam', responseMs: this._questionStartTime ? (Date.now() - this._questionStartTime) : null });
             if (!correct) Storage.scheduleForReview(q.id, false, null);
             this.currentIndex++;
         }
@@ -360,7 +361,7 @@ const Exam = {
         while (this.currentIndex < this.questions.length) {
             const q = this.questions[this.currentIndex];
             this.results.push({ questionId: q.id, topic: q.topic, selected: [], correct: false, timeTaken: 0 });
-            Storage.saveAttempt({ questionId: q.id, topic: q.topic, selectedAnswers: [], isCorrect: false, confidence: null, sessionType: 'exam' });
+            Storage.saveAttempt({ questionId: q.id, topic: q.topic, selectedAnswers: [], isCorrect: false, confidence: null, sessionType: 'exam', responseMs: null });
             Storage.scheduleForReview(q.id, false, null);
             this.currentIndex++;
         }

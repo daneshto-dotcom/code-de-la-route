@@ -101,6 +101,68 @@ const Storage = {
         return attempts.slice(-count);
     },
 
+    // === FOCUS AREAS (B03 analytics v1) ===
+    // Most-missed questions: aggregate attempts, rank by errorRate desc
+    // sinceMs defaults to 30 days. minAttempts filters one-offs.
+    getMostMissedQuestions(limit = 10, minAttempts = 2, sinceMs = 90 * 86400000) {
+        const cutoff = Date.now() - sinceMs;
+        const attempts = this.getAttempts().filter(a => (a.timestamp || 0) >= cutoff && a.sessionType !== 'exam');
+        const byQ = {};
+        for (const a of attempts) {
+            if (!a.questionId) continue;
+            if (!byQ[a.questionId]) byQ[a.questionId] = { questionId: a.questionId, topic: a.topic, attempts: 0, wrongs: 0 };
+            byQ[a.questionId].attempts++;
+            if (!a.isCorrect) byQ[a.questionId].wrongs++;
+        }
+        const list = Object.values(byQ)
+            .filter(r => r.attempts >= minAttempts && r.wrongs > 0)
+            .map(r => ({
+                ...r,
+                errorRate: r.attempts > 0 ? r.wrongs / r.attempts : 0
+            }))
+            .sort((a, b) => b.errorRate - a.errorRate || b.attempts - a.attempts);
+        return list.slice(0, limit);
+    },
+
+    // Weakest topics: topics with lowest accuracy, filtered by minAttempts
+    getWeakestTopics(n = 3, minAttempts = 5, sinceMs = 90 * 86400000) {
+        const cutoff = Date.now() - sinceMs;
+        const attempts = this.getAttempts().filter(a => (a.timestamp || 0) >= cutoff && a.sessionType !== 'exam');
+        const byTopic = {};
+        for (const a of attempts) {
+            if (!a.topic) continue;
+            if (!byTopic[a.topic]) byTopic[a.topic] = { topic: a.topic, attempts: 0, correct: 0 };
+            byTopic[a.topic].attempts++;
+            if (a.isCorrect) byTopic[a.topic].correct++;
+        }
+        const list = Object.values(byTopic)
+            .filter(r => r.attempts >= minAttempts)
+            .map(r => ({
+                ...r,
+                accuracy: r.attempts > 0 ? r.correct / r.attempts : 0
+            }))
+            .sort((a, b) => a.accuracy - b.accuracy);
+        return list.slice(0, n);
+    },
+
+    // Combined API for future B04 adaptive practice consumer
+    getFocusAreas(sinceMs = 90 * 86400000) {
+        const cutoff = Date.now() - sinceMs;
+        const attempts = this.getAttempts().filter(a => (a.timestamp || 0) >= cutoff && a.sessionType !== 'exam');
+        const withMs = attempts.filter(a => typeof a.responseMs === 'number' && a.responseMs > 0);
+        const avgResponseMs = withMs.length > 0
+            ? Math.round(withMs.reduce((s, a) => s + a.responseMs, 0) / withMs.length)
+            : null;
+        return {
+            version: 1,
+            totalAttempts: attempts.length,
+            weakTopics: this.getWeakestTopics(3, 5, sinceMs),
+            mostMissed: this.getMostMissedQuestions(10, 2, sinceMs),
+            avgResponseMs: avgResponseMs,
+            sinceMs: sinceMs
+        };
+    },
+
     // === TOPIC MASTERY ===
     getTopicMastery() {
         const stored = JSON.parse(localStorage.getItem(this.KEYS.TOPIC_MASTERY) || '{}');

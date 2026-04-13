@@ -102,6 +102,7 @@ const Practice = {
 
         this.selectedAnswers = [];
         this.answered = false;
+        this.questionStartMs = performance.now();
         this.renderQuestion();
 
         // Start per-question timer if configured
@@ -329,13 +330,15 @@ const Practice = {
         this.showAnswerFeedback(correct);
 
         // Record attempt
+        const responseMs = this.questionStartMs ? Math.round(performance.now() - this.questionStartMs) : null;
         const attempt = {
             questionId: q.id,
             topic: q.topic,
             selectedAnswers: [...this.selectedAnswers],
             isCorrect: correct,
             confidence: null,
-            sessionType: this.sessionType
+            sessionType: this.sessionType,
+            responseMs: responseMs
         };
 
         // Check if confidence rating enabled
