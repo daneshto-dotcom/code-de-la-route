@@ -27990,6 +27990,655 @@ const QUESTION_BANK = [
         distractorNotes: {
             D: "Payment doesn't immunize against abusive-parking rules."
         }
+    },
+
+    // === B02 CHUNK 13 — S35: conducteur (cond-144..153), tunnels (tunn-185..194), croisement (croi-168..177) ===
+    // --- CONDUCTEUR (cond-144 to cond-153) — multi-answer ---
+    {
+        id: "cond-144",
+        topic: "conducteur",
+        difficulty: 2,
+        questionFr: "Quelles sont les règles du permis probatoire ?",
+        questionEn: "What are the probationary licence rules?",
+        options: {
+            A: { fr: "Capital initial de 6 points pendant la période probatoire", en: "Initial 6-point capital during the probation period" },
+            B: { fr: "Durée de 3 ans (2 ans si conduite accompagnée)", en: "Duration of 3 years (2 years if accompanied driving)" },
+            C: { fr: "Le permis probatoire dure 5 ans pour tous", en: "The probationary licence lasts 5 years for everyone" },
+            D: { fr: "Disque \"A\" obligatoire à l'arrière du véhicule", en: "Mandatory 'A' disc on the rear of the vehicle" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Permis probatoire : 6 points au départ, recapitalisation progressive (8 points après 1 an, 12 après 3 ans). Durée 3 ans (2 si AAC). Disque \"A\" obligatoire. Vitesses réduites : 110 sur autoroute, 100 sur 2x2, 80 hors agglo.",
+        explanationEn: "Probationary licence: 6 points at start, progressive restoration (8 after 1 year, 12 after 3 years). Duration 3 years (2 if AAC). 'A' disc mandatory. Reduced speeds: 110 motorway, 100 on dual carriageway, 80 outside built-up.",
+        trapNote: "AAC (conduite accompagnée) shortens probation to 2 years AND grants more points faster — strong incentive.",
+        distractorNotes: {
+            C: "Probation is 3 years (2 with AAC), not 5."
+        }
+    },
+    {
+        id: "cond-145",
+        topic: "conducteur",
+        difficulty: 2,
+        questionFr: "Quels sont les taux d'alcool maximaux autorisés au volant ?",
+        questionEn: "What are the maximum alcohol levels allowed while driving?",
+        options: {
+            A: { fr: "0,5 g/L de sang (0,25 mg/L d'air expiré) pour un conducteur expérimenté", en: "0.5 g/L blood (0.25 mg/L exhaled air) for experienced drivers" },
+            B: { fr: "0,2 g/L de sang (0,10 mg/L d'air expiré) en permis probatoire", en: "0.2 g/L blood (0.10 mg/L exhaled air) for probationary drivers" },
+            C: { fr: "Le seuil est le même pour tous les conducteurs", en: "The limit is the same for all drivers" },
+            D: { fr: "Au-delà de 0,8 g/L, c'est un délit (et non une contravention)", en: "Above 0.8 g/L, it is a criminal offence (not a fine)" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Taux légal : 0,5 g/L (0,25 mg/L air) pour conducteurs expérimentés ; 0,2 g/L (0,10 mg/L) pour permis probatoire et conducteurs de transport en commun. Au-delà de 0,8 g/L = délit (4500 € d'amende max, 6 points, suspension).",
+        explanationEn: "Legal limit: 0.5 g/L (0.25 mg/L air) for experienced drivers; 0.2 g/L (0.10 mg/L) for probationary licence and public transport drivers. Above 0.8 g/L = criminal offence (max €4500 fine, 6 points, suspension).",
+        trapNote: "0.2 g/L is essentially zero — any drink puts a probationary driver over the limit.",
+        distractorNotes: {
+            C: "Probationary drivers and bus/coach drivers have a stricter 0.2 g/L limit."
+        }
+    },
+    {
+        id: "cond-146",
+        topic: "conducteur",
+        difficulty: 2,
+        questionFr: "Quelles sont les règles concernant les stupéfiants au volant ?",
+        questionEn: "What rules apply to drug use while driving?",
+        options: {
+            A: { fr: "Tolérance zéro : toute trace est sanctionnée", en: "Zero tolerance: any trace is sanctioned" },
+            B: { fr: "Délit puni de 4500 € d'amende et 6 points de retrait", en: "Criminal offence punishable by €4500 fine and 6-point deduction" },
+            C: { fr: "Le cannabis n'est pas considéré comme un stupéfiant au volant", en: "Cannabis is not considered a drug while driving" },
+            D: { fr: "Le refus de dépistage est puni comme une conduite positive", en: "Refusing drug screening is punished like a positive test" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Tolérance zéro pour les stupéfiants (cannabis, cocaïne, etc.). Délit : 4500 € d'amende, 6 points, suspension permis 3 ans, 2 ans de prison max. Le refus de dépistage est puni comme une conduite positive (mêmes peines).",
+        explanationEn: "Zero tolerance for drugs (cannabis, cocaine, etc.). Criminal offence: €4500 fine, 6 points, 3-year licence suspension, max 2 years prison. Refusing the drug test is punished like a positive test (same penalties).",
+        trapNote: "Cannabis stays detectable for days/weeks — you can be over the limit long after smoking.",
+        distractorNotes: {
+            C: "Cannabis IS a drug under driving law — zero tolerance applies."
+        }
+    },
+    {
+        id: "cond-147",
+        topic: "conducteur",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent à l'usage du téléphone au volant ?",
+        questionEn: "What rules apply to phone use while driving?",
+        options: {
+            A: { fr: "Téléphone tenu en main interdit : 135 € + 3 points", en: "Hand-held phone forbidden: €135 + 3 points" },
+            B: { fr: "Oreillette/écouteurs en conduite interdits depuis 2015", en: "Earpieces/earphones while driving forbidden since 2015" },
+            C: { fr: "Le kit Bluetooth intégré au véhicule reste autorisé", en: "Vehicle-integrated Bluetooth remains authorized" },
+            D: { fr: "L'usage du téléphone main libre est totalement libre", en: "Hands-free phone use is completely unrestricted" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Téléphone tenu en main : 135 € + 3 points (R412-6-1). Depuis le décret de juillet 2015, oreillettes/écouteurs/casques sont interdits au volant. Seuls les systèmes Bluetooth intégrés (haut-parleurs) sont autorisés.",
+        explanationEn: "Hand-held phone: €135 + 3 points (R412-6-1). Since the July 2015 decree, earpieces/earphones/headsets are forbidden while driving. Only integrated Bluetooth systems (speakers) are allowed.",
+        trapNote: "ANY earphone in your ear (even one) while driving = same fine as holding the phone.",
+        distractorNotes: {
+            D: "Even hands-free phone use can lead to additional sanctions if combined with another infraction (immediate suspension possible)."
+        }
+    },
+    {
+        id: "cond-148",
+        topic: "conducteur",
+        difficulty: 3,
+        questionFr: "Quels sont les signes de fatigue et les bonnes pratiques en cas de somnolence ?",
+        questionEn: "What are the signs of fatigue and good practices in case of drowsiness?",
+        options: {
+            A: { fr: "Bâillements, paupières lourdes, picotements oculaires sont des signes d'alerte", en: "Yawning, heavy eyelids, eye tingling are warning signs" },
+            B: { fr: "Pause obligatoire toutes les 2 heures sur long trajet", en: "Mandatory break every 2 hours on long journeys" },
+            C: { fr: "La somnolence est responsable d'environ 1/3 des accidents mortels sur autoroute", en: "Drowsiness causes around 1/3 of fatal motorway accidents" },
+            D: { fr: "Boire un café suffit toujours à rester vigilant plusieurs heures", en: "Coffee alone is always enough to stay alert for hours" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Signes de fatigue : bâillements, paupières lourdes, picotements, regard fixe. Pause de 15-20 min toutes les 2 h. La somnolence cause ~1/3 des accidents mortels autoroute (Sécurité Routière). Le café aide brièvement mais ne remplace pas le sommeil — micro-sieste 15-20 min recommandée.",
+        explanationEn: "Fatigue signs: yawning, heavy eyelids, tingling, fixed gaze. 15-20 min break every 2 hours. Drowsiness causes ~1/3 of fatal motorway accidents (Road Safety). Coffee helps briefly but doesn't replace sleep — 15-20 min nap recommended.",
+        trapNote: "Coffee is a short-term boost, not a fatigue solution. The only real cure is sleep.",
+        distractorNotes: {
+            D: "Coffee provides a brief alertness boost only — no substitute for actual rest."
+        }
+    },
+    {
+        id: "cond-149",
+        topic: "conducteur",
+        difficulty: 2,
+        questionFr: "Que signifient les pictogrammes de couleur sur les boîtes de médicaments ?",
+        questionEn: "What do the colored pictograms on medication boxes mean?",
+        options: {
+            A: { fr: "Niveau 1 (jaune) : soyez prudent, ne pas conduire sans avis médical", en: "Level 1 (yellow): be careful, don't drive without medical advice" },
+            B: { fr: "Niveau 2 (orange) : soyez très prudent, demandez l'avis d'un professionnel", en: "Level 2 (orange): be very careful, seek professional advice" },
+            C: { fr: "Niveau 3 (rouge) : ne pas conduire", en: "Level 3 (red): do not drive" },
+            D: { fr: "Ces pictogrammes ne sont qu'informatifs et n'ont aucune valeur légale", en: "These pictograms are only informational and have no legal value" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "3 niveaux de pictogrammes : jaune (prudence), orange (avis professionnel obligatoire), rouge (ne pas conduire). En cas d'accident sous médicament niveau 3, votre responsabilité est engagée. Lisez toujours la notice.",
+        explanationEn: "3 pictogram levels: yellow (caution), orange (mandatory professional advice), red (do not drive). If you crash on a level-3 medication, you bear responsibility. Always read the leaflet.",
+        trapNote: "Red pictogram = absolute no — even prescribed medications can trigger this.",
+        distractorNotes: {
+            D: "Driving under a red-pictogram medication can constitute a criminal offence in case of accident."
+        }
+    },
+    {
+        id: "cond-150",
+        topic: "conducteur",
+        difficulty: 3,
+        questionFr: "Comment récupérer des points sur son permis ?",
+        questionEn: "How can you recover points on your licence?",
+        options: {
+            A: { fr: "Stage de récupération : +4 points (1 stage par an maximum)", en: "Recovery course: +4 points (max 1 course per year)" },
+            B: { fr: "Récupération automatique après 6 mois sans infraction (1 point pour 1ère classe)", en: "Automatic recovery after 6 months no infraction (1 point for 1st class offence)" },
+            C: { fr: "Récupération totale (12 points) après 3 ans sans infraction du même type ou plus grave", en: "Full recovery (12 points) after 3 years without same or worse infraction" },
+            D: { fr: "Acheter des points est légal en payant 200 € l'unité", en: "Buying points is legal at €200 per unit" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Récupération : stage volontaire (+4 points, max 1/an, ~250 €), récupération auto après 6 mois (1 pt 1ère classe), 2 ans (toutes infractions), 3 ans (récupération totale 12 pts si aucune nouvelle infraction). L'achat de points est strictement interdit.",
+        explanationEn: "Recovery: voluntary course (+4 points, max 1/year, ~€250), automatic recovery after 6 months (1 pt 1st class), 2 years (all infractions), 3 years (full 12-point recovery if no new offence). Buying points is strictly prohibited.",
+        trapNote: "Recovery course = max +4 points AND only 1 per year. Don't expect to undo all damage at once.",
+        distractorNotes: {
+            D: "Buying points is illegal — both seller and buyer face criminal sanctions."
+        }
+    },
+    {
+        id: "cond-151",
+        topic: "conducteur",
+        difficulty: 3,
+        questionFr: "Quelles sont les sanctions pour délit de fuite après un accident ?",
+        questionEn: "What are the penalties for hit-and-run after an accident?",
+        options: {
+            A: { fr: "3 ans d'emprisonnement et 75 000 € d'amende (article 434-10 du Code pénal)", en: "3 years' imprisonment and €75,000 fine (Article 434-10 Penal Code)" },
+            B: { fr: "Retrait de 6 points sur le permis", en: "6-point deduction from licence" },
+            C: { fr: "Suspension du permis jusqu'à 5 ans", en: "Licence suspension up to 5 years" },
+            D: { fr: "Aucune sanction si l'accident est matériel uniquement", en: "No penalty if accident is property-damage only" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Délit de fuite : 3 ans de prison + 75 000 € d'amende (art. 434-10). Retrait de 6 points, suspension permis jusqu'à 5 ans, annulation possible. S'applique aux accidents matériels comme corporels — quitter les lieux sans laisser ses coordonnées suffit.",
+        explanationEn: "Hit-and-run: 3 years prison + €75,000 fine (Art. 434-10). 6-point deduction, licence suspension up to 5 years, possible cancellation. Applies to property damage as well as injury — leaving without identifying yourself is enough.",
+        trapNote: "Even a minor scratch on a parked car: leaving without a note = délit de fuite.",
+        distractorNotes: {
+            D: "Hit-and-run applies to ALL accidents, including property-only damage."
+        }
+    },
+    {
+        id: "cond-152",
+        topic: "conducteur",
+        difficulty: 2,
+        questionFr: "Quelles sont les sanctions pour refus de se soumettre au dépistage d'alcool ou de stupéfiants ?",
+        questionEn: "What are the penalties for refusing alcohol or drug screening?",
+        options: {
+            A: { fr: "Sanctions identiques à celles d'une conduite positive", en: "Same penalties as a positive test" },
+            B: { fr: "2 ans d'emprisonnement et 4 500 € d'amende", en: "2 years' imprisonment and €4,500 fine" },
+            C: { fr: "Retrait de 6 points", en: "6-point deduction" },
+            D: { fr: "Pas de sanction si vous acceptez de revenir au commissariat plus tard", en: "No penalty if you agree to come back to the station later" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Le refus de dépistage est un délit : 2 ans de prison, 4 500 € d'amende, 6 points retirés, suspension permis 3 ans. Sanctions équivalentes à un taux d'alcool > 0,8 g/L. Reporter le test n'est pas une option légale.",
+        explanationEn: "Refusing the screening is a criminal offence: 2 years prison, €4,500 fine, 6 points removed, 3-year licence suspension. Equivalent to a >0.8 g/L alcohol test. Postponing the test is not a legal option.",
+        trapNote: "Refusing the test is treated AS IF you tested positive at the maximum level. Don't try to outsmart it.",
+        distractorNotes: {
+            D: "There is no option to postpone — refusing on the spot triggers full penalties."
+        }
+    },
+    {
+        id: "cond-153",
+        topic: "conducteur",
+        difficulty: 2,
+        questionFr: "Quels équipements de sécurité sont obligatoires à bord d'un véhicule ?",
+        questionEn: "What safety equipment is mandatory on board a vehicle?",
+        options: {
+            A: { fr: "Un gilet de haute visibilité (à portée de main, pas dans le coffre)", en: "A high-visibility vest (within reach, not in the trunk)" },
+            B: { fr: "Un triangle de pré-signalisation", en: "A warning triangle" },
+            C: { fr: "Un éthylotest depuis 2012 (obligation maintenue mais non sanctionnée)", en: "A breathalyzer since 2012 (still required but no sanction)" },
+            D: { fr: "Un extincteur obligatoire dans tous les véhicules particuliers", en: "A fire extinguisher mandatory in all passenger vehicles" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Obligatoires : gilet jaune (à portée de main, pas dans le coffre — pour le mettre AVANT de sortir) et triangle de pré-signalisation (à 30 m minimum). L'éthylotest reste théoriquement obligatoire mais sans sanction depuis 2020. L'extincteur n'est pas obligatoire en VL.",
+        explanationEn: "Mandatory: yellow vest (within reach, not in trunk — to put on BEFORE exiting) and warning triangle (at least 30m). The breathalyzer is theoretically still required but unsanctioned since 2020. Fire extinguisher is not mandatory in passenger cars.",
+        trapNote: "Vest must be REACHABLE from driver seat. Vest in the trunk = €135 fine if checked.",
+        distractorNotes: {
+            C: "The breathalyzer requirement was decriminalized in 2020 — no fine for not having one.",
+            D: "Fire extinguishers are required only for some commercial vehicles, not personal cars."
+        }
+    },
+
+    // --- TUNNELS & PASSAGES NIVEAU (tunn-185 to tunn-194) — multi-answer ---
+    {
+        id: "tunn-185",
+        topic: "tunnels_passages_niveau",
+        difficulty: 2,
+        signs: ["tunnel"],
+        questionFr: "Quelles précautions prendre avant d'entrer dans un tunnel ?",
+        questionEn: "What precautions to take before entering a tunnel?",
+        options: {
+            A: { fr: "Allumer les feux de croisement (obligatoire)", en: "Turn on dipped headlights (mandatory)" },
+            B: { fr: "Retirer ses lunettes de soleil", en: "Remove sunglasses" },
+            C: { fr: "Augmenter la distance de sécurité avec le véhicule précédent", en: "Increase safety distance from the vehicle ahead" },
+            D: { fr: "Allumer les feux de route pour mieux voir", en: "Turn on high beams to see better" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Avant un tunnel : allumez les feux de croisement (obligatoire, R416-7), retirez les lunettes de soleil (l'œil met du temps à s'adapter), augmentez la distance. Pas de feux de route en tunnel : ils éblouissent les autres conducteurs.",
+        explanationEn: "Before a tunnel: turn on dipped headlights (mandatory, R416-7), remove sunglasses (eye takes time to adapt), increase distance. No high beams in tunnel: they blind other drivers.",
+        trapNote: "High beams in a tunnel are FORBIDDEN — even alone, dipped beams only.",
+        distractorNotes: {
+            D: "High beams are forbidden in tunnels — they dazzle oncoming drivers."
+        }
+    },
+    {
+        id: "tunn-186",
+        topic: "tunnels_passages_niveau",
+        difficulty: 2,
+        signs: ["tunnel"],
+        questionFr: "Quelle distance de sécurité respecter dans un tunnel ?",
+        questionEn: "What safety distance must you maintain in a tunnel?",
+        options: {
+            A: { fr: "Au moins 2 secondes en circulation normale", en: "At least 2 seconds in normal traffic" },
+            B: { fr: "150 m minimum si vous êtes immobilisé (pour permettre les secours)", en: "150 m minimum if stopped (to allow emergency access)" },
+            C: { fr: "Une distance équivalente à 50 m suffit toujours", en: "A 50 m distance is always sufficient" },
+            D: { fr: "Aucune distance minimale n'est requise dans un tunnel", en: "No minimum distance is required in a tunnel" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "En tunnel, distance de sécurité d'au moins 2 secondes (comme partout), souvent matérialisée par des marques au sol (chevrons). En cas d'arrêt forcé : 150 m mini avec le véhicule devant pour laisser passer les secours.",
+        explanationEn: "In a tunnel, safety distance of at least 2 seconds (as elsewhere), often shown by road markings (chevrons). If stopped: 150 m minimum with the vehicle ahead to allow emergency access.",
+        trapNote: "Stopped in tunnel = 150m gap. Moving in tunnel = 2 seconds (chevron markers).",
+        distractorNotes: {
+            C: "50 m is insufficient at typical tunnel speeds — use the 2-second rule.",
+            D: "Minimum distances apply in tunnels just like on open roads."
+        }
+    },
+    {
+        id: "tunn-187",
+        topic: "tunnels_passages_niveau",
+        difficulty: 2,
+        signs: ["tunnel"],
+        questionFr: "Quelles manœuvres sont interdites dans un tunnel ?",
+        questionEn: "What maneuvers are forbidden in a tunnel?",
+        options: {
+            A: { fr: "Le demi-tour (sauf accès secours autorisés)", en: "U-turns (except authorized emergency access)" },
+            B: { fr: "La marche arrière", en: "Reversing" },
+            C: { fr: "Le dépassement des deux-roues à allure modérée", en: "Overtaking two-wheelers at moderate speed" },
+            D: { fr: "L'arrêt sauf cas d'urgence", en: "Stopping except in an emergency" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Dans un tunnel sont interdits : demi-tour (R412-15), marche arrière (R412-7), arrêt et stationnement sauf urgence (R417-9). Le dépassement reste autorisé selon le marquage au sol et la signalisation propre au tunnel.",
+        explanationEn: "Forbidden in a tunnel: U-turns (R412-15), reversing (R412-7), stopping and parking except emergencies (R417-9). Overtaking remains allowed depending on road markings and tunnel-specific signage.",
+        trapNote: "Missed your exit in a tunnel? Continue to the next exit — never reverse or U-turn.",
+        distractorNotes: {
+            C: "Overtaking depends on the markings — not automatically forbidden in all tunnels."
+        }
+    },
+    {
+        id: "tunn-188",
+        topic: "tunnels_passages_niveau",
+        difficulty: 2,
+        signs: ["tunnel"],
+        questionFr: "Que faire en cas d'incendie dans un tunnel ?",
+        questionEn: "What to do in case of fire in a tunnel?",
+        options: {
+            A: { fr: "Si possible, sortir du tunnel en continuant", en: "If possible, exit the tunnel by continuing" },
+            B: { fr: "Sinon, garer le véhicule sur le côté, clés sur le contact, feux de détresse allumés", en: "Otherwise, park to the side, keys in ignition, hazards on" },
+            C: { fr: "Évacuer vers l'issue de secours la plus proche", en: "Evacuate to the nearest emergency exit" },
+            D: { fr: "Tenter d'éteindre soi-même un feu de plus de 5 m de haut", en: "Try to put out a fire over 5m high yourself" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Incendie en tunnel : sortez si possible. Sinon, garez-vous sur le côté, clés sur le contact (pour permettre aux secours de déplacer le véhicule), feux de détresse, et évacuez vers une issue de secours (tous les 200-400 m). N'affrontez jamais un feu important.",
+        explanationEn: "Tunnel fire: exit if possible. Otherwise, park to the side, keys in ignition (so emergency crews can move the vehicle), hazards on, and evacuate to an emergency exit (every 200-400 m). Never tackle a large fire yourself.",
+        trapNote: "Leave keys in ignition — emergency teams may need to move your vehicle.",
+        distractorNotes: {
+            D: "Only attempt to extinguish small fires with the appropriate equipment — never confront a large blaze."
+        }
+    },
+    {
+        id: "tunn-189",
+        topic: "tunnels_passages_niveau",
+        difficulty: 3,
+        signs: ["tunnel"],
+        questionFr: "Comment fonctionnent les niches et abris de sécurité dans un tunnel ?",
+        questionEn: "How do safety niches and shelters work in a tunnel?",
+        options: {
+            A: { fr: "Les niches contiennent un téléphone d'urgence (signalées tous les ~150 m)", en: "Niches contain an emergency phone (marked every ~150 m)" },
+            B: { fr: "Les abris de sécurité offrent une protection en cas d'incendie", en: "Safety shelters offer protection in case of fire" },
+            C: { fr: "Les abris communiquent avec une galerie d'évacuation parallèle", en: "Shelters connect to a parallel evacuation gallery" },
+            D: { fr: "Les niches et abris sont uniquement décoratifs", en: "Niches and shelters are purely decorative" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Niches : tous les 150-200 m, téléphone d'urgence + extincteur. Abris de sécurité : portes étanches, communication avec une galerie parallèle d'évacuation, ventilation indépendante. En cas d'urgence, dirigez-vous vers le panneau vert d'issue de secours.",
+        explanationEn: "Niches: every 150-200 m, emergency phone + extinguisher. Safety shelters: airtight doors, connection to a parallel evacuation gallery, independent ventilation. In emergencies, head for the green emergency exit sign.",
+        trapNote: "Look for the GREEN exit signs — they indicate the nearest safe route out.",
+        distractorNotes: {
+            D: "Niches and shelters are critical safety features — never block them with your vehicle."
+        }
+    },
+    {
+        id: "tunn-190",
+        topic: "tunnels_passages_niveau",
+        difficulty: 2,
+        signs: ["tunnel"],
+        questionFr: "Que devez-vous faire si vous êtes bloqué dans un embouteillage en tunnel ?",
+        questionEn: "What should you do if stuck in a traffic jam in a tunnel?",
+        options: {
+            A: { fr: "Allumer les feux de détresse", en: "Turn on hazard lights" },
+            B: { fr: "Maintenir une distance de sécurité (au moins 5 m)", en: "Maintain a safety distance (at least 5 m)" },
+            C: { fr: "Couper le moteur si l'arrêt se prolonge", en: "Turn off the engine if the stop is prolonged" },
+            D: { fr: "Sortir de votre véhicule pour rejoindre les autres conducteurs", en: "Get out of your vehicle to join other drivers" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "En embouteillage tunnel : feux de détresse, distance de 5 m mini avec le véhicule devant (pour pouvoir manœuvrer), couper le moteur si l'arrêt dure (réduit fumées et risque d'incendie). Restez dans votre véhicule sauf danger immédiat.",
+        explanationEn: "In a tunnel jam: hazard lights, 5 m minimum distance from vehicle ahead (to allow maneuvering), turn off engine if stop is prolonged (reduces fumes and fire risk). Stay in your vehicle unless immediate danger.",
+        trapNote: "Stay IN your vehicle — only evacuate if there is fire/smoke/emergency announcement.",
+        distractorNotes: {
+            D: "Exit only in case of real danger — staying in the vehicle is safer in normal traffic jams."
+        }
+    },
+    {
+        id: "tunn-191",
+        topic: "tunnels_passages_niveau",
+        difficulty: 2,
+        signs: ["level-crossing"],
+        questionFr: "Comment identifier un passage à niveau et ses dangers ?",
+        questionEn: "How to identify a level crossing and its dangers?",
+        options: {
+            A: { fr: "Croix de Saint-André (panneau de position)", en: "Saint Andrew's cross (position sign)" },
+            B: { fr: "Présence éventuelle de barrières (automatiques ou manuelles)", en: "Possible barriers (automatic or manual)" },
+            C: { fr: "Feux clignotants rouges = arrêt obligatoire", en: "Flashing red lights = mandatory stop" },
+            D: { fr: "Le train n'a pas la priorité sur les véhicules au passage à niveau", en: "Trains don't have priority over vehicles at a level crossing" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Identification : croix de Saint-André (panneau A8), barrières (automatiques/manuelles ou aucune), feux R24 clignotants rouges (arrêt obligatoire), sonnerie. Le train a TOUJOURS la priorité — sa distance d'arrêt peut atteindre 1 km.",
+        explanationEn: "Identification: Saint Andrew's cross (sign A8), barriers (automatic/manual or none), flashing red R24 lights (mandatory stop), bell. The train ALWAYS has priority — its stopping distance can reach 1 km.",
+        trapNote: "Trains can take 1 km to stop — even if you 'have time', they often don't.",
+        distractorNotes: {
+            D: "Trains ALWAYS have priority — their stopping distance is enormous."
+        }
+    },
+    {
+        id: "tunn-192",
+        topic: "tunnels_passages_niveau",
+        difficulty: 2,
+        signs: ["level-crossing"],
+        questionFr: "Que faire si votre véhicule cale ou tombe en panne sur un passage à niveau ?",
+        questionEn: "What to do if your vehicle stalls or breaks down on a level crossing?",
+        options: {
+            A: { fr: "Faire descendre les passagers immédiatement", en: "Get passengers out immediately" },
+            B: { fr: "Tenter de pousser le véhicule hors des voies", en: "Try to push the vehicle off the tracks" },
+            C: { fr: "Utiliser le téléphone d'urgence (signal SNCF) ou alerter les secours", en: "Use the emergency phone (SNCF signal) or alert emergency services" },
+            D: { fr: "Attendre dans le véhicule l'arrivée de la dépanneuse", en: "Wait in the vehicle for the tow truck" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Panne sur passage à niveau : faites descendre tout le monde immédiatement, tentez de pousser le véhicule hors des voies (en marche arrière clé enclenchée si possible), alertez via téléphone d'urgence SNCF ou 112. Ne restez JAMAIS dans le véhicule.",
+        explanationEn: "Breakdown on a level crossing: get everyone out immediately, try to push the vehicle off the tracks (in reverse with key engaged if possible), alert via SNCF emergency phone or 112. NEVER stay in the vehicle.",
+        trapNote: "Lives > vehicle. Get out FIRST, push SECOND, call THIRD. Never wait inside.",
+        distractorNotes: {
+            D: "Waiting in the vehicle on the tracks is potentially fatal — leave first, then act."
+        }
+    },
+    {
+        id: "tunn-193",
+        topic: "tunnels_passages_niveau",
+        difficulty: 2,
+        signs: ["level-crossing"],
+        questionFr: "Quelles règles s'appliquent à l'approche d'un passage à niveau ?",
+        questionEn: "What rules apply when approaching a level crossing?",
+        options: {
+            A: { fr: "Réduire la vitesse pour pouvoir s'arrêter si nécessaire", en: "Reduce speed to be able to stop if needed" },
+            B: { fr: "Ne pas s'engager si la voie n'est pas libre de l'autre côté", en: "Do not engage if the road on the other side is not clear" },
+            C: { fr: "Le dépassement est interdit à l'approche d'un passage à niveau", en: "Overtaking is forbidden when approaching a level crossing" },
+            D: { fr: "On peut passer même quand les feux R24 clignotent si on roule vite", en: "You can cross even when R24 lights flash if you drive fast" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Approche passage à niveau : réduisez la vitesse, vérifiez que la voie est libre devant ET derrière la traversée (jamais s'arrêter sur les rails). Dépassement interdit (R414-11). Feux R24 clignotants = arrêt obligatoire. 4e classe : 135 € + 4 points + suspension possible.",
+        explanationEn: "Approaching a level crossing: reduce speed, check the road is clear before AND after crossing (never stop on rails). Overtaking forbidden (R414-11). Flashing R24 lights = mandatory stop. 4th class: €135 + 4 points + possible suspension.",
+        trapNote: "If traffic is backed up beyond the crossing — DO NOT enter, even if your light is green.",
+        distractorNotes: {
+            D: "Crossing while lights flash = €135, 4 points, possible 3-year suspension."
+        }
+    },
+    {
+        id: "tunn-194",
+        topic: "tunnels_passages_niveau",
+        difficulty: 2,
+        signs: ["tunnel"],
+        questionFr: "Quels équipements de sécurité trouve-t-on dans un tunnel moderne ?",
+        questionEn: "What safety equipment is found in a modern tunnel?",
+        options: {
+            A: { fr: "Caméras de surveillance et capteurs de fumée", en: "Surveillance cameras and smoke detectors" },
+            B: { fr: "Système de ventilation et désenfumage", en: "Ventilation and smoke extraction system" },
+            C: { fr: "Panneaux à messages variables et signaux d'arrêt", en: "Variable message signs and stop signals" },
+            D: { fr: "Aucun équipement spécifique : un tunnel est juste une route couverte", en: "No specific equipment: a tunnel is just a covered road" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Tunnels modernes (directive EU 2004/54) : caméras + détecteurs (fumée, vitesse, incidents), ventilation/désenfumage, PMV, signaux d'arrêt par voie, niches d'urgence, abris, issues de secours, radio FM (104.5 souvent dédiée). Surveillance 24/7 par poste de contrôle.",
+        explanationEn: "Modern tunnels (EU directive 2004/54): cameras + sensors (smoke, speed, incidents), ventilation/smoke extraction, VMS, per-lane stop signals, emergency niches, shelters, emergency exits, FM radio (104.5 often dedicated). 24/7 monitoring from control room.",
+        trapNote: "Tune your FM radio when entering a long tunnel — emergency announcements use it.",
+        distractorNotes: {
+            D: "Modern tunnels have extensive safety systems regulated by EU directives."
+        }
+    },
+
+    // --- CROISEMENT / DEPASSEMENT (croi-168 to croi-177) — multi-answer ---
+    {
+        id: "croi-168",
+        topic: "croisement_depassement",
+        difficulty: 2,
+        questionFr: "Dans quels cas le dépassement est-il interdit ?",
+        questionEn: "In which cases is overtaking forbidden?",
+        options: {
+            A: { fr: "À l'approche d'un sommet de côte ou d'un virage sans visibilité", en: "Approaching a hill summit or blind curve" },
+            B: { fr: "À l'approche d'une intersection (sauf si l'on est sur axe prioritaire)", en: "Approaching an intersection (except if on a priority road)" },
+            C: { fr: "À l'approche d'un passage piéton", en: "Approaching a pedestrian crossing" },
+            D: { fr: "Sur autoroute en file ininterrompue", en: "On a motorway in continuous traffic" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Dépassement interdit : sommet de côte/virage sans visibilité (R414-7), intersections (sauf axe prioritaire), passage piéton, passage à niveau, ligne continue. Sur autoroute, le dépassement reste autorisé mais à gauche uniquement.",
+        explanationEn: "Overtaking forbidden: hill summit/blind curve (R414-7), intersections (unless on priority road), pedestrian crossings, level crossings, continuous lines. On motorways, overtaking remains allowed but only on the left.",
+        trapNote: "Hill summits and blind curves = ALWAYS forbidden, no exception.",
+        distractorNotes: {
+            D: "Overtaking on the motorway is allowed in continuous traffic — just always on the left."
+        }
+    },
+    {
+        id: "croi-169",
+        topic: "croisement_depassement",
+        difficulty: 2,
+        questionFr: "Quelle distance latérale minimale respecter pour dépasser un cycliste ?",
+        questionEn: "What minimum lateral distance must you keep when overtaking a cyclist?",
+        options: {
+            A: { fr: "1 mètre minimum en agglomération", en: "Minimum 1 meter in built-up areas" },
+            B: { fr: "1,5 mètre minimum hors agglomération", en: "Minimum 1.5 meters outside built-up areas" },
+            C: { fr: "Si la distance ne peut pas être respectée, ne pas dépasser", en: "If the distance cannot be respected, do not overtake" },
+            D: { fr: "Aucune distance n'est légalement imposée", en: "No legal minimum distance applies" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Dépassement cycliste : 1 m mini en agglomération, 1,5 m hors agglomération (R414-4). Si impossible (route étroite, trafic en sens inverse), n'effectuez pas le dépassement — attendez. Non-respect : 135 € + 3 points.",
+        explanationEn: "Overtaking a cyclist: 1 m min in built-up areas, 1.5 m outside (R414-4). If impossible (narrow road, oncoming traffic), don't overtake — wait. Non-compliance: €135 + 3 points.",
+        trapNote: "If you can't respect the distance, you can't overtake — patience is the rule.",
+        distractorNotes: {
+            D: "1m city / 1.5m country are legal minimums since 2003 (R414-4)."
+        }
+    },
+    {
+        id: "croi-170",
+        topic: "croisement_depassement",
+        difficulty: 3,
+        questionFr: "Quelles règles s'appliquent au dépassement par la droite ?",
+        questionEn: "What rules apply to overtaking on the right?",
+        options: {
+            A: { fr: "Interdit sur autoroute (R414-6)", en: "Forbidden on motorways (R414-6)" },
+            B: { fr: "Autorisé pour dépasser un véhicule signalant son intention de tourner à gauche", en: "Allowed when overtaking a vehicle signaling a left turn" },
+            C: { fr: "Autorisé en agglomération sur les voies de circulation parallèles", en: "Allowed in built-up areas on parallel traffic lanes" },
+            D: { fr: "Autorisé partout, sans restriction", en: "Allowed everywhere, without restriction" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Dépassement par la droite : interdit en règle générale (R414-6, 135 € + 3 points). Exceptions : véhicule signalant à gauche, voies de circulation parallèles en agglomération, files compactes différentes en circulation lente.",
+        explanationEn: "Overtaking on the right: generally forbidden (R414-6, €135 + 3 points). Exceptions: vehicle signaling left turn, parallel traffic lanes in built-up areas, separate compacted lines in slow traffic.",
+        trapNote: "Right-overtaking is not the same as 'driving in a faster lane' — overtaking means passing closely with intent.",
+        distractorNotes: {
+            D: "Right-side overtaking is generally forbidden — only specific exceptions allow it."
+        }
+    },
+    {
+        id: "croi-171",
+        topic: "croisement_depassement",
+        difficulty: 2,
+        questionFr: "Comment se rabattre correctement après un dépassement ?",
+        questionEn: "How to merge back correctly after overtaking?",
+        options: {
+            A: { fr: "Vérifier dans le rétroviseur intérieur que le véhicule dépassé est visible", en: "Check the inside mirror that the overtaken vehicle is visible" },
+            B: { fr: "Mettre son clignotant droit avant de se rabattre", en: "Activate right turn signal before merging back" },
+            C: { fr: "Se rabattre progressivement sans gêner le véhicule dépassé", en: "Merge back progressively without disturbing the overtaken vehicle" },
+            D: { fr: "Se rabattre immédiatement dès que les phares sont visibles", en: "Merge back immediately as soon as the headlights are visible" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Après dépassement : voyez le véhicule entier (capot + roues avant) dans le rétro intérieur, clignotant droit, rabattement progressif. Se rabattre trop tôt force le véhicule dépassé à freiner — dangereux et pénalisable.",
+        explanationEn: "After overtaking: see the entire vehicle (hood + front wheels) in the inside mirror, right signal, progressive merge. Merging too early forces the overtaken vehicle to brake — dangerous and punishable.",
+        trapNote: "Wait until you see HEADLIGHTS AND FRONT WHEELS in your inside mirror before merging back.",
+        distractorNotes: {
+            D: "Just seeing headlights isn't enough — wait until the whole front of the vehicle is visible."
+        }
+    },
+    {
+        id: "croi-172",
+        topic: "croisement_depassement",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent au franchissement d'une ligne continue lors d'un dépassement ?",
+        questionEn: "What rules apply to crossing a continuous line during overtaking?",
+        options: {
+            A: { fr: "Interdit dans tous les cas (135 € + 3 points)", en: "Forbidden in all cases (€135 + 3 points)" },
+            B: { fr: "Toléré uniquement pour dépasser un cycliste si la sécurité le permet", en: "Tolerated only to overtake a cyclist if safety allows" },
+            C: { fr: "Autorisé pour dépasser un véhicule lent en pleine campagne", en: "Allowed to overtake a slow vehicle in open countryside" },
+            D: { fr: "Le marquage continu sépare les sens de circulation et ne doit pas être franchi", en: "The continuous marking separates traffic flows and must not be crossed" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Franchir une ligne continue : interdit (R412-19, 135 € + 3 points). Exception unique depuis 2015 : dépasser un cycliste si la visibilité et la sécurité le permettent, sans gêner la circulation. La ligne continue sépare physiquement les flux opposés.",
+        explanationEn: "Crossing a continuous line: forbidden (R412-19, €135 + 3 points). Single exception since 2015: overtaking a cyclist if visibility and safety allow, without disrupting traffic. The continuous line physically separates opposite flows.",
+        trapNote: "Slow tractor in front of you on a country road with continuous line — TOO BAD. Wait.",
+        distractorNotes: {
+            C: "Slow vehicles other than cyclists do not justify crossing a continuous line."
+        }
+    },
+    {
+        id: "croi-173",
+        topic: "croisement_depassement",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent au croisement avec un tramway ?",
+        questionEn: "What rules apply when crossing a tram?",
+        options: {
+            A: { fr: "Le tramway a la priorité dans presque toutes les situations", en: "The tram has priority in almost all situations" },
+            B: { fr: "Le dépassement par la droite est généralement obligatoire", en: "Overtaking on the right is generally mandatory" },
+            C: { fr: "Les voies du tram peuvent être empruntées si signalisation l'autorise", en: "Tram tracks may be used if signage allows" },
+            D: { fr: "Vous pouvez vous arrêter sur les rails si vous êtes pressé", en: "You can stop on the rails if you're in a hurry" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Tramway : priorité quasi-absolue (sa distance de freinage est longue). Dépassement obligatoire par la droite (R414-9), sauf rails au centre où le passage par la gauche est imposé. Voies du tram empruntables uniquement si signalisation l'indique. Jamais s'arrêter sur les rails.",
+        explanationEn: "Tram: near-absolute priority (long braking distance). Overtaking mandatory on the right (R414-9), except where rails are central, requiring left passage. Tram tracks usable only if signage permits. Never stop on the rails.",
+        trapNote: "Tram tracks are NOT shortcuts — only use them when signage explicitly allows.",
+        distractorNotes: {
+            D: "Stopping on tram rails endangers your life and severely disrupts public transport."
+        }
+    },
+    {
+        id: "croi-174",
+        topic: "croisement_depassement",
+        difficulty: 3,
+        questionFr: "Quelles règles s'appliquent au croisement sur une route étroite (impossible à deux véhicules) ?",
+        questionEn: "What rules apply when crossing on a narrow road (impossible for two vehicles)?",
+        options: {
+            A: { fr: "Le véhicule descendant cède le passage en montagne", en: "The descending vehicle yields in mountains" },
+            B: { fr: "Le véhicule le plus encombrant est généralement prioritaire", en: "The most cumbersome vehicle is usually prioritized" },
+            C: { fr: "À défaut de règle spécifique, le véhicule le plus proche d'une zone de croisement recule", en: "Without specific rule, the vehicle nearest a passing area reverses" },
+            D: { fr: "Le véhicule le plus rapide passe en premier", en: "The fastest vehicle passes first" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Route étroite : en montagne, descendant cède au montant (plus difficile de redémarrer en côte). Le véhicule encombrant (poids lourd, bus, attelage) a priorité (manœuvre plus difficile). À défaut, le plus proche d'une zone de garage recule. Convention de courtoisie applicable hors loi.",
+        explanationEn: "Narrow road: in mountains, descending yields to ascending (harder to restart uphill). Cumbersome vehicle (truck, bus, trailer) has priority (harder maneuver). Otherwise, the one closest to a passing area reverses. Courtesy convention applies beyond law.",
+        trapNote: "Cumbersome vehicles get priority because backing them up is much harder.",
+        distractorNotes: {
+            D: "Speed grants no priority — courtesy and physical constraints determine right of way."
+        }
+    },
+    {
+        id: "croi-175",
+        topic: "croisement_depassement",
+        difficulty: 2,
+        questionFr: "Quelles précautions prendre pour dépasser de nuit ou par mauvaise visibilité ?",
+        questionEn: "What precautions to take when overtaking at night or in poor visibility?",
+        options: {
+            A: { fr: "Augmenter la distance de visibilité requise (au moins 100 m)", en: "Increase the required visibility distance (at least 100 m)" },
+            B: { fr: "Utiliser les feux de croisement, jamais les feux de route en approche d'un véhicule", en: "Use dipped beams, never high beams when approaching a vehicle" },
+            C: { fr: "Si possible, attendre une portion bien éclairée pour dépasser", en: "If possible, wait for a well-lit section to overtake" },
+            D: { fr: "Klaxonner pour signaler le dépassement de nuit", en: "Honk to signal overtaking at night" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Dépassement de nuit : visibilité réduite augmente le risque. Au moins 100 m de visibilité, feux de croisement (route si seul), attendez une zone éclairée si possible. Klaxon interdit en agglomération et sans danger immédiat. Préférer un appel de phare bref.",
+        explanationEn: "Night overtaking: reduced visibility increases risk. At least 100 m visibility, dipped beams (high beam if alone), wait for a lit area if possible. Honking forbidden in built-up areas and without immediate danger. Prefer a brief headlight flash.",
+        trapNote: "Headlight flash > horn at night. Horn is restricted; flash is the proper signal.",
+        distractorNotes: {
+            D: "Honking is restricted to immediate danger — use a brief headlight flash instead."
+        }
+    },
+    {
+        id: "croi-176",
+        topic: "croisement_depassement",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent au dépassement d'un convoi exceptionnel ?",
+        questionEn: "What rules apply to overtaking an oversized convoy?",
+        options: {
+            A: { fr: "Attendre les indications du véhicule pilote ou des forces de l'ordre", en: "Wait for indications from the pilot vehicle or law enforcement" },
+            B: { fr: "Le dépassement est souvent interdit par la signalisation propre au convoi", en: "Overtaking is often forbidden by convoy-specific signage" },
+            C: { fr: "Maintenir une distance de sécurité accrue", en: "Maintain an increased safety distance" },
+            D: { fr: "Le doubler rapidement par la droite est toujours sûr", en: "Quickly overtaking on the right is always safe" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Convoi exceptionnel : véhicule pilote (gyrophares, panneau \"convoi exceptionnel\") guide le trafic. Suivez ses indications. Dépassement souvent interdit (visibilité réduite, gabarit). Distance accrue car manœuvres lentes. Jamais par la droite.",
+        explanationEn: "Oversized convoy: pilot vehicle (flashing lights, 'convoi exceptionnel' sign) guides traffic. Follow its instructions. Overtaking often forbidden (reduced visibility, size). Increased distance due to slow maneuvers. Never overtake on the right.",
+        trapNote: "Pilot vehicle signals are LEGAL ORDERS — not suggestions.",
+        distractorNotes: {
+            D: "Right-side overtaking of a convoy is dangerous and generally illegal."
+        }
+    },
+    {
+        id: "croi-177",
+        topic: "croisement_depassement",
+        difficulty: 3,
+        questionFr: "Quelles sont les conséquences d'un dépassement dangereux ?",
+        questionEn: "What are the consequences of dangerous overtaking?",
+        options: {
+            A: { fr: "Amende de 4e classe (135 €) + 3 points", en: "4th class fine (€135) + 3 points" },
+            B: { fr: "Suspension du permis possible jusqu'à 3 ans", en: "Possible licence suspension up to 3 years" },
+            C: { fr: "Mise en danger d'autrui (délit pénal) si conduite témérairement dangereuse", en: "Endangering others (criminal offence) if recklessly dangerous" },
+            D: { fr: "Aucune sanction si aucun accident ne survient", en: "No penalty if no accident occurs" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Dépassement dangereux : 135 € + 3 points (R414-4 et suivants). Suspension permis possible 3 ans, voire annulation si récidive. En cas de témérité grave (vie d'autrui en danger) : délit pénal de mise en danger d'autrui (1 an de prison, 15 000 €).",
+        explanationEn: "Dangerous overtaking: €135 + 3 points (R414-4 and following). Possible 3-year licence suspension, even cancellation on repeat. In case of severe recklessness (others' lives endangered): criminal offence of endangering others (1 year prison, €15,000).",
+        trapNote: "An accident is NOT required for sanctions — just being witnessed by police is enough.",
+        distractorNotes: {
+            D: "The infraction itself is sanctioned — accident or not."
+        }
     }
 ];
 
