@@ -27337,6 +27337,659 @@ const QUESTION_BANK = [
         trapNote: "The 2-month deadline for repairs after a failed inspection is strict — beyond that, you must redo the full inspection.",
         distractorNotes: {},
         vocabulary: [{ wordFr: "contrôle technique", wordEn: "vehicle inspection / MOT", definition: "Mandatory periodic safety inspection of vehicles" }]
+    },
+
+    // === B02 CHUNK 12 — S35: signalisation (sign-181..190), route (rout-177..186), arret (arret-098..107) ===
+    // --- SIGNALISATION (sign-181 to sign-190) — multi-answer ---
+    {
+        id: "sign-181",
+        topic: "signalisation",
+        difficulty: 2,
+        questionFr: "Que signalent les panneaux à messages variables (PMV) sur autoroute ?",
+        questionEn: "What do variable message signs (VMS) on motorways indicate?",
+        options: {
+            A: { fr: "Conditions de circulation en temps réel (bouchons, accidents)", en: "Real-time traffic conditions (jams, accidents)" },
+            B: { fr: "Limitations de vitesse temporaires", en: "Temporary speed limits" },
+            C: { fr: "Ils sont uniquement informatifs et n'ont aucune valeur réglementaire", en: "They are purely informational and have no regulatory value" },
+            D: { fr: "Ils remplacent les panneaux fixes uniquement la nuit", en: "They replace fixed signs only at night" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Les PMV affichent des informations en temps réel : trafic, accidents, conditions météo, et limitations de vitesse temporaires (110 au lieu de 130 par exemple). Ces limitations affichées sont obligatoires.",
+        explanationEn: "VMS display real-time information: traffic, accidents, weather, and temporary speed limits (e.g., 110 instead of 130). Displayed limits are mandatory.",
+        trapNote: "VMS speed limits are LEGALLY BINDING — not just suggestions. Ignoring them = same fine as ignoring fixed signs.",
+        distractorNotes: {
+            C: "VMS speed limits and lane closures are fully enforceable.",
+            D: "VMS operate 24/7 based on conditions, not time of day."
+        }
+    },
+    {
+        id: "sign-182",
+        topic: "signalisation",
+        difficulty: 2,
+        questionFr: "Que signifient les panneaux carrés de fin d'interdiction (fond blanc avec barre diagonale) ?",
+        questionEn: "What do end-of-prohibition signs (white background with diagonal bar) mean?",
+        options: {
+            A: { fr: "Ils marquent la fin d'une interdiction précédemment signalée", en: "They mark the end of a previously signaled prohibition" },
+            B: { fr: "Le panneau B33 termine une limitation de vitesse", en: "The B33 sign ends a speed limit" },
+            C: { fr: "Ils imposent une nouvelle limitation à respecter", en: "They impose a new limit to follow" },
+            D: { fr: "Ils n'existent qu'en agglomération", en: "They only exist in built-up areas" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Les panneaux de fin d'interdiction (fond blanc, barre diagonale grise/noire) terminent une restriction. Le B33 termine une limitation spécifique, le B31 termine toutes les interdictions précédentes.",
+        explanationEn: "End-of-prohibition signs (white background, diagonal bar) end a restriction. B33 ends a specific limit, B31 ends all previous prohibitions.",
+        trapNote: "B31 (single bar) ends ALL previous prohibitions — wider effect than B33.",
+        distractorNotes: {
+            C: "End signs lift restrictions, they don't impose new ones.",
+            D: "End signs exist on all road types, including motorways and rural roads."
+        }
+    },
+    {
+        id: "sign-183",
+        topic: "signalisation",
+        difficulty: 2,
+        questionFr: "Quelles sont les couleurs de fond des panneaux de direction en France ?",
+        questionEn: "What are the background colors of direction signs in France?",
+        options: {
+            A: { fr: "Bleu pour les autoroutes", en: "Blue for motorways" },
+            B: { fr: "Vert pour les grands itinéraires nationaux", en: "Green for major national routes" },
+            C: { fr: "Rouge pour les routes départementales", en: "Red for departmental roads" },
+            D: { fr: "Blanc avec inscriptions noires pour les directions locales", en: "White with black text for local destinations" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "En France : bleu = autoroutes, vert = liaisons principales/nationales, blanc = directions locales/secondaires, jaune = signalisation temporaire. Les départementales utilisent généralement le blanc.",
+        explanationEn: "In France: blue = motorways, green = main/national links, white = local/secondary directions, yellow = temporary signs. Departmental roads typically use white.",
+        trapNote: "Yellow = temporary (roadworks, deviations). Memorize the 4 colors: blue/green/white/yellow.",
+        distractorNotes: {
+            C: "Departmental and local roads use white backgrounds, not red. Red is reserved for prohibition borders."
+        }
+    },
+    {
+        id: "sign-184",
+        topic: "signalisation",
+        difficulty: 2,
+        signs: ["pedestrian-crossing"],
+        questionFr: "Quelles règles s'appliquent au panneau de passage piéton (panneau A13b) ?",
+        questionEn: "What rules apply to the pedestrian crossing sign (A13b)?",
+        options: {
+            A: { fr: "C'est un panneau de danger annonçant un passage piéton", en: "It's a danger sign warning of a pedestrian crossing" },
+            B: { fr: "Vous devez ralentir et être prêt à céder le passage", en: "You must slow down and be ready to yield" },
+            C: { fr: "Vous avez priorité absolue sur les piétons à ce passage", en: "You have absolute priority over pedestrians at this crossing" },
+            D: { fr: "Le panneau autorise à dépasser sur le passage piéton", en: "The sign allows overtaking on the crossing" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le A13b est un panneau triangulaire de danger qui annonce un passage piéton. Le piéton engagé ou manifestant son intention de traverser a la priorité (R415-11). Le dépassement est interdit à l'approche d'un passage piéton.",
+        explanationEn: "A13b is a triangular danger sign warning of a pedestrian crossing. A pedestrian who is engaged or showing intent to cross has priority (R415-11). Overtaking is prohibited near pedestrian crossings.",
+        trapNote: "Pedestrians have priority — even just SHOWING intent to cross. Don't wait for them to step on the road.",
+        distractorNotes: {
+            C: "Pedestrians always have priority at marked crossings.",
+            D: "Overtaking is forbidden at and near pedestrian crossings."
+        }
+    },
+    {
+        id: "sign-185",
+        topic: "signalisation",
+        difficulty: 2,
+        questionFr: "Que signifient les panneaux liés aux pistes cyclables ?",
+        questionEn: "What do cycle path signs mean?",
+        options: {
+            A: { fr: "Le panneau rond bleu avec un vélo blanc impose l'usage de la piste aux cyclistes", en: "The round blue sign with a white bicycle requires cyclists to use the path" },
+            B: { fr: "Le panneau carré bleu avec un vélo indique une piste conseillée mais non obligatoire", en: "The square blue sign with a bicycle indicates a recommended but non-mandatory path" },
+            C: { fr: "Tous les panneaux vélo sont obligatoires pour les cyclistes", en: "All bicycle signs are mandatory for cyclists" },
+            D: { fr: "Les voitures peuvent circuler sur les pistes cyclables si elles sont vides", en: "Cars can drive on cycle paths if they are empty" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le panneau rond bleu (B22a) impose l'usage de la piste cyclable aux cyclistes. Le panneau carré bleu (C113) indique une piste conseillée. Les véhicules motorisés ne peuvent jamais circuler sur les pistes cyclables.",
+        explanationEn: "The round blue sign (B22a) requires cyclists to use the bike path. The square blue sign (C113) indicates a recommended path. Motor vehicles can never drive on cycle paths.",
+        trapNote: "Round = obligation, Square = information/recommendation. Same logic across all blue signs.",
+        distractorNotes: {
+            C: "Square blue bike signs are recommendations, not obligations.",
+            D: "Cycle paths are reserved for bikes — motor vehicles forbidden even when empty."
+        }
+    },
+    {
+        id: "sign-186",
+        topic: "signalisation",
+        difficulty: 3,
+        questionFr: "Quelle est la différence entre une zone 30 et un panneau ponctuel de limitation à 30 km/h ?",
+        questionEn: "What is the difference between a Zone 30 and a single 30 km/h limit sign?",
+        options: {
+            A: { fr: "La zone 30 s'applique à un secteur entier jusqu'au panneau de fin de zone", en: "Zone 30 applies to a whole sector until the end-of-zone sign" },
+            B: { fr: "Le panneau ponctuel B14 cesse à la prochaine intersection ou au panneau de fin", en: "The single B14 sign ends at the next intersection or end sign" },
+            C: { fr: "Les deux ont exactement la même portée géographique", en: "Both have exactly the same geographic scope" },
+            D: { fr: "La zone 30 n'existe qu'en zone résidentielle privée", en: "Zone 30 only exists in private residential areas" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Une zone 30 (panneau B30) s'applique à un secteur entier jusqu'au panneau de fin de zone (B51). Un B14 (limitation à 30) cesse à la prochaine intersection significative ou au panneau de fin. Les zones offrent souvent priorité aux piétons et cyclistes.",
+        explanationEn: "Zone 30 (sign B30) applies to a whole sector until the end-of-zone sign (B51). A B14 (30 limit) ends at the next significant intersection or end sign. Zones often grant priority to pedestrians and cyclists.",
+        trapNote: "Zone signs cover ALL streets within the zone; single signs only cover the road they're posted on.",
+        distractorNotes: {
+            C: "Zone signs have a much wider area effect than single signs.",
+            D: "Zones 30 are common in city centers, near schools, and residential streets — not just private areas."
+        }
+    },
+    {
+        id: "sign-187",
+        topic: "signalisation",
+        difficulty: 2,
+        signs: ["children"],
+        questionFr: "Que devez-vous faire à l'approche d'un panneau \"endroit fréquenté par des enfants\" (A13a) ?",
+        questionEn: "What must you do when approaching a 'children's area' sign (A13a)?",
+        options: {
+            A: { fr: "Ralentir et redoubler de vigilance", en: "Slow down and stay extra vigilant" },
+            B: { fr: "Anticiper la traversée imprévisible d'un enfant", en: "Anticipate the unpredictable crossing of a child" },
+            C: { fr: "Garder votre vitesse car les enfants connaissent les règles", en: "Keep your speed as children know the rules" },
+            D: { fr: "Klaxonner pour signaler votre présence", en: "Honk to signal your presence" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le panneau A13a (triangle, deux enfants stylisés) signale un endroit fréquenté par des enfants (école, parc, etc.). Ralentissez et anticipez : un enfant peut surgir sans regarder. Le klaxon est interdit en agglomération sauf danger immédiat.",
+        explanationEn: "Sign A13a (triangle, two stylized children) warns of an area with children (school, park, etc.). Slow down and anticipate: a child may appear without looking. Honking is forbidden in built-up areas except for immediate danger.",
+        trapNote: "Children don't follow adult logic — assume they will dart out unexpectedly.",
+        distractorNotes: {
+            C: "Children's behavior is unpredictable; never assume they understand traffic rules.",
+            D: "Honking in built-up areas is restricted to immediate danger only (R416-1)."
+        }
+    },
+    {
+        id: "sign-188",
+        topic: "signalisation",
+        difficulty: 2,
+        questionFr: "Que signifient les panneaux d'animaux (A15a animaux domestiques, A15b animaux sauvages) ?",
+        questionEn: "What do animal signs mean (A15a domestic, A15b wild)?",
+        options: {
+            A: { fr: "A15a annonce un risque de présence de bétail (vaches, troupeaux)", en: "A15a warns of livestock presence (cows, herds)" },
+            B: { fr: "A15b annonce la possible traversée d'animaux sauvages (cerfs, sangliers)", en: "A15b warns of possible wild animal crossings (deer, wild boar)" },
+            C: { fr: "Les deux panneaux interdisent toute circulation", en: "Both signs prohibit all traffic" },
+            D: { fr: "Ces panneaux n'existent qu'en zone de montagne", en: "These signs only exist in mountain areas" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "A15a (vache) signale un risque de bétail traversant. A15b (cerf) signale la traversée d'animaux sauvages — particulièrement dangereux à l'aube et au crépuscule. Ce sont des panneaux de danger, pas d'interdiction.",
+        explanationEn: "A15a (cow) warns of livestock crossing risk. A15b (deer) warns of wild animal crossings — particularly dangerous at dawn and dusk. These are danger signs, not prohibitions.",
+        trapNote: "Wild animals are most active at dawn/dusk. Slow down significantly when these signs appear at those times.",
+        distractorNotes: {
+            C: "Animal signs are warnings, not prohibitions — circulation continues, but with caution.",
+            D: "Animal signs exist anywhere with animal-crossing risk: forests, rural roads, livestock zones."
+        }
+    },
+    {
+        id: "sign-189",
+        topic: "signalisation",
+        difficulty: 2,
+        questionFr: "Que signifient les différents panneaux de stationnement \"P\" ?",
+        questionEn: "What do the various 'P' parking signs mean?",
+        options: {
+            A: { fr: "P bleu sur fond blanc autorise le stationnement", en: "Blue P on white background authorizes parking" },
+            B: { fr: "P avec disque indique une zone bleue à durée limitée", en: "P with disc indicates a limited-duration blue zone" },
+            C: { fr: "P barré rouge interdit le stationnement", en: "P with red bar prohibits parking" },
+            D: { fr: "Tous les panneaux P signifient stationnement gratuit", en: "All P signs mean free parking" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Le P bleu autorise le stationnement. Avec un disque, la zone bleue impose un disque horaire (généralement 1h30 max). Le P barré rouge interdit le stationnement. Le stationnement payant est signalé séparément (panonceau, horodateur).",
+        explanationEn: "Blue P authorizes parking. With a disc, the blue zone requires a parking disc (usually 1h30 max). P with red bar prohibits parking. Paid parking is shown separately (panel, meter).",
+        trapNote: "Always check the panonceau (small panel) below the P — it specifies conditions, time limits, paid status.",
+        distractorNotes: {
+            D: "P signs say nothing about cost — payment is indicated by separate signs or meters."
+        }
+    },
+    {
+        id: "sign-190",
+        topic: "signalisation",
+        difficulty: 3,
+        questionFr: "Que signalent les panneaux temporaires à fond jaune ?",
+        questionEn: "What do temporary signs with yellow backgrounds indicate?",
+        options: {
+            A: { fr: "Travaux ou modifications temporaires de la circulation", en: "Roadworks or temporary traffic modifications" },
+            B: { fr: "Ils prévalent sur les panneaux fixes en cas de contradiction", en: "They override fixed signs in case of contradiction" },
+            C: { fr: "Ils sont uniquement décoratifs et peuvent être ignorés", en: "They are purely decorative and can be ignored" },
+            D: { fr: "Ils ne s'appliquent qu'aux véhicules de chantier", en: "They only apply to construction vehicles" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Les panneaux jaunes signalent des travaux, déviations ou modifications temporaires. Ils ont valeur réglementaire et prévalent sur les panneaux fixes en cas de contradiction (par ex. limitation à 70 sur autoroute).",
+        explanationEn: "Yellow signs indicate roadworks, detours, or temporary modifications. They are legally binding and override fixed signs in case of contradiction (e.g., 70 limit on a motorway).",
+        trapNote: "Yellow > white. A yellow 70 sign on the autoroute beats the standard 130.",
+        distractorNotes: {
+            C: "Yellow signs are fully enforceable — same fines as fixed signs.",
+            D: "Yellow signs apply to ALL road users in the work zone."
+        }
+    },
+
+    // --- ROUTE (rout-177 to rout-186) — multi-answer ---
+    {
+        id: "rout-177",
+        topic: "route",
+        difficulty: 2,
+        questionFr: "Quelles caractéristiques distinguent une route nationale d'une route départementale ?",
+        questionEn: "What characteristics distinguish a national road from a departmental road?",
+        options: {
+            A: { fr: "La route nationale (N) est gérée par l'État", en: "National road (N) is managed by the State" },
+            B: { fr: "La route départementale (D) est gérée par le département", en: "Departmental road (D) is managed by the department" },
+            C: { fr: "Les nationales sont toujours à 2x2 voies séparées", en: "National roads are always dual carriageways" },
+            D: { fr: "La vitesse limite hors agglomération est identique sur N et D ordinaires", en: "Speed limit outside built-up areas is identical on ordinary N and D roads" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Les routes nationales (N) sont gérées par l'État, les départementales (D) par le conseil départemental. Hors agglomération, les deux ont la même vitesse limite : 80 km/h sur route bidirectionnelle sans séparateur central, 90 km/h si séparateur central.",
+        explanationEn: "National roads (N) are State-managed; departmental roads (D) by the departmental council. Outside built-up areas, both have the same speed limit: 80 km/h on bidirectional roads without a central separator, 90 km/h with one.",
+        trapNote: "Since 2018, the default rural limit is 80 km/h (not 90) unless the road has a central physical separator.",
+        distractorNotes: {
+            C: "Many national roads are 2-lane bidirectional. Dual carriageway is not a defining trait of N roads."
+        }
+    },
+    {
+        id: "rout-178",
+        topic: "route",
+        difficulty: 2,
+        questionFr: "Quels facteurs rendent une chaussée glissante ?",
+        questionEn: "What factors make a road surface slippery?",
+        options: {
+            A: { fr: "La pluie après une longue période sèche (poussières + huiles)", en: "Rain after a long dry period (dust + oils)" },
+            B: { fr: "Les feuilles mortes ou la boue sur la chaussée", en: "Dead leaves or mud on the road" },
+            C: { fr: "Le verglas, surtout sur les ponts et zones ombragées", en: "Black ice, especially on bridges and shaded areas" },
+            D: { fr: "Une chaussée sèche et propre par temps clair", en: "A clean, dry road in clear weather" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Les premières pluies après une période sèche sont les plus dangereuses (poussières/huiles forment un film glissant). Feuilles mortes, boue et gravillons réduisent l'adhérence. Le verglas se forme d'abord sur les ponts et zones ombragées (surface plus froide).",
+        explanationEn: "First rain after a dry spell is most dangerous (dust/oils form a slippery film). Dead leaves, mud, and gravel reduce grip. Black ice forms first on bridges and shaded areas (colder surface).",
+        trapNote: "Bridges freeze BEFORE the surrounding road — slow down on bridges in winter.",
+        distractorNotes: {
+            D: "A dry, clean road provides maximum grip — not slippery."
+        }
+    },
+    {
+        id: "rout-179",
+        topic: "route",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent à la bande d'arrêt d'urgence (BAU) sur autoroute ?",
+        questionEn: "What rules apply to the emergency lane (BAU) on motorways?",
+        options: {
+            A: { fr: "Elle est réservée aux véhicules en panne ou aux secours", en: "It is reserved for breakdowns and emergency vehicles" },
+            B: { fr: "Y circuler ou s'y arrêter sans raison valable est sanctionné (135 €, 3 points)", en: "Driving or stopping without valid reason is sanctioned (€135, 3 points)" },
+            C: { fr: "Elle peut être utilisée pour dépasser un véhicule lent", en: "It can be used to overtake a slow vehicle" },
+            D: { fr: "Vous devez gilet et triangle si vous y stationnez", en: "You must use a vest and warning triangle if you stop there" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "La BAU est réservée aux véhicules en panne, aux secours, et aux forces de l'ordre. Y rouler ou s'y arrêter sans raison valable : 135 € + 3 points. En cas d'arrêt forcé : gilet jaune avant de sortir + triangle à 30 m minimum.",
+        explanationEn: "The BAU is reserved for breakdowns, emergency services, and law enforcement. Driving or stopping without valid reason: €135 + 3 points. If forced to stop: high-vis vest before exiting + warning triangle at 30m minimum.",
+        trapNote: "Vest goes ON before stepping out — putting it on after exit is when most pedestrian-on-BAU accidents happen.",
+        distractorNotes: {
+            C: "Using the BAU to overtake is illegal and dangerous."
+        }
+    },
+    {
+        id: "rout-180",
+        topic: "route",
+        difficulty: 2,
+        questionFr: "Quelles sont les règles de circulation dans un giratoire (rond-point à priorité à l'anneau) ?",
+        questionEn: "What are the traffic rules in a 'giratoire' (roundabout where ring has priority)?",
+        options: {
+            A: { fr: "Les véhicules dans l'anneau ont la priorité (panneau \"cédez le passage\" à l'entrée)", en: "Vehicles in the ring have priority (yield sign at entry)" },
+            B: { fr: "Mettez votre clignotant droit avant la sortie", en: "Activate right turn signal before exiting" },
+            C: { fr: "Les véhicules entrants ont la priorité sur ceux dans l'anneau", en: "Entering vehicles have priority over those in the ring" },
+            D: { fr: "Vous pouvez vous arrêter dans l'anneau pour laisser entrer un autre véhicule", en: "You can stop in the ring to let another vehicle in" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Dans un giratoire (cédez le passage à l'entrée), les véhicules dans l'anneau sont prioritaires. Clignotant droit avant la sortie. Ne jamais s'arrêter dans l'anneau (sauf danger). Attention : un \"rond-point\" sans panneau cédez le passage suit la priorité à droite (rare).",
+        explanationEn: "In a giratoire (yield sign at entry), vehicles in the ring have priority. Right turn signal before exiting. Never stop in the ring (except danger). Note: a 'rond-point' without yield sign follows priority-right (rare).",
+        trapNote: "99% of French roundabouts are giratoires (ring priority). Old-style 'rond-point' with priority-right is rare and signposted.",
+        distractorNotes: {
+            C: "In a giratoire, ring-traffic always has priority — entering vehicles must yield.",
+            D: "Stopping in the ring blocks traffic and is dangerous."
+        }
+    },
+    {
+        id: "rout-181",
+        topic: "route",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent dans une rue à sens unique ?",
+        questionEn: "What rules apply on a one-way street?",
+        options: {
+            A: { fr: "Vous pouvez stationner des deux côtés (sauf interdiction signalée)", en: "You can park on both sides (unless prohibited)" },
+            B: { fr: "Le double-sens cyclable peut être autorisé pour les vélos", en: "Two-way cycling may be authorized for bikes" },
+            C: { fr: "La priorité à droite ne s'applique pas dans une rue à sens unique", en: "Priority-to-right does not apply on a one-way street" },
+            D: { fr: "Vous pouvez circuler en sens inverse pour faire demi-tour", en: "You can drive against the flow to make a U-turn" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "En sens unique : stationnement autorisé des deux côtés (sauf interdiction). De nombreuses rues à sens unique en agglomération autorisent les cyclistes en double-sens (panneau M9v2). La priorité à droite reste valable aux intersections.",
+        explanationEn: "On a one-way street: parking allowed on both sides (unless prohibited). Many one-way streets in built-up areas allow cyclists in both directions (sign M9v2). Priority-to-right still applies at intersections.",
+        trapNote: "Watch for the cycle two-way panel — a cyclist can legally come at you head-on.",
+        distractorNotes: {
+            C: "Priority-right applies on all roads at uncontrolled intersections, including one-ways.",
+            D: "Driving against a one-way is a serious offense (135 €, 4 points)."
+        }
+    },
+    {
+        id: "rout-182",
+        topic: "route",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent dans une voie sans issue (impasse) ?",
+        questionEn: "What rules apply on a dead-end street (impasse)?",
+        options: {
+            A: { fr: "Le panneau C13a (carré bleu, T blanc inversé) signale une impasse", en: "Sign C13a (blue square, inverted white T) indicates a dead-end" },
+            B: { fr: "La circulation y reste possible dans les deux sens sauf indication contraire", en: "Traffic remains possible in both directions unless otherwise indicated" },
+            C: { fr: "Toute impasse est obligatoirement à sens unique", en: "Every dead-end is necessarily one-way" },
+            D: { fr: "Le stationnement y est systématiquement interdit", en: "Parking is systematically forbidden there" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le C13a annonce une voie sans issue. La circulation y est généralement à double sens (sauf indication). Le stationnement suit les règles habituelles (pas d'interdiction systématique). Anticipez le demi-tour en bout d'impasse.",
+        explanationEn: "C13a indicates a dead-end. Traffic is usually bidirectional (unless otherwise indicated). Parking follows normal rules (no automatic prohibition). Plan your U-turn at the end.",
+        trapNote: "C13a variants exist: with cycle path through, with pedestrian exit — read the symbol carefully.",
+        distractorNotes: {
+            C: "Most dead-ends are bidirectional — one-way must be signposted separately.",
+            D: "Parking is allowed unless specifically prohibited."
+        }
+    },
+    {
+        id: "rout-183",
+        topic: "route",
+        difficulty: 3,
+        questionFr: "Quelles règles s'appliquent en montagne ?",
+        questionEn: "What rules apply in mountain driving?",
+        options: {
+            A: { fr: "Le véhicule descendant doit céder le passage au véhicule montant", en: "Descending vehicles must yield to ascending vehicles" },
+            B: { fr: "En période hivernale (loi Montagne), équipements neige obligatoires dans certaines zones", en: "In winter (Montagne law), snow equipment is mandatory in certain zones" },
+            C: { fr: "Le véhicule montant doit toujours céder le passage", en: "Ascending vehicles must always yield" },
+            D: { fr: "L'utilisation du frein moteur est recommandée en descente longue", en: "Engine braking is recommended on long descents" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "En montagne, le véhicule descendant cède le passage au montant (plus difficile de redémarrer en côte). La loi Montagne (depuis 2021) impose pneus hiver ou chaînes du 1er nov au 31 mars dans certaines communes. Le frein moteur évite la surchauffe des freins en descente.",
+        explanationEn: "In mountains, descending vehicles yield to ascending ones (harder to restart uphill). The Montagne law (since 2021) requires winter tires or chains from Nov 1 to Mar 31 in certain municipalities. Engine braking prevents brake overheating on descents.",
+        trapNote: "Use engine braking (lower gears) on long descents — riding the brakes overheats them and can cause failure.",
+        distractorNotes: {
+            C: "Opposite — descending vehicles yield to ascending vehicles."
+        }
+    },
+    {
+        id: "rout-184",
+        topic: "route",
+        difficulty: 2,
+        questionFr: "Quelles précautions prendre en zone de travaux (chantier) ?",
+        questionEn: "What precautions to take in a roadwork zone?",
+        options: {
+            A: { fr: "Respecter la signalisation temporaire (panneaux jaunes)", en: "Respect temporary signs (yellow signs)" },
+            B: { fr: "Réduire la vitesse et augmenter les distances de sécurité", en: "Reduce speed and increase safety distances" },
+            C: { fr: "Maintenir votre vitesse pour ne pas créer de bouchon", en: "Maintain your speed to avoid creating traffic jams" },
+            D: { fr: "Anticiper la présence de personnels sur la chaussée", en: "Anticipate the presence of workers on the road" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "En zone de travaux : respectez la signalisation temporaire (jaune), réduisez la vitesse, augmentez les distances. Anticipez la présence de personnels et engins. Les amendes pour excès de vitesse sont doublées en zone de chantier en présence de personnel.",
+        explanationEn: "In work zones: respect temporary signs (yellow), reduce speed, increase distances. Anticipate the presence of workers and machinery. Speeding fines are doubled in work zones when personnel are present.",
+        trapNote: "Speeding fines DOUBLE when workers are present in roadwork zones.",
+        distractorNotes: {
+            C: "Maintaining speed is dangerous in work zones — slow down regardless of traffic flow."
+        }
+    },
+    {
+        id: "rout-185",
+        topic: "route",
+        difficulty: 3,
+        questionFr: "Quelles règles s'appliquent à une intersection sans aucune signalisation ?",
+        questionEn: "What rules apply at an intersection with no signage at all?",
+        options: {
+            A: { fr: "La priorité à droite s'applique par défaut", en: "Priority-to-right applies by default" },
+            B: { fr: "Vous devez ralentir pour pouvoir céder le passage si nécessaire", en: "You must slow down to be able to yield if necessary" },
+            C: { fr: "Le véhicule le plus rapide a la priorité", en: "The fastest vehicle has priority" },
+            D: { fr: "La priorité à droite ne s'applique pas hors agglomération", en: "Priority-to-right doesn't apply outside built-up areas" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "À une intersection non signalée, la priorité à droite s'applique (article R415-5). Vous devez ralentir et anticiper. La règle s'applique partout (agglomération ET hors agglomération) sauf si une signalisation indique le contraire (STOP, cédez, axe prioritaire).",
+        explanationEn: "At an unsignaled intersection, priority-to-right applies (Article R415-5). You must slow down and anticipate. The rule applies everywhere (in AND outside built-up areas) unless signage indicates otherwise (STOP, yield, priority road).",
+        trapNote: "Priority-right is the DEFAULT everywhere in France — only signs override it.",
+        distractorNotes: {
+            C: "Speed grants no priority — the rule is purely about who's coming from the right.",
+            D: "Priority-right applies on all unsignaled intersections, regardless of location."
+        }
+    },
+    {
+        id: "rout-186",
+        topic: "route",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent dans une zone piétonne ?",
+        questionEn: "What rules apply in a pedestrian zone?",
+        options: {
+            A: { fr: "Les véhicules autorisés circulent à l'allure du pas (max 6 km/h en zone de rencontre)", en: "Authorized vehicles drive at walking pace (max 6 km/h in shared zones)" },
+            B: { fr: "Les piétons ont la priorité sur toute la chaussée", en: "Pedestrians have priority across the entire roadway" },
+            C: { fr: "Tous les véhicules sont autorisés à y circuler sans restriction", en: "All vehicles are allowed to drive there without restriction" },
+            D: { fr: "Le stationnement y est interdit en dehors des emplacements aménagés", en: "Parking is prohibited outside designated spaces" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "En zone piétonne, seuls les véhicules autorisés (livraisons, riverains, secours) peuvent circuler, à l'allure du pas. Les piétons ont la priorité sur toute la chaussée. Le stationnement est interdit hors emplacements aménagés. Distinction : zone de rencontre (vélo + véhicules + piétons) limite à 20 km/h.",
+        explanationEn: "In a pedestrian zone, only authorized vehicles (deliveries, residents, emergency) can drive, at walking pace. Pedestrians have priority across the whole roadway. Parking is prohibited outside designated spots. Note: 'rencontre' zones (bikes + vehicles + pedestrians) cap at 20 km/h.",
+        trapNote: "Pedestrian zone = walking pace. Rencontre zone = 20 km/h. Zone 30 = 30 km/h. Three different limits!",
+        distractorNotes: {
+            C: "Only authorized vehicles can enter a pedestrian zone (residents, deliveries, emergency)."
+        }
+    },
+
+    // --- ARRET & STATIONNEMENT (arret-098 to arret-107) — multi-answer ---
+    {
+        id: "arret-098",
+        topic: "arret_stationnement",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent à proximité d'un arrêt de bus matérialisé (zigzag jaune) ?",
+        questionEn: "What rules apply near a marked bus stop (yellow zigzag)?",
+        options: {
+            A: { fr: "L'arrêt et le stationnement sont interdits sur la zone matérialisée", en: "Stopping and parking are prohibited on the marked area" },
+            B: { fr: "Vous devez céder le passage au bus quittant son arrêt en agglomération", en: "You must yield to a bus leaving its stop in built-up areas" },
+            C: { fr: "Le stationnement est autorisé si l'arrêt fait moins de 5 minutes", en: "Parking is allowed if it lasts less than 5 minutes" },
+            D: { fr: "Vous pouvez vous arrêter brièvement pour déposer un passager", en: "You can stop briefly to drop off a passenger" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Le marquage zigzag jaune interdit tout arrêt et stationnement sur la zone (R417-10). En agglomération, vous devez céder le passage au bus quittant son arrêt et ayant signalé son intention (R415-12). Pas d'exception pour dépose rapide.",
+        explanationEn: "The yellow zigzag marking prohibits all stopping and parking in the area (R417-10). In built-up areas, you must yield to a bus leaving its stop and signaling its intention (R415-12). No exception for quick drop-offs.",
+        trapNote: "Bus stop = ZERO stopping. Even 30 seconds to drop someone off is illegal.",
+        distractorNotes: {
+            C: "No time-based exception — bus stops are no-stop zones.",
+            D: "Quick drop-offs are also forbidden in the marked zone."
+        }
+    },
+    {
+        id: "arret-099",
+        topic: "arret_stationnement",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent aux places de stationnement réservées (GIG-GIC, handicapés) ?",
+        questionEn: "What rules apply to reserved parking spaces (GIG-GIC, disabled)?",
+        options: {
+            A: { fr: "Réservées aux titulaires de la carte mobilité inclusion mention stationnement", en: "Reserved for holders of the disabled parking card (CMI-S)" },
+            B: { fr: "S'y garer sans carte expose à 135 € d'amende et mise en fourrière", en: "Parking without the card exposes to a €135 fine and towing" },
+            C: { fr: "Elles sont accessibles à tous le dimanche et jours fériés", en: "They are accessible to everyone on Sundays and public holidays" },
+            D: { fr: "Le stationnement y est gratuit pour les titulaires de la carte", en: "Parking is free for cardholders" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Les places PMR sont réservées aux titulaires de la CMI-S (anciennement carte GIG/GIC). Stationner sans carte : 135 € + mise en fourrière possible. Les titulaires bénéficient de la gratuité sur tous les emplacements payants en voirie (loi 2015).",
+        explanationEn: "Disabled spaces are reserved for CMI-S cardholders (formerly GIG/GIC card). Parking without the card: €135 + possible towing. Cardholders enjoy free parking in all on-street paid spaces (2015 law).",
+        trapNote: "Sundays/holidays do NOT exempt you — disabled spaces are reserved 24/7/365.",
+        distractorNotes: {
+            C: "Disabled parking is reserved at all times — no day/holiday exception."
+        }
+    },
+    {
+        id: "arret-100",
+        topic: "arret_stationnement",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent au stationnement à proximité d'un passage piéton ?",
+        questionEn: "What rules apply to parking near a pedestrian crossing?",
+        options: {
+            A: { fr: "Stationnement interdit dans les 5 mètres avant le passage piéton", en: "Parking forbidden within 5 meters before the crossing" },
+            B: { fr: "Le but est de garantir la visibilité piéton/conducteur", en: "The aim is to ensure pedestrian/driver visibility" },
+            C: { fr: "Vous pouvez stationner juste avant si votre véhicule est petit", en: "You can park just before if your vehicle is small" },
+            D: { fr: "L'interdiction concerne aussi l'arrêt court", en: "The prohibition also applies to brief stopping" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Le stationnement ET l'arrêt sont interdits dans les 5 mètres en amont d'un passage piéton (R417-11). L'objectif est la visibilité mutuelle. Infraction très gênante : 135 € + 3 points + mise en fourrière possible.",
+        explanationEn: "Both parking AND stopping are forbidden within 5 meters before a pedestrian crossing (R417-11). The goal is mutual visibility. Very obstructive infraction: €135 + 3 points + possible towing.",
+        trapNote: "Vehicle size doesn't matter — the 5m rule is absolute regardless of car size.",
+        distractorNotes: {
+            C: "Vehicle size has no effect — the rule is geometric, not size-based."
+        }
+    },
+    {
+        id: "arret-101",
+        topic: "arret_stationnement",
+        difficulty: 2,
+        questionFr: "Quand devez-vous allumer vos feux de stationnement ou de position en stationnant ?",
+        questionEn: "When must you turn on parking or position lights when parked?",
+        options: {
+            A: { fr: "La nuit, hors agglomération, sur une chaussée non éclairée", en: "At night, outside built-up areas, on an unlit road" },
+            B: { fr: "Quand la visibilité est réduite (brouillard, pluie forte) en stationnement", en: "When visibility is reduced (fog, heavy rain) while parked" },
+            C: { fr: "Toujours en stationnement, même en plein jour", en: "Always when parked, even in broad daylight" },
+            D: { fr: "Jamais — les feux ne s'allument qu'en circulation", en: "Never — lights only turn on when driving" }
+        },
+        correctAnswers: ["A","B"],
+        answerCount: 2,
+        explanationFr: "Vous devez allumer feux de position ou de stationnement la nuit hors agglomération sur chaussée non éclairée, ou par mauvaise visibilité (R416-2). En agglomération, le stationnement éclairé n'exige pas de feux. Inutile en plein jour.",
+        explanationEn: "You must turn on position or parking lights at night outside built-up areas on unlit roads, or in poor visibility (R416-2). In built-up areas with street lighting, no parking lights needed. Not needed in daytime.",
+        trapNote: "Parking lights only matter when YOUR car could be invisible — night + dark road + bad weather.",
+        distractorNotes: {
+            C: "Daytime parking needs no lights.",
+            D: "Lights ARE required when parked in unlit conditions at night."
+        }
+    },
+    {
+        id: "arret-102",
+        topic: "arret_stationnement",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent aux zones bleues (disque obligatoire) ?",
+        questionEn: "What rules apply in blue zones (parking disc required)?",
+        options: {
+            A: { fr: "Vous devez afficher un disque indiquant l'heure d'arrivée", en: "You must display a disc showing your arrival time" },
+            B: { fr: "La durée maximale est généralement de 1h30", en: "The maximum duration is typically 1h30" },
+            C: { fr: "Le disque européen est obligatoire depuis 2012", en: "The European disc has been mandatory since 2012" },
+            D: { fr: "Les zones bleues sont gratuites pour tous les véhicules sans limite", en: "Blue zones are free for all vehicles without limit" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "En zone bleue, affichez un disque européen (modèle unique depuis 2012) indiquant votre heure d'arrivée. Durée généralement limitée à 1h30 (peut varier selon commune). Stationner sans disque ou au-delà de la durée : 35 € (FPS) à 135 € selon commune.",
+        explanationEn: "In a blue zone, display a European disc (single model since 2012) showing arrival time. Duration usually capped at 1h30 (may vary by municipality). Parking without disc or beyond limit: €35 (FPS) to €135 depending on municipality.",
+        trapNote: "Old red/cardboard discs are no longer valid — use the European disc with sliding hours.",
+        distractorNotes: {
+            D: "Blue zones have time limits — exceeding them triggers a fine."
+        }
+    },
+    {
+        id: "arret-103",
+        topic: "arret_stationnement",
+        difficulty: 3,
+        questionFr: "Qu'est-ce qu'un stationnement gênant et quelles sanctions encourez-vous ?",
+        questionEn: "What is obstructive parking and what penalties do you face?",
+        options: {
+            A: { fr: "Stationnement sur trottoir, passage piéton, voie cyclable, devant une bouche d'incendie", en: "Parking on sidewalk, crosswalk, cycle lane, in front of a fire hydrant" },
+            B: { fr: "Amende forfaitaire de 135 € (gênant) ou 750 € (très gênant)", en: "Fixed fine of €135 (obstructive) or €750 (very obstructive)" },
+            C: { fr: "Mise en fourrière immédiate possible", en: "Immediate towing possible" },
+            D: { fr: "Aucune sanction si vous avez activé vos feux de détresse", en: "No penalty if you activated your hazard lights" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Stationnement gênant : 135 € (R417-10), très gênant : 750 € (R417-11) — trottoir, voie cyclable, devant entrée pompiers, place handicapé, etc. Mise en fourrière possible immédiatement. Les feux de détresse ne légalisent JAMAIS un stationnement interdit.",
+        explanationEn: "Obstructive parking: €135 (R417-10), very obstructive: €750 (R417-11) — sidewalk, cycle lane, in front of fire access, disabled space, etc. Immediate towing possible. Hazard lights NEVER legalize a forbidden parking.",
+        trapNote: "Hazards don't make illegal parking legal — they just signal you're being illegal AND aware of it.",
+        distractorNotes: {
+            D: "Hazard lights never legalize a parking infraction."
+        }
+    },
+    {
+        id: "arret-104",
+        topic: "arret_stationnement",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent au stationnement payant en voirie (FPS) ?",
+        questionEn: "What rules apply to paid on-street parking (FPS)?",
+        options: {
+            A: { fr: "Le forfait post-stationnement (FPS) remplace l'amende depuis 2018", en: "The post-parking fee (FPS) has replaced fines since 2018" },
+            B: { fr: "Son montant est fixé par chaque commune", en: "The amount is set by each municipality" },
+            C: { fr: "Le défaut de paiement entraîne automatiquement un retrait de points", en: "Non-payment automatically results in license points loss" },
+            D: { fr: "Vous pouvez le contester dans un délai d'1 mois", en: "You can contest it within 1 month" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Depuis 2018, le défaut de paiement du stationnement payant n'est plus une amende mais un FPS (forfait post-stationnement) fixé par chaque commune (souvent 17-50 €). Aucun retrait de points (infraction décriminalisée). Contestable sous 1 mois.",
+        explanationEn: "Since 2018, non-payment of paid parking is no longer a fine but a FPS (post-parking fee) set by each municipality (often €17-50). No license points lost (decriminalized offense). Can be contested within 1 month.",
+        trapNote: "FPS does NOT cost points — it's a civil fee, not a criminal fine.",
+        distractorNotes: {
+            C: "FPS does not affect license points — it's a civil charge, not a penal fine."
+        }
+    },
+    {
+        id: "arret-105",
+        topic: "arret_stationnement",
+        difficulty: 2,
+        questionFr: "Quelles règles s'appliquent aux places de stationnement pour véhicules électriques ?",
+        questionEn: "What rules apply to electric vehicle parking spaces?",
+        options: {
+            A: { fr: "Réservées aux véhicules en charge sur la borne", en: "Reserved for vehicles charging at the station" },
+            B: { fr: "Stationner un véhicule thermique sur ces places est sanctionné", en: "Parking a fuel-engine vehicle there is sanctioned" },
+            C: { fr: "Un véhicule électrique non en charge peut y rester aussi longtemps qu'il veut", en: "A non-charging electric vehicle can stay as long as it wants" },
+            D: { fr: "Une durée maximale est généralement imposée même en charge", en: "A maximum duration is typically imposed even while charging" }
+        },
+        correctAnswers: ["A","B","D"],
+        answerCount: 3,
+        explanationFr: "Les places marquées « VE en charge » sont réservées aux véhicules électriques branchés. Y stationner avec un véhicule thermique : 35 € à 135 € selon commune. Un VE non branché y est aussi fautif. Durée max souvent imposée (1-4h) pour rotation.",
+        explanationEn: "Spots marked 'EV charging' are reserved for electric vehicles plugged in. Parking a fuel vehicle there: €35 to €135 depending on municipality. A non-plugged EV is also at fault. Max duration often imposed (1-4h) to ensure rotation.",
+        trapNote: "Being electric isn't enough — you must be PLUGGED IN AND CHARGING to legally use the spot.",
+        distractorNotes: {
+            C: "EV spots require active charging — non-charging EVs face the same penalty."
+        }
+    },
+    {
+        id: "arret-106",
+        topic: "arret_stationnement",
+        difficulty: 3,
+        questionFr: "Comment doit-on stationner pour respecter les distances réglementaires ?",
+        questionEn: "How must you park to comply with regulatory distances?",
+        options: {
+            A: { fr: "Le véhicule doit être parallèle au trottoir, du côté droit en sens unique ou bidirectionnel", en: "Vehicle must be parallel to curb, on right side (one-way or bidirectional)" },
+            B: { fr: "Distance maximale de 0,5 m entre le véhicule et le trottoir (ou bord)", en: "Maximum 0.5 m between the vehicle and the curb (or edge)" },
+            C: { fr: "Le stationnement à gauche est autorisé en sens unique", en: "Left-side parking is allowed on one-way streets" },
+            D: { fr: "Aucune distance minimale n'est imposée entre véhicules garés", en: "No minimum distance is imposed between parked vehicles" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Stationnement parallèle au trottoir, du côté droit (sens bidirectionnel) ou des deux côtés (sens unique). Distance max 0,5 m du trottoir. Sortie facile pour véhicules voisins (espace suffisant). Le mauvais positionnement peut justifier un PV.",
+        explanationEn: "Parallel parking to curb, on right side (bidirectional) or both sides (one-way). Max 0.5 m from curb. Easy exit for neighboring vehicles (sufficient space). Poor positioning can justify a ticket.",
+        trapNote: "0.5m is the legal max from curb. Wider gap = obstructive parking risk.",
+        distractorNotes: {
+            D: "You must leave enough space for neighboring vehicles to exit."
+        }
+    },
+    {
+        id: "arret-107",
+        topic: "arret_stationnement",
+        difficulty: 3,
+        questionFr: "Que risquez-vous en cas de stationnement dit \"abusif\" ?",
+        questionEn: "What do you risk in case of so-called 'abusive' parking?",
+        options: {
+            A: { fr: "Stationnement de plus de 7 jours consécutifs au même endroit", en: "Parking more than 7 consecutive days in the same spot" },
+            B: { fr: "Mise en fourrière possible après mise en demeure", en: "Possible towing after formal notice" },
+            C: { fr: "Amende forfaitaire de 35 € (1ère classe, R417-12)", en: "Fixed €35 fine (1st class, R417-12)" },
+            D: { fr: "Aucune sanction si vous payez le stationnement à chaque fois", en: "No penalty if you pay parking each time" }
+        },
+        correctAnswers: ["A","B","C"],
+        answerCount: 3,
+        explanationFr: "Le stationnement abusif (plus de 7 jours consécutifs au même endroit) est sanctionné par 35 € (R417-12). Mise en fourrière possible après notification. Le paiement régulier ne suffit pas : c'est l'immobilisation prolongée qui est interdite.",
+        explanationEn: "Abusive parking (more than 7 consecutive days in the same spot) is sanctioned with €35 (R417-12). Towing possible after notification. Regular payment isn't enough: it's the prolonged immobilization that's prohibited.",
+        trapNote: "Even paying daily, leaving a car 7+ days in one spot is illegal — move it occasionally.",
+        distractorNotes: {
+            D: "Payment doesn't immunize against abusive-parking rules."
+        }
     }
 ];
 
