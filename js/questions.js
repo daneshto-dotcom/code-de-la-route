@@ -28704,11 +28704,12 @@ function getAdaptiveQuestions(count = 10) {
         if (a.isCorrect) questionAccuracy[a.questionId].correct++;
     }
 
-    // Slot allocation: 25% reviews, 30% weak topics, 15% recently-wrong, 15% unseen, 15% random
-    const reviewSlots = Math.round(count * 0.25);
-    const weakSlots = Math.round(count * 0.30);
-    const recentWrongSlots = Math.round(count * 0.15);
-    const unseenSlots = Math.round(count * 0.15);
+    // ELO-aware slot allocation: 30% reviews, 25% zone-matched, 20% weak, 10% recent-wrong, 10% unseen, 5% random
+    const reviewSlots = Math.round(count * 0.30);
+    const zoneSlots = Math.round(count * 0.25);
+    const weakSlots = Math.round(count * 0.20);
+    const recentWrongSlots = Math.round(count * 0.10);
+    const unseenSlots = Math.round(count * 0.10);
 
     function fillBucket(pool, maxSlots) {
         const shuffled = [...pool].sort(() => Math.random() - 0.5);
@@ -28727,9 +28728,18 @@ function getAdaptiveQuestions(count = 10) {
     // 1. Due reviews first (highest priority)
     const dueReviews = Storage.getDueReviews();
     const reviewPool = dueReviews.map(r => getQuestionById(r.questionId)).filter(Boolean);
-    const reviewFilled = fillBucket(reviewPool, reviewSlots);
+    fillBucket(reviewPool, reviewSlots);
 
-    // 2. Weak topic questions (topics with lowest accuracy, at least some attempts)
+    // 2. Zone-matched questions (ELO difficulty within ±200 of user rating)
+    const userRating = Storage.getUserRating();
+    const difficultyMap = Storage.getQuestionDifficulty();
+    const zonePool = QUESTION_BANK.filter(q => {
+        const qDiff = difficultyMap[q.id] || 1500;
+        return Math.abs(qDiff - userRating) <= 200 && attemptedIds.has(q.id);
+    });
+    fillBucket(zonePool, zoneSlots);
+
+    // 3. Weak topic questions (topics with lowest accuracy, at least some attempts)
     const sortedTopics = [...mastery].sort((a, b) => {
         const aScore = a.totalAttempts > 0 ? a.accuracy : 50;
         const bScore = b.totalAttempts > 0 ? b.accuracy : 50;
@@ -28737,9 +28747,9 @@ function getAdaptiveQuestions(count = 10) {
     });
     const weakTopicIds = sortedTopics.slice(0, 4).map(t => t.id || t.topic);
     const weakPool = QUESTION_BANK.filter(q => weakTopicIds.includes(q.topic));
-    const weakFilled = fillBucket(weakPool, weakSlots);
+    fillBucket(weakPool, weakSlots);
 
-    // 3. Recently-wrong questions (answered wrong in last 100 attempts, not yet in SR review)
+    // 4. Recently-wrong questions (answered wrong in last 100 attempts)
     const recentAttempts = attempts.slice(-100);
     const recentWrongIds = new Set();
     for (let i = recentAttempts.length - 1; i >= 0; i--) {
@@ -28748,18 +28758,18 @@ function getAdaptiveQuestions(count = 10) {
     const recentWrongPool = [...recentWrongIds]
         .map(id => getQuestionById(id))
         .filter(Boolean);
-    const recentWrongFilled = fillBucket(recentWrongPool, recentWrongSlots);
+    fillBucket(recentWrongPool, recentWrongSlots);
 
-    // 4. Unseen questions (never attempted — coverage gaps)
+    // 5. Unseen questions (never attempted — coverage gaps)
     const unseenPool = QUESTION_BANK.filter(q => !attemptedIds.has(q.id));
-    const unseenFilled = fillBucket(unseenPool, unseenSlots);
+    fillBucket(unseenPool, unseenSlots);
 
-    // 5. Random fill for all remaining slots (including unfilled from other buckets)
+    // 6. Random fill for all remaining slots
     const needed = count - selected.length;
     const remainingPool = QUESTION_BANK.filter(q => !usedIds.has(q.id));
     fillBucket(remainingPool, needed);
 
-    // Final fill if still short (shouldn't happen with 540 questions)
+    // Final fill if still short
     while (selected.length < count) {
         const remaining = QUESTION_BANK.filter(q => !usedIds.has(q.id));
         if (remaining.length === 0) break;

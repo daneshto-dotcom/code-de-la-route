@@ -407,12 +407,8 @@ const Practice = {
     recordAttempt(attempt) {
         Storage.saveAttempt(attempt);
 
-        // Schedule for review if wrong or guessed
-        if (!attempt.isCorrect || attempt.confidence === 1) {
-            Storage.scheduleForReview(attempt.questionId, attempt.isCorrect, attempt.confidence);
-        } else if (attempt.confidence >= 2) {
-            Storage.scheduleForReview(attempt.questionId, attempt.isCorrect, attempt.confidence);
-        }
+        // Schedule for review (ELO-enhanced: always update ratings)
+        Storage.scheduleForReview(attempt.questionId, attempt.isCorrect, attempt.confidence, attempt.responseMs);
 
         // Show explanation (not in exam mode)
         if (this.sessionType !== 'exam') {
