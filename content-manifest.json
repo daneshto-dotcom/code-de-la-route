@@ -1,7 +1,7 @@
 {
-  "version": 87,
+  "version": 88,
   "questionsUrl": "./data/questions.json",
-  "questionCount": 1094,
-  "lastUpdated": "2026-04-12",
+  "questionCount": 1393,
+  "lastUpdated": "2026-04-16",
   "vocabCount": 820
 }
