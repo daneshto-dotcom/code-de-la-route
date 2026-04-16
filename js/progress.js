@@ -247,15 +247,17 @@ const Progress = {
         });
     },
 
-    // === FOCUS AREAS (B03 v1) ===
+    // === FOCUS AREAS (B03 v2 — S43) ===
     // Action-oriented weakness dashboard. Topic-first (prominent) + Qs collapsible.
+    // v2 adds: window slider (7/30/90/all), percentile bands, CSV export, session dedupe.
     renderFocusAreas() {
         const container = document.getElementById('focus-areas-section');
         if (!container) return;
 
+        const windowDays = Storage.getFocusAreasWindow();
         let focus;
         try {
-            focus = Storage.getFocusAreas();
+            focus = Storage.getFocusAreasV2(windowDays);
         } catch (e) {
             console.error('Focus Areas render failed:', e);
             container.innerHTML = '';
@@ -263,16 +265,24 @@ const Progress = {
         }
         const MIN_ATTEMPTS_FOR_SIGNAL = 20;
 
-        // Empty state — not enough data yet
+        // Window chips — always rendered so user can switch even from empty state.
+        const chipsHtml = this._renderFocusWindowChips(windowDays);
+
+        // Empty state per window
         if (focus.totalAttempts < MIN_ATTEMPTS_FOR_SIGNAL) {
             const needed = MIN_ATTEMPTS_FOR_SIGNAL - focus.totalAttempts;
+            const windowLabel = windowDays === 'all' ? 'all time' : `last ${windowDays} days`;
             container.innerHTML = `
                 <div class="focus-areas-card focus-empty">
-                    <h3>🎯 Focus Areas</h3>
-                    <p class="focus-empty-msg">Complete ${needed} more practice question${needed === 1 ? '' : 's'} to unlock your personalized focus recommendations.</p>
-                    <p class="focus-empty-detail">Your Focus Areas will show which topics need the most work — so you can study smarter, not longer.</p>
+                    <div class="focus-header">
+                        <h3>🎯 Focus Areas</h3>
+                        ${chipsHtml}
+                    </div>
+                    <p class="focus-empty-msg">Insufficient data for ${windowLabel} — need ${needed} more practice attempt${needed === 1 ? '' : 's'} in this window.</p>
+                    <p class="focus-empty-detail">Try a wider window above, or keep practicing to unlock personalized focus recommendations.</p>
                 </div>
             `;
+            this._wireFocusWindowChips(container);
             return;
         }
 
@@ -335,17 +345,32 @@ const Progress = {
         const avgTimeHtml = focus.avgResponseMs
             ? `<span class="focus-avg-time">Avg response: ${(focus.avgResponseMs / 1000).toFixed(1)}s</span>`
             : '';
+        const windowLabel = windowDays === 'all' ? 'all time' : `last ${windowDays} days`;
+        const dedupeSuffix = focus.rawAttempts > focus.totalAttempts
+            ? ` <span class="focus-dedupe-note" title="Same question attempted multiple times in one session counted once">(${focus.rawAttempts - focus.totalAttempts} retry dup${focus.rawAttempts - focus.totalAttempts === 1 ? '' : 's'} deduped)</span>`
+            : '';
+
+        // Band signals (B03 v2) — fast-wrong, slow-correct, slow-wrong
+        const bandsHtml = this._renderFocusBands(focus.bands);
 
         container.innerHTML = `
             <div class="focus-areas-card">
                 <div class="focus-header">
                     <h3>🎯 Focus Areas</h3>
-                    <span class="focus-data-note">Based on last 90 days · ${focus.totalAttempts} practice attempts ${avgTimeHtml}</span>
+                    ${chipsHtml}
+                </div>
+                <div class="focus-meta-row">
+                    <span class="focus-data-note">Based on ${windowLabel} · ${focus.totalAttempts} attempts${dedupeSuffix} ${avgTimeHtml}</span>
+                    <button class="btn btn-ghost btn-sm focus-csv-btn" aria-label="Export focus areas as CSV">📊 CSV</button>
                 </div>
                 ${topicsHtml}
+                ${bandsHtml}
                 ${missedHtml}
             </div>
         `;
+
+        // Wire up window chips
+        this._wireFocusWindowChips(container);
 
         // Wire up topic practice buttons — launch focus session (B04)
         container.querySelectorAll('.focus-topic-btn, .focus-topic-card').forEach(el => {
@@ -363,6 +388,105 @@ const Progress = {
                 this.showQuestionReviewModal(qid);
             });
         });
+
+        // Wire up band rows → show explanation modal if question
+        container.querySelectorAll('.focus-band-row[data-qid]').forEach(row => {
+            row.addEventListener('click', () => this.showQuestionReviewModal(row.dataset.qid));
+        });
+
+        // CSV export
+        const csvBtn = container.querySelector('.focus-csv-btn');
+        if (csvBtn) {
+            csvBtn.addEventListener('click', () => {
+                const csv = Storage.exportFocusAreasCSV(windowDays);
+                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                const stamp = new Date().toISOString().slice(0, 10);
+                a.href = url;
+                a.download = `focus-areas-${windowDays === 'all' ? 'all' : windowDays + 'd'}-${stamp}.csv`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                if (typeof showToast === 'function') showToast('CSV exported.', 'success');
+            });
+        }
+    },
+
+    // Window chip rail — 7 / 30 / 90 / all
+    _renderFocusWindowChips(active) {
+        const options = [
+            { v: 7, label: '7d' },
+            { v: 30, label: '30d' },
+            { v: 90, label: '90d' },
+            { v: 'all', label: 'All' }
+        ];
+        return `<div class="focus-window-chips" role="tablist" aria-label="Focus window">${options.map(o => {
+            const isActive = o.v === active;
+            return `<button class="focus-chip${isActive ? ' is-active' : ''}" data-window="${o.v}" role="tab" aria-selected="${isActive}">${o.label}</button>`;
+        }).join('')}</div>`;
+    },
+
+    _wireFocusWindowChips(container) {
+        container.querySelectorAll('.focus-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const v = chip.dataset.window;
+                const parsed = v === 'all' ? 'all' : parseInt(v, 10);
+                Storage.setFocusAreasWindow(parsed);
+                this.renderFocusAreas();
+            });
+        });
+    },
+
+    // Band signal cards — fast-wrong (misread), slow-correct (hesitant mastery), slow-wrong (struggle)
+    _renderFocusBands(bands) {
+        if (!bands || !bands.counts || bands.counts.totalClassified === 0) return '';
+        const cards = [];
+        if (bands.counts.fastWrong > 0) {
+            cards.push(this._renderBandCard(
+                '⚡❌', 'Fast but wrong', bands.counts.fastWrong,
+                'Answered quickly then missed — likely misreading the question.',
+                'band-fast-wrong', bands.fastWrong
+            ));
+        }
+        if (bands.counts.slowCorrect > 0) {
+            cards.push(this._renderBandCard(
+                '🐢✅', 'Slow but correct', bands.counts.slowCorrect,
+                'You know these — just slow to commit. Review to build confidence.',
+                'band-slow-correct', bands.slowCorrect
+            ));
+        }
+        if (bands.counts.slowWrong > 0) {
+            cards.push(this._renderBandCard(
+                '🐢❌', 'Slow and wrong', bands.counts.slowWrong,
+                'Genuine knowledge gaps — drill the underlying topic.',
+                'band-slow-wrong', bands.slowWrong
+            ));
+        }
+        if (cards.length === 0) return '';
+        return `<div class="focus-bands">${cards.join('')}</div>`;
+    },
+
+    _renderBandCard(icon, title, count, tip, cssClass, samples) {
+        const rows = (samples || []).slice(0, 3).map(s => {
+            const topic = ETG_TOPICS.find(t => t.id === s.topic);
+            const shortId = s.questionId && s.questionId.length > 10 ? s.questionId.substring(0, 10) : (s.questionId || '');
+            const secs = s.responseMs ? (s.responseMs / 1000).toFixed(1) + 's' : '';
+            return `<li class="focus-band-row" data-qid="${s.questionId}" tabindex="0" role="button">
+                <span>${topic?.icon || '📚'} ${shortId}</span>
+                <span class="focus-band-time">${secs}</span>
+            </li>`;
+        }).join('');
+        return `<div class="focus-band-card ${cssClass}">
+            <div class="focus-band-header">
+                <span class="focus-band-icon">${icon}</span>
+                <span class="focus-band-title">${title}</span>
+                <span class="focus-band-count">${count}</span>
+            </div>
+            <p class="focus-band-tip">${tip}</p>
+            ${rows ? `<ul class="focus-band-list">${rows}</ul>` : ''}
+        </div>`;
     },
 
     // Show a modal with the full question, correct answer, explanation,

@@ -3176,6 +3176,95 @@
 .focus-empty-msg { margin: 8px 0; font-size: 0.95rem; }
 .focus-empty-detail { font-size: 0.85rem; color: var(--text-muted, #888); }
 
+/* B03 v2 (S43) — window chips, band cards, CSV btn */
+.focus-window-chips {
+    display: inline-flex;
+    gap: 4px;
+    padding: 2px;
+    background: var(--bg-subtle, #f0f2f6);
+    border-radius: 8px;
+}
+.focus-chip {
+    padding: 4px 10px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--text-muted, #888);
+    transition: background 0.12s, color 0.12s;
+}
+.focus-chip:hover { background: rgba(0,0,0,0.05); }
+.focus-chip.is-active {
+    background: var(--primary, #2E5984);
+    color: #fff;
+    font-weight: 600;
+}
+.focus-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.focus-csv-btn {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+}
+.focus-dedupe-note { opacity: 0.7; font-style: italic; }
+
+.focus-bands {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin: 12px 0;
+}
+@media (min-width: 600px) {
+    .focus-bands { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+}
+.focus-band-card {
+    background: var(--bg-subtle, #f7f9fc);
+    border-radius: 8px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--text-muted, #888);
+}
+.focus-band-card.band-fast-wrong { border-left-color: var(--danger, #d9534f); }
+.focus-band-card.band-slow-correct { border-left-color: var(--warning, #f0ad4e); }
+.focus-band-card.band-slow-wrong { border-left-color: var(--danger, #d9534f); }
+.focus-band-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+.focus-band-icon { font-size: 1.1rem; }
+.focus-band-title { flex: 1; font-weight: 600; font-size: 0.9rem; }
+.focus-band-count {
+    background: var(--primary, #2E5984);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.focus-band-tip { margin: 4px 0; font-size: 0.8rem; color: var(--text-muted, #888); }
+.focus-band-list {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    font-size: 0.8rem;
+}
+.focus-band-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    cursor: pointer;
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+.focus-band-row:hover { background: rgba(0,0,0,0.03); }
+.focus-band-time { color: var(--text-muted, #888); font-variant-numeric: tabular-nums; }
+
 .focus-topics-list {
     display: grid;
     grid-template-columns: 1fr;

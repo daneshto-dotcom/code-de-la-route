@@ -80,6 +80,7 @@ const Storage = {
             attempts.splice(0, attempts.length - this.MAX_ATTEMPTS);
         }
         this._safeSet(this.KEYS.ATTEMPTS, JSON.stringify(attempts));
+        this._invalidateFocusCache();
         this.updateTopicMastery(attempt.topic, attempt.isCorrect);
         this.updateStreak();
         // Trigger gamification checks (if modules loaded)
@@ -148,21 +149,208 @@ const Storage = {
     },
 
     // Combined API for future B04 adaptive practice consumer
-    getFocusAreas(sinceMs = 90 * 86400000) {
-        const cutoff = Date.now() - sinceMs;
-        const attempts = this.getAttempts().filter(a => (a.timestamp || 0) >= cutoff && a.sessionType !== 'exam');
-        const withMs = attempts.filter(a => typeof a.responseMs === 'number' && a.responseMs > 0);
+    // v1 (legacy). Callers migrated to getFocusAreasV2 in S43.
+    getFocusAreas(sinceMs) {
+        if (typeof sinceMs === 'number' && sinceMs > 0) {
+            const days = sinceMs === Infinity ? 'all' : Math.max(1, Math.round(sinceMs / 86400000));
+            return this.getFocusAreasV2(days);
+        }
+        return this.getFocusAreasV2();
+    },
+
+    // === FOCUS AREAS v2 (B03 v2 — S43) ===
+    // windowDays: 7 | 30 | 90 | 'all'
+    _focusAreasCache: null,
+    _focusAreasCacheKey: null,
+
+    _invalidateFocusCache() {
+        this._focusAreasCache = null;
+        this._focusAreasCacheKey = null;
+    },
+
+    getFocusAreasWindow() {
+        const s = this.getSettings();
+        const v = s.focusAreasWindowDays;
+        if (v === 'all' || v === 7 || v === 30 || v === 90) return v;
+        return 90;
+    },
+
+    setFocusAreasWindow(windowDays) {
+        if (windowDays !== 'all' && ![7, 30, 90].includes(windowDays)) return;
+        this.saveSetting('focusAreasWindowDays', windowDays);
+        this._invalidateFocusCache();
+    },
+
+    getFocusAreasV2(windowDaysOverride) {
+        const windowDays = windowDaysOverride !== undefined
+            ? windowDaysOverride
+            : this.getFocusAreasWindow();
+        const allAttempts = this.getAttempts();
+        const cacheKey = `${windowDays}:${allAttempts.length}`;
+        if (this._focusAreasCacheKey === cacheKey && this._focusAreasCache) {
+            return this._focusAreasCache;
+        }
+
+        const cutoff = windowDays === 'all' ? 0 : Date.now() - (windowDays * 86400000);
+        const windowed = allAttempts.filter(a => (a.timestamp || 0) >= cutoff && a.sessionType !== 'exam');
+
+        // Session-level dedupe: keep only the LAST attempt per questionId per session.
+        // Fallback: treat each 5-min timestamp-bucket as a session if sessionId missing.
+        const seen = new Set();
+        const deduped = [];
+        for (let i = windowed.length - 1; i >= 0; i--) {
+            const a = windowed[i];
+            const sessionKey = a.sessionId || `ts-${Math.floor((a.timestamp || 0) / 300000)}`;
+            const key = `${sessionKey}::${a.questionId}`;
+            if (seen.has(key)) continue;
+            seen.add(key);
+            deduped.unshift(a);
+        }
+
+        // Per-topic responseMs percentiles (25th / 75th) for band classification.
+        const byTopicMs = {};
+        for (const a of deduped) {
+            if (typeof a.responseMs !== 'number' || a.responseMs <= 0) continue;
+            if (!byTopicMs[a.topic]) byTopicMs[a.topic] = [];
+            byTopicMs[a.topic].push(a.responseMs);
+        }
+        const topicPercentiles = {};
+        for (const [topic, arr] of Object.entries(byTopicMs)) {
+            if (arr.length < 4) continue;
+            const sorted = [...arr].sort((x, y) => x - y);
+            const p25 = sorted[Math.floor(sorted.length * 0.25)];
+            const p75 = sorted[Math.floor(sorted.length * 0.75)];
+            topicPercentiles[topic] = { p25, p75, n: sorted.length };
+        }
+
+        const fastWrong = [], slowCorrect = [], slowWrong = [], fastCorrect = [];
+        for (const a of deduped) {
+            if (typeof a.responseMs !== 'number' || a.responseMs <= 0) continue;
+            const p = topicPercentiles[a.topic];
+            if (!p) continue;
+            const isFast = a.responseMs <= p.p25;
+            const isSlow = a.responseMs >= p.p75;
+            if (!isFast && !isSlow) continue;
+            if (a.isCorrect && isSlow) slowCorrect.push(a);
+            else if (!a.isCorrect && isFast) fastWrong.push(a);
+            else if (!a.isCorrect && isSlow) slowWrong.push(a);
+            else if (a.isCorrect && isFast) fastCorrect.push(a);
+        }
+
+        const withMs = deduped.filter(a => typeof a.responseMs === 'number' && a.responseMs > 0);
         const avgResponseMs = withMs.length > 0
             ? Math.round(withMs.reduce((s, a) => s + a.responseMs, 0) / withMs.length)
             : null;
-        return {
-            version: 1,
-            totalAttempts: attempts.length,
-            weakTopics: this.getWeakestTopics(3, 5, sinceMs),
-            mostMissed: this.getMostMissedQuestions(10, 2, sinceMs),
-            avgResponseMs: avgResponseMs,
-            sinceMs: sinceMs
+
+        const result = {
+            version: 2,
+            windowDays,
+            totalAttempts: deduped.length,
+            rawAttempts: windowed.length,
+            weakTopics: this._getWeakestTopicsFromSet(deduped, 3, 5),
+            mostMissed: this._getMostMissedFromSet(deduped, 10, 2),
+            avgResponseMs,
+            bands: {
+                fastWrong: fastWrong.slice(-5).map(this._attemptSummary),
+                slowCorrect: slowCorrect.slice(-5).map(this._attemptSummary),
+                slowWrong: slowWrong.slice(-5).map(this._attemptSummary),
+                counts: {
+                    fastWrong: fastWrong.length,
+                    slowCorrect: slowCorrect.length,
+                    slowWrong: slowWrong.length,
+                    fastCorrect: fastCorrect.length,
+                    totalClassified: fastWrong.length + slowCorrect.length + slowWrong.length + fastCorrect.length
+                }
+            }
         };
+
+        this._focusAreasCache = result;
+        this._focusAreasCacheKey = cacheKey;
+        return result;
+    },
+
+    _getMostMissedFromSet(attempts, limit = 10, minAttempts = 2) {
+        const byQ = {};
+        for (const a of attempts) {
+            if (!a.questionId) continue;
+            if (!byQ[a.questionId]) byQ[a.questionId] = { questionId: a.questionId, topic: a.topic, attempts: 0, wrongs: 0 };
+            byQ[a.questionId].attempts++;
+            if (!a.isCorrect) byQ[a.questionId].wrongs++;
+        }
+        return Object.values(byQ)
+            .filter(r => r.attempts >= minAttempts && r.wrongs > 0)
+            .map(r => ({ ...r, errorRate: r.attempts > 0 ? r.wrongs / r.attempts : 0 }))
+            .sort((a, b) => b.errorRate - a.errorRate || b.attempts - a.attempts)
+            .slice(0, limit);
+    },
+
+    _getWeakestTopicsFromSet(attempts, n = 3, minAttempts = 5) {
+        const byTopic = {};
+        for (const a of attempts) {
+            if (!a.topic) continue;
+            if (!byTopic[a.topic]) byTopic[a.topic] = { topic: a.topic, attempts: 0, correct: 0 };
+            byTopic[a.topic].attempts++;
+            if (a.isCorrect) byTopic[a.topic].correct++;
+        }
+        return Object.values(byTopic)
+            .filter(r => r.attempts >= minAttempts)
+            .map(r => ({ ...r, accuracy: r.attempts > 0 ? r.correct / r.attempts : 0 }))
+            .sort((a, b) => a.accuracy - b.accuracy)
+            .slice(0, n);
+    },
+
+    _attemptSummary(a) {
+        return {
+            questionId: a.questionId,
+            topic: a.topic,
+            responseMs: a.responseMs,
+            isCorrect: a.isCorrect,
+            timestamp: a.timestamp
+        };
+    },
+
+    // CSV export — UTF-8 BOM for Excel compat (Gemini council).
+    exportFocusAreasCSV(windowDaysOverride) {
+        const fa = this.getFocusAreasV2(windowDaysOverride);
+        const BOM = '\uFEFF';
+        const rows = ['section,topic,question_id,metric,value'];
+
+        for (const t of fa.weakTopics) {
+            rows.push(`weak_topic,${t.topic},,accuracy_pct,${Math.round(t.accuracy * 100)}`);
+            rows.push(`weak_topic,${t.topic},,attempts,${t.attempts}`);
+        }
+        for (const m of fa.mostMissed) {
+            rows.push(`most_missed,${m.topic},${m.questionId},attempts,${m.attempts}`);
+            rows.push(`most_missed,${m.topic},${m.questionId},wrongs,${m.wrongs}`);
+            rows.push(`most_missed,${m.topic},${m.questionId},error_rate_pct,${Math.round(m.errorRate * 100)}`);
+        }
+
+        const allAttempts = this.getAttempts().filter(a => a.sessionType !== 'exam');
+        let multiAttempted = 0, multiCorrect = 0;
+        for (const a of allAttempts) {
+            if (a.isMultiAnswer) {
+                multiAttempted++;
+                if (a.isCorrect) multiCorrect++;
+            }
+        }
+        if (multiAttempted > 0) {
+            rows.push(`multi_answer,,,attempted,${multiAttempted}`);
+            rows.push(`multi_answer,,,correct,${multiCorrect}`);
+            rows.push(`multi_answer,,,accuracy_pct,${Math.round((multiCorrect / multiAttempted) * 100)}`);
+        }
+
+        rows.push(`band,,,fast_wrong,${fa.bands.counts.fastWrong}`);
+        rows.push(`band,,,slow_correct,${fa.bands.counts.slowCorrect}`);
+        rows.push(`band,,,slow_wrong,${fa.bands.counts.slowWrong}`);
+        rows.push(`band,,,fast_correct,${fa.bands.counts.fastCorrect}`);
+
+        rows.push(`meta,,,window_days,${fa.windowDays}`);
+        rows.push(`meta,,,total_attempts,${fa.totalAttempts}`);
+        rows.push(`meta,,,raw_attempts,${fa.rawAttempts}`);
+        rows.push(`meta,,,avg_response_ms,${fa.avgResponseMs ?? ''}`);
+        rows.push(`meta,,,export_date,${new Date().toISOString()}`);
+
+        return BOM + rows.join('\n');
     },
 
     // === TOPIC MASTERY ===
