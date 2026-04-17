@@ -1,0 +1,96 @@
+{
+  "description": "7 historical periods of the Château de Chazeuil estate",
+  "periods": [
+    {
+      "position": 0,
+      "year": "Medieval",
+      "era": "construction",
+      "title": "The First Foundations",
+      "description": "A construction has existed on this site since the Middle Ages. The vaulted cellars that survive today — massive limestone arches spanning the entire footprint — date from this earliest period.",
+      "mapLayer": {
+        "tiles": "historical_etatmajor",
+        "opacity": 1.0,
+        "sepia": true
+      }
+    },
+    {
+      "position": 1,
+      "year": "17th Century",
+      "era": "construction",
+      "title": "A Louis XIII Château Rises",
+      "description": "The medieval structure is replaced by an elegant Louis XIII-style building, flanked by large pavilions. The southwest-facing facade features brick cross-patterns with protruding cut stone. The slate roof with turrets marks the skyline.",
+      "mapLayer": {
+        "tiles": "historical_etatmajor",
+        "opacity": 1.0,
+        "sepia": true
+      }
+    },
+    {
+      "position": 2,
+      "year": "Late 19th Century",
+      "era": "restoration",
+      "title": "The Grand Restoration",
+      "description": "The chateau is comprehensively restored. The grounds are transformed into a large English-style walled park, crossed by a stream feeding two cascading ponds. Long paved avenues, great trees, formal gardens, and a potager are established across 34 hectares.",
+      "mapLayer": {
+        "tiles": "historical_etatmajor",
+        "opacity": 1.0,
+        "sepia": false
+      }
+    },
+    {
+      "position": 3,
+      "year": "1943",
+      "era": "modern",
+      "title": "The Archive Map",
+      "description": "An archival map of the estate is drawn documenting buildings, courtyards, paths, park, meadows, woodlands, and water features. This map survives today and forms the basis of the estate's digital interactive map.",
+      "mapLayer": {
+        "tiles": "historical_etatmajor",
+        "opacity": 0.85,
+        "sepia": false
+      }
+    },
+    {
+      "position": 4,
+      "year": "2009",
+      "era": "renovation",
+      "title": "Comfort Meets Heritage",
+      "description": "Major renovation restores the kitchen, bathrooms, electricity, and installs gas central heating (Riello boiler) and reversible air conditioning. All three levels made habitable while preserving historic character.",
+      "mapLayer": {
+        "tiles": "aerial",
+        "opacity": 1.0,
+        "sepia": false
+      }
+    },
+    {
+      "position": 5,
+      "year": "2020",
+      "era": "renovation",
+      "title": "The Custodian Arrives",
+      "description": "Daniel Neshto takes residence as bare owner, beginning over five years of hands-on maintenance, renovation, and stewardship — securing the property and developing the vision for the estate's future.",
+      "mapLayer": {
+        "tiles": "aerial",
+        "opacity": 1.0,
+        "sepia": false
+      }
+    },
+    {
+      "position": 6,
+      "year": "2025-2026",
+      "era": "renovation",
+      "title": "A New Chapter Begins",
+      "description": "The estate begins transformation into a curated seasonal home. Phase 1: main house opens for rentals (April-November 2026). Phase 2: three family apartments open. Stables and gym begin renovation.",
+      "mapLayer": {
+        "tiles": "aerial",
+        "opacity": 1.0,
+        "sepia": false
+      }
+    }
+  ],
+  "eraColors": {
+    "construction": "#8B7355",
+    "revolution": "#6B2D3E",
+    "restoration": "#2D5238",
+    "modern": "#4A6B7A",
+    "renovation": "#C9A96E"
+  }
+}
