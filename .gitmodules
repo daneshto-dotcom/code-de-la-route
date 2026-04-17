@@ -1,0 +1,4 @@
+[submodule "Game/founding-realm"]
+	path = Game/founding-realm
+	url = https://github.com/daneshto-dotcom/founding-realm.git
+	branch = master
