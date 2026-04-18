@@ -16,6 +16,14 @@ const Exam = {
     _overallRemaining: 0, // seconds left on overall timer
     _questionStartTime: null, // tracks per-question time
     _timeExpired: false, // true if overall timer ran out
+    // B22 — Exam Day Simulator (S44)
+    _sessionSeed: null,          // base seed for deterministic answer shuffling
+    _shuffleCache: {},           // questionId -> {letters, correctAnswers} remapped
+    _blurEvents: [],             // visibility-change log for integrity signal
+    _visibilityHandler: null,
+    _popstateHandler: null,
+    _beforeunloadHandler: null,
+    _navLocked: false,
 
     start(mode = 'exam') {
         this.mode = mode;
@@ -27,16 +35,122 @@ const Exam = {
         this.active = true;
         this._overallRemaining = EXAM_TOTAL_TIME;
         this._timeExpired = false;
+        // B22 — seed this exam session; seed format: "exam-<timestamp>-<random>"
+        this._sessionSeed = `exam-${this.startTime}-${Math.floor(Math.random() * 1e9)}`;
+        this._shuffleCache = {};
+        this._blurEvents = [];
 
         // Switch views
         document.getElementById('exam-intro').classList.add('hidden');
         document.getElementById('exam-active').classList.remove('hidden');
         document.getElementById('exam-results').classList.add('hidden');
 
+        // B22 — strict mode: lock navigation + start visibility tracking
+        this._lockNavigation();
+        this._attachVisibilityTracker();
+
         // Setup exam UI inside exam-active
         this.setupExamUI();
         this.startOverallTimer();
         this.loadExamQuestion();
+    },
+
+    // B22 — Deterministic seeded PRNG (xmur3 + mulberry32)
+    // Guarantees same shuffle if user refreshes mid-exam
+    _seededRandom(seedStr) {
+        let h = 2166136261 >>> 0;
+        for (let i = 0; i < seedStr.length; i++) {
+            h ^= seedStr.charCodeAt(i);
+            h = Math.imul(h, 16777619);
+        }
+        let state = h >>> 0;
+        return function () {
+            state |= 0; state = (state + 0x6D2B79F5) | 0;
+            let t = Math.imul(state ^ (state >>> 15), 1 | state);
+            t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+            return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+        };
+    },
+
+    // B22 — Shuffle A/B/C/D tile order deterministically per (session, question).
+    // Returns {order: ['C','A','D','B']}. Original correctAnswers stay authoritative for grading.
+    // KNOWN LIMITATION (chunk 1): full mid-exam refresh-resume not implemented — in-memory state
+    //   (currentIndex, correctCount, _sessionSeed, _shuffleCache) is lost on page refresh.
+    //   The seeded shuffle is chunk-2-ready (would produce same order IF state persists).
+    //   Fix deferred to B22 chunk 2 (GROK-ANALYST G3).
+    // KNOWN LIMITATION (chunk 1): iOS PWA back-swipe can race pushState — council accepted this
+    //   as chunk-1 ship. Robust fix needs PWA display-mode:standalone + history trap (GROK-ANALYST G4).
+    _getShuffleMap(question) {
+        const qid = question.id;
+        if (this._shuffleCache[qid]) return this._shuffleCache[qid];
+        const letters = ['A', 'B', 'C', 'D'].filter(L => question.options[L]);
+        const rng = this._seededRandom(`${this._sessionSeed}:${qid}`);
+        // Fisher-Yates on copy
+        const shuffled = [...letters];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(rng() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        const map = { order: shuffled };
+        this._shuffleCache[qid] = map;
+        return map;
+    },
+
+    // B22 — Navigation lock: push history state, warn on back/forward + beforeunload.
+    _lockNavigation() {
+        if (this._navLocked) return;
+        try { history.pushState({ examActive: true }, '', location.href); } catch (_) { /* no-op for file:// */ }
+        this._popstateHandler = (e) => {
+            if (!this.active) return;
+            // Re-push to block back-navigation; ask user to confirm quit via Quit button instead.
+            try { history.pushState({ examActive: true }, '', location.href); } catch (_) {}
+            showToast('Use the Quit button to exit the exam (back-button locked in strict mode).', 'warning');
+        };
+        this._beforeunloadHandler = (e) => {
+            if (!this.active) return;
+            e.preventDefault();
+            e.returnValue = ''; // Required for some browsers to show the dialog
+            return '';
+        };
+        window.addEventListener('popstate', this._popstateHandler);
+        window.addEventListener('beforeunload', this._beforeunloadHandler);
+        this._navLocked = true;
+    },
+
+    _unlockNavigation() {
+        if (!this._navLocked) return;
+        if (this._popstateHandler) window.removeEventListener('popstate', this._popstateHandler);
+        if (this._beforeunloadHandler) window.removeEventListener('beforeunload', this._beforeunloadHandler);
+        this._popstateHandler = null;
+        this._beforeunloadHandler = null;
+        this._navLocked = false;
+    },
+
+    // B22 — Page Visibility tracking: log blur/focus events as integrity signal.
+    // Does NOT pause timer (council wanted real-exam feel — you can't pause the real thing).
+    // Bounded at 100 entries to protect localStorage quota (GROK-ANALYST G5).
+    _BLUR_EVENTS_MAX: 100,
+    _attachVisibilityTracker() {
+        if (this._visibilityHandler) return;
+        this._visibilityHandler = () => {
+            if (!this.active) return;
+            if (this._blurEvents.length >= this._BLUR_EVENTS_MAX) {
+                this._blurEvents.shift(); // drop oldest — keep most recent 100
+            }
+            this._blurEvents.push({
+                at: Date.now(),
+                state: document.visibilityState,
+                questionIndex: this.currentIndex
+            });
+        };
+        document.addEventListener('visibilitychange', this._visibilityHandler);
+    },
+
+    _detachVisibilityTracker() {
+        if (this._visibilityHandler) {
+            document.removeEventListener('visibilitychange', this._visibilityHandler);
+            this._visibilityHandler = null;
+        }
     },
 
     setupExamUI() {
@@ -73,6 +187,9 @@ const Exam = {
                 this.active = false;
                 this.stopExamTimer();
                 this.stopOverallTimer();
+                // B22 — release strict-mode locks before navigating away
+                this._unlockNavigation();
+                this._detachVisibilityTracker();
                 App.navigate('home');
                 this.resetExamView();
             }
@@ -134,7 +251,11 @@ const Exam = {
         // Options
         const optionsContainer = document.getElementById('exam-options');
         optionsContainer.innerHTML = '';
-        const letters = ['A', 'B', 'C', 'D'];
+        // B22 — deterministic shuffle: `letters` = original letters in shuffled order (for grading),
+        // `displayLabels` = A/B/C/D in visual order (what user sees).
+        const shuffleMap = this._getShuffleMap(q);
+        const letters = shuffleMap.order;
+        const displayLabels = ['A', 'B', 'C', 'D'];
         let examSelected = [];
         this._answered = false;
 
@@ -157,20 +278,23 @@ const Exam = {
             promptEl.innerHTML = '';
         }
 
-        for (const letter of letters) {
+        for (let i = 0; i < letters.length; i++) {
+            const letter = letters[i];            // B22 — ORIGINAL letter (used for grading)
+            const displayLabel = displayLabels[i]; // B22 — VISUAL label shown to user (A/B/C/D by position)
             const option = q.options[letter];
             if (!option) continue;
 
             const tile = document.createElement('div');
             tile.className = 'answer-tile' + (isMulti ? ' multi' : '');
-            tile.dataset.letter = letter;
+            tile.dataset.letter = letter;          // original letter for correctness check
+            tile.dataset.display = displayLabel;   // B22 — display label for CSS/debug
             tile.setAttribute('role', isMulti ? 'checkbox' : 'radio');
             tile.setAttribute('aria-checked', 'false');
             tile.setAttribute('tabindex', '0');
             tile.setAttribute('aria-label',
-                `${isMulti ? 'Checkbox' : 'Option'} ${letter}: ${option.fr}`);
+                `${isMulti ? 'Checkbox' : 'Option'} ${displayLabel}: ${option.fr}`);
             tile.innerHTML = `
-                <div class="answer-letter">${letter}</div>
+                <div class="answer-letter">${displayLabel}</div>
                 <div class="answer-content">
                     <div class="answer-text-fr">${option.fr}</div>
                     ${showEn ? `<div class="answer-text-en">${option.en}</div>` : ''}
@@ -398,18 +522,28 @@ const Exam = {
         TTS.stop();
         this.stopExamTimer();
         this.stopOverallTimer();
+        // B22 — release strict-mode locks; tracker detached before debrief render
+        this._unlockNavigation();
+        this._detachVisibilityTracker();
 
         const duration = Math.round((Date.now() - this.startTime) / 1000);
         const passed = this.correctCount >= EXAM_PASS_THRESHOLD;
 
-        // Save exam result
+        // B22 — count tab-blur events (state==='hidden' markers; focus events excluded)
+        const blurCount = (this._blurEvents || []).filter(e => e.state === 'hidden').length;
+
+        // Save exam result (now includes B22 integrity + shuffle seed for reproducibility)
         Storage.saveExamResult({
             correctCount: this.correctCount,
             totalQuestions: this.questions.length,
             passed,
             durationSeconds: duration,
             timeExpired: this._timeExpired,
-            results: this.results
+            results: this.results,
+            // B22 integrity
+            sessionSeed: this._sessionSeed,
+            blurCount: blurCount,
+            blurEvents: this._blurEvents
         });
 
         // Show results view
@@ -496,6 +630,25 @@ const Exam = {
         `;
         topicsDiv.after(timeAnalytics);
 
+        // B22 — Integrity badge: tab-blur count during strict-mode exam
+        const integrityDiv = document.createElement('div');
+        integrityDiv.className = 'exam-integrity-section' + (blurCount > 0 ? ' integrity-flagged' : '');
+        if (blurCount === 0) {
+            integrityDiv.innerHTML = `
+                <h3>🛡️ Integrity</h3>
+                <p class="integrity-clean">No distractions detected — strict mode passed. ✓</p>
+            `;
+        } else {
+            integrityDiv.innerHTML = `
+                <h3>🛡️ Focus Interruptions</h3>
+                <p class="integrity-flagged-text">
+                    You switched away from the exam tab <strong>${blurCount}</strong> time${blurCount > 1 ? 's' : ''}.
+                    The real exam has no tabs — building focus now pays off on test day.
+                </p>
+            `;
+        }
+        timeAnalytics.after(integrityDiv);
+
         // Readiness score (B11)
         const readiness = Storage.getReadinessScore();
         if (readiness !== null) {
@@ -544,6 +697,9 @@ const Exam = {
     },
 
     resetExamView() {
+        // B22 — defensive: ensure locks are released (covers edge cases where showResults didn't run)
+        this._unlockNavigation();
+        this._detachVisibilityTracker();
         document.getElementById('exam-intro').classList.remove('hidden');
         document.getElementById('exam-active').classList.add('hidden');
         document.getElementById('exam-results').classList.add('hidden');
