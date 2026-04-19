@@ -24,6 +24,11 @@ const Exam = {
     _popstateHandler: null,
     _beforeunloadHandler: null,
     _navLocked: false,
+    // B22 chunk 2 (S45) — refresh-resume persistence + strict-viewport restoration
+    _SESSION_KEY: 'fdtta-exam-active-v1',
+    _STALE_MS: 150 * 60 * 1000,  // 2.5h hard-cutoff: older persisted exams are auto-discarded
+    _savedViewport: null,         // original viewport meta content (restored on exit)
+    _persistTimer: null,
 
     start(mode = 'exam') {
         this.mode = mode;
@@ -48,11 +53,16 @@ const Exam = {
         // B22 — strict mode: lock navigation + start visibility tracking
         this._lockNavigation();
         this._attachVisibilityTracker();
+        // B22 chunk 2 (S45) — strict viewport + persistence loop
+        this._applyStrictViewport();
+        this._clearPersistedState(); // fresh session overrides any stale remnant
 
         // Setup exam UI inside exam-active
         this.setupExamUI();
         this.startOverallTimer();
         this.loadExamQuestion();
+        this._persistState();
+        this._startPersistLoop();
     },
 
     // B22 — Deterministic seeded PRNG (xmur3 + mulberry32)
@@ -153,6 +163,151 @@ const Exam = {
         }
     },
 
+    // B22 chunk 2 (S45) — Refresh-resume persistence.
+    // Persists minimum viable state to sessionStorage so a mid-exam page refresh restores session.
+    // Stored: sessionSeed + shuffle cache + currentIndex + startTime + overallRemaining + results.
+    // On load, App.init calls Exam.tryResume() which offers the user a resume dialog.
+    _persistState() {
+        if (!this.active) return;
+        try {
+            const payload = {
+                v: 1,
+                at: Date.now(),
+                mode: this.mode,
+                sessionSeed: this._sessionSeed,
+                shuffleCache: this._shuffleCache,
+                currentIndex: this.currentIndex,
+                correctCount: this.correctCount,
+                results: this.results,
+                startTime: this.startTime,
+                overallRemaining: this._overallRemaining,
+                blurEvents: this._blurEvents,
+                questionIds: this.questions.map(q => q.id)
+            };
+            sessionStorage.setItem(this._SESSION_KEY, JSON.stringify(payload));
+        } catch (e) {
+            // sessionStorage quota exceeded or disabled — non-fatal
+            console.warn('[Exam] persist failed:', e && e.message);
+        }
+    },
+
+    _clearPersistedState() {
+        try { sessionStorage.removeItem(this._SESSION_KEY); } catch (_) {}
+        if (this._persistTimer) {
+            clearInterval(this._persistTimer);
+            this._persistTimer = null;
+        }
+    },
+
+    _readPersistedState() {
+        try {
+            const raw = sessionStorage.getItem(this._SESSION_KEY);
+            if (!raw) return null;
+            const p = JSON.parse(raw);
+            if (!p || p.v !== 1) return null;
+            // Hard cutoff — stale persisted exams auto-discarded
+            if (!p.at || (Date.now() - p.at) > this._STALE_MS) {
+                this._clearPersistedState();
+                return null;
+            }
+            return p;
+        } catch (_) {
+            this._clearPersistedState();
+            return null;
+        }
+    },
+
+    // Called from App.init on page load — detect active persisted exam and offer resume.
+    // Returns true if resume happened (caller should not navigate to default view).
+    tryResume() {
+        const p = this._readPersistedState();
+        if (!p) return false;
+        const answered = p.currentIndex || 0;
+        const total = (p.questionIds && p.questionIds.length) || 0;
+        if (total === 0 || answered >= total) {
+            this._clearPersistedState();
+            return false;
+        }
+        const mins = Math.floor((p.overallRemaining || 0) / 60);
+        const secs = (p.overallRemaining || 0) % 60;
+        const proceed = confirm(
+            `Resume your exam in progress?\n\n` +
+            `Question ${answered + 1} of ${total}\n` +
+            `Time remaining: ${mins}:${secs.toString().padStart(2, '0')}\n\n` +
+            `OK = Resume · Cancel = Discard and start fresh`
+        );
+        if (!proceed) {
+            this._clearPersistedState();
+            return false;
+        }
+        // Restore state
+        this.questions = p.questionIds.map(id => getQuestionById(id)).filter(Boolean);
+        if (this.questions.length !== total) {
+            // Data drift (question bank changed) — can't safely resume
+            this._clearPersistedState();
+            return false;
+        }
+        this.mode = p.mode || 'exam';
+        this.currentIndex = p.currentIndex || 0;
+        this.correctCount = p.correctCount || 0;
+        this.results = p.results || [];
+        this._sessionSeed = p.sessionSeed;
+        this._shuffleCache = p.shuffleCache || {};
+        this.startTime = p.startTime || Date.now();
+        this._overallRemaining = Math.max(0, p.overallRemaining || 0);
+        this._blurEvents = p.blurEvents || [];
+        this._timeExpired = false;
+        this.active = true;
+
+        // Re-enter exam view
+        App.navigate('exam');
+        document.getElementById('exam-intro').classList.add('hidden');
+        document.getElementById('exam-active').classList.remove('hidden');
+        document.getElementById('exam-results').classList.add('hidden');
+
+        // Re-engage strict-mode locks + viewport
+        this._lockNavigation();
+        this._attachVisibilityTracker();
+        this._applyStrictViewport();
+
+        this.setupExamUI();
+        this.startOverallTimer();
+        this.loadExamQuestion();
+        this._startPersistLoop();
+        return true;
+    },
+
+    _startPersistLoop() {
+        if (this._persistTimer) return;
+        // Persist every 10s while exam active — cheap and bounds data-loss window
+        this._persistTimer = setInterval(() => this._persistState(), 10000);
+    },
+
+    // B22 chunk 2 (S45) — Strict mobile viewport.
+    // Disables pinch-zoom during exam (matches official strict-mode UX).
+    // Restores user's original viewport on exit.
+    _applyStrictViewport() {
+        try {
+            const meta = document.querySelector('meta[name="viewport"]');
+            if (!meta) return;
+            this._savedViewport = meta.getAttribute('content');
+            meta.setAttribute('content',
+                'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+            document.body.classList.add('exam-strict-mode');
+        } catch (_) { /* non-fatal */ }
+    },
+
+    _releaseStrictViewport() {
+        try {
+            const meta = document.querySelector('meta[name="viewport"]');
+            if (meta && this._savedViewport) {
+                meta.setAttribute('content', this._savedViewport);
+            }
+            this._savedViewport = null;
+            document.body.classList.remove('exam-strict-mode');
+        } catch (_) { /* non-fatal */ }
+    },
+
     setupExamUI() {
         const container = document.getElementById('exam-active');
         container.innerHTML = `
@@ -190,6 +345,9 @@ const Exam = {
                 // B22 — release strict-mode locks before navigating away
                 this._unlockNavigation();
                 this._detachVisibilityTracker();
+                // B22 chunk 2 — release viewport + clear persistence
+                this._releaseStrictViewport();
+                this._clearPersistedState();
                 App.navigate('home');
                 this.resetExamView();
             }
@@ -489,6 +647,9 @@ const Exam = {
         this.stopOverallTimer();
         this.stopExamTimer();
         this._timeExpired = true;
+        // B22 chunk 2 — persist the "time-up" snapshot so showResults can still fire cleanly
+        // (showResults will clear persistence once results are rendered)
+        this._persistState();
 
         // Auto-submit current question if unanswered
         if (!this._answered && this.currentIndex < this.questions.length) {
@@ -525,6 +686,9 @@ const Exam = {
         // B22 — release strict-mode locks; tracker detached before debrief render
         this._unlockNavigation();
         this._detachVisibilityTracker();
+        // B22 chunk 2 (S45) — release viewport + clear persistence (exam finished cleanly)
+        this._releaseStrictViewport();
+        this._clearPersistedState();
 
         const duration = Math.round((Date.now() - this.startTime) / 1000);
         const passed = this.correctCount >= EXAM_PASS_THRESHOLD;
@@ -649,6 +813,54 @@ const Exam = {
         }
         timeAnalytics.after(integrityDiv);
 
+        // B22 chunk 2 (S45) — Stress markers: per-question responseMs z-score within session.
+        // Requires ≥8 samples before flagging (Council C2 QUALITY); flag z > 2.0 (softer than initial
+        // 1.5 to reduce false positives from legit network/device variance). Language is softened.
+        const timed = this.results.filter(r => typeof r.timeTaken === 'number' && r.timeTaken > 0);
+        if (timed.length >= 8) {
+            const times = timed.map(r => r.timeTaken);
+            const mean = times.reduce((a, b) => a + b, 0) / times.length;
+            const variance = times.reduce((a, b) => a + (b - mean) * (b - mean), 0) / times.length;
+            const std = Math.sqrt(variance);
+            const Z_THRESHOLD = 2.0;
+            const stressed = std > 0
+                ? timed.filter(r => ((r.timeTaken - mean) / std) > Z_THRESHOLD)
+                : [];
+            if (stressed.length > 0) {
+                const stressDiv = document.createElement('div');
+                stressDiv.className = 'exam-stress-section';
+                stressDiv.innerHTML = `
+                    <h3>⏳ Hesitation Markers</h3>
+                    <p class="stress-intro-text">
+                        <strong>${stressed.length} question${stressed.length > 1 ? 's' : ''} took notably longer</strong>
+                        than your session average (${Math.round(mean)}s avg, threshold ${Z_THRESHOLD}σ).
+                        Normal — or a signal to revisit?
+                    </p>
+                    <button class="btn btn-secondary btn-sm" id="stress-review-btn">Review these in drills</button>
+                `;
+                integrityDiv.after(stressDiv);
+                // CTA: drop user into drill mode pre-filtered to these Q IDs (Gemini C4)
+                const stressBtn = stressDiv.querySelector('#stress-review-btn');
+                if (stressBtn) {
+                    stressBtn.addEventListener('click', () => {
+                        const hesitatedIds = stressed.map(r => r.questionId);
+                        try {
+                            Practice.sessionType = 'review';
+                            Practice.sessionQuestions = hesitatedIds
+                                .map(id => getQuestionById(id))
+                                .filter(Boolean);
+                            Practice.sessionIndex = 0;
+                            Practice.sessionCorrect = 0;
+                            App.navigate('practice');
+                            Practice.loadQuestion();
+                        } catch (e) {
+                            console.warn('[Exam] stress-review CTA failed:', e && e.message);
+                        }
+                    });
+                }
+            }
+        }
+
         // Readiness score (B11)
         const readiness = Storage.getReadinessScore();
         if (readiness !== null) {
@@ -700,6 +912,9 @@ const Exam = {
         // B22 — defensive: ensure locks are released (covers edge cases where showResults didn't run)
         this._unlockNavigation();
         this._detachVisibilityTracker();
+        // B22 chunk 2 — defensive viewport/persistence release
+        this._releaseStrictViewport();
+        this._clearPersistedState();
         document.getElementById('exam-intro').classList.remove('hidden');
         document.getElementById('exam-active').classList.add('hidden');
         document.getElementById('exam-results').classList.add('hidden');

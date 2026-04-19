@@ -829,6 +829,13 @@ function showToast(message, type = '') {
 // === INITIALIZE ===
 document.addEventListener('DOMContentLoaded', () => {
     App.init();
+    // B22 chunk 2 (S45) — if a mid-exam refresh happened, offer to resume before user starts elsewhere.
+    // tryResume() is a no-op if no persisted active exam exists; returns true if resumed.
+    try {
+        if (typeof Exam !== 'undefined' && Exam.tryResume) Exam.tryResume();
+    } catch (e) {
+        console.warn('[App] Exam.tryResume failed:', e && e.message);
+    }
 });
 
 // === SERVICE WORKER REGISTRATION ===

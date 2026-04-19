@@ -3487,3 +3487,90 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0.65; }
 }
+
+/* ==========================================================================
+   B22 chunk 2 (S45) — Exam Simulator hardening
+   - iOS/Android back-swipe soft-lock via touch-action + overscroll-behavior
+   - Strict-mode body class disables user zoom (paired with viewport meta toggle)
+   - Stress-marker section (responseMs z-score > 2.0)
+   - Intro PWA "Add to Home Screen" hint (shown only when NOT standalone)
+   ========================================================================== */
+
+/* Soft-lock: when the exam is active, disable iOS edge-swipe + over-scroll bounce.
+   This is NOT a hard lock — iOS Safari reserves the back-swipe gesture — but it
+   materially reduces accidental mid-exam aborts. Hard lock deferred to chunk 3
+   (requires display-mode:standalone + navigator.standalone prompt). */
+body.exam-strict-mode {
+    overscroll-behavior: contain;
+    /* Prevent pinch-zoom even if the viewport meta was overridden by a browser extension */
+    touch-action: pan-x pan-y;
+}
+body.exam-strict-mode #exam-active {
+    /* Edge-guards: 16px invisible margins where touch-action is none,
+       blocking the right-edge back-swipe init on iOS PWA. */
+    overscroll-behavior: contain;
+}
+body.exam-strict-mode #exam-active::before,
+body.exam-strict-mode #exam-active::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    z-index: 9999;
+    pointer-events: auto;
+    touch-action: none;
+    background: transparent;
+}
+body.exam-strict-mode #exam-active::before { left: 0; }
+body.exam-strict-mode #exam-active::after { right: 0; }
+
+/* Intro hint: "Add to Home Screen for best results" — visible only when the app
+   is NOT running in standalone display mode (i.e., plain browser tab). */
+.exam-pwa-hint {
+    margin: 0.75rem 0;
+    padding: 0.75rem 1rem;
+    background: var(--info-bg, #e8f0ff);
+    color: var(--info, #0b4d91);
+    border-left: 3px solid var(--info, #0b4d91);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    display: none;
+}
+[data-theme="dark"] .exam-pwa-hint {
+    background: rgba(11, 77, 145, 0.18);
+    color: #90b7ef;
+}
+/* Show only when the app is NOT standalone — iOS Safari + Android browser tab */
+@media not all and (display-mode: standalone) {
+    .exam-pwa-hint { display: block; }
+}
+
+/* Stress-marker section — sibling of .exam-integrity-section */
+.exam-stress-section {
+    margin: 1rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--warning-bg, #fff7e6);
+    border-radius: 8px;
+    border-left: 3px solid var(--warning, #e67800);
+}
+[data-theme="dark"] .exam-stress-section {
+    background: rgba(230, 120, 0, 0.12);
+}
+.exam-stress-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.05rem;
+    color: var(--warning, #e67800);
+}
+.exam-stress-section .stress-intro-text {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: var(--text);
+}
+.exam-stress-section .stress-intro-text strong {
+    color: var(--warning, #e67800);
+}
+.exam-stress-section #stress-review-btn {
+    margin-top: 0.25rem;
+}
