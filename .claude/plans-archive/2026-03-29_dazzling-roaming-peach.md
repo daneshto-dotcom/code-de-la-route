@@ -1,3 +1,5 @@
+STATUS: COMPLETED (archived at S74 handoff — plans from S25/S29/S30)
+
 # Session 25 Plan: Bug Fix + 5 Visual/UX Priorities
 
 ## Context

@@ -1,3 +1,5 @@
+STATUS: COMPLETED (archived at S74 handoff — plans from S25/S29/S30)
+
 # Session 30 Plan: Festival Landing Page + Dual-Entry Root
 
 ## Context

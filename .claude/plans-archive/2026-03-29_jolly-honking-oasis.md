@@ -1,3 +1,5 @@
+STATUS: COMPLETED (archived at S74 handoff — plans from S25/S29/S30)
+
 # Festival System — 5-Session Implementation Plan (Sessions 30–34)
 
 ## Context
