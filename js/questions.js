@@ -31438,6 +31438,64 @@ function getExamQuestions() {
     return selected.sort(() => Math.random() - 0.5);
 }
 
+// === B21 Final Countdown Mode — daily mock pool builder (S46) ===
+// Tiered fallback per Council C4 (Gemini):
+//   ≥50 last-14d non-exam attempts → 80% bottom-quartile weak + 20% random
+//   20–49                           → 50% weak + 50% random
+//   <20                             → 100% random + lowDataFlag true
+// Returns {questions:[], lowDataFlag:boolean, tier:'weak-heavy'|'mixed'|'cold-start'}.
+function getDailyMockQuestions(count = 20) {
+    const WINDOW_MS = 14 * 86400000;
+    const attempts = Storage.getAttemptsInWindow(WINDOW_MS);
+    const attemptCount = attempts.length;
+
+    // Build shuffled random pool (fallback / filler)
+    const randomPool = [...QUESTION_BANK].sort(() => Math.random() - 0.5);
+
+    // Cold-start: <20 attempts → 100% random
+    if (attemptCount < 20) {
+        return {
+            questions: randomPool.slice(0, count),
+            lowDataFlag: true,
+            tier: 'cold-start'
+        };
+    }
+
+    // Build weak pool from last14d most-missed (bottom quartile by errorRate)
+    // sinceMs = 14 days; minAttempts = 2 to avoid one-off hits
+    const mostMissed = Storage.getMostMissedQuestions(50, 2, WINDOW_MS);
+    const weakIds = mostMissed.map(m => m.questionId);
+    const weakQs = weakIds.map(id => getQuestionById(id)).filter(Boolean);
+
+    // Determine tier mix
+    const isMixed = attemptCount < 50;
+    const weakSlots = isMixed ? Math.round(count * 0.5) : Math.round(count * 0.8);
+    const randomSlots = count - weakSlots;
+
+    const selected = [];
+    const used = new Set();
+
+    // Fill weak slots (bottom-quartile emphasis: slice to top N errorRate already done by getMostMissed sort)
+    const weakShuffled = [...weakQs].sort(() => Math.random() - 0.5);
+    for (const q of weakShuffled) {
+        if (selected.length >= weakSlots) break;
+        if (!used.has(q.id)) { selected.push(q); used.add(q.id); }
+    }
+
+    // If weak pool undersupplied (newish data), backfill with random
+    // Fill random slots (avoid duplicates with weak)
+    for (const q of randomPool) {
+        if (selected.length >= count) break;
+        if (!used.has(q.id)) { selected.push(q); used.add(q.id); }
+    }
+
+    return {
+        questions: selected.slice(0, count),
+        lowDataFlag: false,
+        tier: isMixed ? 'mixed' : 'weak-heavy'
+    };
+}
+
 /* ============================================
    Adaptive Question Selection Algorithm
    Smart weighting: reviews > weak > recently-wrong > unseen > random

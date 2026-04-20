@@ -6,6 +6,7 @@
 const Storage = {
     KEYS: {
         ATTEMPTS: 'fdtta_attempts',
+        DAILY_MOCKS: 'fdtta_daily_mocks',
         TOPIC_MASTERY: 'fdtta_topic_mastery',
         EXAM_RESULTS: 'fdtta_exam_results',
         SETTINGS: 'fdtta_settings',
@@ -102,6 +103,52 @@ const Storage = {
     getRecentAttempts(count = 50) {
         const attempts = this.getAttempts();
         return attempts.slice(-count);
+    },
+
+    // === B21 Final Countdown Mode — daily mock persistence ===
+    // Store up to last 30 daily mocks as [{dateISO, correct, total, band, lowDataFlag, at}]
+    _MAX_DAILY_MOCKS: 30,
+    getDailyMocks() {
+        try {
+            const raw = localStorage.getItem(this.KEYS.DAILY_MOCKS);
+            return raw ? JSON.parse(raw) : [];
+        } catch (_) { return []; }
+    },
+    saveDailyMock(payload) {
+        // payload: {correct, total, band, lowDataFlag}
+        const list = this.getDailyMocks();
+        const now = Date.now();
+        const d = new Date(now);
+        const dateISO = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        list.push({
+            dateISO,
+            correct: payload.correct | 0,
+            total: payload.total | 0,
+            band: String(payload.band || 'unknown'),
+            lowDataFlag: !!payload.lowDataFlag,
+            at: now
+        });
+        // Keep most-recent N
+        if (list.length > this._MAX_DAILY_MOCKS) {
+            list.splice(0, list.length - this._MAX_DAILY_MOCKS);
+        }
+        try {
+            this._safeSet(this.KEYS.DAILY_MOCKS, JSON.stringify(list));
+        } catch (_) { /* quota — non-fatal, daily mock is best-effort */ }
+        return list[list.length - 1];
+    },
+    getDailyMockForToday() {
+        // Returns the FIRST daily mock of today (the one that counts for band tracking),
+        // or null if not yet done today.
+        const d = new Date();
+        const todayISO = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        const list = this.getDailyMocks();
+        return list.find(m => m.dateISO === todayISO) || null;
+    },
+    getAttemptsInWindow(sinceMs) {
+        // Helper for B21 tiered fallback: non-exam attempts within a time window.
+        const cutoff = Date.now() - sinceMs;
+        return this.getAttempts().filter(a => (a.timestamp || 0) >= cutoff && a.sessionType !== 'exam');
     },
 
     // === FOCUS AREAS (B03 analytics v1) ===

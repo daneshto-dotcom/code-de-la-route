@@ -34,6 +34,7 @@ const App = {
         this.setupNavigation();
         this.setupSettings();
         this.setupExamView();
+        this.setupDailyMockCard();
 
         // Init vocab/learn
         Vocab.init();
@@ -400,6 +401,9 @@ const App = {
         document.getElementById('greeting-date').textContent =
             new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
+        // B21 Final Countdown — refresh daily-mock card state on every home visit
+        this.renderDailyMockCard();
+
         // Readiness score
         const readiness = Storage.getReadinessScore();
         if (readiness !== null) {
@@ -635,6 +639,75 @@ const App = {
         document.getElementById('start-practice-exam-btn').addEventListener('click', () => {
             Exam.start('practice');
         });
+    },
+
+    // B21 Final Countdown — home card wiring + today's band pill render
+    setupDailyMockCard() {
+        const startBtn = document.getElementById('start-daily-mock-btn');
+        if (!startBtn) return;
+        startBtn.addEventListener('click', () => {
+            // GROK-ANALYST guard: if an exam/daily-mock is already active, confirm discard first
+            // (JS is single-threaded so no true race, but defensive guard covers navigation edge cases).
+            if (Exam.active) {
+                const discard = confirm(
+                    'You have an active session in progress. Discard it and start today\'s daily mock?\n\n' +
+                    'OK = Discard and start new mock · Cancel = Stay in current session'
+                );
+                if (!discard) return;
+                // Clean up active session safely
+                Exam.active = false;
+                if (typeof Exam.stopExamTimer === 'function') Exam.stopExamTimer();
+                if (typeof Exam.stopOverallTimer === 'function') Exam.stopOverallTimer();
+                Exam._unlockNavigation();
+                Exam._detachVisibilityTracker();
+                Exam._releaseStrictViewport();
+                Exam._clearPersistedState();
+            }
+            const existing = Storage.getDailyMockForToday();
+            if (existing) {
+                const retake = confirm(
+                    `You already did today's mock (${existing.band}, ${existing.correct}/${existing.total}).\n\n` +
+                    `Retake for extra practice? (Your tracked band for today won't change.)\n\n` +
+                    `OK = Retake · Cancel = Keep today's result`
+                );
+                if (!retake) return;
+            }
+            // Navigate to exam view and start daily-mock directly (skip exam-intro)
+            App.navigate('exam');
+            document.getElementById('exam-intro').classList.add('hidden');
+            document.getElementById('exam-results').classList.add('hidden');
+            document.getElementById('exam-active').classList.remove('hidden');
+            Exam.start('daily-mock');
+        });
+    },
+
+    // B21 Final Countdown — render today's band pill on home view
+    renderDailyMockCard() {
+        const card = document.getElementById('daily-mock-card');
+        const pill = document.getElementById('daily-mock-band-pill');
+        const desc = document.getElementById('daily-mock-desc');
+        const btn = document.getElementById('start-daily-mock-btn');
+        if (!card || !pill || !desc || !btn) return;
+        const today = Storage.getDailyMockForToday();
+        if (today) {
+            // Already completed today — show band pill, change CTA copy
+            pill.hidden = false;
+            pill.textContent = today.band;
+            // Map band → css class for the pill
+            const clsMap = {
+                'On Track': 'band-good',
+                'Needs Focus': 'band-medium',
+                'Critical Focus': 'band-attention'
+            };
+            const cls = clsMap[today.band] || 'band-good';
+            pill.className = `daily-mock-band ${cls}`;
+            desc.textContent = `Today's result: ${today.correct}/${today.total}. ${today.lowDataFlag ? 'Based on random questions (keep practicing to unlock weak-area targeting).' : 'Tap to take another for extra practice.'}`;
+            btn.textContent = 'Take another';
+        } else {
+            pill.hidden = true;
+            btn.textContent = "Start today's mock";
+            desc.textContent = '20 questions, 10 minutes. Weighted on your weak areas. Band feedback, no numbers.';
+        }
     },
 
     setupSettings() {

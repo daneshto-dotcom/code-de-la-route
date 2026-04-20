@@ -1,16 +1,30 @@
 /* ============================================
    Mock Exam Engine
    40 questions, 20-second timer, exam simulation
+   B21 Final Countdown Mode (S46): examMode='daily-mock' runs a 20Q
+   mini-mock weighted on weak areas with qualitative bands (no numeric %).
    ============================================ */
+
+// B21 Final Countdown Mode constants
+const DAILY_MOCK_QUESTIONS = 20;
+const DAILY_MOCK_TIME = 660; // 11 minutes (10 + 1 buffer for final-Q pacing — GROK-ANALYST MED)
+// Qualitative band thresholds (Council C6 Gemini — no "Urgent" red):
+//   ≥80% correct → On Track (green)
+//   60-79%      → Needs Focus (amber)
+//   <60%        → Critical Focus (amber-deep)
+const DAILY_MOCK_BAND_GOOD = 0.80;
+const DAILY_MOCK_BAND_MEDIUM = 0.60;
 
 const Exam = {
     questions: [],
     currentIndex: 0,
     correctCount: 0,
     results: [], // per-question results
-    mode: 'exam', // 'exam' (French only) or 'practice' (with English)
+    mode: 'exam', // 'exam' (French only), 'practice' (with English), 'daily-mock' (B21 Final Countdown)
     startTime: null,
     active: false,
+    _dailyMockLowDataFlag: false,  // B21: flag when attempt-history is cold-start
+    _dailyMockTier: null,          // B21: 'weak-heavy' | 'mixed' | 'cold-start'
     _answered: false, // guard against double submission
     _overallTimer: null,
     _overallRemaining: 0, // seconds left on overall timer
@@ -32,16 +46,27 @@ const Exam = {
 
     start(mode = 'exam') {
         this.mode = mode;
-        this.questions = getExamQuestions();
+        // B21 Final Countdown Mode — daily mock branches on question builder + timer
+        if (mode === 'daily-mock') {
+            const pool = getDailyMockQuestions(DAILY_MOCK_QUESTIONS);
+            this.questions = pool.questions;
+            this._dailyMockLowDataFlag = pool.lowDataFlag;
+            this._dailyMockTier = pool.tier;
+            this._overallRemaining = DAILY_MOCK_TIME;
+        } else {
+            this.questions = getExamQuestions();
+            this._dailyMockLowDataFlag = false;
+            this._dailyMockTier = null;
+            this._overallRemaining = EXAM_TOTAL_TIME;
+        }
         this.currentIndex = 0;
         this.correctCount = 0;
         this.results = [];
         this.startTime = Date.now();
         this.active = true;
-        this._overallRemaining = EXAM_TOTAL_TIME;
         this._timeExpired = false;
-        // B22 — seed this exam session; seed format: "exam-<timestamp>-<random>"
-        this._sessionSeed = `exam-${this.startTime}-${Math.floor(Math.random() * 1e9)}`;
+        // B22 — seed this exam session; seed format: "<mode>-<timestamp>-<random>"
+        this._sessionSeed = `${mode}-${this.startTime}-${Math.floor(Math.random() * 1e9)}`;
         this._shuffleCache = {};
         this._blurEvents = [];
 
@@ -691,24 +716,42 @@ const Exam = {
         this._clearPersistedState();
 
         const duration = Math.round((Date.now() - this.startTime) / 1000);
-        const passed = this.correctCount >= EXAM_PASS_THRESHOLD;
+        const isDailyMock = this.mode === 'daily-mock';
+        const pct = this.questions.length > 0 ? this.correctCount / this.questions.length : 0;
+        const passed = !isDailyMock && this.correctCount >= EXAM_PASS_THRESHOLD;
+        // B21 qualitative band (daily-mock only). Per Council C6, no numerical % surfaced.
+        const band = this._computeBand(pct);
 
         // B22 — count tab-blur events (state==='hidden' markers; focus events excluded)
         const blurCount = (this._blurEvents || []).filter(e => e.state === 'hidden').length;
 
-        // Save exam result (now includes B22 integrity + shuffle seed for reproducibility)
-        Storage.saveExamResult({
-            correctCount: this.correctCount,
-            totalQuestions: this.questions.length,
-            passed,
-            durationSeconds: duration,
-            timeExpired: this._timeExpired,
-            results: this.results,
-            // B22 integrity
-            sessionSeed: this._sessionSeed,
-            blurCount: blurCount,
-            blurEvents: this._blurEvents
-        });
+        if (isDailyMock) {
+            // B21 — persist daily-mock result (first-of-day counts for band tracking)
+            const todayExisting = Storage.getDailyMockForToday();
+            if (!todayExisting) {
+                // First mock today → record; retakes are allowed but not overwrite
+                Storage.saveDailyMock({
+                    correct: this.correctCount,
+                    total: this.questions.length,
+                    band: band.label,
+                    lowDataFlag: this._dailyMockLowDataFlag
+                });
+            }
+        } else {
+            // Regular mock / practice exam save path (unchanged from B22)
+            Storage.saveExamResult({
+                correctCount: this.correctCount,
+                totalQuestions: this.questions.length,
+                passed,
+                durationSeconds: duration,
+                timeExpired: this._timeExpired,
+                results: this.results,
+                // B22 integrity
+                sessionSeed: this._sessionSeed,
+                blurCount: blurCount,
+                blurEvents: this._blurEvents
+            });
+        }
 
         // Show results view
         document.getElementById('exam-active').classList.add('hidden');
@@ -718,16 +761,24 @@ const Exam = {
         // Score ring animation
         const ring = document.getElementById('results-ring');
         const circumference = 2 * Math.PI * 70;
-        const pct = this.correctCount / this.questions.length;
         setTimeout(() => {
             ring.style.strokeDashoffset = circumference * (1 - pct);
-            ring.style.stroke = passed ? 'var(--success)' : 'var(--error)';
+            if (isDailyMock) {
+                // B21: amber/green bands (NO red per Council C6 — "Critical Focus" uses amber-deep)
+                ring.style.stroke = band.ringColor;
+            } else {
+                ring.style.stroke = passed ? 'var(--success)' : 'var(--error)';
+            }
         }, 100);
 
         document.getElementById('results-score').textContent = `${this.correctCount}/${this.questions.length}`;
 
         const verdict = document.getElementById('results-verdict');
-        if (passed) {
+        if (isDailyMock) {
+            // B21: band label, no pass/fail verdict
+            verdict.className = `results-verdict ${band.cssClass}`;
+            verdict.textContent = `${band.icon} ${band.label}`;
+        } else if (passed) {
             verdict.className = 'results-verdict pass';
             verdict.textContent = '🎉 PASSED!';
         } else {
@@ -737,7 +788,20 @@ const Exam = {
 
         // Context
         const context = document.getElementById('results-context');
-        if (passed) {
+        if (isDailyMock) {
+            // B21: actionable per-band CTA (Gemini C6 pedagogy-refinement)
+            // GROK-ANALYST bonus: surface tier label so user trusts the adaptivity
+            const tierLabel = {
+                'cold-start': 'Random sampling — build more practice data to unlock weak-area targeting.',
+                'mixed': 'Mixed sampling (50% weak / 50% random) — adaptivity engaging.',
+                'weak-heavy': 'Weak-area-weighted (80% targeted) — fully adaptive.'
+            }[this._dailyMockTier] || '';
+            if (this._dailyMockLowDataFlag) {
+                context.textContent = `${band.cta} (${tierLabel})`;
+            } else {
+                context.textContent = tierLabel ? `${band.cta} ${tierLabel}` : band.cta;
+            }
+        } else if (passed) {
             context.textContent = `National pass rate: ${NATIONAL_PASS_RATE}% — You're performing great!`;
         } else {
             context.textContent = `You need ${EXAM_PASS_THRESHOLD} to pass. Review your mistakes and try again!`;
@@ -900,7 +964,16 @@ const Exam = {
 
         document.getElementById('new-exam-btn').onclick = () => {
             this.resetExamView();
+            if (isDailyMock) {
+                // B21: from daily-mock results, a "New Exam" press goes home (not back to intro)
+                App.navigate('home');
+            }
         };
+        // B21: adjust button label for daily-mock so "New Exam" reads as "Another Mock"
+        const newBtn = document.getElementById('new-exam-btn');
+        if (newBtn) {
+            newBtn.textContent = isDailyMock ? 'Done' : 'New Exam';
+        }
 
         document.getElementById('exam-home-btn').onclick = () => {
             this.resetExamView();
@@ -918,5 +991,37 @@ const Exam = {
         document.getElementById('exam-intro').classList.remove('hidden');
         document.getElementById('exam-active').classList.add('hidden');
         document.getElementById('exam-results').classList.add('hidden');
+    },
+
+    // B21 — qualitative band computation (Council C6: no "Urgent" red; amber-deep for bottom).
+    //   ≥80%  → On Track       (green)
+    //   60-79% → Needs Focus    (amber)
+    //   <60%  → Critical Focus  (amber-deep)
+    _computeBand(pct) {
+        if (pct >= DAILY_MOCK_BAND_GOOD) {
+            return {
+                label: 'On Track',
+                icon: '🎯',
+                cssClass: 'band-good',
+                ringColor: 'var(--success)',
+                cta: 'Great session — keep the daily rhythm. Review any missed questions below.'
+            };
+        }
+        if (pct >= DAILY_MOCK_BAND_MEDIUM) {
+            return {
+                label: 'Needs Focus',
+                icon: '📍',
+                cssClass: 'band-medium',
+                ringColor: 'var(--warning, #e5a442)',
+                cta: 'Solid base — tighten a few areas. Tap "Review Mistakes" to drill today\'s gaps.'
+            };
+        }
+        return {
+            label: 'Critical Focus',
+            icon: '🔍',
+            cssClass: 'band-attention',
+            ringColor: 'var(--warning-deep, #c76a2e)',
+            cta: 'High-impact practice zone. Review today\'s mistakes, then retry a short drill. You\'ve got time — focused work compounds.'
+        };
     }
 };

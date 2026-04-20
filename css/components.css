@@ -3574,3 +3574,72 @@ body.exam-strict-mode #exam-active::after { right: 0; }
 .exam-stress-section #stress-review-btn {
     margin-top: 0.25rem;
 }
+
+/* =====================================================
+   B21 Final Countdown — Daily Mock card + qualitative bands
+   ===================================================== */
+.daily-mock-card {
+    margin: 0.75rem 0 1rem 0;
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    border-left: 4px solid var(--primary, #2E5984);
+}
+.daily-mock-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.daily-mock-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text, #1a1a1a);
+}
+.daily-mock-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #555);
+    line-height: 1.4;
+}
+.daily-mock-card .btn {
+    align-self: flex-start;
+}
+
+/* Band pills (home-card small + results-verdict large) */
+.daily-mock-band {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.band-good {
+    background-color: rgba(56, 161, 105, 0.14);
+    color: var(--success, #2f855a);
+}
+.band-medium {
+    background-color: rgba(229, 164, 66, 0.18);
+    color: var(--warning, #b07109);
+}
+.band-attention {
+    /* Per Council C6: amber-deep (NOT red) — actionable, not alarming */
+    background-color: rgba(199, 106, 46, 0.18);
+    color: var(--warning-deep, #924d1f);
+}
+
+/* Results-verdict band application (large card-sized labels) */
+.results-verdict.band-good {
+    color: var(--success, #2f855a);
+    background-color: transparent;
+}
+.results-verdict.band-medium {
+    color: var(--warning, #b07109);
+    background-color: transparent;
+}
+.results-verdict.band-attention {
+    color: var(--warning-deep, #924d1f);
+    background-color: transparent;
+}
