@@ -20936,19 +20936,21 @@ const QUESTION_BANK = [
         questionEn: "Which statements are correct about an emergency stop on a motorway? (2 answers)",
         options: {
             A: { fr: "Vous devez vous arrêter sur la bande d'arrêt d'urgence le plus à droite possible", en: "You must stop on the hard shoulder as far right as possible" },
-            B: { fr: "Vous devez allumer les feux de détresse et poser le triangle à 200 m en amont", en: "You must switch on hazard lights and place the triangle 200m behind" },
+            B: { fr: "Vous devez allumer les feux de détresse et enfiler le gilet de haute visibilité avant de descendre", en: "You must switch on hazard lights and put on the high-visibility vest before exiting" },
             C: { fr: "Vous pouvez réparer votre véhicule sur la bande d'arrêt d'urgence", en: "You can repair your vehicle on the hard shoulder" },
             D: { fr: "Tous les passagers doivent rester dans le véhicule", en: "All passengers must remain in the vehicle" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Sur autoroute, arrêtez-vous le plus à droite possible sur la BAU, allumez vos feux de détresse et placez le triangle à 200 m en amont (30 m sur route). Faites évacuer les passagers derrière la glissière de sécurité.",
-        explanationEn: "On a motorway, stop as far right as possible on the hard shoulder, switch on hazard lights and place the triangle 200m behind (30m on regular roads). Evacuate passengers behind the safety barrier.",
-        trapNote: "200m on motorway (not 30m — that's for regular roads). Passengers must EXIT the vehicle.",
-        distractorNotes: { C: "Repairing on the hard shoulder is dangerous and should be left to professionals.", D: "Passengers must EXIT and stand behind the safety barrier." },
+        explanationFr: "Sur autoroute, arrêtez-vous le plus à droite possible sur la bande d'arrêt d'urgence, allumez les feux de détresse, enfilez le gilet haute visibilité, puis évacuez tous les occupants derrière la glissière et appelez les secours via la borne d'appel (tous les 1 à 2 km) ou au 112. Ne placez PAS le triangle sur l'autoroute — l'article R416-19 dispense de l'obligation lorsque la mise en place constitue un danger manifeste. La règle des 30 m ne s'applique qu'hors autoroute.",
+        explanationEn: "On a motorway, stop as far right as possible on the emergency shoulder, switch on hazard lights, put on the high-vis vest, then evacuate all passengers behind the safety barrier and call for help via the orange emergency roadside phone (every 1-2km) or 112. DO NOT deploy the triangle on the motorway — article R416-19 exempts you when placement constitutes a clear danger. The 30m rule only applies off-motorway.",
+        trapNote: "R416-19 exception: NEVER deploy the triangle on autoroute — the danger-exemption applies. 30m is the standard OFF motorway. The old \"200m on autoroute\" figure was never legally codified. Immediate evacuation behind the barrier matters more than signage.",
+        distractorNotes: { C: "Repairing on the hard shoulder is strictly forbidden — call the autoroute operator via the borne d'appel; only authorized breakdown services may intervene on an autoroute.", D: "Passengers must EXIT immediately and stand behind the safety barrier — staying in the vehicle is one of the top causes of autoroute fatalities." },
         vocabulary: [
             { wordFr: "bande d'arrêt d'urgence", wordEn: "hard shoulder/emergency lane", definition: "The rightmost lane on a motorway reserved for emergency stops" },
-            { wordFr: "glissière de sécurité", wordEn: "safety barrier/guardrail", definition: "A metal barrier separating the motorway from the roadside" }
+            { wordFr: "glissière de sécurité", wordEn: "safety barrier/guardrail", definition: "A metal barrier separating the motorway from the roadside" },
+            { wordFr: "gilet de haute visibilité", wordEn: "high-visibility vest", definition: "Reflective yellow vest legally required when exiting a stopped vehicle on the roadway" },
+            { wordFr: "borne d'appel d'urgence", wordEn: "emergency roadside phone", definition: "Orange phone every 1-2km on French motorways, connects directly to the road operator" }
         ]
     },
     {
