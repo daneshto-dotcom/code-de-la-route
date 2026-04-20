@@ -2617,17 +2617,21 @@ const QUESTION_BANK = [
         questionFr: "Quelles affirmations sont correctes concernant la circulation dans un sens unique ?",
         questionEn: "Which statements are correct about one-way streets?",
         options: {
-            A: { fr: "Vous pouvez vous placer sur n'importe quelle voie pour tourner", en: "You can position yourself in any lane to turn" },
+            A: { fr: "Vous pouvez utiliser toute la largeur de la chaussée mais devez vous présélectionner selon votre direction avant de tourner (R415-3 et R415-4)", en: "You may use the full width of the roadway but must pre-position according to your direction before turning (R415-3 and R415-4)" },
             B: { fr: "Le stationnement est autorisé des deux côtés sauf signalisation contraire", en: "Parking is allowed on both sides unless indicated otherwise" },
             C: { fr: "La marche arrière est autorisée sur toute la longueur", en: "Reversing is allowed along the entire length" },
             D: { fr: "Les cyclistes peuvent circuler en contresens sans signalisation", en: "Cyclists can ride against traffic without signage" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Dans une rue à sens unique, on peut utiliser toute la largeur de la chaussée et stationner des deux côtés. Les cyclistes en contresens nécessitent une signalisation spécifique.",
-        explanationEn: "On a one-way street, you can use the full width and park on both sides. Cyclists riding against traffic require specific signage.",
-        trapNote: "Cyclists CANNOT ride against traffic unless a specific 'double-sens cyclable' sign is posted.",
-        distractorNotes: { C: "Reversing for a long distance is prohibited — only short distances for parking maneuvers.", D: "Contraflow cycling requires a specific sign (panneau double-sens cyclable)." }
+        explanationFr: "Dans une rue à sens unique : toute la largeur de la chaussée en marche normale + stationnement possible des deux côtés (sauf signalisation contraire). AVANT de tourner, vous devez vous serrer à droite pour un virage à droite (R415-3) ou à gauche pour un virage à gauche (R415-4). Les cyclistes en contresens nécessitent un panneau « double-sens cyclable ».",
+        explanationEn: "On a one-way street: full width available for straight-line driving + parking possible on both sides (unless signage indicates otherwise). BEFORE turning, you must keep right for a right turn (R415-3) or left for a left turn (R415-4). Cyclists riding against traffic require a 'double-sens cyclable' sign.",
+        trapNote: "Full width is for STRAIGHT-LINE driving only. BEFORE turning, R415-3 (right) and R415-4 (left) still apply — keep to the side matching your direction. 'Any lane to turn' is a common exam trap.",
+        distractorNotes: { C: "Reversing for a long distance is prohibited — only short distances for parking maneuvers.", D: "Contraflow cycling requires a specific sign (panneau double-sens cyclable)." },
+        vocabulary: [
+            { wordFr: "présélection", wordEn: "pre-positioning", definition: "Moving into the lane matching your intended direction before a turn" },
+            { wordFr: "sens unique", wordEn: "one-way street", definition: "Street where traffic flows in a single direction only" }
+        ]
     },
     {
         id: "circ-89",
