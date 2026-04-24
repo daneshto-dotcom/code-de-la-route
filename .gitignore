@@ -29,3 +29,10 @@ Thumbs.db
 # Handoff (ephemeral workspace copies)
 /HANDOFF_*.md
 !.handoff-archive/
+
+# S47: additional .claude session artifacts (leaked from prior sessions)
+.claude/pdr-scope-amendment-*.json
+.claude/plans-archive/
+.claude/session-archive/
+# S47: ephemeral image test fixtures
+assets/images/signs/test/
