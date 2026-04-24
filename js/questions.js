@@ -28345,15 +28345,17 @@ const QUESTION_BANK = [
         questionFr: "Quelles affirmations sont vraies sur les panneaux de direction ?",
         questionEn: "Which statements are true about direction signs?",
         options: {
-            A: { fr: "Les panneaux verts indiquent les autoroutes", en: "Green signs indicate motorways" },
-            B: { fr: "Les panneaux bleus indiquent les routes nationales ou rapides", en: "Blue signs indicate national or fast roads" },
+            A: { fr: "Les panneaux bleus indiquent les autoroutes", en: "Blue signs indicate motorways" },
+            B: { fr: "Les panneaux verts indiquent les routes nationales ou les grands itinéraires", en: "Green signs indicate national roads or major routes" },
             C: { fr: "Les panneaux blancs indiquent les directions locales", en: "White signs indicate local directions" },
             D: { fr: "La couleur n'a aucune importance", en: "The colour is not important" }
         },
         correctAnswers: ["A", "B", "C"],
         answerCount: 3,
-        explanationFr: "Vert = autoroute, bleu = route nationale/rapide, blanc = direction locale, jaune = temporaire. La couleur a une signification précise.",
-        explanationEn: "Green = motorway, blue = national/fast road, white = local direction, yellow = temporary. Colour has a specific meaning."
+        explanationFr: "Code couleur officiel des panneaux de direction (R411-24) : Bleu = autoroutes ; Vert = routes nationales et grands itinéraires ; Blanc = directions locales (communales, départementales). La couleur d'un panneau directionnel a une valeur réglementaire informative.",
+        explanationEn: "Official color code for directional signs (R411-24): Blue = motorways; Green = national roads and major routes; White = local directions (municipal, departmental). The color of a directional sign carries informative regulatory meaning.",
+        trapNote: "Classic swap trap: some materials confuse bleu/vert. The correct mapping is Bleu=autoroute, Vert=nationale. Cross-reference with sign-022, sign-034, sign-183, media-058, media-083, and sign-016 — all consistently teach this.",
+        distractorNotes: { D: "The color of a directional sign has a defined regulatory meaning — it is not arbitrary or purely decorative." }
     },
     {
         id: "s42-010",
