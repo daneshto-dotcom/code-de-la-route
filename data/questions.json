@@ -1314,8 +1314,8 @@
         "en": "Taxis"
       },
       "B": {
-        "fr": "Les vélos",
-        "en": "Bicycles"
+        "fr": "Les vélos (si signalisation locale l'autorise)",
+        "en": "Bicycles (if local signage authorizes)"
       },
       "C": {
         "fr": "Les véhicules de secours en intervention",
@@ -1332,9 +1332,9 @@
       "C"
     ],
     "answerCount": 3,
-    "explanationFr": "Les voies de bus peuvent être empruntées par les bus, les taxis, les vélos et les véhicules de secours en intervention. Les voitures électriques n'ont pas d'autorisation spéciale sauf signalisation locale. La signalisation sur place précise souvent les véhicules autorisés.",
-    "explanationEn": "Bus lanes may be used by buses, taxis, bicycles, and emergency vehicles on call. Electric cars have no special authorization unless local signage permits it. On-site signage often specifies which vehicles are allowed.",
-    "trapNote": "Electric cars are NOT automatically allowed in bus lanes in France — unlike some other countries.",
+    "explanationFr": "Voies de bus : bus toujours autorisés ; taxis et vélos seulement si signalisation locale l'indique (panneau Bus+Vélo, sub-panel taxi) ; véhicules de secours en intervention toujours (R412-5 priorité). Voitures particulières y compris électriques : interdites sauf dérogation locale.",
+    "explanationEn": "Bus lanes: buses always authorized; taxis and cyclists only if local signage indicates (Bus+Vélo sign, taxi sub-panel); emergency vehicles in intervention always authorized (R412-5 priority). Private cars including electric: forbidden unless local exemption.",
+    "trapNote": "Cyclists need EXPLICIT local signage to use a bus lane. The general rule (R412-7) is that bus lanes are reserved for buses; all other uses require signage authorization. Emergency-vehicle-on-intervention access is the only unconditional exception (R412-5).",
     "distractorNotes": {
       "D": "Electric cars have no general right to use bus lanes in France. Some cities may allow it via local signage."
     },
@@ -15007,8 +15007,8 @@
         "en": "Taxis can generally use bus lanes"
       },
       "B": {
-        "fr": "Les vélos peuvent circuler dans les voies de bus sauf interdiction",
-        "en": "Bicycles can ride in bus lanes unless prohibited"
+        "fr": "Les vélos peuvent circuler dans les voies de bus uniquement si la signalisation locale l'autorise",
+        "en": "Bicycles may use bus lanes only if local signage authorizes it"
       },
       "C": {
         "fr": "Vous pouvez emprunter une voie de bus pour tourner à droite",
@@ -15024,12 +15024,12 @@
       "B"
     ],
     "answerCount": 2,
-    "explanationFr": "Les taxis et les vélos sont généralement autorisés dans les voies de bus (sauf signalisation contraire). Vous ne pouvez pas emprunter une voie de bus pour tourner, sauf si un marquage au sol l'indique spécifiquement. Les voies de bus sont actives en permanence sauf indication d'horaires.",
-    "explanationEn": "Taxis and bicycles are generally allowed in bus lanes (unless signs say otherwise). You cannot use a bus lane to turn unless road markings specifically indicate it. Bus lanes are active at all times unless hours are posted.",
-    "trapNote": "Bus lanes are generally 24/7 unless time-restricted signs indicate otherwise.",
+    "explanationFr": "Voies réservées bus : les vélos ne peuvent y circuler QUE si une signalisation locale (panneau Bus+Vélo ou marquage spécifique) l'autorise. Le défaut est l'INTERDICTION. R412-7 régit la réservation de la voie ; R412-5 permet les véhicules d'urgence en intervention à tout moment.",
+    "explanationEn": "Reserved bus lanes: bicycles may circulate there ONLY when local signage (Bus+Vélo sign or specific marking) authorizes it. The default is FORBIDDEN. R412-7 governs lane reservation; R412-5 permits emergency vehicles on intervention at all times.",
+    "trapNote": "CRITICAL trap: the default rule for bus lanes is FORBIDDEN for non-buses. 'Sauf interdiction' (unless forbidden) would imply allowed-by-default, which is the REVERSE of the actual rule. Always look for local signage authorizing cyclist use before using a bus lane on a bicycle.",
     "distractorNotes": {
-      "C": "Using a bus lane to turn requires specific road markings allowing it.",
-      "D": "Bus lanes are active at all times unless posted hours say otherwise."
+      "C": "You may not use a bus lane to turn right unless a specific marking (usually a dashed line at the intersection) indicates it. Default = forbidden.",
+      "D": "Bus lanes operate full-time unless signage (hours panel) specifies otherwise. 'Only at peak hours' is the reverse of the default."
     }
   },
   {
@@ -59172,8 +59172,8 @@
         "en": "Taxis (per additional signage)"
       },
       "C": {
-        "fr": "Les vélos et véhicules d'urgence en intervention",
-        "en": "Bicycles and emergency vehicles on call"
+        "fr": "Les vélos (selon signalisation locale) et les véhicules d'urgence en intervention",
+        "en": "Bicycles (per local signage) and emergency vehicles on call"
       },
       "D": {
         "fr": "Les voitures particulières",
@@ -59186,8 +59186,9 @@
       "C"
     ],
     "answerCount": 3,
-    "explanationFr": "Voie bus : autobus, taxis (si autorisés), deux-roues, véhicules d'urgence en intervention. Voitures particulières interdites — sanction possible.",
-    "explanationEn": "Bus lane: buses, taxis (if authorized), two-wheelers, emergency vehicles on call. Private cars forbidden — sanctionable."
+    "explanationFr": "Voie bus : autobus toujours autorisés. Taxis et vélos uniquement si signalisation locale l'autorise (panneau Bus+Vélo, panonceau taxi). Véhicules d'urgence en intervention : toujours autorisés (R412-5 priorité). Voitures particulières : interdites — 135 € + points.",
+    "explanationEn": "Bus lane: buses always allowed. Taxis and bicycles only if local signage authorizes (Bus+Vélo sign, taxi sub-panel). Emergency vehicles on call: always allowed (R412-5 priority). Private cars: forbidden — €135 + points.",
+    "trapNote": "Default rule for bus lanes (couloirs réservés) is FORBIDDEN for non-buses. Cyclists and taxis need explicit local signage. Only emergency vehicles in active intervention (gyrophare + sirène) have unconditional access per R412-5."
   },
   {
     "id": "s39-014",
