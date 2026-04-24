@@ -3040,10 +3040,16 @@ const QUESTION_BANK = [
             C: { fr: "Les piétons peuvent traverser sans regarder", en: "Pedestrians can cross without looking" },
             D: { fr: "Les cyclistes doivent rouler uniquement sur la voie de droite", en: "Cyclists must ride only in the right lane" }
         },
-        correctAnswers: ["A", "B"],
-        answerCount: 2,
-        explanationFr: "En sens unique, le stationnement est possible des deux côtés et le dépassement par la droite est autorisé car il n'y a pas de circulation en sens inverse.",
-        explanationEn: "In one-way streets, parking on both sides and overtaking on the right are permitted since there is no oncoming traffic."
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "En sens unique, le stationnement est possible des deux côtés (sauf signalisation contraire). Le dépassement par la droite reste en principe INTERDIT (R414-6) : il n'est autorisé qu'en présence d'un véhicule signalant un virage à gauche, ou d'un tramway circulant sur la chaussée. Sens unique seul ne crée pas d'exception.",
+        explanationEn: "In one-way streets, parking on both sides is permitted (unless signage forbids it). Overtaking on the right remains FORBIDDEN by default (R414-6): it is only authorized when a vehicle ahead signals a left turn, or to pass a tram running on the roadway. Being a one-way street alone does NOT create an exception.",
+        trapNote: "R414-6 par. II lists only 2 exceptions for right-overtake: (1) vehicle signaling a left turn, (2) tram on the roadway. Being on a sens-unique multi-lane road does NOT in itself authorize right-overtake. R414-6 par. III has a 'files parallèles' clause where faster traffic in one lane is legally NOT classified as dépassement, but this requires DENSE traffic forming uninterrupted queues on all lanes — not the general case. Ornikar teaches the strict rule: 'even on multi-lane roads, overtaking on the right is forbidden.' For the ETG, stick with the strict R414-6 reading.",
+        distractorNotes: {
+            B: "Per R414-6, overtaking on the right is forbidden except in 2 specific cases (left-turn signal, tram on roadway). A sens-unique street does NOT authorize it. Ornikar and primary-source R414-6 agree.",
+            C: "Pedestrians always have a duty of care before crossing. One-way streets do not suspend their safety obligations.",
+            D: "Cyclists may use any lane on a sens-unique street, including turning left from the leftmost lane (R415-3/R415-4 before turning)."
+        }
     },
     {
         id: "s41-002",
@@ -16687,12 +16693,16 @@ const QUESTION_BANK = [
             C: { fr: "Lorsque vous roulez à la vitesse maximale autorisée", en: "When you are driving at the maximum permitted speed" },
             D: { fr: "Jamais, le dépassement par la droite est toujours interdit", en: "Never â€” overtaking on the right is always prohibited" }
         },
-        correctAnswers: ["A", "B"],
-        answerCount: 2,
-        explanationFr: "Le dépassement par la droite est exceptionnellement autorisé lorsque la file de gauche roule plus lentement (files parallèles à vitesses différentes) ou lorsque la circulation est dense et que toutes les voies sont occupées. Ce n'est pas un dépassement actif mais un écoulement naturel du trafic.",
-        explanationEn: "Overtaking on the right is exceptionally permitted when the left lane is moving more slowly (parallel lanes at different speeds) or when traffic is heavy and all lanes are occupied. This is not active overtaking but natural traffic flow.",
-        trapNote: "Many candidates believe overtaking on the right is always forbidden on motorways, ignoring the congestion and differential-speed exceptions.",
-        distractorNotes: { C: "Driving at the speed limit does not grant any special right to overtake on the right", D: "This absolute statement is incorrect â€” French law allows right-side passing in specific congestion situations" },
+        correctAnswers: ["D"],
+        answerCount: 1,
+        explanationFr: "Sur autoroute, le dépassement par la droite est interdit (R414-6 par. I). La seule tolérance légale est la clause 'files parallèles' de R414-6 par. III — elle ne classifie PAS comme dépassement le fait de rouler plus vite qu'une autre file quand la circulation forme une file ininterrompue sur toutes les voies à cause de sa densité. Mais l'ETG et la Sécurité Routière enseignent la règle stricte : ne dépassez jamais par la droite sur autoroute. La réponse D est la plus conforme à la doctrine enseignée.",
+        explanationEn: "On motorways, overtaking on the right is forbidden (R414-6 par. I). The only legal latitude is R414-6 par. III's 'parallel files' clause — it legally classifies faster movement in one lane as NOT overtaking, but only when traffic density forms an uninterrupted queue on every lane. ETG teaching and Sécurité Routière stick with the strict rule: never overtake on the right on a motorway. Answer D is the teaching-aligned answer.",
+        trapNote: "Same pattern as s41-001: R414-6 par. III's 'files parallèles' technicality exists, but the ETG curriculum (Ornikar, Rousseau) aligns with the strict par. I reading: no right-overtake on autoroute. Options A and B invoke the nuance incorrectly — they describe normal lane-speed differences, not the restricted dense-queue condition.",
+        distractorNotes: {
+            A: "The files-parallèles clause only applies to DENSE uninterrupted queue traffic on all lanes, not to general lane-speed differences. ETG expects you to answer 'forbidden' on autoroute right-overtake.",
+            B: "Dense traffic with all lanes occupied is closer to the files-parallèles scenario, but the question stem asks about 'dépassement par la droite autorisé' — per R414-6 par. I and ETG teaching, this is forbidden on autoroute regardless.",
+            C: "Speed alone never authorizes a right-overtake. Speed limit is a ceiling, not a license."
+        },
         vocabulary: [
             { wordFr: "dépassement par la droite", wordEn: "overtaking on the right", definition: "Action de dépasser un véhicule en passant par son côté droit, normalement interdit sauf exceptions" },
             { wordFr: "files parallèles", wordEn: "parallel lanes", definition: "Voies de circulation adjacentes où les véhicules circulent dans la même direction" },
@@ -16879,12 +16889,16 @@ const QUESTION_BANK = [
             C: { fr: "Sur autoroute lorsque la voie de gauche roule lentement", en: "On a motorway when the left lane is moving slowly" },
             D: { fr: "Lorsque vous êtes pressé et que la voie de gauche est occupée", en: "When you are in a hurry and the left lane is occupied" }
         },
-        correctAnswers: ["A", "B"],
-        answerCount: 2,
-        explanationFr: "Le dépassement par la droite est exceptionnellement autorisé dans deux cas principaux : lorsque le véhicule devant signale ou effectue un virage à gauche, et dans les files parallèles en agglomération (quand chaque file avance à son rythme). Sur autoroute, le dépassement par la droite reste interdit — même si la voie de gauche est plus lente, vous devez la dépasser par la gauche.",
-        explanationEn: "Overtaking on the right is exceptionally permitted in two main cases: when the vehicle ahead signals or is turning left, and in parallel traffic lanes in built-up areas (when each lane moves at its own pace). On motorways, overtaking on the right remains forbidden — even if the left lane is slower, you must overtake on the left.",
-        trapNote: "Parallel lanes in town are NOT the same as motorway lanes. On motorways, overtaking on the right is ALWAYS forbidden.",
-        distractorNotes: { C: "On motorways, you must always overtake on the left, even if the left lane is slower.", D: "Being in a hurry is never a legal justification for overtaking on the right." },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "Le seul cas d'autorisation générale de dépasser par la droite est quand le véhicule devant signale ou effectue un virage à gauche (R414-6 par. II 1°). Le dépassement 'files parallèles en agglomération' est une zone grise : R414-6 par. III reconnaît que rouler plus vite dans une autre file dans une circulation dense n'est PAS classifié comme dépassement — mais cela exige une circulation ininterrompue sur toutes les voies. L'ETG enseigne la règle stricte.",
+        explanationEn: "The only broadly authorized case of right-overtake is when the vehicle ahead signals or performs a left turn (R414-6 par. II 1°). The 'parallel files in town' scenario is a legal gray area: R414-6 par. III classifies faster lane-speed in dense queued traffic as NOT overtaking, but requires uninterrupted queues on every lane. ETG teaches the strict rule.",
+        trapNote: "Classic exam trap: 'files parallèles' sounds permissive but R414-6 par. III requires a very specific condition (uninterrupted-queue traffic on every lane) and the ETG curriculum (Ornikar, Rousseau) teaches the strict par. I reading.",
+        distractorNotes: {
+            B: "R414-6 par. III's files-parallèles clause requires uninterrupted-queue density on ALL lanes, not just 'parallel files' generally. ETG teaching aligns with the strict par. I reading.",
+            C: "Slow left lane does not legally authorize right-overtake on autoroute. Must change lanes left and overtake left.",
+            D: "Being in a hurry never authorizes right-overtake."
+        },
         vocabulary: [
             { wordFr: "dépassement par la droite", wordEn: "overtaking on the right", definition: "Passing another vehicle by moving to its right side — normally forbidden in France" },
             { wordFr: "files parallèles", wordEn: "parallel lanes / queues", definition: "Multiple lanes of traffic moving side by side, each at its own speed" }
@@ -18089,12 +18103,16 @@ const QUESTION_BANK = [
             C: { fr: "Sur autoroute quand la voie de gauche est encombrée", en: "On a motorway when the left lane is congested" },
             D: { fr: "En circulation dense quand les files avancent à des vitesses différentes", en: "In heavy traffic when lanes move at different speeds" }
         },
-        correctAnswers: ["A", "B", "D"],
-        answerCount: 3,
-        explanationFr: "Le dépassement par la droite est autorisé quand le véhicule devant tourne à gauche, sur route à sens unique, et en circulation dense avec des files à vitesses différentes. Sur autoroute, le dépassement par la droite reste interdit même si la gauche est lente.",
-        explanationEn: "Overtaking on the right is allowed when the vehicle ahead turns left, on one-way roads, and in heavy traffic with lanes at different speeds. On motorways, right-side overtaking remains prohibited even if the left is slow.",
-        trapNote: "Motorway right-side overtaking is a common trap — it's always prohibited, even in traffic jams.",
-        distractorNotes: { C: "On motorways, overtaking on the right is always prohibited regardless of traffic conditions." },
+        correctAnswers: ["A"],
+        answerCount: 1,
+        explanationFr: "Seul le cas A est un cas général d'autorisation : quand le véhicule devant tourne ou signale un virage à gauche (R414-6 par. II 1°). Sens unique multi-voies (B) et files dense (D) relèvent de R414-6 par. III — une tolérance légale conditionnelle à une circulation ininterrompue sur toutes les voies. L'ETG enseigne la règle stricte 'interdit par la droite'.",
+        explanationEn: "Only case A is a broad authorization: when the vehicle ahead turns or signals a left turn (R414-6 par. II 1°). Multi-lane one-way (B) and dense-file scenarios (D) fall under R414-6 par. III — a conditional legal tolerance requiring uninterrupted queue traffic on all lanes. ETG teaches the strict rule: right-overtake forbidden.",
+        trapNote: "The par. III files-parallèles clause is conditional on DENSE uninterrupted-queue traffic. Isolating sens-unique or general dense-file as authorizations is overreach; ETG curriculum takes the strict par. I reading.",
+        distractorNotes: {
+            B: "Multi-lane sens-unique alone does NOT authorize right-overtake. The files-parallèles clause (R414-6 par. III) requires dense uninterrupted-queue traffic; ETG teaching maintains the strict prohibition.",
+            C: "Slow left lane on autoroute does NOT authorize right-overtake — you must change lanes left.",
+            D: "Lane-speed differences alone do not qualify. The par. III files-parallèles exception is for DENSE queued traffic; ETG teaches the strict rule regardless."
+        },
         vocabulary: []
     },
     {
@@ -18545,12 +18563,15 @@ const QUESTION_BANK = [
             C: { fr: "Autorisé en agglomération sur les voies de circulation parallèles", en: "Allowed in built-up areas on parallel traffic lanes" },
             D: { fr: "Autorisé partout, sans restriction", en: "Allowed everywhere, without restriction" }
         },
-        correctAnswers: ["A", "B", "C"],
-        answerCount: 3,
-        explanationFr: "Dépassement par la droite : interdit en règle générale (R414-6, 135 € + 3 points). Exceptions : véhicule signalant à gauche, voies de circulation parallèles en agglomération, files compactes différentes en circulation lente.",
-        explanationEn: "Overtaking on the right: generally forbidden (R414-6, €135 + 3 points). Exceptions: vehicle signaling left turn, parallel traffic lanes in built-up areas, separate compacted lines in slow traffic.",
-        trapNote: "Right-overtaking is not the same as 'driving in a faster lane' — overtaking means passing closely with intent.",
-        distractorNotes: { D: "Right-side overtaking is generally forbidden — only specific exceptions allow it." }
+        correctAnswers: ["A", "B"],
+        answerCount: 2,
+        explanationFr: "R414-6 : interdit en règle générale (par. I), 2 exceptions (par. II) : véhicule signalant un virage à gauche, tramway sur la chaussée. Sanction : 135 € + 3 points. 'Files parallèles en agglomération' (C) est une technicalité de par. III qui ne s'applique qu'en circulation ininterrompue sur toutes les voies — ce n'est pas la règle générale enseignée par l'ETG.",
+        explanationEn: "R414-6: forbidden by default (par. I), 2 exceptions (par. II): vehicle signaling a left turn, tram on roadway. Penalty: 135 € + 3 points. 'Parallel files in town' (C) is a par. III technicality that only applies to uninterrupted-queue traffic on every lane — not the general rule taught by ETG.",
+        trapNote: "R414-6 par. III's files-parallèles is a specific legal concept requiring uninterrupted-queue density, NOT a general agglomération rule. ETG teaches the strict par. I reading.",
+        distractorNotes: {
+            C: "R414-6 par. III's files-parallèles clause requires uninterrupted-queue density on ALL lanes, not general 'parallel lanes in town'. ETG teaches the strict par. I reading.",
+            D: "Right-overtake is NEVER authorized 'partout, sans restriction' — R414-6 is the default prohibition."
+        }
     },
     {
         id: "croi-171",
