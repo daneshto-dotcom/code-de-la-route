@@ -2,13 +2,32 @@ name: Submodule Bump Gate
 
 # S77 P2 Pass A — Parent-repo CI gate.
 # Validates every commit to main that touches the `Game/founding-realm`
-# submodule pointer:
-#   1. The new submodule SHA is pushed to origin/master (not a dangling local)
-#   2. The submodule source builds cleanly at that SHA (tsc + tests + bundle)
+# submodule pointer.
 #
-# This prevents the classic "submodule bump race" where parent commits
-# a submodule pointer that isn't pushed to the submodule remote — leaving
-# any fresh clone unable to fetch the commit.
+# AUTH CONTEXT:
+#   - Parent repo `legacy-of-the-realm` is PUBLIC
+#   - Submodule repo `founding-realm` is PRIVATE
+#   - Cross-repo access from GH Actions default GITHUB_TOKEN does NOT work
+#     for private submodule repos. Requires a PAT.
+#
+# RUN MODES:
+#   1. WITHOUT `SUBMODULE_PAT` secret (current default):
+#      Performs local parent-index integrity check only.
+#      Validates submodule SHA is a well-formed 40-char hex and .gitmodules
+#      declares the expected repo. Does NOT confirm the SHA is pushed or
+#      that the submodule builds.
+#
+#   2. WITH `SUBMODULE_PAT` secret (requires one-time Daniel action):
+#      Full gate — clones submodule at SHA, runs tsc + tests + bundle +
+#      audit checks. Produces the strongest guarantee against broken bumps.
+#
+# To enable full mode:
+#   1. Create a PAT with `repo` scope at github.com/settings/tokens
+#   2. Add as repo secret `SUBMODULE_PAT` at
+#      github.com/daneshto-dotcom/legacy-of-the-realm/settings/secrets
+#
+# Council (S77 P2) adopted R8 mitigation. Degraded mode accepted as
+# pragmatic first step; full mode remains target state.
 
 on:
   push:
@@ -26,69 +45,73 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  verify-pushed:
-    name: Submodule SHA is pushed to origin
+  integrity:
+    name: Parent index integrity
     runs-on: ubuntu-latest
     timeout-minutes: 3
 
     outputs:
       submodule_sha: ${{ steps.get-sha.outputs.sha }}
+      has_pat: ${{ steps.get-sha.outputs.has_pat }}
 
     steps:
-      - name: Checkout parent (submodules shallow)
+      - name: Checkout parent (no submodules)
         uses: actions/checkout@v4
         with:
           submodules: false
 
-      - name: Read submodule SHA from parent index
+      - name: Read + validate submodule SHA
         id: get-sha
         run: |
-          # git ls-tree shows the recorded commit for the submodule
           SHA=$(git ls-tree HEAD Game/founding-realm | awk '{print $3}')
           if [ -z "$SHA" ]; then
             echo "::error::Could not read submodule SHA from parent index"
             exit 1
           fi
+          # Validate 40-char hex
+          if ! echo "$SHA" | grep -qE '^[0-9a-f]{40}$'; then
+            echo "::error::Submodule SHA $SHA is not a valid 40-char hex"
+            exit 1
+          fi
           echo "sha=$SHA" >> $GITHUB_OUTPUT
           echo "Submodule SHA in parent: $SHA"
 
-      - name: Verify SHA exists on founding-realm origin/master
-        run: |
-          SHA="${{ steps.get-sha.outputs.sha }}"
-          # Check if the SHA is reachable from origin/master of the submodule repo
-          git ls-remote https://github.com/daneshto-dotcom/founding-realm.git refs/heads/master | awk '{print $1}' > master-head.txt
-          MASTER_HEAD=$(cat master-head.txt)
-          echo "founding-realm origin/master HEAD: $MASTER_HEAD"
+          # Check .gitmodules declaration matches expected repo
+          if [ ! -f .gitmodules ]; then
+            echo "::error::.gitmodules missing"
+            exit 1
+          fi
+          if ! grep -q 'url = .*founding-realm' .gitmodules; then
+            echo "::error::.gitmodules does not declare founding-realm url"
+            exit 1
+          fi
+          echo "✓ Parent index + .gitmodules integrity OK"
 
-          # Clone shallow + deepen to check if SHA is in history
-          git clone --filter=blob:none --no-checkout https://github.com/daneshto-dotcom/founding-realm.git /tmp/fr-check
-          cd /tmp/fr-check
-          if git cat-file -e "$SHA" 2>/dev/null; then
-            echo "✓ SHA $SHA exists in founding-realm origin"
+          # Report whether full-mode PAT is available
+          if [ -n "${{ secrets.SUBMODULE_PAT }}" ]; then
+            echo "has_pat=true" >> $GITHUB_OUTPUT
+            echo "SUBMODULE_PAT is set — full gate will run"
           else
-            # SHA might be older — fetch full history to confirm
-            git fetch --unshallow origin 2>/dev/null || git fetch --depth=1000 origin
-            if git cat-file -e "$SHA" 2>/dev/null; then
-              echo "✓ SHA $SHA found after deeper fetch"
-            else
-              echo "::error::Submodule SHA $SHA NOT found in founding-realm origin. Did you forget to push the submodule?"
-              exit 1
-            fi
+            echo "has_pat=false" >> $GITHUB_OUTPUT
+            echo "::notice::SUBMODULE_PAT not set — running in degraded mode. See workflow header for enable instructions."
           fi
 
-  build-at-sha:
-    name: Submodule builds + tests pass at SHA
-    needs: verify-pushed
+  full-gate:
+    name: Full gate (requires SUBMODULE_PAT)
+    needs: integrity
+    if: needs.integrity.outputs.has_pat == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      - name: Checkout submodule at pinned SHA
+      - name: Checkout submodule at pinned SHA (with LFS)
         uses: actions/checkout@v4
         with:
           repository: daneshto-dotcom/founding-realm
-          ref: ${{ needs.verify-pushed.outputs.submodule_sha }}
+          ref: ${{ needs.integrity.outputs.submodule_sha }}
           path: founding-realm
+          token: ${{ secrets.SUBMODULE_PAT }}
+          lfs: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
