@@ -27164,9 +27164,9 @@ const QUESTION_BANK = [
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Ce panneau indique une voie sans issue (impasse). Le véhicule qui sort d'une voie sans issue n'a JAMAIS la priorité, même en l'absence de signalisation. Vous devez céder le passage à tous les usagers de la route principale.",
-        explanationEn: "This sign indicates a dead end (cul-de-sac). A vehicle exiting a dead-end street NEVER has priority, even without signage. You must yield to all users on the main road.",
-        trapNote: "Exiting a dead-end = exiting private property in terms of priority. You yield to EVERYONE, regardless of right-of-way rules.",
+        explanationFr: "Ce panneau indique une voie sans issue (impasse). En sortant, vous rejoignez la voie principale depuis un accès secondaire : vous n'avez pas la priorité par défaut, même sans signalisation de cédez-le-passage. Vous devez céder le passage à tous les usagers de la route principale. Le panneau C6 vous informe de la situation — la règle de priorité elle-même découle des règles générales d'intersection.",
+        explanationEn: "This sign indicates a dead end (cul-de-sac). When exiting, you are joining the main road from a secondary access — you do not have priority by default, even without a yield sign. You must yield to all users on the main road. The C6 sign warns you of the situation; the no-priority rule itself comes from general intersection priority rules.",
+        trapNote: "Exiting a dead-end = joining the main road from a secondary access. You have no right-of-way by default. The C6 sign doesn't create this rule — general intersection priority rules do.",
         distractorNotes: { B: "A dead end is not the same as a road closure — you can enter and exit.", C: "No entry is a round red sign with a white bar, completely different.", D: "Resident-only roads have different regulatory signage." },
         vocabulary: [
             { wordFr: "voie sans issue", wordEn: "dead end/cul-de-sac", definition: "A road that has no exit — you must return the way you came" }
@@ -27378,8 +27378,8 @@ const QUESTION_BANK = [
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Un feu jaune clignotant signifie que vous pouvez passer mais avec prudence. Vous devez céder le passage aux piétons qui traversent et aux véhicules prioritaires. Ce n'est pas un signe de panne — c'est un mode volontaire, souvent la nuit. Il n'impose pas un arrêt obligatoire.",
-        explanationEn: "A flashing yellow light means you may proceed but with caution. You must yield to crossing pedestrians and priority vehicles. It's not a sign of malfunction — it's an intentional mode, often at night. It does not require a mandatory stop.",
+        explanationFr: "Un feu jaune clignotant signifie que vous pouvez passer mais avec prudence. Vous devez céder le passage aux piétons qui s'engagent régulièrement dans la traversée (R415-5). Les véhicules prioritaires — police, pompiers, SAMU, reconnaissables à leur avertisseur et gyrophare — bénéficient d'une priorité absolue en toutes circonstances (R432-1), indépendamment de l'état des feux. Ce n'est pas un signe de panne — c'est un mode volontaire, souvent la nuit.",
+        explanationEn: "A flashing yellow light means you may proceed but with caution. You must yield to pedestrians legally crossing the road (R415-5). Priority vehicles — police, fire, ambulance, identifiable by sirens and flashing lights — always have absolute priority regardless of traffic light state (R432-1). It's not a malfunction — it's an intentional mode, often at night.",
         trapNote: "Flashing yellow is NOT broken — it's a deliberate reduced-control mode. No stop required, just caution.",
         distractorNotes: { C: "Flashing yellow is a normal operational mode, not a malfunction.", D: "No mandatory stop — but caution and yielding to pedestrians is required." }
     },
