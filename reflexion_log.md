@@ -46,13 +46,17 @@
 - S74 #method #worked: Repo is DUAL-PROJECT — FDTTA (French Driving Theory) at root + Legacy in `Game/founding-realm` submodule. Pre-flight flagged B22 commit as suspicious; investigation showed legitimate FDTTA work. Strict scope boundary (submodule only) prevented accidental cross-project changes.
 - S74 #deferred: (1) apple-touch-icon-180.png asset (harmless 404 until generated); (2) 9 Imagen class sigil variants via img2img w/ honor.png init; (3) Customize sidebar panel UI + CUSTOMIZE server message handler; (4) Lighthouse CI baseline + 12-screenshot matrix + axe-core WCAG automation (all require browser/CI infra); (5) Veo cutscene prototype (Gemini ANALYZE rec); (6) runtime event sim for T14 (ts-node harness limitation).
 
-## Session 73 (2026-04-17) — Security + Depth + Polish
+## Session 80 (2026-04-28) — Cloud TTS pipeline + a11y serious-fail + Linux visual baselines
 
-- P1 #security #worked: path-to-regexp ReDoS already patched in 0.1.13 (S72 backlog stale). Added override pin as defense-in-depth. Audit clean, 281/281 tests.
-- P2 #feature #worked: Reputation cosmetics surfaced existing Title[] via activeTitle field + 4 Imagen sigils. 12 files, 297/297 pass. Cross-track global-max tier logic. Council CHECK: Grok CONDITIONAL PASS (2 fixes applied), Gemini 5/5. Simpler than PDR (no separate cosmetics[] array).
-- P3 #feature #worked: 9 NPC TTS MP3s via Chirp 3 HD (Charon/Kore/Fenrir), hardcoded text→audio map, token-guarded race fix. Grok CONDITIONAL PASS, RALPH CLEAN. 227KB, $0.022 cost.
-- P3 #token-note: MCP exposes only Chirp voices, no Studio — Council A/B plan simplified in flight. Fine.
-- S73 #method #worked: Dual-AI Council delivered 5.5/18 adoption (~30%) with 0 false positives. 4/4 HIGH/MED CHECK fingers fixed pre-ship. Quality > quantity.
-- S73 #method #improve: Next batch — expand cosmetics to full 20 (4 tracks × 5 tiers) + try Veo for at least one asset (cutscene/trailer prototype). Gemini ANALYZE flagged Veo as untapped.
-- S73 #method #worked: Verify-first approach on P1 caught stale backlog entry (ReDoS already patched) before shipping — saved scope. Always `npm audit` before assuming a CVE is open.
-- S73 #meta: Scope discipline prevented creep (rejected Fastify/Redis/CRDT refactors from Grok). Dropping features that were "already done in another form" (cosmetics[] vs Title[]) is a WIN.
+- P1 #worked: Council D3 SQLite (`better-sqlite3` INSERT OR IGNORE + WAL) eliminated Windows file-race surface entirely vs JSONL appendFileSync. Bootstrap-from-manifest-as-completed pattern made dedup architecturally clean — server enqueues unconditionally, dedup is in the storage layer. 8/8 P1 tests GREEN.
+- P1 #worked: Council D7 cost analysis (100K char/run cap, $1.20/mo forecast at 100 lines/mo, lifetime ceiling $6.36) was the egregious miss Grok flagged. Lesson: "X is harmless / cost is negligible" claims need a real number, not handwaving.
+- P1 #fix: Cloud TTS REST is fine without SDK — 50+ transitive deps avoided (Council D10 Claude win). Raw fetch + base64 decode is 60 lines.
+- P2 #worked: Council D8 conditional decision tree (probe-then-tighten) is a much better pattern than punting. Run the test, observe behavior, THEN commit to the decision. Should be standard for "tighten gate" priorities.
+- P2 #scope: Research-agent enumeration missed footer color violation (#3a3a32 → 1.74:1). Lesson: when ratchet-tightening, ALWAYS run the test first to discover violations rather than relying on grep-based pre-enumeration. The test is the source of truth.
+- P3 #worked: Linux Docker baselines determinism is REAL — 3 consecutive runs produced bit-identical PNGs (sha256 diff = 0). The Council D5 worry that "Docker is theater" turned out empirically wrong on `mcr.microsoft.com/playwright:v1.59.1-jammy` for chromium-desktop. Threshold-relax fallback NOT triggered.
+- P3 #fix: Container's Node 24 has no better-sqlite3 v11 prebuilt. Fix: `npm ci --ignore-scripts` in baseline-regen scripts (visual tests don't use SQLite — postinstall skip is harmless). Also: MSYS_NO_PATHCONV=1 + `//app` workdir to defeat Git Bash path translation when invoking docker on Windows.
+- P3 #fix: `npx playwright` resolved to `/root/.npm/_npx/...` instead of /app/node_modules. Fix: invoke `./node_modules/.bin/playwright` directly.
+- SESSION #council: 87.5% disruption adoption rate (14/16 decisions had non-trivial revisions); 0 vetoes; 0 SPLIT escalations. Full-tier 2-round + quality gate + PRIME-AUDIT caught 2 real gaps (R14 mobile rot, R15 CI determinism) the original Council didn't surface.
+- SESSION #worked: PRIME-AUDIT (Rule 20) found CI workflow regen-only gap and added inline smoke-verify (Step 2 in visual-baseline.yml). User-visible quality lift from a self-audit step that costs <2K tokens.
+- SESSION #meta: 3/3 SHIP. ~125K UI tokens / 150K (YELLOW). $0.07 LLM Council. 633 tests GREEN (608 sim + 8 tts-queue + 4 a11y + 13 visual). Bundle 285.5kb (unchanged). Submodule 8f94892, parent f2b54f9.
+- SESSION #worked: User-batched approval ("approved! run full session batch") overrode project memory rule "PDRs One-at-a-Time" cleanly. The override is fine when explicit; default stays one-at-a-time per memory.
