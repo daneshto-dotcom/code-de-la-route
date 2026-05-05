@@ -1,41 +1,46 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-05-04 | Session: S85 → S86
+Generated: 2026-05-05 | Session: S93 closed → S94 next (PARK session, final of 4)
 
-## Next Steps
-1. Cloudflare Pages static deploy — needs scope decision first (festival.html + landing.html have backend API deps; pure-static won't work without VPS or Workers proxy)
-2. Studio voice A/B subjective evaluation (user-action) — Daniel listens to Varenne `_studio.mp3` vs `.mp3` via `?tts_tier=chirp3hd` on game2d.html
-3. Mobile baselines fail-on-diff (BACKLOG #32) — Council D14 callback ~2026-05-28 (24d out, can defer)
-4. Embedding-based intent normalization (BACKLOG #31) — needs ~30d ai:* traffic + GCS migration (#blocked)
-5. Pull a fresh BACKLOG row from Tier 3/4 (e.g., #20 Advanced Crafting, #21 Player Event Calendar) if no preference
+## Next Steps (S94 — PARK + UN-PARK HANDOFF)
+1. **Daniel hard-refresh + screenshot** — verify S93 P2 zone labels render legibly (gold "THE COMMONS", "THE CROWN GATE", etc.)
+2. **Bug-review dashboard** — admin.html section reading event-log.db rows (~15K, NEW LOC in admin-handlers + admin.html)
+3. **Run P4 live concurrent test** — 2 browsers, force-kick scenario, fill in observed-result template at bottom of `docs/CONCURRENT_SMOKE_TEST_S93.md` (~3K)
+4. **Un-park doc** — how to wake the project up in 1 month with current-state snapshot + re-verify steps (~5K)
+5. **Final integration verify** — full chargen → quest → combat → reward → logout cycle
+6. Push park-state badge / circulate `docs/TESTER_INVITE.md` link to invited testers (Daniel-action)
 
-## Blockers (Daniel-action)
-- VPS deploy (Hetzner) — gates production
-- GCS bucket + SA per `docs/GCS_SETUP.md` — gates ai:* audio upload
-- SUBMODULE_PAT — gates parent CI full-gate
-- BigQuery dataset + SA — gates CI metrics full mode
+## Blockers
+- S91 + S92 + S93 P2 verify-on-wake still pending Daniel STR walkthrough (non-blocking but worth doing pre-park)
+- statusline_dead — restart Claude Code at session start, OR use real-token paste fallback per /handoff Step 2.5.A
 
-## Pending Backlog
-- #1 VPS Production Deploy + HTTPS — M (Daniel: Hetzner)
-- #9 Real-World Attendance Verification — M (VPS + Stripe)
-- #16 Admin/GM Tooling v2 — M (VPS deploy)
-- #18 Monitoring & Observability — M (VPS deploy)
-- #20 Advanced Crafting & Masterworks — M
-- #21 Player Event Calendar + Chronicle Integration — M
-- #31 Embedding-based intent normalization — M (S81 P2 + 30d traffic)
-- #32 Mobile baselines fail-on-diff — XS (callback ~2026-05-28)
+## Pending Backlog (only `- [ ]` items)
+- [ ] S94 P1 — Daniel verify-on-wake S91 + S92 + S93 P2
+- [ ] S94 P2 — Bug-review dashboard
+- [ ] S94 P3 — Live concurrent smoke test execution
+- [ ] S94 P4 — Un-park doc + final integration verify
+- [ ] VC-1 — Foreign Emissary + Captain Daniel voice collision (post-park)
+- [ ] VC-2 — Brief cross-gender voice leak (post-park)
+- [ ] VC-3 — Audio content vs dialogue text mismatch (post-park, deeper TTS issue)
+- [ ] Quest-engine archaeology — 3 orphan chain-quest paths from S90 P1 (post-park)
+- [ ] D9 — GCS migration of feedback screenshots (post-park)
+- [ ] D10 — CSV admin export endpoint (S94 dashboard companion)
+- [ ] Vercel email investigation — Daniel-action
 
-## Recent Reflexion (last 2 sessions, in submodule reflexion_log.md)
+## Recent Reflexion (S93)
+- P1 #infra #windows-services: cloudflared 2026.3.0 `service install` on Windows leaves bare ImagePath. Manual registry override (`--config <path> tunnel --no-autoupdate run` via `Set-ItemProperty -Type ExpandString`) is the only reliable fix.
+- P2 #scope: read-before-build saved 30 LOC + a Council disagreement. Pre-existing `addZoneLabels` was 90% there; cosmetic fix sufficed.
+- SESSION #pdca: mid-priority discovery ("I can't tell where things are") converted to actual P2 scope rather than carry-forward — kept the priority alive but the change small.
+- SESSION #budget: statusline-dead all session; UI counter is ground truth as CLAUDE.md says.
 
-### S85 — Mobile Customize-panel a11y unblock (BACKLOG #34) — 1/1 SHIP
-- Path A-Lite scope amendment cut implementation from Council-approved ~25 LOC native <details>+APG accordion to ~11 LOC pure-CSS `order:-1` reorder
-- REAL root cause hidden until debug spec: tutorial-overlay (#tutorial-overlay from tutorial.js initTutorial) intercepts #sidebar-toggle clicks; sidebar stays in offscreen translateX(-100%) state. Fix: bypass Playwright UI click; call `window.toggleMobileSidebar()` directly via page.evaluate
-- CSS specificity gotcha: `[data-panel="character"]` (0,0,1,0) lost to `.tab-panel.active` (0,0,2,0) — raised selector to `.tab-panel.active[data-panel="character"]`
-- Bundle 287.0KB → 287.0KB (zero delta — pure CSS + test code). 36/36 a11y GREEN (was 31 + 5 SKIP). Visual baselines did NOT need regen (login overlay captured, sidebar offscreen)
-- Council 1-round Standard, 9 decisions, ~$0.11 spend, 0 vetoes
+## Recent Reflexion (S92, prior)
+- 12-row Battle Ledger D1-D12, 10-delta PRIME-AUDIT (PA-1 to PA-10) — most rigorous Council deliberation of the park track.
+- 8 of 12 Council disputes changed actual behavior; 4 PRIME-AUDIT corrections caught rubber-stamp errors before code.
+- Server-side WAL mode confirmed working (event-log.db + .db-wal + .db-shm files all present after S92 P1).
 
-### S84 — BACKLOG carry-forward — visual workflow git-lfs + auth-flake playbook + reflexion log repair — 3/3 SHIP
-- Carry-forward batches cost ~$0 in LLM spend (Micro deliberation waived per Rule 17)
-- Two-pass workflow approach surfaced second infra defect cleanly via scope-amendment ceremony
-- Playwright Jammy ships without git-lfs AND without build-essential — both needed for serious Node projects
-- Auth-flake watchdog as observability-only middleware: no behavior risk, collects data for next recurrence
-- Raw-byte inspection (od + Node script) beat encoding-rewrite assumption — single 0x00 was the entire problem
+## Current State
+- Game server: UP on port 3000
+- Public URL: UP at https://legacyoftherealm.com (cloudflared restored S93 P1)
+- Parent main: 8240a0c (pushed)
+- Submodule master: a90311b (pushed)
+- Bundle: 302.6 KB (gzip ~89 KB)
+- ACTIVE_PLAN: `Game/founding-realm/ACTIVE_PLAN_game_overhaul.md` (IN-PROGRESS)
