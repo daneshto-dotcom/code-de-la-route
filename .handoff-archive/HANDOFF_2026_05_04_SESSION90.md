@@ -220,3 +220,114 @@ PRE-FLIGHT CHECKLIST (for next session OR Daniel's verify-on-wake)
 [ ] **Vercel email investigation** — Daniel: vercel.com/dashboard → identify failing project → disable failure-email notifications
 
 ═══════════════════════════════════════════════════════════
+VERIFY-ON-WAKE FINDINGS (post-handoff playtest, Daniel reporting)
+═══════════════════════════════════════════════════════════
+
+Daniel woke and ran the verify-on-wake checklist. **Three new BLOCKERS surfaced**.
+S91 P1 priority queue should attack these in order. The S90 ships individually
+landed (sim/bundle/restart all green) but the running game still has critical
+gaps that the substitute CHECK gate could not catch.
+
+### BLOCKER F1 — FIGHT reverts to pre-fight state (S90 P2 INCOMPLETE)
+
+Daniel verbatim: "when when you click on fight it revers back to pre fight stats."
+
+Repro: ARTISAN character `sdfsdfg`, Market Row, day 9 SPRING EVENING. WILD BOAR
+persistent enemy on map. Click WILD BOAR → stance picker opens (`PREPARE FOR
+BATTLE` dialog with 3 rounds × 3 stances pre-selected AGGRESSIVE/DEFENSIVE/
+CUNNING + ability/weapon/repair rows). Click FIGHT in the picker. Brief fight
+mode entry, then UI reverts to pre-fight state — no damage taken, no rewards
+earned, no combat overlay result, character stats unchanged.
+
+S90 P2 fix only addressed the no-encounterId callers (interaction-menu Fight
+button + "f" hotkey). Persistent-enemy click DOES send encounterId
+(renderer.js:1511) — that path was assumed working. Apparently it's not.
+
+Diagnostic candidates for S91:
+- Server resolves but ACTION_RESULT data is malformed → client `showCombatOverlay`
+  fails silently?
+- Server resolves but stance picker doesn't close → race-rendering looks like
+  "revert"?
+- Server returns success:false but client doesn't show showWarningFlash?
+- combat-overlay.js stance-picker close path broken since S89 selector fix?
+
+**Action S91 P1**: Daniel hard-refresh, F12 console, click WILD BOAR + FIGHT,
+paste `[B1-debug] FIGHT_PVE response` console line. Diagnose against actual
+server response shape. Target: closure of B1-rt-revert.
+
+### BLOCKER F2 — TTS voice acting silent
+
+Daniel verbatim: "dialogs open but no voice acting"
+
+Repro: Click any NPC → dialogue panel opens with text (handleTalkNPC works fine,
+S90 P3 fallback path also works). But no audio plays.
+
+S86–S82 had a TTS pipeline (S78 P2 lineId capture, S79 P2 AI line ID, S80
+GCS pipeline, S82 P2 voice studio upgrade for Varenne, S81 P2 GCS migration).
+Last verified working: ?? need to grep voice-manifest + audio-bus state.
+
+Diagnostic candidates for S91:
+- GCS bucket auth expired / 401-403 (memory file says GCP keys rotated 2026-04-18,
+  CREDENTIALS_VAULT.json source of truth)
+- voice-manifest.json missing entries for current NPCs / dialogue ids
+- Audio context stuck in "suspended" (PA-1 autoplay unlock — verified shipped
+  in audio.js:662-664 per S89 grep, but maybe new path not gated by it)
+- TTS queue (`tts-queue.ts enqueueAILine`) silently failing
+- ai:* signed URL chain broken (S81 P2 GCS pipeline)
+
+**Action S91 P2**: read manifest + audio.js init + tts-queue.ts logs.
+Console errors during a fresh dialogue click should reveal the root cause
+within minutes. Daniel's wake-up playtest is the right time to capture
+network panel + console output.
+
+### BLOCKER F3 — Quest pool empty for fresh + existing characters
+
+Daniel verbatim: "i dont have anymore quests, so i started another characters
+(knight) but cant see any quests either"
+
+Repro: Existing ARTISAN character `sdfsdfg` quest panel shows only the active
+"HAUL STONE" quest (already accepted). No new daily quests pool.
+Fresh KNIGHT character: also empty quest pool.
+
+This is unexpected: `generateDailyQuests(tick, 5)` is called somewhere on
+session start / day rollover. If pool is empty, either:
+- generation is gated incorrectly (e.g., requires a cleared previous batch)
+- daily-rollover tick handler stopped calling generateDailyQuests
+- state.quests retained the old completed-batch but new ones aren't being added
+- class quests (`cq_*`) aren't appearing because of FullStateSync filter
+  (`requiredClasses` rejection)
+
+Combined with S90 P1 finding that class quests have orphan `cq_*` IDs that
+fail action-pipeline validation — quest visibility might be broken on
+multiple fronts.
+
+**Action S91 P3**: grep `generateDailyQuests` callers in core/simulation +
+networking/tick-handlers + persistence. Verify quest pool refill cadence.
+Audit FullStateSync quest filter at `state-sync-builder.ts:102-132` against
+actual quest data flowing through.
+
+### Side-channel observations from Daniel's screenshots
+
+- Screenshot 1 confirms S90 P3 working: ARTISAN sprite + quest tracker + sidebar
+  panels all rendering. DevTools open with "Snipping Tool — Screenshot copied"
+  notice (incidental).
+- "MEET THE LOCALS" tooltip at bottom: "Find and talk to an NPC. Click on a
+  green-labeled character nearby." — onboarding hint working.
+- Top-right time/online: "Year 1601 SPRING Day 9 EVENING 19:01 1 online" —
+  server uptime good, Postgres state preserved across restarts.
+- Stance picker UI rendering correctly with 3 rounds, 3 stances each, ability
+  + Weapon + Repair sub-rows. No sign of S89 selector-scope crash.
+
+### Updated S91 priority recommendation
+
+| Slot | Priority | Tier | Reason |
+|------|----------|------|--------|
+| P1 | F1 FIGHT-revert (B1-rt-revert) | Standard ~12K | Game-functional blocker; closes B1-rt fully |
+| P2 | F2 TTS voice acting | Standard ~10K | Dialogue working without voice = half-working immersion |
+| P3 | F3 Quest pool empty | Standard ~10K | Both characters affected; core loop blocker |
+| P4 | Daniel verify-on-wake of P1/P2 from prior session (audio cue change + NPC tooltip + label click + off-schedule fallback) | USER-ACTION | Confirm what DID land works |
+
+S90's "B7 unblocked" carry-forward is now back to BLOCKED — B1-rt-revert blocks
+B7 again (combat post-result screen requires combat round-trip stable first).
+
+═══════════════════════════════════════════════════════════
