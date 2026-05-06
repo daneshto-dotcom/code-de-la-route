@@ -3213,8 +3213,8 @@ const VOCAB_DATA = [
   },
   {
     "wordFr": "pression des pneus",
-    "wordEn": "tyre pressure",
-    "definition": "The air pressure inside the tyres",
+    "wordEn": "tire pressure",
+    "definition": "The air pressure inside the tires",
     "topic": "notions_diverses",
     "questionId": "div-011"
   },
@@ -3283,8 +3283,8 @@ const VOCAB_DATA = [
   },
   {
     "wordFr": "sculptures de pneu",
-    "wordEn": "tyre tread",
-    "definition": "The grooves and patterns on the tyre surface that provide grip",
+    "wordEn": "tire tread",
+    "definition": "The grooves and patterns on the tire surface that provide grip",
     "topic": "notions_diverses",
     "questionId": "div-009"
   },
@@ -3305,7 +3305,7 @@ const VOCAB_DATA = [
   {
     "wordFr": "sous-gonflage",
     "wordEn": "under-inflation",
-    "definition": "When tyre pressure is below the recommended level",
+    "definition": "When tire pressure is below the recommended level",
     "topic": "notions_diverses",
     "questionId": "div-025"
   },
@@ -3354,7 +3354,7 @@ const VOCAB_DATA = [
   {
     "wordFr": "usure",
     "wordEn": "wear",
-    "definition": "The gradual loss of material from the tyre surface",
+    "definition": "The gradual loss of material from the tire surface",
     "topic": "notions_diverses",
     "questionId": "div-009"
   },
@@ -4040,7 +4040,7 @@ const VOCAB_DATA = [
   {
     "wordFr": "adhérence",
     "wordEn": "grip/traction",
-    "definition": "The friction between tyres and road surface",
+    "definition": "The friction between tires and road surface",
     "topic": "route",
     "questionId": "route-009"
   },
@@ -4068,7 +4068,7 @@ const VOCAB_DATA = [
   {
     "wordFr": "aquaplaning",
     "wordEn": "aquaplaning",
-    "definition": "Loss of tyre contact with the road due to water buildup",
+    "definition": "Loss of tire contact with the road due to water buildup",
     "topic": "route",
     "questionId": "route-011"
   },
@@ -4452,15 +4452,15 @@ const VOCAB_DATA = [
   },
   {
     "wordFr": "pneu usé",
-    "wordEn": "worn tyre",
-    "definition": "A tyre whose tread has been reduced by use, decreasing its ability to grip and evacuate water",
+    "wordEn": "worn tire",
+    "definition": "A tire whose tread has been reduced by use, decreasing its ability to grip and evacuate water",
     "topic": "route",
     "questionId": "rout-047"
   },
   {
     "wordFr": "pneus usés",
-    "wordEn": "worn tyres",
-    "definition": "Tyres with reduced tread depth",
+    "wordEn": "worn tires",
+    "definition": "Tires with reduced tread depth",
     "topic": "route",
     "questionId": "route-009"
   },
@@ -4474,7 +4474,7 @@ const VOCAB_DATA = [
   {
     "wordFr": "profondeur de sculpture",
     "wordEn": "tread depth",
-    "definition": "The depth of the grooves in a tyre that channel water away from the contact patch",
+    "definition": "The depth of the grooves in a tire that channel water away from the contact patch",
     "topic": "route",
     "questionId": "rout-047"
   },

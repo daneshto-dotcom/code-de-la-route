@@ -5130,14 +5130,14 @@ const QUESTION_BANK = [
         questionEn: "Which conditions make a vehicle inspection result in a mandatory re-inspection? (2 answers)",
         options: {
             A: { fr: "Défaillance majeure du système de freinage", en: "Major failure of the braking system" },
-            B: { fr: "Pneus avec une profondeur de sculpture inférieure à 1,6 mm", en: "Tyres with tread depth below 1.6 mm" },
+            B: { fr: "Pneus avec une profondeur de sculpture inférieure à 1,6 mm", en: "Tires with tread depth below 1.6 mm" },
             C: { fr: "Un feu de recul défectueux", en: "A faulty reverse light" },
             D: { fr: "Un rétroviseur intérieur fissuré", en: "A cracked interior mirror" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
         explanationFr: "Les défaillances majeures du freinage et les pneus usés en dessous de 1,6 mm sont des défauts critiques nécessitant une contre-visite dans les 2 mois. Un feu de recul ou un rétroviseur intérieur sont des défauts mineurs.",
-        explanationEn: "Major braking failures and tyres worn below 1.6 mm are critical defects requiring re-inspection within 2 months. A reverse light or interior mirror are minor defects.",
+        explanationEn: "Major braking failures and tires worn below 1.6 mm are critical defects requiring re-inspection within 2 months. A reverse light or interior mirror are minor defects.",
         trapNote: "1.6 mm is the legal minimum tread depth — below this the vehicle fails inspection and is illegal to drive.",
         distractorNotes: { C: "A faulty reverse light is a minor defect noted on the report but does not require re-inspection.", D: "A cracked interior mirror is a minor observation — the two exterior mirrors are the legally required ones." },
         vocabulary: [
@@ -5353,14 +5353,14 @@ const QUESTION_BANK = [
         questionEn: "Which statements are correct about eco-driving? (2 answers)",
         options: {
             A: { fr: "Passer rapidement au rapport supérieur réduit la consommation", en: "Shifting to a higher gear early reduces fuel consumption" },
-            B: { fr: "Vérifier régulièrement la pression des pneus contribue à l'économie de carburant", en: "Regularly checking tyre pressure helps save fuel" },
+            B: { fr: "Vérifier régulièrement la pression des pneus contribue à l'économie de carburant", en: "Regularly checking tire pressure helps save fuel" },
             C: { fr: "Rouler en sous-régime (très bas régime moteur) est toujours économique", en: "Driving at very low engine revs is always fuel-efficient" },
             D: { fr: "La climatisation n'a aucun impact sur la consommation", en: "Air conditioning has no impact on fuel consumption" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
         explanationFr: "L'éco-conduite recommande de passer rapidement les vitesses (autour de 2000 tr/min diesel, 2500 essence) et de maintenir la pression correcte des pneus. Le sous-régime peut endommager le moteur. La climatisation augmente la consommation de 5 à 20%.",
-        explanationEn: "Eco-driving recommends shifting gears early (around 2000 rpm diesel, 2500 petrol) and maintaining correct tyre pressure. Under-revving can damage the engine. AC increases consumption by 5-20%.",
+        explanationEn: "Eco-driving recommends shifting gears early (around 2000 rpm diesel, 2500 petrol) and maintaining correct tire pressure. Under-revving can damage the engine. AC increases consumption by 5-20%.",
         trapNote: "Under-revving is NOT eco — it strains the engine. AC = 5-20% more fuel.",
         distractorNotes: { C: "Driving at too-low revs strains the engine and can increase consumption.", D: "Air conditioning increases fuel consumption by 5-20%." },
         vocabulary: [
@@ -5969,13 +5969,13 @@ const QUESTION_BANK = [
         options: {
             A: { fr: "Vous ne pouvez pas emprunter cette route", en: "You cannot use this road" },
             B: { fr: "Vous pouvez passer prudemment", en: "You can pass carefully" },
-            C: { fr: "Les pneus hiver peuvent être acceptés en alternative (selon signalisation)", en: "Winter tyres may be accepted as alternative (per signage)" },
+            C: { fr: "Les pneus hiver peuvent être acceptés en alternative (selon signalisation)", en: "Winter tires may be accepted as alternative (per signage)" },
             D: { fr: "Risque d'amende et de mise en danger", en: "Risk of fine and endangerment" }
         },
         correctAnswers: ["A", "C", "D"],
         answerCount: 3,
         explanationFr: "Panneau B26 : chaînes à neige obligatoires sur au moins deux roues motrices. Pneus hiver parfois acceptés (panonceau). Sans équipement adapté : passage interdit, amende.",
-        explanationEn: "Sign B26: snow chains mandatory on at least two driving wheels. Winter tyres sometimes accepted (sub-sign). Without proper equipment: passage forbidden, fine.",
+        explanationEn: "Sign B26: snow chains mandatory on at least two driving wheels. Winter tires sometimes accepted (sub-sign). Without proper equipment: passage forbidden, fine.",
         trapNote: "Loi Montagne (depuis 2021) : équipement hivernal obligatoire dans certaines zones du 1er nov au 31 mars."
     },
     {
@@ -6346,19 +6346,19 @@ const QUESTION_BANK = [
         questionEn: "Which factors increase braking distance?",
         options: {
             A: { fr: "La route mouillée", en: "A wet road" },
-            B: { fr: "Des pneus usés", en: "Worn tyres" },
+            B: { fr: "Des pneus usés", en: "Worn tires" },
             C: { fr: "Une descente", en: "A downhill slope" },
             D: { fr: "Une route bien éclairée", en: "A well-lit road" }
         },
         correctAnswers: ["A", "B", "C"],
         answerCount: 3,
         explanationFr: "La route mouillée réduit l'adhérence, les pneus usés offrent moins de grip, et une descente ajoute l'effet de la gravité. L'éclairage n'affecte pas la distance de freinage physique.",
-        explanationEn: "A wet road reduces grip, worn tyres offer less traction, and a downhill slope adds gravity's effect. Lighting does not affect physical braking distance.",
+        explanationEn: "A wet road reduces grip, worn tires offer less traction, and a downhill slope adds gravity's effect. Lighting does not affect physical braking distance.",
         trapNote: "Braking distance on a wet road is roughly DOUBLE that on a dry road.",
         distractorNotes: { D: "Lighting affects your ability to see hazards but does not change the physical braking distance." },
         vocabulary: [
-            { wordFr: "adhérence", wordEn: "grip/traction", definition: "The friction between tyres and road surface" },
-            { wordFr: "pneus usés", wordEn: "worn tyres", definition: "Tyres with reduced tread depth" }
+            { wordFr: "adhérence", wordEn: "grip/traction", definition: "The friction between tires and road surface" },
+            { wordFr: "pneus usés", wordEn: "worn tires", definition: "Tires with reduced tread depth" }
         ]
     },
     {
@@ -6377,7 +6377,7 @@ const QUESTION_BANK = [
         correctAnswers: ["B"],
         answerCount: 1,
         explanationFr: "La bande d'arrêt d'urgence est réservée exclusivement aux arrêts d'urgence (panne, malaise, crevaison). S'y arrêter sans raison valable est passible d'une amende.",
-        explanationEn: "The hard shoulder is reserved exclusively for emergency stops (breakdown, illness, flat tyre). Stopping without a valid reason is fineable.",
+        explanationEn: "The hard shoulder is reserved exclusively for emergency stops (breakdown, illness, flat tire). Stopping without a valid reason is fineable.",
         trapNote: "Looking at a map, eating, or taking a phone call are NOT emergencies. Use a service area instead.",
         distractorNotes: { A: "Looking at a map is not an emergency — use a service area.", C: "Overtaking on the hard shoulder is extremely dangerous and illegal.", D: "Meal breaks must be taken at service areas or rest stops." },
         vocabulary: [
@@ -6392,7 +6392,7 @@ const QUESTION_BANK = [
         questionFr: "Qu'est-ce que l'aquaplaning ?",
         questionEn: "What is aquaplaning?",
         options: {
-            A: { fr: "Les pneus glissent sur une couche d'eau et perdent contact avec la route", en: "Tyres slide on a layer of water and lose contact with the road" },
+            A: { fr: "Les pneus glissent sur une couche d'eau et perdent contact avec la route", en: "Tires slide on a layer of water and lose contact with the road" },
             B: { fr: "Le moteur cale à cause de l'eau", en: "The engine stalls because of water" },
             C: { fr: "Les freins ne fonctionnent plus sous la pluie", en: "Brakes stop working in the rain" },
             D: { fr: "Le volant vibre à cause de la pluie", en: "The steering wheel vibrates because of rain" }
@@ -6400,12 +6400,12 @@ const QUESTION_BANK = [
         correctAnswers: ["A"],
         answerCount: 1,
         explanationFr: "L'aquaplaning se produit quand une couche d'eau s'interpose entre les pneus et la route, provoquant une perte totale d'adhérence. Le véhicule glisse comme sur de la glace.",
-        explanationEn: "Aquaplaning occurs when a layer of water builds up between the tyres and the road, causing a total loss of grip. The vehicle slides as if on ice.",
+        explanationEn: "Aquaplaning occurs when a layer of water builds up between the tires and the road, causing a total loss of grip. The vehicle slides as if on ice.",
         trapNote: "If you start aquaplaning: do NOT brake hard. Ease off the accelerator and hold the steering wheel straight.",
-        distractorNotes: { B: "Aquaplaning is about tyre contact, not engine function.", C: "While brakes can be less effective when wet, that's not what aquaplaning means.", D: "Steering vibration is not aquaplaning — aquaplaning feels like floating, not vibrating." },
+        distractorNotes: { B: "Aquaplaning is about tire contact, not engine function.", C: "While brakes can be less effective when wet, that's not what aquaplaning means.", D: "Steering vibration is not aquaplaning — aquaplaning feels like floating, not vibrating." },
         vocabulary: [
-            { wordFr: "aquaplaning", wordEn: "aquaplaning", definition: "Loss of tyre contact with the road due to water buildup" },
-            { wordFr: "adhérence", wordEn: "grip", definition: "The friction between tyre and road surface" }
+            { wordFr: "aquaplaning", wordEn: "aquaplaning", definition: "Loss of tire contact with the road due to water buildup" },
+            { wordFr: "adhérence", wordEn: "grip", definition: "The friction between tire and road surface" }
         ]
     },
     {
@@ -6448,7 +6448,7 @@ const QUESTION_BANK = [
         correctAnswers: ["A"],
         answerCount: 1,
         explanationFr: "Les bandes rugueuses (ou sonores) vibrent sous les pneus pour réveiller un conducteur qui s'endort ou quitte sa voie.",
-        explanationEn: "Rumble strips vibrate under tyres to alert a drowsy driver or one drifting out of lane.",
+        explanationEn: "Rumble strips vibrate under tires to alert a drowsy driver or one drifting out of lane.",
         trapNote: "They're safety devices against drowsy driving, not speed reduction measures.",
         distractorNotes: { B: "Rumble strips are safety devices, not parking markers.", C: "Speed bumps reduce speed — rumble strips alert inattentive drivers.", D: "Cycle lanes are marked with painted lines, not rumble strips." },
         vocabulary: [
@@ -6679,12 +6679,12 @@ const QUESTION_BANK = [
         correctAnswers: ["B"],
         answerCount: 1,
         explanationFr: "En cas d'aquaplaning, il faut lever le pied de l'accélérateur progressivement, ne surtout pas freiner ni tourner le volant brusquement. Les pneus doivent retrouver le contact avec la route naturellement. Tenir le volant droit et fermement.",
-        explanationEn: "In aquaplaning, gradually lift your foot off the accelerator. Do not brake or turn the wheel suddenly. The tyres must regain contact with the road naturally. Hold the steering wheel straight and firmly.",
+        explanationEn: "In aquaplaning, gradually lift your foot off the accelerator. Do not brake or turn the wheel suddenly. The tires must regain contact with the road naturally. Hold the steering wheel straight and firmly.",
         trapNote: "Braking is the most instinctive reaction but the WORST thing to do in aquaplaning — it locks the wheels on the water layer.",
-        distractorNotes: { A: "Braking hard during aquaplaning can cause a complete loss of control.", C: "Turning the wheel quickly risks a violent skid when grip suddenly returns.", D: "Accelerating increases the water layer under the tyres, making it worse." },
+        distractorNotes: { A: "Braking hard during aquaplaning can cause a complete loss of control.", C: "Turning the wheel quickly risks a violent skid when grip suddenly returns.", D: "Accelerating increases the water layer under the tires, making it worse." },
         vocabulary: [
-            { wordFr: "aquaplaning", wordEn: "aquaplaning / hydroplaning", definition: "Loss of tyre contact with the road due to a layer of water" },
-            { wordFr: "adhérence", wordEn: "grip / traction", definition: "The friction between the tyres and the road surface" }
+            { wordFr: "aquaplaning", wordEn: "aquaplaning / hydroplaning", definition: "Loss of tire contact with the road due to a layer of water" },
+            { wordFr: "adhérence", wordEn: "grip / traction", definition: "The friction between the tires and the road surface" }
         ]
     },
     {
@@ -7088,17 +7088,17 @@ const QUESTION_BANK = [
             A: { fr: "Perte d'adhérence sur sol mouillé, risque critique à partir de 2-3 mm d'eau", en: "Loss of grip on wet road, critical risk from 2-3 mm of water" },
             B: { fr: "Blocage des freins par l'eau, risque à partir de 10 cm d'eau", en: "Brake lock from water, risk from 10 cm of water" },
             C: { fr: "Dérapage dû au verglas, risque à partir de 0Â°C", en: "Skidding due to black ice, risk from 0Â°C" },
-            D: { fr: "Usure accélérée des pneus par l'eau, risque au-dessus de 50 km/h", en: "Accelerated tyre wear from water, risk above 50 km/h" }
+            D: { fr: "Usure accélérée des pneus par l'eau, risque au-dessus de 50 km/h", en: "Accelerated tire wear from water, risk above 50 km/h" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
         explanationFr: "L'aquaplaning se produit lorsqu'une pellicule d'eau s'interpose entre les pneus et la chaussée, entraînant une perte totale d'adhérence. Le risque devient critique à partir de seulement 2-3 mm d'eau, surtout à grande vitesse ou avec des pneus usés.",
-        explanationEn: "Aquaplaning occurs when a film of water forms between the tyres and the road surface, causing total loss of grip. The risk becomes critical from just 2-3 mm of water, especially at high speed or with worn tyres.",
-        trapNote: "Most people think you need deep water for aquaplaning. In reality, just 2-3 mm is enough at highway speeds with worn tyres.",
-        distractorNotes: { B: "Aquaplaning is about tyre-surface contact loss, not brake locking â€” and 10 cm is far more than needed", C: "This describes black ice (verglas), a completely different phenomenon from aquaplaning", D: "Aquaplaning does not cause tyre wear â€” it causes loss of steering and braking control" },
+        explanationEn: "Aquaplaning occurs when a film of water forms between the tires and the road surface, causing total loss of grip. The risk becomes critical from just 2-3 mm of water, especially at high speed or with worn tires.",
+        trapNote: "Most people think you need deep water for aquaplaning. In reality, just 2-3 mm is enough at highway speeds with worn tires.",
+        distractorNotes: { B: "Aquaplaning is about tire-surface contact loss, not brake locking â€” and 10 cm is far more than needed", C: "This describes black ice (verglas), a completely different phenomenon from aquaplaning", D: "Aquaplaning does not cause tire wear â€” it causes loss of steering and braking control" },
         vocabulary: [
-            { wordFr: "aquaplaning", wordEn: "aquaplaning / hydroplaning", definition: "Loss of tyre contact with the road due to a layer of water between the tyre and road surface" },
-            { wordFr: "adhérence", wordEn: "grip / traction", definition: "The ability of tyres to maintain contact and friction with the road surface" },
+            { wordFr: "aquaplaning", wordEn: "aquaplaning / hydroplaning", definition: "Loss of tire contact with the road due to a layer of water between the tire and road surface" },
+            { wordFr: "adhérence", wordEn: "grip / traction", definition: "The ability of tires to maintain contact and friction with the road surface" },
             { wordFr: "pellicule d'eau", wordEn: "film of water", definition: "A thin layer of water on the road surface that can cause aquaplaning" }
         ]
     },
@@ -7159,7 +7159,7 @@ const QUESTION_BANK = [
         options: {
             A: { fr: "Réduire le bruit de la circulation pour les riverains", en: "Reduce traffic noise for local residents" },
             B: { fr: "Alerter le conducteur qui dérive vers le bord de la route par des vibrations et du bruit", en: "Alert the driver drifting towards the road edge through vibrations and noise" },
-            C: { fr: "Améliorer l'adhérence des pneus en cas de pluie", en: "Improve tyre grip in rainy conditions" },
+            C: { fr: "Améliorer l'adhérence des pneus en cas de pluie", en: "Improve tire grip in rainy conditions" },
             D: { fr: "Indiquer une zone de stationnement autorisé", en: "Indicate an authorized parking zone" }
         },
         correctAnswers: ["B"],
@@ -7167,7 +7167,7 @@ const QUESTION_BANK = [
         explanationFr: "Les bandes sonores (ou bandes rugueuses) sont des rainures ou reliefs sur le revêtement qui produisent des vibrations et un bruit caractéristique lorsqu'un véhicule les franchit. Elles alertent le conducteur somnolent ou inattentif qu'il quitte sa voie.",
         explanationEn: "Rumble strips are grooves or raised profiles on the road surface that produce vibrations and a characteristic noise when a vehicle crosses them. They alert drowsy or inattentive drivers that they are leaving their lane.",
         trapNote: "The name 'bandes sonores' (sound strips) might suggest they relate to noise management. Their purpose is the opposite: to CREATE noise and vibration as a safety alert.",
-        distractorNotes: { A: "Rumble strips create noise to alert drivers, not to reduce noise for residents", C: "Rumble strips do not improve tyre grip â€” their purpose is purely alerting through vibration", D: "Rumble strips have no connection to parking zones" },
+        distractorNotes: { A: "Rumble strips create noise to alert drivers, not to reduce noise for residents", C: "Rumble strips do not improve tire grip â€” their purpose is purely alerting through vibration", D: "Rumble strips have no connection to parking zones" },
         vocabulary: [
             { wordFr: "bandes sonores", wordEn: "rumble strips", definition: "Textured road surface features that create noise and vibration to alert drifting drivers" },
             { wordFr: "somnolence", wordEn: "drowsiness", definition: "A state of sleepiness that impairs a driver's attention and reaction time" }
@@ -7227,21 +7227,21 @@ const QUESTION_BANK = [
         questionFr: "Quels facteurs augmentent le risque d'aquaplaning ? (2 réponses)",
         questionEn: "Which factors increase the risk of aquaplaning? (2 answers)",
         options: {
-            A: { fr: "Des pneus usés avec une profondeur de sculpture inférieure à 1,6 mm", en: "Worn tyres with tread depth below 1.6 mm" },
+            A: { fr: "Des pneus usés avec une profondeur de sculpture inférieure à 1,6 mm", en: "Worn tires with tread depth below 1.6 mm" },
             B: { fr: "Une vitesse élevée sur route mouillée", en: "High speed on a wet road" },
             C: { fr: "L'utilisation du frein moteur", en: "Using engine braking" },
-            D: { fr: "Une pression des pneus trop élevée", en: "Tyre pressure that is too high" }
+            D: { fr: "Une pression des pneus trop élevée", en: "Tire pressure that is too high" }
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
         explanationFr: "L'aquaplaning est favorisé principalement par des pneus usés (qui ne peuvent plus évacuer l'eau) et une vitesse élevée (qui augmente la pression de l'eau sous le pneu). La profondeur minimale légale est de 1,6 mm mais les experts recommandent de changer les pneus dès 3 mm.",
-        explanationEn: "Aquaplaning is primarily caused by worn tyres (which can no longer disperse water) and high speed (which increases water pressure under the tyre). The legal minimum depth is 1.6 mm but experts recommend changing tyres at 3 mm.",
-        trapNote: "Over-inflated tyres can reduce contact patch but are not a primary aquaplaning factor. The key factors are speed and tread depth.",
+        explanationEn: "Aquaplaning is primarily caused by worn tires (which can no longer disperse water) and high speed (which increases water pressure under the tire). The legal minimum depth is 1.6 mm but experts recommend changing tires at 3 mm.",
+        trapNote: "Over-inflated tires can reduce contact patch but are not a primary aquaplaning factor. The key factors are speed and tread depth.",
         distractorNotes: { C: "Engine braking actually helps maintain control â€” it does not cause aquaplaning", D: "While over-inflation slightly reduces contact area, it is not a primary aquaplaning risk factor compared to speed and tread depth" },
         vocabulary: [
-            { wordFr: "profondeur de sculpture", wordEn: "tread depth", definition: "The depth of the grooves in a tyre that channel water away from the contact patch" },
-            { wordFr: "pneu usé", wordEn: "worn tyre", definition: "A tyre whose tread has been reduced by use, decreasing its ability to grip and evacuate water" },
-            { wordFr: "pression des pneus", wordEn: "tyre pressure", definition: "The air pressure inside a tyre, measured in bars or PSI" }
+            { wordFr: "profondeur de sculpture", wordEn: "tread depth", definition: "The depth of the grooves in a tire that channel water away from the contact patch" },
+            { wordFr: "pneu usé", wordEn: "worn tire", definition: "A tire whose tread has been reduced by use, decreasing its ability to grip and evacuate water" },
+            { wordFr: "pression des pneus", wordEn: "tire pressure", definition: "The air pressure inside a tire, measured in bars or PSI" }
         ]
     },
     {
@@ -8920,14 +8920,14 @@ const QUESTION_BANK = [
         questionEn: "What factors increase braking distance on a wet road?",
         options: {
             A: { fr: "L'aquaplanage réduit l'adhérence", en: "Aquaplaning reduces grip" },
-            B: { fr: "Les pneus usés sont moins efficaces", en: "Worn tyres are less effective" },
+            B: { fr: "Les pneus usés sont moins efficaces", en: "Worn tires are less effective" },
             C: { fr: "La distance de freinage peut doubler", en: "Braking distance can double" },
             D: { fr: "Les freins fonctionnent mieux sur route mouillée", en: "Brakes work better on wet roads" }
         },
         correctAnswers: ["A", "B", "C"],
         answerCount: 3,
         explanationFr: "Sur route mouillée : risque d'aquaplanage, pneus usés = danger accru, distance de freinage jusqu'à 2x plus longue. Les freins ne fonctionnent jamais mieux sur sol mouillé.",
-        explanationEn: "On wet roads: risk of aquaplaning, worn tyres = increased danger, braking distance up to 2x longer. Brakes never work better on wet surfaces."
+        explanationEn: "On wet roads: risk of aquaplaning, worn tires = increased danger, braking distance up to 2x longer. Brakes never work better on wet surfaces."
     },
     {
         id: "s41-048",
@@ -9022,7 +9022,7 @@ const QUESTION_BANK = [
         questionEn: "What are the risks of a road in poor condition?",
         options: {
             A: { fr: "Perte d'adhérence sur les nids-de-poule", en: "Loss of grip on potholes" },
-            B: { fr: "Risque de crevaison", en: "Risk of tyre puncture" },
+            B: { fr: "Risque de crevaison", en: "Risk of tire puncture" },
             C: { fr: "Les amortisseurs compensent tous les défauts", en: "Shock absorbers compensate for all defects" },
             D: { fr: "Instabilité du véhicule", en: "Vehicle instability" }
         },
@@ -9130,7 +9130,7 @@ const QUESTION_BANK = [
             A: { fr: "Réduire fortement la vitesse", en: "Significantly reduce speed" },
             B: { fr: "Éviter les freinages et accélérations brusques", en: "Avoid sudden braking and acceleration" },
             C: { fr: "Utiliser le frein moteur plutôt que la pédale de frein", en: "Use engine braking rather than the brake pedal" },
-            D: { fr: "Augmenter la pression des pneus pour plus d'adhérence", en: "Increase tyre pressure for more grip" }
+            D: { fr: "Augmenter la pression des pneus pour plus d'adhérence", en: "Increase tire pressure for more grip" }
         },
         correctAnswers: ["A", "B", "C"],
         answerCount: 3,
@@ -28604,7 +28604,7 @@ const QUESTION_BANK = [
         answerCount: 1,
         explanationFr: "L'écoconduite est un style de conduite visant à réduire la consommation de carburant et les émissions polluantes : anticipation, souplesse, entretien du véhicule.",
         explanationEn: "Eco-driving is a driving style aimed at reducing fuel consumption and emissions: anticipation, smooth driving, vehicle maintenance.",
-        trapNote: "Eco-driving can save 15-20% on fuel. Key principles: anticipate, shift early, maintain steady speed, check tyre pressure.",
+        trapNote: "Eco-driving can save 15-20% on fuel. Key principles: anticipate, shift early, maintain steady speed, check tire pressure.",
         distractorNotes: { B: "Eco-driving applies to ALL vehicles, not just electric ones.", C: "Location doesn't define eco-driving — it's a driving technique.", D: "Speed management is part of it, but eco-driving is much broader than just speed limits." },
         vocabulary: [
             { wordFr: "écoconduite", wordEn: "eco-driving", definition: "Fuel-efficient and environmentally friendly driving techniques" },
@@ -28662,7 +28662,7 @@ const QUESTION_BANK = [
         topic: "notions_diverses",
         difficulty: 2,
         questionFr: "Quelle est la profondeur minimale légale des sculptures de pneu ?",
-        questionEn: "What is the minimum legal tyre tread depth?",
+        questionEn: "What is the minimum legal tire tread depth?",
         options: {
             A: { fr: "1 mm", en: "1 mm" },
             B: { fr: "1,6 mm", en: "1.6 mm" },
@@ -28672,12 +28672,12 @@ const QUESTION_BANK = [
         correctAnswers: ["B"],
         answerCount: 1,
         explanationFr: "La profondeur minimale légale des sculptures de pneu est de 1,6 mm. En dessous, les pneus sont considérés comme usés et doivent être remplacés.",
-        explanationEn: "The minimum legal tyre tread depth is 1.6 mm. Below this, tyres are considered worn and must be replaced.",
-        trapNote: "1.6 mm is the legal minimum, but experts recommend replacing tyres at 3 mm for safety, especially in wet conditions.",
-        distractorNotes: { A: "1 mm is below the legal minimum — tyres at this depth are illegal.", C: "3 mm is a recommended safe minimum, not the legal requirement.", D: "5 mm is typical for new tyres, not the minimum depth." },
+        explanationEn: "The minimum legal tire tread depth is 1.6 mm. Below this, tires are considered worn and must be replaced.",
+        trapNote: "1.6 mm is the legal minimum, but experts recommend replacing tires at 3 mm for safety, especially in wet conditions.",
+        distractorNotes: { A: "1 mm is below the legal minimum — tires at this depth are illegal.", C: "3 mm is a recommended safe minimum, not the legal requirement.", D: "5 mm is typical for new tires, not the minimum depth." },
         vocabulary: [
-            { wordFr: "sculptures de pneu", wordEn: "tyre tread", definition: "The grooves and patterns on the tyre surface that provide grip" },
-            { wordFr: "usure", wordEn: "wear", definition: "The gradual loss of material from the tyre surface" }
+            { wordFr: "sculptures de pneu", wordEn: "tire tread", definition: "The grooves and patterns on the tire surface that provide grip" },
+            { wordFr: "usure", wordEn: "wear", definition: "The gradual loss of material from the tire surface" }
         ]
     },
     {
@@ -28711,19 +28711,19 @@ const QUESTION_BANK = [
         questionEn: "Which behaviours are part of eco-driving?",
         options: {
             A: { fr: "Anticiper le trafic et freiner en douceur", en: "Anticipate traffic and brake gently" },
-            B: { fr: "Vérifier régulièrement la pression des pneus", en: "Regularly check tyre pressure" },
+            B: { fr: "Vérifier régulièrement la pression des pneus", en: "Regularly check tire pressure" },
             C: { fr: "Accélérer fortement à chaque feu vert", en: "Accelerate hard at every green light" },
             D: { fr: "Couper le moteur dans les embouteillages prolongés", en: "Turn off the engine in prolonged traffic jams" }
         },
         correctAnswers: ["A", "B", "D"],
         answerCount: 3,
         explanationFr: "L'écoconduite inclut l'anticipation, le freinage en douceur, la vérification de la pression des pneus et l'arrêt du moteur lors de longs arrêts. L'accélération brutale augmente la consommation.",
-        explanationEn: "Eco-driving includes anticipation, gentle braking, checking tyre pressure, and turning off the engine during long stops. Hard acceleration increases consumption.",
-        trapNote: "Under-inflated tyres increase fuel consumption by up to 8%. Check pressure monthly.",
+        explanationEn: "Eco-driving includes anticipation, gentle braking, checking tire pressure, and turning off the engine during long stops. Hard acceleration increases consumption.",
+        trapNote: "Under-inflated tires increase fuel consumption by up to 8%. Check pressure monthly.",
         distractorNotes: { C: "Hard acceleration wastes fuel — smooth acceleration is part of eco-driving." },
         vocabulary: [
             { wordFr: "anticiper", wordEn: "to anticipate", definition: "To look ahead and predict what will happen" },
-            { wordFr: "pression des pneus", wordEn: "tyre pressure", definition: "The air pressure inside the tyres" }
+            { wordFr: "pression des pneus", wordEn: "tire pressure", definition: "The air pressure inside the tires" }
         ]
     },
     {
@@ -28873,21 +28873,21 @@ const QUESTION_BANK = [
         difficulty: 2,
         signs: [],
         questionFr: "Quelle est la pression correcte des pneus ?",
-        questionEn: "What is the correct tyre pressure?",
+        questionEn: "What is the correct tire pressure?",
         options: {
             A: { fr: "Toujours 2 bars pour toutes les voitures", en: "Always 2 bar for all cars" },
             B: { fr: "Celle indiquée par le constructeur du véhicule", en: "The one specified by the vehicle manufacturer" },
             C: { fr: "La plus élevée possible", en: "The highest possible" },
-            D: { fr: "La même que celle des pneus neufs en magasin", en: "The same as new tyres in the shop" }
+            D: { fr: "La même que celle des pneus neufs en magasin", en: "The same as new tires in the shop" }
         },
         correctAnswers: ["B"],
         answerCount: 1,
         explanationFr: "La pression correcte est indiquée par le constructeur (autocollant sur le montant de la porte conducteur ou dans le manuel). Elle varie selon le véhicule et la charge.",
         explanationEn: "Correct pressure is specified by the manufacturer (sticker on the driver's door frame or in the manual). It varies by vehicle and load.",
         trapNote: "Check the door frame sticker or manual — there is no universal pressure for all cars.",
-        distractorNotes: { A: "Correct pressure varies by vehicle — there's no universal 2 bar standard.", C: "Over-inflated tyres are dangerous — they have less grip and wear unevenly.", D: "Shop-new tyres may not be at the correct pressure for your specific vehicle." },
+        distractorNotes: { A: "Correct pressure varies by vehicle — there's no universal 2 bar standard.", C: "Over-inflated tires are dangerous — they have less grip and wear unevenly.", D: "Shop-new tires may not be at the correct pressure for your specific vehicle." },
         vocabulary: [
-            { wordFr: "pression des pneus", wordEn: "tyre pressure", definition: "The air pressure inside vehicle tyres, measured in bar or PSI" }
+            { wordFr: "pression des pneus", wordEn: "tire pressure", definition: "The air pressure inside vehicle tires, measured in bar or PSI" }
         ]
     },
     {
@@ -29044,20 +29044,20 @@ const QUESTION_BANK = [
         questionEn: "What are good eco-driving practices? (Select all correct answers)",
         options: {
             A: { fr: "Utiliser le frein moteur en descente plutôt que le frein à pied", en: "Use engine braking downhill rather than the foot brake" },
-            B: { fr: "Vérifier la pression des pneus régulièrement (sous-gonflage = +5% de consommation)", en: "Check tyre pressure regularly (under-inflation = +5% fuel consumption)" },
+            B: { fr: "Vérifier la pression des pneus régulièrement (sous-gonflage = +5% de consommation)", en: "Check tire pressure regularly (under-inflation = +5% fuel consumption)" },
             C: { fr: "Accélérer brutalement pour atteindre rapidement la vitesse de croisière", en: "Accelerate hard to quickly reach cruising speed" },
             D: { fr: "Passer les rapports supérieurs dès que possible (avant 2500 tr/min en diesel, 2000 en essence)", en: "Shift to higher gears as soon as possible (before 2500 rpm diesel, 2000 rpm petrol)" }
         },
         correctAnswers: ["A", "B", "D"],
         answerCount: 3,
         explanationFr: "L'éco-conduite comprend : le frein moteur (consommation nulle en décélération), la pression correcte des pneus (sous-gonflage augmente la consommation de 5 à 8%), et le passage rapide aux rapports supérieurs. Les accélérations brutales gaspillent du carburant.",
-        explanationEn: "Eco-driving includes: engine braking (zero fuel consumption when decelerating), correct tyre pressure (under-inflation increases consumption by 5-8%), and early gear shifting. Hard acceleration wastes fuel.",
+        explanationEn: "Eco-driving includes: engine braking (zero fuel consumption when decelerating), correct tire pressure (under-inflation increases consumption by 5-8%), and early gear shifting. Hard acceleration wastes fuel.",
         trapNote: "Engine braking = zero fuel injection in modern cars. This is counter-intuitive but a key eco-driving concept.",
         distractorNotes: { C: "Hard acceleration is the OPPOSITE of eco-driving — smooth acceleration is key." },
         vocabulary: [
             { wordFr: "éco-conduite", wordEn: "eco-driving", definition: "Driving techniques that reduce fuel consumption and emissions" },
             { wordFr: "frein moteur", wordEn: "engine braking", definition: "Decelerating by releasing the accelerator while in gear, using the engine's resistance" },
-            { wordFr: "sous-gonflage", wordEn: "under-inflation", definition: "When tyre pressure is below the recommended level" }
+            { wordFr: "sous-gonflage", wordEn: "under-inflation", definition: "When tire pressure is below the recommended level" }
         ]
     },
     {
@@ -30156,7 +30156,7 @@ const QUESTION_BANK = [
         answerCount: 1,
         explanationFr: "L'éco-conduite consiste à adopter un style de conduite souple et anticipatif pour réduire la consommation de carburant et les émissions de CO2.",
         explanationEn: "Eco-driving means adopting a smooth and anticipatory driving style to reduce fuel consumption and CO2 emissions.",
-        trapNote: "Eco-driving tips: shift up early, maintain steady speed, anticipate stops, check tyre pressure, remove roof boxes when not needed.",
+        trapNote: "Eco-driving tips: shift up early, maintain steady speed, anticipate stops, check tire pressure, remove roof boxes when not needed.",
         distractorNotes: { B: "Eco-driving applies to all vehicles, not just electric ones.", C: "Driving fast increases fuel consumption — the opposite of eco-driving.", D: "Engine braking is one technique but not the whole concept." },
         vocabulary: [
             { wordFr: "éco-conduite", wordEn: "eco-driving", definition: "A driving style that minimises fuel consumption and environmental impact" },
@@ -30913,14 +30913,14 @@ const QUESTION_BANK = [
         questionEn: "Which factors increase braking distance?",
         options: {
             A: { fr: "La chaussée mouillée", en: "Wet road surface" },
-            B: { fr: "Des pneus usés", en: "Worn tyres" },
+            B: { fr: "Des pneus usés", en: "Worn tires" },
             C: { fr: "La conduite en descente", en: "Driving downhill" },
             D: { fr: "L'utilisation du frein moteur", en: "Using engine braking" }
         },
         correctAnswers: ["A", "B", "C"],
         answerCount: 3,
         explanationFr: "La distance de freinage augmente sur chaussée mouillée (adhérence réduite), avec des pneus usés (moins de grip), et en descente (gravité). Le frein moteur réduit la distance de freinage en ralentissant le véhicule.",
-        explanationEn: "Braking distance increases on wet roads (reduced grip), with worn tyres (less traction), and downhill (gravity). Engine braking actually reduces braking distance by slowing the vehicle.",
+        explanationEn: "Braking distance increases on wet roads (reduced grip), with worn tires (less traction), and downhill (gravity). Engine braking actually reduces braking distance by slowing the vehicle.",
         trapNote: "On wet roads, braking distance can double compared to dry conditions.",
         distractorNotes: { D: "Engine braking is a technique that reduces braking distance by using the engine's resistance to slow down." },
         vocabulary: [
@@ -31151,12 +31151,12 @@ const QUESTION_BANK = [
             A: { fr: "L'état des freins", en: "The condition of the brakes" },
             B: { fr: "Le niveau des émissions polluantes", en: "The level of pollutant emissions" },
             C: { fr: "La couleur de la carrosserie", en: "The colour of the bodywork" },
-            D: { fr: "L'état des pneumatiques", en: "The condition of the tyres" }
+            D: { fr: "L'état des pneumatiques", en: "The condition of the tires" }
         },
         correctAnswers: ["A", "B", "D"],
         answerCount: 3,
         explanationFr: "Le contrôle technique vérifie la sécurité (freins, pneus) et les émissions. La couleur de la carrosserie n'est pas un point de contrôle.",
-        explanationEn: "The technical inspection checks safety (brakes, tyres) and emissions. The bodywork colour is not an inspection point."
+        explanationEn: "The technical inspection checks safety (brakes, tires) and emissions. The bodywork colour is not an inspection point."
     },
     {
         id: "s41-021",
@@ -31185,12 +31185,12 @@ const QUESTION_BANK = [
             A: { fr: "Anticiper les freinages", en: "Anticipate braking" },
             B: { fr: "Maintenir une vitesse stable", en: "Maintain a steady speed" },
             C: { fr: "Accélérer brusquement pour atteindre la vitesse souhaitée", en: "Accelerate suddenly to reach desired speed" },
-            D: { fr: "Vérifier régulièrement la pression des pneus", en: "Regularly check tyre pressure" }
+            D: { fr: "Vérifier régulièrement la pression des pneus", en: "Regularly check tire pressure" }
         },
         correctAnswers: ["A", "B", "D"],
         answerCount: 3,
         explanationFr: "L'éco-conduite : anticiper, vitesse stable, pneus bien gonflés. Les accélérations brusques augmentent la consommation.",
-        explanationEn: "Eco-driving: anticipate, steady speed, proper tyre pressure. Sudden acceleration increases fuel consumption."
+        explanationEn: "Eco-driving: anticipate, steady speed, proper tire pressure. Sudden acceleration increases fuel consumption."
     },
     {
         id: "s41-023",
@@ -31369,7 +31369,7 @@ const QUESTION_BANK = [
         questionFr: "Quels facteurs augmentent la consommation de carburant ?",
         questionEn: "Which factors increase fuel consumption?",
         options: {
-            A: { fr: "Les pneus sous-gonflés", en: "Under-inflated tyres" },
+            A: { fr: "Les pneus sous-gonflés", en: "Under-inflated tires" },
             B: { fr: "La galerie de toit chargée", en: "A loaded roof rack" },
             C: { fr: "La conduite à vitesse constante sur autoroute", en: "Driving at constant speed on the motorway" },
             D: { fr: "Les accélérations et freinages répétés", en: "Repeated acceleration and braking" }
@@ -31377,7 +31377,7 @@ const QUESTION_BANK = [
         correctAnswers: ["A", "B", "D"],
         answerCount: 3,
         explanationFr: "Pneus sous-gonflés, galerie chargée et conduite agressive augmentent la consommation. La vitesse constante sur autoroute l'optimise.",
-        explanationEn: "Under-inflated tyres, loaded roof rack, and aggressive driving increase consumption. Constant speed on the motorway optimises it."
+        explanationEn: "Under-inflated tires, loaded roof rack, and aggressive driving increase consumption. Constant speed on the motorway optimises it."
     },
     {
         id: "s42-007",
