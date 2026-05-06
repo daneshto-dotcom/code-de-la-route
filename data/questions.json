@@ -4811,28 +4811,24 @@
     "difficulty": 2,
     "questionFr": "Quelles sont les règles de circulation sur un rond-point ?",
     "questionEn": "What are the traffic rules on a roundabout?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Céder le passage aux véhicules déjà engagés dans le rond-point",
-        "textEn": "Give way to vehicles already in the roundabout"
+    "options": {
+      "A": {
+        "fr": "Céder le passage aux véhicules déjà engagés dans le rond-point",
+        "en": "Give way to vehicles already in the roundabout"
       },
-      {
-        "letter": "B",
-        "text": "Les véhicules entrant ont toujours la priorité",
-        "textEn": "Vehicles entering always have priority"
+      "B": {
+        "fr": "Les véhicules entrant ont toujours la priorité",
+        "en": "Vehicles entering always have priority"
       },
-      {
-        "letter": "C",
-        "text": "Utiliser le clignotant droit pour sortir du rond-point",
-        "textEn": "Use the right indicator to exit the roundabout"
+      "C": {
+        "fr": "Utiliser le clignotant droit pour sortir du rond-point",
+        "en": "Use the right indicator to exit the roundabout"
       },
-      {
-        "letter": "D",
-        "text": "Rouler le plus vite possible pour ne pas gêner",
-        "textEn": "Drive as fast as possible to avoid disruption"
+      "D": {
+        "fr": "Rouler le plus vite possible pour ne pas gêner",
+        "en": "Drive as fast as possible to avoid disruption"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -4852,28 +4848,24 @@
     "difficulty": 2,
     "questionFr": "Quelles sont les distances de sécurité à respecter sur autoroute par temps sec ?",
     "questionEn": "What safety distances must be maintained on a motorway in dry weather?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Au moins 2 secondes par rapport au véhicule qui précède",
-        "textEn": "At least 2 seconds from the vehicle ahead"
+    "options": {
+      "A": {
+        "fr": "Au moins 2 secondes par rapport au véhicule qui précède",
+        "en": "At least 2 seconds from the vehicle ahead"
       },
-      {
-        "letter": "B",
-        "text": "Un mètre par km/h de vitesse",
-        "textEn": "One meter per km/h of speed"
+      "B": {
+        "fr": "Un mètre par km/h de vitesse",
+        "en": "One meter per km/h of speed"
       },
-      {
-        "letter": "C",
-        "text": "Environ 90 mètres à 130 km/h",
-        "textEn": "About 90 meters at 130 km/h"
+      "C": {
+        "fr": "Environ 90 mètres à 130 km/h",
+        "en": "About 90 meters at 130 km/h"
       },
-      {
-        "letter": "D",
-        "text": "La longueur de 2 voitures suffit",
-        "textEn": "Two car lengths is sufficient"
+      "D": {
+        "fr": "La longueur de 2 voitures suffit",
+        "en": "Two car lengths is sufficient"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -4893,28 +4885,24 @@
     "difficulty": 3,
     "questionFr": "Quelles sont les vitesses maximales autorisées pour un jeune conducteur sur autoroute et route nationale ?",
     "questionEn": "What are the maximum speeds for a new driver on motorways and national roads?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "110 km/h sur autoroute",
-        "textEn": "110 km/h on motorways"
+    "options": {
+      "A": {
+        "fr": "110 km/h sur autoroute",
+        "en": "110 km/h on motorways"
       },
-      {
-        "letter": "B",
-        "text": "130 km/h sur autoroute comme tous les conducteurs",
-        "textEn": "130 km/h on motorways like all drivers"
+      "B": {
+        "fr": "130 km/h sur autoroute comme tous les conducteurs",
+        "en": "130 km/h on motorways like all drivers"
       },
-      {
-        "letter": "C",
-        "text": "80 km/h sur route à double sens sans séparateur",
-        "textEn": "80 km/h on two-way roads without separator"
+      "C": {
+        "fr": "80 km/h sur route à double sens sans séparateur",
+        "en": "80 km/h on two-way roads without separator"
       },
-      {
-        "letter": "D",
-        "text": "100 km/h sur route à chaussées séparées",
-        "textEn": "100 km/h on dual carriageways"
+      "D": {
+        "fr": "100 km/h sur route à chaussées séparées",
+        "en": "100 km/h on dual carriageways"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -4934,28 +4922,24 @@
     "difficulty": 2,
     "questionFr": "Par temps de pluie, quelles précautions devez-vous prendre ?",
     "questionEn": "In rainy weather, what precautions must you take?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Réduire votre vitesse et augmenter les distances de sécurité",
-        "textEn": "Reduce speed and increase safety distances"
+    "options": {
+      "A": {
+        "fr": "Réduire votre vitesse et augmenter les distances de sécurité",
+        "en": "Reduce speed and increase safety distances"
       },
-      {
-        "letter": "B",
-        "text": "Allumer les feux de brouillard arrière",
-        "textEn": "Turn on rear fog lights"
+      "B": {
+        "fr": "Allumer les feux de brouillard arrière",
+        "en": "Turn on rear fog lights"
       },
-      {
-        "letter": "C",
-        "text": "Allumer les feux de croisement",
-        "textEn": "Turn on dipped headlights"
+      "C": {
+        "fr": "Allumer les feux de croisement",
+        "en": "Turn on dipped headlights"
       },
-      {
-        "letter": "D",
-        "text": "Rouler dans les traces du véhicule précédent pour éviter l'aquaplaning",
-        "textEn": "Drive in the tracks of the vehicle ahead to avoid aquaplaning"
+      "D": {
+        "fr": "Rouler dans les traces du véhicule précédent pour éviter l'aquaplaning",
+        "en": "Drive in the tracks of the vehicle ahead to avoid aquaplaning"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -4975,28 +4959,24 @@
     "difficulty": 3,
     "questionFr": "Quelles sont les règles pour circuler dans une zone 30 ?",
     "questionEn": "What are the rules for driving in a 30 km/h zone?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "La vitesse est limitée à 30 km/h",
-        "textEn": "Speed is limited to 30 km/h"
+    "options": {
+      "A": {
+        "fr": "La vitesse est limitée à 30 km/h",
+        "en": "Speed is limited to 30 km/h"
       },
-      {
-        "letter": "B",
-        "text": "Le stationnement est interdit partout",
-        "textEn": "Parking is prohibited everywhere"
+      "B": {
+        "fr": "Le stationnement est interdit partout",
+        "en": "Parking is prohibited everywhere"
       },
-      {
-        "letter": "C",
-        "text": "Les piétons peuvent traverser partout mais n'ont pas la priorité absolue",
-        "textEn": "Pedestrians can cross anywhere but don't have absolute priority"
+      "C": {
+        "fr": "Les piétons peuvent traverser partout mais n'ont pas la priorité absolue",
+        "en": "Pedestrians can cross anywhere but don't have absolute priority"
       },
-      {
-        "letter": "D",
-        "text": "Les cyclistes doivent rouler sur le trottoir",
-        "textEn": "Cyclists must ride on the sidewalk"
+      "D": {
+        "fr": "Les cyclistes doivent rouler sur le trottoir",
+        "en": "Cyclists must ride on the sidewalk"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -5016,28 +4996,24 @@
     "difficulty": 2,
     "questionFr": "Que signifie la règle de la priorité à droite en agglomération ?",
     "questionEn": "What does the priority to the right rule mean in urban areas?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Vous devez céder le passage aux véhicules venant de votre droite",
-        "textEn": "You must yield to vehicles coming from your right"
+    "options": {
+      "A": {
+        "fr": "Vous devez céder le passage aux véhicules venant de votre droite",
+        "en": "You must yield to vehicles coming from your right"
       },
-      {
-        "letter": "B",
-        "text": "Vous avez toujours la priorité si vous venez de la droite",
-        "textEn": "You always have priority if you come from the right"
+      "B": {
+        "fr": "Vous avez toujours la priorité si vous venez de la droite",
+        "en": "You always have priority if you come from the right"
       },
-      {
-        "letter": "C",
-        "text": "Elle s'applique à toute intersection sans signalisation contraire",
-        "textEn": "It applies at any intersection without contrary signage"
+      "C": {
+        "fr": "Elle s'applique à toute intersection sans signalisation contraire",
+        "en": "It applies at any intersection without contrary signage"
       },
-      {
-        "letter": "D",
-        "text": "Elle ne s'applique qu'aux routes nationales",
-        "textEn": "It only applies on national roads"
+      "D": {
+        "fr": "Elle ne s'applique qu'aux routes nationales",
+        "en": "It only applies on national roads"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -5057,28 +5033,24 @@
     "difficulty": 3,
     "questionFr": "Quelles sont les conditions pour emprunter la bande d'arrêt d'urgence sur autoroute ?",
     "questionEn": "Under what conditions can you use the motorway hard shoulder?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "En cas de panne ou de malaise du conducteur",
-        "textEn": "In case of breakdown or driver illness"
+    "options": {
+      "A": {
+        "fr": "En cas de panne ou de malaise du conducteur",
+        "en": "In case of breakdown or driver illness"
       },
-      {
-        "letter": "B",
-        "text": "Pour dépasser un bouchon",
-        "textEn": "To bypass a traffic jam"
+      "B": {
+        "fr": "Pour dépasser un bouchon",
+        "en": "To bypass a traffic jam"
       },
-      {
-        "letter": "C",
-        "text": "En cas d'urgence médicale nécessitant un arrêt immédiat",
-        "textEn": "In case of a medical emergency requiring immediate stop"
+      "C": {
+        "fr": "En cas d'urgence médicale nécessitant un arrêt immédiat",
+        "en": "In case of a medical emergency requiring immediate stop"
       },
-      {
-        "letter": "D",
-        "text": "Pour consulter une carte routière",
-        "textEn": "To check a road map"
+      "D": {
+        "fr": "Pour consulter une carte routière",
+        "en": "To check a road map"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -5098,28 +5070,24 @@
     "difficulty": 2,
     "questionFr": "Quand devez-vous allumer vos feux de croisement ?",
     "questionEn": "When must you turn on your dipped headlights?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "De nuit sur toutes les routes éclairées ou non",
-        "textEn": "At night on all roads, lit or unlit"
+    "options": {
+      "A": {
+        "fr": "De nuit sur toutes les routes éclairées ou non",
+        "en": "At night on all roads, lit or unlit"
       },
-      {
-        "letter": "B",
-        "text": "Uniquement quand il fait complètement noir",
-        "textEn": "Only when it is completely dark"
+      "B": {
+        "fr": "Uniquement quand il fait complètement noir",
+        "en": "Only when it is completely dark"
       },
-      {
-        "letter": "C",
-        "text": "De jour par temps de pluie ou de brouillard",
-        "textEn": "During the day in rain or fog"
+      "C": {
+        "fr": "De jour par temps de pluie ou de brouillard",
+        "en": "During the day in rain or fog"
       },
-      {
-        "letter": "D",
-        "text": "Seulement hors agglomération la nuit",
-        "textEn": "Only outside urban areas at night"
+      "D": {
+        "fr": "Seulement hors agglomération la nuit",
+        "en": "Only outside urban areas at night"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -5139,28 +5107,24 @@
     "difficulty": 3,
     "questionFr": "Que devez-vous faire en cas d'aquaplaning ?",
     "questionEn": "What should you do in case of aquaplaning?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Ne pas freiner brusquement",
-        "textEn": "Do not brake suddenly"
+    "options": {
+      "A": {
+        "fr": "Ne pas freiner brusquement",
+        "en": "Do not brake suddenly"
       },
-      {
-        "letter": "B",
-        "text": "Freiner fort pour ralentir immédiatement",
-        "textEn": "Brake hard to slow down immediately"
+      "B": {
+        "fr": "Freiner fort pour ralentir immédiatement",
+        "en": "Brake hard to slow down immediately"
       },
-      {
-        "letter": "C",
-        "text": "Maintenir le volant droit et lever le pied de l'accélérateur",
-        "textEn": "Keep the steering wheel straight and ease off the accelerator"
+      "C": {
+        "fr": "Maintenir le volant droit et lever le pied de l'accélérateur",
+        "en": "Keep the steering wheel straight and ease off the accelerator"
       },
-      {
-        "letter": "D",
-        "text": "Accélérer pour traverser la flaque d'eau plus vite",
-        "textEn": "Accelerate to cross the water puddle faster"
+      "D": {
+        "fr": "Accélérer pour traverser la flaque d'eau plus vite",
+        "en": "Accelerate to cross the water puddle faster"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -9892,28 +9856,24 @@
     "difficulty": 2,
     "questionFr": "Quels sont les effets de l'alcool sur la conduite ?",
     "questionEn": "What are the effects of alcohol on driving?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Le temps de réaction augmente",
-        "textEn": "Reaction time increases"
+    "options": {
+      "A": {
+        "fr": "Le temps de réaction augmente",
+        "en": "Reaction time increases"
       },
-      {
-        "letter": "B",
-        "text": "La vision nocturne s'améliore",
-        "textEn": "Night vision improves"
+      "B": {
+        "fr": "La vision nocturne s'améliore",
+        "en": "Night vision improves"
       },
-      {
-        "letter": "C",
-        "text": "Le champ visuel se rétrécit (effet tunnel)",
-        "textEn": "The visual field narrows (tunnel effect)"
+      "C": {
+        "fr": "Le champ visuel se rétrécit (effet tunnel)",
+        "en": "The visual field narrows (tunnel effect)"
       },
-      {
-        "letter": "D",
-        "text": "La confiance en soi augmente, compensant les effets négatifs",
-        "textEn": "Self-confidence increases, compensating for negative effects"
+      "D": {
+        "fr": "La confiance en soi augmente, compensant les effets négatifs",
+        "en": "Self-confidence increases, compensating for negative effects"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -9933,28 +9893,24 @@
     "difficulty": 3,
     "questionFr": "Quel est le taux d'alcool maximal autorisé pour un conducteur en période probatoire ?",
     "questionEn": "What is the maximum allowed blood alcohol level for a driver with a probationary licence?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "0,2 g/L de sang",
-        "textEn": "0.2 g/L of blood"
+    "options": {
+      "A": {
+        "fr": "0,2 g/L de sang",
+        "en": "0.2 g/L of blood"
       },
-      {
-        "letter": "B",
-        "text": "0,5 g/L de sang comme tous les conducteurs",
-        "textEn": "0.5 g/L of blood like all drivers"
+      "B": {
+        "fr": "0,5 g/L de sang comme tous les conducteurs",
+        "en": "0.5 g/L of blood like all drivers"
       },
-      {
-        "letter": "C",
-        "text": "Cela correspond à environ zéro verre d'alcool",
-        "textEn": "This corresponds to approximately zero glasses of alcohol"
+      "C": {
+        "fr": "Cela correspond à environ zéro verre d'alcool",
+        "en": "This corresponds to approximately zero glasses of alcohol"
       },
-      {
-        "letter": "D",
-        "text": "0,8 g/L de sang",
-        "textEn": "0.8 g/L of blood"
+      "D": {
+        "fr": "0,8 g/L de sang",
+        "en": "0.8 g/L of blood"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -9974,28 +9930,24 @@
     "difficulty": 2,
     "questionFr": "Quels sont les signes de fatigue au volant nécessitant un arrêt ?",
     "questionEn": "What are the signs of driving fatigue that require stopping?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Des bâillements fréquents et les yeux qui piquent",
-        "textEn": "Frequent yawning and stinging eyes"
+    "options": {
+      "A": {
+        "fr": "Des bâillements fréquents et les yeux qui piquent",
+        "en": "Frequent yawning and stinging eyes"
       },
-      {
-        "letter": "B",
-        "text": "Une envie d'écouter la radio plus fort",
-        "textEn": "A desire to turn up the radio"
+      "B": {
+        "fr": "Une envie d'écouter la radio plus fort",
+        "en": "A desire to turn up the radio"
       },
-      {
-        "letter": "C",
-        "text": "Des écarts de trajectoire involontaires",
-        "textEn": "Involuntary lane drifting"
+      "C": {
+        "fr": "Des écarts de trajectoire involontaires",
+        "en": "Involuntary lane drifting"
       },
-      {
-        "letter": "D",
-        "text": "Une sensation de faim",
-        "textEn": "A feeling of hunger"
+      "D": {
+        "fr": "Une sensation de faim",
+        "en": "A feeling of hunger"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -10015,28 +9967,24 @@
     "difficulty": 3,
     "questionFr": "Quelles sont les sanctions en cas de conduite sous l'emprise de stupéfiants ?",
     "questionEn": "What are the penalties for driving under the influence of drugs?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Jusqu'à 2 ans d'emprisonnement et 4 500 € d'amende",
-        "textEn": "Up to 2 years imprisonment and €4,500 fine"
+    "options": {
+      "A": {
+        "fr": "Jusqu'à 2 ans d'emprisonnement et 4 500 € d'amende",
+        "en": "Up to 2 years imprisonment and €4,500 fine"
       },
-      {
-        "letter": "B",
-        "text": "Un simple avertissement pour la première infraction",
-        "textEn": "Just a warning for the first offense"
+      "B": {
+        "fr": "Un simple avertissement pour la première infraction",
+        "en": "Just a warning for the first offense"
       },
-      {
-        "letter": "C",
-        "text": "Retrait de 6 points sur le permis de conduire",
-        "textEn": "6-point deduction on the driving licence"
+      "C": {
+        "fr": "Retrait de 6 points sur le permis de conduire",
+        "en": "6-point deduction on the driving licence"
       },
-      {
-        "letter": "D",
-        "text": "Interdiction de conduire pendant 1 mois seulement",
-        "textEn": "Driving ban for only 1 month"
+      "D": {
+        "fr": "Interdiction de conduire pendant 1 mois seulement",
+        "en": "Driving ban for only 1 month"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -10056,28 +10004,24 @@
     "difficulty": 2,
     "questionFr": "Quels sont les dangers de l'utilisation du téléphone au volant ?",
     "questionEn": "What are the dangers of using a phone while driving?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Le temps de réaction est multiplié par 3",
-        "textEn": "Reaction time is tripled"
+    "options": {
+      "A": {
+        "fr": "Le temps de réaction est multiplié par 3",
+        "en": "Reaction time is tripled"
       },
-      {
-        "letter": "B",
-        "text": "Le kit mains-libres élimine totalement le danger",
-        "textEn": "Hands-free kits completely eliminate the danger"
+      "B": {
+        "fr": "Le kit mains-libres élimine totalement le danger",
+        "en": "Hands-free kits completely eliminate the danger"
       },
-      {
-        "letter": "C",
-        "text": "L'attention visuelle et cognitive est détournée de la route",
-        "textEn": "Visual and cognitive attention is diverted from the road"
+      "C": {
+        "fr": "L'attention visuelle et cognitive est détournée de la route",
+        "en": "Visual and cognitive attention is diverted from the road"
       },
-      {
-        "letter": "D",
-        "text": "Le téléphone est autorisé à l'arrêt à un feu rouge",
-        "textEn": "Phone use is allowed when stopped at a red light"
+      "D": {
+        "fr": "Le téléphone est autorisé à l'arrêt à un feu rouge",
+        "en": "Phone use is allowed when stopped at a red light"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -10097,28 +10041,24 @@
     "difficulty": 2,
     "questionFr": "Quelles sont les obligations du conducteur après un accident corporel ?",
     "questionEn": "What are the driver's obligations after an injury accident?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "S'arrêter, protéger les lieux, alerter les secours",
-        "textEn": "Stop, protect the scene, alert emergency services"
+    "options": {
+      "A": {
+        "fr": "S'arrêter, protéger les lieux, alerter les secours",
+        "en": "Stop, protect the scene, alert emergency services"
       },
-      {
-        "letter": "B",
-        "text": "Déplacer les blessés immédiatement",
-        "textEn": "Move the injured immediately"
+      "B": {
+        "fr": "Déplacer les blessés immédiatement",
+        "en": "Move the injured immediately"
       },
-      {
-        "letter": "C",
-        "text": "Ne pas quitter les lieux avant l'arrivée des forces de l'ordre",
-        "textEn": "Do not leave before police arrive"
+      "C": {
+        "fr": "Ne pas quitter les lieux avant l'arrivée des forces de l'ordre",
+        "en": "Do not leave before police arrive"
       },
-      {
-        "letter": "D",
-        "text": "Faire un constat amiable suffit en cas de blessure légère",
-        "textEn": "An accident report form is sufficient for minor injuries"
+      "D": {
+        "fr": "Faire un constat amiable suffit en cas de blessure légère",
+        "en": "An accident report form is sufficient for minor injuries"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -10138,28 +10078,24 @@
     "difficulty": 3,
     "questionFr": "Quels médicaments peuvent affecter la capacité de conduite ?",
     "questionEn": "Which medications can affect driving ability?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Les antihistaminiques (contre les allergies)",
-        "textEn": "Antihistamines (for allergies)"
+    "options": {
+      "A": {
+        "fr": "Les antihistaminiques (contre les allergies)",
+        "en": "Antihistamines (for allergies)"
       },
-      {
-        "letter": "B",
-        "text": "Les vitamines et compléments alimentaires",
-        "textEn": "Vitamins and dietary supplements"
+      "B": {
+        "fr": "Les vitamines et compléments alimentaires",
+        "en": "Vitamins and dietary supplements"
       },
-      {
-        "letter": "C",
-        "text": "Les anxiolytiques et les somnifères",
-        "textEn": "Anti-anxiety drugs and sleeping pills"
+      "C": {
+        "fr": "Les anxiolytiques et les somnifères",
+        "en": "Anti-anxiety drugs and sleeping pills"
       },
-      {
-        "letter": "D",
-        "text": "Les médicaments homéopathiques",
-        "textEn": "Homeopathic medications"
+      "D": {
+        "fr": "Les médicaments homéopathiques",
+        "en": "Homeopathic medications"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -10179,28 +10115,24 @@
     "difficulty": 2,
     "questionFr": "Quels sont les principes de l'éco-conduite ?",
     "questionEn": "What are the principles of eco-driving?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Anticiper le trafic et éviter les freinages brusques",
-        "textEn": "Anticipate traffic and avoid harsh braking"
+    "options": {
+      "A": {
+        "fr": "Anticiper le trafic et éviter les freinages brusques",
+        "en": "Anticipate traffic and avoid harsh braking"
       },
-      {
-        "letter": "B",
-        "text": "Rouler au maximum du régime moteur pour plus d'efficacité",
-        "textEn": "Drive at maximum engine RPM for more efficiency"
+      "B": {
+        "fr": "Rouler au maximum du régime moteur pour plus d'efficacité",
+        "en": "Drive at maximum engine RPM for more efficiency"
       },
-      {
-        "letter": "C",
-        "text": "Passer les vitesses à bas régime (environ 2000 tr/min)",
-        "textEn": "Shift gears at low RPM (around 2000 rpm)"
+      "C": {
+        "fr": "Passer les vitesses à bas régime (environ 2000 tr/min)",
+        "en": "Shift gears at low RPM (around 2000 rpm)"
       },
-      {
-        "letter": "D",
-        "text": "Utiliser la climatisation au maximum pour le confort",
-        "textEn": "Use air conditioning at maximum for comfort"
+      "D": {
+        "fr": "Utiliser la climatisation au maximum pour le confort",
+        "en": "Use air conditioning at maximum for comfort"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -10220,28 +10152,24 @@
     "difficulty": 3,
     "questionFr": "Que risque un conducteur en cas de grand excès de vitesse (plus de 50 km/h au-dessus de la limite) ?",
     "questionEn": "What does a driver risk for a major speeding offense (more than 50 km/h over the limit)?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Retrait de 6 points et suspension de permis jusqu'à 3 ans",
-        "textEn": "6-point deduction and licence suspension up to 3 years"
+    "options": {
+      "A": {
+        "fr": "Retrait de 6 points et suspension de permis jusqu'à 3 ans",
+        "en": "6-point deduction and licence suspension up to 3 years"
       },
-      {
-        "letter": "B",
-        "text": "Une simple amende forfaitaire de 135 €",
-        "textEn": "Just a flat-rate fine of €135"
+      "B": {
+        "fr": "Une simple amende forfaitaire de 135 €",
+        "en": "Just a flat-rate fine of €135"
       },
-      {
-        "letter": "C",
-        "text": "La confiscation possible du véhicule",
-        "textEn": "Possible confiscation of the vehicle"
+      "C": {
+        "fr": "La confiscation possible du véhicule",
+        "en": "Possible confiscation of the vehicle"
       },
-      {
-        "letter": "D",
-        "text": "Un avertissement pour la première infraction",
-        "textEn": "A warning for the first offense"
+      "D": {
+        "fr": "Un avertissement pour la première infraction",
+        "en": "A warning for the first offense"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -10261,28 +10189,24 @@
     "difficulty": 2,
     "questionFr": "Que doit vérifier un conducteur avant de prendre la route ?",
     "questionEn": "What must a driver check before taking the road?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "L'état des pneus (pression, usure)",
-        "textEn": "Tire condition (pressure, wear)"
+    "options": {
+      "A": {
+        "fr": "L'état des pneus (pression, usure)",
+        "en": "Tire condition (pressure, wear)"
       },
-      {
-        "letter": "B",
-        "text": "Le nombre de passagers dans les véhicules voisins",
-        "textEn": "The number of passengers in neighboring vehicles"
+      "B": {
+        "fr": "Le nombre de passagers dans les véhicules voisins",
+        "en": "The number of passengers in neighboring vehicles"
       },
-      {
-        "letter": "C",
-        "text": "Le bon fonctionnement des feux et des rétroviseurs",
-        "textEn": "Proper functioning of lights and mirrors"
+      "C": {
+        "fr": "Le bon fonctionnement des feux et des rétroviseurs",
+        "en": "Proper functioning of lights and mirrors"
       },
-      {
-        "letter": "D",
-        "text": "La couleur du liquide de lave-glace",
-        "textEn": "The color of the windshield washer fluid"
+      "D": {
+        "fr": "La couleur du liquide de lave-glace",
+        "en": "The color of the windshield washer fluid"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -15145,28 +15069,24 @@
     "difficulty": 2,
     "questionFr": "Quelles précautions prendre en abordant un virage sur route de montagne ?",
     "questionEn": "What precautions should you take when approaching a mountain road curve?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Réduire la vitesse avant le virage",
-        "textEn": "Reduce speed before the curve"
+    "options": {
+      "A": {
+        "fr": "Réduire la vitesse avant le virage",
+        "en": "Reduce speed before the curve"
       },
-      {
-        "letter": "B",
-        "text": "Accélérer dans le virage pour maintenir la stabilité",
-        "textEn": "Accelerate in the curve to maintain stability"
+      "B": {
+        "fr": "Accélérer dans le virage pour maintenir la stabilité",
+        "en": "Accelerate in the curve to maintain stability"
       },
-      {
-        "letter": "C",
-        "text": "Rester dans votre voie et serrer à droite",
-        "textEn": "Stay in your lane and keep to the right"
+      "C": {
+        "fr": "Rester dans votre voie et serrer à droite",
+        "en": "Stay in your lane and keep to the right"
       },
-      {
-        "letter": "D",
-        "text": "Couper le virage pour réduire la distance",
-        "textEn": "Cut the curve to reduce the distance"
+      "D": {
+        "fr": "Couper le virage pour réduire la distance",
+        "en": "Cut the curve to reduce the distance"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -15186,28 +15106,24 @@
     "difficulty": 3,
     "questionFr": "Quels équipements sont obligatoires en hiver dans certaines zones montagneuses françaises ?",
     "questionEn": "What equipment is mandatory in winter in certain French mountain zones?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Des pneus hiver ou des chaînes (loi Montagne)",
-        "textEn": "Winter tires or chains (Mountain Law)"
+    "options": {
+      "A": {
+        "fr": "Des pneus hiver ou des chaînes (loi Montagne)",
+        "en": "Winter tires or chains (Mountain Law)"
       },
-      {
-        "letter": "B",
-        "text": "Un gilet de haute visibilité supplémentaire",
-        "textEn": "An additional high-visibility vest"
+      "B": {
+        "fr": "Un gilet de haute visibilité supplémentaire",
+        "en": "An additional high-visibility vest"
       },
-      {
-        "letter": "C",
-        "text": "Des pneus hiver marqués 3PMSF ou M+S",
-        "textEn": "Winter tires marked 3PMSF or M+S"
+      "C": {
+        "fr": "Des pneus hiver marqués 3PMSF ou M+S",
+        "en": "Winter tires marked 3PMSF or M+S"
       },
-      {
-        "letter": "D",
-        "text": "Des phares antibrouillard obligatoires",
-        "textEn": "Mandatory fog lights"
+      "D": {
+        "fr": "Des phares antibrouillard obligatoires",
+        "en": "Mandatory fog lights"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -15227,28 +15143,24 @@
     "difficulty": 2,
     "questionFr": "Que signifient les bandes rugueuses sur le bord de la chaussée ?",
     "questionEn": "What do rumble strips on the road edge mean?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Elles alertent le conducteur qui quitte sa voie",
-        "textEn": "They alert the driver who is leaving their lane"
+    "options": {
+      "A": {
+        "fr": "Elles alertent le conducteur qui quitte sa voie",
+        "en": "They alert the driver who is leaving their lane"
       },
-      {
-        "letter": "B",
-        "text": "Elles indiquent une zone de stationnement",
-        "textEn": "They indicate a parking zone"
+      "B": {
+        "fr": "Elles indiquent une zone de stationnement",
+        "en": "They indicate a parking zone"
       },
-      {
-        "letter": "C",
-        "text": "Elles préviennent de la fatigue et de l'inattention",
-        "textEn": "They warn of fatigue and inattention"
+      "C": {
+        "fr": "Elles préviennent de la fatigue et de l'inattention",
+        "en": "They warn of fatigue and inattention"
       },
-      {
-        "letter": "D",
-        "text": "Elles signalent une zone de travaux",
-        "textEn": "They signal a construction zone"
+      "D": {
+        "fr": "Elles signalent une zone de travaux",
+        "en": "They signal a construction zone"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -15268,28 +15180,24 @@
     "difficulty": 2,
     "questionFr": "Quelles caractéristiques distinguent une route express d'une autoroute ?",
     "questionEn": "What characteristics distinguish an expressway from a motorway?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "La vitesse maximale peut être de 110 km/h au lieu de 130",
-        "textEn": "Maximum speed may be 110 km/h instead of 130"
+    "options": {
+      "A": {
+        "fr": "La vitesse maximale peut être de 110 km/h au lieu de 130",
+        "en": "Maximum speed may be 110 km/h instead of 130"
       },
-      {
-        "letter": "B",
-        "text": "Elle est toujours gratuite",
-        "textEn": "It is always free"
+      "B": {
+        "fr": "Elle est toujours gratuite",
+        "en": "It is always free"
       },
-      {
-        "letter": "C",
-        "text": "Elle peut avoir des carrefours à niveau",
-        "textEn": "It may have at-grade intersections"
+      "C": {
+        "fr": "Elle peut avoir des carrefours à niveau",
+        "en": "It may have at-grade intersections"
       },
-      {
-        "letter": "D",
-        "text": "Les piétons peuvent y circuler",
-        "textEn": "Pedestrians may walk on it"
+      "D": {
+        "fr": "Les piétons peuvent y circuler",
+        "en": "Pedestrians may walk on it"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -15309,28 +15217,24 @@
     "difficulty": 3,
     "questionFr": "Que devez-vous faire en cas de forte pluie sur autoroute avec visibilité réduite à moins de 50 mètres ?",
     "questionEn": "What must you do in heavy rain on a motorway with visibility below 50 meters?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Réduire votre vitesse à 50 km/h maximum",
-        "textEn": "Reduce speed to 50 km/h maximum"
+    "options": {
+      "A": {
+        "fr": "Réduire votre vitesse à 50 km/h maximum",
+        "en": "Reduce speed to 50 km/h maximum"
       },
-      {
-        "letter": "B",
-        "text": "S'arrêter sur la bande d'arrêt d'urgence",
-        "textEn": "Stop on the hard shoulder"
+      "B": {
+        "fr": "S'arrêter sur la bande d'arrêt d'urgence",
+        "en": "Stop on the hard shoulder"
       },
-      {
-        "letter": "C",
-        "text": "Allumer vos feux de brouillard avant et arrière",
-        "textEn": "Turn on front and rear fog lights"
+      "C": {
+        "fr": "Allumer vos feux de brouillard avant et arrière",
+        "en": "Turn on front and rear fog lights"
       },
-      {
-        "letter": "D",
-        "text": "Continuer à 110 km/h avec les essuie-glaces au maximum",
-        "textEn": "Continue at 110 km/h with wipers on maximum"
+      "D": {
+        "fr": "Continuer à 110 km/h avec les essuie-glaces au maximum",
+        "en": "Continue at 110 km/h with wipers on maximum"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -15350,28 +15254,24 @@
     "difficulty": 2,
     "questionFr": "Quels sont les avantages du frein moteur en descente ?",
     "questionEn": "What are the benefits of engine braking when going downhill?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Il évite la surchauffe des freins",
-        "textEn": "It prevents brake overheating"
+    "options": {
+      "A": {
+        "fr": "Il évite la surchauffe des freins",
+        "en": "It prevents brake overheating"
       },
-      {
-        "letter": "B",
-        "text": "Il consomme plus de carburant mais est plus efficace",
-        "textEn": "It uses more fuel but is more effective"
+      "B": {
+        "fr": "Il consomme plus de carburant mais est plus efficace",
+        "en": "It uses more fuel but is more effective"
       },
-      {
-        "letter": "C",
-        "text": "Il maintient une vitesse stable sans user les plaquettes",
-        "textEn": "It maintains steady speed without wearing brake pads"
+      "C": {
+        "fr": "Il maintient une vitesse stable sans user les plaquettes",
+        "en": "It maintains steady speed without wearing brake pads"
       },
-      {
-        "letter": "D",
-        "text": "Il n'est efficace qu'avec une boîte manuelle",
-        "textEn": "It is only effective with a manual gearbox"
+      "D": {
+        "fr": "Il n'est efficace qu'avec une boîte manuelle",
+        "en": "It is only effective with a manual gearbox"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -15391,28 +15291,24 @@
     "difficulty": 2,
     "questionFr": "Quelles sont les règles concernant l'utilisation des voies sur une route à 3 voies dans le même sens ?",
     "questionEn": "What are the rules for lane usage on a 3-lane road in the same direction?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "On doit rouler le plus à droite possible",
-        "textEn": "You must drive as far right as possible"
+    "options": {
+      "A": {
+        "fr": "On doit rouler le plus à droite possible",
+        "en": "You must drive as far right as possible"
       },
-      {
-        "letter": "B",
-        "text": "La voie de gauche est réservée au dépassement",
-        "textEn": "The left lane is reserved for overtaking"
+      "B": {
+        "fr": "La voie de gauche est réservée au dépassement",
+        "en": "The left lane is reserved for overtaking"
       },
-      {
-        "letter": "C",
-        "text": "On peut rouler en permanence sur la voie du milieu",
-        "textEn": "You may permanently drive in the middle lane"
+      "C": {
+        "fr": "On peut rouler en permanence sur la voie du milieu",
+        "en": "You may permanently drive in the middle lane"
       },
-      {
-        "letter": "D",
-        "text": "La voie de droite est réservée aux poids lourds",
-        "textEn": "The right lane is reserved for heavy trucks"
+      "D": {
+        "fr": "La voie de droite est réservée aux poids lourds",
+        "en": "The right lane is reserved for heavy trucks"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "B"
@@ -15432,28 +15328,24 @@
     "difficulty": 3,
     "questionFr": "Que faire si vous manquez votre sortie d'autoroute ?",
     "questionEn": "What should you do if you miss your motorway exit?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Continuer jusqu'à la prochaine sortie",
-        "textEn": "Continue to the next exit"
+    "options": {
+      "A": {
+        "fr": "Continuer jusqu'à la prochaine sortie",
+        "en": "Continue to the next exit"
       },
-      {
-        "letter": "B",
-        "text": "Faire marche arrière sur la bande d'arrêt d'urgence",
-        "textEn": "Reverse on the hard shoulder"
+      "B": {
+        "fr": "Faire marche arrière sur la bande d'arrêt d'urgence",
+        "en": "Reverse on the hard shoulder"
       },
-      {
-        "letter": "C",
-        "text": "Ne jamais s'arrêter ni reculer sur l'autoroute",
-        "textEn": "Never stop or reverse on the motorway"
+      "C": {
+        "fr": "Ne jamais s'arrêter ni reculer sur l'autoroute",
+        "en": "Never stop or reverse on the motorway"
       },
-      {
-        "letter": "D",
-        "text": "Faire demi-tour si la chaussée est dégagée",
-        "textEn": "Make a U-turn if the road is clear"
+      "D": {
+        "fr": "Faire demi-tour si la chaussée est dégagée",
+        "en": "Make a U-turn if the road is clear"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -15473,28 +15365,24 @@
     "difficulty": 2,
     "questionFr": "Quels dangers sont spécifiques aux routes bordées d'arbres ?",
     "questionEn": "What dangers are specific to tree-lined roads?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Les arbres constituent des obstacles fixes en cas de sortie de route",
-        "textEn": "Trees are fixed obstacles in case of going off the road"
+    "options": {
+      "A": {
+        "fr": "Les arbres constituent des obstacles fixes en cas de sortie de route",
+        "en": "Trees are fixed obstacles in case of going off the road"
       },
-      {
-        "letter": "B",
-        "text": "Les feuilles mortes rendent la chaussée plus adhérente",
-        "textEn": "Dead leaves make the road surface grippier"
+      "B": {
+        "fr": "Les feuilles mortes rendent la chaussée plus adhérente",
+        "en": "Dead leaves make the road surface grippier"
       },
-      {
-        "letter": "C",
-        "text": "Les zones d'ombre et de lumière alternées peuvent gêner la vision",
-        "textEn": "Alternating shadow and light zones can impair vision"
+      "C": {
+        "fr": "Les zones d'ombre et de lumière alternées peuvent gêner la vision",
+        "en": "Alternating shadow and light zones can impair vision"
       },
-      {
-        "letter": "D",
-        "text": "Les arbres protègent du vent latéral",
-        "textEn": "Trees protect from crosswind"
+      "D": {
+        "fr": "Les arbres protègent du vent latéral",
+        "en": "Trees protect from crosswind"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -15514,28 +15402,24 @@
     "difficulty": 2,
     "questionFr": "Quelles sont les règles pour entrer sur une autoroute ?",
     "questionEn": "What are the rules for entering a motorway?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Utiliser la voie d'accélération pour atteindre la vitesse du trafic",
-        "textEn": "Use the acceleration lane to reach traffic speed"
+    "options": {
+      "A": {
+        "fr": "Utiliser la voie d'accélération pour atteindre la vitesse du trafic",
+        "en": "Use the acceleration lane to reach traffic speed"
       },
-      {
-        "letter": "B",
-        "text": "S'arrêter en bout de voie d'accélération si aucun espace n'est libre",
-        "textEn": "Stop at the end of the acceleration lane if no space is available"
+      "B": {
+        "fr": "S'arrêter en bout de voie d'accélération si aucun espace n'est libre",
+        "en": "Stop at the end of the acceleration lane if no space is available"
       },
-      {
-        "letter": "C",
-        "text": "Céder le passage aux véhicules déjà sur l'autoroute",
-        "textEn": "Yield to vehicles already on the motorway"
+      "C": {
+        "fr": "Céder le passage aux véhicules déjà sur l'autoroute",
+        "en": "Yield to vehicles already on the motorway"
       },
-      {
-        "letter": "D",
-        "text": "Les véhicules sur l'autoroute doivent vous laisser entrer",
-        "textEn": "Vehicles on the motorway must let you enter"
+      "D": {
+        "fr": "Les véhicules sur l'autoroute doivent vous laisser entrer",
+        "en": "Vehicles on the motorway must let you enter"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -20291,28 +20175,24 @@
     "difficulty": 2,
     "questionFr": "Quels usagers sont particulièrement vulnérables en agglomération ?",
     "questionEn": "Which road users are particularly vulnerable in urban areas?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Les piétons",
-        "textEn": "Pedestrians"
+    "options": {
+      "A": {
+        "fr": "Les piétons",
+        "en": "Pedestrians"
       },
-      {
-        "letter": "B",
-        "text": "Les conducteurs de poids lourds",
-        "textEn": "Truck drivers"
+      "B": {
+        "fr": "Les conducteurs de poids lourds",
+        "en": "Truck drivers"
       },
-      {
-        "letter": "C",
-        "text": "Les cyclistes",
-        "textEn": "Cyclists"
+      "C": {
+        "fr": "Les cyclistes",
+        "en": "Cyclists"
       },
-      {
-        "letter": "D",
-        "text": "Les conducteurs d'autobus",
-        "textEn": "Bus drivers"
+      "D": {
+        "fr": "Les conducteurs d'autobus",
+        "en": "Bus drivers"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -20332,28 +20212,24 @@
     "difficulty": 2,
     "questionFr": "Que devez-vous faire en croisant un convoi de cyclistes ?",
     "questionEn": "What must you do when encountering a group of cyclists?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Ralentir et laisser un espace latéral d'au moins 1 mètre",
-        "textEn": "Slow down and leave at least 1 meter lateral space"
+    "options": {
+      "A": {
+        "fr": "Ralentir et laisser un espace latéral d'au moins 1 mètre",
+        "en": "Slow down and leave at least 1 meter lateral space"
       },
-      {
-        "letter": "B",
-        "text": "Klaxonner pour les avertir de votre présence",
-        "textEn": "Honk to warn them of your presence"
+      "B": {
+        "fr": "Klaxonner pour les avertir de votre présence",
+        "en": "Honk to warn them of your presence"
       },
-      {
-        "letter": "C",
-        "text": "Attendre pour dépasser si l'espace est insuffisant",
-        "textEn": "Wait to overtake if space is insufficient"
+      "C": {
+        "fr": "Attendre pour dépasser si l'espace est insuffisant",
+        "en": "Wait to overtake if space is insufficient"
       },
-      {
-        "letter": "D",
-        "text": "Accélérer pour les dépasser rapidement",
-        "textEn": "Accelerate to pass them quickly"
+      "D": {
+        "fr": "Accélérer pour les dépasser rapidement",
+        "en": "Accelerate to pass them quickly"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -20373,28 +20249,24 @@
     "difficulty": 3,
     "questionFr": "Un bus scolaire est arrêté avec ses feux de détresse allumés. Que devez-vous faire ?",
     "questionEn": "A school bus has stopped with its hazard lights on. What must you do?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Ralentir et être prêt à vous arrêter",
-        "textEn": "Slow down and be ready to stop"
+    "options": {
+      "A": {
+        "fr": "Ralentir et être prêt à vous arrêter",
+        "en": "Slow down and be ready to stop"
       },
-      {
-        "letter": "B",
-        "text": "Continuer à vitesse normale s'il n'y a pas d'enfants visibles",
-        "textEn": "Continue at normal speed if no children are visible"
+      "B": {
+        "fr": "Continuer à vitesse normale s'il n'y a pas d'enfants visibles",
+        "en": "Continue at normal speed if no children are visible"
       },
-      {
-        "letter": "C",
-        "text": "Surveiller attentivement les enfants pouvant traverser",
-        "textEn": "Carefully watch for children who may cross"
+      "C": {
+        "fr": "Surveiller attentivement les enfants pouvant traverser",
+        "en": "Carefully watch for children who may cross"
       },
-      {
-        "letter": "D",
-        "text": "Dépasser le bus par la gauche rapidement",
-        "textEn": "Overtake the bus on the left quickly"
+      "D": {
+        "fr": "Dépasser le bus par la gauche rapidement",
+        "en": "Overtake the bus on the left quickly"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -20414,28 +20286,24 @@
     "difficulty": 2,
     "questionFr": "Quelles précautions prendre en présence de piétons âgés ?",
     "questionEn": "What precautions should you take around elderly pedestrians?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Leur laisser plus de temps pour traverser",
-        "textEn": "Give them more time to cross"
+    "options": {
+      "A": {
+        "fr": "Leur laisser plus de temps pour traverser",
+        "en": "Give them more time to cross"
       },
-      {
-        "letter": "B",
-        "text": "Klaxonner pour qu'ils se dépêchent",
-        "textEn": "Honk so they hurry up"
+      "B": {
+        "fr": "Klaxonner pour qu'ils se dépêchent",
+        "en": "Honk so they hurry up"
       },
-      {
-        "letter": "C",
-        "text": "Adapter votre vitesse car ils peuvent changer de direction",
-        "textEn": "Adjust your speed as they may change direction"
+      "C": {
+        "fr": "Adapter votre vitesse car ils peuvent changer de direction",
+        "en": "Adjust your speed as they may change direction"
       },
-      {
-        "letter": "D",
-        "text": "Les dépasser au plus vite pour ne pas les gêner",
-        "textEn": "Pass them quickly to avoid inconveniencing them"
+      "D": {
+        "fr": "Les dépasser au plus vite pour ne pas les gêner",
+        "en": "Pass them quickly to avoid inconveniencing them"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -20455,28 +20323,24 @@
     "difficulty": 3,
     "questionFr": "En présence d'un cavalier sur la route, quelles sont les bonnes réactions ?",
     "questionEn": "When encountering a horse rider on the road, what are the correct reactions?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Ralentir progressivement sans bruit brusque",
-        "textEn": "Slow down gradually without sudden noise"
+    "options": {
+      "A": {
+        "fr": "Ralentir progressivement sans bruit brusque",
+        "en": "Slow down gradually without sudden noise"
       },
-      {
-        "letter": "B",
-        "text": "Klaxonner pour signaler votre approche",
-        "textEn": "Honk to signal your approach"
+      "B": {
+        "fr": "Klaxonner pour signaler votre approche",
+        "en": "Honk to signal your approach"
       },
-      {
-        "letter": "C",
-        "text": "Laisser un espace latéral important en dépassant",
-        "textEn": "Leave a wide lateral gap when overtaking"
+      "C": {
+        "fr": "Laisser un espace latéral important en dépassant",
+        "en": "Leave a wide lateral gap when overtaking"
       },
-      {
-        "letter": "D",
-        "text": "Accélérer pour ne pas rester longtemps à côté du cheval",
-        "textEn": "Accelerate to avoid staying alongside the horse"
+      "D": {
+        "fr": "Accélérer pour ne pas rester longtemps à côté du cheval",
+        "en": "Accelerate to avoid staying alongside the horse"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -20496,28 +20360,24 @@
     "difficulty": 2,
     "questionFr": "Quels sont les risques liés aux trottinettes électriques en ville ?",
     "questionEn": "What are the risks associated with electric scooters in urban areas?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Elles sont silencieuses et difficiles à détecter",
-        "textEn": "They are silent and hard to detect"
+    "options": {
+      "A": {
+        "fr": "Elles sont silencieuses et difficiles à détecter",
+        "en": "They are silent and hard to detect"
       },
-      {
-        "letter": "B",
-        "text": "Elles roulent toujours sur le trottoir",
-        "textEn": "They always ride on the sidewalk"
+      "B": {
+        "fr": "Elles roulent toujours sur le trottoir",
+        "en": "They always ride on the sidewalk"
       },
-      {
-        "letter": "C",
-        "text": "Leurs conducteurs peuvent faire des changements de direction brusques",
-        "textEn": "Their riders may make sudden direction changes"
+      "C": {
+        "fr": "Leurs conducteurs peuvent faire des changements de direction brusques",
+        "en": "Their riders may make sudden direction changes"
       },
-      {
-        "letter": "D",
-        "text": "Elles ne sont pas autorisées en agglomération",
-        "textEn": "They are not permitted in urban areas"
+      "D": {
+        "fr": "Elles ne sont pas autorisées en agglomération",
+        "en": "They are not permitted in urban areas"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -20537,28 +20397,24 @@
     "difficulty": 2,
     "questionFr": "Vous approchez d'un passage piéton. Quelles actions sont correctes ?",
     "questionEn": "You are approaching a pedestrian crossing. Which actions are correct?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Ralentir et céder le passage aux piétons engagés",
-        "textEn": "Slow down and yield to pedestrians who have started crossing"
+    "options": {
+      "A": {
+        "fr": "Ralentir et céder le passage aux piétons engagés",
+        "en": "Slow down and yield to pedestrians who have started crossing"
       },
-      {
-        "letter": "B",
-        "text": "Accélérer si aucun piéton n'est visible",
-        "textEn": "Accelerate if no pedestrian is visible"
+      "B": {
+        "fr": "Accélérer si aucun piéton n'est visible",
+        "en": "Accelerate if no pedestrian is visible"
       },
-      {
-        "letter": "C",
-        "text": "S'arrêter si un piéton manifeste l'intention de traverser",
-        "textEn": "Stop if a pedestrian shows intent to cross"
+      "C": {
+        "fr": "S'arrêter si un piéton manifeste l'intention de traverser",
+        "en": "Stop if a pedestrian shows intent to cross"
       },
-      {
-        "letter": "D",
-        "text": "Klaxonner pour prévenir les piétons de votre arrivée",
-        "textEn": "Honk to warn pedestrians of your arrival"
+      "D": {
+        "fr": "Klaxonner pour prévenir les piétons de votre arrivée",
+        "en": "Honk to warn pedestrians of your arrival"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -20578,28 +20434,24 @@
     "difficulty": 3,
     "questionFr": "Quels véhicules prioritaires doivent être laissés passer immédiatement ?",
     "questionEn": "Which priority vehicles must be given way to immediately?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Les ambulances avec gyrophare et sirène en action",
-        "textEn": "Ambulances with flashing lights and siren active"
+    "options": {
+      "A": {
+        "fr": "Les ambulances avec gyrophare et sirène en action",
+        "en": "Ambulances with flashing lights and siren active"
       },
-      {
-        "letter": "B",
-        "text": "Les taxis en service",
-        "textEn": "Taxis in service"
+      "B": {
+        "fr": "Les taxis en service",
+        "en": "Taxis in service"
       },
-      {
-        "letter": "C",
-        "text": "Les véhicules de pompiers avec avertisseurs en action",
-        "textEn": "Fire trucks with warning signals active"
+      "C": {
+        "fr": "Les véhicules de pompiers avec avertisseurs en action",
+        "en": "Fire trucks with warning signals active"
       },
-      {
-        "letter": "D",
-        "text": "Les dépanneuses sur autoroute",
-        "textEn": "Tow trucks on motorways"
+      "D": {
+        "fr": "Les dépanneuses sur autoroute",
+        "en": "Tow trucks on motorways"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -20619,28 +20471,24 @@
     "difficulty": 2,
     "questionFr": "Quels dangers présentent les deux-roues motorisés pour les automobilistes ?",
     "questionEn": "What dangers do motorized two-wheelers pose to motorists?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Ils peuvent se trouver dans les angles morts",
-        "textEn": "They can be in blind spots"
+    "options": {
+      "A": {
+        "fr": "Ils peuvent se trouver dans les angles morts",
+        "en": "They can be in blind spots"
       },
-      {
-        "letter": "B",
-        "text": "Ils sont toujours plus rapides que les voitures",
-        "textEn": "They are always faster than cars"
+      "B": {
+        "fr": "Ils sont toujours plus rapides que les voitures",
+        "en": "They are always faster than cars"
       },
-      {
-        "letter": "C",
-        "text": "Leur petite taille rend l'évaluation des distances difficile",
-        "textEn": "Their small size makes distance estimation difficult"
+      "C": {
+        "fr": "Leur petite taille rend l'évaluation des distances difficile",
+        "en": "Their small size makes distance estimation difficult"
       },
-      {
-        "letter": "D",
-        "text": "Ils ne respectent jamais le code de la route",
-        "textEn": "They never follow traffic rules"
+      "D": {
+        "fr": "Ils ne respectent jamais le code de la route",
+        "en": "They never follow traffic rules"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -20660,28 +20508,24 @@
     "difficulty": 3,
     "questionFr": "Un piéton aveugle avec une canne blanche traverse devant vous. Que faites-vous ?",
     "questionEn": "A blind pedestrian with a white cane is crossing in front of you. What do you do?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Vous vous arrêtez et attendez qu'il ait fini de traverser",
-        "textEn": "You stop and wait until they finish crossing"
+    "options": {
+      "A": {
+        "fr": "Vous vous arrêtez et attendez qu'il ait fini de traverser",
+        "en": "You stop and wait until they finish crossing"
       },
-      {
-        "letter": "B",
-        "text": "Vous klaxonnez pour l'avertir de votre présence",
-        "textEn": "You honk to warn them of your presence"
+      "B": {
+        "fr": "Vous klaxonnez pour l'avertir de votre présence",
+        "en": "You honk to warn them of your presence"
       },
-      {
-        "letter": "C",
-        "text": "Vous ne redémarrez pas tant qu'il n'a pas atteint le trottoir",
-        "textEn": "You do not restart until they have reached the sidewalk"
+      "C": {
+        "fr": "Vous ne redémarrez pas tant qu'il n'a pas atteint le trottoir",
+        "en": "You do not restart until they have reached the sidewalk"
       },
-      {
-        "letter": "D",
-        "text": "Vous le contournez lentement par la gauche",
-        "textEn": "You slowly go around them on the left"
+      "D": {
+        "fr": "Vous le contournez lentement par la gauche",
+        "en": "You slowly go around them on the left"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -31274,28 +31118,24 @@
     "difficulty": 3,
     "questionFr": "Quelles sont les conditions pour dépasser en toute sécurité ?",
     "questionEn": "What are the conditions for overtaking safely?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Avoir une visibilité suffisante vers l'avant",
-        "textEn": "Having sufficient forward visibility"
+    "options": {
+      "A": {
+        "fr": "Avoir une visibilité suffisante vers l'avant",
+        "en": "Having sufficient forward visibility"
       },
-      {
-        "letter": "B",
-        "text": "Rouler au moins 20 km/h plus vite que le véhicule dépassé",
-        "textEn": "Driving at least 20 km/h faster than the overtaken vehicle"
+      "B": {
+        "fr": "Rouler au moins 20 km/h plus vite que le véhicule dépassé",
+        "en": "Driving at least 20 km/h faster than the overtaken vehicle"
       },
-      {
-        "letter": "C",
-        "text": "Vérifier qu'aucun véhicule n'arrive en sens inverse",
-        "textEn": "Checking that no vehicle is coming from the opposite direction"
+      "C": {
+        "fr": "Vérifier qu'aucun véhicule n'arrive en sens inverse",
+        "en": "Checking that no vehicle is coming from the opposite direction"
       },
-      {
-        "letter": "D",
-        "text": "Mettre les feux de détresse pendant le dépassement",
-        "textEn": "Putting on hazard lights during overtaking"
+      "D": {
+        "fr": "Mettre les feux de détresse pendant le dépassement",
+        "en": "Putting on hazard lights during overtaking"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -31315,28 +31155,24 @@
     "difficulty": 2,
     "questionFr": "Vous êtes sur une route étroite et croisez un véhicule venant en face. Que faites-vous ?",
     "questionEn": "You are on a narrow road and meet a vehicle coming from the opposite direction. What do you do?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Serrer à droite pour faciliter le croisement",
-        "textEn": "Move to the right to ease the passing"
+    "options": {
+      "A": {
+        "fr": "Serrer à droite pour faciliter le croisement",
+        "en": "Move to the right to ease the passing"
       },
-      {
-        "letter": "B",
-        "text": "Accélérer pour passer le premier",
-        "textEn": "Accelerate to pass first"
+      "B": {
+        "fr": "Accélérer pour passer le premier",
+        "en": "Accelerate to pass first"
       },
-      {
-        "letter": "C",
-        "text": "Ralentir si nécessaire, voire s'arrêter",
-        "textEn": "Slow down if necessary, or even stop"
+      "C": {
+        "fr": "Ralentir si nécessaire, voire s'arrêter",
+        "en": "Slow down if necessary, or even stop"
       },
-      {
-        "letter": "D",
-        "text": "Utiliser le klaxon en continu pour avertir l'autre conducteur",
-        "textEn": "Use the horn continuously to warn the other driver"
+      "D": {
+        "fr": "Utiliser le klaxon en continu pour avertir l'autre conducteur",
+        "en": "Use the horn continuously to warn the other driver"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -31356,28 +31192,24 @@
     "difficulty": 3,
     "questionFr": "En montagne, qui a la priorité lors d'un croisement difficile ?",
     "questionEn": "In the mountains, who has priority during a difficult crossing?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Le véhicule montant a la priorité",
-        "textEn": "The vehicle going uphill has priority"
+    "options": {
+      "A": {
+        "fr": "Le véhicule montant a la priorité",
+        "en": "The vehicle going uphill has priority"
       },
-      {
-        "letter": "B",
-        "text": "Le véhicule descendant doit reculer si possible",
-        "textEn": "The vehicle going downhill must reverse if possible"
+      "B": {
+        "fr": "Le véhicule descendant doit reculer si possible",
+        "en": "The vehicle going downhill must reverse if possible"
       },
-      {
-        "letter": "C",
-        "text": "Le véhicule le plus petit doit toujours reculer",
-        "textEn": "The smallest vehicle must always reverse"
+      "C": {
+        "fr": "Le véhicule le plus petit doit toujours reculer",
+        "en": "The smallest vehicle must always reverse"
       },
-      {
-        "letter": "D",
-        "text": "Le véhicule le plus rapide a la priorité",
-        "textEn": "The fastest vehicle has priority"
+      "D": {
+        "fr": "Le véhicule le plus rapide a la priorité",
+        "en": "The fastest vehicle has priority"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "B"
@@ -31397,28 +31229,24 @@
     "difficulty": 2,
     "questionFr": "Quels sont les endroits où le dépassement est interdit ?",
     "questionEn": "Where is overtaking prohibited?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Au sommet d'une côte sans visibilité",
-        "textEn": "At the top of a hill without visibility"
+    "options": {
+      "A": {
+        "fr": "Au sommet d'une côte sans visibilité",
+        "en": "At the top of a hill without visibility"
       },
-      {
-        "letter": "B",
-        "text": "Sur une ligne droite dégagée",
-        "textEn": "On a clear straight road"
+      "B": {
+        "fr": "Sur une ligne droite dégagée",
+        "en": "On a clear straight road"
       },
-      {
-        "letter": "C",
-        "text": "Dans un virage sans visibilité suffisante",
-        "textEn": "In a bend without sufficient visibility"
+      "C": {
+        "fr": "Dans un virage sans visibilité suffisante",
+        "en": "In a bend without sufficient visibility"
       },
-      {
-        "letter": "D",
-        "text": "Sur une route à 4 voies séparées",
-        "textEn": "On a 4-lane divided road"
+      "D": {
+        "fr": "Sur une route à 4 voies séparées",
+        "en": "On a 4-lane divided road"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -31438,28 +31266,24 @@
     "difficulty": 2,
     "questionFr": "Que devez-vous vérifier avant de commencer un dépassement ?",
     "questionEn": "What must you check before starting to overtake?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Qu'aucun véhicule derrière vous n'a commencé à vous dépasser",
-        "textEn": "That no vehicle behind has started overtaking you"
+    "options": {
+      "A": {
+        "fr": "Qu'aucun véhicule derrière vous n'a commencé à vous dépasser",
+        "en": "That no vehicle behind has started overtaking you"
       },
-      {
-        "letter": "B",
-        "text": "Que votre réservoir est suffisamment plein",
-        "textEn": "That your fuel tank is sufficiently full"
+      "B": {
+        "fr": "Que votre réservoir est suffisamment plein",
+        "en": "That your fuel tank is sufficiently full"
       },
-      {
-        "letter": "C",
-        "text": "Que vous pouvez reprendre votre place à droite sans gêner",
-        "textEn": "That you can return to the right lane without causing disruption"
+      "C": {
+        "fr": "Que vous pouvez reprendre votre place à droite sans gêner",
+        "en": "That you can return to the right lane without causing disruption"
       },
-      {
-        "letter": "D",
-        "text": "Que la musique dans votre véhicule n'est pas trop forte",
-        "textEn": "That the music in your vehicle is not too loud"
+      "D": {
+        "fr": "Que la musique dans votre véhicule n'est pas trop forte",
+        "en": "That the music in your vehicle is not too loud"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -31479,28 +31303,24 @@
     "difficulty": 3,
     "questionFr": "Quelles règles s'appliquent au dépassement d'un tramway ?",
     "questionEn": "What rules apply when overtaking a tram?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "On dépasse un tramway par la droite en règle générale",
-        "textEn": "You generally overtake a tram on the right"
+    "options": {
+      "A": {
+        "fr": "On dépasse un tramway par la droite en règle générale",
+        "en": "You generally overtake a tram on the right"
       },
-      {
-        "letter": "B",
-        "text": "On dépasse un tramway par la gauche comme tout véhicule",
-        "textEn": "You overtake a tram on the left like any vehicle"
+      "B": {
+        "fr": "On dépasse un tramway par la gauche comme tout véhicule",
+        "en": "You overtake a tram on the left like any vehicle"
       },
-      {
-        "letter": "C",
-        "text": "Il est interdit de dépasser un tramway à l'arrêt débarquant des passagers",
-        "textEn": "It is forbidden to overtake a stopped tram unloading passengers"
+      "C": {
+        "fr": "Il est interdit de dépasser un tramway à l'arrêt débarquant des passagers",
+        "en": "It is forbidden to overtake a stopped tram unloading passengers"
       },
-      {
-        "letter": "D",
-        "text": "Le dépassement d'un tramway est toujours interdit",
-        "textEn": "Overtaking a tram is always forbidden"
+      "D": {
+        "fr": "Le dépassement d'un tramway est toujours interdit",
+        "en": "Overtaking a tram is always forbidden"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -31520,28 +31340,24 @@
     "difficulty": 2,
     "questionFr": "Quels signaux devez-vous utiliser lors d'un dépassement ?",
     "questionEn": "What signals must you use when overtaking?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Le clignotant gauche avant de déboîter",
-        "textEn": "Left indicator before pulling out"
+    "options": {
+      "A": {
+        "fr": "Le clignotant gauche avant de déboîter",
+        "en": "Left indicator before pulling out"
       },
-      {
-        "letter": "B",
-        "text": "Un appel de phares en agglomération",
-        "textEn": "Headlight flash in urban areas"
+      "B": {
+        "fr": "Un appel de phares en agglomération",
+        "en": "Headlight flash in urban areas"
       },
-      {
-        "letter": "C",
-        "text": "Le clignotant droit pour se rabattre",
-        "textEn": "Right indicator to merge back"
+      "C": {
+        "fr": "Le clignotant droit pour se rabattre",
+        "en": "Right indicator to merge back"
       },
-      {
-        "letter": "D",
-        "text": "Les feux de détresse pendant le dépassement",
-        "textEn": "Hazard lights during overtaking"
+      "D": {
+        "fr": "Les feux de détresse pendant le dépassement",
+        "en": "Hazard lights during overtaking"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
@@ -31561,28 +31377,24 @@
     "difficulty": 3,
     "questionFr": "Que faites-vous si un véhicule que vous doublez accélère pendant votre dépassement ?",
     "questionEn": "What do you do if a vehicle you're overtaking accelerates during your maneuver?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Vous accélérez davantage pour terminer le dépassement",
-        "textEn": "You accelerate more to complete the overtaking"
+    "options": {
+      "A": {
+        "fr": "Vous accélérez davantage pour terminer le dépassement",
+        "en": "You accelerate more to complete the overtaking"
       },
-      {
-        "letter": "B",
-        "text": "Vous abandonnez le dépassement si possible et vous vous rabattez",
-        "textEn": "You abandon the overtaking if possible and merge back"
+      "B": {
+        "fr": "Vous abandonnez le dépassement si possible et vous vous rabattez",
+        "en": "You abandon the overtaking if possible and merge back"
       },
-      {
-        "letter": "C",
-        "text": "Vous ne dépassez pas la vitesse maximale autorisée",
-        "textEn": "You do not exceed the maximum permitted speed"
+      "C": {
+        "fr": "Vous ne dépassez pas la vitesse maximale autorisée",
+        "en": "You do not exceed the maximum permitted speed"
       },
-      {
-        "letter": "D",
-        "text": "Vous klaxonnez pour qu'il ralentisse",
-        "textEn": "You honk for them to slow down"
+      "D": {
+        "fr": "Vous klaxonnez pour qu'il ralentisse",
+        "en": "You honk for them to slow down"
       }
-    ],
+    },
     "correctAnswers": [
       "B",
       "C"
@@ -31602,28 +31414,24 @@
     "difficulty": 2,
     "questionFr": "Lors d'un croisement de nuit, quels éclairages devez-vous utiliser ?",
     "questionEn": "During a nighttime crossing, what lighting must you use?",
-    "options": [
-      {
-        "letter": "A",
-        "text": "Passer en feux de croisement à 150 mètres du véhicule en face",
-        "textEn": "Switch to dipped headlights at 150 meters from the oncoming vehicle"
+    "options": {
+      "A": {
+        "fr": "Passer en feux de croisement à 150 mètres du véhicule en face",
+        "en": "Switch to dipped headlights at 150 meters from the oncoming vehicle"
       },
-      {
-        "letter": "B",
-        "text": "Garder les feux de route pour mieux voir",
-        "textEn": "Keep full beam headlights for better visibility"
+      "B": {
+        "fr": "Garder les feux de route pour mieux voir",
+        "en": "Keep full beam headlights for better visibility"
       },
-      {
-        "letter": "C",
-        "text": "Regarder le bord droit de la route pour éviter l'éblouissement",
-        "textEn": "Look at the right edge of the road to avoid being dazzled"
+      "C": {
+        "fr": "Regarder le bord droit de la route pour éviter l'éblouissement",
+        "en": "Look at the right edge of the road to avoid being dazzled"
       },
-      {
-        "letter": "D",
-        "text": "Éteindre tous les feux pour ne pas éblouir l'autre conducteur",
-        "textEn": "Turn off all lights to avoid dazzling the other driver"
+      "D": {
+        "fr": "Éteindre tous les feux pour ne pas éblouir l'autre conducteur",
+        "en": "Turn off all lights to avoid dazzling the other driver"
       }
-    ],
+    },
     "correctAnswers": [
       "A",
       "C"
