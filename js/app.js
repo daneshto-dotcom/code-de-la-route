@@ -772,7 +772,7 @@ const App = {
         const practiceTimerSpeed = document.getElementById('setting-practice-timer-speed');
         const practiceTimerSpeedSetting = document.getElementById('practice-timer-speed-setting');
         practiceTimer.checked = settings.practiceTimerEnabled || false;
-        practiceTimerSpeed.value = (settings.practiceTimerSeconds || 20).toString();
+        practiceTimerSpeed.value = (settings.practiceTimerSeconds || 40).toString();
         practiceTimerSpeedSetting.style.display = practiceTimer.checked ? '' : 'none';
         practiceTimer.addEventListener('change', () => {
             Storage.saveSetting('practiceTimerEnabled', practiceTimer.checked);
@@ -781,8 +781,18 @@ const App = {
         });
         practiceTimerSpeed.addEventListener('change', () => {
             Storage.saveSetting('practiceTimerSeconds', parseInt(practiceTimerSpeed.value));
-            showToast(`Timer set to ${practiceTimerSpeed.value}s per question`);
+            showToast(`Practice timer set to ${practiceTimerSpeed.value}s per question`);
         });
+
+        // Mock exam per-question timer
+        const examTimerSecs = document.getElementById('setting-exam-timer-seconds');
+        if (examTimerSecs) {
+            examTimerSecs.value = (settings.examTimerSeconds || 25).toString();
+            examTimerSecs.addEventListener('change', () => {
+                Storage.saveSetting('examTimerSeconds', parseInt(examTimerSecs.value));
+                showToast(`Mock exam timer set to ${examTimerSecs.value}s per question`);
+            });
+        }
 
         // Exam date
         const examDate = document.getElementById('setting-exam-date');

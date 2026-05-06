@@ -691,7 +691,8 @@ const Storage = {
             examDate: null,
             confidenceEnabled: true,
             practiceTimerEnabled: false,
-            practiceTimerSeconds: 20
+            practiceTimerSeconds: 40,
+            examTimerSeconds: 25
         }));
     },
 

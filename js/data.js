@@ -37,7 +37,19 @@ function getMasteryColor(accuracy, attempts) {
 
 const EXAM_PASS_THRESHOLD = 35;
 const EXAM_TOTAL_QUESTIONS = 40;
-const EXAM_TIMER_SECONDS = 25;
+const EXAM_TIMER_SECONDS_DEFAULT = 25; // Real ETG = 20s. 25s default gives a small buffer.
+function getExamTimerSeconds() {
+    try {
+        if (typeof Storage !== 'undefined' && Storage.getSettings) {
+            const v = Storage.getSettings().examTimerSeconds;
+            const n = parseInt(v);
+            if (!isNaN(n) && n >= 10 && n <= 120) return n;
+        }
+    } catch (e) { /* fall through */ }
+    return EXAM_TIMER_SECONDS_DEFAULT;
+}
+// Legacy constant — preserved for any external reference. Renderers should call getExamTimerSeconds().
+const EXAM_TIMER_SECONDS = EXAM_TIMER_SECONDS_DEFAULT;
 const EXAM_TOTAL_TIME = 1800; // 30 minutes in seconds
 const NATIONAL_PASS_RATE = 50.7;
 

@@ -610,7 +610,7 @@ const Exam = {
 
         timerBar.style.display = 'block';
         const startTime = Date.now();
-        const totalMs = EXAM_TIMER_SECONDS * 1000;
+        const totalMs = getExamTimerSeconds() * 1000;
 
         this._examTimer = setInterval(() => {
             const elapsed = Date.now() - startTime;

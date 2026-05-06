@@ -592,12 +592,23 @@
                             </label>
                         </div>
                         <div class="setting-item" id="practice-timer-speed-setting">
-                            <label>Timer per question</label>
+                            <label>Practice timer per question</label>
                             <select id="setting-practice-timer-speed" class="setting-select">
-                                <option value="15">15 seconds</option>
-                                <option value="20" selected>20 seconds</option>
-                                <option value="25">25 seconds</option>
+                                <option value="20">20 seconds</option>
                                 <option value="30">30 seconds</option>
+                                <option value="40" selected>40 seconds</option>
+                                <option value="60">60 seconds</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>Mock exam time per question
+                                <small style="display:block;font-weight:normal;opacity:.7;margin-top:2px">Real ETG exam = 20s. Default 25s.</small>
+                            </label>
+                            <select id="setting-exam-timer-seconds" class="setting-select">
+                                <option value="20">20s (Real ETG)</option>
+                                <option value="25" selected>25s (default)</option>
+                                <option value="40">40s (relaxed)</option>
+                                <option value="60">60s (study)</option>
                             </select>
                         </div>
                         <div class="setting-item">
