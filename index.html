@@ -612,6 +612,12 @@
                             </select>
                         </div>
                         <div class="setting-item">
+                            <label>Bug reporter endpoint
+                                <small style="display:block;font-weight:normal;opacity:.7;margin-top:2px">Paste the Apps Script /exec URL (see scripts/BUG-REPORTER-SETUP.md)</small>
+                            </label>
+                            <input type="url" id="setting-bug-reporter-endpoint" class="setting-input" placeholder="https://script.google.com/macros/s/.../exec">
+                        </div>
+                        <div class="setting-item">
                             <label>Target exam date</label>
                             <input type="date" id="setting-exam-date" class="setting-input">
                         </div>
@@ -720,6 +726,50 @@
     <!-- Toast Container -->
     <div id="toast-container" role="status" aria-live="polite"></div>
 
+    <!-- Bug Reporter (S49-P6) -->
+    <button id="bug-report-fab" type="button" aria-label="Report a bug" title="Report a bug">🐞</button>
+    <div class="modal hidden" id="bug-report-modal" role="dialog" aria-label="Report a bug">
+        <div class="modal-content bug-report-content">
+            <button class="modal-close bug-report-close" aria-label="Close">×</button>
+            <h3>Report a bug</h3>
+            <div class="bug-report-context">
+                <small>
+                    Screen: <span class="bug-report-context-screen"></span>
+                    · Question: <span class="bug-report-context-question"></span>
+                    · Version: <span class="bug-report-context-version"></span>
+                </small>
+            </div>
+            <div class="bug-report-field">
+                <label for="bug-report-severity">Severity</label>
+                <select id="bug-report-severity" class="setting-select">
+                    <option value="Critical">Critical (blocks me)</option>
+                    <option value="Bug" selected>Bug</option>
+                    <option value="Suggestion">Suggestion</option>
+                    <option value="Typo">Typo / wording</option>
+                </select>
+            </div>
+            <div class="bug-report-field">
+                <label for="bug-report-description">What happened? (required)</label>
+                <textarea id="bug-report-description" rows="5" placeholder="Describe what you saw vs. what you expected"></textarea>
+            </div>
+            <div class="bug-report-field">
+                <label class="toggle-inline">
+                    <input type="checkbox" id="bug-report-screenshot" checked>
+                    Include screenshot of current screen
+                </label>
+            </div>
+            <div class="bug-report-field">
+                <label for="bug-report-contact">Your name (optional)</label>
+                <input type="text" id="bug-report-contact" class="setting-input" placeholder="e.g. Sara">
+            </div>
+            <div id="bug-report-status" class="bug-report-status"></div>
+            <div class="bug-report-buttons">
+                <button class="btn btn-outline bug-report-cancel">Cancel</button>
+                <button class="btn btn-primary bug-report-submit">Send report</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/data.js"></script>
     <script src="js/signs.js"></script>
     <script src="js/intersections.js"></script>
@@ -740,6 +790,7 @@
     <script src="js/notifications.js"></script>
     <script src="js/tutor.js"></script>
     <script src="js/study-timer.js"></script>
+    <script src="js/bug-reporter.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

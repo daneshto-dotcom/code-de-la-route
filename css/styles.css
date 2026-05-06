@@ -602,3 +602,84 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 0; }
+
+/* ============================================
+   Bug Reporter (S49-P6) — FAB + Modal
+   ============================================ */
+#bug-report-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--primary, #3b82f6);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+#bug-report-fab:hover { transform: scale(1.08); box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+#bug-report-fab:active { transform: scale(0.96); }
+
+#bug-report-modal .bug-report-content {
+    max-width: 460px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+#bug-report-modal h3 { margin: 0 0 var(--space-md, 12px) 0; }
+.bug-report-context {
+    background: var(--surface-2, rgba(255,255,255,0.04));
+    padding: 8px 10px;
+    border-radius: 6px;
+    margin-bottom: var(--space-md, 12px);
+    opacity: 0.85;
+    font-size: 13px;
+}
+.bug-report-field {
+    margin-bottom: var(--space-md, 12px);
+}
+.bug-report-field label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+.bug-report-field textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border, rgba(255,255,255,0.15));
+    background: var(--surface-2, rgba(255,255,255,0.04));
+    color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 90px;
+}
+.bug-report-field .toggle-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.bug-report-status {
+    font-size: 13px;
+    margin-bottom: var(--space-sm, 8px);
+    min-height: 18px;
+}
+.bug-report-status.ok { color: var(--success, #22c55e); }
+.bug-report-status.err { color: var(--danger, #ef4444); }
+.bug-report-status.info { color: var(--text-secondary, #94a3b8); }
+.bug-report-buttons {
+    display: flex;
+    gap: var(--space-sm, 8px);
+    justify-content: flex-end;
+}
