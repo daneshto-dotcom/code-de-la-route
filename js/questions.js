@@ -14489,10 +14489,10 @@ const QUESTION_BANK = [
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Même au feu vert, vous devez céder le passage aux véhicules prioritaires et aux piétons engagés sur le passage.",
-        explanationEn: "Even at a green light, you must yield to priority vehicles and pedestrians on the crossing.",
+        explanationFr: "Même au feu vert, vous devez céder le passage aux véhicules prioritaires et aux piétons engagés sur le passage. À ne pas confondre avec la règle « ne pas s'engager dans une intersection encombrée » (R412-29), qui s'applique en parallèle mais n'est pas un cédez-le-passage formel.",
+        explanationEn: "Even at a green light, you must yield to priority vehicles and pedestrians on the crossing. Distinct from the parallel 'do not enter a blocked intersection' rule (R412-29), which is a separate obligation, not a formal yield.",
         trapNote: "A green light is not absolute. Emergency vehicles and pedestrians override it.",
-        distractorNotes: { C: "A vehicle already there is completing its movement — not a formal yield.", D: "Cross-street traffic is irrelevant when you have green." },
+        distractorNotes: { C: "Not a formal yield. The parallel rule R412-29 ('do not enter a blocked intersection') applies separately — distinct from a céder-le-passage obligation.", D: "Cross-street traffic is irrelevant when you have green." },
         vocabulary: []
     },
     {
