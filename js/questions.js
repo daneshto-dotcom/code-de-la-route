@@ -27229,20 +27229,20 @@ const QUESTION_BANK = [
         id: "sign-067",
         topic: "signalisation",
         difficulty: 1,
-        questionFr: "Quelle couleur de fond a un panneau d'indication ?",
-        questionEn: "What background colour does an information sign have?",
+        questionFr: "Quelle couleur de fond peut avoir un panneau d'indication de direction ?",
+        questionEn: "What background colour can a direction information sign have?",
         options: {
-            A: { fr: "Bleu (en agglomération) ou vert (hors agglomération)", en: "Blue (urban) or green (rural/motorway)" },
+            A: { fr: "Bleu (autoroute), vert (grands itinéraires) ou blanc (local), selon le type de route", en: "Blue (motorway), green (major routes) or white (local), depending on road type" },
             B: { fr: "Rouge", en: "Red" },
             C: { fr: "Jaune", en: "Yellow" },
-            D: { fr: "Blanc", en: "White" }
+            D: { fr: "Bleu (en agglomération) ou vert (hors agglomération)", en: "Blue (urban) or green (rural)" }
         },
         correctAnswers: ["A"],
         answerCount: 1,
-        explanationFr: "Les panneaux d'indication de direction ont un fond bleu en agglomération et vert sur les routes hors agglomération et autoroutes. Les panneaux marron indiquent les sites touristiques.",
-        explanationEn: "Direction information signs have a blue background in urban areas and green on rural roads and motorways. Brown signs indicate tourist sites.",
-        trapNote: "Blue = urban, green = rural/motorway. Brown = tourism. White = local/temporary.",
-        distractorNotes: { B: "Red is used for prohibition and danger signs, not information.", C: "Yellow is used for temporary/works signage.", D: "White is used for local direction signs, not the main information signs." },
+        explanationFr: "La couleur de fond des panneaux directionnels indique le TYPE DE ROUTE, pas la localisation : bleu = autoroute, vert = routes nationales / grands itinéraires, blanc = directions locales (communales, départementales). Les panneaux temporaires de déviation sont jaunes ; les panneaux marron indiquent les sites touristiques. Sources : Ornikar, IISR Partie 5 Art. 89.",
+        explanationEn: "The background colour of directional signs indicates ROAD TYPE, not location: blue = motorway, green = national/major routes, white = local directions (municipal, departmental). Yellow signs are temporary diversions; brown signs mark tourist sites. Sources: Ornikar, IISR Part 5 Art. 89.",
+        trapNote: "Color = road type (motorway/main/local), NOT location (urban/rural). Bleu/vert/blanc = autoroute/national/local.",
+        distractorNotes: { B: "Red is used for prohibition and danger signs, not direction.", C: "Yellow is used only for temporary diversion signs.", D: "Common ETG misconception: colors do NOT depend on agglomération vs hors agglomération — they depend on the road type (motorway/national/local)." },
         vocabulary: [
             { wordFr: "panneau d'indication", wordEn: "information sign", definition: "A sign providing directional or informational guidance to drivers" }
         ]
@@ -27364,10 +27364,10 @@ const QUESTION_BANK = [
         },
         correctAnswers: ["A", "B"],
         answerCount: 2,
-        explanationFr: "Un feu jaune clignotant signifie que vous pouvez passer mais avec prudence. Vous devez céder le passage aux piétons qui s'engagent régulièrement dans la traversée (R415-5). Les véhicules prioritaires — police, pompiers, SAMU, reconnaissables à leur avertisseur et gyrophare — bénéficient d'une priorité absolue en toutes circonstances (R432-1), indépendamment de l'état des feux. Ce n'est pas un signe de panne — c'est un mode volontaire, souvent la nuit.",
-        explanationEn: "A flashing yellow light means you may proceed but with caution. You must yield to pedestrians legally crossing the road (R415-5). Priority vehicles — police, fire, ambulance, identifiable by sirens and flashing lights — always have absolute priority regardless of traffic light state (R432-1). It's not a malfunction — it's an intentional mode, often at night.",
-        trapNote: "Flashing yellow is NOT broken — it's a deliberate reduced-control mode. No stop required, just caution.",
-        distractorNotes: { C: "Flashing yellow is a normal operational mode, not a malfunction.", D: "No mandatory stop — but caution and yielding to pedestrians is required." }
+        explanationFr: "Un feu jaune clignotant signifie que vous pouvez passer mais avec prudence. Vous devez céder le passage aux piétons qui s'engagent régulièrement dans la traversée (R415-5). Les véhicules prioritaires — police, pompiers, SAMU — bénéficient d'une priorité absolue (R432-1). Le feu jaune clignotant lui-même ne modifie PAS les règles de priorité (Arrêté du 24 nov. 1967 art. 7) : si un panneau d'intersection est présent (STOP, cédez le passage, route prioritaire), il prime ; en l'absence de tout panneau, la priorité à droite s'applique. Le mode clignotant peut être volontaire (nuit/trafic faible) OU signaler un dysfonctionnement — dans les deux cas le comportement requis est identique : ralentir et appliquer la signalisation existante.",
+        explanationEn: "A flashing yellow light means you may proceed but with caution. You must yield to pedestrians legally crossing the road (R415-5). Priority vehicles — police, fire, ambulance — always have absolute priority (R432-1). The flashing yellow itself does NOT change priority rules (Decree of 24 Nov 1967 art. 7): if an intersection sign is present (STOP, yield, priority road), it takes precedence; in the absence of any sign, priority to the right applies. The flashing mode may be deliberate (night/low traffic) OR indicate a malfunction — in both cases the required behavior is the same: slow down and apply the existing signage.",
+        trapNote: "Flashing yellow → caution + apply existing priority rules. Existing signs ALWAYS prevail; priorité à droite is only the fallback when no sign is present.",
+        distractorNotes: { C: "Partial truth: a flashing yellow CAN indicate a malfunction, but the priorité-à-droite shortcut only applies if there is NO priority sign at the intersection. With a STOP/cédez/priorité sign present, the sign rules apply — not priorité à droite. Pedagogical curriculum simplification, but technically conditional.", D: "No mandatory stop — caution and yielding to pedestrians is required, but full stop is not." }
     },
     {
         id: "sign-154",
@@ -27905,8 +27905,8 @@ const QUESTION_BANK = [
         id: "sign-182",
         topic: "signalisation",
         difficulty: 2,
-        questionFr: "Que signifient les panneaux carrés de fin d'interdiction (fond blanc avec barre diagonale) ?",
-        questionEn: "What do end-of-prohibition signs (white background with diagonal bar) mean?",
+        questionFr: "Que signifient les panneaux ronds de fin d'interdiction (fond blanc avec barre diagonale) ?",
+        questionEn: "What do round end-of-prohibition signs (white background with diagonal bar) mean?",
         options: {
             A: { fr: "Ils marquent la fin d'une interdiction précédemment signalée", en: "They mark the end of a previously signaled prohibition" },
             B: { fr: "Le panneau B33 termine une limitation de vitesse", en: "The B33 sign ends a speed limit" },
@@ -28198,8 +28198,8 @@ const QUESTION_BANK = [
         },
         correctAnswers: ["A", "D"],
         answerCount: 2,
-        explanationFr: "Les panneaux carrés bleus donnent des indications et informations utiles (direction, parking, hôpital). Les obligations sont sur fond bleu rond, les interdictions sur fond blanc rond à bord rouge.",
-        explanationEn: "Blue square signs provide useful indications and information (directions, parking, hospital). Obligations are on round blue, prohibitions on round white with red border."
+        explanationFr: "Les panneaux carrés bleus de type C couvrent toutes les indications utiles : services (parking, hôpital, station-service, aire de repos), équipements et — par extension via les pré-signalisations directionnelles bleues — la direction des services. La direction principale (villes, axes) est sur les panneaux de type D rectangulaires. Les obligations sont sur fond bleu rond, les interdictions sur fond blanc rond à bord rouge. Réf. IISR Partie 4 chap. 3.",
+        explanationEn: "Blue square Type C signs cover all useful indications: services (parking, hospital, gas, rest area), facilities and — by extension via directional pre-signage — service directions. Main direction (cities, routes) uses rectangular Type D signs. Obligations are on round blue, prohibitions on round white with red border. Ref. IISR Part 4 Ch. 3."
     },
     {
         id: "s41-040",
@@ -28281,10 +28281,10 @@ const QUESTION_BANK = [
             C: { fr: "Les balises J5 signalent la présence d'un îlot", en: "J5 markers signal the presence of an island" },
             D: { fr: "Les balises de position indiquent la limite de la chaussée", en: "Position markers indicate the edge of the road" }
         },
-        correctAnswers: ["A", "B", "D"],
-        answerCount: 3,
-        explanationFr: "Balises de virage : rouge et blanc. Bornes kilométriques : distance. Balises de position : limite de chaussée. Les J5 indiquent la tête d'un terre-plein, pas un îlot.",
-        explanationEn: "Curve delineators: red and white. Kilometre markers: distance. Position markers: edge of road. J5 markers indicate the head of a traffic island."
+        correctAnswers: ["A", "B", "C", "D"],
+        answerCount: 4,
+        explanationFr: "Balises de virage (J1, J4) : rouge et blanc. Bornes kilométriques : distance et localisation pour les secours. Balises J5 : balises carrées bleues placées en tête d'îlot directionnel (tête de terre-plein) — elles invitent l'usager à contourner l'îlot du côté indiqué par la flèche. Balises de position (J6) : matérialisent la limite de chaussée. Réf. IISR Partie 9 Art. 132-1.",
+        explanationEn: "Curve delineators (J1, J4): red and white. Kilometre markers: distance and emergency localisation. J5 markers: square blue beacons placed at the head of a directional island (median strip head) — they prompt drivers to pass on the side indicated by the arrow. Position markers (J6): mark the edge of the carriageway. Ref. IISR Part 9 Art. 132-1."
     },
     {
         id: "s41-045",
