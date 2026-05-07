@@ -794,17 +794,6 @@ const App = {
             });
         }
 
-        // Bug reporter endpoint URL
-        const bugEndpoint = document.getElementById('setting-bug-reporter-endpoint');
-        if (bugEndpoint) {
-            bugEndpoint.value = settings.bugReporterEndpoint || '';
-            bugEndpoint.addEventListener('change', () => {
-                const v = bugEndpoint.value.trim();
-                Storage.saveSetting('bugReporterEndpoint', v || null);
-                showToast(v ? 'Bug reporter endpoint saved' : 'Bug reporter endpoint cleared');
-            });
-        }
-
         // Exam date
         const examDate = document.getElementById('setting-exam-date');
         if (settings.examDate) examDate.value = settings.examDate;

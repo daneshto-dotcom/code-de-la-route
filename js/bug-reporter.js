@@ -1,20 +1,21 @@
 /* ============================================
-   Bug Reporter — S49-P6
-   Floating "Report a bug" button + modal that POSTs to a Google Apps
-   Script Web App (user-deployed). Optional html2canvas screenshot.
+   Bug Reporter — S50 (Google Forms backend)
+   Floating "Report a bug" button + modal that POSTs to a Google Form's
+   /formResponse endpoint. Severity/contact/auto-context are bundled into
+   one text blob and submitted as the form's single paragraph field.
    Offline reports queue in IndexedDB and retry on next online event.
    ============================================ */
 
-const APP_VERSION = 'S49';
+const APP_VERSION = 'S50';
 const QUEUE_DB_NAME = 'fdtta-bug-queue';
 const QUEUE_STORE = 'reports';
-const HTML2CANVAS_CDN = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+
+const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfMkKaSlduvn4OrXxZOQnT8rfRfrIkFyWplwPGC6a2rzuS-Vw/formResponse';
+const FORM_ENTRY = 'entry.1141707440';
 
 const BugReporter = {
     _modal: null,
     _fab: null,
-    _html2canvasReady: false,
-    _html2canvasLoading: null,
 
     init() {
         this._fab = document.getElementById('bug-report-fab');
@@ -42,7 +43,6 @@ const BugReporter = {
         this._modal.querySelector('.bug-report-context-version').textContent = ctx.app_version;
         this._modal.querySelector('#bug-report-description').value = '';
         this._modal.querySelector('#bug-report-severity').value = 'Bug';
-        this._modal.querySelector('#bug-report-screenshot').checked = true;
         this._modal.querySelector('#bug-report-status').textContent = '';
         this._modal.classList.remove('hidden');
         setTimeout(() => this._modal.querySelector('#bug-report-description').focus(), 50);
@@ -71,34 +71,9 @@ const BugReporter = {
         };
     },
 
-    async _ensureHtml2Canvas() {
-        if (this._html2canvasReady) return true;
-        if (this._html2canvasLoading) return this._html2canvasLoading;
-        this._html2canvasLoading = new Promise((resolve) => {
-            const s = document.createElement('script');
-            s.src = HTML2CANVAS_CDN;
-            s.onload = () => { this._html2canvasReady = true; resolve(true); };
-            s.onerror = () => { resolve(false); };
-            document.head.appendChild(s);
-        });
-        return this._html2canvasLoading;
-    },
-
-    async _captureScreenshot() {
-        const ok = await this._ensureHtml2Canvas();
-        if (!ok || typeof html2canvas !== 'function') return null;
-        try {
-            const canvas = await html2canvas(document.body, {
-                useCORS: true,
-                logging: false,
-                scale: 0.6,
-                ignoreElements: (el) => el.id === 'bug-report-modal' || el.id === 'bug-report-fab'
-            });
-            return canvas.toDataURL('image/png', 0.7);
-        } catch (e) {
-            console.warn('Screenshot capture failed:', e);
-            return null;
-        }
+    _buildBlob({ ctx, severity, description, contact }) {
+        const meta = `[Q: ${ctx.question_id || 'none'} | screen: ${ctx.screen} | sev: ${severity} | v: ${ctx.app_version}${contact ? ' | from: ' + contact : ''}]`;
+        return `${meta}\n${description}\n\nUA: ${ctx.user_agent}\nTS: ${ctx.timestamp}`;
     },
 
     async submit() {
@@ -106,7 +81,6 @@ const BugReporter = {
         const submitBtn = this._modal.querySelector('.bug-report-submit');
         const description = this._modal.querySelector('#bug-report-description').value.trim();
         const severity = this._modal.querySelector('#bug-report-severity').value;
-        const includeScreenshot = this._modal.querySelector('#bug-report-screenshot').checked;
         const contact = this._modal.querySelector('#bug-report-contact').value.trim();
 
         if (!description) {
@@ -114,43 +88,22 @@ const BugReporter = {
             status.className = 'bug-report-status err';
             return;
         }
-        const endpoint = this._getEndpoint();
-        if (!endpoint) {
-            status.textContent = 'Bug reporter not configured. Settings → Bug reporter endpoint.';
-            status.className = 'bug-report-status err';
-            return;
-        }
 
         submitBtn.disabled = true;
-        status.textContent = includeScreenshot ? 'Capturing screenshot…' : 'Sending…';
+        status.textContent = 'Sending…';
         status.className = 'bug-report-status info';
 
         const ctx = this._captureContext();
-        const payload = {
-            ...ctx,
-            severity,
-            description,
-            contact,
-            screenshot_base64: null
-        };
-
-        if (includeScreenshot) {
-            payload.screenshot_base64 = await this._captureScreenshot();
-            status.textContent = 'Sending…';
-        }
+        const blob = this._buildBlob({ ctx, severity, description, contact });
 
         try {
-            const result = await this._postReport(endpoint, payload);
-            if (result && result.ok) {
-                status.textContent = 'Bug report sent. Thank you!';
-                status.className = 'bug-report-status ok';
-                if (typeof showToast === 'function') showToast('Bug report sent');
-                setTimeout(() => this.hide(), 1200);
-            } else {
-                throw new Error(result?.error || 'Server returned not-ok');
-            }
+            await this._postReport(blob);
+            status.textContent = 'Bug report sent. Thank you!';
+            status.className = 'bug-report-status ok';
+            if (typeof showToast === 'function') showToast('Bug report sent');
+            setTimeout(() => this.hide(), 1200);
         } catch (e) {
-            await this._enqueue(endpoint, payload);
+            await this._enqueue(blob);
             status.textContent = 'Offline — queued. Will send when online.';
             status.className = 'bug-report-status info';
             if (typeof showToast === 'function') showToast('Bug report queued (offline)');
@@ -160,19 +113,15 @@ const BugReporter = {
         }
     },
 
-    _getEndpoint() {
-        try {
-            return Storage.getSettings().bugReporterEndpoint || null;
-        } catch (e) { return null; }
-    },
-
-    async _postReport(endpoint, payload) {
-        const resp = await fetch(endpoint, {
+    async _postReport(blob) {
+        const body = new URLSearchParams();
+        body.append(FORM_ENTRY, blob);
+        await fetch(FORM_URL, {
             method: 'POST',
-            headers: { 'Content-Type': 'text/plain' },
-            body: JSON.stringify(payload)
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body.toString()
         });
-        return await resp.json();
     },
 
     _openDB() {
@@ -189,11 +138,11 @@ const BugReporter = {
         });
     },
 
-    async _enqueue(endpoint, payload) {
+    async _enqueue(blob) {
         try {
             const db = await this._openDB();
             const tx = db.transaction(QUEUE_STORE, 'readwrite');
-            tx.objectStore(QUEUE_STORE).add({ endpoint, payload, queued_at: Date.now() });
+            tx.objectStore(QUEUE_STORE).add({ blob, queued_at: Date.now() });
             return new Promise(r => tx.oncomplete = r);
         } catch (e) { console.warn('Queue write failed:', e); }
     },
@@ -211,13 +160,11 @@ const BugReporter = {
             });
             for (const item of items) {
                 try {
-                    const result = await this._postReport(item.endpoint, item.payload);
-                    if (result && result.ok) {
-                        await new Promise(r => {
-                            const dreq = store.delete(item.id);
-                            dreq.onsuccess = r; dreq.onerror = r;
-                        });
-                    }
+                    await this._postReport(item.blob);
+                    await new Promise(r => {
+                        const dreq = store.delete(item.id);
+                        dreq.onsuccess = r; dreq.onerror = r;
+                    });
                 } catch (e) { /* leave in queue, retry next time */ }
             }
         } catch (e) { /* silent — best effort */ }
