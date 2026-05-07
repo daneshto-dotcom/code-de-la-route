@@ -469,8 +469,11 @@ const Exam = {
 
             const tile = document.createElement('div');
             tile.className = 'answer-tile' + (isMulti ? ' multi' : '');
-            tile.dataset.letter = letter;          // original letter for correctness check
-            tile.dataset.display = displayLabel;   // B22 — display label for CSS/debug
+            // B22 / S47-P1 E1 contract — automated tests MUST click by data-letter, not data-display.
+            // data-letter = original letter (authoritative for grading); data-display = shuffled visual label.
+            // Selecting by visible letter (data-display) on a shuffled exam mis-scores. See scripts/TEST_HARNESS.md.
+            tile.dataset.letter = letter;
+            tile.dataset.display = displayLabel;
             tile.setAttribute('role', isMulti ? 'checkbox' : 'radio');
             tile.setAttribute('aria-checked', 'false');
             tile.setAttribute('tabindex', '0');
