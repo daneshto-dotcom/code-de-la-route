@@ -14838,16 +14838,16 @@ const QUESTION_BANK = [
         questionFr: "Un tramway arrive à une intersection. Quelles affirmations sont vraies ?",
         questionEn: "A tram approaches an intersection. Which statements are true?",
         options: {
-            A: { fr: "Le tramway a toujours la priorité, quelle que soit la signalisation", en: "The tram always has priority regardless of signage" },
+            A: { fr: "Le tramway a la priorité dans la plupart des situations, sauf signalisation tramway spécifique ou agent qui lui impose l'arrêt", en: "The tram has priority in most situations, except specific tram signals or an officer ordering it to stop" },
             B: { fr: "Le tramway ne peut pas s'arrêter aussi rapidement qu'une voiture", en: "The tram cannot stop as quickly as a car" },
             C: { fr: "Vous devez lui céder le passage même sans panneau spécifique", en: "You must yield to it even without a specific sign" },
             D: { fr: "Le tramway suit les mêmes règles de priorité que les voitures", en: "The tram follows the same priority rules as cars" }
         },
         correctAnswers: ["A", "B", "C"],
         answerCount: 3,
-        explanationFr: "Le tramway bénéficie d'une priorité absolue sur tous les autres véhicules. Sa distance de freinage est beaucoup plus longue qu'une voiture, ce qui justifie cette règle. Vous devez toujours lui céder le passage.",
-        explanationEn: "Trams have absolute priority over all other vehicles. Their braking distance is much longer than a car's, which justifies this rule. You must always yield to them.",
-        trapNote: "Trams are NOT like regular vehicles. They ALWAYS have priority — this is a very common exam question.",
+        explanationFr: "Le tramway bénéficie d'une priorité quasi-absolue sur les autres usagers en raison de sa distance de freinage beaucoup plus longue. Exceptions : il doit obéir à ses propres feux (en forme de T ou barre blanche), aux panneaux STOP qui lui sont adressés et aux gestes des agents de la circulation. En l'absence de signalisation contraire, vous devez toujours lui céder le passage.",
+        explanationEn: "Trams have near-absolute priority over other road users because their braking distance is much longer. Exceptions: they must obey their own lights (T-shaped or white bar), STOP signs addressed to them, and officers' gestures. In the absence of contrary signage, you must always yield to them.",
+        trapNote: "Tram priority is QUASI-absolute, not absolute. Tram-specific signals + officers always prevail. Otherwise, yield to the tram.",
         distractorNotes: { D: "Trams have special priority rules that override normal vehicle priority. They don't follow car rules." },
         vocabulary: []
     },
