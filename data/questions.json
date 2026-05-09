@@ -10175,8 +10175,8 @@
       "C"
     ],
     "answerCount": 2,
-    "explanationFr": "Un excès de plus de 50 km/h est un délit passible de 6 points retirés, suspension de permis jusqu'à 3 ans, amende jusqu'à 1 500 €, et confiscation possible du véhicule.",
-    "explanationEn": "Speeding by more than 50 km/h is a criminal offense: 6-point deduction, licence suspension up to 3 years, fine up to €1,500, and possible vehicle confiscation.",
+    "explanationFr": "Un excès de plus de 50 km/h est une contravention de 5e classe (R413-14-1) passible de 6 points retirés, suspension de permis jusqu'à 3 ans, amende jusqu'à 1 500 €, et confiscation possible du véhicule. En cas de récidive dans les 3 ans, l'infraction devient un délit (L413-1).",
+    "explanationEn": "Exceeding the speed limit by more than 50 km/h is a 5th-class contravention (R413-14-1): 6 points lost, license suspension up to 3 years, fine up to €1,500, and possible vehicle confiscation. On repeat offense within 3 years, the infraction becomes a délit (L413-1).",
     "trapNote": "€135 is for minor speeding (< 20 km/h). Major speeding is a CRIMINAL offense, not a simple fine.",
     "distractorNotes": {
       "B": "€135 is for minor infractions — major speeding carries much heavier penalties.",
@@ -10343,8 +10343,8 @@
         "en": "Driving with blood alcohol at or above 0.5 g/l"
       },
       "B": {
-        "fr": "Usage du téléphone tenu en main au volant",
-        "en": "Using a hand-held phone while driving"
+        "fr": "Conduite sous l'emprise de stupéfiants",
+        "en": "Driving under the influence of drugs"
       },
       "C": {
         "fr": "Stationnement en double file",
@@ -10360,8 +10360,8 @@
       "B"
     ],
     "answerCount": 2,
-    "explanationFr": "L'alcool au volant (≥0,5 g/l) et le téléphone en main entraînent chacun un retrait de 6 points. Le stationnement gênant et l'oubli de clignotant retirent moins de points.",
-    "explanationEn": "Drink driving (≥0.5 g/l) and hand-held phone use each result in a 6-point deduction. Obstructive parking and forgetting to signal carry fewer points.",
+    "explanationFr": "L'alcool au volant (≥0,5 g/l, R234-1) et la conduite sous l'emprise de stupéfiants (L235-1) entraînent chacun un retrait de 6 points. Le téléphone tenu en main retire 3 points (R412-6-1, à ne pas confondre). Le stationnement gênant et l'oubli de clignotant retirent moins de points (1 à 3 selon l'infraction).",
+    "explanationEn": "Alcohol while driving (≥0.5 g/l, R234-1) and driving under the influence of drugs (L235-1) each result in a 6-point retraction. Holding a phone retracts 3 points (R412-6-1, not to be confused). Improper parking and missing turn signal retract fewer points (1 to 3 depending on the infraction).",
     "trapNote": "Phone in hand = 6 points + €135. It's the same severity as drink driving.",
     "distractorNotes": {
       "C": "Double parking is a fine but doesn't carry a 6-point deduction.",
@@ -10545,8 +10545,8 @@
       "B"
     ],
     "answerCount": 2,
-    "explanationFr": "Un excès de plus de 50 km/h est un délit : 6 points retirés, amende jusqu'à 1500€, suspension de permis pouvant aller jusqu'à 3 ans, et confiscation possible du véhicule.",
-    "explanationEn": "Exceeding the limit by more than 50 km/h is a criminal offense: 6-point deduction, fine up to €1,500, license suspension up to 3 years, and possible vehicle confiscation.",
+    "explanationFr": "Un excès de plus de 50 km/h est une contravention de 5e classe (R413-14-1) : 6 points retirés, amende jusqu'à 1500€, suspension de permis pouvant aller jusqu'à 3 ans, et confiscation possible du véhicule. En cas de récidive dans les 3 ans, l'infraction devient un délit (L413-1).",
+    "explanationEn": "Exceeding the speed limit by more than 50 km/h is a 5th-class contravention (R413-14-1): 6 points lost, fine up to €1500, license suspension up to 3 years, and possible vehicle confiscation. On repeat offense within 3 years, the infraction becomes a délit (L413-1).",
     "trapNote": "50+ km/h over is a CRIMINAL offense (délit), not just a contravention — it can lead to court.",
     "distractorNotes": {
       "C": "€135 is for minor speeding — major speeding carries much heavier penalties.",
