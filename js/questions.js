@@ -274,7 +274,7 @@ const QUESTION_BANK = [
         id: "circ-011",
         topic: "circulation",
         difficulty: 2,
-        signs: ["speed_30", "town_entry"],
+        signs: ["zone-30-sign"],
         questionFr: "Dans une zone 30, quelles règles s'appliquent ?",
         questionEn: "In a 30 km/h zone, which rules apply?",
         options: {
@@ -323,7 +323,7 @@ const QUESTION_BANK = [
         id: "circ-013",
         topic: "circulation",
         difficulty: 1,
-        signs: ["speed_30"],
+        signs: ["zone-30-sign"],
         questionFr: "Quelle est la vitesse maximale dans une zone 30 ?",
         questionEn: "What is the maximum speed in a Zone 30?",
         options: {
@@ -28148,8 +28148,8 @@ const QUESTION_BANK = [
         },
         correctAnswers: ["A", "C", "D"],
         answerCount: 3,
-        explanationFr: "Route pour automobiles (voie rapide) : pas une autoroute, mais règles similaires. Interdite piétons/vélos/cyclos. Vitesse 110 km/h (90 si pluie).",
-        explanationEn: "Expressway (not motorway): similar rules. Pedestrians/bikes/mopeds forbidden. Speed 110 km/h (90 if rain).",
+        explanationFr: "Route pour automobiles (voie rapide) : pas une autoroute, mais règles similaires. Interdite piétons/vélos/cyclos. Vitesse 110 km/h (100 si pluie, R413-2).",
+        explanationEn: "Expressway (not motorway): similar rules. Pedestrians/bikes/mopeds forbidden. Speed 110 km/h (100 if rain, R413-2).",
         distractorNotes: { B: "Ce n'est pas une autoroute (le panneau autoroute a une autre icône)." }
     },
     {

@@ -506,3 +506,30 @@ function speedLimitSign(num) {
         <text x="50" y="${num.length > 2 ? 58 : 60}" text-anchor="middle" fill="#333" font-size="${fontSize}" font-weight="bold" font-family="Arial">${num}</text>
     </svg>`;
 }
+
+// S56 P1 — Aliases for legacy kebab-case sign codes used in questions data.
+// 14 image-Qs were rendering empty containers because their signs[] codes
+// (e.g. 'speed-limit-70', 'highway-sign') had no matching renderer. These
+// aliases map legacy codes to existing renderers, plus one fresh SVG for
+// the zone-30 entry panel.
+['30','50','70','90','110','130'].forEach(num => {
+    RoadSigns.signs['speed-limit-' + num] = () => speedLimitSign(num);
+    RoadSigns.labels['speed-limit-' + num] = 'Limitation ' + num + ' km/h';
+});
+RoadSigns.signs['speed_limit_30']    = RoadSigns.signs['speed_30'];
+RoadSigns.signs['highway-sign']      = RoadSigns.signs['highway_start'];
+RoadSigns.signs['weight-limit']      = RoadSigns.signs['weight_limit'];
+RoadSigns.signs['end-of-restriction']= RoadSigns.signs['end_speed_limit'];
+RoadSigns.signs['children']          = RoadSigns.signs['school_zone'];
+RoadSigns.signs['zone-30-sign']      = () => `<svg viewBox="0 0 100 100" width="80" height="80">
+    <rect x="5" y="5" width="90" height="90" rx="5" fill="white" stroke="#333" stroke-width="3"/>
+    <text x="50" y="42" text-anchor="middle" fill="#333" font-size="16" font-weight="bold" font-family="Arial">ZONE</text>
+    <circle cx="50" cy="65" r="20" fill="white" stroke="#CC0000" stroke-width="5"/>
+    <text x="50" y="72" text-anchor="middle" fill="#333" font-size="18" font-weight="bold" font-family="Arial">30</text>
+</svg>`;
+RoadSigns.labels['speed_limit_30']     = 'Limitation 30 km/h';
+RoadSigns.labels['highway-sign']       = "Début d'autoroute";
+RoadSigns.labels['weight-limit']       = 'Limitation de poids';
+RoadSigns.labels['end-of-restriction'] = 'Fin de toutes restrictions';
+RoadSigns.labels['children']           = 'Endroit fréquenté par des enfants';
+RoadSigns.labels['zone-30-sign']       = 'Zone 30';
