@@ -4437,8 +4437,8 @@
     "questionEn": "Which statements are correct about driving in rain? (2 answers)",
     "options": {
       "A": {
-        "fr": "Les vitesses maximales sont réduites de 20 km/h sur autoroute et route à chaussées séparées",
-        "en": "Max speeds reduced by 20 km/h on motorways and dual carriageways"
+        "fr": "Les vitesses maximales sont réduites de 20 km/h sur autoroute (130→110) et de 10 km/h sur route à chaussées séparées (110→100)",
+        "en": "Max speeds reduced by 20 km/h on motorways (130→110) and 10 km/h on dual carriageways (110→100)"
       },
       "B": {
         "fr": "Les distances de freinage augmentent significativement sur chaussée mouillée",
@@ -4458,12 +4458,12 @@
       "B"
     ],
     "answerCount": 2,
-    "explanationFr": "Par temps de pluie: 110 km/h sur autoroute, 100 km/h sur route à chaussées séparées. Les distances de freinage doublent sur chaussée mouillée.",
-    "explanationEn": "In rain: 110 km/h on motorways, 100 km/h on dual carriageways. Braking distances double on wet roads.",
-    "trapNote": "Rain = same reductions as novice drivers. Braking distance doubles.",
+    "explanationFr": "Par temps de pluie : autoroute 130→110 km/h (réduction de 20), route à chaussées séparées 110→100 km/h (réduction de 10), route bidirectionnelle reste 80 (déjà abaissée en 2018), agglomération reste 50. Les distances de freinage doublent sur chaussée mouillée. Article R413-2 + Arrêté du 5 mai 2009. NOTE PEDAGOGIQUE : option D est aussi techniquement correcte (50 agglo inchangée) mais le bareme officiel de cette question retient les deux affirmations centrales sur la vitesse hors agglo et sur les distances.",
+    "explanationEn": "In rain: motorway 130→110 km/h (-20), dual carriageway 110→100 km/h (-10), bidirectional road stays at 80 (already lowered in 2018), urban stays at 50. Braking distances double on wet roads. R413-2 + Arrêté 5 May 2009. NOTE: option D is technically also correct (50 km/h urban is unchanged in rain) but this question's official scoring retains the two core statements on out-of-town speeds and braking distances.",
+    "trapNote": "The autoroute reduction (-20) and the dual-carriageway reduction (-10) are NOT the same — option A details both. Rear fog lights are only for visibility <50m, not for any rain.",
     "distractorNotes": {
-      "C": "Rear fog lights only for visibility under 50m.",
-      "D": "Urban 50 km/h is unchanged in rain."
+      "C": "Les feux de brouillard arrière ne s'allument que si la visibilité est inférieure à 50 m (brouillard, pluie très dense, neige). Pas dès qu'il pleut.",
+      "D": "Option techniquement correcte (50 agglo inchangée par pluie) mais non retenue dans cette question pour conserver le focus sur les réductions hors agglomération + distance de freinage. Sister Q s42-032 traite explicitement les 4 cas avec 'D=50 agglo reste'."
     },
     "vocabulary": [
       {
