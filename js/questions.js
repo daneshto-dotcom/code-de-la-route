@@ -22221,12 +22221,12 @@ const QUESTION_BANK = [
             C: { fr: "Appeler le numéro d'urgence affiché au passage à niveau", en: "Call the emergency number displayed at the level crossing" },
             D: { fr: "Attendre dans le véhicule que le prochain train passe", en: "Wait in the vehicle for the next train to pass" }
         },
-        correctAnswers: ["A", "C"],
-        answerCount: 2,
-        explanationFr: "Priorité absolue : faites descendre tous les passagers et éloignez-les des voies. Appelez ensuite le numéro d'urgence affiché au passage à niveau pour alerter la SNCF.",
-        explanationEn: "Absolute priority: get all passengers out and away from the tracks. Then call the emergency number displayed at the level crossing to alert the railway company.",
-        trapNote: "NEVER stay in a vehicle on the tracks. Get everyone out FIRST, then try to alert the railway.",
-        distractorNotes: { B: "Pushing the vehicle is secondary to evacuating passengers — people first, vehicle second.", D: "Staying in the vehicle on the tracks is extremely dangerous and potentially fatal." },
+        correctAnswers: ["A", "B", "C"],
+        answerCount: 3,
+        explanationFr: "Priorité absolue : faites descendre tous les passagers et éloignez-les des voies. Si possible, tentez ensuite de pousser le véhicule hors des voies. Appelez le numéro d'urgence (BAL ou SNCF) affiché au passage à niveau pour alerter le gestionnaire ferroviaire.",
+        explanationEn: "Absolute priority: get all passengers out and away from the tracks. If possible, try to push the vehicle off the tracks. Call the emergency number (BAL or SNCF) displayed at the level crossing to alert the railway operator.",
+        trapNote: "NEVER stay in a vehicle on the tracks. Get everyone out FIRST, then push the vehicle clear if you can, then alert the railway.",
+        distractorNotes: { D: "Staying in the vehicle on the tracks is extremely dangerous and potentially fatal." },
         vocabulary: [
             { wordFr: "immobilisé", wordEn: "stuck/immobilised", definition: "Unable to move" },
             { wordFr: "voies ferrées", wordEn: "railway tracks", definition: "The metal rails on which trains run" }
@@ -24560,14 +24560,15 @@ const QUESTION_BANK = [
             C: { fr: "Se diriger vers la sortie de secours la plus proche", en: "Head to the nearest emergency exit" },
             D: { fr: "Couper le moteur", en: "Turn off the engine" }
         },
-        correctAnswers: ["A", "C", "D"],
-        answerCount: 3,
-        explanationFr: "En cas de panne en tunnel : allumez les feux de détresse, coupez le moteur, et dirigez-vous vers la sortie de secours la plus proche. Ne restez jamais dans le véhicule à cause du risque d'incendie et de fumées toxiques.",
-        explanationEn: "If you break down in a tunnel: turn on hazard lights, switch off the engine, and head to the nearest emergency exit. Never stay in the vehicle due to fire and toxic fume risks.",
-        trapNote: "Staying in the vehicle feels safe but is the most dangerous option in a tunnel.",
-        distractorNotes: { B: "Staying inside is extremely dangerous due to potential fire, explosion, and toxic fumes in the confined space." },
+        correctAnswers: ["A", "D"],
+        answerCount: 2,
+        explanationFr: "En cas de panne en tunnel : allumez les feux de détresse et coupez le moteur. Si vous devez quitter le véhicule, rejoignez une NICHE DE SÉCURITÉ (téléphone d'urgence + extincteur), PAS une sortie de secours — la sortie de secours est réservée à l'évacuation lors d'un INCENDIE. Ne restez jamais simplement dans le véhicule.",
+        explanationEn: "If you break down in a tunnel: turn on hazard lights and switch off the engine. If you must leave the vehicle, head to a SAFETY NICHE (emergency phone + extinguisher), NOT an emergency exit — the emergency exit is reserved for evacuation during a FIRE. Never just stay in the vehicle.",
+        trapNote: "Breakdown ≠ Fire. For a breakdown, use the safety niche (emergency phone). For a fire, evacuate via the emergency exit.",
+        distractorNotes: { B: "Staying inside is extremely dangerous due to potential fire, explosion, and toxic fumes in the confined space.", C: "Pour une simple panne, rejoignez plutôt une niche de sécurité (téléphone d'urgence). Les sorties de secours servent à l'évacuation en cas d'incendie — pas pour une panne." },
         vocabulary: [
-            { wordFr: "feux de détresse", wordEn: "hazard lights", definition: "Warning flashers activated in emergencies" }
+            { wordFr: "feux de détresse", wordEn: "hazard lights", definition: "Warning flashers activated in emergencies" },
+            { wordFr: "niche de sécurité", wordEn: "safety niche", definition: "Tunnel alcove with emergency phone and extinguisher; for breakdowns and incident reporting" }
         ]
     },
     {
