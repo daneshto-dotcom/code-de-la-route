@@ -4857,8 +4857,8 @@
         "en": "One meter per km/h of speed"
       },
       "C": {
-        "fr": "Environ 90 mètres à 130 km/h",
-        "en": "About 90 meters at 130 km/h"
+        "fr": "Environ 72 mètres à 130 km/h",
+        "en": "About 72 meters at 130 km/h"
       },
       "D": {
         "fr": "La longueur de 2 voitures suffit",
@@ -4870,8 +4870,8 @@
       "C"
     ],
     "answerCount": 2,
-    "explanationFr": "La règle des 2 secondes s'applique. À 130 km/h, cela correspond à environ 90 mètres (ou 2 bandes blanches d'intervalle sur autoroute).",
-    "explanationEn": "The 2-second rule applies. At 130 km/h, this equals about 90 meters (or 2 white line intervals on a motorway).",
+    "explanationFr": "La règle des 2 secondes s'applique (R412-12). À 130 km/h, cela correspond à environ 72 mètres (calcul strict 130/3,6 × 2 ≈ 72,2 m). Les bandes blanches (38 m) aident à l'évaluer.",
+    "explanationEn": "The 2-second rule applies (R412-12). At 130 km/h, this equals about 72 meters (strict calc 130/3.6 × 2 ≈ 72.2 m). White ground markings (38 m) help evaluate it.",
     "trapNote": "Two car lengths (~10m) is dangerously short at motorway speed. 1m per km/h is an approximation, not the actual rule.",
     "distractorNotes": {
       "B": "This is a rough approximation — the official rule is the 2-second interval.",
@@ -14774,8 +14774,8 @@
     "questionEn": "What are the rules about safety distances on the motorway?",
     "options": {
       "A": {
-        "fr": "La distance minimale est de 2 secondes ou environ 90 mètres à 130 km/h",
-        "en": "The minimum distance is 2 seconds or about 90 metres at 130 km/h"
+        "fr": "La distance minimale est de 2 secondes ou environ 73 mètres à 130 km/h",
+        "en": "The minimum distance is 2 seconds or about 73 metres at 130 km/h"
       },
       "B": {
         "fr": "Les lignes au sol sur autoroute permettent d'évaluer la distance de sécurité",
@@ -14795,8 +14795,8 @@
       "B"
     ],
     "answerCount": 2,
-    "explanationFr": "La distance de sécurité minimale est de 2 secondes, soit environ 90 mètres à 130 km/h. Les bandes blanches au sol (espacées d'environ 38 m) aident à l'évaluer : 3 bandes = bonne distance. La distance s'applique toujours, y compris dans les bouchons (réduite mais toujours nécessaire). 1 seconde est insuffisante.",
-    "explanationEn": "The minimum safety distance is 2 seconds, about 90 metres at 130 km/h. White ground markings (spaced about 38m apart) help evaluate it: 3 markings = safe distance. It always applies, including in jams (reduced but necessary). 1 second is insufficient.",
+    "explanationFr": "La distance de sécurité minimale est de 2 secondes (R412-12), soit environ 72-73 mètres à 130 km/h (calcul strict 130/3,6 × 2 ≈ 72,2 m). Les bandes blanches au sol (espacées d'environ 38 m) aident à l'évaluer : 2 bandes = bonne distance. La distance s'applique toujours, y compris dans les bouchons (réduite mais toujours nécessaire). 1 seconde est insuffisante.",
+    "explanationEn": "The minimum safety distance is 2 seconds (R412-12), about 72-73 metres at 130 km/h (strict calc 130/3.6 × 2 ≈ 72.2 m). White ground markings (spaced about 38m apart) help evaluate it: 2 markings = safe distance. It always applies, including in jams (reduced but necessary). 1 second is insufficient.",
     "trapNote": "2 seconds is the MINIMUM, not 1 second. Safety distance rules always apply.",
     "distractorNotes": {
       "C": "Safety distance rules apply at all times, even in slow traffic.",
