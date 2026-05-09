@@ -43331,8 +43331,8 @@
     "id": "sign-008",
     "topic": "signalisation",
     "difficulty": 2,
-    "questionFr": "Que signifie un panneau rond à bord rouge barré d'une ligne diagonale rouge ?",
-    "questionEn": "What does a round sign with a red border and a diagonal red line mean?",
+    "questionFr": "Que signifie un panneau rond à fond blanc avec un bord noir, barré d'une ou plusieurs lignes diagonales noires ?",
+    "questionEn": "What does a round sign with a white background, black border, and one or more diagonal black lines mean?",
     "options": {
       "A": {
         "fr": "Fin d'interdiction",
@@ -43355,13 +43355,13 @@
       "A"
     ],
     "answerCount": 1,
-    "explanationFr": "Un panneau rond avec des lignes diagonales noires sur fond blanc et un bord gris indique la fin de toutes les interdictions. Avec une seule barre, il annule une interdiction spécifique.",
-    "explanationEn": "A round sign with diagonal black lines on a white background and grey border indicates the end of all prohibitions. With a single bar, it cancels a specific prohibition.",
-    "trapNote": "Don't confuse with the 'no entry' sign which is a solid red circle with a white bar.",
+    "explanationFr": "Un panneau rond à fond blanc, bord noir, barré de lignes diagonales noires, indique la fin d'une interdiction. Une seule barre = fin d'une interdiction spécifique (par exemple fin de limitation de vitesse). Plusieurs barres = fin de toutes les interdictions précédentes.",
+    "explanationEn": "A round sign with white background, black border, and diagonal black lines indicates the end of a prohibition. A single bar = end of a specific prohibition (e.g. end of speed limit). Multiple bars = end of all previous prohibitions.",
+    "trapNote": "Start of prohibition signs use a RED border (round red circle); end of prohibition signs use a BLACK border with diagonal black bars.",
     "distractorNotes": {
-      "B": "The diagonal lines indicate END of prohibition, not the start.",
-      "C": "No entry is a solid red circle with a horizontal white bar.",
-      "D": "Road closed signs are different — they block the road entirely."
+      "B": "Start of prohibition signs use a RED border, not a black one — that's the key visual difference.",
+      "C": "No entry is a solid red disc with a horizontal white bar — visually very different.",
+      "D": "Road closed (route barrée) signs are diamond-shaped or use barriers, not round black-bordered."
     },
     "vocabulary": [
       {
