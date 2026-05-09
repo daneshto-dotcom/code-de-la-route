@@ -25107,8 +25107,10 @@ const QUESTION_BANK = [
         },
         correctAnswers: ["A", "B", "C", "D"],
         answerCount: 4,
-        explanationFr: "Toutes sont correctes : feux rouges = interdiction, trains dans les deux sens possibles, barrières automatiques, et franchir les barrières est un délit pénal grave.",
-        explanationEn: "All are correct: red lights = prohibition, trains from either direction, automatic barriers, and crossing barriers is a serious criminal offence."
+        explanationFr: "Toutes sont correctes : feux rouges = interdiction, trains dans les deux sens possibles, barrières automatiques, et franchir les barrières est une infraction grave (article R412-30 du Code de la route). PRECISION LEGALE : le franchissement de barrières fermées est strictement classé en contravention de 4e classe (amende forfaitaire 135 €, retrait de 4 points, suspension de permis jusqu'à 3 ans). L'expression \"délit pénal\" employée dans cette option est une simplification courante du langage ETG ; la qualification de délit pénal au sens strict ne s'applique qu'en cas de blessure ou d'accident corporel résultant du franchissement (article 222-19/222-20 du Code pénal).",
+        explanationEn: "All are correct: red lights = prohibition, trains from either direction, automatic barriers, and crossing barriers is a serious offence (article R412-30 of the Code de la route). LEGAL PRECISION: crossing closed level-crossing barriers is technically a 4th-class contravention (fixed fine 135 €, 4-point deduction, license suspension up to 3 years). The phrase \"criminal offence\" used in this option is a common ETG-curriculum simplification; the strict criminal-offence qualification (délit pénal) only applies if the crossing causes injury or accident (article 222-19/222-20 of the Code pénal).",
+        trapNote: "The \"délit pénal\" wording is curriculum-loose. The strict legal classification is 4e classe contravention (135 €, -4 points, license suspension); it escalates to délit only if injury/death results.",
+        distractorNotes: { D: "Option D is ETG-curriculum-aligned (the claim that crossing barriers is a 'délit pénal' reflects how prep schools teach the gravity of the offence). However, the strict Code de la route classification is 4e classe contravention per R412-30. The délit qualification applies only if the crossing causes injury or fatality." }
     },
     {
         id: "scen-015",
