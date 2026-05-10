@@ -36,3 +36,9 @@ Thumbs.db
 .claude/session-archive/
 # S47: ephemeral image test fixtures
 assets/images/signs/test/
+
+# Per-session transient artifacts (S106 .gitignore extension 2026-05-10)
+.claude/budget-reported-*
+.claude/session-state.json.corrupt.*
+.claude/pdr-deliberation-*.json
+.claude/session-summary.md
