@@ -1,4 +1,4 @@
-STATUS: IN-PROGRESS (Sessions 30-32 complete, Sessions 33-34 remain)
+STATUS: COMPLETE / SUPERSEDED (S97 truth-up 2026-07-08). Sessions 30-32 shipped (festival types/persistence/admin — 16 tables, 15 tabs, verified today by the 232-test festival suite). Session 34's test suite (tests/festival.test.ts) + export/import (festival-admin.ts) also shipped. Session 33's public-page enrichment was deliberately DEFERRED by the S87 decision matrix (revisit when VPS lands OR festival <=12mo). Festival roadmap now lives in BACKLOG.md's S97 tier T1 (vision engine). This archived plan no longer drives work — retained for history only.
 
 # Festival System — 5-Session Implementation Plan (Sessions 30–34)
 

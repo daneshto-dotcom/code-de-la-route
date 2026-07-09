@@ -1,51 +1,28 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-07-08 | Session: S97 (un-park mega-session — audit + fix-all + research + roadmap)
+Generated: 2026-07-09 | Session: S98 (durability capstone + begin vision funnel)
 
 ## Next Steps
-
-Project is **UN-PARKED and healthy** — site live (local + public 200), combat fixed, durability
-hardened. Full detail in HANDOFF_2026_07_08_S97.md + AUDIT_S97.md + RESEARCH_S97.md (submodule).
-
-**Daniel action items (not code — do these first when you return):**
-1. `git push` BOTH repos (operator-gated; 8 submodule commits + 2 parent commits are LOCAL only).
-   Pushing turns CI green + activates the new uptime-monitor workflow + removes the leaked default
-   admin creds from the public parent repo's HEAD.
-2. **Rotate `ADMIN_PASS`** (old value burned — in git history) + re-run `scripts/install-server-autostart.ps1`
-   from an **ELEVATED** PowerShell (applies the OPS-01 15-min re-arm trigger to the live task — the
-   non-elevated re-run got Access-Denied).
-3. Decide whether to purge the old default creds from the PUBLIC parent-repo history (BFG/filter-repo
-   + force-push) — the string is out of HEAD but still in history.
-4. **Manual playtest the B-01 combat fix** (the one thing only you can verify): click a wolf near the
-   gate → FIGHT → expect a real VICTORY/DEFEAT result, NOT a "queued → Action Complete" no-op.
-
-**Next build work — new S97 roadmap (BACKLOG.md top section is the source of truth):**
-- **T0 durability capstone** (do first): off-box SQLite+Litestream replication, `/health/deep` + a
-  push-alerting monitor (UptimeRobot), backup-restore drill. Finish making the world un-loseable.
-- **T1 vision engine** (biggest gap): the "place is real" reveal mechanic — shareable "Royal Summons
-  to Chazeuil" artifact (S), staged reveal via hidden `realm_curious` quality (M), per-player legend
-  sheet → festival persona (M), achievements → real festival perks (M).
-- **T2 retention** (cheap): daily roulette (S), action-point return clock (M), <30s onboarding (M).
-- **T3 AI-NPC**: anachronism guardrail (S) + prompt-cache (S) first; depth later.
-- **T4 emergent-sim depth**: CK3 stress, Norland relationship web, DF rumor feed.
+S98 shipped 4/4 priorities — **pushed, CI-green in both repos, and deployed live** (game server cold-started; `/health/deep` returns 200 local + public). Next session = **S99** off the S97 roadmap (BACKLOG.md + submodule session-state `campaign` block):
+1. **T0.4** — SqlitePersistence adapter (better-sqlite3, WAL + synchronous=FULL) behind the existing PersistenceAdapter interface + **Litestream** streaming the WAL off-box to R2/B2. Full-tier PDR. **Daniel-gated** on open-Q #B/#D.
+2. **DUR-06** — make SAVE_DIR env-driven + one-time stopped-server migration of `save/` OUT of the OneDrive tree. **Daniel-gated** on open-Q #C (path).
+3. **T0.3** — backup-restore drill (boot a throwaway from latest backup → hit /health/deep → alert if not restorable). Depends on S98's /health/deep (done).
+4. **T1.2 (M-half)** — realm_curious accumulator + earlier "sealed letter" beat + **lower B53 reveal thresholds** (HONOR>40 + 50 lifetime actions) so testers can actually REACH the reveal in the hype window (currently unreachable → P3/P4 only unit-tested, not yet live-playtestable end-to-end).
 
 ## Blockers
-- **git push** is operator-gated — all S97 work is committed locally, not on origin.
-- VPS deploy (Hetzner) + Stripe account remain Daniel-gated (ticket /checkout stays 503 until Stripe).
+- **Daniel decisions gate S99** (answer any time): #B object store R2-vs-B2 + bucket name/region · #C off-OneDrive save path (rec `C:\ProgramData\LegacyOfTheRealm\save`) · #D confirm Litestream · #E S100 perk model (which achievements → which real perks, redemption model, signing secret).
+- **Daniel playtest** (post-deploy, only he can do): create a Knight → fight a wolf (verify S97 B-01 combat gives real VICTORY, not "Action Complete"); run `__previewRoyalSummons()` in the browser console to visually confirm the summons render (the one thing S98 couldn't auto-verify — browser tooling was flaky).
 
 ## Pending Backlog
-See BACKLOG.md "S97 RE-PRIORITIZED ROADMAP" (top) for the tiered order. Audit residuals routed there:
-B-04/B-05 quest reachability (HIGH), B-02/B-07/B-09, C4/C5/C6, D2/D5-proxy/D6, DUR-06/07, OPS-04.
+See `Game/founding-realm/BACKLOG.md` "S97 RE-PRIORITIZED ROADMAP". Residuals still open (routed to later tiers): B-04/B-05 quest reachability (HIGH, S100) · B-07 morale on live paths · B-09 quest-pool prune · B-02 log rejections · D2 JWT session-version · D6 admin SSE token-in-URL · C4/C5/C6 client polish · T2 retention · T3.1/T3.2 AI-NPC · T4 emergent-sim depth.
 
 ## Recent Reflexion (last 2 sessions)
+### 2026-07-09 — S98: durability + vision funnel
+- heartbeat-PRESENCE (not staleness) is the crash-loop signal; detect before overwrite; corrupt-tolerant counter.
+- verify the persistence HOOK not just the save (ticket save belongs at the webhook grant, not /checkout).
+- name the proxy before picking the header (Cloudflare Tunnel → trust loopback + CF-Connecting-IP; empirical, not guessed).
+- apply reward extras at the EFFECTIVE reward (choice vs template), split flags/title/chronicle by data-ownership, leave deniers/rep untouched.
+- immutable addEntry() return must be assigned (latent chronicle-drop bug fixed in-pass).
+- gate + allowlist distributable artifacts (persona allowlist + date-gate on the shareable summons).
 
-### 2026-07-08 — Session 97 — Un-park mega-session (audit + fix-all + research + roadmap)
-- P0 durability-parity: parked-but-live needs active-ops durability rigor; fix-one-forget-sibling +
-  no monitoring = 5.5-week silent 502.
-- P1 months-mis-chased-bug: "fighting doesn't work" was an action-dispatch split-brain (handler never
-  ran), not the combat-feedback bug 6 sessions assumed.
-- P2 guard-beats-audit: a boot-time completeness invariant caught 14 no-op actions the static audit missed.
-- SESSION s97-meta: 45 findings → 22 fixed + 7 truth-ups + 15 routed; ~1070 tests green; NOT pushed.
-
-### 2026-05-28 — Session 96 — Parked-site maintenance (CI fix + reboot-survival + Node-24 actions)
-- P1 ci-audit-gate-split-by-exposure; P2 test-the-actual-failover + ps51-ascii-only; P3 verify-action-
-  runtime-before-bump; SESSION s96-meta: emails stopped, reboot-survival added, all Actions Node-24.
+### 2026-07-08 — S97: un-park mega-session
+- 45-finding audit → 22 fixed; combat B-01 root cause (action-dispatch split-brain); durability core; 31-thread research + roadmap. (Full detail in .handoff-archive/HANDOFF_2026_07_08_S97.md.)
