@@ -1,36 +1,26 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-07-10 | Session: S99 (durability off-OneDrive + SQLite + reveal reachability)
+Generated: 2026-07-11 | Session: S100
 
 ## Next Steps
-S99 shipped **5/5 code priorities AND deployed them live** (save migrated off OneDrive to
-`C:\ProgramData\LegacyOfTheRealm\save`; local + public `/health/deep` = 200; both repos pushed +
-CI-clean). Next session = **S100** off the campaign (submodule `session-state.json` `campaign` block):
-1. **T1.3** — legend sheet (shareable stat/achievement card, next funnel piece after the Royal Summons).
-2. **T1.4** — real perks (QR redemption) — needs Daniel's perk model (open Q #E).
-3. **B-04 / B-05** — quest reachability (HIGH residuals from the S97 audit).
-4. **D2 / D6** — admin auth (JWT session-version; SSE token-in-URL).
-5. **Carry-forwards from S99**: wire **Litestream→R2** once Daniel provides the R2 token (adapter +
-   `litestream.yml` are staged; flip `PERSISTENCE=sqlite` after); add the **sealed-letter** reveal beat
-   (needs Festival-Authentic-Voice review); optional: archive/remove the stale OneDrive `save/` originals.
+1. **S101 quest-engine batch (recommended lead):** B-05 NPC chain quests end-to-end + P5 trigger plumbing R2-R8 (bundle them). B-05 = validator branch via getChainQuestById + wire checkChainQuestProgress at 9 chokepoints (combat.ts:264/427, crafting.ts:89/381, market.ts:158, action-dispatch.ts:288 zone, reputation:changed listener, quest.ts:45) + NEW _npcChainProgress sidecar (mirror P3 _playerAchievements) + serialize/deserialize on activeChainQuests Map + fix crafting.ts:240-242 offer-gating (use getCompletedChainQuestIds) + auto-complete turn-in. Own restart-drill. Full wiring map: session-state P4.b05_carry_forward + plans-archive/s100-discovery-quest-reachability.md. P5 = emit npc:interacted + combat:resolved, add time:characterAged + emergentQuest:completed to trigger-engine eventMappings, wire recordZoneVisit, fix evaluateWorldState vacuous gates (R7 — LIVE B22 realm-wide spawn today, careful test).
+2. **Full T1.4 (QR perks)** — now UNBLOCKED (#E answered: marquee+reveal-gated, in-game QR + admin scan, opaque one-time codes, player-account binding, ticket-independent). Build src/modules/perks/ mint/redeem + admin scanner + client "My Writs" QR + SAVE_DIR ledger. Catalog stub already encodes the decisions.
+3. **T1.3 DEED_PHRASES voice review** — Daniel to review the 40 curated 1601 phrasings (public/js/data/deed-phrases.js) for Festival-Authentic-Voice before final; reword any line.
+4. **D2 deploy note** — deploying S100 forces a ONE-TIME admin re-login (old no-sv admin JWTs rejected). Expected, not an outage.
 
 ## Blockers
-- **Daniel-gated**: R2 bucket + S3 API token (activates Litestream off-box replication) · perk model / redemption / signing-secret (T1.4).
-- **Playtest (only Daniel)**: Knight → fight a wolf (verify S97 B-01 real VICTORY); run `__previewRoyalSummons()` in the browser console.
-- **Elevation**: disabling the `LegacyOfTheRealm-GameServer` scheduled task needs an elevated shell (`schtasks /Change` = Access denied from a normal shell; `/Run` works).
+- Litestream off-box replication awaits Daniel's Cloudflare R2 bucket + S3 token (→ Tier-0 vault); adapter + litestream.yml staged since S99.
+- Festival public dates gated (REAL_FESTIVAL_DATE=null in artifact-canvas.js) until Daniel confirms.
+- Playtest (Daniel only): class quests now real — accept a KNIGHT class quest, do a battle, complete it; verify the objective gate.
 
 ## Pending Backlog
-See `Game/founding-realm/BACKLOG.md` "S97 RE-PRIORITIZED ROADMAP". Open residuals: B-04/B-05 quest
-reachability (HIGH, S100) · B-07 morale on live paths · B-09 quest-pool prune · D2 JWT session-version ·
-D6 admin SSE token-in-URL · C4/C5/C6 client polish · T2 retention · T3.1/T3.2 AI-NPC · T4 emergent-sim depth.
+- [ ] B-05 NPC chain quests end-to-end (S101)
+- [ ] P5 trigger plumbing R2-R8 (npc:interacted/combat:resolved emits, eventMappings, zone recording, R7 world-state fix)
+- [ ] Full T1.4 QR perk mint/scan/redemption ledger
+- [ ] T1.3 deed-phrase Festival-Authentic-Voice review
+- [ ] Litestream→R2 wire (on token) then flip PERSISTENCE=sqlite
+- [ ] Sealed-letter reveal narrative beat (voice review)
+- [ ] C07_succession_crisis chain: author templates or delete (P5 scope)
+- [ ] GBC Crystal-reskin campaign (RATIFIED-PARKED, starts after S102 re-park; AI-gen+Grok-review art)
 
 ## Recent Reflexion (last 2 sessions)
-### 2026-07-10 — S99: durability off-OneDrive + SQLite + reveal reachability
-- read the env before naming the landmine (PERSISTENCE=json → PG never contacted; 28P01 was the verifier's own probe).
-- one app-root anchor for a path default, never per-file __dirname (else a fresh-world-seed trap).
-- lazy-require native addons inside the ctor so the fallback catch can catch; cutover bootstrap must reuse the full recovery chain.
-- a restore drill must fingerprint (currentYear/tickCount >=) not just liveness, else it false-passes on a fresh seed.
-- derive the chain gate from persisted completedTemplateIds, not an ephemeral Map (restart-brick); enumerate chains before drop-vs-reconstruct.
-### 2026-07-09 — S98: durability capstone + begin vision funnel
-- heartbeat PRESENCE (not staleness) is the crash-loop signal; detect before overwrite; corrupt-tolerant counter.
-- verify the persistence HOOK not just the save (ticket save belongs at the webhook grant).
-- name the proxy before picking the header (Cloudflare Tunnel → trust loopback + CF-Connecting-IP).
+See .claude/reflexion_log.md top two blocks (S100 + S99). S100 keys: reachability-reveals-latent-render-bugs (P1), credential-bound-token-version-no-store (P2), persist-then-self-heal-with-one-time-grandfather (P3), make-snapshot-only-data-real-then-reuse-the-validated-pipeline (P4). Meta: 4 priorities, each proven by a LIVE boot smoke; A.0 empirical probe before P4 refuted plausible-but-wrong premises again.
