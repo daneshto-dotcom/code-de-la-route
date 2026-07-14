@@ -41,4 +41,4 @@ assets/images/signs/test/
 .claude/budget-reported-*
 .claude/session-state.json.corrupt.*
 .claude/pdr-deliberation-*.json
-.claude/session-summary.md
+.claude/session-summary.md.claude/REVIEW-PENDING.flag
