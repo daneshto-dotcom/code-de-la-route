@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-07-14T21:57:24",
+  "session_id": "S98",
+  "state_sha256": "f91b1c54d871f85f",
+  "approved": true,
+  "card": "==================================================================\nREVIEW CARD - session S98  (generated 2026-07-14 21:57)\n==================================================================\nPRIORITIES:\n  PP1 [completed  ] check_completed=True  None\n  PP2 [completed  ] check_completed=True  None\n  PP3 [completed  ] check_completed=True  None\n  PP4 [completed  ] check_completed=True  None\n\nMCV verdict: exit 2  ::  === RESULT: hard_fail=0 warn=1 -> exit 2 ===\nRestore points (claude-rollback.py --list): 190\n\nHELD / NEEDS A HUMAN DECISION:\n  (none recorded)\n\nACTION: review the above; rollback is still cheap (claude-rollback.py --restore <ref>).\n  APPROVE  -> pre-handoff-review.py --approve, then /handoff\n  AMEND    -> fix + re-CHECK, then regenerate this card\n  ROLLBACK -> claude-rollback.py --restore <ref>\n==================================================================",
+  "approved_session_id": "S98",
+  "approved_state_sha256": "b11717e2197d35de",
+  "approved_at": "2026-07-14T21:58:18"
+}
