@@ -1,27 +1,23 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-07-14 | Session: S101
+Generated: 2026-07-18 | Session: S102 (REBUILD PIVOT — plan + archive + site offline)
 
 ## Next Steps
-1. **S102 lead: Full T1.4 QR perks** (Full-tier, ~35K, UNBLOCKED — #E answered S100): mint/scan/redeem ledger in src/modules/perks/ + admin scanner tab + client "My Writs" QR (sealed-writ art). Catalog stub src/modules/perks/catalog.ts encodes E1 marquee+reveal-gated / E2 in-game QR + admin scan / E3 opaque one-time codes in SAVE_DIR ledger / E4 player-account binding / E5 ticket-independent. Run A.0 vs the S101 codebase first (S100/S101 both proved carry-forward maps go stale).
-2. **T1.3 DEED_PHRASES voice review** (Daniel): the 40 curated 1601 phrasings in public/js/data/deed-phrases.js + the S101 chain heralds ("Word Spreads" / "A Task in Hand" in src/networking/event-subscriptions.ts) need Festival-Authentic-Voice review.
-3. **Playtest (Daniel, now on LIVE)**: (a) KNIGHT class quest → fight → complete (S100 objective gate); (b) NEW S101 loop: talk to Pip → accept "Ears on the Street" → walk 5 different zones → watch progress heralds + auto-turn-in; (c) talk to any NPC twice — dialogue should begin reflecting disposition.
-4. **Chain-quest carry-forwards** (bundle candidates for S102/S103, all ledgered in submodule session-state): buff-reward application system (Varenne Q2/Maren Q2 buffs silently skip), offline-duel-winner credit (needs playerId→charId map on ctx), Messenger/return-to-NPC turn-in, chain-progress HUD, defeat-keyed combat event, dwell-time tracking.
-5. **BACKLOG.md hygiene**: add S101 DONE section (B-04/B-05/P5/R1-R8 now shipped) — deferred from handoff for token budget.
+1. **S103 = the rebuild begins at the domaine gate.** Read `BRAIN/architecture/ACTIVE_PLAN_realm_rebuild.md` (Founder DNA repo) — it is the cold-boot source of truth (§0 tells you exactly how to start). Then read `Game/founding-realm/archive/INDEX.md` (the parts bin).
+2. **Parcel 0 (S103 opener):** Imagen concept boards for the gate scene (GBC/Crystal, 1601 stone/oak) — **reviewed live WITH Daniel** (no-unverified-art rule); pick the master GBC palettes with him; confirm the World Skeleton compass (§2).
+3. **Parcel-001:** the gate scene itself — oak doors + iron banding + stone wall + threshold, walkable 16×16 grid-locked player. Build → screenshot → Daniel's LOVE gate → commit+tag `parcel-001`.
+4. Scaffold `Game/founding-realm/rebuild/` per ACTIVE_PLAN §6 (own package.json/tsconfig, import boundary, palette.ts + build-time palette guard, ParcelScene base) — minimal, client-only, no server yet.
+5. ⚠️ Before any multi-agent workflow: check `claude.ai/admin-settings/usage` — the org monthly Anthropic spend limit was HIT in S102 (blocked the archive agents; finished in main loop). Solo main-loop work is fine.
 
 ## Blockers
-- Litestream→R2 off-box replication awaits Daniel's Cloudflare R2 bucket + S3 token (adapter + litestream.yml staged since S99).
-- Festival public dates gated (REAL_FESTIVAL_DATE=null in artifact-canvas.js) until Daniel confirms.
-- Daniel-only: voice reviews (deed phrases, chain heralds, sealed-letter beat) + the live playtest above.
+- None blocking the rebuild. Site is intentionally OFFLINE (P3, done) — legacyoftherealm.com returns Cloudflare 502; restart/break-glass in `Game/founding-realm/archive/state-snapshot/README.md`.
+- Optional (owner): to make the domain return NXDOMAIN instead of 502, remove the tunnel CNAME/DNS in the Cloudflare dashboard. Not needed — game is fully down either way.
 
-## Pending Backlog
-- [ ] Full T1.4 QR perk mint/scan/redemption ledger (S102 lead)
-- [ ] T1.3 deed-phrase + S101 herald Festival-Authentic-Voice review
-- [ ] Litestream→R2 wire (on token) then flip PERSISTENCE=sqlite
-- [ ] Sealed-letter reveal narrative beat (voice review)
-- [ ] Buff-reward application system (no applier exists; chain buffs skip)
-- [ ] Offline-duel-winner chain credit + combat:resolved emit (playerId→charId map)
-- [ ] GBC Crystal-reskin campaign (RATIFIED-PARKED, starts after S102 re-park)
-- [ ] Admin force-spawn/world-state override tooling (BACKLOG #16 Admin/GM Tooling v2)
+## Pending Backlog (parked by the pivot — in archive/decisions/)
+- QR perks T1.4 (A.0 dossier preserved; E4/scarcity/QR-MVP owner decisions still open).
+- S101 16-item chain/trigger carry-forward ledger (buff applier, offline-duel credit, Messenger turn-in, chain HUD…).
+- Breadth-module deep-entry-at-pull-time (Grok CHECK); gameplay-video capture while old build restartable (Gemini CHECK).
+- Voice reviews (DEED_PHRASES + S101 chain heralds), REAL_FESTIVAL_DATE, Litestream→R2 — all owner-gated, revisit at rebuild deploy.
 
 ## Recent Reflexion (last 2 sessions)
-See .claude/reflexion_log.md top two blocks (S101 + S100). S101 keys: live-smoke-catches-what-unit-tests-structurally-cannot (validator gap, dotenv→LIVE-save hazard, ENV_FILE_OVERRIDE=0 + isolation-guard pattern now MANDATORY for scratch servers), adversarial-check-earns-its-cost (1 refuted CRITICAL, 4 real fixes incl. distinct-objective mechanism), map-vs-emit-vs-listener-audit (4 failure places in dead event systems; victor-only mapping). Meta: 2 priorities shipped AND DEPLOYED (S100+S101 live together); A.0 refuted the carry-forward map 8 ways before planning.
+- **S102:** scope-owner-decisions-before-Council; mechanical-coverage-gate-survives-agent-death-by-spend-limit; mcv-schema-not-fabrication; scheduled-task-stop-orphans-process-+-tunnel-hides-second-instance. Rebuild pivot: 3/3 shipped, survived 2 spend-limit interruptions, MCV reconciled to exit 0.
+- **S101:** live-smoke-catches-what-unit-tests-cannot; adversarial-check-earns-cost-when-findings-flip-design; map-vs-emit-vs-listener-audit-before-reviving-dead-events. B-05 NPC chains + P5 plumbing shipped + deployed live.
