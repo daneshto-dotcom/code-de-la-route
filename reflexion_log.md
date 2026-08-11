@@ -60,3 +60,27 @@
 - SESSION #worked: PRIME-AUDIT (Rule 20) found CI workflow regen-only gap and added inline smoke-verify (Step 2 in visual-baseline.yml). User-visible quality lift from a self-audit step that costs <2K tokens.
 - SESSION #meta: 3/3 SHIP. ~125K UI tokens / 150K (YELLOW). $0.07 LLM Council. 633 tests GREEN (608 sim + 8 tts-queue + 4 a11y + 13 visual). Bundle 285.5kb (unchanged). Submodule 8f94892, parent f2b54f9.
 - SESSION #worked: User-batched approval ("approved! run full session batch") overrode project memory rule "PDRs One-at-a-Time" cleanly. The override is fine when explicit; default stays one-at-a-time per memory.
+
+---
+
+## S103 — 2026-08-11 — The plan is finished (2/2)
+
+### #pattern-the-alarm-was-ours-probe-the-repo-before-blaming-the-vendor  _(P1-SilenceUptimeAlarm)_
+
+Owner reported 'github or cloudflare is mailing me every day that the site is down'. Both named suspects were third parties; the actual sender was our own S97 uptime-monitor.yml — cron */15, deliberate `exit 1`, plus a 'Still down' comment per fire on a dedup issue open since 2026-07-09 (~96 runs/day for a month). A 60-second `gh run list` + `gh issue list` probe found it; guessing at Cloudflare settings would have burned the session and fixed nothing. LESSON: when a user blames an external service for notification spam, grep your OWN scheduled workflows first — a watchdog aimed at a door you deliberately closed is indistinguishable, from the inbox, from a vendor problem.
+
+### #pattern-adversarial-check-is-worth-it-even-when-most-findings-die  _(P1-SilenceUptimeAlarm)_
+
+GROK-ANALYST raised 8 findings on a 13-line YAML comment-out. Four were falsifiable and I falsified three in one command (`git ls-remote --heads` killed 'other branches keep the cron armed'; a 403 from the dependabot API killed 'Dependabot mail remains'; reading lines 57-68 killed 'closing the issue breaks dedup'). But the survivors were the valuable part: CI failing on push against a FROZEN dep tree, and the re-arm step being documentation-only rather than a machine gate. LESSON: a low adoption rate is not evidence the CHECK was wasted — verify each claim mechanically instead of accepting OR dismissing wholesale, and report the kill list alongside the survivors so the calibration data stays honest.
+
+### #pattern-grep-your-own-draft-for-facts-the-owner-never-said  _(P2-PlanAndMechanics)_
+
+In the P2 PDR I wrote 'the three entrances and their real roles - main gate at 217, the north entrance, and 189 as the forest keeper's service gate for livestock and wood' as if summarising Daniel. He had never mentioned a north entrance, parcel 189, or a forest keeper; I synthesised it from a cadastre label and narrative momentum. It never reached the plan file - but only because CHECK ran a mechanical fabrication hunt (grep the artifact for every claim drafted but not owner-confirmed). LESSON: the dangerous fabrication is not the wild one, it is the plausible one phrased as a summary of what the user just told you. Grep the deliverable for owner-attributed claims and trace each to a real message or a data file.
+
+### #pattern-keep-the-conclusion-name-the-fabricated-evidence  _(P2-PlanAndMechanics)_
+
+GROK-ANALYST's FAIL rested on an '11 days per asset approval cadence (historical session data)' and a '2025 marketing window closes in <90 days'. Neither exists - there is no cadence dataset, and the festival date is an explicitly OPEN owner decision in the same plan. Both lazy responses are wrong: accepting the finding with its numbers, or dismissing the finding because the numbers are fake. Gemini reached the same conclusion independently with no numbers at all. I recorded the conclusion AND named the fabrications inside the document. LESSON: separate an external model's conclusion from its evidence, verify each independently, and when you keep a conclusion whose evidence was bad, say so in the artifact.
+
+### #s103-meta  _(SESSION)_
+
+The owner narrowed my proposals three times (correct-as-we-go instead of a map audit; 600 m2 instead of my creeping two-screen parcel; plan-only instead of building) and was right every time. My drift was always toward MORE - more boards, more map, more parcels. That drift is precisely what killed the previous build, and the person enforcing the parcel doctrine was him, not me. PATTERN: when a user repeatedly narrows what you propose, the narrowing is the signal, not friction to route around.
