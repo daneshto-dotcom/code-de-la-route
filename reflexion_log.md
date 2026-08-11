@@ -84,3 +84,7 @@ GROK-ANALYST's FAIL rested on an '11 days per asset approval cadence (historical
 ### #s103-meta  _(SESSION)_
 
 The owner narrowed my proposals three times (correct-as-we-go instead of a map audit; 600 m2 instead of my creeping two-screen parcel; plan-only instead of building) and was right every time. My drift was always toward MORE - more boards, more map, more parcels. That drift is precisely what killed the previous build, and the person enforcing the parcel doctrine was him, not me. PATTERN: when a user repeatedly narrows what you propose, the narrowing is the signal, not friction to route around.
+
+### #pattern-a-completed-priority-with-no-assertions-looks-exactly-like-a-fabricated-one  _(P2-PlanAndMechanics)_
+
+I closed P2 with a 2,000-character check_method essay and ZERO mechanical assertions. MCV hard-failed it as UNCOVERED, and it was right to: from the verifier position, an eloquent prose claim with nothing to grep is the same shape as an invented one. The artifact was real and pushed (50c52bd/386684c) — that is not the point. The point is that I had written the narrative of verification without the act of it. Reconciled with 9 verbatim needles spanning every material claim, each grep -F confirmed on disk BEFORE being written into the array rather than after (writing needles first and checking later is how you end up asserting a string that only exists in your own summary). LESSON: prose describing a check is not a check. Any priority you mark completed needs at least one thing a script can fail on.
