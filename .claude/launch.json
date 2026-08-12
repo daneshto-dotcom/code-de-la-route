@@ -13,6 +13,16 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "35315", "--bind", "127.0.0.1", "--directory", "Game/founding-realm/public"],
       "port": 35315
+    },
+    {
+      "name": "rebuild",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "Game/founding-realm/rebuild/esbuild.config.mjs",
+        "--serve",
+        "--port=20694"
+      ],
+      "port": 20694
     }
   ]
 }
