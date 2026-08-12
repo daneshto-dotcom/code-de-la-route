@@ -22,6 +22,8 @@
     "*/__pycache__/*",
     "*.pyc",
     "*/session-port.json",
-    "*/session-state.json*"
-  ]
+    "*/session-state.json*",
+    "*/rebuild/realm/realm.db"
+  ],
+  "_comment_s105": "S105 (2026-08-12) added ignore glob '*/rebuild/realm/realm.db'. RATIONALE, stated openly because narrowing MCV scope silently is exactly what this mechanism exists to prevent: realm.db is a DERIVED INDEX, listed in rebuild/.gitignore, deleted and rebuilt from scratch by `npm run realm:build` out of realm/*.json -- and every one of those seven JSON sources IS diff-bound and carries content assertions in S105 P1/P2. Asserting on the .db would bind claims to an artefact rather than to authored data. This mirrors the existing '*/rebuild/dist/*' and '*/public/dist/*' entries exactly. The realm/*.json sources remain diff-bound."
 }
