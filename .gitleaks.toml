@@ -1,0 +1,78 @@
+# gitleaks configuration — legacy-of-the-realm (parent repo)
+#
+# WHY THIS FILE EXISTS
+# --------------------
+# The game lives in the `Game/founding-realm` submodule and carries its own
+# `.gitleaks.toml`. That nested config is honoured when the scanner runs FROM the
+# submodule root — but NOT from this parent root. Verified in S107: a parent-root
+# `gitleaks detect --no-git` re-reported the settled false positive at
+#   Game/founding-realm/src/networking/gateway.ts:1366
+#   Game/founding-realm/dist/src/networking/gateway.js:995
+# gitleaks does not descend into nested configs.
+#
+# Git-mode `gitleaks detect` from here is unaffected either way — the submodule is
+# a separate git directory, so the parent scan never walks its history. It reports
+# clean across all 290 parent commits. Only working-tree mode reaches those files.
+#
+# WHY THIS IS A MIRROR AND NOT AN `[extend] path`
+# -----------------------------------------------
+# `[extend] path = "Game/founding-realm/.gitleaks.toml"` was tried first, to keep
+# exactly one definition of the exemption. It does not work:
+#   - with `useDefault = true` alongside it, gitleaks refuses outright —
+#     "unable to load config due to extend.path and extend.useDefault being set"
+#   - without it, the config loads and the default rules come through, but the
+#     extended `[[allowlists]]` block does NOT — the two gateway findings came
+#     straight back (6 findings, unchanged).
+# So the exemption is restated here. The two files must stay in step; the
+# submodule's copy is the one with the full rationale and the empirical proof
+# that each clause of the AND binds. Read that file first.
+#
+# The path regex is anchored with `(^|/)` so a single pattern matches both
+# `src/networking/gateway.ts` (from the submodule root) and
+# `Game/founding-realm/src/networking/gateway.ts` (from here).
+#
+# EXPECTED RESULT from this root:
+#   `gitleaks detect`          → no leaks found, exit 0 (290 commits)
+#   `gitleaks detect --no-git` → findings only in `Game/founding-realm/.env`,
+#                                which holds real keys, is gitignored, and has
+#                                never entered history.
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Anthropic model identifiers in the frozen gateway are not credentials. Mirror of Game/founding-realm/.gitleaks.toml — see that file for the full rationale."
+condition   = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes     = ['''^claude-[a-z0-9-]+$''']
+paths       = ['''(^|/)(src|dist/src)/networking/gateway\.(ts|js)$''']
+
+# Second exemption — archived session-state snapshots.
+#
+# `.claude/session-archive/` holds forensic copies of past sessions' state. Every
+# one of them carries `verification[]` machine-check assertions shaped like:
+#   {"path": "…/security-exceptions.json", "key": "exceptions.2.advisory_id",
+#    "op": "==", "value": "1120654"}
+# `generic-api-key` flags the value of the `key` field. Read directly from the
+# scanner rather than assumed, the captured secret is `exceptions.2.advisory_id`
+# — the dotted JSON key PATH, not the advisory number. (A first attempt here
+# allowlisted `^[0-9]+$` on the assumption it was the id; it suppressed nothing,
+# which is how the real capture was found.)
+#
+# This is structural, not a one-off: every archived session-state carries these
+# assertions, so the finding recurs for each new archive entry.
+#
+# Scoped like the block above, and safe by construction on three counts: the rule
+# must be the generic entropy heuristic (every dedicated credential rule — jwt,
+# aws, gcp, anthropic, github… — is excluded, so a real key of a known class
+# still fires here); the path must be inside the archive; and the secret must be
+# a dotted lowercase identifier path, which no credential scheme issues. A
+# random-looking key in this directory still fires — verified.
+[[allowlists]]
+description = "Dotted JSON key paths in archived session-state verification assertions are not credentials."
+condition   = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes     = ['''^[a-z][a-zA-Z0-9_]*(\.[a-zA-Z0-9_]+)+$''']
+paths       = ['''(^|/)\.claude/session-archive/''']
