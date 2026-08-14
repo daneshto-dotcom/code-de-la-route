@@ -41,7 +41,12 @@ assets/images/signs/test/
 .claude/budget-reported-*
 .claude/session-state.json.corrupt.*
 .claude/pdr-deliberation-*.json
-.claude/session-summary.md.claude/REVIEW-PENDING.flag
+.claude/session-summary.md
+# S108: the two patterns above and below were CONCATENATED onto one line with no
+# newline between them, so neither was ever ignored and both files sat tracked in a
+# PUBLIC repo. This is how REVIEW-PENDING.flag - which carries the whole review card,
+# carry-forwards and owner quotes included - survived S107's untracking pass.
+.claude/REVIEW-PENDING.flag
 
 # Transient state-lock artifacts. S107 committed these by way of `git add -A`;
 # they are per-process temp copies of session state and must never be tracked.
