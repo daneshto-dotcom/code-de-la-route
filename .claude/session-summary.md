@@ -1,16 +1,14 @@
-# Session Summary — S106
-_Last updated: 2026-08-13 14:21:00_
+# Session Summary — S107
+_Last updated: 2026-08-14 10:13:32_
 
 ## Budget
-- Remaining: 1000000 tokens
-- Status: **GREEN**
+- Remaining: ? tokens
+- Status: **?**
 - Council: Grok 0 call(s), Gemini 0 call(s) (~$0.00)
 
 ## Priorities
-[DONE] ZONE-1 enlarged, the gate opens, the whole outdoor zone walkable (parent 27ed451 / submodule 4f71a1e)
-[DONE] The doorway system and the FIRST INTERIOR - the cellar under BLD-1 (parent 27ed451 / submodule 4f71a1e)
-[    ] Step-by-step: the smallest mechanics that make the zone read as a place
-[DONE] Mine the narrated walkthrough VID_20260813_091936.mp4 (6m34s, 1080p30, WITH SPEECH) — transcribe Daniel's commentary, read the frames, reconcile against the realm DB and this session's build (parent 27ed451 / submodule 4f71a1e)
-[    ] The remaining interiors: BLD-1's ground floor (FOUR rooms) and its attic
+[DONE] C — Hygiene & carry-forward (push · gitleaks settle · stale sweep) (parent 58f0eb2 / submodule 3f1b17f)
+[DONE] D — Provenance enforcement: claim-declaring atlas, 5th blocking guard, staleness manifest, provenance report (parent a9e421d / submodule ed653f1)
+[DONE] Owner layout correction — smithy to the wall, the field opened, the 60 m2 garden built (parent fe31887 / submodule e36e02b)
 ## Next Steps
 See `BACKLOG.md` for the full queue and `boot-snapshot.md` for the next session plan.

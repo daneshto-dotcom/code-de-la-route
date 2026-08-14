@@ -1,0 +1,75 @@
+{
+  "tool_calls_session_total": 1,
+  "session_id": "S107",
+  "session_start": "2026-08-13T13:00:00Z",
+  "budget_total": 1000000,
+  "budget_overhead": 5000,
+  "schema_version": 3,
+  "pdr_approved": false,
+  "deliberation_completed": false,
+  "unlock_source": null,
+  "boot_sequence": {
+    "completed": true,
+    "read": [
+      "ECOSYSTEM_MANIFEST.md",
+      "BRAIN/REASONING_PROTOCOL.md (DFRP 8-step)",
+      "BRAIN/TWIN_ACTIVATION_PROMPT.md (67 rules, 17 sections)",
+      "HANDOFF_2026_08_13_S106.md",
+      "boot-snapshot.md",
+      "BRAIN/architecture/ACTIVE_PLAN_realm_rebuild.md (IN-PROGRESS, source of truth)",
+      ".claude/session-state.json (S106, archived to session-archive/)",
+      ".claude/reflexion_log.md (tail)"
+    ],
+    "empirical_state_probe": {
+      "parent_repo": "main @ 20da852, 5 commits unpushed to origin (github.com/daneshto-dotcom/legacy-of-the-realm)",
+      "submodule": "master @ 4f71a1e, 1 commit unpushed to origin (github.com/daneshto-dotcom/founding-realm)",
+      "guards": "npm run check = ALL PASS (boundary PASS; palette PASS zone1 8/8, parcel001 8/8, bld1cellar 2/8, 84 tiles/326 regions; reach PASS zone-1 261/261 + 18 landmarks, bld1-cellar 82/82 + 6 landmarks, 4 warps; realm PASS 126 records)",
+      "typecheck": "tsc --noEmit exit 0",
+      "context_at_boot": "137,171 / 1,000,000 (13.7% GREEN)",
+      "housekeeping": "7 stale lockdir/tmp artifacts in parent .claude/, 14 in submodule .claude/ — untracked, offered for cleanup"
+    }
+  },
+  "priorities": [],
+  "reflexion_entries_to_archive": [],
+  "totals": {},
+  "carry_forward": [
+    {
+      "id": "CF-S106-GITLEAKS-GATEWAY",
+      "severity": "security / pre-existing, non-blocking",
+      "finding": "gitleaks: 2 history findings (e9091baf 2026-03-25, f1c4942c 2026-03-24) + 1 live at src/networking/gateway.ts:1366 in the FROZEN OLD BUILD. .env and dist/ confirmed gitignored.",
+      "assessment": "NOT introduced by S106 — every S106 file is under rebuild/. The line reads its key from process.env; likely a false positive matching an adjacent string literal. 'Likely' is not 'verified'.",
+      "next_action": "Read gateway.ts:1366 by eye; either add a scoped gitleaks allowlist entry with stated rationale, or rotate. An alarm that is always on is not an alarm.",
+      "status": "OPEN — carried into S107"
+    },
+    {
+      "id": "CF-S106-FRONTAGE-WALL",
+      "severity": "fidelity",
+      "finding": "Daniel's Street View captures show the road frontage as a TALL RENDERED wall with red clay tile coping, high enough that only BLD-1's brick cornice and hipped roof show above. The art draws a rubble wall with stone coping; FEA-ROAD-BOUNDARY records the plinth at ~0.8 m.",
+      "next_action": "Ask him whether to redraw. It changes the opening view of the game.",
+      "status": "OPEN — carried into S107, on the offer list"
+    },
+    {
+      "id": "CF-S106-OFFERED-NOT-BUILT",
+      "severity": "design, awaiting owner go",
+      "finding": "Standing offers unanswered: well (puits), mounting block (montoir), wheel-guard stones (chasse-roues), bread oven (four a pain); the cement water tank (t~62s); chimney smoke from BLD-1; redrawing the main gate from the real 1783 ironwork (awaiting go since S105).",
+      "next_action": "Put to Daniel at the top of S107. Each is cheap; none is authorised.",
+      "status": "OPEN — presented at S107 boot"
+    }
+  ],
+  "open_questions_for_owner": [
+    "Tape measure — cellar vault, oak lintel, 2.1 m boundary wall, storage houses are ALL estimates (3 sessions running).",
+    "Old smithy access — shown at t~75s but behind bamboo in every frame.",
+    "IMG_8865 — still missing from the S105 sequence.",
+    "The original 1783 gate plans Daniel holds — best possible reference for the gate redraw.",
+    "BLD-3 (the pavilion) still needs Daniel's name and number.",
+    "More videos promised: 'the next videos I will start letting you explore this and show you how it's going to look to get to the Chateau.'"
+  ],
+  "constitutional_reminders": [
+    "§11.0 THE WORKING AGREEMENT — Daniel directs every step. OFFER assets; never add without his go.",
+    "§13.1 THE LOVE-IT GATE — ship something visible and SHOW it every session. Gate is reached when the ZONE is finished, not once per session (Daniel's S106 ruling).",
+    "DEC-1601-METHOD — SUBTRACT, DON'T INVENT. S106 broke this in the cellar.",
+    "Maps are GENERATED — tools/build-zone1.py / build-cellar.py are the source. Never hand-edit map.json.",
+    "Session state lives in the PROJECT ROOT .claude/. Python file IO always encoding='utf-8'."
+  ],
+  "session_closed": false
+}
