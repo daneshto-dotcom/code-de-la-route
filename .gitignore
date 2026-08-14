@@ -42,3 +42,8 @@ assets/images/signs/test/
 .claude/session-state.json.corrupt.*
 .claude/pdr-deliberation-*.json
 .claude/session-summary.md.claude/REVIEW-PENDING.flag
+
+# Transient state-lock artifacts. S107 committed these by way of `git add -A`;
+# they are per-process temp copies of session state and must never be tracked.
+.claude/session-state.json.tmp.*
+.claude/session-state.json.lockdir*/
