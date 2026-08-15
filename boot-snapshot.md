@@ -1,63 +1,82 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-08-15 | Session: S109
+Generated: 2026-08-15 | Session: S110
 
 ## READ THIS FIRST — THREE CONSTITUTIONAL RULES
 1. **THE WORKING AGREEMENT (§11.0).** Daniel directs every step. OFFER archived assets; NEVER add them without his explicit go.
 2. **THE LOVE-IT GATE (§13.1).** Ship something visible and SHOW it.
 3. **SUBTRACT, DON'T INVENT (`DEC-1601-METHOD`).** Absence of footage is never filled with invention.
 
+## WHERE THE GAME IS NOW
+**The arrival runs end to end.** A new player boots into **2026** outside a shut gate with traffic
+on the N7, talks to **Captain Dael**, buys a ticket, watches a 45 s film, and lands in **1601**.
+Verified from a wiped save as one continuous run. Five priorities complete and bound.
+
+## THE FOUR ARCHITECTURE FACTS THAT WILL BITE YOU
+1. **ONE GENERATOR, TWO CENTURIES.** `build-zone1.py` emits BOTH `zone1/map.json` and
+   `zone1_2026/map.json`. **Never hand-edit either.** One correction lands in both.
+2. **OBJECTS HAVE THEIR OWN PALETTE BANK.** Vehicles and NPCs are spawned ENTITIES, not legend
+   glyphs, so their palettes cost the scene nothing. This is the only reason the 2026 map fits in 8
+   and the only reason Dael has skin. **Never put a person or vehicle in a legend.**
+3. **GLYPH SPACE WAS NEVER FULL.** S109's blocker was true only of printable ASCII. Rows are JSON
+   strings read one CHARACTER at a time — any BMP char is legal (`Π` `≈` `≡`). Constraint gone.
+4. **§11.7 IS A TEST.** A cell-by-cell assert proves the fabric is identical across eras. Touching a
+   fabric palette requires citing the authorising row in `ERA_AUTHORITY`.
+
 ## THE ONE TOOL THAT CHANGES HOW YOU WORK
-**`npm run grid` — USE IT EVERY TIME HE SENDS A SCREENSHOT.**
+**`npm run grid` — USE IT EVERY TIME HE SENDS A SCREENSHOT.** Never estimate a tile index.
+
+## NEXT SESSION — HIS EXPLICIT INSTRUCTION
+> *"i will start a new session next and start correcting everything step by step until we LOVE IT"*
+
+**He wants MECHANICS and the overall state of the game. Not the film.** Expect a long correction
+run. That IS the working mode — the deliverable is the process as much as the game.
+
+## OPEN DECISION HE HAS NOT ANSWERED
+He wants archived **Captain Dael + his voice** (`en-US-Chirp3-HD-Fenrir`, 15 dialogue lines) as the
+ticket vendor/captain who **gives the tutorial tour inside the festival**. He earlier chose
+"Showman outside, Dael inside." **Unanswered: does Dael MOVE off the 2026 gate entirely, or stay
+AND do the tour?** This is a Rule-16 amendment — needs an NPC sprite system, the TTS pipeline (the
+game has ZERO audio files by design), and a guided tutorial mechanic.
+
+## WHAT DID NOT LAND (40/51 audited)
+- Road signs (N7/A79/INRAE/Route de la Ronde) — **colours were never photographed**, the one real dependency
+- Wire fencing · concrete blocks · corrugated metal roof — on the survey's list, not drawn
+- Final-frame == game-first-frame assert (§3.6 wanted a machine check; eyeball-only)
+- The motto card — *"A Realm to Enter. A Legacy to Forge."* exists verbatim on the live site
+- Class / name / stats window — deferred by him
+
+## THE FILM — PARKED, ACCEPTED AS REFERENCE ONLY
+> *"it looks like ai slop with faces mingles. the ticket vendor goign through his own boot ... but
+> its fine for reference for now"*
+
+The master-plate method fixed ARCHITECTURE (pier caps 8/8, ironwork 6/6, nothing modern through the
+gateway) but did NOT fix **faces** or **solidity**. Those look like Veo limits a seed plate cannot
+reach — a third pass with the same method would likely fail the same way. If revisited, change
+TECHNIQUE (shorter shots, faces further from camera, backs not fronts), don't re-prompt.
+
+## BLOCKERS
+- **ROTATE the `.env` keys** (`CF-S107-KEY-EXPOSURE`, open since S107). Transcript exposure only.
+- **The attic is built on zero footage** — `IMG_8865` never delivered.
+- Still wanted: a tape measure · the 1783 gate plans · old smithy access · **a photograph of the real gate**
+  (every likeness in the film is derived from prose and UNVERIFIED).
+- `CF-S109-WORLDBUILD-SYSTEM` — tile inspector + tile library. His sequencing was Council **after**
+  Part 3. Part 3 is now done, so this is due.
+- Parked at his instruction: the smithy roof, the NE corner of the court.
+
+## HOW TO RUN IT — POWERSHELL, NOT BASH
+`&&` is invalid in Windows PowerShell 5.1. Use `;` and an absolute path:
+```powershell
+cd "C:\Users\onesh\OneDrive\Desktop\Claude\Founder DNA\Extension Projects\Legacy of the Realm\Game\founding-realm\rebuild"; npm run dev
 ```
-python tools/grid.py zone1 15 18 22 30 --names
-```
-It labels every tile `col,row` over the render — red where the tile carries an OVER tile.
-S109 lost FOUR round-trips deriving marked tiles from pixel arithmetic; it gave two
-different wrong answers to the same question. The grid answered it in one pass.
-**Never estimate a tile index from a screenshot again. Render the grid, read it off.**
+Serves on **8080**. Volume up — the road makes engine noise now.
 
-## Next Steps
-1. **PART 3 — THE ARRIVAL.** Spawn outside the gate; the guard / ticket vendor NPC;
-   buy festival ticket + pick class; ISEKAI cinematic into 1601; gate opens, player
-   still in the forecourt but can now enter. This is the only unbuilt part of the plan.
-2. **THEN Council on `CF-S109-WORLDBUILD-SYSTEM`** — his explicit sequencing. A
-   world-building/admin system so corrections stop costing screenshots: click a tile
-   in the browser to get its coords + name; a browsable library of every tile designed;
-   he swaps tiles himself or points at the one he wants instead.
-3. **Ask what to correct.** ~20 marked corrections in S109. That is the working mode.
-4. Decide where the **three smithy openings** go — withdrawn, not deleted, when the
-   east flank came out. Their art is banded for a north-south elevation.
-5. **The low wall** at (18,25)-(18,27) was replaced by bamboo (three of his seven
-   marks landed on it). If it is still wanted it needs a column of its own.
-
-## Blockers
-- **GLYPH SPACE IS FULL.** Every letter, digit and punctuation mark is assigned. The
-  next new tile needs the grid widened to two chars per cell, or the six SHUT-gate
-  glyphs reclaimed from reserve. Decide BEFORE the next art request, not during one.
-- **`earth_shade` and `earth_worn` are named BACKWARDS relative to how they look.**
-  Cost two inverted instructions in S109. Ask for the LOOK, not the name. Renaming
-  them is its own job — it touches the atlas, claims, evidence index and two legends.
-- **ROTATE the Anthropic + GCP keys** in `Game/founding-realm/.env` (`CF-S107-KEY-EXPOSURE`,
-  open since S107). Transcript exposure only; nothing was ever committed.
-- **THE ATTIC HAS NO FOOTAGE.** `IMG_8865` never delivered; both Council reviewers said
-  not to build it. Built on his explicit instruction. Largest open risk in the build.
-- Still wanted: **a tape measure** · `IMG_8865` · the 1783 gate plans · old smithy access.
-
-## Pending Backlog
-- Part 3 (above) is the whole of the next build session.
-- `CF-S107-PALETTE-BACKFILL` — 9 of 11 palettes still have empty `derivedFrom`.
-- `CF-S107-RECORD-GAPS` — gate postern + smith's door still in `KNOWN_RECORD_GAPS`.
-- The smithy roof reads as a flat slab with no end treatment; the north-east corner of
-  the court is a large empty field. BOTH PARKED at his instruction — do not touch.
-
-## Recent Reflexion (last 2 sessions)
-`.claude/reflexion_log.md` — S109 (14 entries) and S108 (17) are the top two blocks.
-The load-bearing S109 entries:
-- **S109-6** Pixel-arithmetic on a screenshot is not a method. Build the tool instead.
-- **S109-7** A pass that runs before the thing it must sit on top of — THREE times.
-  Six of seven marks landed and the seventh silently did not. Partial success reads
-  as success.
-- **S109-8** Checking half a set is how a bug survives being fixed.
-- **S109-9** When a coordinate frame moves, move the FRAME, not the ~100 call sites.
-- **S109-10** The guards caught what would have been reported as done.
-- **S109-14** The correction rounds ARE the working mode, and they must scale.
+## RECENT REFLEXION (S110, 12 entries)
+The load-bearing ones:
+- **S110-1** The guards caught three defects I had already looked at and accepted. A constraint that
+  refuses you is sometimes telling you the answer.
+- **S110-2** I shut the gate and forgot the postern — S109-8 verbatim, one session later.
+- **S110-3** Every vehicle drove backwards and I could not see it. Found by auditing the LOG, not the screen.
+- **S110-4** The "grey ghost" was architectural, not artistic.
+- **S110-6** Two of the film's worst defects traced to omissions in MY spec wording.
+- **S110-8** The era-flag bug was invisible to every component test; only the end-to-end run found it.
+- **S110-9** I marked a priority complete for a deliverable the owner then rejected.
