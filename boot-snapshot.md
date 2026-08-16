@@ -58,6 +58,12 @@ Crystal is the grammar, not the ceiling. Refuse analog movement, mouse aiming, H
 **D** — **the key opens the two doors** the game has advertised since S109. Question → Tool → Revelation.
 
 ## BLOCKERS / OPEN
+- ⛑ **16 commits unpushed on the parent, 15 on the submodule.** The remote is REACHABLE (credential
+  healthy), so this is a real backlog, not a dead token. Push is operator-confirmed — ask Daniel.
+- **THE CUTSCENE ALREADY SKIPS — but only on a REWATCH.** `Cinematic.ts` gates it on
+  `intro.seen === true`, from a unanimous S110 Council call. Daniel asked for it to be skippable
+  (S112); the change is small but it REVERSES a logged decision, so it needs saying in the PDR.
+  Backlog #30.
 - **The bottle tile is PROVISIONAL** (`craft()`): the survey observed the LEDGE's function, not a bottle.
 - **ROTATE the `.env` keys** — `CF-S107-KEY-EXPOSURE`, open since S107.
 - **The film is PARKED and rejected again** — S112: *"it looks super shitting and we WILL rework it
