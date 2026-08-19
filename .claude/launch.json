@@ -4,14 +4,27 @@
     {
       "name": "game-server",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "server", "--prefix", "Game/founding-realm"],
+      "runtimeArgs": [
+        "run",
+        "server",
+        "--prefix",
+        "Game/founding-realm"
+      ],
       "port": 3000,
       "autoPort": false
     },
     {
       "name": "client-static",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "35315", "--bind", "127.0.0.1", "--directory", "Game/founding-realm/public"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "35315",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "Game/founding-realm/public"
+      ],
       "port": 35315
     },
     {
@@ -20,9 +33,9 @@
       "runtimeArgs": [
         "Game/founding-realm/rebuild/esbuild.config.mjs",
         "--serve",
-        "--port=20694"
+        "--port=19111"
       ],
-      "port": 20694
+      "port": 19111
     }
   ]
 }
