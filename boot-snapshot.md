@@ -1,5 +1,5 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-08-16 | Session: S112
+Generated: 2026-08-19 | Session: S113
 
 ## READ THIS FIRST — THREE CONSTITUTIONAL RULES
 1. **THE WORKING AGREEMENT (§11.0).** Daniel directs every step. OFFER archived assets; NEVER add them without his explicit go.
@@ -7,83 +7,83 @@ Generated: 2026-08-16 | Session: S112
 3. **SUBTRACT, DON'T INVENT (`DEC-1601-METHOD`).** Absence of footage is never filled with invention.
 
 ## WHERE THE GAME IS NOW
-The arrival runs (2026 → Dael → film → 1601), and as of S112 **there is one thing in the world you
-can pick up.** The cellar's bottle ledge is **searchable**: face it, press `F`, take a bottle, put it
-down somewhere else, and it is still there after a reload.
+The arrival runs (2026 → Dael → film → 1601), and **the item system is complete end to end.**
+You can search a shelf, carry things in two hands and a 3×3 pack, fill a bottle at the basin,
+drink it, pour it out, throw it and hear it shatter — and find an iron key that opens the store
+door for good. The cutscene now skips on the FIRST viewing.
 
-## THE ONE DOCUMENT THAT MATTERS
-**`BRAIN/architecture/ACTIVE_PLAN_S112_ITEMS.md`** — the item/verb architecture, three Council
-rounds, the input model, and every decision with its reason. **Read it before touching items.**
+## THE INPUT MODEL — BUILT, AND THE TIERS ARE LOAD-BEARING
+| Key | Tier | Verbs |
+|---|---|---|
+| `F` / `Enter` | **ENGAGE** — reach *into* the world | Take · Knock · Unlock · Talk · **Fill** · Look |
+| `1` / `2` (+numpad) | **HANDS** — act *with* what you hold | **Place** · Spill · Strike · Throw · Ingest |
+| `I` / `TAB` | **SUBSCREEN** | 3×3 grid + two hand slots |
 
-## THE SIX ARCHITECTURE FACTS THAT WILL BITE YOU
+- **TAP vs HOLD on a hand key:** tap acts on the tile you face; hold 220 ms raises a sight, arrows
+  aim it (Manhattan ≤ 4), release throws. **Sight on your own tile = cancel.**
+- S113 caught FILL and PLACE on the WRONG tiers and moved them. Do not let them drift back.
+- **DO NOT BIND `Ctrl` or `Alt`** — browser game. Bind with `kb.addKey`, never `keyboard.on`:
+  addKey registers a capture, and a capture is the only thing here that calls preventDefault.
+
+## SIX ARCHITECTURE FACTS THAT WILL BITE YOU
 1. **ONE GENERATOR, TWO CENTURIES.** `build-zone1.py` emits BOTH zone1 and zone1_2026. Never hand-edit either.
-2. **OBJECTS HAVE THEIR OWN PALETTE BANK.** Vehicles, NPCs and now ITEMS are spawned entities, never
-   legend glyphs. Verified: `palette-check` counts `map.legend[ch].tile` only, so an entity costs the scene nothing.
-3. **GLYPH SPACE WAS NEVER FULL.** Rows are JSON strings read one CHARACTER at a time — any BMP char is legal.
-4. **§11.7 IS A TEST.** A cell-by-cell assert proves the fabric is identical across eras.
-5. **THE PARCEL OWNS ITS START TILE** (S111). `hasPosition` separates a fresh save from a resumed one.
-6. **PLAYER STATE AND WORLD STATE ARE SEPARATE, AND MUST STAY SO** (S112). `carried` is yours;
-   `world.taken` / `world.dropped` belong to the world and to the server the day there is one.
-   **Folding them together makes multiplayer a rewrite.** Item methods are COMMANDS, not mutations —
-   the archived build already ships `action-sanitizer.ts`.
+2. **PLAYER STATE AND WORLD STATE ARE SEPARATE.** `carry` (hands+pack) is yours; `world.taken`/`world.dropped`
+   belong to the world and to the server the day there is one. Folding them = multiplayer rewrite.
+3. **NO UI ART IN THE ATLAS.** `evidence-check` fails any tile no live map places, and menus reach the
+   world through none of its routes. Chrome is Graphics on the DECLARED UI ramp; the doll is a
+   `player.png` frame; items are composited atlas frames.
+4. **THE PLAYER SHEET IS 3 COLOURS.** A green bottle can never be drawn into `player.png`.
+5. **A TAKE CAN NEVER BE REFUSED** (ground swaps when full); a CONTAINER declines dim instead.
+6. **DROPPED ITEMS BLOCK**, and `create()` throws on an unwalkable warp — `canPlaceAt` refuses doorways.
 
-## TRAPS ALREADY PAID FOR
-- **Dropped items BLOCK**, and `create()` throws on an unwalkable warp — so a bottle in a doorway
-  would crash the next boot. `canPlaceAt` refuses doorways; items spawn AFTER warp validation.
-- **A TAKE CAN NEVER BE REFUSED.** Full hands + a ground item = swap. Containers decline dim instead.
-- **DO NOT BIND `Ctrl` OR `Alt`** — browser game. `Ctrl+W` closes the tab. `SPACE` needs `preventDefault()`.
-
-## TWO TOOLS THAT CHANGE HOW YOU WORK
-**`npm run grid` — USE IT EVERY TIME HE SENDS A SCREENSHOT.** Never estimate a tile index.
-
-**The Browser pane is often NOT compositing**, so rAF never fires and `update()`, the Clock and
-tweens never advance — while `game.loop.actualFps` reports a **default** 60. **Check
-`game.loop.frame`: if it is 0, nothing has stepped.** Drive it yourself:
+## THE TESTING HARNESS — THE BOOT ADVICE ALONE IS NOT ENOUGH
+The pane often does not composite, so rAF never fires while `actualFps` lies about 60.
+`game.step()` is necessary but **not sufficient**:
+- Phaser 3.90's **TweenManager keeps its own wall-clock** and ignores step()'s delta — pump every
+  live tween by hand or `moving` never clears.
+- **`sys.sceneUpdate` is cached at boot** — patching `scene.update` on the prototype fires never.
+  Instrument via `scene.events.on(UPDATE)`.
 ```js
-let T=1000; const step=(ms)=>{const dt=16.666; for(let e=0;e<ms;e+=dt){T+=dt; game.step(T,dt);}};
+window.step=(ms)=>{const dt=16.666;for(let e=0;e<ms;e+=dt){T+=dt;g.loop.delta=dt;g.loop.time=T;g.step(T,dt);
+  for(const sc of g.scene.scenes){if(!sc.scene.isActive())continue;for(const t of sc.tweens.getTweens())t.update(dt);}}};
 ```
 
-## THE INPUT MODEL — DECIDED, NOT YET BUILT
-`F`/`Enter` = ENGAGE (reach into the world) · `1`/`2` = HANDS (act with what you hold) · `I` = subscreen.
-**Inverse operations never share a key** — that is why the one-button model was rejected.
-**Tap** a hand key = strike/place; **hold** = a reticle appears, arrows choose the target tile, release to throw.
-`F` acts instantly when safe and reversible; it **always asks before anything irreversible**.
+## Next Steps
+1. **CF-S109-WORLDBUILD-SYSTEM** — tile inspector + tile library. Daniel sequenced **Council** on this
+   after Part 3; Part 3 closed in S110 and it is now the oldest open item. Needs a PDR.
+2. **WHERE THE KEY REALLY LIVES** — Daniel's call: *"make it hard to find the key later or make it
+   into a quest."* It sits provisionally at the back of the cellar's west ledge, flagged in
+   `build-cellar.py`. Moving it is a one-line change to `holds`.
+3. **STO-1's INTERIOR** — the door now opens onto darkness because `FEA-STORAGE-HOUSES` records that
+   its "dimensions still want a tape measure". One measurement unblocks a real room.
+4. **Backlog #29 — the film**, still parked on Daniel's call ("we WILL rework it later"); the
+   direction is stills, not video. `CF-S110-FILM-REROLLS` carries the four weak shots.
+5. **A DROP-FROM-PACK VERB.** With 11 slots full and a container in front, Take draws dim. Recoverable
+   (place from a hand onto the ground), so not a soft-lock — but the pack is its obvious home.
 
-**THE CRYSTAL TEST for every future mechanic:** *can it be said in tiles, facing, one button, and a box?*
-Crystal is the grammar, not the ceiling. Refuse analog movement, mouse aiming, HUD bars, hitbox combat, zoom.
-
-## NEXT PHASES
-**B** — 3×3 grid + two hands + the mini sprite that visibly holds the assigned item.
-**C** — the verb engine (properties, three laws, FILL/SPILL/INGEST/THROW).
-**D** — **the key opens the two doors** the game has advertised since S109. Question → Tool → Revelation.
-
-## BLOCKERS / OPEN
-- ⛑ **16 commits unpushed on the parent, 15 on the submodule.** The remote is REACHABLE (credential
-  healthy), so this is a real backlog, not a dead token. Push is operator-confirmed — ask Daniel.
-- **THE CUTSCENE ALREADY SKIPS — but only on a REWATCH.** `Cinematic.ts` gates it on
-  `intro.seen === true`, from a unanimous S110 Council call. Daniel asked for it to be skippable
-  (S112); the change is small but it REVERSES a logged decision, so it needs saying in the PDR.
-  Backlog #30.
-- **The bottle tile is PROVISIONAL** (`craft()`): the survey observed the LEDGE's function, not a bottle.
-- **ROTATE the `.env` keys** — `CF-S107-KEY-EXPOSURE`, open since S107.
-- **The film is PARKED and rejected again** — S112: *"it looks super shitting and we WILL rework it
-  later! maybe try an image generating story not a full movie, just frame after frame short storyline."*
-- The sketchbook API is still dead code — Gemini's proposal is to wake it on the FIRST pickup.
-- Verb-menu ceiling past ~8 entries: recorded, not solved.
-- `CF-S109-WORLDBUILD-SYSTEM` — tile inspector + tile library.
+## Blockers
+- **`CF-S107-KEY-EXPOSURE` — rotate the `.env` keys.** Open since S107.
+- **The gate's lower half: OPEN BARS or SOLID PANEL?** The record never says; the film is internally
+  inconsistent. One photograph settles it permanently.
+- **Dael's tutorial role** — unanswered since S110.
 - The N7 is ONE TILE wide; two lanes means growing a map shared with 1601.
-- Dael's tutorial role — unanswered since S110.
+- Verb-menu ceiling past ~8 entries: recorded, not solved (menus currently cap at 4).
 
-## HOW TO RUN IT — POWERSHELL, NOT BASH
-```powershell
-cd "C:\Users\onesh\OneDrive\Desktop\Claude\Founder DNA\Extension Projects\Legacy of the Realm\Game\founding-realm\rebuild"; npm run dev
-```
-Port **20694**. The bottles are in the cellar — stand under the **west** end of the top-wall ledge and press `F`.
+## Pending Backlog
+- [ ] #29 — the arrival film reworked as a frame-by-frame story (PARKED on the owner's call)
+- [ ] CF-S109-WORLDBUILD-SYSTEM — tile inspector + tile library (Council-sequenced, now due)
+- [ ] CF-S110-FILM-REROLLS — four weak shots + the gate question
+- [ ] CF-S107-KEY-EXPOSURE — rotate the `.env` keys
+- [ ] Sketchbook API still dead code (0 callers); Gemini's proposal was to wake it on first pickup
+- [ ] `bottle_empty` / `bottle_water` / `key_iron` are all PROVISIONAL art, first to redraw
 
-## RECENT REFLEXION (S112, 6 entries)
-- **S112-1** He designed his way out of a closed option set I presented. Three choices invites picking one; the better answer can be outside the set.
-- **S112-2** The defect lived BETWEEN two functions that were each correct alone. Only a round trip through the running game found it.
-- **S112-3** One word — "multiplayer" — was architecture in disguise.
-- **S112-4** My one-button model optimised for elegance; the player needs predictability.
-- **S112-5** The Council's best output was a contradiction, resolved on an axis neither had named.
-- **S112-6** A guard's own comments wrote the rule for extending it.
+## Recent Reflexion (S113)
+- **S113-1** The harness lied before the code did: Phaser's TweenManager ignores step()'s delta and
+  `sys.sceneUpdate` is cached at boot. A harness that lies is worse than none — it produces confident numbers.
+- **S113-2** I reported a finding from a counter that had never incremented. Prove the instrument moves first.
+- **S113-4** Records outrank the plan: "the key opens the two locked doors" met an owner ruling and an
+  unmeasured interior. Rescoping on evidence and saying so beats delivering the sentence.
+- **S113-8** Prose is not verification. 20 of my `verification[]` entries were accurate sentences that
+  bound to nothing on disk. Typed assertions or it did not happen.
+- **S113-10** Implement the recorded model, not the convenient one — FILL and PLACE had both drifted
+  onto the wrong tier, each by a locally reasonable choice nobody decided.
