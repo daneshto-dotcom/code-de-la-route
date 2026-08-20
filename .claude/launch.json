@@ -33,9 +33,9 @@
       "runtimeArgs": [
         "Game/founding-realm/rebuild/esbuild.config.mjs",
         "--serve",
-        "--port=19111"
+        "--port=22877"
       ],
-      "port": 19111
+      "port": 22877
     }
   ]
 }
