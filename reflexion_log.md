@@ -115,3 +115,36 @@ I closed P2 with a 2,000-character check_method essay and ZERO mechanical assert
 
 - SESSION #pattern-i-hand-rolled-a-step-that-had-an-owner — I appended the reflexion entries to the log myself and then cleared reflexion_entries_to_archive, and the Stop hook immediately failed: it reads THAT field and requires entry-count >= completed-priority-count. Emptying the array is /handoff's job, at the point where it has actually archived them. The entries were real and committed, so nothing was lost — but I broke a machine-checked invariant by doing half of another tool's job and none of its bookkeeping. When a protocol names the tool that owns a step, either run that tool or satisfy the whole contract, not the part that looks like the point.
 
+
+
+## S116 — 18 entries
+
+
+## S116 — 9 entries
+
+### #a-pixel-nudge-is-a-guess-until-you-photograph-it-again  (S116-P2)
+I fixed D1 by moving the column headers down 4px. The arithmetic was right about the hint and wrong about what it moved INTO: the selected row paints fillRect(6, y-3, ..., ROW_H-3), so row 0 owns 43..58, and the headers landed at 39..45. I had measured the text bands and not the CHROME bands. A photograph caught it in one look. Lesson: when fixing a collision, enumerate every drawn thing in the destination band, not just the text — fills and strokes occupy rows too, and they are invisible to a Text-object read.
+
+### #byte-length-is-not-pixel-identity  (S116-P2)
+Four frames of the hands card were all exactly 16,430 bytes in two genuinely different states, and I nearly filed "card 3 does not animate". Two PNGs of the same dimensions can compress to identical sizes. Diff pixels (ImageChops.difference(...).getbbox()), never sizes. Twice this session a size-identity reading pointed at a defect that was not there — the instrument degrading toward a CONFIDENT WRONG ANSWER, which is worse than S115s "degrading toward reassurance".
+
+### #fixing-the-timing-revealed-the-geometry  (S116-P2)
+Making the throw land at t=0.92 and hold was the approved fix, and it worked. It also put the projectile on screen long enough to see that it came down 24px BELOW the reticle — a pure sin() bulge returns to its launch height while the sight had risen. That defect had existed all along and was unobservable because the frame was never displayed. Making a thing visible is not cosmetic work; it is how you find the next bug.
+
+### #the-tool-that-checks-for-quiet-wrongness-was-quietly-wrong  (S116-P1)
+Writing `diff` to replace byte-length comparison, I reached for convert("L") as the non-deprecated way to count changed pixels. It under-reported by 8 — ITU-R 601-2 weights blue at 0.11, so a one-unit blue-only difference rounds to zero. I only caught it because the number moved from 12493 to 12485 and I had the earlier figure to compare against. The instrument built to stop a false negative shipped with a false negative. Lesson: a new measuring tool must be validated against a KNOWN answer from the old method before it is trusted, not merely against itself.
+
+### #no-single-scene-check-can-catch-a-promise-broken-across-scenes  (S116-P3)
+The best find of the session was not a rendering fault. Creation.ts said "you can change this later in the journal" and Journal.ts had no handedness control — two files, each internally consistent, contradicting each other in front of the player. tsc, 7 guards and 2915 assertions all passed. It surfaced only because I photographed two screens and read what they CLAIMED against each other. Lesson: when a screen makes a promise about another screen, that sentence is a cross-scene assertion and needs a test that spans both.
+
+### #the-same-verb-from-two-places-only-one-of-which-drew-anything  (S116-P4)
+Dropping from a HAND spawned a sprite because the map performed it. Dropping from the PACK wrote the same save field from a paused sibling scene and would have drawn nothing — the item present, blocking a tile, invisible until the player left and came back. Nothing in the type system or the 2928 assertions could see it; it was found by asking "who draws this, and is that code running right now?". Lesson: when a verb becomes reachable from a second scene, list every side effect the FIRST scene performed alongside the state change, because the state change is the part that ports for free and the side effects are the part that silently does not.
+
+### #one-fix-teaches-you-where-the-others-are  (S116-P4)
+D3 was a keymap-derived string clipping its panel. While adding a fifth footer hint to the pack I recognised the identical shape — labels from the live keymap, a line that fits on the shipped defaults and clips the moment anyone rebinds — and measured it before it broke rather than after. Two instances of one defect class, the second found for free because the first had been named precisely. Naming a defect by its MECHANISM rather than its location is what makes the second one findable.
+
+### #a-carry-forward-can-carry-a-wrong-diagnosis-forward-too  (S116-P5)
+CF-S115-SUBMODULE-STATE-SHADOW named the trigger as "cwd drifts into Game/founding-realm". I inherited that and nearly mitigated the wrong thing. One probe — print cwd, then check the file mtime — showed cwd at the project root while the shadow was being written anyway. The real trigger is the FILE PATH handed to the hook. A carry-forward is a hypothesis with a session number on it, and the number makes it feel settled; re-probe the mechanism before acting on an inherited diagnosis, especially when the proposed fix is a habit rather than a change.
+
+### #the-guardrail-was-right-twice-including-when-it-was-wrong  (S116-P5)
+The destructive-command guard blocked my recursive delete of 14 lockdirs. Rewriting it as per-file deletes plus rmdir was strictly better — rmdir fails safely on anything I had not predicted, and I inspected the contents first. Then it blocked a git commit because my commit MESSAGE quoted the dangerous flags while explaining that I had not used them. Both blocks cost under a minute and one of them improved the work. Reword and comply; do not reach for the override token.

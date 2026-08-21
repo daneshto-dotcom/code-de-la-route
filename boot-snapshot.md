@@ -1,5 +1,5 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-08-20 | Session: S115
+Generated: 2026-08-21 | Session: S116
 
 ## READ THIS FIRST — THREE CONSTITUTIONAL RULES
 1. **THE WORKING AGREEMENT (§11.0).** Daniel directs every step. OFFER archived assets; NEVER add them without his explicit go.
@@ -13,12 +13,30 @@ execution still halted after P1 to ask about ordering: *"why are you stopping ea
 i approved full session priority batch so get cooking on att of them and i will check ur work at
 the end!!!"* When he has approved a batch, run the batch.
 
+## FIFTH RULE, EARNED AT S116
+**LOOK AT IT. AN IMPRESSION IS NOT A MEASUREMENT.** S115 concluded the JOURNAL could not be seen
+because the pane will not composite. It can: drive the loop by hand and read the WebGL back buffer
+in the same task — nothing swaps the buffer here, so the frame survives. Six defects fell out of the
+first minute. `tsc`, 7 guards and 2915 assertions had passed over all six.
+
+The other half of the rule is harder. **Three times this session an impression of "clipped" was
+wrong**, and three times a row-by-row ink profile settled it. Byte-length is not pixel identity
+(four frames at exactly 16,430 bytes in two different states). Two samples 700ms apart is 0.22 of a
+3200ms cycle and cannot tell you a thing is static. **`npm run shoot`, `npm run shot`, and read
+`rebuild/docs/SEEING-THE-GAME.md` before looking at anything.**
+
 ## WHERE THE GAME IS NOW
-The arrival runs (2026 → Dael → film → 1601). **The input model is now discoverable and
-reconfigurable.** ESC opens the JOURNAL: one page lists every key with two slots each and lets you
-change them, the other teaches five mechanics with animated diagrams. A new player is asked ONE
-question — right- or left-handed — and the throw knows which hand forever. Aiming has its own key
-and accepts the mouse. Save schema is **v6**.
+The arrival runs (2026 → Dael → film → 1601). **The input model is now discoverable,
+reconfigurable, and — as of S116 — actually LOOKED AT.** ESC opens the JOURNAL: one page lists every
+key with two slots each and lets you change them plus **FAVOURED HAND**, the other teaches five
+mechanics with animated diagrams. A new player is asked ONE question — right- or left-handed — and
+the JOURNAL can now change the answer, which is what the creation screen had been promising since
+S115 without any control existing. The throw **visibly arrives** in the reticle. The pack can put a
+thing **down**, one at a time, refusing an occupied tile out loud. Save schema is **v6, unchanged**.
+
+**Every text-width budget on these screens is now MEASURED at runtime**, not counted — `FONT` is a
+fallback stack, so a character budget taken off one machine is silently wrong on the next. See
+`Journal.fitLines()` and `Subscreen.fitHint()`.
 
 ## THE INPUT MODEL — NOW A TABLE IN THE SAVE, NOT LITERALS IN SCENES
 | Action | Default | Tier |
