@@ -1,160 +1,109 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-08-21 | Session: S116
+Generated: 2026-08-22 | Session: S117
 
 ## READ THIS FIRST — THREE CONSTITUTIONAL RULES
 1. **THE WORKING AGREEMENT (§11.0).** Daniel directs every step. OFFER archived assets; NEVER add them without his explicit go.
 2. **THE LOVE-IT GATE (§13.1).** Ship something visible and SHOW it.
 3. **SUBTRACT, DON'T INVENT (`DEC-1601-METHOD`).** Absence of footage is never filled with invention.
 
-## FOURTH RULE, EARNED AT S115
-**REPORT BETWEEN STEPS; DO NOT STOP BETWEEN STEPS.** PDRs-one-at-a-time is a sound DEFAULT and
-becomes an obstruction the moment Daniel overrides it. He approved a four-priority batch and
-execution still halted after P1 to ask about ordering: *"why are you stopping each priority! I said
-i approved full session priority batch so get cooking on att of them and i will check ur work at
-the end!!!"* When he has approved a batch, run the batch.
+## FOURTH RULE (S115) — REPORT BETWEEN STEPS; DO NOT STOP BETWEEN STEPS
+When he has approved a batch, run the batch. Honoured this session.
 
-## FIFTH RULE, EARNED AT S116
-**LOOK AT IT. AN IMPRESSION IS NOT A MEASUREMENT.** S115 concluded the JOURNAL could not be seen
-because the pane will not composite. It can: drive the loop by hand and read the WebGL back buffer
-in the same task — nothing swaps the buffer here, so the frame survives. Six defects fell out of the
-first minute. `tsc`, 7 guards and 2915 assertions had passed over all six.
+## FIFTH RULE (S116) — LOOK AT IT. AN IMPRESSION IS NOT A MEASUREMENT
+## SIXTH RULE, EARNED AT S117 — **NOW SIX FOR SIX**
+An unmeasured read of a rendered frame has been **wrong six consecutive times** across
+S116–S117, and right zero times. Three tonight: "ENTER does nothing at the gate" (Dael
+was two tiles right; I was facing a wall), "the pack's left hand slot is missing" (the
+doll is centred, 152..168, between labels at 150/170), "a stray mark above the footer"
+(the caption's em-dash placeholder). **Do not speak an unmeasured claim about a frame,
+let alone file it.** Every real defect tonight was found by a number.
 
-The other half of the rule is harder. **Three times this session an impression of "clipped" was
-wrong**, and three times a row-by-row ink profile settled it. Byte-length is not pixel identity
-(four frames at exactly 16,430 bytes in two different states). Two samples 700ms apart is 0.22 of a
-3200ms cycle and cannot tell you a thing is static. **`npm run shoot`, `npm run shot`, and read
-`rebuild/docs/SEEING-THE-GAME.md` before looking at anything.**
+## WHICH CAMERA — ASK BEFORE YOU SHOOT (S117)
+`docs/SEEING-THE-GAME.md` rested on "the pane never composites". That is a CONDITION and
+it flips. **rAF is suspended in a hidden tab.**
+
+| | pane displayed | pane not displayed |
+|---|---|---|
+| `document.visibilityState` | `visible` | `hidden` |
+| `game.loop.frame` | advances | pinned at 0 |
+| `computer{screenshot}` | **WORKS — use it** | times out at 5s |
+| hand-drive + `toDataURL` | risky, rAF may swap under you | **SOUND — use it** |
+
+`clockMoves` passes in BOTH, so the existing INSTRUMENT_CHECK cannot tell them apart.
+**Neither camera can photograph the cinematic** — the film is a DOM `<video>`, so
+`toDataURL` returns a blank 4,074-byte frame mid-playback. Check `video.currentTime` instead.
+
+**Run `window.audit()` at every beat of a survey** (it is written out in SEEING-THE-GAME.md).
+It found the three MessageBox defects and was silent on seven other beats.
 
 ## WHERE THE GAME IS NOW
-The arrival runs (2026 → Dael → film → 1601). **The input model is now discoverable,
-reconfigurable, and — as of S116 — actually LOOKED AT.** ESC opens the JOURNAL: one page lists every
-key with two slots each and lets you change them plus **FAVOURED HAND**, the other teaches five
-mechanics with animated diagrams. A new player is asked ONE question — right- or left-handed — and
-the JOURNAL can now change the answer, which is what the creation screen had been promising since
-S115 without any control existing. The throw **visibly arrives** in the reticle. The pack can put a
-thing **down**, one at a time, refusing an occupied tile out loud. Save schema is **v6, unchanged**.
+The arrival runs 2026 → Dael → film → 1601. **This session the GAME itself got looked at
+for the first time**, not just the settings screens — and the very first NPC interaction
+had three defects in one method. All fixed. The JOURNAL no longer paints its last diagram
+over the keys page. Character creation says `LEFT / RIGHT TO CHOOSE` instead of the
+baffling `LEFT / A TO CHOOSE`. Save schema **v6, unchanged**.
 
-**Every text-width budget on these screens is now MEASURED at runtime**, not counted — `FONT` is a
-fallback stack, so a character budget taken off one machine is silently wrong on the next. See
-`Journal.fitLines()` and `Subscreen.fitHint()`.
+**Text layout is now MEASURED everywhere it matters** — `Journal.fitLines()`,
+`Subscreen.fitHint()`, and new this session `BoxLayout.layoutOptionColumn()`. Never count
+characters: `FONT` is a fallback stack, so the advance is whatever the machine resolves.
 
-## THE INPUT MODEL — NOW A TABLE IN THE SAVE, NOT LITERALS IN SCENES
-| Action | Default | Tier |
-|---|---|---|
-| `walkUp/Down/Left/Right` | arrows + WASD | — |
-| `engage` | `ENTER` / `F` | **ENGAGE** — reach *into* the world: Take · Knock · Unlock · Talk · Fill · Look |
-| `handLeft` / `handRight` | `1`/`NUM1`, `2`/`NUM2` | **HANDS** — act *with* what you hold: Place · Spill · Strike · Ingest |
-| `aim` | `E` / `G` | **NEW at S115.** Hold it; steer with arrows, WASD or the mouse; release throws |
-| `pack` | `I` / `TAB` | SUBSCREEN |
-| `menu` | `ESC` | **FIXED, un-rebindable BY CONSTRUCTION** |
-
-- **EXACTLY TWO SLOTS PER ACTION.** `Binding = [string, string | null]` — the asymmetry IS the rule
-  that a primary always exists. Never widen this to an array.
-- **`BINDABLE_KEYS` is a WHITELIST.** No Ctrl/Alt/Meta (Ctrl+W closes the tab), no function keys
-  (F5 reloads), no BACKSPACE, no ESC. Fails closed: a key nobody considered is not offered.
-- **AIM HAS NO HOLD THRESHOLD.** The 220 ms delay only ever existed to tell a tap from a hold on the
-  *shared* hand key. `SPLIT_HOLD_MS` (the pack) is now the ONLY home of the 220 ms idiom, so the old
-  "change one, change both" law no longer binds aiming.
-- **`Input.ts` MUST STAY PHASER-FREE.** SaveStore imports it and SaveStore is tested HEADLESS;
-  importing Phaser there kills the suite on `window is not defined` before its first assertion.
-  `InputMap.ts` is the only place the two meet.
-
-## EIGHT ARCHITECTURE FACTS THAT WILL BITE YOU
-1. **ONE GENERATOR, TWO CENTURIES.** `build-zone1.py` emits BOTH zone1 and zone1_2026. Never hand-edit either.
+## ARCHITECTURE FACTS THAT WILL BITE YOU
+1. **ONE GENERATOR, TWO CENTURIES.** `build-zone1.py` emits BOTH zone1 and zone1_2026.
 2. **PLAYER STATE AND WORLD STATE ARE SEPARATE.** `carry` is yours; `world.taken`/`world.dropped` belong to the world.
-3. **A HAND HOLDS EXACTLY ONE THING — a LAW.** Items.ts law 1: stacking hands would force a stack to split mid-FILL. **Only the PACK stacks.**
-4. **NO UI ART IN THE ATLAS.** `evidence-check` fails any tile no live map places. All chrome is runtime Graphics + the 11px bitmap text.
-5. **THE PLAYER SHEET IS 3 COLOURS.** An item can never be drawn INTO `player.png`; it is composited beside it.
-6. **A TAKE CAN NEVER BE REFUSED** (ground swaps when full); a CONTAINER declines dim, and that check is tile-aware (`canTake`).
-7. **DERIVED ARTIFACTS MUST PROVE THEIR OWN FRESHNESS.** `check:stale` is guard #7.
-8. **MIGRATION BRANCHES DO NOT CHAIN (new, S115).** Every `if (version === N)` returns a COMPLETE
-   SaveData stamped current and jumps straight to now. Add a field and **all six return sites** must
-   carry it, or an old save migrates forward stamped v6 with the field missing. S114 shipped exactly
-   that gap into the v3 branch.
-
-## ASSERT THE BRANCH, NEVER THE VERSION NUMBER — FOURTH BREAK
-`assert(version === 5)` failed **122 times** on a correct bump. Worse than noisy: `version` was the
-module's own exported constant, so it compared a constant to a literal — it could never catch a bug
-and could only ever break on a bump. It now asserts that migration STAMPS the current version.
-A sibling test had also silently stopped testing its own name ("an already-v5 save passes through
-untouched" was feeding a v5 save to a v6 build). **Four MCV assertions were superseded this session
-for the same reason — always a needle pinned to a value a correct change was going to move.**
-
-## THE TESTING HARNESS — THE BOOT ADVICE ALONE IS NOT ENOUGH
-The pane often does not composite, so rAF never fires while `actualFps` lies about 60.
-- `game.step()` is necessary but NOT sufficient: pump every live tween by hand or `moving` never clears.
-- **`sys.sceneUpdate` is cached at boot** — patch via `scene.events.on(UPDATE)`.
-- **A synthetic `KeyboardEvent` reports `keyCode: 0`** and Phaser dispatches on `keyCode`. Force it.
-- **A rebind capture reads `ev.code`**, so a synthetic event needs `code` too (`{code:'KeyQ'}`).
-- **Phaser's MouseManager binds `mousemove`, NOT `pointermove`.** Dispatching the wrong type reads (0,0) forever.
-- **Input is QUEUED and flushed inside the step.** Dispatch, THEN step, or the pointer never updates.
-- **THE INSTRUMENT DEGRADES WITH USE.** Reload before each scenario; make an INSTRUMENT_CHECK the first assertion.
-- **AND IT DEGRADES TOWARD REASSURANCE (new, S115).** A listener-count probe returned a comforting
-  `0` because it sampled the wrong scene, and nearly buried a real finding. Prove the counter can
-  MOVE (add a probe handler, watch it change, remove it) before trusting a flat line.
-- **"THE TEST FAILED" ≠ "THE CODE IS WRONG" (new, S115).** Two reported failures this session were
-  harness artifacts; a frame-by-frame trace showed the code correct from frame 0. Trace before fixing.
-```js
-window.step=(ms)=>{const dt=16.666;for(let e=0;e<ms;e+=dt){T+=dt;g.loop.delta=dt;g.loop.time=T;g.step(T,dt);
-  for(const sc of g.scene.scenes){if(!sc.scene.isActive())continue;for(const t of sc.tweens.getTweens())t.update(dt);}}};
-```
+3. **A HAND HOLDS EXACTLY ONE THING — a LAW.** Only the PACK stacks.
+4. **NO UI ART IN THE ATLAS.** All chrome is runtime Graphics + 11px text.
+5. **MIGRATION BRANCHES DO NOT CHAIN.** Every `if (version === N)` returns a COMPLETE SaveData stamped current.
+6. **A SCENE MAY OWN MORE THAN ONE GRAPHICS SURFACE** (new, S117). `Journal` owns `chrome`@10 and `anim`@20, and `redraw()` cleared only the first for two sessions. **Guard #8 `check:surfaces` now asserts every surface is cleared by the wholesale redraw** — aliases resolved, because all three scenes clear through `const g = this.chrome`.
+7. **TWO PLACES DERIVING ONE NUMBER IS A BUG WITH A DELAY FUSE** (new, S117). Box geometry had two sources; `moveCursor` recomputed a pitch `show()` had just derived.
+8. **`Input.ts` and `BoxLayout.ts` MUST STAY PHASER-FREE.** Headless tests import them; `Interact.ts` touches `Phaser.` seven times and dies on `window is not defined`.
 
 ## Next Steps
-1. **LOOK AT THE JOURNAL — the one thing S115 could not verify.** The Browser pane does not
-   composite here, so `computer{screenshot}` times out and **no human has seen the diagrams**. Text
-   and structure were verified by reading every Text object drawn; composition was not. Open the
-   Browser pane, `npm run dev`, press ESC.
-2. **A drop-from-pack verb** — the last dim-Take corner (carried from S114).
-3. **Where the key really lives** — Daniel's call (*"make it hard to find later or make it into a quest"*).
-4. **`CF-S115-SUBMODULE-STATE-SHADOW`** — an untracked `.claude/` in the submodule shadows the real
-   state dir whenever cwd drifts into `Game/founding-realm/**`. Hooks are writing there. Needs an amendment.
-5. **STO-1's interior** — the door opens onto darkness until someone measures it.
-6. Sketchbook API is still dead code (0 callers). Wake it or delete it.
-7. `bottle_empty` / `bottle_water` / `key_iron` are PROVISIONAL art, first in the redraw queue.
-8. The hand-key tap still fires on RELEASE. With the hold gone, firing on press is a one-line
-   change — deliberately not taken, because it is a feel change nobody asked for.
+1. **P4, FIRST — the art you have to choose.** `bottle_empty`, `bottle_water`, `key_iron` are provisional (confirmed in `build-atlas.py:2903, 2964, 3802`) and **the standing man reads as a bottle** — corroborated by measurement, not impression: on `p4-map-after-resume.png` the player at (160,235) and the dropped bottle at (190,185) are both small dark vertical blobs at 16px. Deferred deliberately: §11.0 says OFFER art, never install it, and you were asleep. Options to be offered, not landed.
+2. **`CF-S117-DEPLOY-HANDLERS` — blocked on you, twice over.** (a) create the Neon **database** on the paid Launch plan (NOT the CNC database) + the Vercel project with root dir `rebuild`, and set `DATABASE_URL` plus a **FRESH** `JWT_SECRET` — the vault's `vercel.jwt_secret` belongs to CNC and a shared signing key makes a token from one app valid in the other; (b) rule on Vercel Hobby's commercial-use restriction. Everything else is written: `deploy/schema.sql`, `deploy/account-rules.ts` (55 assertions), `deploy/README.md`.
+3. **Push, or say no.** 11 parent + 15 submodule commits, origin verified reachable, so the only reason they are local is that the question has been asked three times and never answered.
+4. **`CF-S116-FIND-CLAUDE-DIR-SUBMODULE`** (HIGH, still open) and its new sibling **`CF-S117-MCV-PARTIAL-STATUS-HIDES-BINDINGS`** — both in `~/.claude` shared by eight projects, so SYNC-BRAIN Tier 0/1 and their own amendment.
+5. **Composition questions only you can answer:** the three interiors are letterboxed (a 14×10 room is 224×160 in a 320×288 frame, floating in black) — intended or not? The pack has ~45px of dead space between grid and footer. The five HOW-TO-PLAY diagram frames are still sparse.
+6. Wake the sketchbook (needs a third JOURNAL page) or leave it — `CF-S117-SKETCHBOOK-VIEWER`.
 
 ## Blockers
-- **`CF-S107-KEY-EXPOSURE` — rotate the `.env` keys. Open since S107. HIGH.** Owner-only.
-- **The gate's lower half: open bars or solid panel?** ONE photograph settles it.
-- **Backlog #29, the film** — parked; the direction is stills, not video.
+- **`CF-S107-KEY-EXPOSURE` — rotate the `.env` keys. Open since S107. HIGH. Owner-only.**
+- **The gate's lower half: open bars or solid panel?** ONE photograph settles it, and would upgrade the film plate from "consistent with the record" to a verified likeness.
+- **A tape measure for STO-1** — the door opens onto darkness until someone measures the interior.
+- **Backlog #29, the film** — parked on your call; direction is stills, not video.
 - **Dael's tutorial role** — unanswered since S110.
-- The N7 is ONE TILE wide; two lanes means growing a map shared with 1601.
-- Verb-menu ceiling past ~8 entries: recorded, not solved (menus cap at 4).
+- **Where the iron key really lives** — your call ("make it hard to find later or make it into a quest").
 
 ## Pending Backlog
 - [ ] #29 — the arrival film as a frame-by-frame story (PARKED on the owner's call)
-- [ ] #36 — item system: **a drop-from-pack verb is the last open piece**
 - [ ] #37 — damage, fire, and what a liquid does. **RECORDED, DELIBERATELY NOT DESIGNED**
-- [ ] **Character stats (new, S115): STR/DEX and item weight feeding `throwRange()`. RECORDED,
-      DELIBERATELY NOT DESIGNED** — the seam exists and takes one argument it does not yet use.
+- [ ] Character stats: STR/DEX and item weight feeding `throwRange()`. **RECORDED, NOT DESIGNED**
 - [ ] CF-S110-FILM-REROLLS — four weak shots + the gate question
 - [ ] CF-S107-KEY-EXPOSURE — rotate the `.env` keys
-- [ ] CF-S115-SUBMODULE-STATE-SHADOW — the shadow `.claude/` in the submodule
-- [ ] Sketchbook API still dead code (0 callers)
+- [ ] CF-S116-FIND-CLAUDE-DIR-SUBMODULE — the real fix, 8 projects
+- [ ] CF-S117-DEPLOY-HANDLERS — endpoints + login screen + SaveStore wiring
+- [ ] CF-S117-SKETCHBOOK-VIEWER / CF-S117-BOX-FIVE-OPTIONS / CF-S117-MCV-PARTIAL-STATUS-HIDES-BINDINGS
+- [ ] The hand-key tap still fires on RELEASE, not press (a feel change nobody asked for)
+- [ ] #36 item system — **COMPLETE** as of S116-P4 (drop-from-pack was the last piece)
 
-## Recent Reflexion (S115)
-- **#the-instrument-lied-in-the-comforting-direction** — a probe returned 0 listeners because it
-  sampled the wrong scene, and nearly refuted a real finding. S114 said the instrument DEGRADES;
-  S115 adds that it degrades toward REASSURANCE. Prove the counter can move before trusting a zero.
-- **#the-quality-lens-rubber-stamped-the-riskiest-item-twice** — 5/5/5 in PLAN with no challenges,
-  5/5/5/5 in CHECK with no findings, on code containing two real defects. **When a lens returns
-  nothing twice on the riskiest item, treat the SILENCE as the finding.**
-- **#my-own-fix-introduced-the-bug-the-suite-caught** — the de-collision fix conflated "secondary
-  absent" with "secondary cleared", silently undoing a rebind on next boot. Fixing a finding is a
-  code change and deserves the same suspicion as the code that caused it.
-- **#four-breaks-means-the-assertion-was-never-testing-anything** — `assert(version === 5)` compared
-  a constant to a literal. A test that only ever fails when you are right is an anti-test.
-- **#the-owner-removes-the-ambiguity-the-council-decorates-it** — three seats converged on "active
-  hand + 1/2 switches"; he asked one question at character creation instead. A Council converges on
-  the most SYMMETRICAL arrangement of the parts on the table, and symmetry is not simplicity.
-- **#a-race-with-the-browser-is-not-winnable-so-do-not-enter-it** — Phaser's window listener is
-  registered at boot and a later one fires AFTER it, so `preventDefault` cannot win. The cure was a
-  state one: drain the pending edges once the gesture resolves.
-- **#compare-against-the-last-frame-not-the-first** — "has the mouse moved since aiming began" was
-  true forever once it had moved, so no key could win the aim back. Any predicate containing "since"
-  needs its anchor named out loud.
-- **#the-test-failed-is-not-the-code-is-wrong** — two reported failures were harness artifacts; I was
-  one step from "fixing" correct code. Trace first.
-- **#i-stopped-when-he-had-already-said-go** — halted after P1 of an approved four-priority batch.
-  Report between steps; do not stop between steps.
+## Recent Reflexion (S117 + S114)
+Read `.claude/reflexion_log.md` — 49 entries, newest at top. **New this session:
+`.claude/reflexion-archive.md`**, because the 50-entry cap was silently DELETING unique
+entries while its policy claimed they survived in archived handoffs — S111's did not.
+The cap now MOVES blocks to the archive instead of deleting them.
+
+Highest-signal S117 entries:
+- **#six-out-of-six-now-an-impression-of-a-ui-defect-has-never-been-right** — the base rate.
+- **#the-camera-spent-a-whole-session-pointed-at-the-furniture** — a new tool gets aimed at what was most recently built, which is the least likely place for old bugs. Aim it at the oldest thing a player touches first.
+- **#a-blocker-carried-for-forty-sessions-was-never-re-checked** — "VPS blocked on Daniel" was false from S78 to S117. The answer was one grep of the session archive.
+- **#naming-the-cost-beats-paying-it-badly** — shipping the half that can be proven and naming the half that cannot is not less work, it is the work.
+- **#i-wrote-the-anti-test-i-was-reconciling** — I wrote a brittle full-string assertion in the same session that documented why not to.
+- **#the-prune-was-destroying-what-the-policy-promised-it-preserved** — take the backup BEFORE the irreversible step, and verify the claim a destructive policy rests on.
+
+## Testing / gate
+`npm run build` (8 guards) · `npm run typecheck` · `npm test` (**3,051 assertions**) · `npm run scan:secrets`
+**New: `.github/workflows/rebuild-ci.yml`** runs all of it on any push touching `rebuild/**`.
+`ci.yml` remains PARKED — it guards the frozen old build whose `npm audit` fails forever.
+
+## Dev server
+Port **33446** was live at close and still answering HTTP 200. To bring it back:
+`node Game/founding-realm/rebuild/esbuild.config.mjs --serve --port=<port>` — or `/port` then `preview_start`.
