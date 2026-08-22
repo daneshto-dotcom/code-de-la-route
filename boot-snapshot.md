@@ -1,5 +1,5 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-08-22 | Session: S117
+Generated: 2026-08-22 | Session: S118
 
 ## READ THIS FIRST — THREE CONSTITUTIONAL RULES
 1. **THE WORKING AGREEMENT (§11.0).** Daniel directs every step. OFFER archived assets; NEVER add them without his explicit go.
@@ -7,114 +7,123 @@ Generated: 2026-08-22 | Session: S117
 3. **SUBTRACT, DON'T INVENT (`DEC-1601-METHOD`).** Absence of footage is never filled with invention.
 
 ## FOURTH RULE (S115) — REPORT BETWEEN STEPS; DO NOT STOP BETWEEN STEPS
-When he has approved a batch, run the batch. Honoured this session.
-
 ## FIFTH RULE (S116) — LOOK AT IT. AN IMPRESSION IS NOT A MEASUREMENT
-## SIXTH RULE, EARNED AT S117 — **NOW SEVEN FOR SEVEN**
-An unmeasured read of a rendered frame has been **wrong seven consecutive times** across
-S116–S117, and right zero times. The seventh: the hand question "never fired" — until I
-measured `loop.frame` at 0→0 with the pane hidden, so `time.delayedCall(0)` could never
-fire. Not a game fault; a frozen loop. Three others tonight: "ENTER does nothing at the gate" (Dael
-was two tiles right; I was facing a wall), "the pack's left hand slot is missing" (the
-doll is centred, 152..168, between labels at 150/170), "a stray mark above the footer"
-(the caption's em-dash placeholder). **Do not speak an unmeasured claim about a frame,
-let alone file it.** Every real defect tonight was found by a number.
+## SIXTH RULE (S117) — **NOW EIGHT FOR EIGHT.** An unmeasured read of a rendered
+frame has been wrong eight consecutive times and right zero. The eighth: "the
+open-gate overlay isn't landing" — a pixel diff of the 32×32 gate region says
+**148 pixels differ**. It was landing; it is subtle at 1× where the gate is two tiles.
 
-## WHICH CAMERA — ASK BEFORE YOU SHOOT (S117)
-`docs/SEEING-THE-GAME.md` rested on "the pane never composites". That is a CONDITION and
-it flips. **rAF is suspended in a hidden tab.**
+## SEVENTH RULE, EARNED AT S118 — **MEASURED IS NOT THE SAME AS CORRECT**
+The sixth rule is about DEFECTS. It says nothing about whether the right THING was
+built, and I had started treating "measured" as a synonym for "right".
 
-| | pane displayed | pane not displayed |
-|---|---|---|
-| `document.visibilityState` | `visible` | `hidden` |
-| `game.loop.frame` | advances | pinned at 0 |
-| `computer{screenshot}` | **WORKS — use it** | times out at 5s |
-| hand-drive + `toDataURL` | risky, rAF may swap under you | **SOUND — use it** |
+I built the cutscene from the game's own atlas tiles *specifically* so the
+protagonist could not drift — he IS `player.png`, the same bytes every panel, so the
+AI film's worst failure was impossible by construction. Airtight, and wrong: **"it
+looks like a part of the game. its not correct."** A cutscene's job is to read as a
+DIFFERENT MEDIUM, and I had optimised the one property guaranteeing it would read as
+the same one. No number would ever have said so. Only him looking at it.
 
-`clockMoves` passes in BOTH, so the existing INSTRUMENT_CHECK cannot tell them apart.
-**Neither camera can photograph the cinematic** — the film is a DOM `<video>`, so
-`toDataURL` returns a blank 4,074-byte frame mid-playback. Check `video.currentTime` instead.
-
-**Run `window.audit()` at every beat of a survey** (it is written out in SEEING-THE-GAME.md).
-It found the three MessageBox defects and was silent on seven other beats.
+**Ask what the thing is FOR before optimising a property of it.**
 
 ## WHERE THE GAME IS NOW
-The arrival runs 2026 → Dael → film → 1601. **This session the GAME itself got looked at
-for the first time**, not just the settings screens — and the very first NPC interaction
-had three defects in one method. All fixed. The JOURNAL no longer paints its last diagram
-over the keys page. Character creation says `LEFT / RIGHT TO CHOOSE` instead of the
-baffling `LEFT / A TO CHOOSE`.
+The arrival runs 2026 → Dael → **an eight-page COMIC BOOK** → 1601. **The AI film is
+gone.** Bright printing inks, panels with ink gutters, halftone, radial bursts, speed
+lines, a `RIIIP` in hand-authored 5×7 lettering, and every figure in silhouette.
+37.4 MB became **26 KB**.
 
-**AND THE GAME HAS A FRONT DOOR NOW.** A register/login gate (real DOM `<input>`s,
-so the keyboard rises on a phone and password managers work) runs BEFORE Phaser is
-constructed, then hand selection, then the 2026 arrival. Save schema **v6 → v7**
-for the account. ESC → JOURNAL → ACCOUNT signs out or restarts.
+**AND THERE IS A DEPLOYABLE FOLDER.** `npm run site` writes `rebuild/site` — 23
+files, ~1.6 MB — guarded by an allowlist. It has been served flat and played from
+registration through the comic into 1601.
 
-**Text layout is now MEASURED everywhere it matters** — `Journal.fitLines()`,
-`Subscreen.fitHint()`, and new this session `BoxLayout.layoutOptionColumn()`. Never count
-characters: `FONT` is a fallback stack, so the advance is whatever the machine resolves.
+## WHAT IS BLOCKED ON DANIEL, IN ORDER
+1. **THREE CLICKS AND THE GAME IS LIVE.** `rebuild/deploy/GOING-LIVE.md` has them.
+   `npm run site`, drag `rebuild/site` onto Cloudflare Pages, attach the domain.
+   The 502 on `legacyoftherealm.com` is the tunnel he switched off on 2026-07-17 —
+   the domain is alive on Cloudflare and DNS is already in the zone.
+2. **The vault's Cloudflare token is DEAD** — Cloudflare returns
+   `{"code":1000,"message":"Invalid API Token"}`. It is also the wrong scope
+   (`Workers Scripts: Edit`). A Pages-scoped token turns on the automatic route.
+3. **The Neon connection string** — `legacy_realm_db.pooled` still reads
+   `PASTE_POOLED_CONNECTION_STRING_HERE`. Until then saves are per-device and
+   offline sign-out offers REGISTER not LOGIN.
+4. **`CF-S107-KEY-EXPOSURE`** — and S118 made it worse: reading the vault printed
+   the Cloudflare tokens into a session transcript.
+5. **P4, THE ART, STILL DEFERRED AND STILL HIS.** Three provisional item sprites,
+   and the player sprite: measured, `down0` has **two** distinct silhouette widths
+   across 13 inked rows and its shoulders (w8) are **exactly** its head's width — no
+   shoulder line at all, which is why he reads as a hat on a sack. `player.hold`
+   proves the cure: arms give it a third width class and it reads instantly. The
+   comic's crowd figures were built with 5+ widths on that finding.
+6. **The gate's lower half: open bars or solid panel?** One photograph.
+7. **A tape measure for STO-1.** **Dael's tutorial role** (open since S110).
+   **Where the iron key lives.**
 
 ## ARCHITECTURE FACTS THAT WILL BITE YOU
-1. **ONE GENERATOR, TWO CENTURIES.** `build-zone1.py` emits BOTH zone1 and zone1_2026.
-2. **PLAYER STATE AND WORLD STATE ARE SEPARATE.** `carry` is yours; `world.taken`/`world.dropped` belong to the world.
+1. **ONE GENERATOR, TWO CENTURIES.** `build-zone1.py` emits zone1 AND zone1_2026.
+2. **PLAYER STATE AND WORLD STATE ARE SEPARATE.** `carry` is yours; `world.taken` is the world's.
 3. **A HAND HOLDS EXACTLY ONE THING — a LAW.** Only the PACK stacks.
 4. **NO UI ART IN THE ATLAS.** All chrome is runtime Graphics + 11px text.
-5. **MIGRATION BRANCHES DO NOT CHAIN.** Every `if (version === N)` returns a COMPLETE SaveData stamped current.
-6. **A SCENE MAY OWN MORE THAN ONE GRAPHICS SURFACE** (new, S117). `Journal` owns `chrome`@10 and `anim`@20, and `redraw()` cleared only the first for two sessions. **Guard #8 `check:surfaces` now asserts every surface is cleared by the wholesale redraw** — aliases resolved, because all three scenes clear through `const g = this.chrome`.
-7. **TWO PLACES DERIVING ONE NUMBER IS A BUG WITH A DELAY FUSE** (new, S117). Box geometry had two sources; `moveCursor` recomputed a pitch `show()` had just derived.
-8. **THE JOURNAL HAS THREE PAGES** (new, S117). `keys -> play -> account`, cycled with `1`/`2`. Both tab labels derive from one `PAGE_TITLE` map — do not add a fourth page with a hard-coded ternary. **ACCOUNT is where sign out and restart live**, because a DOM bar in the letterbox is invisible on a full-bleed canvas and failed silently when it could not find its element.
-9. **SIGN OUT AND RESTART ARE DIFFERENT VERBS.** `signOut()` clears the identity and LEAVES THE WORLD STANDING. `reset()` erases everything back to a true first run. They sit one keystroke apart, so both are labelled by consequence, and restart asks first.
-10. **SAVE IS v7** (S117). `account: {username, salt, hash, iterations, createdAt, serverId} | null`. PBKDF2-SHA256 at 210k iterations via Web Crypto — a SOFT LOCK, not security: offline everything needed to verify sits in the same localStorage the player can edit.
-11. **`Input.ts`, `BoxLayout.ts` and `AccountRules.ts` MUST STAY PHASER-FREE.** Headless tests import them; `Interact.ts` touches `Phaser.` seven times and dies on `window is not defined`. `AccountRules.ts` lives in `src/core/` and NOT `deploy/` because tsc rejects a cross-rootDir import that esbuild accepts — the client and the future server share ONE source of validation.
-
-## Next Steps
-1. **P4, FIRST — the art you have to choose.** `bottle_empty`, `bottle_water`, `key_iron` are provisional (confirmed in `build-atlas.py:2903, 2964, 3802`) and **the standing man reads as a bottle** — corroborated by measurement, not impression: on `p4-map-after-resume.png` the player at (160,235) and the dropped bottle at (190,185) are both small dark vertical blobs at 16px. Deferred deliberately: §11.0 says OFFER art, never install it, and you were asleep. Options to be offered, not landed.
-2. **THE NEON PROJECT NOW EXISTS** — `legacy-of-the-realm`, Frankfurt, PG18, branch `production`, created by Daniel S117. **The vault block `legacy_realm_db` is written but its `pooled`/`direct` fields still hold `PASTE_..._HERE` placeholders.** Paste the connection string from the Neon dashboard (Connect) and `deploy/apply-schema.mjs` will apply `schema.sql` and PROVE it landed — it tests the version CHECK by trying to insert a blob that lies about its own version.
-3. **`CF-S117-DEPLOY-HANDLERS` — still blocked on you for the Vercel half.** (a) create the Neon **database** on the paid Launch plan (NOT the CNC database) + the Vercel project with root dir `rebuild`, and set `DATABASE_URL` plus a **FRESH** `JWT_SECRET` — the vault's `vercel.jwt_secret` belongs to CNC and a shared signing key makes a token from one app valid in the other; (b) rule on Vercel Hobby's commercial-use restriction. Everything else is written: `deploy/schema.sql`, `src/core/AccountRules.ts` (55 assertions), `deploy/README.md`, `deploy/apply-schema.mjs`.
-4. **PUSHED.** Both remotes were at 0 unpushed at close — S114 through S117 is all on GitHub.
-5. **`CF-S116-FIND-CLAUDE-DIR-SUBMODULE`** (HIGH, still open) and its new sibling **`CF-S117-MCV-PARTIAL-STATUS-HIDES-BINDINGS`** — both in `~/.claude` shared by eight projects, so SYNC-BRAIN Tier 0/1 and their own amendment.
-6. **Composition questions only you can answer:** the three interiors are letterboxed (a 14×10 room is 224×160 in a 320×288 frame, floating in black) — intended or not? The pack has ~45px of dead space between grid and footer. The five HOW-TO-PLAY diagram frames are still sparse.
-7. Wake the sketchbook or leave it — `CF-S117-SKETCHBOOK-VIEWER`. **The page objection is gone**: the JOURNAL now cycles three pages, so a fourth is a small change rather than an argument. It is still the owner's call, and half-waking it (recording pages nobody can open) would build the very §9.2 violation the law forbids.
-
-## Blockers
-- **`CF-S107-KEY-EXPOSURE` — rotate the `.env` keys. Open since S107. HIGH. Owner-only.**
-- **The gate's lower half: open bars or solid panel?** ONE photograph settles it, and would upgrade the film plate from "consistent with the record" to a verified likeness.
-- **A tape measure for STO-1** — the door opens onto darkness until someone measures the interior.
-- **Backlog #29, the film** — parked on your call; direction is stills, not video.
-- **Dael's tutorial role** — unanswered since S110.
-- **Where the iron key really lives** — your call ("make it hard to find later or make it into a quest").
-
-## Pending Backlog
-- [ ] #29 — the arrival film as a frame-by-frame story (PARKED on the owner's call)
-- [ ] #37 — damage, fire, and what a liquid does. **RECORDED, DELIBERATELY NOT DESIGNED**
-- [ ] Character stats: STR/DEX and item weight feeding `throwRange()`. **RECORDED, NOT DESIGNED**
-- [ ] CF-S110-FILM-REROLLS — four weak shots + the gate question
-- [ ] CF-S107-KEY-EXPOSURE — rotate the `.env` keys
-- [ ] CF-S116-FIND-CLAUDE-DIR-SUBMODULE — the real fix, 8 projects
-- [ ] CF-S117-DEPLOY-HANDLERS — endpoints + login screen + SaveStore wiring
-- [ ] CF-S117-SKETCHBOOK-VIEWER / CF-S117-BOX-FIVE-OPTIONS / CF-S117-MCV-PARTIAL-STATUS-HIDES-BINDINGS
-- [ ] The hand-key tap still fires on RELEASE, not press (a feel change nobody asked for)
-- [ ] #36 item system — **COMPLETE** as of S116-P4 (drop-from-pack was the last piece)
-
-## Recent Reflexion (S117 + S114)
-Read `.claude/reflexion_log.md` — 49 entries, newest at top. **New this session:
-`.claude/reflexion-archive.md`**, because the 50-entry cap was silently DELETING unique
-entries while its policy claimed they survived in archived handoffs — S111's did not.
-The cap now MOVES blocks to the archive instead of deleting them.
-
-Highest-signal S117 entries:
-- **#six-out-of-six-now-an-impression-of-a-ui-defect-has-never-been-right** — the base rate.
-- **#the-camera-spent-a-whole-session-pointed-at-the-furniture** — a new tool gets aimed at what was most recently built, which is the least likely place for old bugs. Aim it at the oldest thing a player touches first.
-- **#a-blocker-carried-for-forty-sessions-was-never-re-checked** — "VPS blocked on Daniel" was false from S78 to S117. The answer was one grep of the session archive.
-- **#naming-the-cost-beats-paying-it-badly** — shipping the half that can be proven and naming the half that cannot is not less work, it is the work.
-- **#i-wrote-the-anti-test-i-was-reconciling** — I wrote a brittle full-string assertion in the same session that documented why not to.
-- **#the-prune-was-destroying-what-the-policy-promised-it-preserved** — take the backup BEFORE the irreversible step, and verify the claim a destructive policy rests on.
+5. **MIGRATION BRANCHES DO NOT CHAIN.** Every `if (version === N)` returns a COMPLETE SaveData.
+6. **A SCENE MAY OWN MORE THAN ONE GRAPHICS SURFACE.** Guard #8 asserts the wholesale redraw clears all of them.
+7. **TWO PLACES DERIVING ONE NUMBER IS A BUG WITH A DELAY FUSE.**
+8. **THE JOURNAL HAS THREE PAGES** — `keys → play → account`, cycled with `1`/`2`.
+9. **SIGN OUT AND RESTART ARE DIFFERENT VERBS**, and RESTART replays the arrival **with no page reload** — which is how S118 found a scene freeze.
+10. **SAVE IS v7.** PBKDF2-SHA256 at 210k via Web Crypto — a SOFT LOCK, not security.
+11. **`Input.ts`, `BoxLayout.ts`, `AccountRules.ts` MUST STAY PHASER-FREE.** Headless tests import them.
+12. **PHASER REUSES A SCENE INSTANCE ACROSS RESTARTS** (new, S118). A class field
+    initialiser is per-CONSTRUCTION, not per-run. `done` survived a `finish()`,
+    `update()` returned on its first line, ENTER and ESC were both dead, and the
+    player sat on page 1 for ever. **Reset per-run state in `preload()`.**
+13. **A DEPLOY IS AN ALLOWLIST, NEVER A DIRECTORY** (new, S118). `rebuild/` holds
+    `docs/SITE-SURVEY-*.md` and `realm/*.json` — measured cadastral geometry of a
+    real family's home — and the repo is PRIVATE, so serving that folder is a first
+    disclosure, not a re-publication. Guard #9 has two independent nets.
+14. **`COMIC` IS NOT IN `MASTER_COLORS`, ON PURPOSE** (new, S118). World palettes are
+    anchored on measurements and are muted because the place is; printing inks are
+    not. A tile painted in comic ink FAILS `check:palette`. The cutscene may borrow
+    the world's colours; the world can never borrow the cutscene's.
+15. **`BOX_H` IS DERIVED** (new, S118): `BODY_TOP_PAD + LINE_PITCH*MAX_BODY_LINES + PAD`.
+    Phaser Text height is **exactly 12 × lines** at 11px, measured. Raise
+    MAX_BODY_LINES and the box and the option column both follow.
+16. **`PIL.rectangle(fill=None)` PAINTS WHITE** (new, S118). Not a no-op. The
+    every-pixel-is-a-declared-ink assertion caught `#FFFFFF` on four pages.
 
 ## Testing / gate
-`npm run build` (8 guards) · `npm run typecheck` · `npm test` (**13 + 25 + 55 + 3,029**) · `npm run scan:secrets`
-**New: `.github/workflows/rebuild-ci.yml`** runs all of it on any push touching `rebuild/**`.
-`ci.yml` remains PARKED — it guards the frozen old build whose `npm audit` fails forever.
+`npm run build` (**9 checks** — boundary, palette, reach, realm, evidence, surfaces,
+**comic (NEW #10)**, staleness, bundle) · `npm run typecheck` · `npm test`
+(**13 + 25 + 55 + 3,029**) · `npm run scan:secrets` (clean, 588 commits) ·
+**`npm run site`** (build + **guard #9**, negative-tested 5 ways)
 
 ## Dev server
-Port **33446** was live at close and still answering HTTP 200. To bring it back:
-`node Game/founding-realm/rebuild/esbuild.config.mjs --serve --port=<port>` — or `/port` then `preview_start`.
+`npm run site` then a static server on `rebuild/site` — `.claude/launch.json` has a
+**`site-preview`** entry. **Careful: `npm run site` deletes and recreates `site/`,
+which kills a server pointed at it** (`CF-S118-SITE-BUILD-KILLS-PREVIEW`).
+
+## Recent Reflexion — read `.claude/reflexion_log.md`, 10 new entries
+- **#consistency-was-the-wrong-axis-and-nothing-i-could-measure-would-have-said-so** — the session's lesson.
+- **#a-derived-quantity-is-only-as-good-as-its-inputs** — I fixed one caption and broke six with the *correct* fix.
+- **#the-deploy-was-never-blocked-on-a-vps-and-tonight-it-was-not-blocked-on-a-token-either** — probe the credential before designing around having one.
+- **#phaser-reuses-the-scene-instance-so-a-class-field-runs-once**
+- **#the-guard-caught-what-the-eye-called-fine-twice**
+- **#i-contaminated-his-browser-for-the-third-session-running** — writing the lesson down is demonstrably not the fix.
+
+## Pending Backlog
+- [ ] **#29 the arrival film — SUPERSEDED. It is a comic now.** Close the row.
+- [ ] **P4 art — FIRST ITEM, and it is his call** (see WHAT IS BLOCKED, item 5)
+- [ ] CF-S117-DEPLOY-HANDLERS — four endpoints + SaveStore wiring. Blocked on the Neon string.
+- [ ] CF-S118-BOX-BODY-PAGING · CF-S118-SURFACE-GUARD-NAME-COUPLED · CF-S118-DEPLOY-UNVERIFIED
+- [ ] CF-S118-SHOOT-SINK-LEAK · CF-S118-SITE-BUILD-KILLS-PREVIEW
+- [ ] CF-S116-FIND-CLAUDE-DIR-SUBMODULE · CF-S117-MCV-PARTIAL-STATUS-HIDES-BINDINGS (both in `~/.claude`, 8 projects, SYNC-BRAIN Tier 0/1)
+- [ ] CF-S107-KEY-EXPOSURE — now also the Cloudflare tokens
+- [ ] #37 damage/fire/liquid · character stats feeding `throwRange()` — RECORDED, DELIBERATELY NOT DESIGNED
+- [ ] CF-S117-SKETCHBOOK-VIEWER · CF-S117-BOX-FIVE-OPTIONS
+- [ ] The hand-key tap still fires on RELEASE, not press
+- [ ] Interiors are letterboxed; the pack has ~45px dead space; diagram frames are sparse — composition, and his
+
+## Where the comic lives
+`tools/build-comic.py` → `src/art/comic/page-*.png` + `story.json`. **Never edit a
+page PNG** — change the storyboard and re-run. `src/core/Cinematic.ts` pages it;
+attempt 1 (tile-composed, rejected) is preserved at commit **46f91f5** because he
+noted the paged text-and-picture machinery is *"usefull nevetheless for later
+purposes"* for quest windows.
