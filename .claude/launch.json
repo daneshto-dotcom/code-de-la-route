@@ -36,6 +36,20 @@
         "--port=33446"
       ],
       "port": 33446
+    },
+    {
+      "name": "site-preview",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "56914",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "Game/founding-realm/rebuild/site"
+      ],
+      "port": 56914
     }
   ]
 }
