@@ -89,6 +89,19 @@ registration through the comic into 1601.
 16. **`PIL.rectangle(fill=None)` PAINTS WHITE** (new, S118). Not a no-op. The
     every-pixel-is-a-declared-ink assertion caught `#FFFFFF` on four pages.
 
+## CI IS GREEN AGAIN — AND HAD BEEN RED SINCE S117
+`Rebuild CI` failed on every push from S117 to S118 while handoffs reported "build
+PASSING". Found by S118's Rule 22 audit. **It was never art drift:** all 17 files
+differed in SIZE ONLY (`atlas.png` 18309 -> 20021), because the job pins
+`Pillow>=10,<12` and this machine runs Pillow 12+. A byte comparison of a
+COMPRESSED file asserts the compressor as well as the content. The step now
+DECODES the PNGs and compares pixels — 61 of 61 pixel-identical — and two runs are
+green. `Deploy site` is green too, skipping cleanly for want of a token.
+
+**The lesson generalises and this repo keeps relearning it:** never bind an
+assertion to a value a correct change will move. Same class as
+CF-S114-MCV-VERSION-ASSERTION-CLASS and the full-string `scripts.test` equality.
+
 ## Testing / gate
 `npm run build` (**9 checks** — boundary, palette, reach, realm, evidence, surfaces,
 **comic (NEW #10)**, staleness, bundle) · `npm run typecheck` · `npm test`
