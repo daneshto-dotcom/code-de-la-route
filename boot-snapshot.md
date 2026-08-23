@@ -32,27 +32,30 @@ gone.** Bright printing inks, panels with ink gutters, halftone, radial bursts, 
 lines, a `RIIIP` in hand-authored 5×7 lettering, and every figure in silhouette.
 37.4 MB became **26 KB**.
 
-**AND THERE IS A DEPLOYABLE FOLDER.** `npm run site` writes `rebuild/site` — **15
-files, ~1.5 MB** — guarded by an allowlist. Served flat and played from registration
-through the comic into 1601. **NOTHING HAS EVER BEEN UPLOADED** — the game has never
-been on the internet, and the 502 is the July tunnel, not a regression.
+**THE GAME IS LIVE — first time ever on the internet.** https://legacy-of-the-realm.saras-fdtta.workers.dev
+Deployed as a Cloudflare **Worker with static assets** (not Pages), 15 files, every
+asset verified 200 by request. The URL is public and shareable.
+
+**`legacyoftherealm.com` is still 502 and the fix is `Add Route`, not `Add Domain`.**
+Add Domain refuses because the dead-tunnel record still holds the root. A Worker
+ROUTE binds to an existing proxied record — the root already resolves to Cloudflare
+anycast — so `legacyoftherealm.com/*` intercepts before the dead origin is tried and
+nothing in DNS is touched. **NEVER clear DNS to make room: the domain carries live
+inbound email, `MX 10 inbound-smtp.eu-west-1.amazonaws.com`.**
 
 **TWO INSTRUCTIONS S118 GOT WRONG IN ITS OWN HANDOFF, both corrected:**
 - `npm run site --prefix <relative-path>` FAILS from anywhere but the repo root.
-  `cd` to `Game/founding-realm/rebuild` first.
 - **Workers & Pages is an ACCOUNT-level page.** Inside a zone the sidebar only shows
-  *Workers Routes*, a different feature. Direct link:
-  `dash.cloudflare.com/?to=/:account/workers-and-pages`
+  *Workers Routes*. Direct: `dash.cloudflare.com/?to=/:account/workers-and-pages`
 
-Both cost the owner real time on an account with 2% weekly quota left. **An
-instruction handed to a human is a deliverable and needs the same literal-correctness
-check as code.**
+Both cost the owner time on an account at 2% weekly quota. **An instruction handed to
+a human is a deliverable and needs the same literal-correctness check as code.**
 
 ## WHAT IS BLOCKED ON DANIEL, IN ORDER
-1. **THREE CLICKS AND THE GAME IS LIVE.** `rebuild/deploy/GOING-LIVE.md` has them.
-   `npm run site`, drag `rebuild/site` onto Cloudflare Pages, attach the domain.
-   The 502 on `legacyoftherealm.com` is the tunnel he switched off on 2026-07-17 —
-   the domain is alive on Cloudflare and DNS is already in the zone.
+1. **ONE CLICK LEFT: `+ Add Route` -> `legacyoftherealm.com/*`** on the
+   `legacy-of-the-realm` Worker. The game itself is ALREADY LIVE at
+   legacy-of-the-realm.saras-fdtta.workers.dev. Do NOT use Add Domain (it refuses)
+   and do NOT delete DNS records (live MX for email).
 2. **The vault's Cloudflare token is DEAD** — Cloudflare returns
    `{"code":1000,"message":"Invalid API Token"}`. It is also the wrong scope
    (`Workers Scripts: Edit`). A Pages-scoped token turns on the automatic route.
