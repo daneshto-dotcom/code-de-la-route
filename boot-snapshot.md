@@ -32,9 +32,21 @@ gone.** Bright printing inks, panels with ink gutters, halftone, radial bursts, 
 lines, a `RIIIP` in hand-authored 5×7 lettering, and every figure in silhouette.
 37.4 MB became **26 KB**.
 
-**AND THERE IS A DEPLOYABLE FOLDER.** `npm run site` writes `rebuild/site` — 23
-files, ~1.6 MB — guarded by an allowlist. It has been served flat and played from
-registration through the comic into 1601.
+**AND THERE IS A DEPLOYABLE FOLDER.** `npm run site` writes `rebuild/site` — **15
+files, ~1.5 MB** — guarded by an allowlist. Served flat and played from registration
+through the comic into 1601. **NOTHING HAS EVER BEEN UPLOADED** — the game has never
+been on the internet, and the 502 is the July tunnel, not a regression.
+
+**TWO INSTRUCTIONS S118 GOT WRONG IN ITS OWN HANDOFF, both corrected:**
+- `npm run site --prefix <relative-path>` FAILS from anywhere but the repo root.
+  `cd` to `Game/founding-realm/rebuild` first.
+- **Workers & Pages is an ACCOUNT-level page.** Inside a zone the sidebar only shows
+  *Workers Routes*, a different feature. Direct link:
+  `dash.cloudflare.com/?to=/:account/workers-and-pages`
+
+Both cost the owner real time on an account with 2% weekly quota left. **An
+instruction handed to a human is a deliverable and needs the same literal-correctness
+check as code.**
 
 ## WHAT IS BLOCKED ON DANIEL, IN ORDER
 1. **THREE CLICKS AND THE GAME IS LIVE.** `rebuild/deploy/GOING-LIVE.md` has them.
@@ -113,7 +125,23 @@ CF-S114-MCV-VERSION-ASSERTION-CLASS and the full-string `scripts.test` equality.
 **`site-preview`** entry. **Careful: `npm run site` deletes and recreates `site/`,
 which kills a server pointed at it** (`CF-S118-SITE-BUILD-KILLS-PREVIEW`).
 
-## Recent Reflexion — read `.claude/reflexion_log.md`, 10 new entries
+## MCV RECONCILED AT CLOSE — and 12 of the 63 failures were mine
+The stop-hook gate hard-failed. **Class 1, mine:** every S118 `verification[]` entry
+was `{file, claim}` PROSE, so the verifier reported `unknown assertion type: None`
+and marked all three priorities WEAK. That is S114's #prose-is-not-verification,
+reproduced in a session whose own boot snapshot cites it approvingly. Replaced with
+**63 typed assertions**. **Class 2:** S110-P4 / S113-P2 needles bound the DOM
+`<video>` film, correctly gone — REBOUND to durable invariants (the arrival scene and
+its hand-off contract; ESC-skips-on-first-view). Third appearance of
+CF-S114-MCV-VERSION-ASSERTION-CLASS. **Class 3:** `site/**` is a derived gitignored
+build product → added to `ignore_globs` beside the existing `rebuild/dist/*`.
+**After: 717 pass / 0 fail / 0 UNBOUND, exit 0.**
+
+**RUN `python ~/.claude/scripts/verify-session-claims.py` AT EACH PRIORITY BOUNDARY**,
+not at close — a gate firing reactively is what the INTEGRITY-WARNING PROTOCOL exists
+to prevent. And `~/.claude/scripts/verification-skeleton.py` exists; I never opened it.
+
+## Recent Reflexion — read `.claude/reflexion_log.md`, 13 new entries
 - **#consistency-was-the-wrong-axis-and-nothing-i-could-measure-would-have-said-so** — the session's lesson.
 - **#a-derived-quantity-is-only-as-good-as-its-inputs** — I fixed one caption and broke six with the *correct* fix.
 - **#the-deploy-was-never-blocked-on-a-vps-and-tonight-it-was-not-blocked-on-a-token-either** — probe the credential before designing around having one.
