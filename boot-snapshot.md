@@ -144,13 +144,27 @@ build product → added to `ignore_globs` beside the existing `rebuild/dist/*`.
 not at close — a gate firing reactively is what the INTEGRITY-WARNING PROTOCOL exists
 to prevent. And `~/.claude/scripts/verification-skeleton.py` exists; I never opened it.
 
-## Recent Reflexion — read `.claude/reflexion_log.md`, 13 new entries
-- **#consistency-was-the-wrong-axis-and-nothing-i-could-measure-would-have-said-so** — the session's lesson.
-- **#a-derived-quantity-is-only-as-good-as-its-inputs** — I fixed one caption and broke six with the *correct* fix.
-- **#the-deploy-was-never-blocked-on-a-vps-and-tonight-it-was-not-blocked-on-a-token-either** — probe the credential before designing around having one.
-- **#phaser-reuses-the-scene-instance-so-a-class-field-runs-once**
+## Recent Reflexion — `.claude/reflexion_log.md` (44 entries; 31 older moved to `.claude/reflexion-archive.md`, zero loss proven by entry text)
+- **#consistency-was-the-wrong-axis-and-nothing-i-could-measure-would-have-said-so**
+- **#a-derived-quantity-is-only-as-good-as-its-inputs**
+- **#the-deploy-was-never-blocked-on-a-vps-and-tonight-it-was-not-blocked-on-a-token-either**
+- **#a-deploy-is-an-allowlist-never-a-directory**
+- **#the-arithmetic-and-the-pixels-agreeing-is-how-you-know-both-are-right**
 - **#the-guard-caught-what-the-eye-called-fine-twice**
-- **#i-contaminated-his-browser-for-the-third-session-running** — writing the lesson down is demonstrably not the fix.
+## Next Steps
+1. **ATTACH THE DOMAIN** — `+ Add Route` -> `legacyoftherealm.com/*` on the
+   `legacy-of-the-realm` Worker. NOT Add Domain (refuses). NEVER clear DNS (live MX).
+2. **CF-S118-DEPLOY-DOC-SAYS-PAGES** — the docs + workflow describe Pages; the live
+   thing is a Worker. `wrangler pages deploy` would make a SECOND project.
+3. **CF-S117-DEPLOY-HANDLERS** — four auth endpoints + SaveStore wiring. Needs the
+   Neon string in `legacy_realm_db.pooled`.
+4. **P4 art** — his call. The player sprite has no shoulder line (measured).
+5. **CF-S107-KEY-EXPOSURE** — rotate the keys.
+
+## Blockers
+- The domain route (above) — one dashboard action, his.
+- Dead Cloudflare token (wrong scope AND rejected). Neon connection string.
+- A photograph of the gate's lower half. A tape measure for STO-1. Dael's tutorial role.
 
 ## Pending Backlog
 - [ ] **#29 the arrival film — SUPERSEDED. It is a comic now.** Close the row.
