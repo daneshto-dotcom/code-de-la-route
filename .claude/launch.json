@@ -50,6 +50,17 @@
         "Game/founding-realm/rebuild/site"
       ],
       "port": 56914
+    },
+    {
+      "name": "dev-api",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "--env-file=Game/founding-realm/rebuild/deploy/.dev-api.env",
+        "--experimental-strip-types",
+        "--no-warnings",
+        "Game/founding-realm/rebuild/deploy/dev-api.mjs"
+      ],
+      "port": 37904
     }
   ]
 }
