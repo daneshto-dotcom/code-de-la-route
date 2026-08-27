@@ -60,7 +60,7 @@
         "--no-warnings",
         "Game/founding-realm/rebuild/deploy/dev-api.mjs"
       ],
-      "port": 37904
+      "port": 20747
     }
   ]
 }
