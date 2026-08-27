@@ -18,7 +18,7 @@ Generated: 2026-08-26 | Session: S119
    Only the pane's `computer{screenshot}` fails, and it fails for DOM too. `npm run shoot` + the page-side
    driver made 89 frames in S116-S118 and 16 more in S120. S119 shot NOTHING: the instrument existed,
    worked, and went unused for two days of building. Do not re-derive "it cannot be seen" from this rule.
-   **A SIXTH TRAP the driver header does not list:** a synthetic KeyboardEvent built from `{code}` alone
+   **THE KEY TRAP, now listed in the driver header itself (S120 audit):** an event built from `{code}` alone
    reports `e.key === ''`. Phaser dispatches on `keyCode` so game actions work, but any handler reading
    `e.key` (Creation's name field) is unreachable. Set `key` explicitly or you cannot type.
 
