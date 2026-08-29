@@ -2,65 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "game-server",
+      "name": "realm-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run",
-        "server",
-        "--prefix",
-        "Game/founding-realm"
-      ],
-      "port": 3000,
-      "autoPort": false
-    },
-    {
-      "name": "client-static",
-      "runtimeExecutable": "python",
-      "runtimeArgs": [
-        "-m",
-        "http.server",
-        "35315",
-        "--bind",
-        "127.0.0.1",
-        "--directory",
-        "Game/founding-realm/public"
-      ],
-      "port": 35315
-    },
-    {
-      "name": "rebuild",
-      "runtimeExecutable": "node",
-      "runtimeArgs": [
-        "Game/founding-realm/rebuild/esbuild.config.mjs",
-        "--serve",
-        "--port=33446"
-      ],
-      "port": 33446
-    },
-    {
-      "name": "site-preview",
-      "runtimeExecutable": "python",
-      "runtimeArgs": [
-        "-m",
-        "http.server",
-        "56914",
-        "--bind",
-        "127.0.0.1",
-        "--directory",
-        "Game/founding-realm/rebuild/site"
-      ],
-      "port": 56914
-    },
-    {
-      "name": "dev-api",
-      "runtimeExecutable": "node",
-      "runtimeArgs": [
-        "--env-file=Game/founding-realm/rebuild/deploy/.dev-api.env",
-        "--experimental-strip-types",
-        "--no-warnings",
-        "Game/founding-realm/rebuild/deploy/dev-api.mjs"
-      ],
-      "port": 20747
+      "runtimeArgs": ["--prefix", "Game/founding-realm/rebuild", "run", "dev", "--", "--port=27826"],
+      "port": 27826
     }
   ]
 }
