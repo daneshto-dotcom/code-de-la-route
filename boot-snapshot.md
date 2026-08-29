@@ -1,7 +1,27 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-08-29 | Session: S123 | parent 6cf3e08 | submodule bee25eb
+Generated: 2026-08-29 | Session: S124 | parent 6cf3e08 | submodule bee25eb
 
 ## READ THIS FIRST — WHAT CHANGED UNDER YOU
+
+**A ONE-LINE SAVE BUG WAS ERASING EVERY PLAYER'S PROGRESS ON LOAD, and it was
+live through the whole of S123.** `migrate()`'s current-version path spread
+`splitFlags(data.worldFlags)` — which rescues `era` and `intro.seen` from where
+they lived BEFORE v9 — and never read `data.progress`, where they actually live.
+It returned `progress: {}` and spread that over the real one. Arrive, reload, and
+you were back at the ticket gate. FIXED, plus a boot repair that rescues damaged
+saves and a write guard. **Any handoff older than this is describing a game that
+silently reset you.**
+
+Two things made it unrecognisable, and both are worth carrying: "no cars" meant
+`era` had been ERASED (`Traffic` only draws when `era==='2026'`), not that you
+were in 1601; and "DAY 24" comes from the realm's SERVER epoch, so it reads the
+same on a character made a minute ago. **When a symptom seems to prove your state
+is intact, check whether it reads that state at all.**
+
+**THE OWNER FOUND IT, NOT THE GATE.** S123 closed with 12 guards, 3,215 save
+assertions and a clean MCV — over a live save-corruption bug. Nothing could have
+caught it: every save test loads ONCE, and the bug lived in the second load. A
+round trip is not a load.
 
 **THE MAP EXISTS AND IT IS LIVE.** Press **M** in game, or open the Journal's sixth
 tab, and you see the whole parcel from above with a blinking marker on your tile.
@@ -46,14 +66,18 @@ Deploy is AUTOMATIC on push to master touching `rebuild/**`. NEVER `pages deploy
    two altitudes; only the parcel shipped. THE BLOCKER IS DATA, NOT ART: there is
    no inter-parcel world layout anywhere — no origin, no offset, only a warp graph.
    Someone must AUTHOR parcel origins in a metre frame from S109-SITE-TRUTH.
-3. **AD03 archives** — 3 P 3301 (1821 cadastre) and the pre-1601 terriers. Their
+3. **Audit the save layer for the same class** — a derived value overwriting a
+   stored one. And add ROUND-TRIP coverage: no save test loads twice.
+4. **AD03 archives** — 3 P 3301 (1821 cadastre) and the pre-1601 terriers. Their
    site blocks non-browser requests by design; needs a human with a browser.
-4. **Presence authentication** — deferred by the owner, NOT decided.
-5. **CF-S117-MCV-PARTIAL-STATUS-HIDES-BINDINGS** — the verifier false-green.
+5. **Presence authentication** — deferred by the owner, NOT decided.
+6. **CF-S117-MCV-PARTIAL-STATUS-HIDES-BINDINGS** — the verifier false-green.
    Shared across all eight projects; SYNC-BRAIN Tier 0/1, own session.
-6. **Item spawn/despawn contention**, and `world.dropped` still has no decay policy.
+7. **Item spawn/despawn contention**, and `world.dropped` still has no decay policy.
 
 ## BLOCKED ON HIM
+- **ROTATE THE EXPOSED CLOUDFLARE TOKEN (CF-S123, HIGH)** — a live cfat_ token was
+  pasted into the S123 transcript. Not an outage; the stored token still works.
 - **CF-S107-KEY-EXPOSURE (HIGH, since S107)** — rotate the .env keys.
 - **CF-S115-SUBMODULE-STATE-SHADOW (HIGH)** — deleting inside a submodule needs go.
 - **www. is still 404** — one zone Redirect Rule. Do NOT re-probe.
