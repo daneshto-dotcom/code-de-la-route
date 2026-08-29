@@ -1,148 +1,112 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-08-27 | Session: S120
+Generated: 2026-08-29 | Session: S121
 
-## READ THIS FIRST — THE CONSTITUTIONAL RULES
-1. **THE WORKING AGREEMENT (§11.0).** Daniel directs every step. OFFER archived assets; NEVER install without his go.
-2. **THE LOVE-IT GATE (§13.1).** Ship something visible and SHOW it.
-3. **SUBTRACT, DON'T INVENT (`DEC-1601-METHOD`).** Absence of footage is never filled with invention.
-4. **S115** — report between steps; do not stop between them.
-5. **S116/S117** — LOOK AT IT. An unmeasured read of a rendered frame was wrong eight times running.
-6. **S118** — MEASURED IS NOT THE SAME AS CORRECT. Ask what a thing is FOR before optimising a property of it.
-7. **S119 — THE INSTRUMENT IS SOMETIMES THE PRIORITY.** `__realm` exists on localhost; step the loop by hand.
-   **THE GAME CAN BE PHOTOGRAPHED.** `canvas.toDataURL()` works — nothing swaps the buffer, so the back
-   buffer still holds the render (`tools/shoot.ts`). Only the pane's `computer{screenshot}` fails, for DOM
-   too. 105 frames exist in `docs/shots/`. Do NOT re-derive "it cannot be seen".
-8. **S120, NEW — A NEEDLE MUST BE A SHAPE ONLY CODE CAN HAVE.** Four MCV failures this session came from
-   assertions written against what I MEANT to write rather than what the file says: a comment quoting the
-   phrase asserted absent (x2), an invented assertion type (x2), and a needle broken by the file's own
-   80-column wrapping. The verifier knows ONLY: file_exists, file_absent, file_contains, file_lacks,
-   grep_count, json_field, syntax_ok, nonce_match. And bind to the CLAIM, not to today's code shape — an
-   assertion anchored to `handSince` died when that dead field was correctly deleted.
+## READ THIS FIRST - WHAT CHANGED UNDER YOU
 
-## WHERE THE GAME IS NOW
-**LIVE AND CORRECT AT https://legacyoftherealm.com** — deployed 6x this session with the vault's
-Cloudflare token via `wrangler deploy` (NOT `pages deploy`; it is a Worker). Apex bundle byte-identical
-to the local build, verified each time. `www.` is still **404** — one zone Redirect Rule, 301 to apex,
-NEVER a second Worker route (localStorage is per-origin and a route would FORK the save).
+**THE SERVER IS ON.** For this entire project /api answered 503 not-configured. It does not any
+more. Neon PG 18.6 is attached, secrets are on the Worker, and a REAL PERSON has registered and
+played: account "dfsfsdfsd", world in the database at revision 3. Anything in an older handoff
+saying "no database exists" or "the client is authoritative offline" is now WRONG.
 
-Everything from S119 is finally reachable by a real player: the six-page creation wizard, the character
-sheet, the Journal's four tabs, accounts with offline fallback. S120 fixed what looking at it revealed.
+**THE $5/mo WORKERS DECISION IS RETIRED, NOT PENDING.** Three handoffs called it load-bearing:
+PBKDF2 x100,000 measured ~29 ms against a 10 ms Free CPU limit, so login "must fail" once a
+database existed. It registers in ~310 ms on the apex, repeatedly, no CPU refusal. Stop carrying it.
 
-## THE TWO DOCUMENTS THAT MAKE THE NEXT SESSION CHEAP — READ BOTH BEFORE PLANNING
-1. **`Game/founding-realm/BACKLOG.md` → section "NEXT SESSIONS — PLANNED, WITH IMPLEMENTATION NOTES".**
-   S121-P1/P2/P3 and S122 with files named, design decisions ALREADY TAKEN, the trap in each, and the
-   test that proves it. Do not re-plan these.
-2. **`Game/founding-realm/rebuild/deploy/RESEARCH-multiplayer.md`** — 317 lines, 10 sources, the platform
-   reading already done. **Do NOT repeat it.** Key verified facts so they are never re-derived:
-   SQLite-backed Durable Objects ARE on the Workers **Free** plan (100,000 req/day, 13,000 GB-s/day);
-   a connection = 1 request; incoming messages bill **20:1**; **outgoing messages are FREE**; hibernating
-   objects are not billed for duration. Netcode answer: send the STEP, not the position (Westward's
-   shipped pattern) — the game is tile-locked so interpolation/prediction/rollback are NOT needed.
+**SAVES ARE PER-REALM.** `save` is keyed (player_id, realm_id); the realm is a PATH segment,
+/api/realm/<realmId>/save. The realm-less spelling is GONE, not aliased. Realms are declared rows
+with an immutable epoch, so a typo in a URL cannot bring a world into existence.
 
-## NEXT STEPS
-1. **S121-P1 — close `CF-S120-NOTHING-PUSHES-DURING-PLAY`.** `push()` is called from TWO sites, both in
-   `Restart.ts`; nothing uploads during play. Measured with a control: player walked (15,35)->(15,32),
-   local save written, ZERO `/api` calls. Decision pre-taken: debounce ~5 s after the last local write +
-   flush on `pagehide`/`visibilitychange`. THE TRAP: `push()` returns `stale` and is deliberately NOT
-   retried — an autosave meeting a second device must SURFACE the conflict, not clobber.
-2. **S121-P2 — Neon + secrets (BLOCKED ON OWNER).** He pastes the pooled string for the EXISTING Neon
-   project `legacy-of-the-realm` into `legacy_realm_db.pooled` in the vault — not into chat. Then schema,
-   `wrangler secret put DATABASE_URL` piped from the vault, a FRESH 32-byte `SESSION_SECRET` (never
-   `vercel.jwt_secret`). **$5/mo decision is load-bearing:** Free is 10 ms CPU/invocation and PBKDF2
-   x100,000 measures ~29 ms, so login FAILS on Free once a database exists.
-3. **S121-P3 — the Durable Object spike.** One DO, one parcel, two tabs, a moving square. It must produce
-   TWO NUMBERS: the per-DO memory class, and whether a Free DO carries a per-invocation CPU cap. **If it
-   produces a feature instead of numbers, it failed.**
-4. **S122 — presence design PDR**, only after 1 and 3.
-5. Small and queued: world-index churn -> content HASHES (the mtimes are load-bearing for
-   `staleness-check`, so do not just delete them); `CF-S117-BOX-FIVE-OPTIONS` (4-option ceiling, ~3 lines);
-   `Input.ts`'s four unused exported helpers; `CF-S120-DEV-API-LEAKS-A-POSTGRES-PER-RUN` (reap on STARTUP).
+**THE WORLD KEEPS TIME AND NOTHING RUNS TO DO IT.** realmTime(epoch, serverNow) is pure: 3 real
+minutes per realm hour, a realm day is 72 real minutes. No tick, no loop, no alarm, no Durable
+Object. Night is a PALETTE SWAP (NightPalette.ts) applied by a GLSL pipeline over a 120 s ramp.
 
-## BLOCKERS (owner only)
-- **Neon pooled connection string** — into the vault, not chat. The project already exists.
-- **The $5/mo Workers decision** — or accept weaker password hashing for real people.
-- **`www.` 404** — a dashboard Redirect Rule. PROBED: neither vault token can do it (`rulesets` returns
-  10000 with the Workers token, 7003 with the DNS token). Genuinely his click.
-- **`CF-S107-KEY-EXPOSURE`** — HIGH, open since S107. Rotate.
+## RULES THAT COST REAL TIME TO LEARN
 
-## ARCHITECTURE FACTS THAT WILL BITE YOU
-1. **ONE GENERATOR, TWO CENTURIES.** `build-zone1.py` emits zone1 AND zone1_2026.
-2. **PLAYER STATE AND WORLD STATE ARE SEPARATE.** `carry` is yours; `world.taken` is the world's.
-3. **A HAND HOLDS EXACTLY ONE THING — a LAW.** Only the PACK stacks.
-4. **NO UI ART IN THE ATLAS.** All chrome is runtime Graphics + 11px text.
-5. **MIGRATION BRANCHES DO NOT CHAIN.** Every `if (version === N)` returns a COMPLETE SaveData. **SAVE IS
-   v8.** A missing branch falls through to `fresh()` and BLANKS THE WORLD.
-6. **A SCENE MAY OWN MORE THAN ONE SURFACE.** An `Image` is NOT part of the Graphics surface.
-7. **TWO PLACES DERIVING ONE NUMBER IS A BUG WITH A DELAY FUSE.**
-8. **THE JOURNAL HAS FOUR PAGES** — keys → play → account → character. **A NEW PAGE GOES ON THE END, AND
-   NEEDS A BRANCH IN `update()` TOO** — S119 added `character` to the tab order and not to `update()`, so
-   another page's animation drew through it for a whole session. The tab strip is now FOCUSABLE (`onTabs`).
-9. **SIGN OUT AND RESTART ARE DIFFERENT VERBS.** `Restart.ts` PUBLISHES the erase.
-10. **`Input.ts`, `BoxLayout.ts`, `AccountRules.ts`, `Stats.ts`, `Character.ts` MUST STAY PHASER-FREE.**
-11. **PHASER REUSES A SCENE INSTANCE ACROSS RESTARTS.** Reset per-run state in `init()`/`preload()`.
-12. **A DEPLOY IS AN ALLOWLIST, NEVER A DIRECTORY.** Guard #9. Still 15 files.
-13. **`SPRITE` BANKS ARE 3 OPAQUE PER 8x8 REGION.** The y=8 seam is why 5 inks fit one figure.
-14. **THE OPTION LISTS ARE DECLARED TWICE** and the generator REFUSES TO BUILD if they disagree.
-15. **`wrangler.toml` HAS NO `routes` KEY, ON PURPOSE.** Adding one arms a destructive `PUT /routes` that
-    would delete the apex route Daniel attached by hand. This is why `wrangler deploy` is safe.
-16. **THE SERVER MUST SHIP BEFORE THE CLIENT** on any save-version bump. One `SaveVersion.ts`, re-exported.
-17. **NEW S120 — THE CREDENTIAL NEVER LEAVES THE DEVICE.** `forTransport()` strips `account` from what is
-    pushed, from what `adoptRemote()` installs, AND from BOTH sides of `pull()`'s `matchesLocal` compare —
-    miss that third caller and the compare can never match, killing the branch silently.
-18. **NEW S120 — AN OUTAGE IS NOT A REFUSAL.** A 5xx or `not-configured` means offline (fall through to
-    local play); a 4xx still refuses. Getting this wrong locked EVERY new player out of the game entirely.
-19. **NEW S120 — UNKNOWN `/api` ROUTES 404 BEFORE THE CONFIG CHECK.** Otherwise, with no database, every
-    bogus path answered `503 not-configured`, which `isOutage()` reads as OFFLINE — a client bug would
-    degrade silently instead of failing loudly.
+1. **S11.0** he directs every step. **S13.1** ship something visible and SHOW it.
+2. **VERIFY THE ARTIFACT, NOT THE SOURCE.** The browser serves dist/main.js. Rebuild before you
+   test, or you test the old code.
+3. **BIND TO THE CLAIM, NOT TODAY'S CODE SHAPE.** S121 caught itself pinning
+   `SAVE_SCHEMA_VERSION = 9` - exactly what CF-S114-MCV-VERSION-ASSERTION-CLASS forbids, now on
+   its fourth appearance. Assert the migration BRANCH, never the number.
+4. **NEW S121 - MEASURE THROUGH THE TRANSIENT.** A pixel reading said night made the world
+   BRIGHTER. The camera fade was mid-run at 42% and both grabs sat on a rising ramp. Settle the
+   frame first; a reading taken during a transient measures the transient.
+5. **NEW S121 - WHEN TWO PLACES COMPUTE ONE NUMBER, ONE MUST BE THE DEFINITION.** The LUT builder
+   used `v >> 2`, the shader `floor(v/255*63+0.5)`. 48 of 103 colours silently went unmapped while
+   every summary metric still looked healthy.
+6. **NEW S121 - A METRIC CAN BE GAMED INTO ABSURDITY.** An automatic palette-separation pass turned
+   a black car orange and gave an NPC green skin, both numerically valid. The principled fix was
+   one line: people do not dim.
+7. **THE PANE DOES NOT RUN rAF.** Real-time waits render nothing - step the loop by hand
+   (`__realm.loop.step(16)`). `__night` and `__cues` are localhost-only hooks for driving the sky
+   and the sounds. A truthy `window.game` is NOT proof the game booted.
 
 ## TESTING / GATE
-`npm run typecheck` · `npm test` (**3,155** assertions) · `npm run build` (**9** guards — 8 print
-"X guard: PASS", `check:boundary` prints "import boundary: PASS"; the other 3 PASS lines are from
-`realm:build`, so "12 guards" is WRONG) · `npm run test:db` (**80**, needs Docker) · `npm run site`
-(guard #9) · `npm run scan:secrets`
+`npm run typecheck` - `npm test` (**3,966** assertions, 11 suites) - `npm run build` (**9 guards**;
+12 PASS lines total, the other 3 come from prebuild -> npm run admin, NOT realm:build) -
+`npm run test:db` (**99**, needs Docker) - `npm run site` - `npm run scan:secrets`
 
-**Deploy:** `npm run site` then `CLOUDFLARE_API_TOKEN` from the vault (never echoed) + `npx wrangler@4
-deploy`. Verify by fetching the apex bundle back and byte-comparing to `rebuild/site/dist/main.js`.
+**Deploy:** `npm run site`, then `npx wrangler@4 versions upload` for a preview URL, verify, then
+`deploy`. NEVER `pages deploy` - it is a Worker. Byte-compare the served bundle afterwards.
 
-**Dev server:** `preview_start {name:"dev-api"}` — needs Docker. **Check
-`docker ps --filter name=lotr-pg-test` at close**: it leaks one container per run.
+## NEXT STEPS
+1. **CF-S121-TESTS-ARE-NEVER-TYPECHECKED (MEDIUM, new, PROVEN).** tsconfig includes only
+   `src/**/*`, so ZERO test files are typechecked. Demonstrated: a deliberate type error in a test
+   file gave tsc 0 errors and the suite still said PASS. "Typecheck clean" has never covered a
+   single assertion. Expect a backlog across 11 suites - its own priority, not a drive-by.
+2. **CF-S119-SAVE-DIVERGENCE is REFUSED, not resolved.** A diverged boot latches autosync OFF
+   (`autoSync.markDiverged()`) so it cannot clobber the other device - but the player has no way
+   to CHOOSE. The primitives exist: pull() + adoptRemote() / keepLocal(). ~60 lines on the
+   account page, and it closes a carry-forward open since S119.
+3. **Shared, contended world state** - another player taking the last bottle while you are away.
+   Deliberately deferred: no users until two people stand in one cellar. When it comes, do the
+   cheap thing first (per-character containers), and give `world.dropped` a DECAY POLICY before it
+   is shared - it is an unbounded, permanently growing map today.
+4. **Ambient day/night MUSIC.** He has tracks from the old build. Only the TRANSITION cues were
+   built (Ambience.ts: tritone+owl for dusk, major triad+birds for dawn). The sustained beds are
+   not wired, by his instruction.
+5. Small: `CF-S117-BOX-FIVE-OPTIONS` (4-option ceiling, ~3 lines) - world-index content hashes
+   (the mtimes are load-bearing for staleness-check, so do not just delete them) - `Input.ts` four
+   unused exports - dev-api container reaper (reap on STARTUP, not on exit).
 
-## Pending Backlog
-- [ ] CF-S120-NAME-ENTER-SKIPS-PATH-PAGE
-- [ ] CF-S120-NAME-F-TYPES-NOT-CONTINUE
-- [ ] CF-S120-JOURNAL-CHARACTER-ANIM-LEAK
-- [ ] CF-S120-HUD-NO-PLATE-CONTRAST
-- [ ] CF-S120-WORLD-INDEX-MTIME-CHURN
-- [ ] CF-S120-NOTHING-PUSHES-DURING-PLAY
-- [ ] CF-S120-DEV-API-LEAKS-A-POSTGRES-PER-RUN
+## BLOCKED ON HIM
+- **CF-S107-KEY-EXPOSURE** - HIGH, open since S107. An exposed key does not expire on its own.
+- **`www.` is 404** - one zone Redirect Rule, 301 to apex. NEVER a second Worker route:
+  localStorage is per-origin and a route would FORK the save. PROBED: neither vault token can do
+  it (rulesets 10000 / 7003). He said "late on" at S121 - do not re-probe it.
+- **CF-S115-SUBMODULE-STATE-SHADOW** - HIGH. Deleting inside a submodule needs his go.
+- **The constitution is STALE** - blocks the /handoff CLOSE gate until re-stamped (GOV-28.1).
 
-## Recent Reflexion — S120 tags (full text in `.claude/reflexion_log.md`, 40 entries)
-- **#the-instrument-existed-and-nobody-ran-it**
-- **#the-footer-was-the-spec-and-both-keys-broke-it**
-- **#i-was-wrong-twice-and-measurement-caught-both**
-- **#a-guard-that-passes-after-the-bug-happens**
-- **#the-comment-was-the-risk-not-the-code**
-- **#my-own-green-verdict-was-confounded**
-- **#the-browser-serves-the-bundle-not-the-source**
-- **#i-invented-a-vocabulary-and-called-it-verification**
-- **#green-is-not-deployed**
-- **#i-reported-an-absence-i-had-not-actually-searched-for**
-- **#the-error-message-said-safe-while-it-locked-the-door**
-- **#my-verdict-string-said-still-blocked-about-a-working-deploy**
-- **#it-was-drawn-as-a-button-and-was-not-one**
-- **#a-label-computed-for-four-pages-and-printed-on-one**
-- **#i-wrote-a-test-that-could-not-fail**
-- **#the-cure-was-already-in-the-repo-with-a-comment-about-this-bug**
-- **#my-test-data-was-invalid-and-it-looked-like-a-regression**
-- **#i-probed-the-two-i-could-not-do-before-saying-i-could-not**
-- **#the-fix-that-made-it-pure-also-made-it-a-trap**
-- **#sanitise-the-offer-not-the-rule**
-- **#a-game-set-in-france-needs-its-accents-tested**
-- **#the-stale-row-was-the-before-picture**
-- **#the-feature-was-half-wired-and-the-comment-admitted-it**
-- **#a-skip-that-reports-success**
-- **#chosen-for-slack-not-for-fitting**
-- **#i-told-him-a-platform-limit-from-memory-and-it-was-wrong**
-- **#the-cleanup-step-found-the-bug-the-work-never-would**
-- **#i-narrated-a-diagnosis-one-line-before-checking-it**
-- **#eleven-priorities-and-the-forward-plan-was-the-deliverable**
+## PENDING BACKLOG
+- [ ] Higher-res Chateau photos (needs source files from Daniel)
+- [ ] fog-strip.webp integration (generated in S51, not wired to map edges)
+- [ ] Fallback sprite improvement (deferred — rare edge case)
+- [ ] Sprite atlas packing (deferred — 27 PNGs manageable)
+- [ ] **S74 deferred**: apple-touch-icon-180.png asset file (link tag + manifest ref already in place; falls back to webp logo until PNG generated)
+- [ ] **S74 deferred**: 12-screenshot viewport matrix (iPhone SE/iPhone 15 Pro/Pixel 7/desktop × 3 flows) — S79 P4 + S80 P3 shipped 13 baselines (fest
+- [ ] **S74 deferred**: Veo cutscene prototype (Gemini ANALYZE rec — untapped tool opportunity)
+- [ ] **S74 deferred**: T14 runtime event sim — current test asserts debounce code presence via file content, not live visualViewport event dispatch (
+- [ ] **S75 protocol**: Full-file diffs in CHECK prompts (current partial-snippet pattern caused 44% false-positive rate)
+- [ ] **S75 protocol**: Convergence scan in PDR R1 (when Grok + Gemini independently agree on architecture, surface explicitly)
+- [ ] **S80 deferred**: TTS pipeline end-to-end manual QA against real LLM emit (`scripts/tts-synthesize.js` is mocked in tests; first AI-dialogue-pla
+- [ ] **Sentinel-25 HIGH**: Inventory UI — sidebar tab works; filtering / sorting affordances missing
+(26 unchecked items total in BACKLOG.md)
+
+## RECENT REFLEXION - S121 tags (full text in .claude/reflexion_log.md, 47 entries)
+- #six-research-tracks-reasoned-about-a-server-that-was-switched-off
+- #the-blocker-i-carried-for-a-session-did-not-exist
+- #applied-is-not-the-same-as-matches
+- #the-plan-was-pre-taken-and-one-parameter-of-it-was-measurably-wrong
+- #the-test-found-the-bug-that-reading-had-walked-past-twice
+- #i-rejected-a-bug-the-reviewer-invented
+- #the-owner-reframed-and-it-changed-the-answer-not-just-the-scope
+- #a-credential-went-into-chat-because-i-asked-for-it-in-the-same-breath-as-the-file
+- #the-name-said-world-and-the-contents-said-player
+- #a-grep-for-literal-calls-missed-the-dynamic-one
+- #the-failing-test-might-mean-the-data-is-gone
+- #the-optimiser-satisfied-the-metric-and-produced-green-skin
+- #the-principled-fix-was-smaller-than-the-numeric-one
+- #it-looked-like-it-worked-and-half-the-palette-was-untouched
+- #i-measured-a-fade-and-nearly-reported-it-as-the-feature
+- #i-read-a-truthy-global-as-proof-and-it-was-a-pane-artifact
+- #the-author-said-the-player-holds-no-decisions-and-it-held-three
