@@ -62,3 +62,22 @@ Re-fetch: gdown against the public Drive folder. The MCP drive_list CANNOT see i
 See .claude/reflexion_log.md — S126 block at top (14 entries), then S125.
 Note: the S123 block (40 entries) was pruned at the 50-entry cap; it survives in
 .handoff-archive/.
+
+## LAST STEP OF BOOT - ASK THE DATABASE BEFORE YOU START (owner instruction, S127)
+Two stores, 83 knowledge entries + the realm records, and they are queryable in half a
+second. Do this AFTER the handoff and BEFORE any work:
+
+    cd Game/founding-realm/rebuild
+    npm run know -- <the terms of your actual task>
+    npm run know -- --open
+
+Flags: bare terms search; `--open` for what is outstanding; `--kind decision` for the
+owner's rulings; `--id <ID>` for one entry in full.
+
+**S127 is why this line exists.** The zone-2 grid decision turned on a constraint no
+survey document had - `FACT-MINIMAP` + `FACT-PAGE-BUDGET` cap a parcel at 42 rows if it is
+to keep zone-1's shipped 5 px/tile MAP page. `npm run know -- minimap` returns it first.
+The same session then lost time to a shell failure `RES-S123-WINDOWS-SHELL-EATS-DOLLAR-BRACE`
+already answered. The database knew both; nobody asked it.
+
+Protocol, including what to ADD at close: `Game/founding-realm/CLAUDE.md` -> WORLD DATABASE.
