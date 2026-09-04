@@ -25,12 +25,19 @@ with a minimap at 5 px/tile — the same legibility zone-1 ships, which is the p
    FOLIAGE_DRY's after dark. The shared day ink is DELIBERATE — era twins, 0.00 on purpose — so
    this is his call, not a repair: accept one night ink, or un-share the day colour. Excused by
    name in `KNOWN_LUT_COLLISIONS` meanwhile, and R11 fails if a listed collision stops colliding.
-3. **`CF-S122-PRESENCE-IS-UNAUTHENTICATED`** — MEDIUM-HIGH, live in production, untouched by
+3. **`CF-S128-EDGE-BLOCKS-THE-MONITOR` — the site is live and STILL unwatched.** `/health` was
+   built this session and answers 200 correctly, but Cloudflare refuses the probe with **403**
+   from GitHub Actions runner IPs, so it never reaches the Worker. I verified `/health` from
+   this machine — a residential IP the edge does not challenge — and armed a schedule that runs
+   from a datacenter range it does. It opened a false outage issue on a healthy site; the
+   schedule is re-parked and the issue is closed with the diagnosis. **Needs a Cloudflare WAF
+   skip rule for `/health` (dashboard, so his), then a manual run to confirm, then re-arm.**
+4. **`CF-S122-PRESENCE-IS-UNAUTHENTICATED`** — MEDIUM-HIGH, live in production, untouched by
    S128. The presence WebSocket accepts anyone; no session token is checked.
-4. **`CF-S127-HARVEST-UNVERIFIED`** — 40 candidates from five agents across S110–S126,
+5. **`CF-S127-HARVEST-UNVERIFIED`** — 40 candidates from five agents across S110–S126,
    including corrections to entries that are actively WRONG. All 30 verifiers were killed by a
    spend limit. Replays from cache.
-5. Two cheap improvements, both recorded: `CF-S128-ARBORETUM-IS-PLANTED-BY-ARITHMETIC` (the
+6. Two cheap improvements, both recorded: `CF-S128-ARBORETUM-IS-PLANTED-BY-ARITHMETIC` (the
    trees are a modulo lattice, and he ruled "scenery with **good variety**") and
    `CF-S128-POND-SHAPE-IS-INVENTED-WITHIN-A-MEASURED-FRAME` (the outline is authored inside a
    measured frame — needs the satellite registration, not a ruling).
@@ -59,7 +66,7 @@ S128 added two, and moved rules that had never run in a build:
 - The atlas sheet grows automatically, but `tile()` is **FROZEN** once it is sized — register
   new tiles ABOVE the `rows = ...` line in `build()` or it raises by name.
 
-## LAST STEP OF BOOT — ASK THE DATABASE (his instruction, S127)
+## LAST STEP OF BOOT — ASK THE DATABASE BEFORE YOU START (his instruction, S127)
   cd Game/founding-realm/rebuild && npm run know -- <your task terms>
 **110 entries** + 169 realm records. It paid three times in S128: the border guard's two
 required refinements came out of the finding verbatim; the duckweed observation gave the water
@@ -83,4 +90,7 @@ MIXED LINE ENDINGS: git stores LF, autocrlf expands to CRLF, so multi-line ancho
 Deploy is AUTOMATIC on push to `master` touching `rebuild/**`, and it ships the assets **and**
 the Worker (`npx wrangler@4 deploy`) — ~2.5 min push-to-live, measured.
 Verify by HASHING the live bundle: `e8ff7dbc21955e5d`, byte-identical, contains `zone-2-pond`.
-`/health` returns **200** — the site is watched again for the first time since S103.
+`/health` returns **200** and is correct — but the site is **STILL NOT WATCHED**. The monitor's
+probe is refused by Cloudflare's edge with **403** from GitHub Actions runner IPs, so the
+schedule was re-parked and the false outage issue closed. See `CF-S128-EDGE-BLOCKS-THE-MONITOR`
+— it needs a WAF skip rule for `/health`, which is dashboard access and therefore his.
