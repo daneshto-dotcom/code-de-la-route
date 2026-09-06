@@ -98,3 +98,56 @@ break a cached client; that is the entire reason it is split.
 P1 is bigger than "add a token" because the Council found the live-client hazard. I am
 shipping phase 1 only. Anyone reading "presence is authenticated" should read it as
 "presence CAN be authenticated and counts who is not" until phase 2 lands.
+
+---
+
+# SCOPE AMENDMENT 1 — S130 continuation (Rule 16)
+
+**Authority.** Owner, this session: *"keep working the rest of the not complete
+priorities that are not awaiting on me. then i will check it all in the end"* and
+*"dont fan too many agents out at the same time so we dont hit limits. do them
+batch by batch saving all progress each batch"*.
+
+The approved S129 batch has nothing left that is not awaiting him: P1/P2 shipped,
+P3 blocked on evidence only he can produce, P4 re-scoped and closed, P5 blocked on
+his letter. So this amendment takes the next work from the OPEN FINDINGS list
+rather than from the original five.
+
+## How the list was chosen — measured, not guessed
+A 29-item triage workflow (53 agents, 0 errors) read each open finding against the
+CURRENT code, then two adversarial refuters attacked every "still broken" claim.
+
+| bucket | n | disposition |
+|---|---|---|
+| confirmed still-live, no owner input needed | **12** | 2/2 upheld each, zero refutations — THIS AMENDMENT |
+| claimed already fixed | 7 | re-checked by a reversed-burden skeptic batch before any closure |
+| owner-blocked | 10 | left alone; listed for him |
+
+**An asymmetry I built and then corrected:** the first workflow adversarially
+verified the "still broken" claims but NOT the "already fixed" ones. Wrongly
+closing a finding hides a live defect, which is the more dangerous direction, so a
+second batch runs one skeptic per already-fixed claim with the burden of proof
+reversed. Nothing is closed on a single agent's word.
+
+## Execution rule for this amendment (his instruction)
+BATCHES, not a fan-out. Each batch: implement → `npm run check` (16 guards) →
+`npm test` (16 suites) → commit → push. A limit or a kill therefore costs only the
+batch in flight, which is exactly how CF-S127-HARVEST-UNVERIFIED lost 40 entries.
+
+## The twelve, in batch order (all LOW risk, none needs a ruling)
+- **A — guards that do not guard** (the highest-value class here):
+  `CF-S127-NO-GUARD-ON-PARCEL-VIEWPORT-FIT`, `CF-S122-SCENE-SURFACE-BLIND-SPOTS`,
+  `CF-S127-ZONE-GRID-UNCHECKED`
+- **B — assertions pinned to spellings** (RES-S123-SPELLING-NOT-CLAIM, still biting):
+  `CF-S117-BRITTLE-COMMAND-ASSERTIONS`, `CF-S122-TESTS-ASSERT-SOURCE-TEXT`
+- **C — one fact, one home:** `CF-S122-PALETTE-DEAD-SETS`,
+  `CF-S122-DAYNIGHT-GLSL-CONSTANTS`, `CF-S127-NIGHT-GUARD-HOLES`
+- **D — enforcement gaps:** `CF-S117-BOX-FIVE-OPTIONS`, `CF-S122-CI-STATUS-PENDING-RUN`
+- **E — docs that are actively wrong:** `CF-S122-DOCS-STILL-STALE`
+- **F — outside the repo:** `CF-S117-TOKEN-TOOL-CWD-SENSITIVE` (a ~/.claude script)
+
+## Not in scope, and why
+`CF-S129-ZONE-2-ROAD-WOOD-DRAWS-CROWNS-IT-THEN-ERASES` — the triage agreed with me
+that it is owner-blocked: the code draws crowns and discards them (hygiene, mine)
+but WHICH wood he wants is taste (his). The hygiene half is held until he rules,
+so the fix lands once instead of twice.
