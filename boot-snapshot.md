@@ -1,96 +1,91 @@
 # Boot Snapshot (auto-generated at handoff)
-Generated: 2026-09-04 | Session: S128 | submodule 7f2b917 | clean, pushed, LIVE
+Generated: 2026-09-08 | Session: S129/S130 | submodule 71daf60 | clean, pushed, LIVE
 
 ## READ THIS FIRST
-**THE POND IS BUILT, WALKABLE AND LIVE.** `zone-2-pond` (29×38 at 2 m = 58×76 m, 509 walkable
-tiles) ships in the bundle serving legacyoftherealm.com, reachable on foot from `zone-2-road`,
-with a minimap at 5 px/tile — the same legibility zone-1 ships, which is the prediction
-`DEC-S127-GRID` rested on. Two of zone 2's three parcels are now walkable.
+**THE OUTDOORS IS ONE MAP.** `src/parcels/outdoors` is a generated 41x114 composite of
+zone-1 + zone-2-road + zone-2-pond, built by `tools/build-world.py` from the measured
+origins in `src/core/world-layout.json`. The three source parcels are still the authored
+truth and are still built; the player never stands in one. Walked end to end in the engine:
+world y=110 -> y=1, both old seams crossed, `scenes: ["outdoors"]` the whole way, camera
+stepping 18 px per tile with no jump. No transition outdoors. Interiors keep their fade.
 
-  Game/founding-realm/rebuild/tools/build-zone2.py     paint_pond — the map source
-  Game/founding-realm/rebuild/tools/build-atlas.py     the five pond tiles, at the END of the list
-  HANDOFF_2026_09_04_S128.md                           the full story
+  Game/founding-realm/rebuild/src/core/world-layout.json   the origins (3 consumers, one source)
+  Game/founding-realm/rebuild/tools/build-world.py         the compositor
+  Game/founding-realm/rebuild/tools/world-check.ts         guard 17 — seams must line up
+  HANDOFF_2026_09_08_S130.md                               the full story
 
 ## Next Steps
-1. **`zone-2-head` (20×33) — the last parcel of zone 2.** Its ART IS ALREADY DRAWN: the five
-   pond tiles cover the shallow inflow, the dam and the little fishery. It needs ONE ruling,
-   his, open since S127 — is the quest pocket inside the polygon he traced? Three frames were
-   sent; he asked *"which pocket?"*. The perimeter budget says NO: 28 m of spare boundary
-   against the 40–60 m a finger to the wall and back would cost. When it lands, open
-   `zone-2-pond`'s row-0 hedge lid at cols 2–3 and add the warp pair — the same operation S128
-   performed on `zone-2-road`, and **the border guard will hold you to it**.
-2. **`CF-S128-LUT-COLLISION-DROUGHT-FOLIAGE-DRY` — a LIVE shipping bug, and an ART call.**
-   `#2B2D23` is DROUGHT[3] *and* FOLIAGE_DRY[2] with different night inks; the LUT is keyed on
-   the day colour and written last-write-wins, so DROUGHT's darkest ink renders as
-   FOLIAGE_DRY's after dark. The shared day ink is DELIBERATE — era twins, 0.00 on purpose — so
-   this is his call, not a repair: accept one night ink, or un-share the day colour. Excused by
-   name in `KNOWN_LUT_COLLISIONS` meanwhile, and R11 fails if a listed collision stops colliding.
-3. **`CF-S128-EDGE-BLOCKS-THE-MONITOR` — the site is live and STILL unwatched.** `/health` was
-   built this session and answers 200 correctly, but Cloudflare refuses the probe with **403**
-   from GitHub Actions runner IPs, so it never reaches the Worker. I verified `/health` from
-   this machine — a residential IP the edge does not challenge — and armed a schedule that runs
-   from a datacenter range it does. It opened a false outage issue on a healthy site; the
-   schedule is re-parked and the issue is closed with the diagnosis. **Needs a Cloudflare WAF
-   skip rule for `/health` (dashboard, so his), then a manual run to confirm, then re-arm.**
-4. **`CF-S122-PRESENCE-IS-UNAUTHENTICATED`** — MEDIUM-HIGH, live in production, untouched by
-   S128. The presence WebSocket accepts anyone; no session token is checked.
-5. **`CF-S127-HARVEST-UNVERIFIED`** — 40 candidates from five agents across S110–S126,
-   including corrections to entries that are actively WRONG. All 30 verifiers were killed by a
-   spend limit. Replays from cache.
-6. Two cheap improvements, both recorded: `CF-S128-ARBORETUM-IS-PLANTED-BY-ARITHMETIC` (the
-   trees are a modulo lattice, and he ruled "scenery with **good variety**") and
-   `CF-S128-POND-SHAPE-IS-INVENTED-WITHIN-A-MEASURED-FRAME` (the outline is authored inside a
-   measured frame — needs the satellite registration, not a ruling).
+1. **The MAP page is a postage stamp.** `CF-S130-THE-MAP-PAGE-IS-A-POSTAGE-STAMP-NOW`.
+   min(300//41, 210//114, 16) = 1 px/tile against the 5 px every parcel shipped at, which
+   FACT-S127 names as the failure mode. Fix is costed in the finding: bake at 5 px/tile and
+   window the page with `Image.setCrop` around the player. This is the world's bill.
+2. **The zone card has nothing to fire on.** `CF-S130-ZONE-CARD-MUST-FOLLOW-POSITION-NOT-WARPS`.
+   Deleting the outdoor warps deleted its trigger. Make it position-based (watch the world
+   tile against a zone boundary) — better than the warp version, since it fires wherever he
+   crosses rather than only on the drive.
+3. **A hedge line runs across the park.** `CF-S130-FORMER-SEAM-ROWS-STILL-CARRY-THEIR-BORDER-WALLS`.
+   Every parcel walled its own edge while it was a separate map. Those rows are interior now.
+   The fix belongs in the SOURCE parcels — the compositor cannot tell containment from a real
+   boundary.
+4. **`zone-2-head` (20x33)** — still gated on his letter for the quest pocket (A/B/C frames
+   sent S129). Now also needs a world placement in `world-layout.json` when it lands.
+5. `CF-S122-PRESENCE-IS-UNAUTHENTICATED` **phase 2** — phase 1 ships and COUNTS unticketed
+   sockets. Delete the `admitted === null` path once `[presence] UNTICKETED` stops appearing.
+6. `CF-S130-HUD-CLOCK-COUNTS-SOURCE` and `CF-S130-FILE-CONTAINS-PINS-SPELLINGS` — the last
+   two of the source-text-assertion class.
 
 ## Blockers
-- **`zone-2-head`** — his ruling on the quest pocket. Everything else in zone 2 is art.
-- `CF-S107-KEY-EXPOSURE` (HIGH, since S107) and `CF-S123-CF-TOKEN-EXPOSED-IN-TRANSCRIPT`
-  (HIGH) — rotation, owner only, neither has moved.
-- `CF-S115-SUBMODULE-STATE-SHADOW` (HIGH) — needs his go.
+- **Owner only:** rotate the Cloudflare token (`CF-S123`) and the `.env` keys (`CF-S107`).
+  He has said he will do this with a wider security pass — not urgent, private repo.
+- **Together next session, he asked me to walk him through it:** the Cloudflare WAF skip rule
+  for `/health` (`CF-S128-EDGE-BLOCKS-THE-MONITOR`). The site is live and STILL UNWATCHED.
+- **His ruling:** the quest pocket letter; the `zone-2-road` wood (art call); the pond outline
+  (he can trace it in the same measure tool that produced 11 442 m2 / 541,98 m).
+- `CF-S128-LUT-COLLISION` — RULED "leave it excused". Do NOT put it back in front of him.
 
-## THE GATE IS NOW 16 GUARDS, NOT 14
-S128 added two, and moved rules that had never run in a build:
-- **`check:atlas`** — the sheet holds its own tiles, in BOTH directions. An *over*-sized sheet
-  is silent: palette-check skips empty regions while tile-library and provenance-report size
-  their pages off `atlas.rows`.
-- **`check:night-palette`** — R6–R12, extracted from `night.test.ts`, which runs under
-  `npm test` only. Until S128 **no colour-distance rule in this repo ran in the build at all**,
-  and `palette-check.ts` has never contained one — every threshold in it is a cardinality.
-- **`reach-check` gained the border audit** (`CF-S127-NO-GUARD-ON-WALKABLE-BORDER`, closed).
-  Containment is not connectivity: a hole at the map edge is perfectly REACHABLE, so the flood
-  fill structurally cannot see it.
+## Pending Backlog
+30 open findings. `cd Game/founding-realm/rebuild && npm run know -- --open`.
+5 are his (above); the rest are mine.
 
-## BEFORE SIZING ANY PARCEL — three budgets now
-- A scrolling parcel needs **≥ 20 cols AND ≥ 18 rows**, or it shows sky (`ParcelScene:624`, an AND).
-- **≤ 42 rows** to keep zone-1's 5 px/tile MAP page.
-- The atlas sheet grows automatically, but `tile()` is **FROZEN** once it is sized — register
-  new tiles ABOVE the `rows = ...` line in `build()` or it raises by name.
+## Recent Reflexion (last 2 sessions)
+## 2026-09-08 - Session S129/S130: the fade was hiding a 12-tile jump, and he had to ask three times for one world
 
-## LAST STEP OF BOOT — ASK THE DATABASE BEFORE YOU START (his instruction, S127)
-  cd Game/founding-realm/rebuild && npm run know -- <your task terms>
-**110 entries** + 169 realm records. It paid three times in S128: the border guard's two
-required refinements came out of the finding verbatim; the duckweed observation gave the water
-palette its three measured hexes; and `OBS-S126-GREEN-BAND-IS-THE-WATERLINE` is why the herb
-margin traces the shore instead of being a straight column.
+- P1 #empirical-refutes-plausible-criticals #plant-the-exact-fault #deploy-is-one-artifact: I proposed a WebSocket auth transport on a security intuition (subprotocol header beats query string) and BOTH Council models refuted the premise itself rather than the details: Cloudflare logs both, so transport was never the lever and lifetime was. The transferable rule: WHEN CHOOSING WHERE TO PUT A CREDENTIAL, ASK WHAT LOGS IT, NOT WHAT LOOKS PRIVATE — and if the answer is 'everything logs it', the fix is TTL, not location. Second, and bigger: Gemini caught that one `wrangler deploy` ships the assets and the Worker as ONE artifact, so a server that starts demanding a credential in the same push breaks every browser holding a cached client. A ROLLOUT IS NOT A DEPLOY: when server and client ship together, any new requirement needs a phase that ACCEPTS BOTH and counts, or the first deploy is the outage. Third, the plant-the-fault run paid again — but only because I also extended the test harness's Response stub, which kept just `status`: my assertions about no-store and the JSON body would have read `undefined` and still passed nothing. A FAKE THAT DROPS THE FIELD YOUR ASSERTION READS IS A GREEN TEST THAT CHECKS NOTHING.
 
-## Rules S128 paid for
-A PLANT-THE-FAULT RUN THAT REPORTS PASS TELLS YOU NOTHING unless the fault you planted is the
-one the guard is for — two of my first four plants reported MISSED and both were the TEST.
-A DISTANCE TO A NEIGHBOUR IS NOT A NUMBER, IT IS A MINIMUM OVER PAIRS. A TEXTURE IS NOT A
-DRAWING — anything you can name in a tile becomes a pattern once it repeats; draw grain, not
-objects, and a uniform scatter is not organic. WHEN A GATE GOES RED AT CLOSE, SORT THE FAILURES
-BY WHY FIRST — ten hard failures, not one of them false when written. WHEN YOU ARM AN ALARM,
-VERIFY THE MECHANISM YOU RELY ON, while the evidence still says failure. And the shell has
-MIXED LINE ENDINGS: git stores LF, autocrlf expands to CRLF, so multi-line anchors written with
-\n do not match on disk — normalise to LF, patch, write LF.
+- P2 #look-at-the-render #policy-not-instance #raw-code-not-abbreviations: Three defects in this priority were invisible to every guard and visible instantly in a PNG: a stake that read as a ladder, a crown floating clear of its own stem, and highlights that formed one diagonal streak repeated on every instance. The gate was green for all three. A GUARD CHECKS THAT PIXELS ARE DECLARED, NOT THAT THEY DEPICT WHAT YOU MEANT - for art, rendering and looking IS the test, and it has to happen before the commit, not after. The deeper one is transferable past art: I asked a rejection sampler for 'two in five mature' and got two in eighteen, because the expensive class fails the spacing test more often. WHEN A SAMPLER REJECTS, THE RATIO YOU WRITE IS AN INPUT, NOT AN OUTCOME. It is the same error as the comment I deleted in the same commit, which claimed the old planting was 'spaced irregularly' while sitting on top of two fixed-stride loops: a description is not a measurement, whether it is written in prose or in a parameter.
 
-## Gate at close
-`npm run check` **16 guards** · `npm test` 16 suites · `npm run check:site` · MCV
-`hard_fail=0 warn=0` (45 files, 0 UNBOUND). All exit 0.
-Deploy is AUTOMATIC on push to `master` touching `rebuild/**`, and it ships the assets **and**
-the Worker (`npx wrangler@4 deploy`) — ~2.5 min push-to-live, measured.
-Verify by HASHING the live bundle: `e8ff7dbc21955e5d`, byte-identical, contains `zone-2-pond`.
-`/health` returns **200** and is correct — but the site is **STILL NOT WATCHED**. The monitor's
-probe is refused by Cloudflare's edge with **403** from GitHub Actions runner IPs, so the
-schedule was re-parked and the false outage issue closed. See `CF-S128-EDGE-BLOCKS-THE-MONITOR`
-— it needs a WAF skip rule for `/health`, which is dashboard access and therefore his.
+- P4 #a-quoted-string-is-still-code #stage-by-path-after-a-surprise #a-fact-that-pins-a-value-rots: I wrote two shell commands in BACKTICKS inside a double-quoted `git commit -m`, and bash executed them. One was `wrangler deploy`. It missed production only because this machine has no CLOUDFLARE_API_TOKEN — and it had already resolved a DIFFERENT worker name from its cwd, so a token would have meant a WRONG deploy, not a harmless one. Then `git add -A` committed the wrangler.jsonc it left behind, whose assets.directory was the whole source tree — re-creating, under a second worker name, the exact leak that rebuild/wrangler.toml's longest comment exists to prevent. THREE RULES. (1) A STRING YOU ARE ONLY QUOTING IS STILL CODE IF THE SHELL CAN SEE IT, and the place it bites is documentation, where metacharacters get typed with no intent to run. Multi-line messages go through -F- with a QUOTED heredoc, always — my earlier commits this session were safe only by accident of already using it. (2) AFTER ANY UNEXPECTED TOOL RUN, STAGE BY PATH. add -A commits whatever the surprise left behind. (3) Separately and more happily: the atlas fact survived my own change to the thing it describes (179->182 tiles) because it states a RULE, not a count. A FACT THAT PINS A CURRENT VALUE ROTS.
+
+- A #verify-the-direction-that-costs-you-most #a-guard-added-while-green-is-the-only-guard-you-can-trust: I triaged 29 findings and adversarially verified every 'this is still broken' claim while accepting every 'this is already fixed' claim on one agent's word. Closing a finding wrongly HIDES A LIVE DEFECT, so the direction I left unguarded was the expensive one. A reversed-burden batch then overturned 4 of 7 — including `npm run dev` still corrupting the shipped bundle. VERIFY THE DIRECTION THAT COSTS YOU MOST, not the one that is easiest to attack. Second: both guards I added pass as no-ops today, and that is the ONLY time you can prove a guard works in both directions — plant the fault, watch it fire, remove it, watch it stop. A guard first written when something is already broken can never tell you whether it ever worked.
+
+- B #detection-is-not-repair #move-the-line-that-does-the-damage: CF-S122-DEV-WATCH-OVERWRITES-DIST had been read as fixed because a guard had been added to NOTICE it. The artifact was still being corrupted; the alarm just rang afterwards, and only when someone ran it. DETECTION IS A SMOKE ALARM, NOT A FIX. When a guard is standing in for a repair, find the line that actually does the damage and move THAT — here one expression, `OUT_NAME = watch ? 'dist-dev' : 'dist'`, made the corruption physically impossible, where three sessions of detection had not stopped it once.
+
+- E #a-rule-at-the-scope-of-the-incident-misses-the-class #when-a-habit-rule-fails-add-a-guard #docs-do-not-rot-evenly: I recorded a lesson about backticks in `git commit -m`, then made the identical mistake 90 minutes later inside `python -c "..."` — because I had written the rule at the scope of the TOOL that burned me instead of the MECHANISM (the shell expands backticks in double quotes, in any program's arguments). A RULE WRITTEN AT THE SCOPE OF THE INCIDENT WILL NOT COVER THE CLASS. The response was not a better-worded rule: when a habit rule has already failed once, the only honest fix is a guard that does not depend on me remembering — bundle-check now refuses any stray wrangler config above rebuild/. Separately, from the docs themselves: A DOC DOES NOT ROT EVENLY. GOING-LIVE.md contradicted itself three paragraphs apart, and the WRONG half was the instruction at the top while the correction sat below it — corrections accumulate at the bottom of a page and the confident imperative at the top is the last thing anyone updates.
+
+- F #knowing-a-rule-is-not-applying-it #plant-the-fault-catches-what-guards-cannot: I taught the verifier to warn about assertions pinned to values that are supposed to move, and then in the very next commit wrote `MAX_OPTIONS === 4`. What caught it was not the guard - the guard only inspects MCV assertions in session-state, not test files - it was PLANTING THE FAULT: raising MAX_BODY_LINES to prove the ceiling was derived turned my own brand-new assertion red on a correct change. KNOWING A RULE IS NOT THE SAME AS APPLYING IT, and the thing that closes that gap is not another rule but an experiment. Plant-the-fault is not only a way to check a guard works; it is a way to discover that the ASSERTIONS YOU JUST WROTE are pinned to the wrong thing, which no amount of green can tell you.
+
+- K #verify-the-finding-before-you-fix-it #take-the-code-out-of-the-runtime #geometry-is-not-what-died: CF-S122 claimed a test would survive its own feature being deleted. I PLANTED THAT EXACT DELETION FIRST and watched 17/17 pass — which turned a plausible finding into a measured one and told me precisely what the fix had to make fail. Then the fix nearly stopped one step short: extracting layoutTabs() made the arithmetic testable and a pure-geometry test STILL sails through the deletion, because deleting a draw call does not move a rectangle. GEOMETRY IS NOT WHAT DIED. Only extracting drawTabs() behind minimal interfaces and driving it with recorders made the original fault fail. And the reason the old test read source at all was real — importing Journal.ts pulls in Phaser, which will not load in Node — so the answer was to TAKE THE CODE OUT OF THE RUNTIME, not to blame the test. Same move RES-S123-UNTESTED-LAYER records for the Durable Objects.
+
+- P1 #the-fade-was-hiding-a-defect #a-mechanism-inherits-behaviour-it-was-not-designed-for #the-obvious-fix-was-the-same-bug: He asked me to remove a cutscene. The cutscene was not the problem — it was a symptom of warps having been built as INTERIOR DOORS and the outdoor seams later reusing the mechanism, inheriting a fade nobody had chosen for them. WHEN A BEHAVIOUR FEELS WRONG IN ONE PLACE, ASK WHAT IT WAS DESIGNED FOR: the answer was 'a door', and a road is not a door. Two things that only measurement could tell me. First, THE OBVIOUS FIX WAS THE SAME BUG: a place-name card on every parcel crossing would have fired every 38 tiles, because zone-2-road and zone-2-pond are both Zone 2 — the interruption he objected to, in a new costume. Second, removing the fade EXPOSED a 12-tile lateral jump at the zone-1 seam that the fade had been concealing since it was built. I shipped that exposure deliberately rather than re-adding a fade to hide it: A TRANSITION THAT EXISTS TO CONCEAL A MISALIGNMENT IS NOT A TRANSITION, IT IS A COVER. Measure the seam before you promise continuity.
+
+- P2 #reproduce-before-you-theorise #a-reset-list-with-gaps-is-evidence-of-wrong-placement #i-answered-a-smaller-question: I spent several minutes theorising about why the cellar exit went black and got nowhere; the answer arrived in one line of stack trace the moment I actually ran the game through tools/shoot.ts. REPRODUCE BEFORE YOU THEORISE - and this repo already owns the harness for it, which I reached for late. Second: I found a reset list SIX items long with TWO missing and my first instinct was to add the two. A LIST THAT LONG WITH GAPS IS EVIDENCE THE PLACEMENT IS WRONG, not that someone was careless - the fix was to move the rule to the moment the framework guarantees (shutdown), where forgetting is impossible rather than merely unlikely. Third, and the one that cost him a round trip: he asked for ONE CONTINUOUS MAP and I delivered continuous SEAMS, then reported it as done. I had measured the seam alignment and never questioned whether 'no fade between parcels' was the same thing as 'one map'. It is not, and he had to tell me twice.
+
+- P4+P5 #answer-the-question-he-asked #a-frame-can-be-checked-a-graph-cannot #my-own-assertion-caught-me-twice: He asked three times for one continuous world and I answered a smaller question twice - first removing the fade-out, then the fade-in - because each time I fixed the SYMPTOM I could see rather than the STRUCTURE he was describing. 'every zone now has 2,15 location while there should be only one 2,15' was the whole brief, stated plainly, and I did not hear it until the third telling. WHEN SOMEONE RESTATES A REQUEST INSTEAD OF ACCEPTING THE FIX, THE FIX ANSWERED A DIFFERENT QUESTION. The technical lesson is worth as much: A WARP GRAPH CANNOT BE CHECKED FOR CONTINUITY - any tile may lead to any tile - which is exactly why a 12-tile sideways jump hid behind a fade for three sessions with every guard green. A COORDINATE FRAME CAN BE, and check:world caught the historical bug the moment it existed. And twice in one priority my own new assertions caught me: the glyph allocator (per-layer against a flat legend) and an overstated capacity fact I had written an hour earlier. Both were found by running the thing, not by re-reading it.
+## 2026-09-04 - Session S128: the generator could not have drawn the pond, and a settled reason ran backwards
+
+- P1 #the-assertion-passed-and-was-still-not-enough: Fixed an atlas generator that sized its sheet before its last tile registered, added an assertion, and planted the fault to prove the assertion bit. IT DID NOT. Registering one tile after the allocation leaves 175 tiles in 176 slots, so it fits, so nothing fires — the defect is invisible until the count crosses a row boundary, which is the exact property I had just finished writing into the comment above the assertion. I had described the trap in prose and then walked into it while testing. The assertion was correct and useless: it catches the CONSEQUENCE (overflow) and not the CAUSE (a late registration), and those come apart for two tiles out of every eight. The fix was to make the cause unrepresentable — freeze the registry when the sheet is sized, so a late tile raises by name on the first one whatever the arithmetic is. THE LESSON IS ABOUT THE TEST, NOT THE CODE: a plant-the-fault run that reports PASS has told you nothing unless the fault you planted is the one the guard is for. I planted "the thing overflows" when the guard was for "someone registers late", and only because I planted the wrong one did I find out the guard was aimed wrong too. Also worth keeping: my harness then reported UNEXPECTED on a run that had actually PASSED, because its predicate grepped for "IndexError" and my own error message contains the word. Two false readings in one exercise, both from the instrument.
+
+- P2 #the-guard-was-right-and-my-tests-were-the-bug: Planted ten faults against a new night-palette guard. Four of the first batch: two BIT, two reported MISSED — and both misses were my TEST. One mutated the NIGHT side of a ramp to manufacture a day-colour collision, which broke R6 min-gap first so the run failed for the wrong reason and my needle never appeared. The other asserted a non-dimming ramp using a GRAVEL day ramp I had typed from memory rather than read, so nothing was identical and nothing fired. A third harness earlier in the same session reported UNEXPECTED on a run that had actually PASSED, because its predicate grepped for the word IndexError and my own error message contains it. THREE false readings in one session, all from instruments, none from the code under test. The lesson is not to test more carefully in general — it is that a plant-the-fault run has TWO failure modes and only one of them is the guard. When a plant reports MISSED, the first hypothesis should be that the fault was not actually planted, and the cheap check is to look at what the run DID say rather than at whether my needle appeared. Every one of these was diagnosable in one read of the actual output.
+
+- P3 #the-reason-ran-backwards: A durable fact recorded a palette value as settled AND gave its reason: the measured duckweed shade sat 8.1 CIE76 from FOLIAGE_DRY, the pond-reads-as-a-dry-hedge failure, so the shade step was moved off the measurement. I re-ran that arithmetic before building on it and it is backwards in BOTH metrics — the substitute is 13.64 sRGB / 5.18 CIE76 from its nearest FOLIAGE_DRY ink where the MEASURED value is 21.95 / 8.14. The change moved the pond CLOSER to the thing it was made to avoid. The error is instructive and not careless: the comparison was made against ONE ink of the neighbouring ramp rather than against the ramp, and against the value being REMOVED rather than the value being INTRODUCED. A distance to a neighbour is not a number, it is a MINIMUM OVER PAIRS, and a substitution must be measured on the same footing as the thing it replaces or the comparison is not a comparison. Two further things only fell out because I checked: R8 reads STEP 1, which was identical in both ramps, so no guard ever had jurisdiction over the change; and the pair the note cites is 27.35 sRGB, below R8 floor of 30, so the rule would not have policed the measured value either. The whole justification was for a guard that was never watching.
+
+- P4 #a-texture-is-not-a-drawing: Drew five tiles from good evidence, passed sixteen guards and sixteen suites, and rendered a crop field. Four rendered passes were needed and EACH ONE CHANGED THE DESIGN — none of what they showed was reachable from map data. The two causes were both structural rather than careless. Rng is seeded per tile NAME, so every instance of a tile is pixel-identical: any motif bigger than about 4 px is not texture, it is a STAMP, and it repeats a few hundred times across a pond. And Parcel.scatter walks an LCG at a fixed rate, which over a rectangle lands its hits on a near-regular LATTICE — so the "random" open water came out in rows and columns. The rim failed a third way: STONE is a warm pale limestone and at the same value as the GRAVEL drive two columns away, so an impassable revetment read as more road, which is the precise confusion the tile exists to prevent. The lesson that generalises past this pond: DRAW GRAIN, NOT OBJECTS, and never trust a uniform scatter to look natural. The one about process is harder — I had the mock-bank harness after pass two and could have written it before pass one.
+
+- P5 #the-guard-i-needed-was-the-one-i-was-about-to-need: This commit opens a map border on purpose, and reach-check structurally cannot see a border hole: it flood-fills from the spawn and asks whether the player can GET somewhere, and a hole at the edge is perfectly reachable. CF-S127-NO-GUARD-ON-WALKABLE-BORDER had been open since the previous session with its status reading "all known instances fixed; the check itself is not written" — the audit that found four holes had been written by hand and thrown away. Writing it in the SAME commit that opens a border is what made it more than bookkeeping: the second fault I planted was removing this commit`s own new warp pair, and the guard named (2,0) and (3,0). It would have caught me. The transferable part is about WHEN to pay a known debt: an open finding is cheapest to close in the session whose work would have tripped it, because that session can prove the guard bites on a real mistake instead of a synthetic one.
+
+- P7 #i-nearly-armed-it-without-checking-what-deploys: Landed /health and the cron in one commit, pushed, and polled the live apex. It returned 404 seven times. My first instinct was that the deploy was slow; the useful instinct was the second one — go and check whether the workflow deploys the WORKER at all, or only the static assets. If it had been assets-only, /health could never have appeared and the schedule I had just armed would have opened a site-down issue every fifteen minutes against a perfectly healthy site, which is the precise failure the whole priority existed to avoid. It does deploy the Worker (deploy-site.yml:218) and the eighth poll returned 200. The lesson is not "wait longer": when you arm an alarm, the thing to verify is not that the alarm works but that the MECHANISM YOU ARE RELYING ON to make it true actually exists — and the moment to check that is while the evidence still says failure, not after it flips.
+
+- P8 #ten-red-assertions-and-none-of-them-was-a-lie: The close gate reported ten hard failures. Not one was a claim that had been false when it was written — every one was a historical assertion that this session's own legitimate work had superseded: two COUNT pins broken by five new tiles, two rule phrases that MOVED when I extracted the night rules into a build guard, one substring pinning three guard names in SEQUENCE that broke because I inserted two guards, and four phrases in a probe I rewrote because it misreported. The temptation is to delete all ten and move on, and the S113 precedent says why not to: they are different kinds and deserve different answers. The two that MOVED were REPOINTED, because retiring them would have silently dropped real coverage. The count pins were retired rather than re-pinned at 179, because re-pinning re-arms the trap for the next session — and the invariant they reached for is now held by a GUARD that moves with the world. The chain substring was NARROWED to the one durable name inside it. And the tenth was a genuine gap: a new minimap PNG bound by nothing, which matters because minimaps are checked by NOTHING else in this repo. THE RULE: when a gate goes red at close, sort the failures by WHY before deciding what to do with any of them.
+
+- P7b #i-verified-from-the-wrong-vantage-point: Built /health and verified it thoroughly — 200, right content-type, right cache header, every user agent including none, and polled across the deploy window so I watched it flip from 404 to 200 — then armed the monitor on that evidence. It failed on all five of its first fires with HTTP 403 and opened a false site-is-DOWN issue against a healthy site: Cloudflare refuses GitHub Actions runner IPs at the edge, so the probe never reaches the Worker at all. Every check I ran was correct, and not one of them was the check that mattered, because I ran them all from a residential IP the edge does not challenge while the thing I was arming runs from a datacenter range it does. THE RULE: A HEALTH CHECK IS ONLY VERIFIED FROM THE VANTAGE POINT THAT WILL ACTUALLY PERFORM IT — and more generally, when a probe and its consumer sit on different networks, THE NETWORK IS PART OF THE THING UNDER TEST. The sharper half is about the recovery: I had quoted the S103 parking in my own commit message as the exact failure to avoid, and then reproduced it anyway. Knowing a failure mode by name is not the same as checking whether you are standing in it.
+
